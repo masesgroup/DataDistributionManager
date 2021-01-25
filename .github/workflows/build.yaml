@@ -82,7 +82,6 @@ jobs:
           GenerateFile.cmd
           cd..
 
-      - name: NuGet Restore
       - uses: nuget/setup-nuget@v1
         with:
           nuget-version: '5.x'
