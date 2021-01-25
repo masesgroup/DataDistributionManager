@@ -28,81 +28,81 @@ jobs:
         with:
           submodules: 'true'
           
-    - name: set up msvc env
-      uses: ilammy/msvc-dev-cmd@v1.5.0
+      - name: set up msvc env
+        uses: ilammy/msvc-dev-cmd@v1.5.0
       
-    - name: configure OpenDDS
-      shell: cmd
-      run: |
-        cd third_party\OpenDDS
-        configure
+      - name: configure OpenDDS
+        shell: cmd
+        run: |
+         cd third_party\OpenDDS
+          configure
 
-    - name: Build OpenDDS x64
-      shell: cmd
-      run: |
-        msbuild -p:Configuration=Release,Platform=x64 -m DDS_TAOv2.sln
-        xcopy .\lib\*.dll ..\..\Output\x64\
-        xcopy .\lib\*.pdb ..\..\Output\pdb64\
-        xcopy .\lib\*.lib ..\..\Output\lib64\
-        xcopy .\bin\*.exe ..\..\Output\bin64\
-        xcopy .\bin\*.pdb ..\..\Output\pdb64\
-        xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x64\
-        xcopy .\ACE_wrappers\lib\*.pdb ..\..\Output\pdb64\
-        xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib64\
-        xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin64\
-        xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb64\
+      - name: Build OpenDDS x64
+        shell: cmd
+        run: |
+          msbuild -p:Configuration=Release,Platform=x64 -m DDS_TAOv2.sln
+          xcopy .\lib\*.dll ..\..\Output\x64\
+          xcopy .\lib\*.pdb ..\..\Output\pdb64\
+          xcopy .\lib\*.lib ..\..\Output\lib64\
+          xcopy .\bin\*.exe ..\..\Output\bin64\
+          xcopy .\bin\*.pdb ..\..\Output\pdb64\
+          xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x64\
+          xcopy .\ACE_wrappers\lib\*.pdb ..\..\Output\pdb64\
+          xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib64\
+          xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin64\
+          xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb64\
 
-    - name: Build OpenDDS x86
-      shell: cmd
-      run: |
-        msbuild -p:Configuration=Release,Platform=Win32 -m DDS_TAOv2.sln
-        xcopy .\lib\*.dll ..\..\Output\x86\
-        xcopy .\lib\*.pdb ..\..\Output\pdb32\
-        xcopy .\lib\*.lib ..\..\Output\lib32\
-        xcopy .\bin\*.exe ..\..\Output\bin32\
-        xcopy .\bin\*.pdb ..\..\Output\pdb32\
-        xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x86\
-        xcopy .\ACE_wrappers\lib\*.pdb ..\..\Output\pdb32\
-        xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib32\
-        xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin32\
-        xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb32\
-        cd ..\..
+      - name: Build OpenDDS x86
+        shell: cmd
+        run: |
+          msbuild -p:Configuration=Release,Platform=Win32 -m DDS_TAOv2.sln
+          xcopy .\lib\*.dll ..\..\Output\x86\
+          xcopy .\lib\*.pdb ..\..\Output\pdb32\
+          xcopy .\lib\*.lib ..\..\Output\lib32\
+          xcopy .\bin\*.exe ..\..\Output\bin32\
+          xcopy .\bin\*.pdb ..\..\Output\pdb32\
+          xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x86\
+          xcopy .\ACE_wrappers\lib\*.pdb ..\..\Output\pdb32\
+          xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib32\
+          xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin32\
+          xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb32\
+          cd ..\..
 
-    - name: Generate OpenDDS projects
-      shell: cmd
-      run: |
-        cd DataDistributionManagerOpenDDS
-        GenerateFile.cmd
-        cd..
+      - name: Generate OpenDDS projects
+        shell: cmd
+        run: |
+          cd DataDistributionManagerOpenDDS
+          GenerateFile.cmd
+          cd..
 
-    - name: Generate OpenDDS projects
-      shell: cmd
-      run: |
-        cd DataDistributionManagerOpenDDS
-        GenerateFile.cmd
-        cd..
+      - name: Generate OpenDDS projects
+        shell: cmd
+        run: |
+          cd DataDistributionManagerOpenDDS
+          GenerateFile.cmd
+          cd..
 
-    - name: NuGet Restore
-    - uses: nuget/setup-nuget@v1
-      with:
-        nuget-version: '5.x'
-    - run: nuget restore DataDistributionManager.sln
-    
-    - name: Build DataDistributionManager x64
-      shell: cmd
-      run: |
-        msbuild /m -p:Configuration=Release,Platform=x64 DataDistributionManager.sln
-        
-    - name: Build DataDistributionManager x86
-      shell: cmd
-      run: |
-        msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
-    
-    - name: Build Java Binder
-      shell: cmd
-      run: |
-        cd DataDistributionManagerJava
-        set JDKVERSION=jdk-13.0.2+8
-        CreateJars.bat
-        cd..
+      - name: NuGet Restore
+      - uses: nuget/setup-nuget@v1
+        with:
+          nuget-version: '5.x'
+      - run: nuget restore DataDistributionManager.sln
+
+      - name: Build DataDistributionManager x64
+        shell: cmd
+        run: |
+          msbuild /m -p:Configuration=Release,Platform=x64 DataDistributionManager.sln
+
+      - name: Build DataDistributionManager x86
+        shell: cmd
+        run: |
+          msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
+
+      - name: Build Java Binder
+        shell: cmd
+        run: |
+          cd DataDistributionManagerJava
+          set JDKVERSION=jdk-13.0.2+8
+          CreateJars.bat
+          cd..
     
