@@ -35,7 +35,7 @@ jobs:
         shell: cmd
         run: |
           cd third_party\CommonTools
-          msbuild -p:Configuration=Release -m CommonTools.sln
+          msbuild -p:Configuration=Release,Platform="Any CPU" -m CommonTools.sln
 
       - name: Extract commit SHA
         run: |
