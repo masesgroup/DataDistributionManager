@@ -90,12 +90,14 @@ jobs:
         shell: cmd
         run: |
           call .\third_party\OpenDDS\setenv.cmd
+          set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
           msbuild /m -p:Configuration=Release,Platform=x64 DataDistributionManager.sln
 
       - name: Build DataDistributionManager x86
         shell: cmd
         run: |
           call .\third_party\OpenDDS\setenv.cmd
+          set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
           msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
 
       - name: Build Java Binder
