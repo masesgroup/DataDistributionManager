@@ -17,7 +17,7 @@
 */
 
 // Copied from PInvoke.net
-
+#pragma warning disable 1591, 1570
 namespace MASES.DataDistributionManager.Bindings.Interop
 {
     //#define DOTNET20 //uncomment for .NET 2.0
@@ -7153,3 +7153,5 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     }
     #endregion HRESULT
 }
+
+#pragma warning restore 1591, 1570

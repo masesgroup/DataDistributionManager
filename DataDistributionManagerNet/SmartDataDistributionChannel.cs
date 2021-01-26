@@ -22,43 +22,77 @@ using System.Runtime.InteropServices;
 
 namespace MASES.DataDistributionManager.Bindings
 {
+    /// <summary>
+    /// MAin class managing channel
+    /// </summary>
     public class SmartDataDistributionChannel : IDataDistributionChannelCallbackLow
     {
+        /// <summary>
+        /// Ctor
+        /// </summary>
         public SmartDataDistributionChannel()
         {
             m_DataDistributionChannelCallbackLow = new DataDistributionChannelCallbackLow(IntPtr.Zero, this);
         }
-
+        /// <summary>
+        /// Finalizer
+        /// </summary>
         ~SmartDataDistributionChannel()
         {
 
         }
-
+        /// <summary>
+        /// Starts the channel
+        /// </summary>
+        /// <param name="dwMilliseconds">Timeout in ms</param>
+        /// <returns><see cref="HRESULT"/></returns>
         public HRESULT StartChannel(uint dwMilliseconds)
         {
             return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_StartChannel>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, dwMilliseconds);
         }
-
+        /// <summary>
+        /// Stops the channel
+        /// </summary>
+        /// <param name="dwMilliseconds">Timeout in ms</param>
+        /// <returns><see cref="HRESULT"/></returns>
         public HRESULT StopChannel(uint dwMilliseconds)
         {
             return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_StopChannel>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, dwMilliseconds);
         }
-
+        /// <summary>
+        /// Lock the channel
+        /// </summary>
+        /// <param name="timeout">Timeout to acuire lock</param>
+        /// <returns><see cref="HRESULT"/></returns>
         public HRESULT Lock(uint timeout)
         {
             return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_Lock>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, timeout);
         }
-
+        /// <summary>
+        /// Unlock the channel
+        /// </summary>
+        /// <returns><see cref="HRESULT"/></returns>
         public HRESULT Unlock()
         {
           return  DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_Unlock>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle);
         }
-
+        /// <summary>
+        /// Seek the channel
+        /// </summary>
+        /// <param name="position">Seek poisition</param>
+        /// <returns><see cref="HRESULT"/></returns>
         public HRESULT SeekChannel(Int64 position)
         {
            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_SeekChannel>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, position);
         }
-
+        /// <summary>
+        /// Writes in the channel
+        /// </summary>
+        /// <param name="key">Key to use in the channel message</param>
+        /// <param name="buffer">The data buffer in the channel message</param>
+        /// <param name="waitAll">Wait a complete acknowledge from the peers</param>
+        /// <param name="timestamp">timestamp to associated to the message</param>
+        /// <returns></returns>
         public HRESULT WriteOnChannel(string key, byte[] buffer, bool waitAll = false, Int64 timestamp = -1)
         {
             IntPtr unmanagedPointer = Marshal.AllocHGlobal(buffer.Length);
@@ -74,7 +108,13 @@ namespace MASES.DataDistributionManager.Bindings
                 Marshal.FreeHGlobal(unmanagedPointer);
             }
         }
-
+        /// <summary>
+        /// Reads data from channel
+        /// </summary>
+        /// <param name="offset">Position where read begins</param>
+        /// <param name="length">Number of elements to read</param>
+        /// <param name="buffer">Result buffer</param>
+        /// <returns><see cref="HRESULT"/></returns>
         public HRESULT ReadFromChannel(Int64 offset, long length, out byte[] buffer)
         {
             try
@@ -97,17 +137,32 @@ namespace MASES.DataDistributionManager.Bindings
             {
             }
         }
-
+        /// <summary>
+        /// Changes channel direction
+        /// </summary>
+        /// <param name="direction">New <see cref="DDM_CHANNEL_DIRECTION"/></param>
+        /// <returns><see cref="HRESULT"/></returns>
         public HRESULT ChangeChannelDirection(DDM_CHANNEL_DIRECTION direction)
         {
             return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_ChangeChannelDirection>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, direction);
         }
-
+        /// <summary>
+        /// Called when a data is available
+        /// </summary>
+        /// <param name="channelName">The channel with data</param>
+        /// <param name="key">Message key</param>
+        /// <param name="buffer">MEssage buffer</param>
         public virtual void OnDataAvailable(string channelName, string key, byte[] buffer)
         {
 
         }
-
+        /// <summary>
+        /// Called when an event condition is raised from subsystem
+        /// </summary>
+        /// <param name="channelName">The channel name</param>
+        /// <param name="errorCode">The error code reported</param>
+        /// <param name="nativeCode">The native code associated to the error if available</param>
+        /// <param name="subSystemReason">A string with a reason from subsystem</param>
         public virtual void OnConditionOrError(string channelName, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, string subSystemReason)
         {
 
