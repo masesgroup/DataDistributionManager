@@ -52,6 +52,11 @@ jobs:
           cd third_party\OpenDDS
           call setenv.cmd
           msbuild -p:Configuration=Release,Platform=x64 -m DDS_TAOv2.sln
+
+      - name: Move OpenDDS x64
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
           xcopy .\lib\*.dll ..\..\Output\x64\
           xcopy .\lib\*.pdb ..\..\Output\pdb64\
           xcopy .\lib\*.lib ..\..\Output\lib64\
@@ -69,6 +74,11 @@ jobs:
           cd third_party\OpenDDS
           call setenv.cmd
           msbuild -p:Configuration=Release,Platform=Win32 -m DDS_TAOv2.sln
+
+      - name: Move OpenDDS x86
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
           xcopy .\lib\*.dll ..\..\Output\x86\
           xcopy .\lib\*.pdb ..\..\Output\pdb32\
           xcopy .\lib\*.lib ..\..\Output\lib32\
@@ -79,7 +89,6 @@ jobs:
           xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib32\
           xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin32\
           xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb32\
-          cd ..\..
 
       - uses: nuget/setup-nuget@v1
         with:

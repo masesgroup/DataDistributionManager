@@ -84,6 +84,11 @@ nuget.exe restore DataDistributionManager.sln
 
 * Builds the Data Distribution Manager:
 
+  * If the build machine hosts a JDK it is possible to use JNI headers from that JDK with the following command:
+  ```  
+  set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
+  ```
+
 ```
 msbuild /m -p:Configuration=Release,Platform=x64 DataDistributionManager.sln
 msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
@@ -94,7 +99,7 @@ msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
 
 ```
 cd DataDistributionManagerJava
-set JDKVERSION=jdk1.8.0_191 < or the version of JDK installed in the build machine>
+set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
 CreateJars.bat
 cd..
 ```
