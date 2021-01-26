@@ -102,7 +102,7 @@ jobs:
         shell: cmd
         run: |
           cd DataDistributionManagerJava
-          set JDKVERSION=jdk-13.0.2+8
+          set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
           CreateJar.bat
           cd..
     
