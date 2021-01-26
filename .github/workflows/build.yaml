@@ -40,6 +40,7 @@ jobs:
       - name: Generate OpenDDS projects
         shell: cmd
         run: |
+          call .\third_party\OpenDDS\setenv.cmd
           cd DataDistributionManagerOpenDDS
           perl %ACE_ROOT%\bin\generate_export_file.pl DataDistributionSchemaCommon > DataDistributionSchemaCommon_Export.h
           perl %ACE_ROOT%\bin\mwc.pl -type vs2019 DataDistributionManagerOpenDDS.mwc
@@ -49,6 +50,7 @@ jobs:
         shell: cmd
         run: |
           cd third_party\OpenDDS
+          call setenv.cmd
           msbuild -p:Configuration=Release,Platform=x64 -m DDS_TAOv2.sln
           xcopy .\lib\*.dll ..\..\Output\x64\
           xcopy .\lib\*.pdb ..\..\Output\pdb64\
@@ -65,6 +67,7 @@ jobs:
         shell: cmd
         run: |
           cd third_party\OpenDDS
+          call setenv.cmd
           msbuild -p:Configuration=Release,Platform=Win32 -m DDS_TAOv2.sln
           xcopy .\lib\*.dll ..\..\Output\x86\
           xcopy .\lib\*.pdb ..\..\Output\pdb32\
@@ -78,8 +81,6 @@ jobs:
           xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb32\
           cd ..\..
 
-
-
       - uses: nuget/setup-nuget@v1
         with:
           nuget-version: '5.x'
@@ -88,11 +89,13 @@ jobs:
       - name: Build DataDistributionManager x64
         shell: cmd
         run: |
+          call .\third_party\OpenDDS\setenv.cmd
           msbuild /m -p:Configuration=Release,Platform=x64 DataDistributionManager.sln
 
       - name: Build DataDistributionManager x86
         shell: cmd
         run: |
+          call .\third_party\OpenDDS\setenv.cmd
           msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
 
       - name: Build Java Binder
