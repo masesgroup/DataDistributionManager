@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{AA70DB07-B2B0-4304-9EF8-2391CC0FA0B0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{79E29068-45BB-47D7-A6D4-A3DEB8EF50CD}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataDistributionManager", "DataDistributionManager\DataDistributionManager.vcxproj", "{8F228993-29BF-4DAD-95AB-A553C1C23EF0}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataDistributionManagerKafka", "DataDistributionManagerKafka\DataDistributionManagerKafka.vcxproj", "{83C34AD7-B6C6-41FE-986F-BFB7E4773689}"
@@ -27,13 +25,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Binders", "Binders", "{5625263C-E307-4AA5-9747-E008CA6DA579}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataDistributionManagerNet", "DataDistributionManagerNet\DataDistributionManagerNet.csproj", "{0C767E4D-8A2D-402D-AABF-59B04DD9260C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagerTestNet", "ManagerTestNet\ManagerTestNet.csproj", "{59929597-F4DA-43D2-870F-55B5FCAC37CA}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ManagerTest", "ManagerTest\ManagerTest.vcxproj", "{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}"
-	ProjectSection(ProjectDependencies) = postProject
-		{8F228993-29BF-4DAD-95AB-A553C1C23EF0} = {8F228993-29BF-4DAD-95AB-A553C1C23EF0}
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -163,52 +154,6 @@ Global
 		{0C767E4D-8A2D-402D-AABF-59B04DD9260C}.Unicode Release|Win32.Build.0 = Release|Any CPU
 		{0C767E4D-8A2D-402D-AABF-59B04DD9260C}.Unicode Release|x64.ActiveCfg = Release|Any CPU
 		{0C767E4D-8A2D-402D-AABF-59B04DD9260C}.Unicode Release|x64.Build.0 = Release|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Debug|Win32.Build.0 = Debug|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Debug|x64.Build.0 = Debug|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Release|Win32.ActiveCfg = Release|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Release|Win32.Build.0 = Release|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Release|x64.ActiveCfg = Release|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Release|x64.Build.0 = Release|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Unicode Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Unicode Debug|Any CPU.Build.0 = Debug|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Unicode Debug|Win32.ActiveCfg = Debug|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Unicode Debug|Win32.Build.0 = Debug|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Unicode Debug|x64.ActiveCfg = Debug|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Unicode Debug|x64.Build.0 = Debug|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Unicode Release|Any CPU.ActiveCfg = Release|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Unicode Release|Any CPU.Build.0 = Release|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Unicode Release|Win32.ActiveCfg = Release|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Unicode Release|Win32.Build.0 = Release|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Unicode Release|x64.ActiveCfg = Release|Any CPU
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA}.Unicode Release|x64.Build.0 = Release|Any CPU
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Debug|Win32.ActiveCfg = Debug|Win32
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Debug|Win32.Build.0 = Debug|Win32
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Debug|x64.ActiveCfg = Debug|x64
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Debug|x64.Build.0 = Debug|x64
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Release|Any CPU.ActiveCfg = Release|Win32
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Release|Win32.ActiveCfg = Release|Win32
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Release|Win32.Build.0 = Release|Win32
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Release|x64.ActiveCfg = Release|x64
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Release|x64.Build.0 = Release|x64
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Unicode Debug|Any CPU.ActiveCfg = Release|x64
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Unicode Debug|Any CPU.Build.0 = Release|x64
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Unicode Debug|Win32.ActiveCfg = Debug|Win32
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Unicode Debug|Win32.Build.0 = Debug|Win32
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Unicode Debug|x64.ActiveCfg = Debug|x64
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Unicode Debug|x64.Build.0 = Debug|x64
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Unicode Release|Any CPU.ActiveCfg = Release|x64
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Unicode Release|Any CPU.Build.0 = Release|x64
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Unicode Release|Win32.ActiveCfg = Release|Win32
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Unicode Release|Win32.Build.0 = Release|Win32
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Unicode Release|x64.ActiveCfg = Release|x64
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0}.Unicode Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -219,8 +164,6 @@ Global
 		{B885E87A-AC84-4EE6-8486-9BA16B465CB3} = {AA70DB07-B2B0-4304-9EF8-2391CC0FA0B0}
 		{40B63857-FECA-1BAD-5002-3FDE0000002E} = {AA70DB07-B2B0-4304-9EF8-2391CC0FA0B0}
 		{0C767E4D-8A2D-402D-AABF-59B04DD9260C} = {5625263C-E307-4AA5-9747-E008CA6DA579}
-		{59929597-F4DA-43D2-870F-55B5FCAC37CA} = {79E29068-45BB-47D7-A6D4-A3DEB8EF50CD}
-		{82521B98-545B-45DA-B7D2-7EEC9F30C9F0} = {79E29068-45BB-47D7-A6D4-A3DEB8EF50CD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A246ADC8-3843-4C70-B468-B650A5CADD33}
