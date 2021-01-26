@@ -31,6 +31,25 @@ jobs:
       - name: set up msvc env
         uses: ilammy/msvc-dev-cmd@v1.5.0
       
+      - name: Build Common Tools
+        shell: cmd
+        run: |
+          cd third_party\CommonTools
+          msbuild -p:Configuration=Release,Platform=AnyCPU -m CommonTools.sln
+
+      - name: Extract commit SHA
+        run: |
+          echo "GITHUB_COMMIT_MESSAGE=$(echo $GITHUB_SHA)" >> $GITHUB_ENV
+        shell: bash
+       
+      - name: Prepare version
+        shell: cmd
+        run: |
+          cd third_party\CommonTools\Output
+          VersionGenerator %GITHUB_WORKSPACE%\ProductInformation\Version.cs %GITHUB_WORKSPACE%\ProductInformation ${{ env.GITHUB_COMMIT_MESSAGE }}
+        env:
+          GITHUB_WORKSPACE: $GITHUB_WORKSPACE
+      
       - name: configure OpenDDS
         shell: cmd
         run: |
