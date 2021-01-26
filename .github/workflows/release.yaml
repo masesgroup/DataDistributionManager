@@ -137,7 +137,6 @@ jobs:
           cd..
           
       - name: Prepare for packaging
-        shell: cmd
         run: |
           Rename-Item .\Output .\Output\runtime
           New-Item -Path .\Output\include -ItemType directory
