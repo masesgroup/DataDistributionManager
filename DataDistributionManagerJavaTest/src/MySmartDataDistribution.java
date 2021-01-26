@@ -16,7 +16,7 @@
 *  Refer to LICENSE for more information.
 */
 
-import org.mases.businesscontinuity.*;
+import org.mases.datadistributionmanager.*;
 
 public class MySmartDataDistribution extends SmartDataDistribution {
     public void OnLogging(DDM_LOG_LEVEL level, String source, String function, String errStr) {

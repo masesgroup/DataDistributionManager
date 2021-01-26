@@ -16,9 +16,9 @@
 *  Refer to LICENSE for more information.
 */
 
-import org.mases.businesscontinuity.*;
+import org.mases.datadistributionmanager.*;
 
-public class MySmartDataDistributionTopic extends SmartDataDistributionTopic {
+public class MySmartDataDistributionTopic extends SmartDataDistributionChannel {
     public void OnDataAvailable(String topicName, String key, byte[] buffer) {
         String s = new String(buffer);
  

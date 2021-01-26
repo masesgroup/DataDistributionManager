@@ -1,3 +1,3 @@
 @echo off
 
-java -cp "./Output;../Output/JCOBridge.jar" CLRWrapperTest
+"%JDK_ROOT_FOLDER%\bin\java.exe" -cp "./Output;../Output/datadistributionmanager.jar" DataDistributionManagerJavaTest

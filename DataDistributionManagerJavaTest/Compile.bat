@@ -2,5 +2,5 @@
 
 mkdir Output
 
-"c:\Program Files\Java\%JDKVERSION%\bin\javac.exe" -cp "../Output/JCOBridge.jar" -d ./Output ./src/*.java ./src/org/mases/jcobridge/tests/*.java
+"%JDK_ROOT_FOLDER%\bin\javac.exe" -Xlint:deprecation --source 8 --target 8 -cp "../Output/datadistributionmanager.jar" -d ./Output ./src/*.java
 IF %ERRORLEVEL% NEQ 0 PAUSE
