@@ -37,6 +37,14 @@ jobs:
           cd third_party\OpenDDS
           configure
 
+      - name: Generate OpenDDS projects
+        shell: cmd
+        run: |
+          cd DataDistributionManagerOpenDDS
+          perl %ACE_ROOT%\bin\generate_export_file.pl DataDistributionSchemaCommon > DataDistributionSchemaCommon_Export.h
+          perl %ACE_ROOT%\bin\mwc.pl -type vs2019 DataDistributionManagerOpenDDS.mwc
+          cd..
+
       - name: Build OpenDDS x64
         shell: cmd
         run: |
@@ -70,12 +78,7 @@ jobs:
           xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb32\
           cd ..\..
 
-      - name: Generate OpenDDS projects
-        shell: cmd
-        run: |
-          cd DataDistributionManagerOpenDDS
-          GenerateFile.cmd
-          cd..
+
 
       - uses: nuget/setup-nuget@v1
         with:
