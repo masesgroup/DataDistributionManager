@@ -49,7 +49,12 @@ jobs:
           VersionGenerator %GITHUB_WORKSPACE%\ProductInformation\Version.cs %GITHUB_WORKSPACE%\ProductInformation ${{ env.GITHUB_COMMIT_MESSAGE }}
         env:
           GITHUB_WORKSPACE: $GITHUB_WORKSPACE
-      
+
+      - name: Prepare nuget
+        shell: cmd
+        run:
+          third_party\CommonTools\Output\PlaceHolderReplacer.exe .\ProductInformation\Version.cs .\packaging\nuget\datadistributionmanager.nuspec
+    
       - name: configure OpenDDS
         shell: cmd
         run: |
@@ -128,6 +133,11 @@ jobs:
           set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
           msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
 
+      - name: Build DataDistributionManager net5.0 and netcoreapp3.1
+        run: |
+          dotnet build --no-incremental --configuration Release --framework netcoreapp3.1 -o Outputnetcoreapp3.1 DataDistributionManagerNet\DataDistributionManagerNet5.csproj
+          dotnet build --no-incremental --configuration Release --framework net5.0 -o Outputnet5.0 DataDistributionManagerNet\DataDistributionManagerNet5.csproj
+
       - name: Build Java Binder
         shell: cmd
         run: |
@@ -135,7 +145,21 @@ jobs:
           set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
           CreateJar.bat
           cd..
-          
+
+      - uses: nuget/setup-nuget@v1
+        with:
+          nuget-version: '5.x'
+      - run: nuget pack packaging\nuget\datadistributionmanager.nuspec
+
+      - name: Upload DataDistributionManager binaries to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: .\DataDistributionManager.${{ github.ref }}.nupkg
+          asset_name: DataDistributionManager.${{ github.ref }}.nupkg
+          tag: ${{ github.ref }}
+          overwrite: true
+      
       - name: Prepare for packaging
         run: |
           Rename-Item .\Output .\Output\runtime
@@ -165,3 +189,4 @@ jobs:
           asset_name: DataDistributionManager.zip
           tag: ${{ github.ref }}
           overwrite: true
+          
