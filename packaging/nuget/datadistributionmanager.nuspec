@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>DataDistributionManager</id>
-    <version>0.1.10.1</version>
+    <version>__VERSION_PLACEHOLDER__</version>
     <title>Data Distribution Manager - Reliable communication library</title>
 	<summary>This package contains all libraries and resources to use Data Distribution Manager.</summary>
 	<description>The package contains all libraries and resources to create a reliable subsystem able to distribute data across multiple datacenters using multiple languages (C/C++, .NET, JVM enabled languages) over multiple technologies (e.g. Apache Kafka, OpenDDS, etc)</description>
@@ -17,18 +17,18 @@
     <copyright>Copyright ©  MASES s.r.l. 2021</copyright>
   </metadata>
   <files>
-		<file src="datadistributionmanager.targets" target="build\native" />
-  		<file src="datadistributionmanagernet.targets" target="build" />
-		
-		<file src="..\..\OutputPackage\DataDistributionManagerNet.dll" target="lib\net461" />
-		<file src="..\..\Outputnet5.0\DataDistributionManagerNet.dll" target="lib\net5.0" />
-		<file src="..\..\Outputnetcoreapp3.1\DataDistributionManagerNet.dll" target="lib\netcoreapp3.1" />
+	<file src="datadistributionmanager.targets" target="build\native" />
+	<file src="datadistributionmanagernet.targets" target="build" />
+	
+	<file src="..\..\OutputPackage\DataDistributionManagerNet.dll" target="lib\net461" />
+	<file src="..\..\Outputnet5.0\DataDistributionManagerNet.dll" target="lib\net5.0" />
+	<file src="..\..\Outputnetcoreapp3.1\DataDistributionManagerNet.dll" target="lib\netcoreapp3.1" />
 
-		<file src="..\..\OutputPackage\include\*" target="build\native\include\" />
-		<file src="..\..\OutputPackage\runtime\x64\DataDistributionManager.lib" target="build\native\lib\x64\" />
-		<file src="..\..\OutputPackage\runtime\x86\DataDistributionManager.lib" target="build\native\lib\x86\" />
-		
-		<file src="..\..\OutputPackage\runtime\x86\*.dll" target="runtimes\x86\" />
-		<file src="..\..\OutputPackage\runtime\x64\*.dll" target="runtimes\x64\" />
+	<file src="..\..\OutputPackage\include\*" target="build\native\include\" />
+	<file src="..\..\OutputPackage\runtime\x64\DataDistributionManager.lib" target="build\native\lib\x64\" />
+	<file src="..\..\OutputPackage\runtime\x86\DataDistributionManager.lib" target="build\native\lib\x86\" />
+	
+	<file src="..\..\OutputPackage\runtime\x86\*.dll" target="runtimes\x86\" />
+	<file src="..\..\OutputPackage\runtime\x64\*.dll" target="runtimes\x64\" />
   </files>
 </package>

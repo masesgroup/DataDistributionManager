@@ -52,13 +52,19 @@ jobs:
 
       - name: Prepare nuget
         shell: cmd
-        run:
-          third_party\CommonTools\Output\PlaceHolderReplacer.exe .\ProductInformation\Version.cs .\packaging\nuget\datadistributionmanager.nuspec
- 
-      - name: Verify Nuget name
         run: |
-          cat .\packaging\nuget\datadistributionmanager.nuspec
+          third_party\CommonTools\Output\PlaceHolderReplacer.exe .\ProductInformation\Version.cs .\packaging\nuget\datadistributionmanager.nuspec >> .\nuget_version.txt
+
+      - name: Store version
+        run: |
+          echo "NUGET_PACKAGE_VERSION=$(cat .\nuget_version.txt)" >> $GITHUB_ENV
         shell: bash
+
+      - name: Verify Nuget version in file
+        run: |
+          type .\packaging\nuget\datadistributionmanager.nuspec
+          echo ${{ env.NUGET_PACKAGE_VERSION }}
+        shell: cmd
  
       - name: configure OpenDDS
         shell: cmd
@@ -181,8 +187,8 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: .\DataDistributionManager.1.0.0.0.nupkg
-          asset_name: DataDistributionManager.1.0.0.0.nupkg
+          file: .\DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
+          asset_name: DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
           tag: ${{ github.ref }}
           overwrite: true
 
