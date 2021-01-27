@@ -146,20 +146,6 @@ jobs:
           CreateJar.bat
           cd..
 
-      - uses: nuget/setup-nuget@v1
-        with:
-          nuget-version: '5.x'
-      - run: nuget pack packaging\nuget\datadistributionmanager.nuspec
-
-      - name: Upload DataDistributionManager binaries to release
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: .\DataDistributionManager.${{ github.ref }}.nupkg
-          asset_name: DataDistributionManager.${{ github.ref }}.nupkg
-          tag: ${{ github.ref }}
-          overwrite: true
-      
       - name: Prepare for packaging
         run: |
           Rename-Item .\Output .\Output\runtime
@@ -180,7 +166,21 @@ jobs:
           Remove-Item -LiteralPath .\Output\runtime\lib64 -Force -Recurse
           Remove-Item -LiteralPath .\Output\runtime\lib32 -Force -Recurse
           Compress-Archive -Path .\Output\* -DestinationPath .\Output\DataDistributionManager.zip
-          
+
+      - uses: nuget/setup-nuget@v1
+        with:
+          nuget-version: '5.x'
+      - run: nuget pack packaging\nuget\datadistributionmanager.nuspec
+
+      - name: Upload DataDistributionManager binaries to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: .\DataDistributionManager.${{ github.ref }}.nupkg
+          asset_name: DataDistributionManager.${{ github.ref }}.nupkg
+          tag: ${{ github.ref }}
+          overwrite: true
+
       - name: Upload DataDistributionManager binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
