@@ -25,8 +25,8 @@
 	<file src="..\..\Outputnetcoreapp3.1\DataDistributionManagerNet.dll" target="lib\netcoreapp3.1" />
 
 	<file src="..\..\OutputPackage\include\*" target="build\native\include\" />
-	<file src="..\..\OutputPackage\runtime\x64\DataDistributionManager.lib" target="build\native\lib\x64\" />
-	<file src="..\..\OutputPackage\runtime\x86\DataDistributionManager.lib" target="build\native\lib\x86\" />
+	<file src="..\..\OutputPackage\lib\x86\DataDistributionManager.lib" target="build\native\lib\x86\" />
+	<file src="..\..\OutputPackage\lib\x64\DataDistributionManager.lib" target="build\native\lib\x64\" />
 	
 	<file src="..\..\OutputPackage\runtime\x86\*.dll" target="runtimes\x86\" />
 	<file src="..\..\OutputPackage\runtime\x64\*.dll" target="runtimes\x64\" />
