@@ -20,15 +20,15 @@
 		<file src="datadistributionmanager.targets" target="build\native" />
   		<file src="datadistributionmanagernet.targets" target="build" />
 		
-		<file src="..\..\Output\runtime\DataDistributionManagerNet.dll" target="lib\net461" />
+		<file src="..\..\OutputPackage\DataDistributionManagerNet.dll" target="lib\net461" />
 		<file src="..\..\Outputnet5.0\DataDistributionManagerNet.dll" target="lib\net5.0" />
 		<file src="..\..\Outputnetcoreapp3.1\DataDistributionManagerNet.dll" target="lib\netcoreapp3.1" />
 
-		<file src="..\..\Output\include\*" target="build\native\include\" />
-		<file src="..\..\Output\runtime\x64\DataDistributionManager.lib" target="build\native\lib\x64\" />
-		<file src="..\..\Output\runtime\x86\DataDistributionManager.lib" target="build\native\lib\x86\" />
+		<file src="..\..\OutputPackage\include\*" target="build\native\include\" />
+		<file src="..\..\OutputPackage\runtime\x64\DataDistributionManager.lib" target="build\native\lib\x64\" />
+		<file src="..\..\OutputPackage\runtime\x86\DataDistributionManager.lib" target="build\native\lib\x86\" />
 		
-		<file src="..\..\Output\runtime\x86\*.dll" target="runtimes\x86\" />
-		<file src="..\..\Output\runtime\x64\*.dll" target="runtimes\x64\" />
+		<file src="..\..\OutputPackage\runtime\x86\*.dll" target="runtimes\x86\" />
+		<file src="..\..\OutputPackage\runtime\x64\*.dll" target="runtimes\x64\" />
   </files>
 </package>

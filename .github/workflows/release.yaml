@@ -54,7 +54,12 @@ jobs:
         shell: cmd
         run:
           third_party\CommonTools\Output\PlaceHolderReplacer.exe .\ProductInformation\Version.cs .\packaging\nuget\datadistributionmanager.nuspec
-    
+ 
+      - name: Verify Nuget name
+        run: |
+          cat .\packaging\nuget\datadistributionmanager.nuspec
+        shell: bash
+ 
       - name: configure OpenDDS
         shell: cmd
         run: |
@@ -148,24 +153,24 @@ jobs:
 
       - name: Prepare for packaging
         run: |
-          Rename-Item .\Output .\Output\runtime
-          New-Item -Path .\Output\include -ItemType directory
-          Copy-Item .\DataDistributionManager\DataDistributionManager.h .\Output\include\DataDistributionManager.h
-          Copy-Item .\DataDistributionManager\DataDistributionManagerEnums.h .\Output\include\DataDistributionManagerEnums.h
-          Copy-Item .\DataDistributionManager\SmartDataDistributionManager.h .\Output\include\SmartDataDistributionManager.h
-          Remove-Item .\Output\runtime\*.exp -Recurse -Force
-          Remove-Item .\Output\runtime\*.iobj -Recurse -Force
-          Remove-Item .\Output\runtime\*.ipdb -Recurse -Force
-          Remove-Item .\Output\runtime\*.xml -Recurse -Force
-          Remove-Item .\Output\runtime\x64\DataDistributionManagerKafka.lib -Force
-          Remove-Item .\Output\runtime\x64\DataDistributionManagerOpenDDS.lib -Force
-          Remove-Item .\Output\runtime\x64\DataDistributionMastershipManager.lib -Force
-          Remove-Item .\Output\runtime\x86\DataDistributionManagerKafka.lib -Force
-          Remove-Item .\Output\runtime\x86\DataDistributionManagerOpenDDS.lib -Force
-          Remove-Item .\Output\runtime\x86\DataDistributionMastershipManager.lib -Force
-          Remove-Item -LiteralPath .\Output\runtime\lib64 -Force -Recurse
-          Remove-Item -LiteralPath .\Output\runtime\lib32 -Force -Recurse
-          Compress-Archive -Path .\Output\* -DestinationPath .\Output\DataDistributionManager.zip
+          New-Item -Path .\OutputPackage -ItemType directory
+          New-Item -Path .\OutputPackage\lib -ItemType directory
+          New-Item -Path .\OutputPackage\lib\x86 -ItemType directory
+          New-Item -Path .\OutputPackage\lib\x64 -ItemType directory
+          New-Item -Path .\OutputPackage\runtime -ItemType directory
+          New-Item -Path .\OutputPackage\runtime\x86 -ItemType directory
+          New-Item -Path .\OutputPackage\runtime\x64 -ItemType directory
+          New-Item -Path .\OutputPackage\include -ItemType directory
+          Copy-Item .\DataDistributionManager\DataDistributionManager.h .\OutputPackage\include\DataDistributionManager.h
+          Copy-Item .\DataDistributionManager\DataDistributionManagerEnums.h .\OutputPackage\include\DataDistributionManagerEnums.h
+          Copy-Item .\DataDistributionManager\SmartDataDistributionManager.h .\OutputPackage\include\SmartDataDistributionManager.h
+          Copy-Item .\Output\x86\DataDistributionManager.lib .\OutputPackage\lib\x86\DataDistributionManager.lib -Force
+          Copy-Item .\Output\x64\DataDistributionManager.lib .\OutputPackage\lib\x64\DataDistributionManager.lib -Force
+          Copy-Item .\Output\*.dll .\OutputPackage\runtime\ -Force
+          Copy-Item .\Output\*.jar .\OutputPackage\runtime\ -Force
+          Copy-Item .\Output\x86\*.dll .\OutputPackage\runtime\x86\ -Force
+          Copy-Item .\Output\x64\*.dll .\OutputPackage\runtime\x64\ -Force
+          Compress-Archive -Path .\OutputPackage\* -DestinationPath .\OutputPackage\DataDistributionManager.zip
 
       - uses: nuget/setup-nuget@v1
         with:
@@ -176,8 +181,8 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: .\DataDistributionManager.${{ github.ref }}.nupkg
-          asset_name: DataDistributionManager.${{ github.ref }}.nupkg
+          file: .\DataDistributionManager.1.0.0.0.nupkg
+          asset_name: DataDistributionManager.1.0.0.0.nupkg
           tag: ${{ github.ref }}
           overwrite: true
 
@@ -185,7 +190,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: .\Output\DataDistributionManager.zip
+          file: .\OutputPackage\DataDistributionManager.zip
           asset_name: DataDistributionManager.zip
           tag: ${{ github.ref }}
           overwrite: true
