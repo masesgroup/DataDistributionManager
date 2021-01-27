@@ -57,7 +57,7 @@ jobs:
 
       - name: Store version
         run: |
-          echo "NUGET_PACKAGE_VERSION=$(cat .\nuget_version.txt)" >> $GITHUB_ENV
+          echo "NUGET_PACKAGE_VERSION=$(cat nuget_version.txt)" >> $GITHUB_ENV
         shell: bash
 
       - name: Verify Nuget version in file
