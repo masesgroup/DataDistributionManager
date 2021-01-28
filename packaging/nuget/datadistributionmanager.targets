@@ -11,9 +11,9 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup Condition="'$(Platform)' == 'x64'">
-    <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\runtimes\x64\*.dll" />
+    <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\x64\*.dll" />
   </ItemGroup>
   <ItemGroup Condition="'$(Platform)' != 'x64'">
-    <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\runtimes\x86\*.dll" />
+    <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\x86\*.dll" />
   </ItemGroup>
 </Project>
