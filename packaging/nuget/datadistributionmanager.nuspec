@@ -17,8 +17,8 @@
     <copyright>Copyright ©  MASES s.r.l. 2021</copyright>
   </metadata>
   <files>
-	<file src="datadistributionmanager.targets" target="build\native" />
-	<file src="datadistributionmanagernet.targets" target="build" />
+	<file src=".\native\datadistributionmanager.targets" target="build\native" />
+	<file src=".\dotnet\datadistributionmanager.targets" target="build" />
 	
 	<file src="..\..\Output\DataDistributionManagerNet.dll" target="lib\net461" />
 	<file src="..\..\Outputnet5.0\DataDistributionManagerNet.dll" target="lib\net5.0" />
@@ -30,5 +30,9 @@
 	
 	<file src="..\..\OutputPackage\runtime\x86\*.dll" target="runtimes\x86\" />
 	<file src="..\..\OutputPackage\runtime\x64\*.dll" target="runtimes\x64\" />
+	
+	<file src="..\..\LICENSE" target="licenses\datadistributionmanager\LICENSE" />
+	<file src="..\..\packages\librdkafka.redist.1.5.3\LICENSES.txt" target="licenses\librdkafka" />
+	<file src="..\..\third_party\OpenDDS\LICENSE" target="licenses\opendds\LICENSE" />
   </files>
 </package>

@@ -1,7 +1,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<ItemGroup>
-		<nativex86 Include="$(MSBuildThisFileDirectory)\..\runtime\x86\*.*" />
-		<nativex64 Include="$(MSBuildThisFileDirectory)\..\runtime\x64\*.*" />
+		<nativex86 Include="$(MSBuildThisFileDirectory)\..\runtimes\x86\*.*" />
+		<nativex64 Include="$(MSBuildThisFileDirectory)\..\runtimes\x64\*.*" />
 	</ItemGroup>
 
 	<Target Name="CopyFilesNative" BeforeTargets="Build"> 
