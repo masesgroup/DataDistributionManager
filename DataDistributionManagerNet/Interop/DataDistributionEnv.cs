@@ -38,7 +38,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         }
 
         /// <summary>
-        /// The interface table for all the function pointers in <see cref="DataDistribution"/>.
+        /// The interface table for all the function pointers in DataDistributionManager.dll.
         /// </summary>
         enum DataDistributionInterfaceTable
         {

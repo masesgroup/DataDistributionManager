@@ -22,5 +22,6 @@ static class MASESVersionInfo
     public const string ProductCopyright = "Copyright © MASES s.r.l. 2021";
     public const string Company = "MASES s.r.l.";
     public const string Trademark = "MASES s.r.l.";
-    public const string CurrentVersion = "1.0.0.0";
+    public const string ProductCurrentMajorVersion = "1.0.0.0";
+    public const string ProductCurrentVersion = "1.0.0.0";
 }

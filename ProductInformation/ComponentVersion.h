@@ -1,7 +1,0 @@
-// 1.0.0.210113
-#define COMPONENTVERSION "1.0.0.210113"
-#define COMPONENTVERSIONCPP 1,0,0,210113
-#define COMPONENTINFORMATIONALVERSION "1.0.0.210113-6798e29c12f12a0422b4d00d3531fc64b0b057e1"
-/********** revision ************
-6798e29c12f12a0422b4d00d3531fc64b0b057e1
-*********************************/

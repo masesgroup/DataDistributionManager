@@ -18,18 +18,18 @@
 
 import java.nio.charset.Charset;
 
-import org.mases.businesscontinuity.*;
+import org.mases.datadistributionmanager.*;
 
 public class DataDistributionManagerJavaTest {
 	public static void main(String args[]) {
 		final int THRESHOLD = 1000;
 
-		DDM_TOPIC_DIRECTION direction = DDM_TOPIC_DIRECTION.RECEIVER;
+		DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.RECEIVER;
 
 		MySmartDataDistribution dataDistribution = new MySmartDataDistribution();
-		String str = "prova";
+		String str = "test";
 		HRESULT hRes = dataDistribution.Initialize(
-				"D:/MARIO/MASES/BusinessContinuityApplication/Configuration/OpenDDSManager.conf", str, "KafkaManager");
+				"../../Configuration/OpenDDSManager.conf", str, "KafkaManager");
 
 		if (hRes.getFailed()) {
 			System.out.println("Error in configuration.");
@@ -42,10 +42,10 @@ public class DataDistributionManagerJavaTest {
 			return;
 		}
 
-		MySmartDataDistributionTopic provaTopic;
+		MySmartDataDistributionTopic mytestTopic;
 		try {
-			provaTopic = dataDistribution.CeateSmartTopic(MySmartDataDistributionTopic.class, "prova",
-					DDM_TOPIC_DIRECTION.RECEIVER, null);
+			mytestTopic = dataDistribution.CeateSmartChannel(MySmartDataDistributionTopic.class, "test",
+					DDM_CHANNEL_DIRECTION.RECEIVER, null);
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
 			e.printStackTrace();
 			return;
@@ -53,7 +53,7 @@ public class DataDistributionManagerJavaTest {
 
 		System.out.println("After StartMasterConsumerAndWait...\n");
 
-		provaTopic.StartTopic(10000);
+		mytestTopic.StartChannel(10000);
 
 		try {
 			System.out.println("Starting sending...\n");
@@ -63,8 +63,8 @@ public class DataDistributionManagerJavaTest {
 			byte[] buffer = str.getBytes(Charset.forName("ASCII"));
 			while (true) {
 				hRes = HRESULT.S_OK;
-				if (direction == DDM_TOPIC_DIRECTION.TRANSMITTER) {
-					hRes = provaTopic.WriteOnTopic(null, buffer, false, -1);
+				if (direction == DDM_CHANNEL_DIRECTION.TRANSMITTER) {
+					hRes = mytestTopic.WriteOnChannel(null, buffer, false, -1);
 				}
 				if (hRes == HRESULT.S_OK) {
 					str = String.format("{0:10}", counter++);

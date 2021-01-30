@@ -6,9 +6,9 @@
 			<accessrule kind="accessible" pattern="javafx/**"/>
 		</accessrules>
 	</classpathentry>
-	<classpathentry kind="lib" path="../Output/datadistributionmanager.jar" sourcepath="../DataDistributionManagerJava/src">
+	<classpathentry kind="lib" path="../../Output/datadistributionmanager.jar" sourcepath="../../DataDistributionManagerJava/src">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:file:/../Output/datadistributionmanager.docs.jar"/>
+			<attribute name="javadoc_location" value="jar:file:/../../Output/datadistributionmanager.docs.jar"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="Output"/>

@@ -31,14 +31,14 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
     long m_InitializeResult = -1;
 
     static boolean LoadWrapper() {
-        String libName = "DataDistributionManagerd.dll";
+        String libName = "DataDistributionManager.dll";
         String bridgePath = null;
         if (bridgePath == null || bridgePath.isEmpty()) {
             ClassLoader loader = SmartDataDistribution.class.getClassLoader();
-            URL url = loader.getResource("org/mases/businesscontinuity/SmartDataDistribution.class");
+            URL url = loader.getResource("org/mases/datadistributionmanager/SmartDataDistribution.class");
 
             bridgePath = url.getFile();
-            int index = bridgePath.indexOf("/businesscontinuity.jar");
+            int index = bridgePath.indexOf("/datadistributionmanager.jar");
             bridgePath = bridgePath.substring(0, index);
             bridgePath = bridgePath.substring("file:/".length());
 

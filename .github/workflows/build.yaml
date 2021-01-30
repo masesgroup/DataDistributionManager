@@ -1,0 +1,138 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI_BUILD
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# This workflow contains two jobs called "check" and "build_windows"
+jobs:
+  build_windows:
+    # The type of runner that the job will run on
+    runs-on: windows-2019
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Runs a set of commands using the runners shell
+      # Support longpaths
+      - name: Support long paths
+        run: git config --system core.longpaths true
+      
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        with:
+          submodules: 'true'
+          
+      - name: set up msvc env
+        uses: ilammy/msvc-dev-cmd@v1.5.0
+      
+      - name: Build Common Tools
+        shell: cmd
+        run: |
+          cd third_party\CommonTools
+          msbuild -p:Configuration=Release,Platform="Any CPU" -m CommonTools.sln
+
+      - name: Extract commit SHA
+        run: |
+          echo "GITHUB_COMMIT_MESSAGE=$(echo $GITHUB_SHA)" >> $GITHUB_ENV
+        shell: bash
+       
+      - name: Prepare version
+        shell: cmd
+        run: |
+          cd third_party\CommonTools\Output
+          VersionGenerator %GITHUB_WORKSPACE%\ProductInformation\Version.cs %GITHUB_WORKSPACE%\ProductInformation ${{ env.GITHUB_COMMIT_MESSAGE }}
+        env:
+          GITHUB_WORKSPACE: $GITHUB_WORKSPACE
+      
+      - name: configure OpenDDS
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          configure
+
+      - name: Generate OpenDDS projects
+        shell: cmd
+        run: |
+          call .\third_party\OpenDDS\setenv.cmd
+          cd DataDistributionManagerOpenDDS
+          perl %ACE_ROOT%\bin\generate_export_file.pl DataDistributionSchemaCommon > DataDistributionSchemaCommon_Export.h
+          perl %ACE_ROOT%\bin\mwc.pl -type vs2019 DataDistributionManagerOpenDDS.mwc
+          cd..
+
+      - name: Build OpenDDS x64
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          call setenv.cmd
+          msbuild -p:Configuration=Release,Platform=x64 -m DDS_TAOv2.sln
+
+      - name: Move OpenDDS x64
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          xcopy .\lib\*.dll ..\..\Output\x64\
+          xcopy .\lib\*.pdb ..\..\Output\pdb64\
+          xcopy .\lib\*.lib ..\..\Output\lib64\
+          xcopy .\bin\*.exe ..\..\Output\bin64\
+          xcopy .\bin\*.pdb ..\..\Output\pdb64\
+          xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x64\
+          xcopy .\ACE_wrappers\lib\*.pdb ..\..\Output\pdb64\
+          xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib64\
+          xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin64\
+          xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb64\
+
+      - name: Build OpenDDS x86
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          call setenv.cmd
+          msbuild -p:Configuration=Release,Platform=Win32 -m DDS_TAOv2.sln
+
+      - name: Move OpenDDS x86
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          xcopy .\lib\*.dll ..\..\Output\x86\
+          xcopy .\lib\*.pdb ..\..\Output\pdb32\
+          xcopy .\lib\*.lib ..\..\Output\lib32\
+          xcopy .\bin\*.exe ..\..\Output\bin32\
+          xcopy .\bin\*.pdb ..\..\Output\pdb32\
+          xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x86\
+          xcopy .\ACE_wrappers\lib\*.pdb ..\..\Output\pdb32\
+          xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib32\
+          xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin32\
+          xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb32\
+
+      - uses: nuget/setup-nuget@v1
+        with:
+          nuget-version: '5.x'
+      - run: nuget restore DataDistributionManager.sln
+
+      - name: Build DataDistributionManager x64
+        shell: cmd
+        run: |
+          call .\third_party\OpenDDS\setenv.cmd
+          set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
+          msbuild /m -p:Configuration=Release,Platform=x64 DataDistributionManager.sln
+
+      - name: Build DataDistributionManager x86
+        shell: cmd
+        run: |
+          call .\third_party\OpenDDS\setenv.cmd
+          set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
+          msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
+
+      - name: Build Java Binder
+        shell: cmd
+        run: |
+          cd DataDistributionManagerJava
+          set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
+          CreateJar.bat
+          cd..
+    
