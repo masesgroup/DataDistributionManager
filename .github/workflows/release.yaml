@@ -167,6 +167,7 @@ jobs:
           New-Item -Path .\OutputPackage\runtime\x86 -ItemType directory
           New-Item -Path .\OutputPackage\runtime\x64 -ItemType directory
           New-Item -Path .\OutputPackage\include -ItemType directory
+          New-Item -Path .\OutputPackage\licenses -ItemType directory
           Copy-Item .\DataDistributionManager\DataDistributionManager.h .\OutputPackage\include\DataDistributionManager.h
           Copy-Item .\DataDistributionManager\DataDistributionManagerEnums.h .\OutputPackage\include\DataDistributionManagerEnums.h
           Copy-Item .\DataDistributionManager\SmartDataDistributionManager.h .\OutputPackage\include\SmartDataDistributionManager.h
@@ -176,6 +177,9 @@ jobs:
           Copy-Item .\Output\*.jar .\OutputPackage\runtime\ -Force
           Copy-Item .\Output\x86\*.dll .\OutputPackage\runtime\x86\ -Force
           Copy-Item .\Output\x64\*.dll .\OutputPackage\runtime\x64\ -Force
+          Copy-Item .\LICENSE .\OutputPackage\licenses\LICENSE.datadistributionmanager -Force
+          Copy-Item .\packages\librdkafka.redist.1.5.3\LICENSES.txt .\OutputPackage\licenses\LICENSE.librdkafka -Force
+          Copy-Item .\third_party\OpenDDS\LICENSE .\OutputPackage\licenses\LICENSE.opendds -Force
           Compress-Archive -Path .\OutputPackage\* -DestinationPath .\OutputPackage\DataDistributionManager.zip
 
       - uses: nuget/setup-nuget@v1

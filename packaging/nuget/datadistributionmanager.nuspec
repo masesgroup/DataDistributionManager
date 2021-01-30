@@ -1,38 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
-  <metadata>
-    <id>DataDistributionManager</id>
-    <version>__VERSION_PLACEHOLDER__</version>
-    <title>Data Distribution Manager - Reliable communication library</title>
-	<summary>This package contains all libraries and resources to use Data Distribution Manager.</summary>
-	<description>The package contains all libraries and resources to create a reliable subsystem able to distribute data across multiple datacenters using multiple languages (C/C++, .NET, JVM enabled languages) over multiple technologies (e.g. Apache Kafka, OpenDDS, etc)</description>
-    <authors>MASES s.r.l.</authors>
-    <owners>MASES s.r.l.</owners>
-    <licenseUrl>https://github.com/masesgroup/DataDistributionManager/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/masesgroup/DataDistributionManager/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/masesgroup/masesgroup.github.io/master/assets/images/mases_logo_short.png</iconUrl>
-    <releaseNotes>https://github.com/masesgroup/DataDistributionManager/releases</releaseNotes>
-	<tags></tags>
-    <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <copyright>Copyright ©  MASES s.r.l. 2021</copyright>
-  </metadata>
-  <files>
-	<file src=".\native\datadistributionmanager.targets" target="build\native" />
-	<file src=".\dotnet\datadistributionmanager.targets" target="build" />
-	
-	<file src="..\..\Output\DataDistributionManagerNet.dll" target="lib\net461" />
-	<file src="..\..\Outputnet5.0\DataDistributionManagerNet.dll" target="lib\net5.0" />
-	<file src="..\..\Outputnetcoreapp3.1\DataDistributionManagerNet.dll" target="lib\netcoreapp3.1" />
+	<metadata>
+		<id>DataDistributionManager</id>
+		<version>__VERSION_PLACEHOLDER__</version>
+		<title>Data Distribution Manager - Reliable communication library</title>
+		<summary>This package contains all libraries and resources to use Data Distribution Manager.</summary>
+		<description>The package contains all libraries and resources to create a reliable subsystem able to distribute data across multiple datacenters using multiple languages (C/C++, .NET, JVM enabled languages) over multiple technologies (e.g. Apache Kafka, OpenDDS, etc)</description>
+		<authors>MASES s.r.l.</authors>
+		<owners>MASES s.r.l.</owners>
+		<licenseUrl>https://github.com/masesgroup/DataDistributionManager/blob/master/LICENSE</licenseUrl>
+		<projectUrl>https://github.com/masesgroup/DataDistributionManager/</projectUrl>
+		<iconUrl>https://raw.githubusercontent.com/masesgroup/masesgroup.github.io/master/assets/images/mases_logo_short.png</iconUrl>
+		<releaseNotes>https://github.com/masesgroup/DataDistributionManager/releases</releaseNotes>
+		<tags></tags>
+		<requireLicenseAcceptance>true</requireLicenseAcceptance>
+		<copyright>Copyright ©  MASES s.r.l. 2021</copyright>
+	</metadata>
+	<files>
+		<file src=".\native\datadistributionmanager.targets" target="build\native" />
+		<file src=".\dotnet\datadistributionmanager.targets" target="build" />
 
-	<file src="..\..\OutputPackage\include\*" target="build\native\include\" />
-	<file src="..\..\OutputPackage\lib\x86\DataDistributionManager.lib" target="build\native\lib\x86\" />
-	<file src="..\..\OutputPackage\lib\x64\DataDistributionManager.lib" target="build\native\lib\x64\" />
-	
-	<file src="..\..\OutputPackage\runtime\x86\*.dll" target="runtimes\x86\" />
-	<file src="..\..\OutputPackage\runtime\x64\*.dll" target="runtimes\x64\" />
-	
-	<file src="..\..\LICENSE" target="licenses\datadistributionmanager\LICENSE" />
-	<file src="..\..\packages\librdkafka.redist.1.5.3\LICENSES.txt" target="licenses\librdkafka" />
-	<file src="..\..\third_party\OpenDDS\LICENSE" target="licenses\opendds\LICENSE" />
-  </files>
+		<file src="..\..\Output\DataDistributionManagerNet.dll" target="lib\net461" />
+		<file src="..\..\Outputnet5.0\DataDistributionManagerNet.dll" target="lib\net5.0" />
+		<file src="..\..\Outputnetcoreapp3.1\DataDistributionManagerNet.dll" target="lib\netcoreapp3.1" />
+
+		<file src="..\..\OutputPackage\include\*" target="build\native\include\" />
+		<file src="..\..\OutputPackage\lib\x86\DataDistributionManager.lib" target="build\native\lib\x86\" />
+		<file src="..\..\OutputPackage\lib\x64\DataDistributionManager.lib" target="build\native\lib\x64\" />
+
+		<file src="..\..\OutputPackage\runtime\x86\*.dll" target="runtimes\x86\" />
+		<file src="..\..\OutputPackage\runtime\x64\*.dll" target="runtimes\x64\" />
+
+		<file src="..\..\OutputPackage\licenses\*.*" target="licenses\" />
+	</files>
 </package>
