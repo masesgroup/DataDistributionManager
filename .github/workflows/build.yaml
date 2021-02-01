@@ -61,7 +61,7 @@ jobs:
 
       - name: Prepare OpenDDS
         run: |
-          Expand-Archive -LiteralPath '.\OpenDDS_Build_3.15.zip' -DestinationPath .\Output
+          Expand-Archive -LiteralPath '.\OpenDDS_Build_3.15.zip' -DestinationPath .\Output -Force
 
       - name: Move OpenDDS x64
         shell: cmd
