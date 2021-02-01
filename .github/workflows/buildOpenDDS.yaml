@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Upload OpenDDS
         run: |
-          python .\third_party\CommonTools\scripts\utilsftp.py -c check -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.15.zip -l .\OpenDDS_Build_3.15.zip
+          python ./third_party/CommonTools/scripts/utilsftp.py -c check -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.15.zip -l ./OpenDDS_Build_3.15.zip
 
       - name: If failed we need to rebuild artifact
         id: check_downloadOpenDDS
