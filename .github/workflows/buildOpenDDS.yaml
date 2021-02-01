@@ -16,7 +16,7 @@ jobs:
   check:
     name: Check artifact files
     outputs:
-      run_job: ${{ steps.check_downloadOpenDDS.outputs.run_job }}
+      run_job: ${{ steps.check_existsOpenDDS.outputs.run_job }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -24,14 +24,15 @@ jobs:
         with:
           submodules: 'true'
     
-      - name: Check OpenDDS
+      - name: Exists OpenDDS
+        id: existsOpenDDS
         continue-on-error: true
         run: |
           python $GITHUB_WORKSPACE/third_party/CommonTools/scripts/utilsftp.py -c check -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.15.zip -l $GITHUB_WORKSPACE/OpenDDS_Build_3.15.zip
 
       - name: If failed we need to rebuild artifact
-        id: check_downloadOpenDDS
-        if: ${{ steps.downloadOpenDDS.outcome == 'failure' }}
+        id: check_existsOpenDDS
+        if: ${{ steps.existsOpenDDS.outcome == 'failure' }}
         run: echo '::set-output name=run_job::true'
 
   build_windows:
