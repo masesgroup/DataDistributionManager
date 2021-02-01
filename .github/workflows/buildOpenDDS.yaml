@@ -25,6 +25,7 @@ jobs:
           submodules: 'true'
     
       - name: Check OpenDDS
+        continue-on-error: true
         run: |
           python $GITHUB_WORKSPACE/third_party/CommonTools/scripts/utilsftp.py -c check -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.15.zip -l $GITHUB_WORKSPACE/OpenDDS_Build_3.15.zip
 
