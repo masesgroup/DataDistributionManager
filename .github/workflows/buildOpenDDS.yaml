@@ -20,13 +20,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v2
+        continue-on-error: true
         id: downloadOpenDDS
         with:
           name: OpenDDS_Build_3_15
 
       - name: If failed we need to rebuild artifact
         id: check_downloadOpenDDS
-        if: ${{ failure() }}
+        if: ${{ steps.downloadOpenDDS.outcome == failure() }}
         run: echo '::set-output name=run_job::true'
 
   build_windows:
