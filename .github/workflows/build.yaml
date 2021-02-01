@@ -52,14 +52,20 @@ jobs:
         env:
           GITHUB_WORKSPACE: $GITHUB_WORKSPACE
 
-      - name: Download OpenDDS
+      - name: Configure OpenDDS
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          configure
+
+      - name: Download OpenDDS Binaries
         shell: cmd
         run: |
           python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c download -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_Build_3.15.zip
         env:
           GITHUB_WORKSPACE: $GITHUB_WORKSPACE
 
-      - name: Prepare OpenDDS
+      - name: Prepare OpenDDS Binaries
         run: |
           Expand-Archive -LiteralPath '.\OpenDDS_Build_3.15.zip' -DestinationPath .\Output -Force
 
@@ -105,3 +111,5 @@ jobs:
           set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
           CreateJar.bat
           cd..
+
+
