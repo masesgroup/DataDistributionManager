@@ -106,8 +106,12 @@ jobs:
 
       - name: Prepare for packaging
         run: |
-          Compress-Archive -Path .\Output\* -DestinationPath .\OpenDDS_Build_3.15.zip
+          Compress-Archive -Path %GITHUB_WORKSPACE%\Output\* -DestinationPath %GITHUB_WORKSPACE%\OpenDDS_Build_3.15.zip
+        env:
+          GITHUB_WORKSPACE: $GITHUB_WORKSPACE
 
       - name: Upload OpenDDS
         run: |
-          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.15.zip -l .\OpenDDS_Build_3.15.zip
+          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_Build_3.15.zip
+        env:
+          GITHUB_WORKSPACE: $GITHUB_WORKSPACE
