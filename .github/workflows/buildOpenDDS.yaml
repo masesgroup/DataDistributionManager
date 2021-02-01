@@ -28,10 +28,6 @@ jobs:
         id: check_downloadOpenDDS
         if: ${{ failure() }}
         run: echo '::set-output name=run_job::true'
-        
-      - name: Otherwise bypass
-        if: ${{ success() }}
-        run: echo '::set-output name=run_job::false'
 
   build_windows:
     needs: check
