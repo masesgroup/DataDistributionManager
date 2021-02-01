@@ -52,15 +52,13 @@ jobs:
         env:
           GITHUB_WORKSPACE: $GITHUB_WORKSPACE
 
-        # Download OpenDDS prebuilt
-      - uses: actions/download-artifact@v2
-        id: downloadOpenDDS
-        with:
-          name: OpenDDS_Build_3_15
+      - name: Download OpenDDS
+        run: |
+          python .\third_party\CommonTools\scripts\utilsftp.py -c download -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.15.zip -l .\OpenDDS_Build_3.15.zip
           
       - name: Prepare OpenDDS
         run: |
-          Expand-Archive -LiteralPath '.\OpenDDS_Build.zip' -DestinationPath .\Output
+          Expand-Archive -LiteralPath '.\OpenDDS_Build_3.15.zip' -DestinationPath .\Output
 
       - name: Move OpenDDS x64
         shell: cmd

@@ -19,11 +19,9 @@ jobs:
       run_job: ${{ steps.check_downloadOpenDDS.outputs.run_job }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v2
-        continue-on-error: true
-        id: downloadOpenDDS
-        with:
-          name: OpenDDS_Build_3_15
+      - name: Upload OpenDDS
+        run: |
+          python .\third_party\CommonTools\scripts\utilsftp.py -c check -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.15.zip -l .\OpenDDS_Build_3.15.zip
 
       - name: If failed we need to rebuild artifact
         id: check_downloadOpenDDS
@@ -101,9 +99,8 @@ jobs:
 
       - name: Prepare for packaging
         run: |
-          Compress-Archive -Path .\Output\* -DestinationPath .\OpenDDS_Build.zip
+          Compress-Archive -Path .\Output\* -DestinationPath .\OpenDDS_Build_3.15.zip
 
-      - uses: actions/upload-artifact@v2
-        with:
-          name: OpenDDS_Build_3_15
-          path: .\OpenDDS_Build.zip
+      - name: Upload OpenDDS
+        run: |
+          python .\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.15.zip -l .\OpenDDS_Build_3.15.zip
