@@ -21,6 +21,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v2
         id: downloadOpenDDS
+        continue-on-error: true
         with:
           name: OpenDDS_Build_3_15
 
