@@ -27,11 +27,11 @@ jobs:
       - name: If failed we need to rebuild artifact
         id: check_downloadOpenDDS
         if: ${{ failure() }}
-        run: echo "::set-output name=run_job::true"
+        run: echo '::set-output name=run_job::true'
         
       - name: Otherwise bypass
         if: ${{ success() }}
-        run: echo "::set-output name=run_job::false"
+        run: echo '::set-output name=run_job::false'
 
   build_windows:
     needs: check
