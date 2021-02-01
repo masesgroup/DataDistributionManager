@@ -16,16 +16,16 @@ jobs:
   check:
     name: Check artifact files
     outputs:
-      run_job: ${{ steps.check_files.outputs.run_job }}
+      run_job: ${{ steps.check_downloadOpenDDS.outputs.run_job }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v2
         id: downloadOpenDDS
-        continue-on-error: true
         with:
           name: OpenDDS_Build_3_15
 
       - name: If failed we need to rebuild artifact
+        id: check_downloadOpenDDS
         if: ${{ failure() }}
         run: echo "::set-output name=run_job::true"
         
