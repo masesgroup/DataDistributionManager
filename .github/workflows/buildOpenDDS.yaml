@@ -12,7 +12,29 @@ on:
 
 # This workflow contains two jobs called "check" and "build_windows"
 jobs:
+  # Verify if a build is needed
+  check:
+    name: Check artifact files
+    outputs:
+      run_job: ${{ steps.check_files.outputs.run_job }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v2
+        id: downloadOpenDDS
+        with:
+          name: OpenDDS_Build_3_15
+
+      - name: If failed we need to rebuild artifact
+        if: ${{ failure() }}
+        run: echo "::set-output name=run_job::true"
+        
+      - name: Otherwise bypass
+        if: ${{ success() }}
+        run: echo "::set-output name=run_job::false"
+
   build_windows:
+    needs: check
+    if: needs.check.outputs.run_job == 'true'
     # The type of runner that the job will run on
     runs-on: windows-2019
 
@@ -36,7 +58,6 @@ jobs:
         run: |
           cd third_party\OpenDDS
           configure
-          xcopy .\setenv.cmd ..\..\Output
 
       - name: Build OpenDDS x64
         shell: cmd
@@ -50,15 +71,11 @@ jobs:
         run: |
           cd third_party\OpenDDS
           xcopy .\lib\*.dll ..\..\Output\x64\
-          xcopy .\lib\*.pdb ..\..\Output\pdb64\
           xcopy .\lib\*.lib ..\..\Output\lib64\
           xcopy .\bin\*.exe ..\..\Output\bin64\
-          xcopy .\bin\*.pdb ..\..\Output\pdb64\
           xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x64\
-          xcopy .\ACE_wrappers\lib\*.pdb ..\..\Output\pdb64\
           xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib64\
           xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin64\
-          xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb64\
 
       - name: Build OpenDDS x86
         shell: cmd
@@ -72,15 +89,17 @@ jobs:
         run: |
           cd third_party\OpenDDS
           xcopy .\lib\*.dll ..\..\Output\x86\
-          xcopy .\lib\*.pdb ..\..\Output\pdb32\
           xcopy .\lib\*.lib ..\..\Output\lib32\
           xcopy .\bin\*.exe ..\..\Output\bin32\
-          xcopy .\bin\*.pdb ..\..\Output\pdb32\
           xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x86\
-          xcopy .\ACE_wrappers\lib\*.pdb ..\..\Output\pdb32\
           xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib32\
           xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin32\
-          xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb32\
+
+      - name: Move setenv.cmd
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          xcopy setenv.cmd ..\..\Output\
 
       - name: Prepare for packaging
         run: |
@@ -88,5 +107,5 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-          name: my-artifact
+          name: OpenDDS_Build_3_15
           path: .\OpenDDS_Build.zip
