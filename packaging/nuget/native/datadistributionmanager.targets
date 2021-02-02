@@ -14,9 +14,9 @@
 		<ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\licenses\*.*" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(Platform)' == 'x64'">
-		<ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\x64\*.dll" />
+		<ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\x64\*.*" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(Platform)' != 'x64'">
-		<ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\x86\*.dll" />
+		<ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\x86\*.*" />
 	</ItemGroup>
 </Project>

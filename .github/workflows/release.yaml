@@ -66,7 +66,7 @@ jobs:
           echo ${{ env.NUGET_PACKAGE_VERSION }}
         shell: cmd
  
-      - name: configure OpenDDS
+      - name: Configure OpenDDS
         shell: cmd
         run: |
           cd third_party\OpenDDS
@@ -166,6 +166,9 @@ jobs:
           New-Item -Path .\OutputPackage\runtime -ItemType directory
           New-Item -Path .\OutputPackage\runtime\x86 -ItemType directory
           New-Item -Path .\OutputPackage\runtime\x64 -ItemType directory
+          New-Item -Path .\OutputPackage\pdb -ItemType directory
+          New-Item -Path .\OutputPackage\pdb\x86 -ItemType directory
+          New-Item -Path .\OutputPackage\pdb\x64 -ItemType directory
           New-Item -Path .\OutputPackage\include -ItemType directory
           New-Item -Path .\OutputPackage\licenses -ItemType directory
           Copy-Item .\DataDistributionManager\DataDistributionManager.h .\OutputPackage\include\DataDistributionManager.h
@@ -176,7 +179,15 @@ jobs:
           Copy-Item .\Output\*.dll .\OutputPackage\runtime\ -Force
           Copy-Item .\Output\*.jar .\OutputPackage\runtime\ -Force
           Copy-Item .\Output\x86\*.dll .\OutputPackage\runtime\x86\ -Force
+          Copy-Item .\Output\bin32\dcpsinfo_dump.exe .\OutputPackage\runtime\x86\ -Force
+          Copy-Item .\Output\bin32\DCPSInfoRepo.exe .\OutputPackage\runtime\x86\ -Force
+          Copy-Item .\Output\bin32\repoctl.exe .\OutputPackage\runtime\x86\ -Force
           Copy-Item .\Output\x64\*.dll .\OutputPackage\runtime\x64\ -Force
+          Copy-Item .\Output\bin64\dcpsinfo_dump.exe .\OutputPackage\runtime\x64\ -Force
+          Copy-Item .\Output\bin64\DCPSInfoRepo.exe .\OutputPackage\runtime\x64\ -Force
+          Copy-Item .\Output\bin64\repoctl.exe .\OutputPackage\runtime\x64\ -Force
+          Copy-Item .\Output\pdb32\*.pdb .\OutputPackage\pdb\x86\ -Force
+          Copy-Item .\Output\pdb64\*.pdb .\OutputPackage\pdb\x64\ -Force
           Copy-Item .\LICENSE .\OutputPackage\licenses\LICENSE.datadistributionmanager -Force
           Copy-Item .\packages\librdkafka.redist.1.5.3\LICENSES.txt .\OutputPackage\licenses\LICENSE.librdkafka -Force
           Copy-Item .\third_party\OpenDDS\LICENSE .\OutputPackage\licenses\LICENSE.opendds -Force
