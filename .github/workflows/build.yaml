@@ -52,6 +52,12 @@ jobs:
         env:
           GITHUB_WORKSPACE: $GITHUB_WORKSPACE
 
+      - name: Configure OpenDDS to download ACE/TAO
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          configure
+
       - name: Download OpenDDS Binaries
         shell: cmd
         run: |
