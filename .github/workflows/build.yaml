@@ -74,7 +74,6 @@ jobs:
         run: |
            xcopy .\Output\x64\*.dll .\third_party\OpenDDS\lib\
            xcopy .\Output\bin64\*.exe .\third_party\OpenDDS\bin\
-           xcopy .\Output\setenv.cmd .\third_party\OpenDDS\
 
       - name: Generate OpenDDS projects
         shell: cmd
