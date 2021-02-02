@@ -83,7 +83,9 @@ jobs:
       - name: Move OpenDDS x64
         shell: cmd
         run: |
+           xcopy .\Output\bin32\*.* .\third_party\OpenDDS\bin\
            xcopy .\Output\x86\*.dll .\third_party\OpenDDS\lib\
+           xcopy .\Output\bin32\*.dll .\third_party\OpenDDS\ACE_wrappers\bin\
            xcopy .\Output\x86\*.dll .\third_party\OpenDDS\ACE_wrappers\lib\
 
       - name: Generate OpenDDS projects
