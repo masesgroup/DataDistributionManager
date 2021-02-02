@@ -52,12 +52,6 @@ jobs:
         env:
           GITHUB_WORKSPACE: $GITHUB_WORKSPACE
 
-      - name: Configure OpenDDS
-        shell: cmd
-        run: |
-          cd third_party\OpenDDS
-          configure
-
       - name: Download OpenDDS Binaries
         shell: cmd
         run: |
@@ -72,10 +66,10 @@ jobs:
       - name: Move OpenDDS x64
         shell: cmd
         run: |
-           xcopy .\Output\x64\*.dll .\third_party\OpenDDS\lib\
-           xcopy .\Output\x64\*.dll .\third_party\OpenDDS\ACE_wrappers\lib\
-           xcopy .\Output\bin64\*.exe .\third_party\OpenDDS\bin\
-           xcopy .\Output\bin64\*.exe .\third_party\OpenDDS\ACE_wrappers\bin\
+           xcopy .\Output\x86\*.dll .\third_party\OpenDDS\lib\
+           xcopy .\Output\x86\*.dll .\third_party\OpenDDS\ACE_wrappers\lib\
+           xcopy .\Output\ACE_wrappers\* .\third_party\OpenDDS\ACE_wrappers\ /s /i
+           xcopy .\Output\setenv.cmd .\third_party\OpenDDS\
 
       - name: Generate OpenDDS projects
         shell: cmd
