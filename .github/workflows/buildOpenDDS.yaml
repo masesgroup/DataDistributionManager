@@ -69,20 +69,16 @@ jobs:
           call setenv.cmd
           msbuild -p:Configuration=Release,Platform=x64 -m DDS_TAOv2.sln
 
-      - name: Move OpenDDS x64
+      - name: Move OpenDDS x64 binaries
         shell: cmd
         run: |
           cd third_party\OpenDDS
           xcopy .\lib\*.dll ..\..\Output\x64\
-          xcopy .\lib\*.pdb ..\..\Output\pdb64\
           xcopy .\lib\*.lib ..\..\Output\lib64\
           xcopy .\bin\*.exe ..\..\Output\bin64\
-          xcopy .\bin\*.pdb ..\..\Output\pdb64\
           xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x64\
-          xcopy .\ACE_wrappers\lib\*.pdb ..\..\Output\pdb64\
           xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib64\
           xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin64\
-          xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb64\
           
       - name: Move OpenDDS x64 PDB
         shell: cmd
@@ -101,22 +97,18 @@ jobs:
           call setenv.cmd
           msbuild -p:Configuration=Release,Platform=Win32 -m DDS_TAOv2.sln
 
-      - name: Move OpenDDS x86
+      - name: Move OpenDDS x86 binaries
         shell: cmd
         run: |
           cd third_party\OpenDDS
           xcopy .\lib\*.dll ..\..\Output\x86\
-          xcopy .\lib\*.pdb ..\..\Output\pdb32\
           xcopy .\lib\*.lib ..\..\Output\lib32\
           xcopy .\bin\*.exe ..\..\Output\bin32\
-          xcopy .\bin\*.pdb ..\..\Output\pdb32\
           xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x86\
-          xcopy .\ACE_wrappers\lib\*.pdb ..\..\Output\pdb32\
           xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib32\
           xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin32\
-          xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb32\
 
-      - name: Move OpenDDS x86
+      - name: Move OpenDDS x86 PDB
         shell: cmd
         run: |
           cd third_party\OpenDDS
@@ -131,12 +123,12 @@ jobs:
           cd third_party\OpenDDS
           xcopy setenv.cmd ..\..\Output\
 
-      - name: Prepare for packaging OpenDDS
+      - name: Prepare for packaging OpenDDS Binaries and PDB
         run: |
           Compress-Archive -Path .\Output\* -DestinationPath .\OpenDDS_Build_3.15.zip
           Compress-Archive -Path .\OutputPdb\* -DestinationPath .\OpenDDS_PDB_Build_3.15.zip
 
-      - name: Prepare for packaging OpenDDS_ACETAO_Header
+      - name: Prepare for packaging OpenDDS Headers
         shell: cmd
         run: |
           7z a .\OpenDDS_Headers_3.15.zip .\third_party\OpenDDS\*.h -r
