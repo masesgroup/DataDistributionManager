@@ -110,16 +110,17 @@ jobs:
         shell: cmd
         run: |
           cd third_party\OpenDDS
-          xcopy .\ACE_wrappers\* ..\..\Output\ACE_wrappers\ /s /i
           xcopy setenv.cmd ..\..\Output\
 
       - name: Prepare for packaging
         run: |
           Compress-Archive -Path .\Output\* -DestinationPath .\OpenDDS_Build_3.15.zip
+          Compress-Archive -Path .\third_party\OpenDDS\ACE_wrappers\* -DestinationPath .\OpenDDS_ACETAO_Build_3.15.zip
 
       - name: Upload OpenDDS
         shell: cmd
         run: |
           python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_Build_3.15.zip
+          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_ACETAO_Build_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_ACETAO_Build_3.15.zip
         env:
           GITHUB_WORKSPACE: $GITHUB_WORKSPACE
