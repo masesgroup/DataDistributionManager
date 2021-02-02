@@ -139,13 +139,14 @@ jobs:
       - name: Prepare for packaging OpenDDS_ACETAO_Header
         shell: cmd
         run: |
-          7z a -r .\OpenDDS_ACETAO_Header_3.15.zip .\third_party\OpenDDS\ACE_wrappers\*.h
+          7z a .\OpenDDS_Headers_3.15.zip .\third_party\OpenDDS\*.h -r
+          7z u .\OpenDDS_Headers_3.15.zip .\third_party\OpenDDS\*.inl -r
 
       - name: Upload OpenDDS
         shell: cmd
         run: |
           python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_Build_3.15.zip
           python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_PDB_Build_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_PDB_Build_3.15.zip
-          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_ACETAO_Header_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_ACETAO_Header_3.15.zip
+          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Headers_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_Headers_3.15.zip
         env:
           GITHUB_WORKSPACE: $GITHUB_WORKSPACE
