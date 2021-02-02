@@ -56,14 +56,23 @@ jobs:
         shell: cmd
         run: |
           python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c download -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_Build_3.15.zip
-          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c download -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_ACETAO_Build_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_ACETAO_Build_3.15.zip
+        env:
+          GITHUB_WORKSPACE: $GITHUB_WORKSPACE
+          
+      - name: Download OpenDDS Headers
+        shell: cmd
+        run: |
+          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c download -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_ACETAO_Header_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_ACETAO_Header_3.15.zip
         env:
           GITHUB_WORKSPACE: $GITHUB_WORKSPACE
 
       - name: Prepare OpenDDS Binaries
         run: |
           Expand-Archive -LiteralPath '.\OpenDDS_Build_3.15.zip' -DestinationPath .\Output -Force
-          Expand-Archive -LiteralPath '.\OpenDDS_ACETAO_Build_3.15.zip' -DestinationPath .\third_party\OpenDDS\ACE_wrappers -Force
+          
+      - name: Prepare OpenDDS Headers
+        run: |
+          Expand-Archive -LiteralPath '.\OpenDDS_ACETAO_Header_3.15.zip' -DestinationPath .\third_party\OpenDDS\ACE_wrappers -Force
 
       - name: Move OpenDDS x64
         shell: cmd

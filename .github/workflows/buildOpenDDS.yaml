@@ -83,6 +83,16 @@ jobs:
           xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib64\
           xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin64\
           xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb64\
+          
+      - name: Move OpenDDS x64 PDB
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          mkdir ..\..\OutputPdb
+          xcopy .\lib\*.pdb ..\..\OutputPdb\pdb64\
+          xcopy .\bin\*.pdb ..\..\OutputPdb\pdb64\
+          xcopy .\ACE_wrappers\lib\*.pdb ..\..\OutputPdb\pdb64\
+          xcopy .\ACE_wrappers\bin\*.pdb ..\..\OutputPdb\pdb64\
 
       - name: Build OpenDDS x86
         shell: cmd
@@ -106,21 +116,36 @@ jobs:
           xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin32\
           xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb32\
 
+      - name: Move OpenDDS x86
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          xcopy .\lib\*.pdb ..\..\OutputPdb\pdb32\
+          xcopy .\bin\*.pdb ..\..\OutputPdb\pdb32\
+          xcopy .\ACE_wrappers\lib\*.pdb ..\..\OutputPdb\pdb32\
+          xcopy .\ACE_wrappers\bin\*.pdb ..\..\OutputPdb\pdb32\
+
       - name: Move setenv.cmd
         shell: cmd
         run: |
           cd third_party\OpenDDS
           xcopy setenv.cmd ..\..\Output\
 
-      - name: Prepare for packaging
+      - name: Prepare for packaging OpenDDS
         run: |
           Compress-Archive -Path .\Output\* -DestinationPath .\OpenDDS_Build_3.15.zip
-          Compress-Archive -Path .\third_party\OpenDDS\ACE_wrappers\* -DestinationPath .\OpenDDS_ACETAO_Build_3.15.zip
+          Compress-Archive -Path .\OutputPdb\* -DestinationPath .\OpenDDS_PDB_Build_3.15.zip
+
+      - name: Prepare for packaging OpenDDS_ACETAO_Header
+        shell: cmd
+        run: |
+          7z a -r .\OpenDDS_ACETAO_Header_3.15.zip .\third_party\OpenDDS\ACE_wrappers\*.h
 
       - name: Upload OpenDDS
         shell: cmd
         run: |
           python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_Build_3.15.zip
-          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_ACETAO_Build_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_ACETAO_Build_3.15.zip
+          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_PDB_Build_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_PDB_Build_3.15.zip
+          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_ACETAO_Header_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_ACETAO_Header_3.15.zip
         env:
           GITHUB_WORKSPACE: $GITHUB_WORKSPACE
