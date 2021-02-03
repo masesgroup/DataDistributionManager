@@ -198,11 +198,6 @@ jobs:
           nuget-version: '5.x'
       - run: nuget pack packaging\nuget\datadistributionmanager.nuspec
 
-      - uses: nuget/setup-nuget@v1
-        with:
-          nuget-version: '5.x'
-      - run: nuget push *.nupkg -ApiKey ${{ secrets.DATADISTRIBUTIONMANAGER_NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json -SkipDuplicate
-
       - name: Upload DataDistributionManager binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
@@ -220,4 +215,8 @@ jobs:
           asset_name: DataDistributionManager.zip
           tag: ${{ github.ref }}
           overwrite: true
-          
+
+      - uses: nuget/setup-nuget@v1
+        with:
+          nuget-version: '5.x'
+      - run: nuget push *.nupkg -ApiKey ${{ secrets.DATADISTRIBUTIONMANAGER_NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json -SkipDuplicate
