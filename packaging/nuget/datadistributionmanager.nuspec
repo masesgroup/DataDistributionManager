@@ -29,7 +29,9 @@
 		<file src="..\..\OutputPackage\lib\x64\DataDistributionManager.lib" target="build\native\lib\x64\" />
 
 		<file src="..\..\OutputPackage\runtime\x86\*.dll" target="runtimes\x86\" />
+		<file src="..\..\OutputPackage\runtime\x86\*.exe" target="runtimes\x86\" />
 		<file src="..\..\OutputPackage\runtime\x64\*.dll" target="runtimes\x64\" />
+		<file src="..\..\OutputPackage\runtime\x64\*.exe" target="runtimes\x64\" />
 
 		<file src="..\..\OutputPackage\licenses\*.*" target="licenses\" />
 	</files>

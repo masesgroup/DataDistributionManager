@@ -19,7 +19,6 @@
 #include "DataDistributionManager.h"
 #include "org_mases_datadistributionmanager_NativeInterface.h"
 
-// JNIEnv* env; (initialized somewhere else)
 JavaVM* jvm = NULL;
 jint jvmVersion = 0;
 
@@ -96,19 +95,16 @@ static void CheckAndRaise(JNIEnv * env)
 {
 	jthrowable exc = env->ExceptionOccurred();
 	if (exc) {
-		/* We don't do much with the exception, except that we print a
-		debug message using ExceptionDescribe, clear it, and throw
-		a new exception. */
 		jclass newExcCls;
 
 		env->ExceptionDescribe();
 		env->ExceptionClear();
 
 		newExcCls = env->FindClass("java/lang/IllegalArgumentException");
-		if (newExcCls == 0) { /* Unable to find the new exception class, give up. */
+		if (newExcCls == 0) {
 			return;
 		}
-		env->ThrowNew(newExcCls, "thrown from C code");
+		env->ThrowNew(newExcCls, "thrown from JNI code");
 	}
 }
 
@@ -139,7 +135,7 @@ const char * dataDistributionConfigurationCbJava(const void* opaque, const char 
 	jstring jkey = env->NewStringUTF(key);
 	jstring jvalue = env->NewStringUTF(value);
 
-	jmethodID callbackMethodId = env->GetMethodID(p->thisClass, "OnConfiguration", "(JILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+	jmethodID callbackMethodId = env->GetMethodID(p->thisClass, "OnConfiguration", "(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;");
 
 	jobject res = env->CallObjectMethod(p->jthis, callbackMethodId, (jlong)p, jkey, jvalue);
 
