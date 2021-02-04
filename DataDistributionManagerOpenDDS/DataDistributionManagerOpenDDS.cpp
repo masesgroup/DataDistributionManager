@@ -400,66 +400,73 @@ void DataDistributionManagerOpenDDS::SetParameter(HANDLE channelHandle, const ch
 {
 	Log(DDM_LOG_LEVEL::INFO_LEVEL, "DataDistributionManagerOpenDDS", "SetParameter", "Name: %s - Value: %s", (paramName != NULL) ? paramName : "", (paramValue != NULL) ? paramValue : "");
 
-	pChannelConfigurationOpenDDS pChannelConfiguration = static_cast<ChannelConfigurationOpenDDS*>(channelHandle);
+	if (NULL != channelHandle)
+	{
+		pChannelConfigurationOpenDDS pChannelConfiguration = static_cast<ChannelConfigurationOpenDDS*>(channelHandle);
 
-	if (!strcmp(paramName, "datadistributionmanager.maxmessagesize"))
-	{
-		SetMaxMessageSize(_atoi64(paramValue));
-		return;
+		if (!strcmp(paramName, "datadistributionmanager.maxmessagesize"))
+		{
+			SetMaxMessageSize(_atoi64(paramValue));
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.serverlost"))
+		{
+			pChannelConfiguration->m_ServerLostTimeout = atoi(paramValue);
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.createchannel"))
+		{
+			pChannelConfiguration->m_CreateChannelTimeout = atoi(paramValue);
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.channelseek"))
+		{
+			pChannelConfiguration->m_ChannelSeekTimeout = atoi(paramValue);
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.firstconnection"))
+		{
+			pChannelConfiguration->m_FirstConnectionTimeout = atoi(paramValue);
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.keepalive"))
+		{
+			pChannelConfiguration->m_KeepAliveTimeout = atoi(paramValue);
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.consumer"))
+		{
+			pChannelConfiguration->m_ConsumerTimeout = atoi(paramValue);
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.producer"))
+		{
+			pChannelConfiguration->m_ProducerTimeout = atoi(paramValue);
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.commit.sync"))
+		{
+			if (!strcmp(paramValue, "true") ||
+				!strcmp(paramValue, "1"))
+				pChannelConfiguration->m_CommitSync = TRUE;
+			else
+				pChannelConfiguration->m_CommitSync = FALSE;
+			return;
+		}
 	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.serverlost"))
+	else
 	{
-		pChannelConfiguration->m_ServerLostTimeout = atoi(paramValue);
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.createchannel"))
-	{
-		pChannelConfiguration->m_CreateChannelTimeout = atoi(paramValue);
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.channelseek"))
-	{
-		pChannelConfiguration->m_ChannelSeekTimeout = atoi(paramValue);
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.firstconnection"))
-	{
-		pChannelConfiguration->m_FirstConnectionTimeout = atoi(paramValue);
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.keepalive"))
-	{
-		pChannelConfiguration->m_KeepAliveTimeout = atoi(paramValue);
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.consumer"))
-	{
-		pChannelConfiguration->m_ConsumerTimeout = atoi(paramValue);
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.producer"))
-	{
-		pChannelConfiguration->m_ProducerTimeout = atoi(paramValue);
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.commit.sync"))
-	{
-		if (!strcmp(paramValue, "true") ||
-			!strcmp(paramValue, "1"))
-			pChannelConfiguration->m_CommitSync = TRUE;
-		else
-			pChannelConfiguration->m_CommitSync = FALSE;
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.opendds.cmdlineargs"))
-	{
-		SetCmdLine(paramValue);
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.opendds.domain_id"))
-	{
-		m_domainId = atoi(paramValue);
-		return;
+		// if channel handle is NULL we are in Initialize and we need to get only the following parameters
+		if (!strcmp(paramName, "datadistributionmanager.opendds.cmdlineargs"))
+		{
+			SetCmdLine(paramValue);
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.opendds.domain_id"))
+		{
+			m_domainId = atoi(paramValue);
+			return;
+		}
 	}
 }
 

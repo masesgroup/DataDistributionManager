@@ -70,9 +70,9 @@ int DataDistributionManagerKafka::read_config_file(pChannelConfigurationKafka co
 
 int DataDistributionManagerKafka::conf_init(pChannelConfigurationKafka configuration, const char* arrayParams[], int len)
 {
-	if (!(&configuration->pConnection_conf))
+	if (!configuration->pConnection_conf)
 		configuration->pConnection_conf = RdKafka::Conf::create(RdKafka::Conf::CONF_GLOBAL);
-	if (!(&configuration->pTopic))
+	if (!configuration->pTopic)
 		configuration->pTopic_conf = RdKafka::Conf::create(RdKafka::Conf::CONF_TOPIC);
 
 	int result = read_config_file(configuration, arrayParams, len);
