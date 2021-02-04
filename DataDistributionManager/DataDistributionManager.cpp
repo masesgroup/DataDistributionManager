@@ -399,12 +399,24 @@ HRESULT DataDistributionManagerImpl::Initialize(IDataDistributionCallback* callb
 	if (m_ProtocolLib.length() == 0)
 	{
 		if (m_Protocol.length() == 0) return E_INVALID_PROTOCOL_FORMAT;
-		m_ProtocolLib = "datadistributionmanager";
+		m_ProtocolLib = "DataDistributionManager";
 		m_ProtocolLib += m_Protocol;
 #if _DEBUG
 		m_ProtocolLib += "d";
 #endif
 	}
+
+	// add DataDistributionManager.dll folder in the PATH variable to load DLLs
+	TCHAR oldPath[64 * 1024];
+	GetEnvironmentVariable("PATH", oldPath, 64 * 1024);
+	std::string moduleName("DataDistributionManager.dll");
+	TCHAR pathToDll[MAX_PATH];
+	HMODULE ddm_Module = GetModuleHandle(moduleName.c_str());
+	DWORD moduleNameLen = GetModuleFileName(ddm_Module, pathToDll, MAX_PATH);
+	std::string newFullPath(pathToDll);
+	std::string path = newFullPath.substr(0, newFullPath.size() - moduleName.size());
+	std::string newPath = std::string(oldPath) + std::string(";") + path;
+	SetEnvironmentVariable("PATH", newPath.c_str());
 
 	m_hlibModule = LoadLibraryA(m_ProtocolLib.c_str());
 

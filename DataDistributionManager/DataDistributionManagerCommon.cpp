@@ -82,11 +82,30 @@ void DataDistributionCommon::Log(const DDM_LOG_LEVEL level, const char* sourceNa
 	if (m_pDataDistributionManagerCallbacks) m_pDataDistributionManagerCallbacks->OnLogging(level, sourceName, function, buffer);
 }
 
-size_t DataDistributionCommon::GetMaxMessageSize() { Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "GetMaxMessageSize", "Not Implemented in subclass"); return 0; }
+size_t DataDistributionCommon::GetMaxMessageSize() 
+{ 
+	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "GetMaxMessageSize", "Not Implemented in subclass"); 
+	return 0; 
+}
 
-HANDLE DataDistributionCommon::CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction, const char* arrayParams[], int len) { return NULL; }
-HRESULT DataDistributionCommon::StartChannel(HANDLE channelHandle, DWORD dwMilliseconds) { Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "StartChannel", "Not Implemented in subclass"); return TRUE; }
-HRESULT DataDistributionCommon::StopChannel(HANDLE channelHandle, DWORD dwMilliseconds) { Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "StopChannel", "Not Implemented in subclass"); return S_OK; }
+HANDLE DataDistributionCommon::CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction, const char* arrayParams[], int len) 
+{
+	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "CreateChannel", "Not Implemented in subclass");
+	return NULL;
+}
+
+HRESULT DataDistributionCommon::StartChannel(HANDLE channelHandle, DWORD dwMilliseconds) 
+{ 
+	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "StartChannel", "Not Implemented in subclass"); 
+	return TRUE; 
+}
+
+HRESULT DataDistributionCommon::StopChannel(HANDLE channelHandle, DWORD dwMilliseconds) 
+{ 
+	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "StopChannel", "Not Implemented in subclass");
+	return S_OK; 
+}
+
 void DataDistributionCommon::SetParameter(HANDLE channelHandle, const char* paramName, const char* paramValue)
 {
 	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "SetParameter", "Not Implemented in subclass");
