@@ -177,7 +177,9 @@ jobs:
           Copy-Item .\Output\bin64\dcpsinfo_dump.exe .\OutputPackage\runtime\x64\ -Force
           Copy-Item .\Output\bin64\DCPSInfoRepo.exe .\OutputPackage\runtime\x64\ -Force
           Copy-Item .\Output\bin64\repoctl.exe .\OutputPackage\runtime\x64\ -Force
+          Copy-Item .\Output\x86\*.pdb .\OutputPackage\pdb\x86\ -Force
           Copy-Item .\Output\pdb32\*.pdb .\OutputPackage\pdb\x86\ -Force
+          Copy-Item .\Output\x64\*.pdb .\OutputPackage\pdb\x64\ -Force
           Copy-Item .\Output\pdb64\*.pdb .\OutputPackage\pdb\x64\ -Force
           Copy-Item .\LICENSE .\OutputPackage\licenses\LICENSE.datadistributionmanager -Force
           Copy-Item .\packages\librdkafka.redist.1.5.3\LICENSES.txt .\OutputPackage\licenses\LICENSE.librdkafka -Force

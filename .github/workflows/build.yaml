@@ -51,6 +51,22 @@ jobs:
           VersionGenerator %GITHUB_WORKSPACE%\ProductInformation\Version.cs %GITHUB_WORKSPACE%\ProductInformation ${{ env.GITHUB_COMMIT_MESSAGE }}
         env:
           GITHUB_WORKSPACE: $GITHUB_WORKSPACE
+          
+      - name: Prepare nuget
+        shell: cmd
+        run: |
+          third_party\CommonTools\Output\PlaceHolderReplacer.exe .\ProductInformation\Version.cs .\packaging\nuget\datadistributionmanager.nuspec >> .\nuget_version.txt
+
+      - name: Store version
+        run: |
+          echo "NUGET_PACKAGE_VERSION=$(cat nuget_version.txt)" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Verify Nuget version in file
+        run: |
+          type .\packaging\nuget\datadistributionmanager.nuspec
+          echo ${{ env.NUGET_PACKAGE_VERSION }}
+        shell: cmd
 
       - name: Configure OpenDDS to download ACE/TAO
         shell: cmd
@@ -144,7 +160,9 @@ jobs:
           Copy-Item .\Output\bin64\dcpsinfo_dump.exe .\OutputPackage\runtime\x64\ -Force
           Copy-Item .\Output\bin64\DCPSInfoRepo.exe .\OutputPackage\runtime\x64\ -Force
           Copy-Item .\Output\bin64\repoctl.exe .\OutputPackage\runtime\x64\ -Force
+          Copy-Item .\Output\x86\*.pdb .\OutputPackage\pdb\x86\ -Force
           Copy-Item .\Output\pdb32\*.pdb .\OutputPackage\pdb\x86\ -Force
+          Copy-Item .\Output\x64\*.pdb .\OutputPackage\pdb\x64\ -Force
           Copy-Item .\Output\pdb64\*.pdb .\OutputPackage\pdb\x64\ -Force
           Copy-Item .\LICENSE .\OutputPackage\licenses\LICENSE.datadistributionmanager -Force
           Copy-Item .\packages\librdkafka.redist.1.5.3\LICENSES.txt .\OutputPackage\licenses\LICENSE.librdkafka -Force
@@ -166,6 +184,16 @@ jobs:
           set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
           CreateJar.bat
           cd..
+
+      - uses: nuget/setup-nuget@v1
+        with:
+          nuget-version: '5.x'
+      - run: nuget pack packaging\nuget\datadistributionmanager.nuspec
+      
+      - uses: actions/upload-artifact@v2
+        with:
+          name: DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
+          path: .\DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
 
       - uses: actions/upload-artifact@v2
         with:
