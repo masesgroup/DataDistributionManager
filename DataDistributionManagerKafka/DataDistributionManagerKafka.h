@@ -97,7 +97,7 @@ public:
 		m_TopicSeekTimeout = 10000;
 		m_ServerLostTimeout = 10000;
 		m_KeepAliveTimeout = 1000;
-		m_FirstConnectionTimeout = 10000;
+		m_MessageReceiveTimeout = 10000;
 		m_ConsumerTimeout = 10;
 		m_ProducerTimeout = 1;
 
@@ -115,7 +115,7 @@ public:
 	int  m_TopicSeekTimeout;
 	int  m_ServerLostTimeout;
 	int  m_KeepAliveTimeout;
-	int  m_FirstConnectionTimeout;
+	int  m_MessageReceiveTimeout;
 	int  m_ConsumerTimeout;
 	int  m_ProducerTimeout;
 

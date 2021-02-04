@@ -428,9 +428,9 @@ void DataDistributionManagerKafka::SetParameter(HANDLE channelHandle, const char
 		pTopicConfiguration->m_TopicSeekTimeout = atoi(paramValue);
 		return;
 	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.firstconnection"))
+	else if (!strcmp(paramName, "datadistributionmanager.timeout.receive"))
 	{
-		pTopicConfiguration->m_FirstConnectionTimeout = atoi(paramValue);
+		pTopicConfiguration->m_MessageReceiveTimeout = atoi(paramValue);
 		return;
 	}
 	else if (!strcmp(paramName, "datadistributionmanager.timeout.keepalive"))
@@ -542,7 +542,7 @@ const char* DataDistributionManagerKafka::GetParameter(HANDLE channelHandle, con
 	}
 	else if (!strcmp(paramName, "datadistributionmanager.timeout.firstconnection"))
 	{
-		return ConvertIToA(pTopicConfiguration->m_FirstConnectionTimeout);
+		return ConvertIToA(pTopicConfiguration->m_MessageReceiveTimeout);
 	}
 	else if (!strcmp(paramName, "datadistributionmanager.timeout.keepalive"))
 	{
@@ -1121,6 +1121,7 @@ DWORD __stdcall DataDistributionManagerKafka::consumerHandler(void * argh)
 		return -1;
 	}
 
+	BOOL timeoutEmitted = FALSE;
 	SetEvent(pTopicConfiguration->h_evtConsumer);
 	timeStart.ResetTime();
 	do
@@ -1136,9 +1137,10 @@ DWORD __stdcall DataDistributionManagerKafka::consumerHandler(void * argh)
 		{
 			auto duration = timeStart.ElapsedMilliseconds();
 
-			if (duration > pTopicConfiguration->m_FirstConnectionTimeout) // wait at least one keep-alive message until timeout expires
+			if (!timeoutEmitted && duration > pTopicConfiguration->m_MessageReceiveTimeout) // no message within m_MessageReceiveTimeout
 			{
-				pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_ELAPSED_FIRST_CONNECTION_TIMEOUT, 0, "Elapsed first connection timeline.");
+				pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT, 0, "Elapsed timeout receiving packets.");
+				timeoutEmitted = TRUE;
 			}
 		}
 #ifdef TRIAL_VERSION_DEPLOY
@@ -1148,6 +1150,7 @@ DWORD __stdcall DataDistributionManagerKafka::consumerHandler(void * argh)
 #endif
 		case RdKafka::ErrorCode::ERR_NO_ERROR:
 		{
+			timeoutEmitted = FALSE;
 			timeStart.ResetTime();
 
 			pTopicConfiguration->OnDataAvailable(p_Msg->key()->c_str(), p_Msg->key_len(), p_Msg->payload(), p_Msg->len());

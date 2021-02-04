@@ -424,9 +424,9 @@ void DataDistributionManagerOpenDDS::SetParameter(HANDLE channelHandle, const ch
 			pChannelConfiguration->m_ChannelSeekTimeout = atoi(paramValue);
 			return;
 		}
-		else if (!strcmp(paramName, "datadistributionmanager.timeout.firstconnection"))
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.receive"))
 		{
-			pChannelConfiguration->m_FirstConnectionTimeout = atoi(paramValue);
+			pChannelConfiguration->m_MessageReceiveTimeout = atoi(paramValue);
 			return;
 		}
 		else if (!strcmp(paramName, "datadistributionmanager.timeout.keepalive"))
@@ -508,7 +508,7 @@ const char* DataDistributionManagerOpenDDS::GetParameter(HANDLE channelHandle, c
 	}
 	else if (!strcmp(paramName, "datadistributionmanager.timeout.firstconnection"))
 	{
-		return ConvertIToA(pChannelConfiguration->m_FirstConnectionTimeout);
+		return ConvertIToA(pChannelConfiguration->m_MessageReceiveTimeout);
 	}
 	else if (!strcmp(paramName, "datadistributionmanager.timeout.keepalive"))
 	{
@@ -590,7 +590,7 @@ HRESULT DataDistributionManagerOpenDDS::WriteOnChannel(HANDLE channelHandle, con
 
 	if (CORBA::is_nil(pChannelConfiguration->channel_dw.in())) {
 		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pChannelConfiguration->GetChannelName(), "WriteOnChannel", "writer not ready.");
-		return FALSE;
+		return E_FAIL;
 	}
 
 	msg_handle = pChannelConfiguration->channel_dw->register_instance(msg);
@@ -605,7 +605,7 @@ HRESULT DataDistributionManagerOpenDDS::WriteOnChannel(HANDLE channelHandle, con
 		if (retCode != DDS::RETCODE_OK) {
 			ACE_ERROR((LM_ERROR, ACE_TEXT("(%P|%t) ERROR: SPY write returned %d.\n"), retCode));
 #pragma warning "send callback"
-			return FALSE;
+			return E_FAIL;
 		}
 	}
 	else
@@ -614,7 +614,7 @@ HRESULT DataDistributionManagerOpenDDS::WriteOnChannel(HANDLE channelHandle, con
 		if (retCode != DDS::RETCODE_OK) {
 			ACE_ERROR((LM_ERROR, ACE_TEXT("(%P|%t) ERROR: SPY write returned %d.\n"), retCode));
 #pragma warning "send callback"
-			return FALSE;
+			return E_FAIL;
 		}
 	}
 
@@ -625,11 +625,11 @@ HRESULT DataDistributionManagerOpenDDS::WriteOnChannel(HANDLE channelHandle, con
 		if (retCode != DDS::RETCODE_OK) {
 			ACE_ERROR((LM_ERROR, ACE_TEXT("(%P|%t) ERROR: SPY write returned %d.\n"), retCode));
 #pragma warning "send callback"
-			return FALSE;
+			return E_FAIL;
 		}
 	}
 
-	return TRUE;
+	return S_OK;
 }
 
 HRESULT DataDistributionManagerOpenDDS::ReadFromChannel(HANDLE channelHandle, int64_t offset, size_t *dataLen, void **param)
@@ -742,7 +742,7 @@ DWORD __stdcall DataDistributionManagerOpenDDS::consumerHandler(void * argh)
 	ws->attach_condition(cond);
 
 	DDS::ConditionSeq active;
-	DDS::Duration_t ten_seconds = DataDistributionManagerOpenDDS::DurationFromMs(pChannelConfiguration->m_FirstConnectionTimeout);
+	DDS::Duration_t ten_seconds = DataDistributionManagerOpenDDS::DurationFromMs(pChannelConfiguration->m_MessageReceiveTimeout);
 	retCode = ws->wait(active, ten_seconds);
 
 	if (retCode == DDS::RETCODE_OK)
@@ -783,6 +783,7 @@ DWORD __stdcall DataDistributionManagerOpenDDS::consumerHandler(void * argh)
 	SetEvent(pChannelConfiguration->h_evtConsumer);
 	timeStart.ResetTime();
 
+	BOOL timeoutEmitted = FALSE;
 	DDS::ReadCondition_var rc = pChannelConfiguration->channel_dr->create_readcondition(DDS::ANY_SAMPLE_STATE, DDS::ANY_VIEW_STATE, DDS::ANY_INSTANCE_STATE);
 	DDS::Duration_t timeout = DataDistributionManagerOpenDDS::DurationFromMs(pChannelConfiguration->m_ConsumerTimeout);
 	retCode = ws->attach_condition(rc);
@@ -796,6 +797,7 @@ DWORD __stdcall DataDistributionManagerOpenDDS::consumerHandler(void * argh)
 		{
 		case DDS::RETCODE_OK:
 		{
+			timeoutEmitted = FALSE;
 			timeStart.ResetTime();
 			DDS::ReturnCode_t retCodeInner;
 			DataDistributionSchema::OpenDDSMsgDataReader_var res_dr = DataDistributionSchema::OpenDDSMsgDataReader::_narrow(pChannelConfiguration->channel_dr);
@@ -825,9 +827,10 @@ DWORD __stdcall DataDistributionManagerOpenDDS::consumerHandler(void * argh)
 		{
 			auto duration = timeStart.ElapsedMilliseconds();
 
-			if (duration > pChannelConfiguration->m_FirstConnectionTimeout) // wait at least one keep-alive message until timeout expires
+			if (!timeoutEmitted && duration > pChannelConfiguration->m_MessageReceiveTimeout) // no message within m_MessageReceiveTimeout
 			{
-				pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_ELAPSED_FIRST_CONNECTION_TIMEOUT, 0, "Elapsed first connection timeline.");
+				pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT, 0, "Elapsed timeout receiving packets.");
+				timeoutEmitted = TRUE;
 			}
 		}
 		break;

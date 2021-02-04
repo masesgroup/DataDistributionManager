@@ -140,6 +140,10 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         /// No data returned
         /// </summary>
         DDM_NO_DATA_RETURNED,
+        /// <summary>
+        /// Timeout elapsed waiting for messages from the channel
+        /// </summary>
+        DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT
     };
     /// <summary>
     /// State of the instance
