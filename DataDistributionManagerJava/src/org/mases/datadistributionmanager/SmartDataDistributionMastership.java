@@ -59,7 +59,7 @@ class SmartDataDistributionMastership implements ISmartDataDistributionMastershi
                 .IDataDistributionMastershipCommon_GetClusterIndexes(IDataDistribution_instance);
         for (long l : indexes) {
             int status = NativeInterface.IDataDistributionMastershipCommon_GetStateOf(IDataDistribution_instance, l);
-            map.put(new Long(l), DDM_INSTANCE_STATE.valueOfAtomicNumber(status));
+            map.put(l, DDM_INSTANCE_STATE.valueOfAtomicNumber(status));
         }
         return map;
     }
@@ -70,7 +70,7 @@ class SmartDataDistributionMastership implements ISmartDataDistributionMastershi
                 .IDataDistributionMastershipCommon_GetClusterIndexes(IDataDistribution_instance);
         for (long l : indexes) {
             ClusterHealthElement elem =  NativeInterface.IDataDistributionMastershipCommon_GetClusterHealth(IDataDistribution_instance, l );
-            map.put(new Long(l), elem);
+            map.put(l, elem);
         }
         return map;
     }

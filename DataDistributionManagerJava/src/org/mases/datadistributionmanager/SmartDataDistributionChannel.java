@@ -23,11 +23,6 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
         m_DataDistributionChannelCallbackLow = NativeCallbackManager.RegisterCallback(this);
     }
 
-    @Override
-    protected void finalize() throws Throwable {
-        super.finalize();
-    }
-
     public HRESULT StartChannel(int dwMilliseconds) {
         long res = NativeInterface.IDataDistributionSubsystem_StartChannel(IDataDistributionSubsystemManager_ptr,
                 topicHandle, dwMilliseconds);

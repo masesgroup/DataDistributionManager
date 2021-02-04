@@ -149,14 +149,6 @@ jobs:
           dotnet build --no-incremental --configuration Release --framework netcoreapp3.1 -o Outputnetcoreapp3.1 DataDistributionManagerNet\DataDistributionManagerNet5.csproj
           dotnet build --no-incremental --configuration Release --framework net5.0 -o Outputnet5.0 DataDistributionManagerNet\DataDistributionManagerNet5.csproj
 
-      - name: Build Java Binder
-        shell: cmd
-        run: |
-          cd DataDistributionManagerJava
-          set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
-          CreateJar.bat
-          cd..
-
       - name: Prepare for packaging
         run: |
           New-Item -Path .\OutputPackage -ItemType directory
@@ -177,7 +169,6 @@ jobs:
           Copy-Item .\Output\x86\DataDistributionManager.lib .\OutputPackage\lib\x86\DataDistributionManager.lib -Force
           Copy-Item .\Output\x64\DataDistributionManager.lib .\OutputPackage\lib\x64\DataDistributionManager.lib -Force
           Copy-Item .\Output\*.dll .\OutputPackage\runtime\ -Force
-          Copy-Item .\Output\*.jar .\OutputPackage\runtime\ -Force
           Copy-Item .\Output\x86\*.dll .\OutputPackage\runtime\x86\ -Force
           Copy-Item .\Output\bin32\dcpsinfo_dump.exe .\OutputPackage\runtime\x86\ -Force
           Copy-Item .\Output\bin32\DCPSInfoRepo.exe .\OutputPackage\runtime\x86\ -Force
@@ -193,12 +184,28 @@ jobs:
           Copy-Item .\third_party\OpenDDS\LICENSE .\OutputPackage\licenses\LICENSE.opendds -Force
           Compress-Archive -Path .\OutputPackage\* -DestinationPath .\OutputPackage\DataDistributionManager.zip
 
+      - name: Prepare for Java packaging
+        run: |
+          New-Item -Path .\OutputJava -ItemType directory
+          New-Item -Path .\OutputJava\windows_x64 -ItemType directory
+          New-Item -Path .\OutputJava\windows_x86 -ItemType directory
+          Compress-Archive -Path .\OutputPackage\runtime\x64\* -DestinationPath .\OutputJava\windows_x64\nativepackage.zip
+          Compress-Archive -Path .\OutputPackage\runtime\x86\* -DestinationPath .\OutputJava\windows_x86\nativepackage.zip
+
+      - name: Build Java Binder
+        shell: cmd
+        run: |
+          cd DataDistributionManagerJava
+          set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
+          CreateJar.bat
+          cd..
+
       - uses: nuget/setup-nuget@v1
         with:
           nuget-version: '5.x'
       - run: nuget pack packaging\nuget\datadistributionmanager.nuspec
 
-      - name: Upload DataDistributionManager binaries to release
+      - name: Upload DataDistributionManager NuGet to release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
@@ -213,6 +220,24 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: .\OutputPackage\DataDistributionManager.zip
           asset_name: DataDistributionManager.zip
+          tag: ${{ github.ref }}
+          overwrite: true
+
+      - name: Upload DataDistributionManager Java to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: .\Output\datadistributionmanager.jar
+          asset_name: datadistributionmanager.jar
+          tag: ${{ github.ref }}
+          overwrite: true
+
+      - name: Upload DataDistributionManager Java docs to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: .\Output\datadistributionmanager.docs.jar
+          asset_name: datadistributionmanager.docs.jar
           tag: ${{ github.ref }}
           overwrite: true
 

@@ -28,7 +28,7 @@ class NativeCallbackManager {
     public static long RegisterCallback(IDataDistributionCallbackLow callbacks)
     {
         long remoteReference = NativeInterface.DataDistributionCallback_create(callbacks);
-        BY_IDataDistributionCallbackLow.put(callbacks, new Long(remoteReference));
+        BY_IDataDistributionCallbackLow.put(callbacks, remoteReference);
         return remoteReference;
     }
 
@@ -41,7 +41,7 @@ class NativeCallbackManager {
     public static long RegisterCallback(IDataDistributionChannelCallbackLow callbacks)
     {
         long remoteReference = NativeInterface.DataDistributionChannelCallback_create(callbacks);
-        BY_IDataDistributionChannelCallbackLow.put(callbacks, new Long(remoteReference));
+        BY_IDataDistributionChannelCallbackLow.put(callbacks, remoteReference);
         return remoteReference;
     }
 
@@ -54,7 +54,7 @@ class NativeCallbackManager {
     public static long RegisterCallback(IDataDistributionMastershipCallbackLow callbacks)
     {
         long remoteReference = NativeInterface.DataDistributionMastershipCallback_create(callbacks);
-        BY_IDataDistributionMastershipCallbackLow.put(callbacks, new Long(remoteReference));
+        BY_IDataDistributionMastershipCallbackLow.put(callbacks, remoteReference);
         return remoteReference;
     }
 

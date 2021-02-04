@@ -116,6 +116,49 @@ jobs:
           set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
           msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
 
+      - name: Prepare for packaging
+        run: |
+          New-Item -Path .\OutputPackage -ItemType directory
+          New-Item -Path .\OutputPackage\lib -ItemType directory
+          New-Item -Path .\OutputPackage\lib\x86 -ItemType directory
+          New-Item -Path .\OutputPackage\lib\x64 -ItemType directory
+          New-Item -Path .\OutputPackage\runtime -ItemType directory
+          New-Item -Path .\OutputPackage\runtime\x86 -ItemType directory
+          New-Item -Path .\OutputPackage\runtime\x64 -ItemType directory
+          New-Item -Path .\OutputPackage\pdb -ItemType directory
+          New-Item -Path .\OutputPackage\pdb\x86 -ItemType directory
+          New-Item -Path .\OutputPackage\pdb\x64 -ItemType directory
+          New-Item -Path .\OutputPackage\include -ItemType directory
+          New-Item -Path .\OutputPackage\licenses -ItemType directory
+          Copy-Item .\DataDistributionManager\DataDistributionManager.h .\OutputPackage\include\DataDistributionManager.h
+          Copy-Item .\DataDistributionManager\DataDistributionManagerEnums.h .\OutputPackage\include\DataDistributionManagerEnums.h
+          Copy-Item .\DataDistributionManager\SmartDataDistributionManager.h .\OutputPackage\include\SmartDataDistributionManager.h
+          Copy-Item .\Output\x86\DataDistributionManager.lib .\OutputPackage\lib\x86\DataDistributionManager.lib -Force
+          Copy-Item .\Output\x64\DataDistributionManager.lib .\OutputPackage\lib\x64\DataDistributionManager.lib -Force
+          Copy-Item .\Output\*.dll .\OutputPackage\runtime\ -Force
+          Copy-Item .\Output\x86\*.dll .\OutputPackage\runtime\x86\ -Force
+          Copy-Item .\Output\bin32\dcpsinfo_dump.exe .\OutputPackage\runtime\x86\ -Force
+          Copy-Item .\Output\bin32\DCPSInfoRepo.exe .\OutputPackage\runtime\x86\ -Force
+          Copy-Item .\Output\bin32\repoctl.exe .\OutputPackage\runtime\x86\ -Force
+          Copy-Item .\Output\x64\*.dll .\OutputPackage\runtime\x64\ -Force
+          Copy-Item .\Output\bin64\dcpsinfo_dump.exe .\OutputPackage\runtime\x64\ -Force
+          Copy-Item .\Output\bin64\DCPSInfoRepo.exe .\OutputPackage\runtime\x64\ -Force
+          Copy-Item .\Output\bin64\repoctl.exe .\OutputPackage\runtime\x64\ -Force
+          Copy-Item .\Output\pdb32\*.pdb .\OutputPackage\pdb\x86\ -Force
+          Copy-Item .\Output\pdb64\*.pdb .\OutputPackage\pdb\x64\ -Force
+          Copy-Item .\LICENSE .\OutputPackage\licenses\LICENSE.datadistributionmanager -Force
+          Copy-Item .\packages\librdkafka.redist.1.5.3\LICENSES.txt .\OutputPackage\licenses\LICENSE.librdkafka -Force
+          Copy-Item .\third_party\OpenDDS\LICENSE .\OutputPackage\licenses\LICENSE.opendds -Force
+          Compress-Archive -Path .\OutputPackage\* -DestinationPath .\OutputPackage\DataDistributionManager.zip
+
+      - name: Prepare for Java packaging
+        run: |
+          New-Item -Path .\OutputJava -ItemType directory
+          New-Item -Path .\OutputJava\windows_x64 -ItemType directory
+          New-Item -Path .\OutputJava\windows_x86 -ItemType directory
+          Compress-Archive -Path .\OutputPackage\runtime\x64\* -DestinationPath .\OutputJava\windows_x64\nativepackage.zip
+          Compress-Archive -Path .\OutputPackage\runtime\x86\* -DestinationPath .\OutputJava\windows_x86\nativepackage.zip
+
       - name: Build Java Binder
         shell: cmd
         run: |
@@ -124,4 +167,12 @@ jobs:
           CreateJar.bat
           cd..
 
+      - uses: actions/upload-artifact@v2
+        with:
+          name: DataDistributionManager.jar
+          path: .\Output\datadistributionmanager.jar
 
+      - uses: actions/upload-artifact@v2
+        with:
+          name: DataDistributionManager.zip
+          path: .\OutputPackage\DataDistributionManager.zip

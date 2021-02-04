@@ -12,10 +12,13 @@ IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 "%JDK_ROOT_FOLDER%\bin\javadoc.exe" --source 8 -quiet -author -public -d ./Javadoc -link https://docs.oracle.com/javase/8/docs/api/ ./src/org/mases/datadistributionmanager/*.java
 IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 @echo javadoc END
-"%JDK_ROOT_FOLDER%\bin\jar.exe" cvfm datadistributionmanager.jar datadistributionmanagerManifest.txt -C ./Output . > .\Output\datadistributionmanager.jar.txt
+
+xcopy ..\OutputJava\*.* .\Output\org\mases\datadistributionmanager /Y /E
+
+"%JDK_ROOT_FOLDER%\bin\jar.exe" cvfm datadistributionmanager.jar datadistributionmanagerManifest.txt -C ./Output . > .\datadistributionmanager.jar.txt
 IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 @echo jar datadistributionmanager.jar END
-"%JDK_ROOT_FOLDER%\bin\jar.exe" cvf datadistributionmanager.docs.jar -C ./Javadoc . > .\Output\datadistributionmanager.docs.jar.txt 
+"%JDK_ROOT_FOLDER%\bin\jar.exe" cvf datadistributionmanager.docs.jar -C ./Javadoc . > .\datadistributionmanager.docs.jar.txt 
 IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 @echo jar datadistributionmanager.docs.jar END
 move /Y datadistributionmanager.jar ..\Output

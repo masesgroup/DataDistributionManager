@@ -19,9 +19,14 @@
 package org.mases.datadistributionmanager;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.URL;
+import java.io.InputStream;
 import java.nio.file.*;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 public class SmartDataDistribution implements IDataDistributionCallbackLow, IDataDistributionMastershipCallbackLow {
     long m_DataDistributionCallbackLow;
@@ -30,53 +35,145 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
     long IDataDistributionSubsystemManager_ptr;
     long m_InitializeResult = -1;
 
-    static boolean LoadWrapper() {
-        String libName = "DataDistributionManager.dll";
-        String bridgePath = null;
-        if (bridgePath == null || bridgePath.isEmpty()) {
-            ClassLoader loader = SmartDataDistribution.class.getClassLoader();
-            URL url = loader.getResource("org/mases/datadistributionmanager/SmartDataDistribution.class");
-
-            bridgePath = url.getFile();
-            int index = bridgePath.indexOf("/datadistributionmanager.jar");
-            bridgePath = bridgePath.substring(0, index);
-            bridgePath = bridgePath.substring("file:/".length());
-
-            bridgePath = bridgePath.replace("%20", " ");
+    private static void unzip(String zipFilePath, String destDirectory) throws IOException {
+        File destDir = new File(destDirectory);
+        if (!destDir.exists()) {
+            destDir.mkdir();
         }
-
-        if (System.getProperty("sun.arch.data.model").equals("64")) {
-            bridgePath += "/x64";
-        } else {
-            bridgePath += "/x86";
+        try (ZipInputStream zipIn = new ZipInputStream(new FileInputStream(zipFilePath))) {
+            ZipEntry entry = zipIn.getNextEntry();
+            while (entry != null) {
+                String filePath = destDirectory + File.separator + entry.getName();
+                if (!entry.isDirectory()) {
+                    extractFile(zipIn, filePath);
+                    if (!System.getProperty("os.name").contains("Windows")) {
+                        try {
+                            Runtime.getRuntime().exec(new String[] { "chmod", "755", filePath }).waitFor();
+                        } catch (Throwable e) {
+                        }
+                    }
+                } else {
+                    File dir = new File(filePath);
+                    dir.mkdirs();
+                }
+                zipIn.closeEntry();
+                entry = zipIn.getNextEntry();
+            }
         }
+    }
 
-        Path rootPath = Paths.get(bridgePath);
-        Path partialPath = Paths.get(libName);
-        Path resolvedPath = rootPath.resolve(partialPath).normalize();
+    private static void extractFile(ZipInputStream zipIn, String filePath) throws IOException {
+        final int BUFFER_SIZE = 4096;
+        try (BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(filePath))) {
+            byte[] bytesIn = new byte[BUFFER_SIZE];
+            int read = 0;
+            while ((read = zipIn.read(bytesIn)) != -1) {
+                bos.write(bytesIn, 0, read);
+            }
+        }
+    }
 
-        String fileStr = resolvedPath.toString();
+    private static boolean extractAndLoadLibraryFile(String libFolderForCurrentOS, String targetFolder,
+            String entryLibrary) {
+        final String containerFileName = "nativepackage.zip";
 
-        String b = null;
+        String nativeLibraryFilePath = libFolderForCurrentOS + "/" + containerFileName;
+
+        String extractedLibFileName = containerFileName;
+        File extractedLibFile = new File(targetFolder, extractedLibFileName);
+
         try {
-            b = new File(fileStr).getCanonicalPath();
+            // Extract file into the current directory
+            InputStream reader = SmartDataDistribution.class.getResourceAsStream(nativeLibraryFilePath);
+            FileOutputStream writer = new FileOutputStream(extractedLibFile);
+            byte[] buffer = new byte[1024];
+            int bytesRead = 0;
+            while ((bytesRead = reader.read(buffer)) != -1) {
+                writer.write(buffer, 0, bytesRead);
+            }
+
+            writer.close();
+            reader.close();
+
+            unzip(extractedLibFile.toString(), targetFolder);
+
+            return loadNativeLibrary(targetFolder, entryLibrary);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+            return false;
+        }
+    }
+
+    private static synchronized boolean loadNativeLibrary(String path, String name) {
+        File libPath = new File(path, name);
+        if (libPath.exists()) {
+            try {
+                System.load(new File(path, name).getAbsolutePath());
+                return true;
+            } catch (UnsatisfiedLinkError e) {
+                System.err.println(e);
+                return false;
+            }
+
+        } else
+            return false;
+    }
+
+    static boolean LoadWrapper() {
+        String osName = System.getProperty("os.name");
+        String osArch = System.getProperty("os.arch");
+
+        String libFolderForCurrentOS = "windows_x64";
+        String libName = "DataDistributionManager.dll";
+
+        if (osName.toLowerCase().contains("linux")) {
+            if (osArch.toLowerCase().contains("amd64") || osArch.toLowerCase().contains("x86_64")) {
+                libFolderForCurrentOS = "linux_x64";
+                libName = "DataDistributionManager.so";
+            } else if (osArch.toLowerCase().contains("x86")) {
+                libFolderForCurrentOS = "linux_x86";
+                libName = "DataDistributionManager.so";
+            } else if (osArch.toLowerCase().contains("arm")) {
+                libFolderForCurrentOS = "linux_arm";
+                libName = "DataDistributionManager.so";
+            } else if (osArch.toLowerCase().contains("arm64")) {
+                libFolderForCurrentOS = "linux_arm64";
+                libName = "DataDistributionManager.so";
+            }
+        } else if (osName.toLowerCase().contains("mac")) {
+            if (osArch.toLowerCase().contains("64")) {
+                libFolderForCurrentOS = "mac_x64";
+                libName = "DataDistributionManager.dylib";
+            }
+        } else if (osName.toLowerCase().contains("windows")) {
+            if (osArch.toLowerCase().contains("amd64") || osArch.toLowerCase().contains("x86_64")) {
+                libFolderForCurrentOS = "windows_x64";
+                libName = "DataDistributionManager.dll";
+            } else if (osArch.toLowerCase().contains("x86")) {
+                libFolderForCurrentOS = "windows_x86";
+                libName = "DataDistributionManager.dll";
+            } else if (osArch.toLowerCase().contains("arm")) {
+                libFolderForCurrentOS = "windows_arm";
+                libName = "DataDistributionManager.dll";
+            } else if (osArch.toLowerCase().contains("arm64")) {
+                libFolderForCurrentOS = "windows_arm64";
+                libName = "DataDistributionManager.dll";
+            }
+        }
+
+        try {
+            Path tmpPath = Files.createTempDirectory(SmartDataDistribution.class.getName());
+            return extractAndLoadLibraryFile(libFolderForCurrentOS, tmpPath.toString(), libName);
         } catch (IOException e) {
             e.printStackTrace();
+            return false;
         }
-        System.out.println(b);
-        System.load(b);
-        return true;
     }
 
     static final boolean loaded = LoadWrapper();
 
     public SmartDataDistribution() {
         IDataDistribution_ptr = NativeInterface.DataDistribution_create();
-    }
-
-    @Override
-    protected void finalize() throws Throwable {
-        super.finalize();
     }
 
     public HRESULT Initialize(String conf_file, String szMyAddress, String topicTrailer) {
@@ -174,17 +271,20 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
 
     @SuppressWarnings("unchecked")
     public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String topicName,
-            DDM_CHANNEL_DIRECTION direction, String[] arrayParams)
-            throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+            DDM_CHANNEL_DIRECTION direction, String[] arrayParams) throws Throwable {
 
         if (IDataDistributionSubsystemManager_ptr == 0)
             return null;
 
-        Object newObject = Class.forName(clazz.getName()).newInstance();
+        Object newObject = Class.forName(clazz.getName()).getDeclaredConstructor().newInstance();
         SmartDataDistributionChannel inm = (SmartDataDistributionChannel) newObject;
 
         long handle = NativeInterface.IDataDistributionSubsystem_CreateChannel(IDataDistributionSubsystemManager_ptr,
                 topicName, inm.m_DataDistributionChannelCallbackLow, direction.atomicNumber, arrayParams);
+
+        if (handle == 0) {
+            throw new Exception("Unable to create channel, see log for the reason.");
+        }
 
         inm.m_direction = direction;
         inm.IDataDistributionSubsystemManager_ptr = IDataDistributionSubsystemManager_ptr;
