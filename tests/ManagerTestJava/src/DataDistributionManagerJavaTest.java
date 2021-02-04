@@ -28,8 +28,7 @@ public class DataDistributionManagerJavaTest {
 
 		MySmartDataDistribution dataDistribution = new MySmartDataDistribution();
 		String str = "test";
-		HRESULT hRes = dataDistribution.Initialize(
-				"../../Configuration/OpenDDSManager.conf", str, "KafkaManager");
+		HRESULT hRes = dataDistribution.Initialize("OpenDDSManager.conf", str, "Manager");
 
 		if (hRes.getFailed()) {
 			System.out.println("Error in configuration.");
@@ -46,7 +45,7 @@ public class DataDistributionManagerJavaTest {
 		try {
 			mytestTopic = dataDistribution.CeateSmartChannel(MySmartDataDistributionTopic.class, "test",
 					DDM_CHANNEL_DIRECTION.RECEIVER, null);
-		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+		} catch (Throwable e) {
 			e.printStackTrace();
 			return;
 		}

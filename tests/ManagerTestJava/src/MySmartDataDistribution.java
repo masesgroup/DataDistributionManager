@@ -19,6 +19,12 @@
 import org.mases.datadistributionmanager.*;
 
 public class MySmartDataDistribution extends SmartDataDistribution {
+
+    public String OnConfiguration(String key, String value)
+    {
+        return value;
+    }
+
     public void OnLogging(DDM_LOG_LEVEL level, String source, String function, String errStr) {
         System.out.println(errStr);
     }
