@@ -131,6 +131,11 @@ jobs:
           call .\third_party\OpenDDS\setenv.cmd
           set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
           msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
+          
+      - name: Build DataDistributionManager net5.0 and netcoreapp3.1
+        run: |
+          dotnet build --no-incremental --configuration Release --framework netcoreapp3.1 -o Outputnetcoreapp3.1 DataDistributionManagerNet\DataDistributionManagerNet5.csproj
+          dotnet build --no-incremental --configuration Release --framework net5.0 -o Outputnet5.0 DataDistributionManagerNet\DataDistributionManagerNet5.csproj
 
       - name: Prepare for packaging
         run: |
