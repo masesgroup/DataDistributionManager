@@ -21,13 +21,12 @@ import org.mases.datadistributionmanager.*;
 public class MySmartDataDistributionTopic extends SmartDataDistributionChannel {
     public void OnDataAvailable(String topicName, String key, byte[] buffer) {
         String s = new String(buffer);
- 
         System.out.println(String.format("Topic %s with key %s is saying %s", topicName, key, s));
-
     }
 
     public void OnConditionOrError(String topicName, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode,
             String subSystemReason) {
-
+        System.out.println(String.format("Topic %s with errorCode %s nativeCode %d subSystemReason %s", topicName,
+                (errorCode != null) ? errorCode.name() : "", nativeCode, subSystemReason));
     }
 }

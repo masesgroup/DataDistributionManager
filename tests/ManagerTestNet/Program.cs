@@ -70,11 +70,17 @@ namespace ManagerTestNet
             var str = string.Format("{0:10}", pid);
             buffer = Encoding.UTF8.GetBytes(str);
 
-            DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.RECEIVER;
+            DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.TRANSMITTER;
 
             MySmartDataDistribution dataDistribution = new MySmartDataDistribution();
 
-            var hRes = dataDistribution.Initialize(args[0], str, "KafkaManager");
+            OpenDDSConfiguration conf = new OpenDDSConfiguration();
+            conf.DCPSConfigFile = "dds_tcp_conf.ini";
+            conf.DCPSTransportDebugLevel = 10;
+
+            var hRes = dataDistribution.Initialize(conf);
+
+            // var hRes = dataDistribution.Initialize(args[0], str, "KafkaManager");
 
             if (hRes.Failed)
             {

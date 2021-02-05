@@ -26,9 +26,22 @@ public class DataDistributionManagerJavaTest {
 
 		DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.RECEIVER;
 
+		OpenDDSConfiguration conf = new OpenDDSConfiguration();
+		// set direct values
+		conf.setDCPSConfigFile("dds_tcp_conf.ini");
+		conf.setDCPSTransportDebugLevel(10);
+
+		// set the full command line
+		// conf.setCommandLine("-DCPSConfigFile dds_tcp_conf.ini -DCPSTransportDebugLevel 10");
+
+		String[] confRes = conf.getConfiguration();
+
 		MySmartDataDistribution dataDistribution = new MySmartDataDistribution();
 		String str = "test";
-		HRESULT hRes = dataDistribution.Initialize("OpenDDSManager.conf", str, "Manager");
+		// use the external file
+		HRESULT hRes = dataDistribution.Initialize(conf);
+		// use the external file
+		// HRESULT hRes = dataDistribution.Initialize("OpenDDSManager.conf");
 
 		if (hRes.getFailed()) {
 			System.out.println("Error in configuration.");
@@ -43,8 +56,7 @@ public class DataDistributionManagerJavaTest {
 
 		MySmartDataDistributionTopic mytestTopic;
 		try {
-			mytestTopic = dataDistribution.CeateSmartChannel(MySmartDataDistributionTopic.class, "test",
-					DDM_CHANNEL_DIRECTION.RECEIVER, null);
+			mytestTopic = dataDistribution.CeateSmartChannel(MySmartDataDistributionTopic.class, "test");
 		} catch (Throwable e) {
 			e.printStackTrace();
 			return;
@@ -66,14 +78,14 @@ public class DataDistributionManagerJavaTest {
 					hRes = mytestTopic.WriteOnChannel(null, buffer, false, -1);
 				}
 				if (hRes == HRESULT.S_OK) {
-					str = String.format("{0:10}", counter++);
+					str = String.format("%d", counter++);
 					buffer = str.getBytes(Charset.forName("ASCII"));
 					if ((counter % THRESHOLD) == 0)
-						System.out.println(String.format("SendData Reached {0}", counter));
+						System.out.println(String.format("SendData Reached %d", counter));
 				}
 				Thread.sleep(1000);
 			}
-		} catch (InterruptedException e) {
+		} catch ( InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
