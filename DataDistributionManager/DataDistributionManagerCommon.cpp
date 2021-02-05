@@ -33,7 +33,7 @@ DataDistributionCommon::~DataDistributionCommon()
 
 }
 
-HRESULT DataDistributionCommon::ConvertConfFile(const char* conf_file,  const char*** arrayParams, int* len)
+HRESULT DataDistributionCommon::ConvertConfFile(const char* conf_file, const char*** arrayParams, int* len)
 {
 	return DataDistributionManagerImpl::ConvertConfFile(conf_file, arrayParams, len);
 }
@@ -82,28 +82,28 @@ void DataDistributionCommon::Log(const DDM_LOG_LEVEL level, const char* sourceNa
 	if (m_pDataDistributionManagerCallbacks) m_pDataDistributionManagerCallbacks->OnLogging(level, sourceName, function, buffer);
 }
 
-size_t DataDistributionCommon::GetMaxMessageSize() 
-{ 
-	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "GetMaxMessageSize", "Not Implemented in subclass"); 
-	return 0; 
+size_t DataDistributionCommon::GetMaxMessageSize()
+{
+	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "GetMaxMessageSize", "Not Implemented in subclass");
+	return 0;
 }
 
-HANDLE DataDistributionCommon::CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction, const char* arrayParams[], int len) 
+HANDLE DataDistributionCommon::CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction, const char* arrayParams[], int len)
 {
 	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "CreateChannel", "Not Implemented in subclass");
 	return NULL;
 }
 
-HRESULT DataDistributionCommon::StartChannel(HANDLE channelHandle, DWORD dwMilliseconds) 
-{ 
-	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "StartChannel", "Not Implemented in subclass"); 
-	return TRUE; 
+HRESULT DataDistributionCommon::StartChannel(HANDLE channelHandle, DWORD dwMilliseconds)
+{
+	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "StartChannel", "Not Implemented in subclass");
+	return TRUE;
 }
 
-HRESULT DataDistributionCommon::StopChannel(HANDLE channelHandle, DWORD dwMilliseconds) 
-{ 
+HRESULT DataDistributionCommon::StopChannel(HANDLE channelHandle, DWORD dwMilliseconds)
+{
 	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "StopChannel", "Not Implemented in subclass");
-	return S_OK; 
+	return S_OK;
 }
 
 void DataDistributionCommon::SetParameter(HANDLE channelHandle, const char* paramName, const char* paramValue)
@@ -132,21 +132,21 @@ HRESULT DataDistributionCommon::Unlock(HANDLE channelHandle) { Log(DDM_LOG_LEVEL
 HRESULT DataDistributionCommon::SeekChannel(HANDLE channelHandle, int64_t position) { Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "SeekChannel", "Not Implemented in subclass"); return E_FAIL; }
 HRESULT DataDistributionCommon::DeleteChannel(HANDLE channelHandle) { Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "DeleteChannel", "Not Implemented in subclass"); return E_FAIL; }
 HRESULT DataDistributionCommon::WriteOnChannel(HANDLE channelHandle, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll, const int64_t timestamp)
-{ 
+{
 	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "WriteOnChannel", "Not Implemented in subclass");
-	return E_FAIL; 
+	return E_FAIL;
 }
 
 HRESULT DataDistributionCommon::ReadFromChannel(HANDLE channelHandle, int64_t offset, size_t *dataLen, void **param)
-{ 
-	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "ReadFromChannel", "Not Implemented in subclass"); 
-	return FALSE; 
+{
+	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "ReadFromChannel", "Not Implemented in subclass");
+	return FALSE;
 }
 
 HRESULT DataDistributionCommon::ChangeChannelDirection(HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction)
-{ 
+{
 	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "ChangeChannelDirection", "Not Implemented in subclass");
-	return FALSE; 
+	return FALSE;
 }
 
 HRESULT DataDistributionCommon::Start(DWORD dwMilliseconds)
@@ -198,6 +198,12 @@ void DataDistributionCommon::SetMaxMessageSize(size_t maxMessageSize)
 	m_MaxMessageSize = maxMessageSize;
 }
 
+std::string DataDistributionCommon::GetConfigFile() { return m_confFile; }
+std::string DataDistributionCommon::GetChannelTrailer() { return (m_ChannelTrailer != NULL) ? m_ChannelTrailer : ""; }
+std::string DataDistributionCommon::GetServerName() { return (m_ServerName != NULL) ? m_ServerName : ""; }
+const char** DataDistributionCommon::GetArrayParams() { return m_arrayParams; }
+int DataDistributionCommon::GetArrayParamsLen() { return m_arrayParamsLen; }
+
 ChannelConfiguration::ChannelConfiguration(const char* channelName, DDM_CHANNEL_DIRECTION direction, DataDistributionCommon* mainManager, IDataDistributionChannelCallback* Cb)
 {
 	m_pChannelName = _strdup(channelName);
@@ -242,7 +248,7 @@ void ChannelConfiguration::SetDirection(DDM_CHANNEL_DIRECTION direction)
 	LeaveCriticalSection(&m_csFlags);
 }
 
-void ChannelConfiguration::OnDataAvailable(const char* key, size_t keyLen,  void* buffer, size_t len)
+void ChannelConfiguration::OnDataAvailable(const char* key, size_t keyLen, void* buffer, size_t len)
 {
 	OnDataAvailable(this, key, keyLen, buffer, len);
 }

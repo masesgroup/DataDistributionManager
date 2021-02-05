@@ -176,6 +176,14 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
         IDataDistribution_ptr = NativeInterface.DataDistribution_create();
     }
 
+    public HRESULT Initialize(String conf_file) throws IllegalArgumentException {
+        return Initialize(conf_file, null, null);
+    }
+
+    public HRESULT Initialize(String conf_file, String topicTrailer) throws IllegalArgumentException {
+        return Initialize(conf_file, null, topicTrailer);
+    }
+
     public HRESULT Initialize(String conf_file, String szMyAddress, String topicTrailer) {
         m_DataDistributionCallbackLow = NativeCallbackManager.RegisterCallback((IDataDistributionCallbackLow) this);
 
@@ -191,9 +199,25 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
         return new HRESULT(m_InitializeResult);
     }
 
+    public HRESULT Initialize(IConfiguration configuration) throws IllegalArgumentException {
+        return Initialize(configuration.getConfiguration(), null, null);
+    }
+
+    public HRESULT Initialize(IConfiguration configuration, String topicTrailer) throws IllegalArgumentException {
+        return Initialize(configuration.getConfiguration(), null, topicTrailer);
+    }
+
     public HRESULT Initialize(IConfiguration configuration, String szMyAddress, String topicTrailer)
             throws IllegalArgumentException {
         return Initialize(configuration.getConfiguration(), szMyAddress, topicTrailer);
+    }
+
+    public HRESULT Initialize(String[] arrayParams) throws IllegalArgumentException {
+        return Initialize(arrayParams, null, null);
+    }
+
+    public HRESULT Initialize(String[] arrayParams, String topicTrailer) throws IllegalArgumentException {
+        return Initialize(arrayParams, null, topicTrailer);
     }
 
     public HRESULT Initialize(String[] arrayParams, String szMyAddress, String topicTrailer) {

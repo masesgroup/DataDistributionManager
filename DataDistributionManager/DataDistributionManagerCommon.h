@@ -87,11 +87,11 @@ protected:
 	std::string CheckConfigurationParameter(std::string key, std::string value);
 	void SetSubSystemStarted(BOOL started);
 	void SetMaxMessageSize(size_t maxMessageSize);
-	std::string GetConfigFile() { return m_confFile; }
-	std::string GetChannelTrailer() { return m_ChannelTrailer; }
-	std::string GetServerName() { return m_ServerName; }
-	const char** GetArrayParams() { return m_arrayParams; }
-	int GetArrayParamsLen() { return m_arrayParamsLen; }
+	std::string GetConfigFile();
+	std::string GetChannelTrailer();
+	std::string GetServerName();
+	const char** GetArrayParams();
+	int GetArrayParamsLen();
 private:
 	const char** m_arrayParams;
 	int m_arrayParamsLen;

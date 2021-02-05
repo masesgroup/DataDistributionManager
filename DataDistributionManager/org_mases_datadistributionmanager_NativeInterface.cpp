@@ -500,26 +500,35 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 	const char* pjStr;
 	jboolean isCopy = JNI_FALSE;
 
-	const char* conf_file;
-	const char* szMyAddress;
-	const char* ChannelTrailer;
+	const char* conf_file = NULL;
+	const char* szMyAddress = NULL;
+	const char* channelTrailer = NULL;
 
-	pjStr = env->GetStringUTFChars(jconf_file, &isCopy);
-	conf_file = (pjStr != NULL) ? _strdup(pjStr) : NULL;
-	env->ReleaseStringUTFChars(jconf_file, pjStr);
+	if (jconf_file != NULL)
+	{
+		pjStr = env->GetStringUTFChars(jconf_file, &isCopy);
+		conf_file = (pjStr != NULL) ? _strdup(pjStr) : NULL;
+		env->ReleaseStringUTFChars(jconf_file, pjStr);
+	}
 
-	pjStr = env->GetStringUTFChars(jszMyAddress, &isCopy);
-	szMyAddress = (pjStr != NULL) ? _strdup(pjStr) : NULL;
-	env->ReleaseStringUTFChars(jszMyAddress, pjStr);
+	if (jszMyAddress != NULL)
+	{
+		pjStr = env->GetStringUTFChars(jszMyAddress, &isCopy);
+		szMyAddress = (pjStr != NULL) ? _strdup(pjStr) : NULL;
+		env->ReleaseStringUTFChars(jszMyAddress, pjStr);
+	}
 
-	pjStr = env->GetStringUTFChars(jChannelTrailer, &isCopy);
-	ChannelTrailer = (pjStr != NULL) ? _strdup(pjStr) : NULL;
-	env->ReleaseStringUTFChars(jChannelTrailer, pjStr);
+	if (jChannelTrailer != NULL)
+	{
+		pjStr = env->GetStringUTFChars(jChannelTrailer, &isCopy);
+		channelTrailer = (pjStr != NULL) ? _strdup(pjStr) : NULL;
+		env->ReleaseStringUTFChars(jChannelTrailer, pjStr);
+	}
 
 	HRESULT result = pIDataDistribution->Initialize(pDataDistributionCallbackContainer->pcb,
 		(conf_file != NULL) ? _strdup(conf_file) : NULL,
 		(szMyAddress != NULL) ? _strdup(szMyAddress) : NULL,
-		(ChannelTrailer != NULL) ? _strdup(ChannelTrailer) : NULL);
+		(channelTrailer != NULL) ? _strdup(channelTrailer) : NULL);
 
 	return (jlong)result;
 }
@@ -537,8 +546,8 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 
 	const char* pjStr;
 	jboolean isCopy = JNI_FALSE;
-	const char* szMyAddress;
-	const char* ChannelTrailer;
+	const char* szMyAddress = NULL;
+	const char* channelTrailer = NULL;
 
 	int size = env->GetArrayLength(jarrayParams);
 
@@ -555,17 +564,23 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 		env->DeleteLocalRef(string);
 	}
 
-	pjStr = env->GetStringUTFChars(jszMyAddress, &isCopy);
-	szMyAddress = (pjStr != NULL) ? _strdup(pjStr) : NULL;
-	env->ReleaseStringUTFChars(jszMyAddress, pjStr);
+	if (jszMyAddress != NULL)
+	{
+		pjStr = env->GetStringUTFChars(jszMyAddress, &isCopy);
+		szMyAddress = (pjStr != NULL) ? _strdup(pjStr) : NULL;
+		env->ReleaseStringUTFChars(jszMyAddress, pjStr);
+	}
 
-	pjStr = env->GetStringUTFChars(jChannelTrailer, &isCopy);
-	ChannelTrailer = (pjStr != NULL) ? _strdup(pjStr) : NULL;
-	env->ReleaseStringUTFChars(jChannelTrailer, pjStr);
+	if (jChannelTrailer != NULL)
+	{
+		pjStr = env->GetStringUTFChars(jChannelTrailer, &isCopy);
+		channelTrailer = (pjStr != NULL) ? _strdup(pjStr) : NULL;
+		env->ReleaseStringUTFChars(jChannelTrailer, pjStr);
+	}
 
 	HRESULT result = pIDataDistribution->Initialize(pDataDistributionCallbackContainer->pcb, array, size,
 		(szMyAddress != NULL) ? _strdup(szMyAddress) : NULL,
-		(ChannelTrailer != NULL) ? _strdup(ChannelTrailer) : NULL);
+		(channelTrailer != NULL) ? _strdup(channelTrailer) : NULL);
 
 	return (jlong)result;
 }
