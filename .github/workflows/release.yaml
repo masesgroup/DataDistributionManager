@@ -2,7 +2,7 @@
 
 name: CI_RELEASE
 
-# Controls when the action will run. Triggers the workflow on push or pull request
+# Controls when the action will run. Triggers the workflow on release published or release edited request
 # events but only for the master branch
 on:
   release:
@@ -10,13 +10,11 @@ on:
       - published
       - edited
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  # This workflow contains a single job called "build_release"
   build_release:
     # The type of runner that the job will run on
     runs-on: windows-2019
-  
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a set of commands using the runners shell
@@ -24,6 +22,7 @@ jobs:
       - name: Support long paths
         run: git config --system core.longpaths true
       
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it                                                                                  
       - uses: actions/checkout@v2
         with:
           submodules: 'true'
@@ -72,15 +71,6 @@ jobs:
           cd third_party\OpenDDS
           configure
 
-      - name: Generate OpenDDS projects
-        shell: cmd
-        run: |
-          call .\third_party\OpenDDS\setenv.cmd
-          cd DataDistributionManagerOpenDDS
-          perl %ACE_ROOT%\bin\generate_export_file.pl DataDistributionSchemaCommon > DataDistributionSchemaCommon_Export.h
-          perl %ACE_ROOT%\bin\mwc.pl -type vs2019 DataDistributionManagerOpenDDS.mwc
-          cd..
-
       - name: Build OpenDDS x64
         shell: cmd
         run: |
@@ -124,6 +114,15 @@ jobs:
           xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib32\
           xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin32\
           xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb32\
+
+      - name: Generate OpenDDS projects
+        shell: cmd
+        run: |
+          call .\third_party\OpenDDS\setenv.cmd
+          cd DataDistributionManagerOpenDDS
+          perl %ACE_ROOT%\bin\generate_export_file.pl DataDistributionSchemaCommon > DataDistributionSchemaCommon_Export.h
+          perl %ACE_ROOT%\bin\mwc.pl -type vs2019 DataDistributionManagerOpenDDS.mwc
+          cd..
 
       - uses: nuget/setup-nuget@v1
         with:
