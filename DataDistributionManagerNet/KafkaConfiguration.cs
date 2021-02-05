@@ -32,8 +32,11 @@ namespace MASES.DataDistributionManager.Bindings
         const string ClientIdKey = "datadistributionmanager.kafka.client.id";
         const string GroupIdKey = "datadistributionmanager.kafka.group.id";
 
-        KafkaConfiguration() 
-            : base("kafka", "DataDistributionManagerKafka.dll")
+        /// <summary>
+        /// Initialize a <see cref="KafkaConfiguration"/>
+        /// </summary>
+        public KafkaConfiguration()
+             : base("kafka", "DataDistributionManagerKafka.dll")
         {
         }
 

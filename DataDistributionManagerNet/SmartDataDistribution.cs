@@ -189,19 +189,7 @@ namespace MASES.DataDistributionManager.Bindings
             }
             return null;
         }
-        /// <summary>
-        /// Creates a channel
-        /// </summary>
-        /// <typeparam name="T">A <see cref="Type"/> which inherits <see cref="SmartDataDistributionChannel"/></typeparam>
-        /// <param name="channelName">The channel name</param>
-        /// <param name="direction">The <see cref="DDM_CHANNEL_DIRECTION"/>. Default is <see cref="DDM_CHANNEL_DIRECTION.ALL"/></param>
-        /// <param name="configuration">The configuration coming from an instance of <see cref="IConfiguration"/> </param>
-        /// <returns>An allocated instance of <typeparamref name="T"/></returns>
-        public T CreateSmartChannel<T>(string channelName, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.ALL, IConfiguration configuration = null)
-            where T : SmartDataDistributionChannel
-        {
-            return CreateSmartChannel<T>(channelName, direction, (configuration != null) ? configuration.Configuration : null);
-        }
+
         /// <summary>
         /// Creates a channel
         /// </summary>
@@ -223,6 +211,20 @@ namespace MASES.DataDistributionManager.Bindings
             smartChannelReference.channelHandle = handle;
 
             return smartChannelReference;
+        }
+
+        /// <summary>
+        /// Creates a channel with <see cref="IConfiguration"/>
+        /// </summary>
+        /// <typeparam name="T">A <see cref="Type"/> which inherits <see cref="SmartDataDistributionChannel"/></typeparam>
+        /// <param name="channelName">The channel name</param>
+        /// <param name="direction">The <see cref="DDM_CHANNEL_DIRECTION"/>. Default is <see cref="DDM_CHANNEL_DIRECTION.ALL"/></param>
+        /// <param name="configuration">The configuration coming from an instance of <see cref="IConfiguration"/></param>
+        /// <returns>An allocated instance of <typeparamref name="T"/></returns>
+        public T CreateSmartChannel2<T>(string channelName, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.ALL, IConfiguration configuration = null)
+            where T : SmartDataDistributionChannel
+        {
+            return CreateSmartChannel<T>(channelName, direction, (configuration != null) ? configuration.Configuration : null);
         }
 
         #region IDataDistributionCallback

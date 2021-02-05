@@ -33,7 +33,10 @@ namespace MASES.DataDistributionManager.Bindings
         const string DCPSConfigFileKey = "DCPSConfigFile";
         const string DCPSTransportDebugLevelKey = "DCPSTransportDebugLevel";
 
-        OpenDDSConfiguration()
+        /// <summary>
+        /// Initialize a <see cref="OpenDDSConfiguration"/>
+        /// </summary>
+        public OpenDDSConfiguration()
             : base("opendds", "DataDistributionManagerOpenDDS.dll")
         {
         }
