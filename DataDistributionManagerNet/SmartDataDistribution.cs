@@ -23,11 +23,13 @@ using System.Runtime.InteropServices;
 
 namespace MASES.DataDistributionManager.Bindings
 {
+    #region ClusterHealthElement class
     /// <summary>
     /// Container of cluster instance information
     /// </summary>
     public class ClusterHealthElement
     {
+
         internal ClusterHealthElement(ClusterHealthElementStruct s)
         {
             this.Status = s.Status;
@@ -47,7 +49,9 @@ namespace MASES.DataDistributionManager.Bindings
         /// </summary>
         public Int64 LastContactTime { get; private set; }
     };
+    #endregion
 
+    #region SmartDataDistribution class
     /// <summary>
     /// Main class to activate Data Distribution Manager
     /// </summary>
@@ -84,6 +88,17 @@ namespace MASES.DataDistributionManager.Bindings
 
             if (result.Succeeded) IDataDistributionSubsystemManager_ptr = DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistribution_GetSubsystemManager>().Invoke(IDataDistribution_ptr);
             return result;
+        }
+        /// <summary>
+        /// Initialize the instance using a configuration instance
+        /// </summary>
+        /// <param name="configuration">The configuration coming from an instance of <see cref="IConfiguration"/> </param>
+        /// <param name="szMyAddress">The name of the server hosting the process</param>
+        /// <param name="channelTrailer">Trailer string to append on channel names</param>
+        /// <returns><see cref="HRESULT"/></returns>
+        public HRESULT Initialize(IConfiguration configuration, string szMyAddress = null, string channelTrailer = null)
+        {
+            return Initialize(configuration.Configuration, szMyAddress, channelTrailer);
         }
         /// <summary>
         /// Initialize the instance using a set of key=value pairs
@@ -173,6 +188,19 @@ namespace MASES.DataDistributionManager.Bindings
                 return Marshal.PtrToStringAnsi(ptr);
             }
             return null;
+        }
+        /// <summary>
+        /// Creates a channel
+        /// </summary>
+        /// <typeparam name="T">A <see cref="Type"/> which inherits <see cref="SmartDataDistributionChannel"/></typeparam>
+        /// <param name="channelName">The channel name</param>
+        /// <param name="direction">The <see cref="DDM_CHANNEL_DIRECTION"/>. Default is <see cref="DDM_CHANNEL_DIRECTION.ALL"/></param>
+        /// <param name="configuration">The configuration coming from an instance of <see cref="IConfiguration"/> </param>
+        /// <returns>An allocated instance of <typeparamref name="T"/></returns>
+        public T CreateSmartChannel<T>(string channelName, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.ALL, IConfiguration configuration = null)
+            where T : SmartDataDistributionChannel
+        {
+            return CreateSmartChannel<T>(channelName, direction, (configuration != null) ? configuration.Configuration : null);
         }
         /// <summary>
         /// Creates a channel
@@ -459,9 +487,12 @@ namespace MASES.DataDistributionManager.Bindings
 
         #endregion
 
+        #region Private members
         DataDistributionCallbackLow m_DataDistributionCallbackLow;
         DataDistributionMastershipCallbackLow m_DataDistributionMastershipCallbackLow;
         IntPtr IDataDistribution_ptr;
         IntPtr IDataDistributionSubsystemManager_ptr;
+        #endregion
     }
+    #endregion
 }

@@ -50,10 +50,14 @@
     <Compile Include="..\ProductInformation\ComponentVersion.cs">
       <Link>Properties\ComponentVersion.c</Link>
     </Compile>
+    <Compile Include="CommonConfiguration.cs" />
+    <Compile Include="IConfiguration.cs" />
     <Compile Include="Interop\ClusterHealthElement.cs" />
     <Compile Include="Interop\HRESULTType.cs" />
     <Compile Include="Interop\UnderlyingEvent.cs" />
     <Compile Include="ISmartDataDistributionMastership.cs" />
+    <Compile Include="KafkaConfiguration.cs" />
+    <Compile Include="OpenDDSConfiguration.cs" />
     <Compile Include="SmartDataDistribution.cs" />
     <Compile Include="SmartDataDistributionChannel.cs" />
     <Compile Include="Interop\Bindings.cs" />

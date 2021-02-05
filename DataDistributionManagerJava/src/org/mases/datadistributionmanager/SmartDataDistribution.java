@@ -191,6 +191,11 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
         return new HRESULT(m_InitializeResult);
     }
 
+    public HRESULT Initialize(IConfiguration configuration, String szMyAddress, String topicTrailer)
+            throws IllegalArgumentException {
+        return Initialize(configuration.getConfiguration(), szMyAddress, topicTrailer);
+    }
+
     public HRESULT Initialize(String[] arrayParams, String szMyAddress, String topicTrailer) {
         m_DataDistributionCallbackLow = NativeCallbackManager.RegisterCallback((IDataDistributionCallbackLow) this);
 
@@ -269,10 +274,25 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
         return "";
     }
 
+    public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String topicName)
+            throws Throwable {
+        return CeateSmartChannel(clazz, topicName, DDM_CHANNEL_DIRECTION.ALL, (IConfiguration) null);
+    }
+
+    public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String topicName,
+            DDM_CHANNEL_DIRECTION direction) throws Throwable {
+        return CeateSmartChannel(clazz, topicName, direction, (IConfiguration) null);
+    }
+
+    public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String topicName,
+            DDM_CHANNEL_DIRECTION direction, IConfiguration configuration) throws Throwable {
+        return CeateSmartChannel(clazz, topicName, direction,
+                (configuration == null) ? null : configuration.getConfiguration());
+    }
+
     @SuppressWarnings("unchecked")
     public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String topicName,
             DDM_CHANNEL_DIRECTION direction, String[] arrayParams) throws Throwable {
-
         if (IDataDistributionSubsystemManager_ptr == 0)
             return null;
 
