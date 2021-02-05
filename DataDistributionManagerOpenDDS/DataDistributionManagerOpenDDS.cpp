@@ -797,6 +797,10 @@ DWORD __stdcall DataDistributionManagerOpenDDS::consumerHandler(void * argh)
 		{
 		case DDS::RETCODE_OK:
 		{
+			if (timeoutEmitted)
+			{
+				pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_END, 0, "End timeout receiving packets.");
+			}
 			timeoutEmitted = FALSE;
 			timeStart.ResetTime();
 			DDS::ReturnCode_t retCodeInner;
@@ -829,7 +833,7 @@ DWORD __stdcall DataDistributionManagerOpenDDS::consumerHandler(void * argh)
 
 			if (!timeoutEmitted && duration > pChannelConfiguration->m_MessageReceiveTimeout) // no message within m_MessageReceiveTimeout
 			{
-				pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT, 0, "Elapsed timeout receiving packets.");
+				pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_BEGIN, 0, "Elapsed timeout receiving packets.");
 				timeoutEmitted = TRUE;
 			}
 		}

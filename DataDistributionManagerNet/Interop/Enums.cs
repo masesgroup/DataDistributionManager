@@ -143,7 +143,11 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         /// <summary>
         /// Timeout elapsed waiting for messages from the channel
         /// </summary>
-        DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT
+        DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_BEGIN,
+        /// <summary>
+        /// End timeout condition waiting for messages from the channel
+        /// </summary>
+        DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_END
     };
     /// <summary>
     /// State of the instance

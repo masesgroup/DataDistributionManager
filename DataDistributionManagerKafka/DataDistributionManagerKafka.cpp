@@ -1139,7 +1139,7 @@ DWORD __stdcall DataDistributionManagerKafka::consumerHandler(void * argh)
 
 			if (!timeoutEmitted && duration > pTopicConfiguration->m_MessageReceiveTimeout) // no message within m_MessageReceiveTimeout
 			{
-				pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT, 0, "Elapsed timeout receiving packets.");
+				pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_BEGIN, 0, "Elapsed timeout receiving packets.");
 				timeoutEmitted = TRUE;
 			}
 		}
@@ -1150,6 +1150,10 @@ DWORD __stdcall DataDistributionManagerKafka::consumerHandler(void * argh)
 #endif
 		case RdKafka::ErrorCode::ERR_NO_ERROR:
 		{
+			if (timeoutEmitted)
+			{
+				pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_END, 0, "End timeout receiving packets.");
+			}
 			timeoutEmitted = FALSE;
 			timeStart.ResetTime();
 
