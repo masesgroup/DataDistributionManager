@@ -30,6 +30,7 @@ namespace MASES.DataDistributionManager.Bindings
         Dictionary<string, string> commandLineKeyValuePair = new Dictionary<string, string>();
 
         const string CommandLineKey = "datadistributionmanager.opendds.cmdlineargs";
+        const string DomainIdKey = "datadistributionmanager.opendds.domain_id";
         const string DCPSConfigFileKey = "DCPSConfigFile";
         const string DCPSTransportDebugLevelKey = "DCPSTransportDebugLevel";
 
@@ -90,10 +91,26 @@ namespace MASES.DataDistributionManager.Bindings
             set
             {
                 if (value == null) keyValuePair.Remove(CommandLineKey);
-                keyValuePair[CommandLineKey] = value;
+                else keyValuePair[CommandLineKey] = value;
             }
         }
 
+        /// <summary>
+        /// The domain id parameter to initialize OpenDDS
+        /// </summary>
+        public uint DomainId
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(DomainIdKey, out value);
+                return uint.Parse(value);
+            }
+            set
+            {
+                keyValuePair[DomainIdKey] = value.ToString();
+            }
+        }
 
         /// <see cref="CommonConfiguration.CheckConfiguration"/>
         protected override void CheckConfiguration()

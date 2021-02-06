@@ -25,6 +25,7 @@ public class OpenDDSConfiguration extends CommonConfiguration {
     HashMap<String, String> commandLineKeyValuePair = new HashMap<String, String>();
 
     final String CommandLineKey = "datadistributionmanager.opendds.cmdlineargs";
+    final String DomainIdKey = "datadistributionmanager.opendds.domain_id";
     final String DCPSConfigFileKey = "DCPSConfigFile";
     final String DCPSTransportDebugLevelKey = "DCPSTransportDebugLevel";
 
@@ -76,23 +77,39 @@ public class OpenDDSConfiguration extends CommonConfiguration {
     /// ../../Configuration/dds_tcp_conf.ini -DCPSTransportDebugLevel 10)
     /// </summary>
     public void setCommandLine(String commandline) {
-        keyValuePair.put(CommandLineKey, commandline);
+        if (commandline == null)
+            keyValuePair.remove(CommandLineKey);
+        else
+            keyValuePair.put(CommandLineKey, commandline);
+    }
+
+    /// <summary>
+    /// The domain id parameters to initialize OpenDDS
+    /// </summary>
+    public String getDomainId() {
+        String value = keyValuePair.get(DomainIdKey);
+        return (value == null) ? "" : value;
+    }
+
+    /// <summary>
+    /// The domain id parameters to initialize OpenDDS
+    /// </summary>
+    public void setDomainId(Integer value) {
+        keyValuePair.put(DomainIdKey, value.toString());
     }
 
     /// <see cref="CommonConfiguration.CheckConfiguration"/>
     @Override
     protected void CheckConfiguration() throws IllegalArgumentException {
         super.CheckConfiguration();
-        if (!keyValuePair.containsKey(CommandLineKey)  && commandLineKeyValuePair.size() == 0) {
+        if (!keyValuePair.containsKey(CommandLineKey) && commandLineKeyValuePair.size() == 0) {
             throw new IllegalArgumentException("Missing CommandLine");
         }
     }
 
-    String commandLineBuilder()
-    {
+    String commandLineBuilder() {
         StringBuilder sb = new StringBuilder();
-        for (String key: commandLineKeyValuePair.keySet())
-        {
+        for (String key : commandLineKeyValuePair.keySet()) {
             sb.append(String.format("-%s %s ", key, commandLineKeyValuePair.get(key)));
         }
         return String.format("%s=%s", CommandLineKey, sb.toString());
@@ -101,8 +118,7 @@ public class OpenDDSConfiguration extends CommonConfiguration {
     @Override
     public String[] getConfiguration() throws IllegalArgumentException {
         CheckConfiguration();
-        if (!keyValuePair.containsKey(CommandLineKey))
-        {
+        if (!keyValuePair.containsKey(CommandLineKey)) {
             ArrayList<String> lst = new ArrayList<String>();
             for (String val : super.getConfiguration()) {
                 lst.add(val);
@@ -110,7 +126,7 @@ public class OpenDDSConfiguration extends CommonConfiguration {
             lst.add(commandLineBuilder());
             String[] array = new String[lst.size()];
             return lst.toArray(array);
-        }
-        else return super.getConfiguration();
+        } else
+            return super.getConfiguration();
     }
 }
