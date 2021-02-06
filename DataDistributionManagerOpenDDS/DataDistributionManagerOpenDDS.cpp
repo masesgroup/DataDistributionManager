@@ -91,7 +91,8 @@ DDM_UNDERLYING_ERROR_CONDITION DataDistributionManagerOpenDDS::OpenDDSErrorMappe
 
 HRESULT DataDistributionManagerOpenDDS::conf_init(pChannelConfigurationOpenDDS configuration, const char* arrayParams[], int len)
 {
-	return 0;
+	int result = read_config_file(configuration, arrayParams, len);
+	if (result != NO_ERROR) return result;
 }
 
 HRESULT DataDistributionManagerOpenDDS::read_config_file(pChannelConfigurationOpenDDS configuration, const char* arrayParams[], int len)
