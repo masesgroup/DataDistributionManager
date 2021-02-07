@@ -18,6 +18,14 @@
 
 package org.mases.datadistributionmanager;
 
+/**
+ * Interface to retrieve configuration parameters
+ */
 public interface IConfiguration {
+    /**
+     * The configuration parameters to use written as key=value
+     * 
+     * @return an array of {@link String} with key=value pairs
+     */
     String[] getConfiguration() throws IllegalArgumentException;
 }

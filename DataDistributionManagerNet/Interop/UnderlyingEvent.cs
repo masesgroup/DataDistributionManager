@@ -22,7 +22,7 @@ using System.Runtime.InteropServices;
 namespace MASES.DataDistributionManager.Bindings.Interop
 {
     /// <summary>
-    /// UnderlyingEvent struct for representing the information from low system.
+    /// UnderlyingEvent struct representing the information from low system.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     internal struct UnderlyingEvent

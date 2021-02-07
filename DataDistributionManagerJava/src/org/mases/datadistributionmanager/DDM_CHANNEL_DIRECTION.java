@@ -20,22 +20,34 @@ package org.mases.datadistributionmanager;
 
 import java.util.*;
 
+/**
+ * Direction of the channel
+ */
 public enum DDM_CHANNEL_DIRECTION {
+    /**
+     * Transmitter
+     */
     TRANSMITTER("TRANSMITTER", 1),
+    /**
+     * Receiver
+     */
     RECEIVER("RECEIVER", 2),
     // ...
+    /**
+     * Both
+     */
     ALL("ALL", 3);
 
     private static final Map<String, DDM_CHANNEL_DIRECTION> BY_LABEL = new HashMap<>();
     private static final Map<Integer, DDM_CHANNEL_DIRECTION> BY_ATOMIC_NUMBER = new HashMap<>();
 
     static {
-        for (DDM_CHANNEL_DIRECTION e: values()) {
+        for (DDM_CHANNEL_DIRECTION e : values()) {
             BY_LABEL.put(e.label, e);
             BY_ATOMIC_NUMBER.put(e.atomicNumber, e);
         }
     }
-    
+
     public final String label;
     public final int atomicNumber;
 
@@ -44,8 +56,8 @@ public enum DDM_CHANNEL_DIRECTION {
         this.atomicNumber = atomicNumber;
     }
 
-   // ... fields, constructor, methods
- 
+    // ... fields, constructor, methods
+
     public static DDM_CHANNEL_DIRECTION valueOfLabel(String label) {
         return BY_LABEL.get(label);
     }

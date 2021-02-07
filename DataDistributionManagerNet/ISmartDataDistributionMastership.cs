@@ -53,11 +53,12 @@ namespace MASES.DataDistributionManager.Bindings
         /// <summary>
         /// Check if this is the next primary server
         /// </summary>
-        /// <returns></returns>
+        /// <returns>True if this server is the next primary</returns>
         bool RequestIAmNextPrimary();
         /// <summary>
         /// Verify if this server will be elected as next primary
         /// </summary>
+        /// <value>True if this server is the next primary</value>
         bool IamNextPrimary { get; }
         /// <summary>
         /// State of the cluster

@@ -24,7 +24,7 @@ namespace MASES.DataDistributionManager.Bindings
     /// <summary>
     /// The general configuration class
     /// </summary>
-    public class CommonConfiguration : IConfiguration
+    public abstract class CommonConfiguration : IConfiguration
     {
         const string ProtocolKey = "datadistributionmanager.common.protocol";
         const string ProtocolLibraryKey = "datadistributionmanager.common.protolib";
@@ -42,12 +42,8 @@ namespace MASES.DataDistributionManager.Bindings
         /// The list of key/value pairs
         /// </summary>
         protected Dictionary<string, string> keyValuePair = new Dictionary<string, string>();
-        /// <summary>
-        /// Initialize a new <see cref="CommonConfiguration"/> with <paramref name="protocol"/> and <paramref name="protolib"/>
-        /// </summary>
-        /// <param name="protocol">The protocol to use</param>
-        /// <param name="protolib">Protocol library</param>
-        public CommonConfiguration(string protocol, string protolib)
+
+        internal CommonConfiguration(string protocol, string protolib)
         {
             Protocol = protocol;
             ProtocolLibrary = protolib;
@@ -224,7 +220,7 @@ namespace MASES.DataDistributionManager.Bindings
         }
 
         /// <summary>
-        /// The timeout on channel message produce
+        /// True to commit message in sync
         /// </summary>
         public bool CommitSync
         {

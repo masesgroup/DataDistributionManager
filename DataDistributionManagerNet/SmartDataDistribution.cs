@@ -29,7 +29,6 @@ namespace MASES.DataDistributionManager.Bindings
     /// </summary>
     public class ClusterHealthElement
     {
-
         internal ClusterHealthElement(ClusterHealthElementStruct s)
         {
             this.Status = s.Status;
@@ -138,56 +137,65 @@ namespace MASES.DataDistributionManager.Bindings
         /// <summary>
         /// Starts the manager
         /// </summary>
-        /// <param name="dwMilliseconds">Timeout in ms</param>
+        /// <param name="timeout">Timeout in ms</param>
         /// <returns><see cref="HRESULT"/></returns>
-        public HRESULT Start(uint dwMilliseconds)
+        public HRESULT Start(uint timeout)
         {
-            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_Start>().Invoke(IDataDistributionSubsystemManager_ptr, dwMilliseconds);
+            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_Start>().Invoke(IDataDistributionSubsystemManager_ptr, timeout);
         }
         /// <summary>
         /// Stops the manager
         /// </summary>
-        /// <param name="dwMilliseconds">Timeout in ms</param>
+        /// <param name="timeout">Timeout in ms</param>
         /// <returns><see cref="HRESULT"/></returns>
-        public HRESULT Stop(uint dwMilliseconds)
+        public HRESULT Stop(uint timeout)
         {
-            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_Stop>().Invoke(IDataDistributionSubsystemManager_ptr, dwMilliseconds);
+            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_Stop>().Invoke(IDataDistributionSubsystemManager_ptr, timeout);
         }
         /// <summary>
         /// Return the protocol in use
         /// </summary>
-        public string GetProtocol()
+        public string Protocol
         {
-            IntPtr ptr = DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistribution_GetProtocol>().Invoke(IDataDistribution_ptr);
-            if (ptr != IntPtr.Zero)
+            get
             {
-                return Marshal.PtrToStringAnsi(ptr);
+                IntPtr ptr = DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistribution_GetProtocol>().Invoke(IDataDistribution_ptr);
+                if (ptr != IntPtr.Zero)
+                {
+                    return Marshal.PtrToStringAnsi(ptr);
+                }
+                return null;
             }
-            return null;
         }
         /// <summary>
         /// Return the protocol library in use
         /// </summary>
-        public string GetProtocolLib()
+        public string ProtocolLib
         {
-            IntPtr ptr = DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistribution_GetProtocolLib>().Invoke(IDataDistribution_ptr);
-            if (ptr != IntPtr.Zero)
+            get
             {
-                return Marshal.PtrToStringAnsi(ptr);
+                IntPtr ptr = DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistribution_GetProtocolLib>().Invoke(IDataDistribution_ptr);
+                if (ptr != IntPtr.Zero)
+                {
+                    return Marshal.PtrToStringAnsi(ptr);
+                }
+                return null;
             }
-            return null;
         }
         /// <summary>
         /// Return the mastership library in use
         /// </summary>
-        public string GetMastershipLib()
+        public string MastershipLib
         {
-            IntPtr ptr = DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistribution_GetMastershipLib>().Invoke(IDataDistribution_ptr);
-            if (ptr != IntPtr.Zero)
+            get
             {
-                return Marshal.PtrToStringAnsi(ptr);
+                IntPtr ptr = DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistribution_GetMastershipLib>().Invoke(IDataDistribution_ptr);
+                if (ptr != IntPtr.Zero)
+                {
+                    return Marshal.PtrToStringAnsi(ptr);
+                }
+                return null;
             }
-            return null;
         }
 
         /// <summary>

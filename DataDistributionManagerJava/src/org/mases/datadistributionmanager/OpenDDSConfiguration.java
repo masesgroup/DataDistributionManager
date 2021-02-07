@@ -21,6 +21,9 @@ package org.mases.datadistributionmanager;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * The configuration class for OpenDDS
+ */
 public class OpenDDSConfiguration extends CommonConfiguration {
     HashMap<String, String> commandLineKeyValuePair = new HashMap<String, String>();
 
@@ -29,53 +32,71 @@ public class OpenDDSConfiguration extends CommonConfiguration {
     final String DCPSConfigFileKey = "DCPSConfigFile";
     final String DCPSTransportDebugLevelKey = "DCPSTransportDebugLevel";
 
+    /**
+     * Ctor
+     */
     public OpenDDSConfiguration() {
         super("opendds", "DataDistributionManagerOpenDDS.dll");
     }
 
-    /// <summary>
-    /// The command line parameters of DCPSConfigFile
-    /// </summary>
+    /**
+     * The command line parameters of DCPSConfigFile
+     * 
+     * @return
+     */
     public String getDCPSConfigFile() {
         String value = commandLineKeyValuePair.get(DCPSConfigFileKey);
         return (value == null) ? "" : value;
     }
 
-    /// <summary>
-    /// The command line parameters of DCPSConfigFile
-    /// </summary>
+    /**
+     * The command line parameters of DCPSConfigFile
+     * 
+     * @param value The command line parameters of DCPSConfigFile
+     */
     public void setDCPSConfigFile(String value) {
         commandLineKeyValuePair.put(DCPSConfigFileKey, value);
     }
 
-    /// <summary>
-    /// The command line parameters of DCPSTransportDebugLevel
-    /// </summary>
+    /**
+     * The command line parameters of DCPSTransportDebugLevel
+     * 
+     * @return
+     */
     public Integer getDCPSTransportDebugLevel() {
         String value = commandLineKeyValuePair.get(DCPSTransportDebugLevelKey);
         return (value == null) ? 0 : Integer.parseInt(value);
     }
 
-    /// <summary>
-    /// The command line parameters of DCPSTransportDebugLevel
-    /// </summary>
+    /**
+     * The command line parameters of DCPSTransportDebugLevel
+     * 
+     * @param value The command line parameters of DCPSTransportDebugLevel
+     */
     public void setDCPSTransportDebugLevel(Integer value) {
         commandLineKeyValuePair.put(DCPSTransportDebugLevelKey, value.toString());
     }
 
-    /// <summary>
-    /// The command line parameters to initialize OpenDDS (e.g. -DCPSConfigFile
-    /// ../../Configuration/dds_tcp_conf.ini -DCPSTransportDebugLevel 10)
-    /// </summary>
+    /**
+     * 
+     * @return The command line parameters to initialize OpenDDS (e.g.
+     *         -DCPSConfigFile ../../Configuration/dds_tcp_conf.ini
+     *         -DCPSTransportDebugLevel 10)
+     */
     public String getCommandLine() {
         String value = keyValuePair.get(CommandLineKey);
         return (value == null) ? "" : value;
     }
 
-    /// <summary>
-    /// The command line parameters to initialize OpenDDS (e.g. -DCPSConfigFile
-    /// ../../Configuration/dds_tcp_conf.ini -DCPSTransportDebugLevel 10)
-    /// </summary>
+    /**
+     * The command line parameters to initialize OpenDDS (e.g. -DCPSConfigFile
+     * ../../Configuration/dds_tcp_conf.ini -DCPSTransportDebugLevel 10)
+     * 
+     * @param commandline The command line parameters to initialize OpenDDS (e.g.
+     *                    -DCPSConfigFile ../../Configuration/dds_tcp_conf.ini
+     *                    -DCPSTransportDebugLevel 10). Note: Set a value to null
+     *                    remove the property
+     */
     public void setCommandLine(String commandline) {
         if (commandline == null)
             keyValuePair.remove(CommandLineKey);
@@ -83,22 +104,24 @@ public class OpenDDSConfiguration extends CommonConfiguration {
             keyValuePair.put(CommandLineKey, commandline);
     }
 
-    /// <summary>
-    /// The domain id parameters to initialize OpenDDS
-    /// </summary>
+    /**
+     * 
+     * @return The domain id parameter to initialize OpenDDS
+     */
     public String getDomainId() {
         String value = keyValuePair.get(DomainIdKey);
         return (value == null) ? "" : value;
     }
 
-    /// <summary>
-    /// The domain id parameters to initialize OpenDDS
-    /// </summary>
+    /**
+     * The domain id parameter to initialize OpenDDS
+     * 
+     * @param value The domain id parameter to initialize OpenDDS
+     */
     public void setDomainId(Integer value) {
         keyValuePair.put(DomainIdKey, value.toString());
     }
 
-    /// <see cref="CommonConfiguration.CheckConfiguration"/>
     @Override
     protected void CheckConfiguration() throws IllegalArgumentException {
         super.CheckConfiguration();

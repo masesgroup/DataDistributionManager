@@ -18,6 +18,9 @@
 
 package org.mases.datadistributionmanager;
 
+/**
+ * The configuration class for Kafka
+ */
 public class KafkaConfiguration extends CommonConfiguration {
     final String KafkaConfigurationBaseProperty = "datadistributionmanager.kafka.";
     final String ReplicationFactorKey = "datadistributionmanager.kafka.topic.replicationfactor";
@@ -26,107 +29,137 @@ public class KafkaConfiguration extends CommonConfiguration {
     final String ClientIdKey = "datadistributionmanager.kafka.client.id";
     final String GroupIdKey = "datadistributionmanager.kafka.group.id";
 
+    /**
+     * ctor
+     */
     public KafkaConfiguration() {
         super("kafka", "DataDistributionManagerKafka.dll");
     }
 
-    /// <summary>
-    /// The client id to be used
-    /// </summary>
+    /**
+     * 
+     * @return The client id to be used
+     */
     public String getClientId() {
         String value = keyValuePair.get(ClientIdKey);
         return (value == null) ? "" : value;
     }
 
-    /// <summary>
-    /// The client id to be used
-    /// </summary>
-    public void ClientId(String clientId) {
+    /**
+     * The client id to be used
+     * 
+     * @param clientId The client id to be used
+     */
+    public void setClientId(String clientId) {
         keyValuePair.put(ClientIdKey, clientId);
     }
 
-    /// <summary>
-    /// The group id to be used
-    /// </summary>
+    /**
+     * 
+     * @return The group id to be used
+     */
     public String getGroupId() {
         String value = keyValuePair.get(GroupIdKey);
         return (value == null) ? "" : value;
     }
 
-    /// <summary>
-    /// The group id to be used
-    /// </summary>
+    /**
+     * The group id to be used
+     * 
+     * @param groupId The group id to be used
+     */
     public void setGroupId(String groupId) {
         keyValuePair.put(GroupIdKey, groupId);
     }
 
-    /// <summary>
-    /// The debug level (e.g. metadata,topic,msg,broker)
-    /// </summary>
+    /**
+     * 
+     * @return The debug level (e.g. metadata,topic,msg,broker)
+     */
     public String getDebug() {
         String value = keyValuePair.get(DebugKey);
         return (value == null) ? "" : value;
     }
 
-    /// <summary>
-    /// The debug level (e.g. metadata,topic,msg,broker)
-    /// </summary>
+    /**
+     * The debug level (e.g. metadata,topic,msg,broker)
+     * 
+     * @param debug The debug level (e.g. metadata,topic,msg,broker)
+     */
     public void setDebug(String debug) {
         keyValuePair.put(DebugKey, debug);
     }
 
-    /// <summary>
-    /// The bootstrap broker(s) to be used as Comma Separated Value(s)
-    /// </summary>
+    /**
+     * 
+     * @return The bootstrap broker(s) to be used as Comma Separated Value(s)
+     */
     public String getBootstrapBrokers() {
         String value = keyValuePair.get(BootstrapBrokersKey);
         return (value == null) ? "" : value;
     }
 
-    /// <summary>
-    /// The bootstrap broker(s) to be used as Comma Separated Value(s)
-    /// </summary>
+    /**
+     * The bootstrap broker(s) to be used as Comma Separated Value(s)
+     * 
+     * @param brokers The bootstrap broker(s) to be used as Comma Separated Value(s)
+     */
     public void setBootstrapBrokers(String brokers) {
         keyValuePair.put(BootstrapBrokersKey, brokers);
     }
 
-    /// <summary>
-    /// The replication factor to be used
-    /// </summary>
+    /**
+     * 
+     * @return The replication factor to be used
+     */
     public Integer getReplicationFactor() {
         String value = keyValuePair.get(ReplicationFactorKey);
         return (value == null) ? 0 : Integer.parseInt(value);
     }
 
-    /// <summary>
-    /// The replication factor to be used
-    /// </summary>
+    /**
+     * The replication factor to be used
+     * 
+     * @param value The replication factor to be used
+     */
     public void setReplicationFactor(Integer value) {
         keyValuePair.put(ProducerTimeoutKey, value.toString());
     }
 
-    /// <summary>
-    /// Generic setter/getter for all configuration properties related to librdkafka
-    /// (see https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md)
-    /// </summary>
-    /// <param name="property">The property name</param>
-    /// <returns></returns>
+    /**
+     * Generic getter for all configuration properties related to librdkafka (see
+     * https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md)
+     * 
+     * @param property The property name
+     * @return The property value
+     */
     public String getProperty(String property) {
-        String value = keyValuePair.get(property);
-        return (value == null) ? "" : value;
+        String value = "";
+        if (property.startsWith(KafkaConfigurationBaseProperty)) {
+            if (keyValuePair.containsKey(property))
+                value = keyValuePair.get(property);
+        } else {
+            if (keyValuePair.containsKey(KafkaConfigurationBaseProperty + property))
+                value = keyValuePair.get(KafkaConfigurationBaseProperty + property);
+        }
+        return value;
     }
 
-    /// <summary>
-    /// Generic setter/getter for all configuration properties related to librdkafka
-    /// (see https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md)
-    /// </summary>
-    /// <param name="property">The property name</param>
-    /// <returns></returns>
+    /**
+     * Generic setter for all configuration properties related to librdkafka (see
+     * https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md)
+     * 
+     * @param property The property name
+     * @param value    The property value
+     */
     public void setProperty(String property, String value) {
-        keyValuePair.put(property, value.toString());
+        if (property.startsWith(KafkaConfigurationBaseProperty)) {
+            keyValuePair.put(property, value);
+        } else {
+            keyValuePair.put(KafkaConfigurationBaseProperty + property, value);
+        }
     }
 
-    /// <see cref="CommonConfiguration.CheckConfiguration"/>
     @Override
     protected void CheckConfiguration() throws IllegalArgumentException {
         super.CheckConfiguration();

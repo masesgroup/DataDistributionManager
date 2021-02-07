@@ -18,25 +18,43 @@
 
 package org.mases.datadistributionmanager;
 
+/**
+ * Container of cluster instance information
+ */
 public class ClusterHealthElement {
     final DDM_INSTANCE_STATE Status;
     final long Uptime;
     final long LastContactTime;
 
-    public ClusterHealthElement(int status, long uptime, long lastContactTime) {
+    ClusterHealthElement(int status, long uptime, long lastContactTime) {
         this.Status = DDM_INSTANCE_STATE.valueOfAtomicNumber(status);
         this.Uptime = uptime;
         this.LastContactTime = lastContactTime;
     }
 
+    /**
+     * Instance status
+     * 
+     * @return The {@link DDM_INSTANCE_STATE} status
+     */
     public DDM_INSTANCE_STATE getStatus() {
         return Status;
     }
 
+    /**
+     * Instance uptime
+     * 
+     * @return the uptime
+     */
     public long getUptime() {
         return Uptime;
     }
 
+    /**
+     * Last contact time of the instance
+     * 
+     * @return last contact time
+     */
     public long getLastContactTime() {
         return LastContactTime;
     }

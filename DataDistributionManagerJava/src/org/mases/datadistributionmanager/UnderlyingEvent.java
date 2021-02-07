@@ -18,9 +18,9 @@
 
 package org.mases.datadistributionmanager;
 
-/// <summary>
-/// JNI struct for representing the arguments for creating the Java VM.
-/// </summary>
+/**
+ * UnderlyingEvent struct representing the information from low system.
+ */
 public class UnderlyingEvent {
     UnderlyingEvent(String channelName, DDM_UNDERLYING_ERROR_CONDITION condition, boolean isDataAvailable, String key,
             byte[] buffer, int nativeCode, String subSystemReason) {
@@ -33,11 +33,11 @@ public class UnderlyingEvent {
         this.SubSystemReason = subSystemReason;
     }
 
-    public final String ChannelName;
-    public final DDM_UNDERLYING_ERROR_CONDITION Condition;
-    public final boolean IsDataAvailable;
-    public final String Key;
-    public final byte[] Buffer;
-    public final int NativeCode;
-    public final String SubSystemReason;
+    final String ChannelName;
+    final DDM_UNDERLYING_ERROR_CONDITION Condition;
+    final boolean IsDataAvailable;
+    final String Key;
+    final byte[] Buffer;
+    final int NativeCode;
+    final String SubSystemReason;
 }

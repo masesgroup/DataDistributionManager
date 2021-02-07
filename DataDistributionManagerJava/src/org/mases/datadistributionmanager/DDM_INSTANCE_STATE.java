@@ -20,26 +20,53 @@ package org.mases.datadistributionmanager;
 
 import java.util.*;
 
+/**
+ * State of the instance
+ */
 public enum DDM_INSTANCE_STATE {
+    /**
+     * Unknown
+     */
     UNKNOWN("UNKNOWN", 0x1),
+    /**
+     * Primary
+     */
     PRIMARY("PRIMARY", 0x2),
+    /**
+     * Follower
+     */
     FOLLOWER("FOLLOWER", 0x3),
+    /**
+     * Alone
+     */
     ALONE("ALONE", 0x4),
+    /**
+     * Stopping
+     */
     STOPPING("STOPPING", 0x5),
+    /**
+     * Going alone
+     */
     GOING_ALONE("GOING_ALONE", 0x6),
+    /**
+     * Observer
+     */
     OBSERVER("OBSERVER", 0x7),
+    /**
+     * Command sender
+     */
     COMMAND("COMMAND", 0x8);
 
     private static final Map<String, DDM_INSTANCE_STATE> BY_LABEL = new HashMap<>();
     private static final Map<Integer, DDM_INSTANCE_STATE> BY_ATOMIC_NUMBER = new HashMap<>();
 
     static {
-        for (DDM_INSTANCE_STATE e: values()) {
+        for (DDM_INSTANCE_STATE e : values()) {
             BY_LABEL.put(e.label, e);
             BY_ATOMIC_NUMBER.put(e.atomicNumber, e);
         }
     }
-    
+
     public final String label;
     public final int atomicNumber;
 
@@ -48,8 +75,8 @@ public enum DDM_INSTANCE_STATE {
         this.atomicNumber = atomicNumber;
     }
 
-   // ... fields, constructor, methods
- 
+    // ... fields, constructor, methods
+
     public static DDM_INSTANCE_STATE valueOfLabel(String label) {
         return BY_LABEL.get(label);
     }

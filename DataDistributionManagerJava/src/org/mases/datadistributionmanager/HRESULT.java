@@ -17,7 +17,9 @@
 */
 
 package org.mases.datadistributionmanager;
-
+/**
+ * Java mapper of Windows HRESULT
+ */
 public class HRESULT {
     public static final HRESULT S_OK = new HRESULT(0);
     public static final HRESULT E_FAIL = new HRESULT(0x80004005L);

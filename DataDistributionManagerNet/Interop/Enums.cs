@@ -96,7 +96,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         /// </summary>
         INFO_LEVEL = 0x8,
         /// <summary>
-        /// DEbug
+        /// Debug
         /// </summary>
         DEBUG_LEVEL = 0x10
     };
@@ -126,6 +126,10 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         /// Invalid data
         /// </summary>
         DDM_INVALID_DATA,
+        /// <summary>
+        /// Subsystem not started
+        /// </summary>
+        DDM_SUBSYSTEM_NOT_STARTED,
 
         // Condition section
         /// <summary>

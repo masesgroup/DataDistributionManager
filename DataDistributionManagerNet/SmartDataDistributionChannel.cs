@@ -23,14 +23,14 @@ using System.Runtime.InteropServices;
 namespace MASES.DataDistributionManager.Bindings
 {
     /// <summary>
-    /// MAin class managing channel
+    /// Main class managing channel
     /// </summary>
     public class SmartDataDistributionChannel : IDataDistributionChannelCallbackLow
     {
         /// <summary>
         /// Ctor
         /// </summary>
-        public SmartDataDistributionChannel()
+        SmartDataDistributionChannel()
         {
             m_DataDistributionChannelCallbackLow = new DataDistributionChannelCallbackLow(IntPtr.Zero, this);
         }
@@ -44,20 +44,20 @@ namespace MASES.DataDistributionManager.Bindings
         /// <summary>
         /// Starts the channel
         /// </summary>
-        /// <param name="dwMilliseconds">Timeout in ms</param>
+        /// <param name="timeout">Timeout in ms</param>
         /// <returns><see cref="HRESULT"/></returns>
-        public HRESULT StartChannel(uint dwMilliseconds)
+        public HRESULT StartChannel(uint timeout)
         {
-            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_StartChannel>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, dwMilliseconds);
+            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_StartChannel>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, timeout);
         }
         /// <summary>
         /// Stops the channel
         /// </summary>
-        /// <param name="dwMilliseconds">Timeout in ms</param>
+        /// <param name="timeout">Timeout in ms</param>
         /// <returns><see cref="HRESULT"/></returns>
-        public HRESULT StopChannel(uint dwMilliseconds)
+        public HRESULT StopChannel(uint timeout)
         {
-            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_StopChannel>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, dwMilliseconds);
+            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_StopChannel>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, timeout);
         }
         /// <summary>
         /// Lock the channel
@@ -151,7 +151,7 @@ namespace MASES.DataDistributionManager.Bindings
         /// </summary>
         /// <param name="channelName">The channel with data</param>
         /// <param name="key">Message key</param>
-        /// <param name="buffer">MEssage buffer</param>
+        /// <param name="buffer">Message buffer</param>
         public virtual void OnDataAvailable(string channelName, string key, byte[] buffer)
         {
 

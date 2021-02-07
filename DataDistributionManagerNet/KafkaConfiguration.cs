@@ -21,7 +21,7 @@ using System;
 namespace MASES.DataDistributionManager.Bindings
 {
     /// <summary>
-    /// The configuration class for OpenDDS
+    /// The configuration class for Kafka
     /// </summary>
     public class KafkaConfiguration : CommonConfiguration
     {
@@ -129,7 +129,7 @@ namespace MASES.DataDistributionManager.Bindings
         /// Generic setter/getter for all configuration properties related to librdkafka (see https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md)
         /// </summary>
         /// <param name="property">The property name</param>
-        /// <returns></returns>
+        /// <returns>The property value</returns>
         public string this[string property]
         {
             get

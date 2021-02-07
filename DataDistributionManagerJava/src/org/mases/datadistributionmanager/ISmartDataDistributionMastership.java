@@ -20,30 +20,101 @@ package org.mases.datadistributionmanager;
 
 import java.util.HashMap;
 
+/**
+ * Interface to manage undrlying mastersip manager
+ */
 public interface ISmartDataDistributionMastership {
-    long Start(int dwMilliseconds);
+    /**
+     * Starts the manager
+     * 
+     * @param dwMilliseconds Timeout in ms
+     * @return {@link HRESULT}
+     */
+    HRESULT Start(int dwMilliseconds);
 
-    long Stop(int dwMilliseconds);
+    /**
+     * Stops the manager
+     * 
+     * @param dwMilliseconds Timeout in ms
+     * @return {@link HRESULT}
+     */
+    HRESULT Stop(int dwMilliseconds);
 
+    /**
+     * Change the state of this instance
+     * 
+     * @param newState The new {@link DDM_INSTANCE_STATE} state
+     */
     void ChangeMyState(DDM_INSTANCE_STATE newState);
 
+    /**
+     * Change the state of the instance with instanceId
+     * 
+     * @param instanceId Instance to change state
+     * @param newState   Expected {@link DDM_INSTANCE_STATE} state
+     */
     void ChangeState(long instanceId, DDM_INSTANCE_STATE newState);
 
+    /**
+     * Check if this is the next primary server
+     * 
+     * @return True if this server is the next primary
+     */
     boolean RequestIAmNextPrimary();
 
+    /**
+     * Verify if this server will be elected as next primary
+     * 
+     * @return True if this server is the next primary
+     */
     boolean getIamNextPrimary();
 
+    /**
+     * State of the cluster
+     * 
+     * @return an {@link HashMap} between server id and {@link DDM_INSTANCE_STATE}
+     */
     HashMap<Long, DDM_INSTANCE_STATE> getClusterState();
 
+    /**
+     * Health of the cluster
+     * 
+     * @return an {@link HashMap} between server id and {@link ClusterHealthElement}
+     */
     HashMap<Long, ClusterHealthElement> getClusterHealth();
 
+    /**
+     * Get my {@link DDM_INSTANCE_STATE} state
+     * 
+     * @return this {@link DDM_INSTANCE_STATE} state
+     */
     DDM_INSTANCE_STATE getMyState();
 
+    /**
+     * Get my server identifier
+     * 
+     * @return local identifier
+     */
     long getLocalServerId();
 
+    /**
+     * Gets identifier of the primary server
+     * 
+     * @return primary identifier
+     */
     long getPrimaryServerId();
 
+    /**
+     * Gets actual message delay in the cluster
+     * 
+     * @return message delay in the cluster
+     */
     long getMessageDelay();
 
+    /**
+     * Gets this instance uptime
+     * 
+     * @return the uptime
+     */
     long getUpTime();
 }

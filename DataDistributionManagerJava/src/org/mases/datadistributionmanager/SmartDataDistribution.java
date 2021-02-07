@@ -28,6 +28,9 @@ import java.io.FileInputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+/**
+ * Main class to activate Data Distribution Manager
+ */
 public class SmartDataDistribution implements IDataDistributionCallbackLow, IDataDistributionMastershipCallbackLow {
     long m_DataDistributionCallbackLow;
     long m_DataDistributionMastershipCallbackLow;
@@ -172,18 +175,44 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
 
     static final boolean loaded = LoadWrapper();
 
+    /**
+     * Ctor
+     */
     public SmartDataDistribution() {
         IDataDistribution_ptr = NativeInterface.DataDistribution_create();
     }
 
+    /**
+     * Initialize the instance using configuration file
+     * 
+     * @param conf_file Configuration file to use
+     * @return {@link HRESULT}
+     * @throws IllegalArgumentException
+     */
     public HRESULT Initialize(String conf_file) throws IllegalArgumentException {
         return Initialize(conf_file, null, null);
     }
 
+    /**
+     * Initialize the instance using configuration file
+     * 
+     * @param conf_file    Configuration file to use
+     * @param topicTrailer Trailer string to append on channel names
+     * @return {@link HRESULT}
+     * @throws IllegalArgumentException
+     */
     public HRESULT Initialize(String conf_file, String topicTrailer) throws IllegalArgumentException {
         return Initialize(conf_file, null, topicTrailer);
     }
 
+    /**
+     * Initialize the instance using configuration file
+     * 
+     * @param conf_file    Configuration file to use
+     * @param szMyAddress  The name of the server hosting the process
+     * @param topicTrailer Trailer string to append on channel names
+     * @return {@link HRESULT}
+     */
     public HRESULT Initialize(String conf_file, String szMyAddress, String topicTrailer) {
         m_DataDistributionCallbackLow = NativeCallbackManager.RegisterCallback((IDataDistributionCallbackLow) this);
 
@@ -199,27 +228,77 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
         return new HRESULT(m_InitializeResult);
     }
 
+    /**
+     * Initialize the instance using a configuration instance
+     * 
+     * @param configuration The configuration coming from an instance of
+     *                      {@link IConfiguration}
+     * @return {@link HRESULT}
+     * @throws IllegalArgumentException
+     */
     public HRESULT Initialize(IConfiguration configuration) throws IllegalArgumentException {
         return Initialize(configuration.getConfiguration(), null, null);
     }
 
+    /**
+     * Initialize the instance using a configuration instance
+     * 
+     * @param configuration The configuration coming from an instance of
+     *                      {@link IConfiguration}
+     * @param topicTrailer  Trailer string to append on channel names
+     * @return {@link HRESULT}
+     * @throws IllegalArgumentException
+     */
     public HRESULT Initialize(IConfiguration configuration, String topicTrailer) throws IllegalArgumentException {
         return Initialize(configuration.getConfiguration(), null, topicTrailer);
     }
 
+    /**
+     * Initialize the instance using a configuration instance
+     * 
+     * @param configuration The configuration coming from an instance of
+     *                      {@link IConfiguration}
+     * @param szMyAddress   The name of the server hosting the process
+     * @param topicTrailer  Trailer string to append on channel names
+     * @return {@link HRESULT}
+     * @throws IllegalArgumentException
+     */
     public HRESULT Initialize(IConfiguration configuration, String szMyAddress, String topicTrailer)
             throws IllegalArgumentException {
         return Initialize(configuration.getConfiguration(), szMyAddress, topicTrailer);
     }
 
+    /**
+     * Initialize the instance using a set of key=value pairs
+     * 
+     * @param arrayParams array of key=value parameters
+     * @return {@link HRESULT}
+     * @throws IllegalArgumentException
+     */
     public HRESULT Initialize(String[] arrayParams) throws IllegalArgumentException {
         return Initialize(arrayParams, null, null);
     }
 
+    /**
+     * Initialize the instance using a set of key=value pairs
+     * 
+     * @param arrayParams  array of key=value parameters
+     * @param topicTrailer Trailer string to append on channel names
+     * @return {@link HRESULT}
+     * @throws IllegalArgumentException
+     */
     public HRESULT Initialize(String[] arrayParams, String topicTrailer) throws IllegalArgumentException {
         return Initialize(arrayParams, null, topicTrailer);
     }
 
+    /**
+     * Initialize the instance using a set of key=value pairs
+     * 
+     * @param arrayParams  array of key=value parameters
+     * @param szMyAddress  The name of the server hosting the process
+     * @param topicTrailer Trailer string to append on channel names
+     * @return {@link HRESULT}
+     */
     public HRESULT Initialize(String[] arrayParams, String szMyAddress, String topicTrailer) {
         m_DataDistributionCallbackLow = NativeCallbackManager.RegisterCallback((IDataDistributionCallbackLow) this);
 
@@ -235,6 +314,13 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
         return new HRESULT(m_InitializeResult);
     }
 
+    /**
+     * Request to allocate mastership manager
+     * 
+     * @param serverName The server name
+     * @param parameters Paramaters to send to underlying layer
+     * @return {@link HRESULT}
+     */
     public HRESULT RequestMastershipManager(String serverName, String[] parameters) {
         if (m_SmartDataDistributionMastership != null)
             return HRESULT.S_OK;
@@ -258,64 +344,128 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
 
     SmartDataDistributionMastership m_SmartDataDistributionMastership;
 
+    /**
+     * 
+     * @return Returns {@link ISmartDataDistributionMastership}
+     */
     public ISmartDataDistributionMastership getMastershipManager() {
         return m_SmartDataDistributionMastership;
     }
 
-    public HRESULT Start(int dwMilliseconds) {
+    /**
+     * Starts the manager
+     * 
+     * @param timeout Timeout in ms
+     * @return {@link HRESULT}
+     */
+    public HRESULT Start(int timeout) {
         long res = -1;
         if (IDataDistributionSubsystemManager_ptr != 0) {
-            res = NativeInterface.IDataDistributionSubsystem_Start(IDataDistributionSubsystemManager_ptr,
-                    dwMilliseconds);
+            res = NativeInterface.IDataDistributionSubsystem_Start(IDataDistributionSubsystemManager_ptr, timeout);
         }
         return new HRESULT(res);
     }
 
-    public HRESULT Stop(int dwMilliseconds) {
-        long res = NativeInterface.IDataDistributionSubsystem_Stop(IDataDistributionSubsystemManager_ptr,
-                dwMilliseconds);
+    /**
+     * Stops the manager
+     * 
+     * @param timeout Timeout in ms
+     * @return {@link HRESULT}
+     */
+    public HRESULT Stop(int timeout) {
+        long res = NativeInterface.IDataDistributionSubsystem_Stop(IDataDistributionSubsystemManager_ptr, timeout);
         return new HRESULT(res);
     }
 
-    public String GetProtocol() {
+    /**
+     * 
+     * @return Return the protocol in use
+     */
+    public String getProtocol() {
         if (IDataDistributionSubsystemManager_ptr != 0) {
             return NativeInterface.IDataDistribution_GetProtocol(IDataDistributionSubsystemManager_ptr);
         }
         return "";
     }
 
-    public String GetProtocolLib() {
+    /**
+     * 
+     * @return Return the protocol library in use
+     */
+    public String getProtocolLib() {
         if (IDataDistributionSubsystemManager_ptr != 0) {
             return NativeInterface.IDataDistribution_GetProtocolLib(IDataDistributionSubsystemManager_ptr);
         }
         return "";
     }
 
-    public String GetMastershipLib() {
+    /**
+     * 
+     * @return Return the mastership library in use
+     */
+    public String getMastershipLib() {
         if (IDataDistributionSubsystemManager_ptr != 0) {
             return NativeInterface.IDataDistribution_GetMastershipLib(IDataDistributionSubsystemManager_ptr);
         }
         return "";
     }
 
-    public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String topicName)
+    /**
+     * 
+     * @param <T>         The class extending {@link SmartDataDistributionChannel}
+     * @param clazz       The class to be instantiated
+     * @param channelName The channel name
+     * @return The allocated instance
+     * @throws Throwable
+     */
+    public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String channelName)
             throws Throwable {
-        return CeateSmartChannel(clazz, topicName, DDM_CHANNEL_DIRECTION.ALL, (IConfiguration) null);
+        return CeateSmartChannel(clazz, channelName, DDM_CHANNEL_DIRECTION.ALL, (IConfiguration) null);
     }
 
-    public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String topicName,
+    /**
+     * 
+     * @param <T>         The class extending {@link SmartDataDistributionChannel}
+     * @param clazz       The class to be instantiated
+     * @param channelName The channel name
+     * @param direction   The {@link DDM_CHANNEL_DIRECTION} of the channel
+     * @return The allocated instance
+     * @throws Throwable
+     */
+    public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String channelName,
             DDM_CHANNEL_DIRECTION direction) throws Throwable {
-        return CeateSmartChannel(clazz, topicName, direction, (IConfiguration) null);
+        return CeateSmartChannel(clazz, channelName, direction, (IConfiguration) null);
     }
 
-    public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String topicName,
+    /**
+     * 
+     * @param <T>           The class extending {@link SmartDataDistributionChannel}
+     * @param clazz         The class to be instantiated
+     * @param channelName   The channel name
+     * @param direction     The {@link DDM_CHANNEL_DIRECTION} of the channel
+     * @param configuration The configuration coming from an instance of
+     *                      {@link IConfiguration}
+     * @return The allocated instance
+     * @throws Throwable
+     */
+    public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String channelName,
             DDM_CHANNEL_DIRECTION direction, IConfiguration configuration) throws Throwable {
-        return CeateSmartChannel(clazz, topicName, direction,
+        return CeateSmartChannel(clazz, channelName, direction,
                 (configuration == null) ? null : configuration.getConfiguration());
     }
 
+    /**
+     * 
+     * @param <T>         The class extending {@link SmartDataDistributionChannel}
+     * @param clazz       The class to be instantiated
+     * @param channelName The channel name
+     * @param direction   The {@link DDM_CHANNEL_DIRECTION} of the channel
+     * @param arrayParams Specific parameters which override main parameters
+     * @return The allocated instance
+     * @throws Throwable
+     */
     @SuppressWarnings("unchecked")
-    public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String topicName,
+    public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String channelName,
             DDM_CHANNEL_DIRECTION direction, String[] arrayParams) throws Throwable {
         if (IDataDistributionSubsystemManager_ptr == 0)
             return null;
@@ -324,7 +474,7 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
         SmartDataDistributionChannel inm = (SmartDataDistributionChannel) newObject;
 
         long handle = NativeInterface.IDataDistributionSubsystem_CreateChannel(IDataDistributionSubsystemManager_ptr,
-                topicName, inm.m_DataDistributionChannelCallbackLow, direction.atomicNumber, arrayParams);
+                channelName, inm.m_DataDistributionChannelCallbackLow, direction.atomicNumber, arrayParams);
 
         if (handle == 0) {
             throw new Exception("Unable to create channel, see log for the reason.");
@@ -354,11 +504,11 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
 
     }
 
-    public void OnCompletelyDisconnected(long IDataDistribution_nativePtr, String topicName, String reason) {
-        OnCompletelyDisconnected(topicName, reason);
+    public void OnCompletelyDisconnected(long IDataDistribution_nativePtr, String channelName, String reason) {
+        OnCompletelyDisconnected(channelName, reason);
     }
 
-    public void OnCompletelyDisconnected(String topicName, String reason) {
+    public void OnCompletelyDisconnected(String channelName, String reason) {
 
     }
 

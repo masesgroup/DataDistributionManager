@@ -27,12 +27,16 @@ class SmartDataDistributionMastership implements ISmartDataDistributionMastershi
         IDataDistribution_instance = ptr;
     }
 
-    public long Start(int dwMilliseconds) {
-        return NativeInterface.IDataDistributionMastershipCommon_Start(IDataDistribution_instance, dwMilliseconds);
+    public HRESULT Start(int dwMilliseconds) {
+        long res = -1;
+        res = NativeInterface.IDataDistributionMastershipCommon_Start(IDataDistribution_instance, dwMilliseconds);
+        return new HRESULT(res);
     }
 
-    public long Stop(int dwMilliseconds) {
-        return NativeInterface.IDataDistributionMastershipCommon_Stop(IDataDistribution_instance, dwMilliseconds);
+    public HRESULT Stop(int dwMilliseconds) {
+        long res = -1;
+        res = NativeInterface.IDataDistributionMastershipCommon_Stop(IDataDistribution_instance, dwMilliseconds);
+        return new HRESULT(res);
     }
 
     public void ChangeMyState(DDM_INSTANCE_STATE newState) {

@@ -21,7 +21,10 @@ package org.mases.datadistributionmanager;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class CommonConfiguration implements IConfiguration {
+/**
+ * The general configuration class
+ */
+public abstract class CommonConfiguration implements IConfiguration {
     final String ProtocolKey = "datadistributionmanager.common.protocol";
     final String ProtocolLibraryKey = "datadistributionmanager.common.protolib";
     final String MaxMessageSizeKey = "datadistributionmanager.maxmessagesize";
@@ -34,194 +37,234 @@ public class CommonConfiguration implements IConfiguration {
     final String ProducerTimeoutKey = "datadistributionmanager.timeout.producer";
     final String CommitSyncKey = "datadistributionmanager.commit.sync";
 
-    /// <summary>
-    /// The list of key/value pairs
-    /// </summary>
+    /**
+     * The list of key/value pairs
+     */
     protected HashMap<String, String> keyValuePair = new HashMap<String, String>();
 
-    /// <summary>
-    /// Initialize a new <see cref="CommonConfiguration"/> with <paramref
-    /// name="protocol"/> and <paramref name="protolib"/>
-    /// </summary>
-    /// <param name="protocol">The protocol to use</param>
-    /// <param name="protolib">Protocol library</param>
-    public CommonConfiguration(String protocol, String protolib) {
+    CommonConfiguration(String protocol, String protolib) {
         setProtocol(protocol);
         setProtocolLibrary(protolib);
     }
 
-    /// <summary>
-    /// The protocol to use (e.g. kafka, opendds)
-    /// </summary>
+    /**
+     * The protocol to use (e.g. kafka, opendds)
+     * 
+     * @return The protocol
+     */
     public String getProtocol() {
         String value = keyValuePair.get(ProtocolKey);
         return (value == null) ? "" : value;
     }
 
+    /**
+     * The protocol to use (e.g. kafka, opendds)
+     * 
+     * @param protocol The protocol
+     */
     public void setProtocol(String protocol) {
         keyValuePair.put(ProtocolKey, protocol);
     }
 
-    /// <summary>
-    /// The protocol library to use
-    /// </summary>
+    /**
+     * The protocol library to use
+     * 
+     * @return The protocol library
+     */
     public String getProtocolLibrary() {
         String value = keyValuePair.get(ProtocolLibraryKey);
         return (value == null) ? "" : value;
     }
 
-    /// <summary>
-    /// The protocol library to use
-    /// </summary>
+    /**
+     * The protocol library to use
+     * 
+     * @param protolib The protocol library
+     */
     public void setProtocolLibrary(String protolib) {
         keyValuePair.put(ProtocolLibraryKey, protolib);
     }
 
-    /// <summary>
-    /// The max message size managed
-    /// </summary>
+    /**
+     * The max message size managed
+     * 
+     * @return The max message size
+     */
     public Integer getMaxMessageSize() {
         String value = keyValuePair.get(MaxMessageSizeKey);
         return (value == null) ? 0 : Integer.parseInt(value);
     }
 
-    /// <summary>
-    /// The max message size managed
-    /// </summary>
+    /**
+     * The max message size managed
+     * 
+     * @param msgSize The max message size
+     */
     public void setMaxMessageSize(Integer msgSize) {
         keyValuePair.put(MaxMessageSizeKey, msgSize.toString());
     }
 
-    /// <summary>
-    /// The timeout on create channel
-    /// </summary>
+    /**
+     * The timeout on create channel
+     * 
+     * @return The create channel timeout
+     */
     public Integer getCreateChannelTimeout() {
         String value = keyValuePair.get(CreateChannelTimeoutKey);
         return (value == null) ? 0 : Integer.parseInt(value);
     }
 
-    /// <summary>
-    /// The timeout on create channel
-    /// </summary>
+    /**
+     * The timeout on create channel
+     * 
+     * @param timeout The create channel timeout
+     */
     public void setCreateChannelTimeout(Integer timeout) {
         keyValuePair.put(CreateChannelTimeoutKey, timeout.toString());
     }
 
-    /// <summary>
-    /// The timeout on server lost
-    /// </summary>
+    /**
+     * The timeout on server lost
+     * 
+     * @return The server lost timeout
+     */
     public Integer getServerLostTimeout() {
         String value = keyValuePair.get(ServerLostTimeoutKey);
         return (value == null) ? 0 : Integer.parseInt(value);
     }
 
-    /// <summary>
-    /// The timeout on server lost
-    /// </summary>
+    /**
+     * The timeout on server lost
+     * 
+     * @param timeout The server lost timeout
+     */
     public void setServerLostTimeout(Integer timeout) {
         keyValuePair.put(ServerLostTimeoutKey, timeout.toString());
     }
 
-    /// <summary>
-    /// The timeout on seek channel
-    /// </summary>
+    /**
+     * The timeout on seek channel
+     * 
+     * @return The seek timeout
+     */
     public Integer getChannelSeekTimeout() {
         String value = keyValuePair.get(ChannelSeekTimeoutKey);
         return (value == null) ? 0 : Integer.parseInt(value);
     }
 
-    /// <summary>
-    /// The timeout on seek channel
-    /// </summary>
+    /**
+     * The timeout on seek channel
+     * 
+     * @param timeout The seek timeout
+     */
     public void setChannelSeekTimeout(Integer timeout) {
         keyValuePair.put(ChannelSeekTimeoutKey, timeout.toString());
     }
 
-    /// <summary>
-    /// The timeout on channel receive
-    /// </summary>
+    /**
+     * The timeout on channel receive
+     * 
+     * @return The receive timeout
+     */
     public Integer getReceiveTimeout() {
         String value = keyValuePair.get(ReceiveTimeoutKey);
         return (value == null) ? 0 : Integer.parseInt(value);
     }
 
-    /// <summary>
-    /// The timeout on channel receive
-    /// </summary>
-    public void setReceiveSeekTimeout(Integer timeout) {
+    /**
+     * The timeout on channel receive
+     * 
+     * @param timeout The receive timeout
+     */
+    public void setReceiveTimeout(Integer timeout) {
         keyValuePair.put(ReceiveTimeoutKey, timeout.toString());
     }
 
-    /// <summary>
-    /// The timeout on channel keep alive
-    /// </summary>
+    /**
+     * The timeout on channel keep alive
+     * 
+     * @return The keep-alive timeout
+     */
     public Integer getKeepAliveTimeout() {
         String value = keyValuePair.get(KeepAliveTimeoutKey);
         return (value == null) ? 0 : Integer.parseInt(value);
     }
 
-    /// <summary>
-    /// The timeout on channel keep alive
-    /// </summary>
+    /**
+     * The timeout on channel keep alive
+     * 
+     * @param timeout The keep-alive timeout
+     */
     public void setKeepAliveTimeout(Integer timeout) {
         keyValuePair.put(KeepAliveTimeoutKey, timeout.toString());
     }
 
-    /// <summary>
-    /// The timeout on channel message consume
-    /// </summary>
+    /**
+     * The timeout on channel message consume
+     * 
+     * @return The consumer timeout
+     */
     public Integer getConsumerTimeout() {
         String value = keyValuePair.get(ConsumerTimeoutKey);
         return (value == null) ? 0 : Integer.parseInt(value);
     }
 
-    /// <summary>
-    /// The timeout on channel message consume
-    /// </summary>
+    /**
+     * The timeout on channel message consume
+     * 
+     * @param timeout The consumer timeout
+     */
     public void setConsumerTimeout(Integer timeout) {
         keyValuePair.put(ConsumerTimeoutKey, timeout.toString());
     }
 
-    /// <summary>
-    /// The timeout on channel message produce
-    /// </summary>
+    /**
+     * The timeout on channel message produce
+     * 
+     * @return The producer timeout
+     */
     public Integer getProducerTimeout() {
         String value = keyValuePair.get(ProducerTimeoutKey);
         return (value == null) ? 0 : Integer.parseInt(value);
     }
 
-    /// <summary>
-    /// The timeout on channel message produce
-    /// </summary>
-    public void ProducerTimeout(Integer timeout) {
+    /**
+     * The timeout on channel message produce
+     * 
+     * @param timeout The producer timeout
+     */
+    public void setProducerTimeout(Integer timeout) {
         keyValuePair.put(ProducerTimeoutKey, timeout.toString());
     }
 
-    /// <summary>
-    /// The timeout on channel message produce
-    /// </summary>
+    /**
+     * True to commit message in sync
+     * 
+     * @return True to commit message in sync
+     */
     public boolean getCommitSync() {
         String value = keyValuePair.get(ProducerTimeoutKey);
         return (value == null) ? false : Boolean.parseBoolean(value);
     }
 
-    /// <summary>
-    /// The timeout on channel message produce
-    /// </summary>
+    /**
+     * True to commit message in sync
+     * 
+     * @param value True to commit message in sync
+     */
     public void setCommitSync(Boolean value) {
         keyValuePair.put(ProducerTimeoutKey, value.toString());
     }
 
-    /// <summary>
-    /// Checks the configuration for mandatory information
-    /// </summary>
+    /**
+     * Checks the configuration for mandatory information
+     */
     protected void CheckConfiguration() throws IllegalArgumentException {
         if (!keyValuePair.containsKey(ProtocolKey) && !keyValuePair.containsKey(ProtocolLibraryKey)) {
             throw new IllegalArgumentException("Missing Protocol or ProtocolLibrary");
         }
     }
 
-    /// <see cref="IConfiguration.Configuration"/>
     public String[] getConfiguration() throws IllegalArgumentException {
         ArrayList<String> lst = new ArrayList<String>();
         for (String key : keyValuePair.keySet()) {

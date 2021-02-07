@@ -20,38 +20,56 @@ package org.mases.datadistributionmanager;
 
 import java.util.*;
 
-public enum TOPIC_STARTUP_TYPE {
+/**
+ * Startup state
+ */
+public enum CHANNEL_STARTUP_TYPE {
+    /**
+     * Undefined
+     */
     UNDEFINED("UNDEFINED", 0X1),
+    /**
+     * Created
+     */
     CREATED("CREATED", 0X2),
+    /**
+     * Started
+     */
     STARTED("STARTED", 0X4),
+    /**
+     * Stopped
+     */
     STOPPED("STOPPED", 0X8),
+    /**
+     * Disconnected
+     */
     DISCONNECTED("DISCONNECTED", 0X10);
 
-    private static final Map<String, TOPIC_STARTUP_TYPE> BY_LABEL = new HashMap<>();
-    private static final Map<Integer, TOPIC_STARTUP_TYPE> BY_ATOMIC_NUMBER = new HashMap<>();
+    private static final Map<String, CHANNEL_STARTUP_TYPE> BY_LABEL = new HashMap<>();
+    private static final Map<Integer, CHANNEL_STARTUP_TYPE> BY_ATOMIC_NUMBER = new HashMap<>();
 
     static {
-        for (TOPIC_STARTUP_TYPE e: values()) {
+        for (CHANNEL_STARTUP_TYPE e : values()) {
             BY_LABEL.put(e.label, e);
             BY_ATOMIC_NUMBER.put(e.atomicNumber, e);
         }
     }
-    
+
     public final String label;
     public final int atomicNumber;
 
-    private TOPIC_STARTUP_TYPE(String label, int atomicNumber) {
+    private CHANNEL_STARTUP_TYPE(String label, int atomicNumber) {
         this.label = label;
         this.atomicNumber = atomicNumber;
     }
 
-   // ... fields, constructor, methods
- 
-    public static TOPIC_STARTUP_TYPE valueOfLabel(String label) {
+    // ... fields, constructor, methods
+
+    public static CHANNEL_STARTUP_TYPE valueOfLabel(String label) {
         return BY_LABEL.get(label);
     }
 
-    public static TOPIC_STARTUP_TYPE valueOfAtomicNumber(int number) {
+    public static CHANNEL_STARTUP_TYPE valueOfAtomicNumber(int number) {
         return BY_ATOMIC_NUMBER.get(number);
     }
 }
