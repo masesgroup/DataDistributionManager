@@ -28,6 +28,8 @@ public class KafkaConfiguration extends CommonConfiguration {
     final String DebugKey = "datadistributionmanager.kafka.debug";
     final String ClientIdKey = "datadistributionmanager.kafka.client.id";
     final String GroupIdKey = "datadistributionmanager.kafka.group.id";
+    final String TopicCreateKey = "datadistributionmanager.kafka.topic.create";
+    final String DumpMetadataKey = "datadistributionmanager.kafka.topic.dumpmetadata";
 
     /**
      * ctor
@@ -123,7 +125,45 @@ public class KafkaConfiguration extends CommonConfiguration {
      * @param value The replication factor to be used
      */
     public void setReplicationFactor(Integer value) {
-        keyValuePair.put(ProducerTimeoutKey, value.toString());
+        keyValuePair.put(ReplicationFactorKey, value.toString());
+    }
+
+    /**
+     * True to request a create topic
+     * 
+     * @return True to request a create topic
+     */
+    public boolean getTopicCreate() {
+        String value = keyValuePair.get(TopicCreateKey);
+        return (value == null) ? false : Boolean.parseBoolean(value);
+    }
+
+    /**
+     * True to request a create topic
+     * 
+     * @param value True to request a create topic
+     */
+    public void setTopicCreate(Boolean value) {
+        keyValuePair.put(TopicCreateKey, value.toString());
+    }
+
+    /**
+     * True to dump metadata
+     * 
+     * @return True to dump metadata
+     */
+    public boolean getDumpMetadata() {
+        String value = keyValuePair.get(DumpMetadataKey);
+        return (value == null) ? false : Boolean.parseBoolean(value);
+    }
+
+    /**
+     * True to dump metadata
+     * 
+     * @param value True to dump metadata
+     */
+    public void setDumpMetadata(Boolean value) {
+        keyValuePair.put(DumpMetadataKey, value.toString());
     }
 
     /**

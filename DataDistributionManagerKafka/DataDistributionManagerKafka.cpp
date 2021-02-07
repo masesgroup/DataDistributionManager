@@ -329,15 +329,13 @@ HANDLE DataDistributionManagerKafka::CreateChannel(const char* channelName, IDat
 		return NULL;
 	}
 
-	if (admin_create_topic(pTopicConfiguration->pProducer->c_ptr(), pTopicConfiguration->GetChannelName(), 1, pTopicConfiguration->m_TopicReplicationFactor, pTopicConfiguration->m_CreateChannelTimeout) != NO_ERROR)
+	if (pTopicConfiguration->m_CreateTopic && admin_create_topic(pTopicConfiguration->pProducer->c_ptr(), pTopicConfiguration->GetChannelName(), 1, pTopicConfiguration->m_TopicReplicationFactor, pTopicConfiguration->m_CreateChannelTimeout) != NO_ERROR)
 	{
 		delete pTopicConfiguration->pConsumer;
 		delete pTopicConfiguration->pProducer;
 		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "CreateTopic", "admin_create_topic %s failed", pTopicConfiguration->GetChannelName());
 		return NULL;
 	}
-
-	class RdKafka::Metadata *metadata;
 
 	pTopicConfiguration->pTopicPartition = RdKafka::TopicPartition::create(sTopicName, 0);
 	pTopicConfiguration->pTopicPartitionVector = new std::vector<RdKafka::TopicPartition*>();
@@ -352,16 +350,20 @@ HANDLE DataDistributionManagerKafka::CreateChannel(const char* channelName, IDat
 		return NULL;
 	}
 
-	auto err = pTopicConfiguration->pProducer->metadata(false, pTopicConfiguration->pTopic, &metadata, pTopicConfiguration->m_CreateChannelTimeout);
+	if (pTopicConfiguration->m_DumpMetadata)
+	{
+		class RdKafka::Metadata *metadata;
+		auto err = pTopicConfiguration->pProducer->metadata(false, pTopicConfiguration->pTopic, &metadata, pTopicConfiguration->m_CreateChannelTimeout);
 
-	if (err != RdKafka::ERR_NO_ERROR)
-	{
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "Initialize", "Failed to acquire metadata for topic %s: %s", pTopicConfiguration->GetChannelName(), RdKafka::err2str(err).c_str());
-	}
-	else
-	{
-		auto resultStr = metadata_print(sTopicName, metadata);
-		Log(DDM_LOG_LEVEL::DEBUG_LEVEL, pTopicConfiguration->GetChannelName(), "Initialize", "%s", resultStr.c_str());
+		if (err != RdKafka::ERR_NO_ERROR)
+		{
+			Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "Initialize", "Failed to acquire metadata for topic %s: %s", pTopicConfiguration->GetChannelName(), RdKafka::err2str(err).c_str());
+		}
+		else
+		{
+			auto resultStr = metadata_print(sTopicName, metadata);
+			Log(DDM_LOG_LEVEL::DEBUG_LEVEL, pTopicConfiguration->GetChannelName(), "Initialize", "%s", resultStr.c_str());
+		}
 	}
 
 	topicVector.push_back(pTopicConfiguration);
@@ -465,6 +467,24 @@ void DataDistributionManagerKafka::SetParameter(HANDLE channelHandle, const char
 	else if (!strcmp(paramName, "datadistributionmanager.kafka.topic.replicationfactor"))
 	{
 		pTopicConfiguration->m_TopicReplicationFactor = atoi(paramValue);
+		return;
+	}
+	else if (!strcmp(paramName, "datadistributionmanager.kafka.topic.create"))
+	{
+		if (!strcmp(paramValue, "true") ||
+			!strcmp(paramValue, "1"))
+			pTopicConfiguration->m_CreateTopic = TRUE;
+		else
+			pTopicConfiguration->m_CreateTopic = FALSE;
+		return;
+	}
+	else if (!strcmp(paramName, "datadistributionmanager.kafka.topic.dumpmetadata"))
+	{
+		if (!strcmp(paramValue, "true") ||
+			!strcmp(paramValue, "1"))
+			pTopicConfiguration->m_DumpMetadata = TRUE;
+		else
+			pTopicConfiguration->m_DumpMetadata = FALSE;
 		return;
 	}
 

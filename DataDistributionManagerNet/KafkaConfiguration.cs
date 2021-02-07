@@ -31,6 +31,8 @@ namespace MASES.DataDistributionManager.Bindings
         const string DebugKey = "datadistributionmanager.kafka.debug";
         const string ClientIdKey = "datadistributionmanager.kafka.client.id";
         const string GroupIdKey = "datadistributionmanager.kafka.group.id";
+        const string TopicCreateKey = "datadistributionmanager.kafka.topic.create";
+        const string DumpMetadataKey = "datadistributionmanager.kafka.topic.dumpmetadata";
 
         /// <summary>
         /// Initialize a <see cref="KafkaConfiguration"/>
@@ -122,6 +124,40 @@ namespace MASES.DataDistributionManager.Bindings
             set
             {
                 keyValuePair[ReplicationFactorKey] = value.ToString();
+            }
+        }
+
+        /// <summary>
+        /// True to request a create topic
+        /// </summary>
+        public bool TopicCreate
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(TopicCreateKey, out value);
+                return bool.Parse(value);
+            }
+            set
+            {
+                keyValuePair[TopicCreateKey] = value.ToString();
+            }
+        }
+
+        /// <summary>
+        /// True to dump metadata
+        /// </summary>
+        public bool DumpMetadata
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(DumpMetadataKey, out value);
+                return bool.Parse(value);
+            }
+            set
+            {
+                keyValuePair[DumpMetadataKey] = value.ToString();
             }
         }
 

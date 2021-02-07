@@ -100,6 +100,8 @@ public:
 		m_MessageReceiveTimeout = 10000;
 		m_ConsumerTimeout = 10;
 		m_ProducerTimeout = 1;
+		m_CreateTopic = FALSE;
+		m_DumpMetadata = FALSE;
 
 		m_lastRoutedOffset = RD_KAFKA_OFFSET_END;
 		m_lastManagedOffset = RD_KAFKA_OFFSET_END;
@@ -118,6 +120,8 @@ public:
 	int  m_MessageReceiveTimeout;
 	int  m_ConsumerTimeout;
 	int  m_ProducerTimeout;
+	BOOL m_CreateTopic;
+	BOOL m_DumpMetadata;
 
 	std::string clientId;
 	std::string groupId;
