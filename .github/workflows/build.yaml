@@ -116,7 +116,7 @@ jobs:
       - uses: nuget/setup-nuget@v1
         with:
           nuget-version: '5.x'
-      - run: nuget restore DataDistributionManager.sln
+      - run: nuget restore src\DataDistributionManager.sln
 
       - name: Build DataDistributionManager x64
         shell: cmd
