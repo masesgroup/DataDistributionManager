@@ -22,7 +22,7 @@
     <ProjectGuid>{B885E87A-AC84-4EE6-8486-9BA16B465CB3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>KafkaManager</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
     <ProjectName>DataDistributionMastershipManager</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -111,6 +111,9 @@
       <AdditionalLibraryDirectories>..\..\Output\x86;</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>$(OutDir)..\pdb32\$(TargetName).pdb</ProgramDatabaseFile>
     </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..\..\ProductInformation</AdditionalIncludeDirectories>
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -128,6 +131,9 @@
       <AdditionalLibraryDirectories>..\..\Output\x64;</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>$(OutDir)..\pdb64\$(TargetName).pdb</ProgramDatabaseFile>
     </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..\..\ProductInformation</AdditionalIncludeDirectories>
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -149,6 +155,9 @@
       <AdditionalLibraryDirectories>..\..\Output\x86;</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>$(OutDir)..\pdb32\$(TargetName).pdb</ProgramDatabaseFile>
     </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..\..\ProductInformation</AdditionalIncludeDirectories>
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -170,12 +179,16 @@
       <AdditionalLibraryDirectories>..\..\Output\x64;</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>$(OutDir)..\pdb64\$(TargetName).pdb</ProgramDatabaseFile>
     </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..\..\ProductInformation</AdditionalIncludeDirectories>
+    </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataDistributionMastershipManager.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -196,6 +209,9 @@
       </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
