@@ -130,6 +130,14 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         /// Subsystem not started
         /// </summary>
         DDM_SUBSYSTEM_NOT_STARTED,
+        /// <summary>
+        /// Failed on write
+        /// </summary>
+        DDM_WRITE_FAILED,
+        /// <summary>
+        /// Commit failed
+        /// </summary>
+        DDM_COMMIT_FAILED,
 
         // Condition section
         /// <summary>
@@ -151,7 +159,11 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         /// <summary>
         /// End timeout condition waiting for messages from the channel
         /// </summary>
-        DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_END
+        DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_END,
+        /// <summary>
+        /// Timeout on acknowledgment
+        /// </summary>
+        DDM_ELAPSED_MESSAGE_ACKNOWLEDGMENT_TIMEOUT,
     };
     /// <summary>
     /// State of the instance

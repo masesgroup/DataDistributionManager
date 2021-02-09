@@ -214,6 +214,11 @@ namespace MASES.DataDistributionManager.Bindings
             IntPtr handle = DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_CreateChannel>().Invoke(
                 IDataDistributionSubsystemManager_ptr, channelName, smartChannelReference.m_DataDistributionChannelCallbackLow.Pointer, direction, arrayParams, (arrayParams != null) ? arrayParams.Length : 0);
 
+            if (handle == IntPtr.Zero)
+            {
+                throw new InvalidOperationException("Failed to allocate a channel");
+            }
+
             smartChannelReference.m_direction = direction;
             smartChannelReference.IDataDistributionSubsystemManager_ptr = IDataDistributionSubsystemManager_ptr;
             smartChannelReference.channelHandle = handle;

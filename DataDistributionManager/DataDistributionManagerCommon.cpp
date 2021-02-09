@@ -25,6 +25,7 @@ DataDistributionCommon::DataDistributionCommon()
 	m_ChannelTrailer = "";
 	m_ServerName = "";
 	m_MaxMessageSize = 0;
+	m_ServerLostTimeout = 10000;
 	m_pDataDistributionManagerCallbacks = NULL;
 }
 
@@ -84,8 +85,7 @@ void DataDistributionCommon::Log(const DDM_LOG_LEVEL level, const char* sourceNa
 
 size_t DataDistributionCommon::GetMaxMessageSize()
 {
-	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "GetMaxMessageSize", "Not Implemented in subclass");
-	return 0;
+	return m_MaxMessageSize;
 }
 
 HANDLE DataDistributionCommon::CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction, const char* arrayParams[], int len)
@@ -108,7 +108,71 @@ HRESULT DataDistributionCommon::StopChannel(HANDLE channelHandle, DWORD dwMillis
 
 void DataDistributionCommon::SetParameter(HANDLE channelHandle, const char* paramName, const char* paramValue)
 {
-	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "SetParameter", "Not Implemented in subclass");
+	Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "DataDistributionCommon", "SetParameter", "Writing %s with value %s", (paramName != NULL) ? paramName : "", (paramValue != NULL) ? paramValue : "");
+
+	if (NULL != channelHandle)
+	{
+		// Non global params
+		ChannelConfiguration* pTopicConfiguration = static_cast<ChannelConfiguration*>(channelHandle);
+
+		if (!strcmp(paramName, "datadistributionmanager.timeout.createchannel"))
+		{
+			pTopicConfiguration->SetCreateChannelTimeout(atoi(paramValue));
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.channelseek"))
+		{
+			pTopicConfiguration->SetChannelSeekTimeout(atoi(paramValue));
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.receive"))
+		{
+			pTopicConfiguration->SetMessageReceiveTimeout(atoi(paramValue));
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.keepalive"))
+		{
+			pTopicConfiguration->SetKeepAliveTimeout(atoi(paramValue));
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.consumer"))
+		{
+			pTopicConfiguration->SetConsumerTimeout(atoi(paramValue));
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.producer"))
+		{
+			pTopicConfiguration->SetProducerTimeout(atoi(paramValue));
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.commit.sync"))
+		{
+			if (!strcmp(paramValue, "true") ||
+				!strcmp(paramValue, "1"))
+				pTopicConfiguration->SetCommitSync(TRUE);
+			else
+				pTopicConfiguration->SetCommitSync(FALSE);
+			return;
+		}
+	}
+	else
+	{
+		// if channel handle is NULL we are in Initialize and we need to get only the following parameters
+		if (!strcmp(paramName, "datadistributionmanager.maxmessagesize"))
+		{
+#if _WIN64
+			SetMaxMessageSize(_atoi64(paramValue));
+#else
+			SetMaxMessageSize(_atoi(paramValue));
+#endif
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.serverlost"))
+		{
+			SetServerLostTimeout(atoi(paramValue));
+			return;
+		}
+	}
 }
 
 void DataDistributionCommon::SetParameter(HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId, const char* paramValue)
@@ -116,9 +180,70 @@ void DataDistributionCommon::SetParameter(HANDLE channelHandle, DDM_GENERAL_PARA
 	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "SetParameter", "Not Implemented in subclass");
 }
 
+static const char* ConvertIToA(int value)
+{
+	return _strdup(_itoa(value, NULL, 0));
+}
+
+static const char* ConvertIToA(size_t value)
+{
+#ifdef _WIN64
+	return _strdup(_ui64toa(value, NULL, 0));
+#else
+	return _strdup(itoa(value, NULL, 0));
+#endif
+}
+
 const char* DataDistributionCommon::GetParameter(HANDLE channelHandle, const char* paramName)
 {
-	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "GetParameter", "Not Implemented in subclass");
+	Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "DataDistributionCommon", "GetParameter", "Reading %s", (paramName != NULL) ? paramName : "");
+
+	if (channelHandle != NULL)
+	{
+		ChannelConfiguration* pChannelConfiguration = static_cast<ChannelConfiguration*>(channelHandle);
+
+		if (!strcmp(paramName, "datadistributionmanager.CreateChannel"))
+		{
+			return ConvertIToA(pChannelConfiguration->GetCreateChannelTimeout());
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.channelseek"))
+		{
+			return ConvertIToA(pChannelConfiguration->GetChannelSeekTimeout());
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.firstconnection"))
+		{
+			return ConvertIToA(pChannelConfiguration->GetMessageReceiveTimeout());
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.keepalive"))
+		{
+			return ConvertIToA(pChannelConfiguration->GetKeepAliveTimeout());
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.consumer"))
+		{
+			return ConvertIToA(pChannelConfiguration->GetConsumerTimeout());
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.producer"))
+		{
+			return ConvertIToA(pChannelConfiguration->GetProducerTimeout());
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.commit.sync"))
+		{
+			if (pChannelConfiguration->GetCommitSync()) return "true";
+			else return "false";
+		}
+	}
+	else
+	{
+		if (!strcmp(paramName, "datadistributionmanager.maxmessagesize"))
+		{
+			return ConvertIToA(GetMaxMessageSize());
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.serverlost"))
+		{
+			return ConvertIToA(GetServerLostTimeout());
+		}
+	}
+
 	return NULL;
 }
 
@@ -174,7 +299,7 @@ IDataDistributionCallback* DataDistributionCommon::GetCallbacks()
 
 int DataDistributionCommon::GetServerLostTimeout()
 {
-	return 0;
+	return m_ServerLostTimeout;
 }
 
 std::string DataDistributionCommon::CheckConfigurationParameter(std::string key, std::string value)
@@ -198,6 +323,11 @@ void DataDistributionCommon::SetMaxMessageSize(size_t maxMessageSize)
 	m_MaxMessageSize = maxMessageSize;
 }
 
+void DataDistributionCommon::SetServerLostTimeout(int timeout)
+{
+	m_ServerLostTimeout = timeout;
+}
+
 std::string DataDistributionCommon::GetConfigFile() { return m_confFile; }
 std::string DataDistributionCommon::GetChannelTrailer() { return (m_ChannelTrailer != NULL) ? m_ChannelTrailer : ""; }
 std::string DataDistributionCommon::GetServerName() { return (m_ServerName != NULL) ? m_ServerName : ""; }
@@ -208,11 +338,19 @@ ChannelConfiguration::ChannelConfiguration(const char* channelName, DDM_CHANNEL_
 {
 	m_pChannelName = _strdup(channelName);
 	m_Direction = direction;
-	pMainManager = mainManager;
+	m_pMainManager = mainManager;
 	dataCb = Cb;
 
 	m_StartupStatusSet = FALSE;
 	m_StartupStatus = CHANNEL_STARTUP_TYPE::UNDEFINED;
+
+	m_CommitSync = TRUE;
+	m_CreateChannelTimeout = 10000;
+	m_ChannelSeekTimeout = 10000;
+	m_KeepAliveTimeout = 1000;
+	m_MessageReceiveTimeout = 10000;
+	m_ConsumerTimeout = 10;
+	m_ProducerTimeout = 1;
 
 	m_lastRoutedOffset = -1;
 	m_lastManagedOffset = -1;
@@ -248,6 +386,11 @@ void ChannelConfiguration::SetDirection(DDM_CHANNEL_DIRECTION direction)
 	LeaveCriticalSection(&m_csFlags);
 }
 
+DataDistributionCommon* ChannelConfiguration::GetManager()
+{
+	return m_pMainManager;
+}
+
 void ChannelConfiguration::OnDataAvailable(const char* key, size_t keyLen, void* buffer, size_t len)
 {
 	OnDataAvailable(this, key, keyLen, buffer, len);
@@ -262,25 +405,35 @@ void ChannelConfiguration::OnDataAvailable(const HANDLE channelHandle, const cha
 	}
 }
 
-void ChannelConfiguration::OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, const char* subSystemReason)
+void ChannelConfiguration::OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, const char* subSystemReason, ...)
 {
-	OnConditionOrError(this, errorCode, nativeCode, subSystemReason);
-}
-
-void ChannelConfiguration::OnConditionOrError(const HANDLE channelHandle, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, const char* subSystemReason)
-{
+	va_list args = NULL;
+	va_start(args, subSystemReason);
 	UnderlyingEventData pData(m_pChannelName, errorCode, nativeCode, subSystemReason);
 	if (dataCb != NULL)
 	{
 		dataCb->OnUnderlyingEvent(this, &pData);
 	}
+	va_end(args);
+}
+
+void ChannelConfiguration::OnConditionOrError(const HANDLE channelHandle, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, const char* subSystemReason, ...)
+{
+	va_list args = NULL;
+	va_start(args, subSystemReason);
+	UnderlyingEventData pData(m_pChannelName, errorCode, nativeCode, subSystemReason);
+	if (dataCb != NULL)
+	{
+		dataCb->OnUnderlyingEvent(this, &pData);
+	}
+	va_end(args);
 }
 
 void ChannelConfiguration::Log(DDM_LOG_LEVEL level, const char* function, const char* format, ...)
 {
 	va_list args = NULL;
 	va_start(args, format);
-	static_cast<DataDistributionCommon*>(pMainManager)->Log(level, m_pChannelName, function, format, args);
+	static_cast<DataDistributionCommon*>(m_pMainManager)->Log(level, m_pChannelName, function, format, args);
 	va_end(args);
 }
 
@@ -334,7 +487,7 @@ CHANNEL_STARTUP_TYPE ChannelConfiguration::GetStartupStatus()
 	return status;
 }
 
-BOOL ChannelConfiguration::GetStartupStatusSet()
+BOOL ChannelConfiguration::IsStartupStatusSet()
 {
 	BOOL status = FALSE;
 	EnterCriticalSection(&m_csFlags);
@@ -385,4 +538,23 @@ void ChannelConfiguration::WaitingFinishLockState(DWORD dwMilliseconds)
 	LeaveCriticalSection(&m_csFlags);
 }
 
+BOOL ChannelConfiguration::GetCommitSync() { return m_CommitSync; }
+void ChannelConfiguration::SetCommitSync(BOOL val) { m_CommitSync = val; }
 
+int  ChannelConfiguration::GetCreateChannelTimeout() { return m_CreateChannelTimeout; }
+void ChannelConfiguration::SetCreateChannelTimeout(int val) { m_CreateChannelTimeout = val; }
+
+int  ChannelConfiguration::GetChannelSeekTimeout() { return m_ChannelSeekTimeout; }
+void ChannelConfiguration::SetChannelSeekTimeout(int val) { m_ChannelSeekTimeout = val; }
+
+int  ChannelConfiguration::GetKeepAliveTimeout() { return m_KeepAliveTimeout; }
+void ChannelConfiguration::SetKeepAliveTimeout(int val) { m_KeepAliveTimeout = val; }
+
+int  ChannelConfiguration::GetMessageReceiveTimeout() { return m_MessageReceiveTimeout; }
+void ChannelConfiguration::SetMessageReceiveTimeout(int val) { m_MessageReceiveTimeout = val; }
+
+int  ChannelConfiguration::GetConsumerTimeout() { return m_ConsumerTimeout; }
+void ChannelConfiguration::SetConsumerTimeout(int val) { m_ConsumerTimeout = val; }
+
+int  ChannelConfiguration::GetProducerTimeout() { return m_ProducerTimeout; }
+void ChannelConfiguration::SetProducerTimeout(int val) { m_ProducerTimeout = val; }

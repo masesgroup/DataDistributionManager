@@ -40,6 +40,7 @@ class DataDistributionManagerKafka : public DataDistributionCommon
 public:
 	DataDistributionManagerKafka();
 	virtual ~DataDistributionManagerKafka();
+	HRESULT Initialize();
 	HANDLE CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION::ALL, const char* arrayParams[] = NULL, int len = NULL);
 	HRESULT StartChannel(HANDLE channelHandle, DWORD dwMilliseconds);
 	HRESULT StopChannel(HANDLE channelHandle, DWORD dwMilliseconds);
@@ -90,16 +91,7 @@ public:
 		pTopicPartition = NULL;
 		pTopicPartitionVector = NULL;
 		m_ProducerMsgFlags = 0;
-
 		m_TopicReplicationFactor = 1;
-		m_CommitSync = TRUE;
-		m_CreateChannelTimeout = 10000;
-		m_TopicSeekTimeout = 10000;
-		m_ServerLostTimeout = 10000;
-		m_KeepAliveTimeout = 1000;
-		m_MessageReceiveTimeout = 10000;
-		m_ConsumerTimeout = 10;
-		m_ProducerTimeout = 1;
 		m_CreateTopic = FALSE;
 		m_DumpMetadata = FALSE;
 
@@ -112,14 +104,6 @@ public:
 
 	int m_ProducerMsgFlags;
 	int  m_TopicReplicationFactor;
-	BOOL m_CommitSync;
-	int  m_CreateChannelTimeout;
-	int  m_TopicSeekTimeout;
-	int  m_ServerLostTimeout;
-	int  m_KeepAliveTimeout;
-	int  m_MessageReceiveTimeout;
-	int  m_ConsumerTimeout;
-	int  m_ProducerTimeout;
 	BOOL m_CreateTopic;
 	BOOL m_DumpMetadata;
 
@@ -169,7 +153,7 @@ public:
 			switch (code)
 			{
 			case RdKafka::ERR__ALL_BROKERS_DOWN:
-				if (!pTopicConfiguration->GetStartupStatusSet())
+				if (!pTopicConfiguration->IsStartupStatusSet())
 				{
 					pTopicConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "KafkaMessageManagerEventCb", "ERROR: %s %s", RdKafka::err2str(code).c_str(), event.str().c_str());
 					pTopicConfiguration->SetStartupStatus(CHANNEL_STARTUP_TYPE::DISCONNECTED);
@@ -246,7 +230,7 @@ public:
 				pTopicConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerRebalanceCb", "consumer->assign error: %s", RdKafka::err2str(errorCode).c_str());
 			}
 
-			if (!pTopicConfiguration->GetStartupStatusSet())
+			if (!pTopicConfiguration->IsStartupStatusSet())
 			{
 				pTopicConfiguration->SetStartupStatus(CHANNEL_STARTUP_TYPE::STARTED);
 			}

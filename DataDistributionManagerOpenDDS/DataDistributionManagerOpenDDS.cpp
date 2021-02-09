@@ -91,8 +91,7 @@ DDM_UNDERLYING_ERROR_CONDITION DataDistributionManagerOpenDDS::OpenDDSErrorMappe
 
 HRESULT DataDistributionManagerOpenDDS::conf_init(pChannelConfigurationOpenDDS configuration, const char* arrayParams[], int len)
 {
-	int result = read_config_file(configuration, arrayParams, len);
-	if (result != NO_ERROR) return result;
+	return read_config_file(configuration, arrayParams, len);
 }
 
 HRESULT DataDistributionManagerOpenDDS::read_config_file(pChannelConfigurationOpenDDS configuration, const char* arrayParams[], int len)
@@ -153,6 +152,7 @@ void DataDistributionManagerOpenDDS::SetCmdLine(std::string cmdLine)
 
 HRESULT DataDistributionManagerOpenDDS::Initialize()
 {
+	HRESULT hr = S_OK;
 	if (read_config_file(NULL, GetArrayParams(), GetArrayParamsLen()) != NO_ERROR)
 	{
 		return E_FAIL;
@@ -228,7 +228,7 @@ HRESULT DataDistributionManagerOpenDDS::Initialize()
 
 	m_default_channel_qos.deadline.period = duration;
 
-	return S_OK;
+	return hr;
 }
 
 HRESULT DataDistributionManagerOpenDDS::Lock(HANDLE channelHandle, DWORD timeout)
@@ -401,59 +401,13 @@ void DataDistributionManagerOpenDDS::SetParameter(HANDLE channelHandle, const ch
 {
 	Log(DDM_LOG_LEVEL::INFO_LEVEL, "DataDistributionManagerOpenDDS", "SetParameter", "Name: %s - Value: %s", (paramName != NULL) ? paramName : "", (paramValue != NULL) ? paramValue : "");
 
+	DataDistributionCommon::SetParameter(channelHandle, paramName, paramValue);
+
 	if (NULL != channelHandle)
 	{
+		// Non global params
 		pChannelConfigurationOpenDDS pChannelConfiguration = static_cast<ChannelConfigurationOpenDDS*>(channelHandle);
 
-		if (!strcmp(paramName, "datadistributionmanager.maxmessagesize"))
-		{
-			SetMaxMessageSize(_atoi64(paramValue));
-			return;
-		}
-		else if (!strcmp(paramName, "datadistributionmanager.timeout.serverlost"))
-		{
-			pChannelConfiguration->m_ServerLostTimeout = atoi(paramValue);
-			return;
-		}
-		else if (!strcmp(paramName, "datadistributionmanager.timeout.createchannel"))
-		{
-			pChannelConfiguration->m_CreateChannelTimeout = atoi(paramValue);
-			return;
-		}
-		else if (!strcmp(paramName, "datadistributionmanager.timeout.channelseek"))
-		{
-			pChannelConfiguration->m_ChannelSeekTimeout = atoi(paramValue);
-			return;
-		}
-		else if (!strcmp(paramName, "datadistributionmanager.timeout.receive"))
-		{
-			pChannelConfiguration->m_MessageReceiveTimeout = atoi(paramValue);
-			return;
-		}
-		else if (!strcmp(paramName, "datadistributionmanager.timeout.keepalive"))
-		{
-			pChannelConfiguration->m_KeepAliveTimeout = atoi(paramValue);
-			return;
-		}
-		else if (!strcmp(paramName, "datadistributionmanager.timeout.consumer"))
-		{
-			pChannelConfiguration->m_ConsumerTimeout = atoi(paramValue);
-			return;
-		}
-		else if (!strcmp(paramName, "datadistributionmanager.timeout.producer"))
-		{
-			pChannelConfiguration->m_ProducerTimeout = atoi(paramValue);
-			return;
-		}
-		else if (!strcmp(paramName, "datadistributionmanager.commit.sync"))
-		{
-			if (!strcmp(paramValue, "true") ||
-				!strcmp(paramValue, "1"))
-				pChannelConfiguration->m_CommitSync = TRUE;
-			else
-				pChannelConfiguration->m_CommitSync = FALSE;
-			return;
-		}
 	}
 	else
 	{
@@ -489,55 +443,22 @@ const char* DataDistributionManagerOpenDDS::GetParameter(HANDLE channelHandle, c
 {
 	Log(DDM_LOG_LEVEL::INFO_LEVEL, "DataDistributionManagerOpenDDS", "GetParameter", "Name: %s", (paramName != NULL) ? paramName : "");
 
-	pChannelConfigurationOpenDDS pChannelConfiguration = static_cast<ChannelConfigurationOpenDDS*>(channelHandle);
-
-	if (!strcmp(paramName, "datadistributionmanager.maxmessagesize"))
+	if (NULL != channelHandle)
 	{
-		return ConvertIToA(GetMaxMessageSize());
+		pChannelConfigurationOpenDDS pChannelConfiguration = static_cast<ChannelConfigurationOpenDDS*>(channelHandle);
 	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.serverlost"))
+	else
 	{
-		return ConvertIToA(pChannelConfiguration->m_ServerLostTimeout);
+		if (!strcmp(paramName, "datadistributionmanager.opendds.cmdlineargs"))
+		{
+			return m_cmdLine.c_str();
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.opendds.domain_id"))
+		{
+			return itoa(m_domainId, NULL, 0);
+		}
 	}
-	else if (!strcmp(paramName, "datadistributionmanager.CreateChannel"))
-	{
-		return ConvertIToA(pChannelConfiguration->m_CreateChannelTimeout);
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.channelseek"))
-	{
-		return ConvertIToA(pChannelConfiguration->m_ChannelSeekTimeout);
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.firstconnection"))
-	{
-		return ConvertIToA(pChannelConfiguration->m_MessageReceiveTimeout);
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.keepalive"))
-	{
-		return ConvertIToA(pChannelConfiguration->m_KeepAliveTimeout);
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.consumer"))
-	{
-		return ConvertIToA(pChannelConfiguration->m_ConsumerTimeout);
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.producer"))
-	{
-		return ConvertIToA(pChannelConfiguration->m_ProducerTimeout);
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.commit.sync"))
-	{
-		if (pChannelConfiguration->m_CommitSync) return "true";
-		else return "false";
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.opendds.cmdlineargs"))
-	{
-		return m_cmdLine.c_str();
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.opendds.domain_id"))
-	{
-		return itoa(m_domainId, NULL, 0);
-	}
-
-	return NULL;
+	return DataDistributionCommon::GetParameter(channelHandle, paramName);
 }
 
 HRESULT DataDistributionManagerOpenDDS::SeekChannel(HANDLE channelHandle, size_t position)
@@ -604,7 +525,8 @@ HRESULT DataDistributionManagerOpenDDS::WriteOnChannel(HANDLE channelHandle, con
 		//ORBSVCS_Time::hrtime_to_TimeT(time, timestamp);
 		retCode = pChannelConfiguration->channel_dw->write_w_timestamp(msg, msg_handle, time);
 		if (retCode != DDS::RETCODE_OK) {
-			ACE_ERROR((LM_ERROR, ACE_TEXT("(%P|%t) ERROR: SPY write returned %d.\n"), retCode));
+			ACE_ERROR((LM_ERROR, ACE_TEXT("(%P|%t) ERROR: SPY write_w_timestamp returned %d.\n"), retCode));
+			pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_WRITE_FAILED, retCode, "Failed write_w_timestamp.");
 #pragma warning "send callback"
 			return E_FAIL;
 		}
@@ -615,17 +537,19 @@ HRESULT DataDistributionManagerOpenDDS::WriteOnChannel(HANDLE channelHandle, con
 		if (retCode != DDS::RETCODE_OK) {
 			ACE_ERROR((LM_ERROR, ACE_TEXT("(%P|%t) ERROR: SPY write returned %d.\n"), retCode));
 #pragma warning "send callback"
+			pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_WRITE_FAILED, retCode, "Failed write.");
 			return E_FAIL;
 		}
 	}
 
-	if (pChannelConfiguration->m_CommitSync)
+	if (pChannelConfiguration->GetCommitSync())
 	{
-		DDS::Duration_t timeout = DataDistributionManagerOpenDDS::DurationFromMs(pChannelConfiguration->m_ProducerTimeout);
+		DDS::Duration_t timeout = DataDistributionManagerOpenDDS::DurationFromMs(pChannelConfiguration->GetProducerTimeout());
 		retCode = pChannelConfiguration->channel_dw->wait_for_acknowledgments(timeout);
 		if (retCode != DDS::RETCODE_OK) {
-			ACE_ERROR((LM_ERROR, ACE_TEXT("(%P|%t) ERROR: SPY write returned %d.\n"), retCode));
+			ACE_ERROR((LM_ERROR, ACE_TEXT("(%P|%t) ERROR: SPY wait_for_acknowledgments returned %d.\n"), retCode));
 #pragma warning "send callback"
+			pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_ELAPSED_MESSAGE_ACKNOWLEDGMENT_TIMEOUT, retCode, "Failed wait_for_acknowledgments.");
 			return E_FAIL;
 		}
 	}
@@ -743,7 +667,7 @@ DWORD __stdcall DataDistributionManagerOpenDDS::consumerHandler(void * argh)
 	ws->attach_condition(cond);
 
 	DDS::ConditionSeq active;
-	DDS::Duration_t ten_seconds = DataDistributionManagerOpenDDS::DurationFromMs(pChannelConfiguration->m_MessageReceiveTimeout);
+	DDS::Duration_t ten_seconds = DataDistributionManagerOpenDDS::DurationFromMs(pChannelConfiguration->GetMessageReceiveTimeout());
 	retCode = ws->wait(active, ten_seconds);
 
 	if (retCode == DDS::RETCODE_OK)
@@ -786,7 +710,7 @@ DWORD __stdcall DataDistributionManagerOpenDDS::consumerHandler(void * argh)
 
 	BOOL timeoutEmitted = FALSE;
 	DDS::ReadCondition_var rc = pChannelConfiguration->channel_dr->create_readcondition(DDS::ANY_SAMPLE_STATE, DDS::ANY_VIEW_STATE, DDS::ANY_INSTANCE_STATE);
-	DDS::Duration_t timeout = DataDistributionManagerOpenDDS::DurationFromMs(pChannelConfiguration->m_ConsumerTimeout);
+	DDS::Duration_t timeout = DataDistributionManagerOpenDDS::DurationFromMs(pChannelConfiguration->GetConsumerTimeout());
 	retCode = ws->attach_condition(rc);
 	do
 	{
@@ -832,7 +756,7 @@ DWORD __stdcall DataDistributionManagerOpenDDS::consumerHandler(void * argh)
 		{
 			auto duration = timeStart.ElapsedMilliseconds();
 
-			if (!timeoutEmitted && duration > pChannelConfiguration->m_MessageReceiveTimeout) // no message within m_MessageReceiveTimeout
+			if (!timeoutEmitted && duration > pChannelConfiguration->GetMessageReceiveTimeout()) // no message within m_MessageReceiveTimeout
 			{
 				pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_BEGIN, 0, "Elapsed timeout receiving packets.");
 				timeoutEmitted = TRUE;

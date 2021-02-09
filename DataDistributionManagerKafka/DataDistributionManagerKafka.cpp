@@ -25,7 +25,6 @@ extern "C" __declspec(dllexport) void* CreateObjectImplementation()
 
 DataDistributionManagerKafka::DataDistributionManagerKafka()
 {
-	// init
 	SetMaxMessageSize(1024 * 1024);
 }
 
@@ -169,7 +168,6 @@ exitFun:
 	return retVal;
 }
 
-
 static std::string metadata_print(const std::string &channel, const RdKafka::Metadata *metadata)
 {
 	std::stringstream stdStream;
@@ -234,6 +232,16 @@ static std::string metadata_print(const std::string &channel, const RdKafka::Met
 	}
 
 	return stdStream.str();
+}
+
+HRESULT DataDistributionManagerKafka::Initialize()
+{
+	if (read_config_file(NULL, GetArrayParams(), GetArrayParamsLen()) != NO_ERROR)
+	{
+		return E_FAIL;
+	}
+
+	return S_OK;
 }
 
 HRESULT DataDistributionManagerKafka::Lock(HANDLE channelHandle, DWORD timeout)
@@ -329,7 +337,7 @@ HANDLE DataDistributionManagerKafka::CreateChannel(const char* channelName, IDat
 		return NULL;
 	}
 
-	if (pTopicConfiguration->m_CreateTopic && admin_create_topic(pTopicConfiguration->pProducer->c_ptr(), pTopicConfiguration->GetChannelName(), 1, pTopicConfiguration->m_TopicReplicationFactor, pTopicConfiguration->m_CreateChannelTimeout) != NO_ERROR)
+	if (pTopicConfiguration->m_CreateTopic && admin_create_topic(pTopicConfiguration->pProducer->c_ptr(), pTopicConfiguration->GetChannelName(), 1, pTopicConfiguration->m_TopicReplicationFactor, pTopicConfiguration->GetCreateChannelTimeout()) != NO_ERROR)
 	{
 		delete pTopicConfiguration->pConsumer;
 		delete pTopicConfiguration->pProducer;
@@ -353,7 +361,7 @@ HANDLE DataDistributionManagerKafka::CreateChannel(const char* channelName, IDat
 	if (pTopicConfiguration->m_DumpMetadata)
 	{
 		class RdKafka::Metadata *metadata;
-		auto err = pTopicConfiguration->pProducer->metadata(false, pTopicConfiguration->pTopic, &metadata, pTopicConfiguration->m_CreateChannelTimeout);
+		auto err = pTopicConfiguration->pProducer->metadata(false, pTopicConfiguration->pTopic, &metadata, pTopicConfiguration->GetCreateChannelTimeout());
 
 		if (err != RdKafka::ERR_NO_ERROR)
 		{
@@ -407,59 +415,13 @@ HRESULT DataDistributionManagerKafka::StopChannel(HANDLE channelHandle, DWORD dw
 void DataDistributionManagerKafka::SetParameter(HANDLE channelHandle, const char* paramName, const char* paramValue)
 {
 	Log(DDM_LOG_LEVEL::INFO_LEVEL, "DataDistributionManagerKafka", "SetParameter", "Name: %s - Value: %s", (paramName != NULL) ? paramName : "", (paramValue != NULL) ? paramValue : "");
+
+	DataDistributionCommon::SetParameter(channelHandle, paramName, paramValue);
+
 	std::string errstr;
 	pChannelConfigurationKafka pTopicConfiguration = static_cast<ChannelConfigurationKafka*>(channelHandle);
 
-	if (!strcmp(paramName, "datadistributionmanager.maxmessagesize"))
-	{
-		SetMaxMessageSize(_atoi64(paramValue));
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.serverlost"))
-	{
-		pTopicConfiguration->m_ServerLostTimeout = atoi(paramValue);
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.createchannel"))
-	{
-		pTopicConfiguration->m_CreateChannelTimeout = atoi(paramValue);
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.channelseek"))
-	{
-		pTopicConfiguration->m_TopicSeekTimeout = atoi(paramValue);
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.receive"))
-	{
-		pTopicConfiguration->m_MessageReceiveTimeout = atoi(paramValue);
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.keepalive"))
-	{
-		pTopicConfiguration->m_KeepAliveTimeout = atoi(paramValue);
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.consumer"))
-	{
-		pTopicConfiguration->m_ConsumerTimeout = atoi(paramValue);
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.producer"))
-	{
-		pTopicConfiguration->m_ProducerTimeout = atoi(paramValue);
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.commit.sync"))
-	{
-		if (!strcmp(paramValue, "true") ||
-			!strcmp(paramValue, "1"))
-			pTopicConfiguration->m_CommitSync = TRUE;
-		else
-			pTopicConfiguration->m_CommitSync = FALSE;
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.kafka.producer.msgflags"))
+	if (!strcmp(paramName, "datadistributionmanager.kafka.producer.msgflags"))
 	{
 		pTopicConfiguration->m_ProducerMsgFlags = atoi(paramValue);
 		return;
@@ -544,50 +506,23 @@ const char* DataDistributionManagerKafka::GetParameter(HANDLE channelHandle, con
 {
 	pChannelConfigurationKafka pTopicConfiguration = static_cast<ChannelConfigurationKafka*>(channelHandle);
 
-	if (!strcmp(paramName, "datadistributionmanager.maxmessagesize"))
-	{
-		return ConvertIToA(GetMaxMessageSize());
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.serverlost"))
-	{
-		return ConvertIToA(pTopicConfiguration->m_ServerLostTimeout);
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.createchannel"))
-	{
-		return ConvertIToA(pTopicConfiguration->m_CreateChannelTimeout);
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.channelseek"))
-	{
-		return ConvertIToA(pTopicConfiguration->m_TopicSeekTimeout);
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.firstconnection"))
-	{
-		return ConvertIToA(pTopicConfiguration->m_MessageReceiveTimeout);
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.keepalive"))
-	{
-		return ConvertIToA(pTopicConfiguration->m_KeepAliveTimeout);
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.consumer"))
-	{
-		return ConvertIToA(pTopicConfiguration->m_ConsumerTimeout);
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.timeout.producer"))
-	{
-		return ConvertIToA(pTopicConfiguration->m_ProducerTimeout);
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.commit.sync"))
-	{
-		if (pTopicConfiguration->m_CommitSync) return "true";
-		else return "false";
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.kafka.producer.msgflags"))
+	if (!strcmp(paramName, "datadistributionmanager.kafka.producer.msgflags"))
 	{
 		return ConvertIToA(pTopicConfiguration->m_ProducerMsgFlags);
 	}
 	else if (!strcmp(paramName, "datadistributionmanager.kafka.topic.replicationfactor"))
 	{
 		return ConvertIToA(pTopicConfiguration->m_TopicReplicationFactor);
+	}
+	else if (!strcmp(paramName, "datadistributionmanager.kafka.topic.create"))
+	{
+		if (pTopicConfiguration->m_CreateTopic) return "true";
+		else return "false";
+	}
+	else if (!strcmp(paramName, "datadistributionmanager.kafka.topic.dumpmetadata"))
+	{
+		if (pTopicConfiguration->m_DumpMetadata) return "true";
+		else return "false";
 	}
 
 	std::string n(paramName);
@@ -628,7 +563,7 @@ const char* DataDistributionManagerKafka::GetParameter(HANDLE channelHandle, con
 	}
 	else return _strdup(v.c_str());
 
-	return NULL;
+	return DataDistributionCommon::GetParameter(channelHandle, paramName);
 }
 
 HRESULT DataDistributionManagerKafka::SeekChannel(HANDLE channelHandle, size_t position)
@@ -645,7 +580,7 @@ HRESULT DataDistributionManagerKafka::SeekChannel(HANDLE channelHandle, size_t p
 	std::vector<RdKafka::TopicPartition*> partVector;
 	std::string sTopicName = pTopicConfiguration->GetChannelName();
 	partVector.push_back(RdKafka::TopicPartition::create(sTopicName, 0, position));
-	code = pTopicConfiguration->pConsumer->offsetsForTimes(partVector, pTopicConfiguration->m_CreateChannelTimeout);
+	code = pTopicConfiguration->pConsumer->offsetsForTimes(partVector, pTopicConfiguration->GetCreateChannelTimeout());
 	for (unsigned int i = 0; i < partVector.size(); i++)
 	{
 #ifdef _WIN64
@@ -714,7 +649,7 @@ HRESULT DataDistributionManagerKafka::WriteOnChannel(HANDLE channelHandle, const
 	{
 		DDM_UNDERLYING_ERROR_CONDITION thisCode = KafkaErrorMapper(code);
 
-		pTopicConfiguration->OnConditionOrError(thisCode, code, RdKafka::err2str(code).c_str());
+		pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_WRITE_FAILED, code, RdKafka::err2str(code).c_str());
 		return E_FAIL;
 	}
 	return S_OK;
@@ -726,7 +661,7 @@ HRESULT DataDistributionManagerKafka::ReadFromChannel(HANDLE channelHandle, int6
 	if (!GetSubSystemStarted())
 	{
 		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "ReadFromTopic", "SubSystem not started.");
-		return FALSE;
+		return S_FALSE;
 	}
 
 	return S_OK;
@@ -1116,6 +1051,7 @@ DWORD __stdcall DataDistributionManagerKafka::consumerHandler(void * argh)
 	if (code != RdKafka::ERR_NO_ERROR)
 	{
 		pTopicConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "consumerHandler", "pTopicConfiguration->pConsumer->subscribe error: %s", RdKafka::err2str(code).c_str());
+		pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, code, "Failed to start subsystem: %s", RdKafka::err2str(code).c_str());
 		pTopicConfiguration->bConsumerRun = FALSE;
 		SetEvent(pTopicConfiguration->h_evtConsumer);
 		return -1;
@@ -1127,7 +1063,7 @@ DWORD __stdcall DataDistributionManagerKafka::consumerHandler(void * argh)
 		p_Msg = pTopicConfiguration->pConsumer->consume(10); // waiting first message to know if we are connected
 		code = p_Msg->err();
 		if (code == RdKafka::ErrorCode::ERR_NO_ERROR) pTopicConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "primaryConsumerHandler", "Received Message in the loop");
-		result = code == RdKafka::ErrorCode::ERR__TIMED_OUT && !pTopicConfiguration->GetStartupStatusSet();
+		result = code == RdKafka::ErrorCode::ERR__TIMED_OUT && !pTopicConfiguration->IsStartupStatusSet();
 		if (result) delete p_Msg;
 	} while (result);
 
@@ -1136,6 +1072,7 @@ DWORD __stdcall DataDistributionManagerKafka::consumerHandler(void * argh)
 	if (pTopicConfiguration->GetStartupStatus() != CHANNEL_STARTUP_TYPE::STARTED)
 	{
 		pTopicConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "consumerHandler", "pKafkaMessageManager->GetStartupStatus() is: %d", pTopicConfiguration->GetStartupStatus());
+		pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, 0, "Failed to start subsystem");
 		pTopicConfiguration->bConsumerRun = FALSE;
 		SetEvent(pTopicConfiguration->h_evtConsumer);
 		return -1;
@@ -1157,17 +1094,13 @@ DWORD __stdcall DataDistributionManagerKafka::consumerHandler(void * argh)
 		{
 			auto duration = timeStart.ElapsedMilliseconds();
 
-			if (!timeoutEmitted && duration > pTopicConfiguration->m_MessageReceiveTimeout) // no message within m_MessageReceiveTimeout
+			if (!timeoutEmitted && duration > pTopicConfiguration->GetMessageReceiveTimeout()) // no message within m_MessageReceiveTimeout
 			{
 				pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_BEGIN, 0, "Elapsed timeout receiving packets.");
 				timeoutEmitted = TRUE;
 			}
 		}
-#ifdef TRIAL_VERSION_DEPLOY
-		continue;
-#else
 		break;
-#endif
 		case RdKafka::ErrorCode::ERR_NO_ERROR:
 		{
 			if (timeoutEmitted)
@@ -1181,7 +1114,7 @@ DWORD __stdcall DataDistributionManagerKafka::consumerHandler(void * argh)
 
 			if (deleteMsgOnExit)
 			{
-				if (pTopicConfiguration->m_CommitSync)
+				if (pTopicConfiguration->GetCommitSync())
 				{
 					code = pTopicConfiguration->pConsumer->commitSync(p_Msg);
 				}
@@ -1192,22 +1125,18 @@ DWORD __stdcall DataDistributionManagerKafka::consumerHandler(void * argh)
 				if (code != RdKafka::ERR_NO_ERROR)
 				{
 					pTopicConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "consumerHandler", "pTopicConfiguration->pConsumer->commitSync/commitAsync error: %s", RdKafka::err2str(code).c_str());
+					pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_COMMIT_FAILED, code, "Failed to commit message: %s", RdKafka::err2str(code).c_str());
 				}
 				pTopicConfiguration->SetManagedOffset(p_Msg->offset());
 			}
 		}
-#ifdef TRIAL_VERSION_DEPLOY
-		continue;
-#else
 		break;
-#endif
 		default:
-			DDM_UNDERLYING_ERROR_CONDITION errCondCode = KafkaErrorMapper(code);
-			pTopicConfiguration->OnConditionOrError(errCondCode, code, RdKafka::err2str(code).c_str());
+			pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_UNMAPPED_ERROR_CONDITION, code, RdKafka::err2str(code).c_str());
 			break;
 		}
 		if (deleteMsgOnExit) delete p_Msg;
-	} while ((p_Msg = pTopicConfiguration->pConsumer->consume(pTopicConfiguration->m_ConsumerTimeout)) != NULL && pTopicConfiguration->bConsumerRun);
+	} while ((p_Msg = pTopicConfiguration->pConsumer->consume(pTopicConfiguration->GetConsumerTimeout())) != NULL && pTopicConfiguration->bConsumerRun);
 
 	return S_OK;
 }
@@ -1220,7 +1149,7 @@ DWORD __stdcall DataDistributionManagerKafka::pollHandler(void * argh)
 
 	while (pTopicConfiguration->bPollRun)
 	{
-		int eventServed = pTopicConfiguration->pProducer->poll(pTopicConfiguration->m_ProducerTimeout);
+		int eventServed = pTopicConfiguration->pProducer->poll(pTopicConfiguration->GetProducerTimeout());
 		if (eventServed != 0) pTopicConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, pTopicConfiguration->GetChannelName(), "primaryPollHandler", "served %d events", eventServed);
 	}
 

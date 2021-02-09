@@ -140,7 +140,7 @@ namespace MASES.DataDistributionManager.Bindings
             }
             set
             {
-                keyValuePair[TopicCreateKey] = value.ToString();
+                keyValuePair[TopicCreateKey] = value.ToString().ToLowerInvariant();
             }
         }
 
@@ -157,7 +157,7 @@ namespace MASES.DataDistributionManager.Bindings
             }
             set
             {
-                keyValuePair[DumpMetadataKey] = value.ToString();
+                keyValuePair[DumpMetadataKey] = value.ToString().ToLowerInvariant();
             }
         }
 

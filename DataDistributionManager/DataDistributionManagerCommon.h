@@ -77,16 +77,17 @@ public:
 	virtual HRESULT ReadFromChannel(HANDLE channelHandle, int64_t offset, size_t *dataLen, void **param);
 	virtual HRESULT ChangeChannelDirection(HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction);
 
-	size_t GetMaxMessageSize();
+	virtual size_t GetMaxMessageSize();
+	virtual int GetServerLostTimeout();
 	virtual	HRESULT Start(DWORD dwMilliseconds);
 	virtual	HRESULT Stop(DWORD dwMilliseconds);
 	IDataDistributionCallback* GetCallbacks();
-	virtual int GetServerLostTimeout();
 	BOOL GetSubSystemStarted();
 protected:
 	std::string CheckConfigurationParameter(std::string key, std::string value);
 	void SetSubSystemStarted(BOOL started);
 	void SetMaxMessageSize(size_t maxMessageSize);
+	void SetServerLostTimeout(int timeout);
 	std::string GetConfigFile();
 	std::string GetChannelTrailer();
 	std::string GetServerName();
@@ -96,6 +97,7 @@ private:
 	const char** m_arrayParams;
 	int m_arrayParamsLen;
 	size_t m_MaxMessageSize;
+	int  m_ServerLostTimeout;
 	IDataDistributionCallback* m_pDataDistributionManagerCallbacks;
 	const char* m_confFile;
 	const char* m_ChannelTrailer;
@@ -110,10 +112,11 @@ public:
 	const char* GetChannelName();
 	DDM_CHANNEL_DIRECTION GetDirection();
 	void SetDirection(DDM_CHANNEL_DIRECTION direction);
+	DataDistributionCommon* GetManager();
 	void OnDataAvailable(const char* key, size_t keyLen, void* buffer, size_t len);
 	void OnDataAvailable(const HANDLE channelHandle, const char* key, size_t keyLen, void* buffer, size_t len);
-	void OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, const char* subSystemReason);
-	void OnConditionOrError(const HANDLE channelHandle, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, const char* subSystemReason);
+	void OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, const char* subSystemReason, ...);
+	void OnConditionOrError(const HANDLE channelHandle, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, const char* subSystemReason, ...);
 	void Log(DDM_LOG_LEVEL level, const char* function, const char* format, ...);
 	void CompletelyDisconnected();
 	int64_t GetManagedOffset();
@@ -121,18 +124,42 @@ public:
 	DWORD WaitStartupStatus(DWORD dwMilliseconds);
 	void SetStartupStatus(CHANNEL_STARTUP_TYPE status);
 	CHANNEL_STARTUP_TYPE GetStartupStatus();
-	BOOL GetStartupStatusSet();
+	BOOL IsStartupStatusSet();
 	BOOL GetLockState();
 	HRESULT SetLockState();
 	HRESULT ResetLockState();
 	void WaitingFinishLockState(DWORD dwMilliseconds);
+
+	BOOL GetCommitSync();
+	void SetCommitSync(BOOL);
+	int  GetCreateChannelTimeout();
+	void SetCreateChannelTimeout(int);
+	int  GetChannelSeekTimeout();
+	void SetChannelSeekTimeout(int);
+	int  GetKeepAliveTimeout();
+	void SetKeepAliveTimeout(int);
+	int GetMessageReceiveTimeout();
+	void SetMessageReceiveTimeout(int);
+	int  GetConsumerTimeout();
+	void SetConsumerTimeout(int);
+	int  GetProducerTimeout();
+	void SetProducerTimeout(int);
 protected:
 	CRITICAL_SECTION m_csFlags;
 	CRITICAL_SECTION m_csState;
 	CRITICAL_SECTION m_csOffsets;
 	int64_t m_lastRoutedOffset;
 	int64_t m_lastManagedOffset;
+
 private:
+	BOOL m_CommitSync;
+	int  m_CreateChannelTimeout;
+	int  m_ChannelSeekTimeout;
+	int  m_KeepAliveTimeout;
+	int  m_MessageReceiveTimeout;
+	int  m_ConsumerTimeout;
+	int  m_ProducerTimeout;
+
 	BOOL bLockState;
 
 	HANDLE h_evtStartupStatus;
@@ -141,7 +168,7 @@ private:
 	BOOL m_StartupStatusSet;
 
 	CHANNEL_STARTUP_TYPE m_StartupStatus;
-	DataDistributionCommon* pMainManager;
+	DataDistributionCommon* m_pMainManager;
 	IDataDistributionChannelCallback* dataCb;
 	char* m_pChannelName;
 	DDM_CHANNEL_DIRECTION m_Direction;

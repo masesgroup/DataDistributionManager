@@ -47,7 +47,6 @@ class __declspec(dllexport) DataDistributionManagerOpenDDS : public DataDistribu
 public:
 	DataDistributionManagerOpenDDS();
 	virtual ~DataDistributionManagerOpenDDS(void);
-	size_t GetMaxStateSize();
 	HRESULT Initialize();
 	HANDLE CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION::ALL, const char* arrayParams[] = NULL, int len = NULL);
 	HRESULT StartChannel(HANDLE channelHandle, DWORD dwMilliseconds);
@@ -102,30 +101,8 @@ public:
 	ChannelConfigurationOpenDDS(const char* channelName, DDM_CHANNEL_DIRECTION direction, DataDistributionManagerOpenDDS* mainManager, IDataDistributionChannelCallback* Cb)
 		: ChannelConfiguration(channelName,direction, mainManager, Cb)
 	{
-		m_CreateChannelTimeout = 10000;
-		m_ChannelSeekTimeout = 10000;
-		m_ServerLostTimeout = 10000;
-		m_KeepAliveTimeout = 1000;
-		m_MessageReceiveTimeout = 10000;
-		m_CommitSync = FALSE;
-		m_ConsumerTimeout = 10;
-		m_ProducerTimeout = 1;
-
-		m_lastRoutedOffset = -1;
-		m_lastManagedOffset = -1;
-
 		h_evtConsumer = CreateEvent(0, true, false, NULL);
 	}
-
-	BOOL m_CommitSync;
-
-	int  m_CreateChannelTimeout;
-	int  m_ChannelSeekTimeout;
-	int  m_ServerLostTimeout;
-	int  m_KeepAliveTimeout;
-	int  m_MessageReceiveTimeout;
-	int  m_ConsumerTimeout;
-	int  m_ProducerTimeout;
 
 	DDS::Topic_var channel_channel;
 

@@ -23,8 +23,6 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-//#define TRIAL_VERSION_DEPLOY
-
 #define _CRT_RAND_S  
 
 #include <winsock2.h>

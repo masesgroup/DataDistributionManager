@@ -215,8 +215,6 @@ public:
 	virtual void Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, ...) = 0;
 	virtual void Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, va_list args) = 0;
 	virtual	IDataDistributionCallback* GetCallbacks() = 0;
-protected:
-	virtual	void SetMaxMessageSize(size_t stateSize) = 0;
 };
 
 typedef std::map<int64_t, ClusterHealthElement*> ClusterHealth;

@@ -48,7 +48,14 @@ public enum DDM_UNDERLYING_ERROR_CONDITION {
      * Subsystem not started
      */
     DDM_SUBSYSTEM_NOT_STARTED("DDM_SUBSYSTEM_NOT_STARTED", 0x10000004),
-
+    /**
+     * Write failed
+     */
+    DDM_WRITE_FAILED("DDM_WRITE_FAILED", 0x10000005),
+    /**
+     * Commit failed
+     */
+    DDM_COMMIT_FAILED("DDM_COMMIT_FAILED", 0x10000006),
     // Condition section
     /**
      * Data are available
@@ -69,7 +76,11 @@ public enum DDM_UNDERLYING_ERROR_CONDITION {
     /**
      * End timeout condition waiting for messages from the channel
      */
-    DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_END("DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_END", 0x20000004);
+    DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_END("DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_END", 0x20000004),
+    /**
+     * Timeout on acknowledgment
+     */
+    DDM_ELAPSED_MESSAGE_ACKNOWLEDGMENT_TIMEOUT("DDM_ELAPSED_MESSAGE_ACKNOWLEDGMENT_TIMEOUT", 0x20000005);
 
     private static final Map<String, DDM_UNDERLYING_ERROR_CONDITION> BY_LABEL = new HashMap<>();
     private static final Map<Integer, DDM_UNDERLYING_ERROR_CONDITION> BY_ATOMIC_NUMBER = new HashMap<>();

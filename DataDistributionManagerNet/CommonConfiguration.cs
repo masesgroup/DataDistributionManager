@@ -232,7 +232,7 @@ namespace MASES.DataDistributionManager.Bindings
             }
             set
             {
-                keyValuePair[CommitSyncKey] = value.ToString();
+                keyValuePair[CommitSyncKey] = value.ToString().ToLowerInvariant();
             }
         }
 
