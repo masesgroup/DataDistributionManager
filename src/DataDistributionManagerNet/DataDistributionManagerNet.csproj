@@ -44,10 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\ProductInformation\Version.cs">
+    <Compile Include="..\..\ProductInformation\Version.cs">
       <Link>Properties\Version.cs</Link>
     </Compile>
-    <Compile Include="..\ProductInformation\ComponentVersion.cs">
+    <Compile Include="..\..\ProductInformation\ComponentVersion.cs">
       <Link>Properties\ComponentVersion.c</Link>
     </Compile>
     <Compile Include="CommonConfiguration.cs" />
