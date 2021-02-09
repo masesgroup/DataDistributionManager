@@ -13,7 +13,7 @@ IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 @echo javadoc END
 
-xcopy ..\OutputJava\*.* .\Output\org\mases\datadistributionmanager /Y /E
+xcopy ..\..\OutputJava\*.* .\Output\org\mases\datadistributionmanager /Y /E
 
 "%JDK_ROOT_FOLDER%\bin\jar.exe" cvfm datadistributionmanager.jar datadistributionmanagerManifest.txt -C ./Output . > .\datadistributionmanager.jar.txt
 IF %ERRORLEVEL% NEQ 0 GOTO ERROR
@@ -21,10 +21,10 @@ IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 "%JDK_ROOT_FOLDER%\bin\jar.exe" cvf datadistributionmanager.docs.jar -C ./Javadoc . > .\datadistributionmanager.docs.jar.txt 
 IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 @echo jar datadistributionmanager.docs.jar END
-move /Y datadistributionmanager.jar ..\Output
+move /Y datadistributionmanager.jar ..\..\Output
 IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 @echo move datadistributionmanager.jar END
-move /Y datadistributionmanager.docs.jar ..\Output
+move /Y datadistributionmanager.docs.jar ..\..\Output
 IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 @echo move datadistributionmanager.docs.jar END
 GOTO END

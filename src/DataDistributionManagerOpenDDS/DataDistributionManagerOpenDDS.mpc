@@ -21,12 +21,12 @@ project(*Common) : dcps, svc_utils {
   dynamicflags   = NOGDI;DATADISTRIBUTIONSCHEMACOMMON_BUILD_DLL
   
   specific {  
-	Win32::libout = ..\Output\x86
-	Win32::libs     += ..\Output\x86\DataDistributionManager
-	Win32::libpaths = ..\Output\lib32
-	x64::libout = ..\Output\x64
-	x64::libs     += ..\Output\x64\DataDistributionManager
-	x64::libpaths = ..\Output\lib64
+	Win32::libout = ..\..\Output\x86
+	Win32::libs     += ..\..\Output\x86\DataDistributionManager
+	Win32::libpaths = ..\..\Output\lib32
+	x64::libout = ..\..\Output\x64
+	x64::libs     += ..\..\Output\x64\DataDistributionManager
+	x64::libpaths = ..\..\Output\lib64
 	}
 
   requires += tao_orbsvcs
@@ -65,14 +65,14 @@ project(*Publisher) : dcpsexe, dcps_tcp, svc_utils {
   after    += *Common
   exename  = publisher
   specific {  
-	Win32::exeout   = ..\Output\x86
-	Win32::libs     += ..\Output\x86\DataDistributionManager
-	Win32::libs     += ..\Output\x86\DataDistributionManagerOpenDDS
-	Win32::libpaths = ..\Output\lib32
-	x64::exeout   = ..\Output\x64
-	x64::libs     += ..\Output\x64\DataDistributionManagerOpenDDS
-    x64::libs     += ..\Output\x64\DataDistributionManager
-	x64::libpaths = ..\Output\lib64
+	Win32::exeout   = ..\..\Output\x86
+	Win32::libs     += ..\..\Output\x86\DataDistributionManager
+	Win32::libs     += ..\..\Output\x86\DataDistributionManagerOpenDDS
+	Win32::libpaths = ..\..\Output\lib32
+	x64::exeout   = ..\..\Output\x64
+	x64::libs     += ..\..\Output\x64\DataDistributionManagerOpenDDS
+    x64::libs     += ..\..\Output\x64\DataDistributionManager
+	x64::libpaths = ..\..\Output\lib64
 	}
   requires += tao_orbsvcs
   requires += no_opendds_safety_profile
@@ -105,12 +105,12 @@ project(*Subscriber) : dcpsexe, dcps_tcp {
   after    += *Common
   exename  = subscriber
   specific {  
-	Win32::exeout   = ..\Output\x86
-	Win32::libs     += ..\Output\x86\DataDistributionManager;..\Output\x86\DataDistributionManagerOpenDDS
-	Win32::libpaths = ..\Output\lib32
-	x64::exeout   = ..\Output\x64
-	x64::libs     += ..\Output\x64\DataDistributionManagerOpenDDS;..\Output\x64\DataDistributionManager
-	x64::libpaths = ..\Output\lib64
+	Win32::exeout   = ..\..\Output\x86
+	Win32::libs     += ..\..\Output\x86\DataDistributionManager;..\Output\x86\DataDistributionManagerOpenDDS
+	Win32::libpaths = ..\..\Output\lib32
+	x64::exeout   = ..\..\Output\x64
+	x64::libs     += ..\..\Output\x64\DataDistributionManagerOpenDDS;..\Output\x64\DataDistributionManager
+	x64::libpaths = ..\..\Output\lib64
 	}
   requires += tao_orbsvcs
   requires += no_opendds_safety_profile

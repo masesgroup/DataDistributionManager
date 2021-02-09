@@ -163,7 +163,7 @@ void DataDistributionCommon::SetParameter(HANDLE channelHandle, const char* para
 #if _WIN64
 			SetMaxMessageSize(_atoi64(paramValue));
 #else
-			SetMaxMessageSize(_atoi(paramValue));
+			SetMaxMessageSize(atoi(paramValue));
 #endif
 			return;
 		}
