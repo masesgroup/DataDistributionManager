@@ -18,11 +18,16 @@
 
 package org.mases.datadistributionmanager;
 
+import java.nio.charset.Charset;
+
 /**
  * Main class managing channel
  */
 public class SmartDataDistributionChannel implements IDataDistributionChannelCallbackLow {
-    SmartDataDistributionChannel() {
+    /**
+     * Ctor
+     */
+    public SmartDataDistributionChannel() {
         m_DataDistributionChannelCallbackLow = NativeCallbackManager.RegisterCallback(this);
     }
 
@@ -88,8 +93,74 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
     /**
      * Writes on the channel
      * 
+     * @param key   The key to use
+     * @param value The {@link String} to write in the channel
+     * @return {@link HRESULT}
+     */
+    public HRESULT WriteOnChannel(String key, String value) {
+        return WriteOnChannel(key, value, false, -1);
+    }
+
+    /**
+     * Writes on the channel
+     * 
+     * @param key     The key to use
+     * @param value   The {@link String} to write in the channel
+     * @param waitAll waits all write in the distributed environment
+     * @return {@link HRESULT}
+     */
+    public HRESULT WriteOnChannel(String key, String value, boolean waitAll) {
+        return WriteOnChannel(key, value, waitAll, -1);
+    }
+
+    /**
+     * Writes on the channel
+     * 
      * @param key       The key to use
-     * @param buffer    The buffer to write
+     * @param value     The {@link String} to write in the channel
+     * @param waitAll   waits all write in the distributed environment
+     * @param timestamp timestamp to apply
+     * @return {@link HRESULT}
+     */
+    public HRESULT WriteOnChannel(String key, String value, boolean waitAll, long timestamp) {
+        byte[] buffer = value.getBytes(Charset.forName("UTF8"));
+        return WriteOnChannel(key, buffer, waitAll, timestamp);
+    }
+
+    /**
+     * Writes on the channel
+     * 
+     * @param key       The key to use
+     * @param buffer    The buffer to write in the channel
+     * @return {@link HRESULT}
+     */
+    public HRESULT WriteOnChannel(String key, byte[] buffer) {
+        // Call unmanaged code
+        long res = NativeInterface.IDataDistributionSubsystem_WriteOnChannel(IDataDistributionSubsystemManager_ptr,
+                topicHandle, key, buffer, false, -1);
+        return new HRESULT(res);
+    }
+
+    /**
+     * Writes on the channel
+     * 
+     * @param key       The key to use
+     * @param buffer    The buffer to write in the channel
+     * @param waitAll   waits all write in the distributed environment
+     * @return {@link HRESULT}
+     */
+    public HRESULT WriteOnChannel(String key, byte[] buffer, boolean waitAll) {
+        // Call unmanaged code
+        long res = NativeInterface.IDataDistributionSubsystem_WriteOnChannel(IDataDistributionSubsystemManager_ptr,
+                topicHandle, key, buffer, waitAll, -1);
+        return new HRESULT(res);
+    }
+
+    /**
+     * Writes on the channel
+     * 
+     * @param key       The key to use
+     * @param buffer    The buffer to write in the channel
      * @param waitAll   waits all write in the distributed environment
      * @param timestamp timestamp to apply
      * @return {@link HRESULT}

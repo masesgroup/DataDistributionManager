@@ -30,7 +30,7 @@ namespace MASES.DataDistributionManager.Bindings
         /// <summary>
         /// Ctor
         /// </summary>
-        SmartDataDistributionChannel()
+        public SmartDataDistributionChannel()
         {
             m_DataDistributionChannelCallbackLow = new DataDistributionChannelCallbackLow(IntPtr.Zero, this);
         }
@@ -84,6 +84,19 @@ namespace MASES.DataDistributionManager.Bindings
         public HRESULT SeekChannel(Int64 position)
         {
            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_SeekChannel>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, position);
+        }
+        /// <summary>
+        /// Writes in the channel
+        /// </summary>
+        /// <param name="key">Key to use in the channel message</param>
+        /// <param name="value">The <see cref="string"/> to write in the channel</param>
+        /// <param name="waitAll">Wait a complete acknowledge from the peers</param>
+        /// <param name="timestamp">timestamp to associated to the message</param>
+        /// <returns></returns>
+        public HRESULT WriteOnChannel(string key, string value, bool waitAll = false, Int64 timestamp = -1)
+        {
+            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(value);
+            return WriteOnChannel(key, buffer, waitAll, timestamp);
         }
         /// <summary>
         /// Writes in the channel
