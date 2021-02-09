@@ -25,25 +25,23 @@ public class DataDistributionManagerJavaTest {
 		final int THRESHOLD = 1000;
 
 		DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.RECEIVER;
-
-		OpenDDSConfiguration conf = new OpenDDSConfiguration();
-		// set direct values
-		conf.setDCPSInfoRepoAutostart(true);
-		conf.setDCPSInfoRepoCommandLine("-ORBEndpoint iiop://localhost:12345");
-		conf.setDCPSConfigFile("dds_tcp_conf.ini");
-		conf.setDCPSTransportDebugLevel(10);
-
-		// set the full command line
-		// conf.setCommandLine("-DCPSConfigFile dds_tcp_conf.ini -DCPSTransportDebugLevel 10");
-
-		String[] confRes = conf.getConfiguration();
-
 		MySmartDataDistribution dataDistribution = new MySmartDataDistribution();
-		String str = "test";
-		// use the external file
-		HRESULT hRes = dataDistribution.Initialize(conf);
-		// use the external file
-		// HRESULT hRes = dataDistribution.Initialize("OpenDDSManager.conf");
+		HRESULT hRes = HRESULT.S_OK;
+		if (args.length == 0) {
+			OpenDDSConfiguration conf = new OpenDDSConfiguration();
+			// set the full command line
+			// conf.setCommandLine("-DCPSConfigFile dds_tcp_conf.ini
+			// -DCPSTransportDebugLevel 10");
+			// set direct values
+			conf.setDCPSInfoRepoAutostart(true);
+			conf.setDCPSInfoRepoCommandLine("-ORBEndpoint iiop://localhost:12345");
+			conf.setDCPSConfigFile("dds_tcp_conf.ini");
+			conf.setDCPSTransportDebugLevel(10);
+			String[] confRes = conf.getConfiguration();
+			hRes = dataDistribution.Initialize(conf);
+		} else {
+			hRes = dataDistribution.Initialize(args[0]);
+		}
 
 		if (hRes.getFailed()) {
 			System.out.println("Error in configuration.");
@@ -64,15 +62,14 @@ public class DataDistributionManagerJavaTest {
 			return;
 		}
 
-		System.out.println("After StartMasterConsumerAndWait...\n");
+		System.out.println("After CeateSmartChannel...\n");
 
 		mytestTopic.StartChannel(10000);
 
 		try {
 			System.out.println("Starting sending...\n");
-
 			int counter = 100;
-
+			String str = "test";
 			byte[] buffer = str.getBytes(Charset.forName("ASCII"));
 			while (true) {
 				hRes = HRESULT.S_OK;
@@ -87,7 +84,7 @@ public class DataDistributionManagerJavaTest {
 				}
 				Thread.sleep(1000);
 			}
-		} catch ( InterruptedException e) {
+		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
