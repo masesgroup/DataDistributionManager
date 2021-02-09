@@ -78,6 +78,7 @@ private:
 	HRESULT StartConsumerAndWait(pChannelConfigurationOpenDDS pChannelConfiguration, DWORD dwMilliseconds);
 	void StopConsumer(pChannelConfigurationOpenDDS pChannelConfiguration);
 	static DWORD __stdcall consumerHandler(void * argh);
+	HRESULT InitializeInfoRepo();
 private:
 	::DDS::DomainId_t m_domainId;
 	DataDistributionSchema::OpenDDSMsgTypeSupport_var openddsmsg_servant;
@@ -89,6 +90,9 @@ private:
 	ACE_ARGV_T<char>* m_myArgs;
 	int m_argc;
 	char** m_argv;
+
+	::CORBA::Boolean m_bStartDCPSInfoRepo;
+	std::string	m_DCPSInfoRepoCmdLine;
 
 	int  m_ServerLostTimeout;
 

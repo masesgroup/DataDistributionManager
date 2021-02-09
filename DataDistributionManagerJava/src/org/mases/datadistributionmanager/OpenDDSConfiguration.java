@@ -26,7 +26,8 @@ import java.util.HashMap;
  */
 public class OpenDDSConfiguration extends CommonConfiguration {
     HashMap<String, String> commandLineKeyValuePair = new HashMap<String, String>();
-
+    final String DCPSInfoRepoAutostartKey = "datadistributionmanager.opendds.dcpsinforepo.autostart";
+    final String DCPSInfoRepoCommandLineKey = "datadistributionmanager.opendds.dcpsinforepo.cmdlineargs";
     final String CommandLineKey = "datadistributionmanager.opendds.cmdlineargs";
     final String DomainIdKey = "datadistributionmanager.opendds.domain_id";
     final String DCPSConfigFileKey = "DCPSConfigFile";
@@ -40,9 +41,47 @@ public class OpenDDSConfiguration extends CommonConfiguration {
     }
 
     /**
+     * Automatically start DCPSInfoRepo
+     * 
+     * @return Automatically start DCPSInfoRepo
+     */
+    public boolean getDCPSInfoRepoAutostart() {
+        String value = keyValuePair.get(DCPSInfoRepoAutostartKey);
+        return (value == null) ? false : Boolean.parseBoolean(value);
+    }
+
+    /**
+     * Automatically start DCPSInfoRepo
+     * 
+     * @param value Automatically start DCPSInfoRepo
+     */
+    public void setDCPSInfoRepoAutostart(Boolean value) {
+        keyValuePair.put(DCPSInfoRepoAutostartKey, value.toString());
+    }
+
+    /**
+     * The command line to be used on DCPSInfoRepo executable
+     * 
+     * @return The command line to be used on DCPSInfoRepo executable
+     */
+    public String getDCPSInfoRepoCommandLine() {
+        String value = keyValuePair.get(DCPSInfoRepoCommandLineKey);
+        return (value == null) ? "" : value;
+    }
+
+    /**
+     * The command line to be used on DCPSInfoRepo executable
+     * 
+     * @param value The command line to be used on DCPSInfoRepo executable
+     */
+    public void setDCPSInfoRepoCommandLine(String value) {
+        keyValuePair.put(DCPSInfoRepoCommandLineKey, value);
+    }
+
+    /**
      * The command line parameters of DCPSConfigFile
      * 
-     * @return
+     * @return The command line parameters of DCPSConfigFile
      */
     public String getDCPSConfigFile() {
         String value = commandLineKeyValuePair.get(DCPSConfigFileKey);
@@ -61,7 +100,7 @@ public class OpenDDSConfiguration extends CommonConfiguration {
     /**
      * The command line parameters of DCPSTransportDebugLevel
      * 
-     * @return
+     * @return The command line parameters of DCPSTransportDebugLevel
      */
     public Integer getDCPSTransportDebugLevel() {
         String value = commandLineKeyValuePair.get(DCPSTransportDebugLevelKey);

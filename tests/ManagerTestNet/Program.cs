@@ -75,6 +75,8 @@ namespace ManagerTestNet
             MySmartDataDistribution dataDistribution = new MySmartDataDistribution();
 
             OpenDDSConfiguration conf = new OpenDDSConfiguration();
+            conf.DCPSInfoRepoAutostart = true;
+            conf.DCPSInfoRepoCommandLine = "-ORBEndpoint iiop://localhost:12345";
             conf.DCPSConfigFile = "dds_tcp_conf.ini";
             conf.DCPSTransportDebugLevel = 10;
 

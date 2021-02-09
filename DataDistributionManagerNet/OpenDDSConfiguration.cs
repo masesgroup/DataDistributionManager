@@ -28,7 +28,8 @@ namespace MASES.DataDistributionManager.Bindings
     public class OpenDDSConfiguration : CommonConfiguration
     {
         Dictionary<string, string> commandLineKeyValuePair = new Dictionary<string, string>();
-
+        const string DCPSInfoRepoAutostartKey = "datadistributionmanager.opendds.dcpsinforepo.autostart";
+        const string DCPSInfoRepoCommandLineKey = "datadistributionmanager.opendds.dcpsinforepo.cmdlineargs";
         const string CommandLineKey = "datadistributionmanager.opendds.cmdlineargs";
         const string DomainIdKey = "datadistributionmanager.opendds.domain_id";
         const string DCPSConfigFileKey = "DCPSConfigFile";
@@ -40,6 +41,40 @@ namespace MASES.DataDistributionManager.Bindings
         public OpenDDSConfiguration()
             : base("opendds", "DataDistributionManagerOpenDDS.dll")
         {
+        }
+
+        /// <summary>
+        /// Automatically start DCPSInfoRepo
+        /// </summary>
+        public bool DCPSInfoRepoAutostart
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(DCPSInfoRepoAutostartKey, out value);
+                return bool.Parse(value);
+            }
+            set
+            {
+                keyValuePair[DCPSInfoRepoAutostartKey] = value.ToString().ToLowerInvariant();
+            }
+        }
+
+        /// <summary>
+        /// The command line to be used on DCPSInfoRepo executable
+        /// </summary>
+        public string DCPSInfoRepoCommandLine
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(DCPSInfoRepoCommandLineKey, out value);
+                return value;
+            }
+            set
+            {
+                keyValuePair[DCPSInfoRepoCommandLineKey] = value;
+            }
         }
 
         /// <summary>

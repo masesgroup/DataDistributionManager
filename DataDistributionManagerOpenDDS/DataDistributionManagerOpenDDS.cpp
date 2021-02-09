@@ -46,6 +46,8 @@ DataDistributionManagerOpenDDS::DataDistributionManagerOpenDDS()
 	m_cmdLine = "";
 	m_argc = 0;
 	m_argv = NULL;
+	m_bStartDCPSInfoRepo = FALSE;
+	m_DCPSInfoRepoCmdLine = "";
 }
 
 DataDistributionManagerOpenDDS::~DataDistributionManagerOpenDDS()
@@ -150,6 +152,47 @@ void DataDistributionManagerOpenDDS::SetCmdLine(std::string cmdLine)
 	}
 }
 
+HRESULT DataDistributionManagerOpenDDS::InitializeInfoRepo()
+{
+	if (m_bStartDCPSInfoRepo)
+	{
+		// get path of DataDistributionManagerOpenDDS.dll because DCPSInfoRepo is in the same folder
+		TCHAR oldPath[64 * 1024];
+		std::string moduleName("DataDistributionManagerOpenDDS.dll");
+		TCHAR pathToDll[MAX_PATH];
+		HMODULE ddm_Module = GetModuleHandle(moduleName.c_str());
+		DWORD moduleNameLen = GetModuleFileName(ddm_Module, pathToDll, MAX_PATH);
+		std::string newFullPath(pathToDll);
+		std::string path = newFullPath.substr(0, newFullPath.size() - moduleName.size());
+
+		STARTUPINFO si;
+		PROCESS_INFORMATION pi;
+
+		ZeroMemory(&si, sizeof(si));
+		si.cb = sizeof(si);
+		ZeroMemory(&pi, sizeof(pi));
+
+		std::string commandLine = path + "DCPSInfoRepo " + m_DCPSInfoRepoCmdLine;
+
+		// Start the child process. 
+		if (!CreateProcessA(NULL,			// No module name (use command line)
+			(TCHAR*)commandLine.c_str(),	// Command line
+			NULL,							// Process handle not inheritable
+			NULL,							// Thread handle not inheritable
+			FALSE,							// Set handle inheritance to FALSE
+			0,								// No creation flags
+			NULL,							// Use parent's environment block
+			NULL,							// Use parent's starting directory 
+			&si,							// Pointer to STARTUPINFO structure
+			&pi)							// Pointer to PROCESS_INFORMATION structure
+			)
+		{
+			return HRESULT_FROM_WIN32(GetLastError());
+		}
+	}
+	return S_OK;
+}
+
 HRESULT DataDistributionManagerOpenDDS::Initialize()
 {
 	HRESULT hr = S_OK;
@@ -157,6 +200,10 @@ HRESULT DataDistributionManagerOpenDDS::Initialize()
 	{
 		return E_FAIL;
 	}
+
+	hr = InitializeInfoRepo();
+
+	if (FAILED(hr)) return hr;
 
 	m_dpf = TheParticipantFactoryWithArgs(m_argc, m_argv);
 
@@ -422,6 +469,20 @@ void DataDistributionManagerOpenDDS::SetParameter(HANDLE channelHandle, const ch
 			m_domainId = atoi(paramValue);
 			return;
 		}
+		else if (!strcmp(paramName, "datadistributionmanager.opendds.dcpsinforepo.autostart"))
+		{
+			if (!strcmp(paramValue, "true") ||
+				!strcmp(paramValue, "1"))
+				m_bStartDCPSInfoRepo = true;
+			else
+				m_bStartDCPSInfoRepo = false;
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.opendds.dcpsinforepo.cmdlineargs"))
+		{
+			m_DCPSInfoRepoCmdLine = paramValue;
+			return;
+		}
 	}
 }
 
@@ -456,6 +517,15 @@ const char* DataDistributionManagerOpenDDS::GetParameter(HANDLE channelHandle, c
 		else if (!strcmp(paramName, "datadistributionmanager.opendds.domain_id"))
 		{
 			return itoa(m_domainId, NULL, 0);
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.opendds.dcpsinforepo.autostart"))
+		{
+			if (m_bStartDCPSInfoRepo) return "true";
+			else return "false";
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.opendds.dcpsinforepo.cmdlineargs"))
+		{
+			return m_DCPSInfoRepoCmdLine.c_str();
 		}
 	}
 	return DataDistributionCommon::GetParameter(channelHandle, paramName);

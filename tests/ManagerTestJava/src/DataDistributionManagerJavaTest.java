@@ -28,6 +28,8 @@ public class DataDistributionManagerJavaTest {
 
 		OpenDDSConfiguration conf = new OpenDDSConfiguration();
 		// set direct values
+		conf.setDCPSInfoRepoAutostart(true);
+		conf.setDCPSInfoRepoCommandLine("-ORBEndpoint iiop://localhost:12345");
 		conf.setDCPSConfigFile("dds_tcp_conf.ini");
 		conf.setDCPSTransportDebugLevel(10);
 
