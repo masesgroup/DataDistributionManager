@@ -78,6 +78,7 @@ private:
 	HRESULT StartConsumerAndWait(pChannelConfigurationOpenDDS pChannelConfiguration, DWORD dwMilliseconds);
 	void StopConsumer(pChannelConfigurationOpenDDS pChannelConfiguration);
 	static DWORD __stdcall consumerHandler(void * argh);
+	static DWORD __stdcall readDataFromInfoRepo(void * argh);
 	HRESULT InitializeInfoRepo();
 private:
 	::DDS::DomainId_t m_domainId;
@@ -93,6 +94,11 @@ private:
 
 	::CORBA::Boolean m_bStartDCPSInfoRepo;
 	std::string	m_DCPSInfoRepoCmdLine;
+#define BUFSIZE 4096 
+
+	HANDLE m_hChildStd_OUT_Rd;
+	HANDLE m_hChildStd_OUT_Wr;
+	HANDLE m_hreadDataFromInfoRepo;
 
 	int  m_ServerLostTimeout;
 
@@ -103,7 +109,7 @@ class ChannelConfigurationOpenDDS : public ChannelConfiguration
 {
 public:
 	ChannelConfigurationOpenDDS(const char* channelName, DDM_CHANNEL_DIRECTION direction, DataDistributionManagerOpenDDS* mainManager, IDataDistributionChannelCallback* Cb)
-		: ChannelConfiguration(channelName,direction, mainManager, Cb)
+		: ChannelConfiguration(channelName, direction, mainManager, Cb)
 	{
 		h_evtConsumer = CreateEvent(0, true, false, NULL);
 	}

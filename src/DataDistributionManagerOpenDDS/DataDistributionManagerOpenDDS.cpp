@@ -154,6 +154,10 @@ void DataDistributionManagerOpenDDS::SetCmdLine(std::string cmdLine)
 
 HRESULT DataDistributionManagerOpenDDS::InitializeInfoRepo()
 {
+	m_hChildStd_OUT_Rd = NULL;
+	m_hChildStd_OUT_Wr = NULL;
+	m_hreadDataFromInfoRepo = NULL;
+
 	if (m_bStartDCPSInfoRepo)
 	{
 		// get path of DataDistributionManagerOpenDDS.dll because DCPSInfoRepo is in the same folder
@@ -167,9 +171,36 @@ HRESULT DataDistributionManagerOpenDDS::InitializeInfoRepo()
 
 		STARTUPINFO si;
 		PROCESS_INFORMATION pi;
+		SECURITY_ATTRIBUTES saAttr;
+
+		ZeroMemory(&saAttr, sizeof(saAttr));
+		saAttr.nLength = sizeof(SECURITY_ATTRIBUTES);
+		saAttr.bInheritHandle = TRUE;
+		saAttr.lpSecurityDescriptor = NULL;
+
+		// Create a pipe for the child process's STDOUT. 
+
+		if (!CreatePipe(&m_hChildStd_OUT_Rd, &m_hChildStd_OUT_Wr, &saAttr, 0))
+		{
+			Log(DDM_LOG_LEVEL::ERROR_LEVEL, "DataDistributionManagerOpenDDS", "InitializeInfoRepo", "StdoutRd CreatePipe");
+			return HRESULT_FROM_WIN32(GetLastError());
+		}
+
+		// Ensure the read handle to the pipe for STDOUT is not inherited.
+
+		if (!SetHandleInformation(m_hChildStd_OUT_Rd, HANDLE_FLAG_INHERIT, 0))
+		{
+			Log(DDM_LOG_LEVEL::ERROR_LEVEL, "DataDistributionManagerOpenDDS", "InitializeInfoRepo", "Stdout SetHandleInformation");
+			return HRESULT_FROM_WIN32(GetLastError());
+		}
 
 		ZeroMemory(&si, sizeof(si));
 		si.cb = sizeof(si);
+		si.hStdError = m_hChildStd_OUT_Wr;
+		si.hStdOutput = m_hChildStd_OUT_Wr;
+		// si.hStdInput = g_hChildStd_IN_Rd;
+		si.dwFlags |= STARTF_USESTDHANDLES;
+
 		ZeroMemory(&pi, sizeof(pi));
 
 		std::string commandLine = path + "DCPSInfoRepo " + m_DCPSInfoRepoCmdLine;
@@ -179,18 +210,41 @@ HRESULT DataDistributionManagerOpenDDS::InitializeInfoRepo()
 			(TCHAR*)commandLine.c_str(),	// Command line
 			NULL,							// Process handle not inheritable
 			NULL,							// Thread handle not inheritable
-			FALSE,							// Set handle inheritance to FALSE
+			TRUE,							// Set handle inheritance to FALSE
 			0,								// No creation flags
 			NULL,							// Use parent's environment block
 			NULL,							// Use parent's starting directory 
 			&si,							// Pointer to STARTUPINFO structure
 			&pi)							// Pointer to PROCESS_INFORMATION structure
-			)
+		   )
 		{
 			return HRESULT_FROM_WIN32(GetLastError());
 		}
+		else
+		{
+			m_hreadDataFromInfoRepo = CreateThread(0, 0, readDataFromInfoRepo, this, 0, NULL);
+		}
 	}
 	return S_OK;
+}
+
+DWORD __stdcall DataDistributionManagerOpenDDS::readDataFromInfoRepo(void * argh)
+{
+	DWORD dwRead;
+	CHAR chBuf[BUFSIZE];
+	BOOL bSuccess = FALSE;
+	DataDistributionManagerOpenDDS* pDataDistributionManagerOpenDDS = static_cast<DataDistributionManagerOpenDDS*>(argh);
+
+	for (;;)
+	{
+		bSuccess = ReadFile(pDataDistributionManagerOpenDDS->m_hChildStd_OUT_Rd, chBuf, BUFSIZE, &dwRead, NULL);
+		if (!bSuccess || dwRead == 0) continue;
+
+		pDataDistributionManagerOpenDDS->Log(DDM_LOG_LEVEL::INFO_LEVEL, "External source", "DCPSInfoRepo", chBuf);
+
+		if (!bSuccess) break;
+	}
+	return 0;
 }
 
 HRESULT DataDistributionManagerOpenDDS::Initialize()
@@ -612,7 +666,7 @@ HRESULT DataDistributionManagerOpenDDS::WriteOnChannel(HANDLE channelHandle, con
 		}
 	}
 
-	if (pChannelConfiguration->GetCommitSync())
+	if (waitAll)
 	{
 		DDS::Duration_t timeout = DataDistributionManagerOpenDDS::DurationFromMs(pChannelConfiguration->GetProducerTimeout());
 		retCode = pChannelConfiguration->channel_dw->wait_for_acknowledgments(timeout);
@@ -658,6 +712,10 @@ HRESULT DataDistributionManagerOpenDDS::ChangeChannelDirection(HANDLE channelHan
 
 HRESULT DataDistributionManagerOpenDDS::Stop(DWORD milliseconds)
 {
+	if (m_hChildStd_OUT_Rd) CloseHandle(m_hChildStd_OUT_Rd);
+	if (m_hChildStd_OUT_Wr) CloseHandle(m_hChildStd_OUT_Wr);
+	if (m_hreadDataFromInfoRepo) CloseHandle(m_hreadDataFromInfoRepo);
+
 	return shutdown();
 }
 
