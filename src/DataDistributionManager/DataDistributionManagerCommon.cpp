@@ -207,7 +207,7 @@ static const char* ConvertIToA(size_t value)
 #ifdef _WIN64
 	return _strdup(_ui64toa(value, NULL, 0));
 #else
-	return _strdup(itoa(value, NULL, 0));
+	return _strdup(_itoa(value, NULL, 0));
 #endif
 }
 

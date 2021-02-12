@@ -37,7 +37,7 @@ int DataDistributionManagerKafka::read_config_file(ChannelConfigurationKafka* co
 	// SHA512 of copyright calculated with https://www.fileformat.info/tool/hash.htm
 	static const byte sStringHash[] = "c444f7fa5bdbdd738661edc4c528c82bb9ed6f4efce9da0db9403b65035a5a970f87d62362c1f9a4f9d083e5c926460292aba19e5b179b3dd68ab584ce866a35";
 
-	for (size_t i = 0; i < len; i++)
+	for (int i = 0; i < len; i++)
 	{
 		std::string line = arrayParams[i];
 
@@ -500,7 +500,7 @@ void DataDistributionManagerKafka::SetParameter(HANDLE channelHandle, const char
 
 static const char* ConvertIToA(int value)
 {
-	return _strdup(itoa(value, NULL, 0));
+	return _strdup(_itoa(value, NULL, 0));
 }
 
 static const char* ConvertIToA(size_t value)
@@ -508,7 +508,7 @@ static const char* ConvertIToA(size_t value)
 #ifdef _WIN64
 	return _strdup(_ui64toa(value, NULL, 0));
 #else
-	return _strdup(itoa(value, NULL, 0));
+	return _strdup(_itoa(value, NULL, 0));
 #endif
 }
 
