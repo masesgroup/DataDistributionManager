@@ -311,7 +311,7 @@ struct DataDistributionMastershipCallbackContainer
 	IDataDistributionMastershipCallback* pcb;
 };
 
-void dataDistributionOnClusterStateChangeJavaCb(void* opaque, DDM_CLUSTEREVENT change, size_t serverid)
+void dataDistributionOnClusterStateChangeJavaCb(void* opaque, DDM_CLUSTEREVENT change, int64_t serverid)
 {
 	BOOL attached;
 	JNIEnv* env = NewEnv("OnClusterStateChange", &attached);
@@ -336,7 +336,7 @@ void dataDistributionOnStateChangeJavaCb(void* opaque, DDM_INSTANCE_STATE newSta
 	ReleaseEnv(attached);
 }
 
-void dataDistributionOnStateReadyJavaCb(void* opaque, void* pState, size_t len)
+void dataDistributionOnStateReadyJavaCb(void* opaque, void* pState, int64_t len)
 {
 	BOOL attached;
 	JNIEnv* env = NewEnv("OnStateReady", &attached);
@@ -386,7 +386,7 @@ void dataDistributionOnRequestedStateJavaCb(void* opaque, void** pState, size_t*
 	ReleaseEnv(attached);
 }
 
-void dataDistributionOnMultiplePrimaryJavaCb(void* opaque, size_t myId, size_t otherId)
+void dataDistributionOnMultiplePrimaryJavaCb(void* opaque, int64_t myId, int64_t otherId)
 {
 	BOOL attached;
 	JNIEnv* env = NewEnv("OnMultiplePrimary", &attached);

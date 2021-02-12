@@ -51,7 +51,7 @@ void DataDistributionMastershipManagerBase::OnALIVE(ALIVE* pALIVE)
 		data->Status = pALIVE->Status;
 		data->Uptime = pALIVE->Uptime;
 		data->LastContactTime = GetUpTime();
-		clusterState.insert(std::pair<size_t, ClusterHealthElement*>(pALIVE->ServerId, data));
+		clusterState.insert(std::pair<int64_t, ClusterHealthElement*>(pALIVE->ServerId, data));
 		m_pMastershipCallback->OnClusterStateChange(DDM_CLUSTEREVENT::ADDSERVER, pALIVE->ServerId);
 	}
 	bool addRandomTime = false;
@@ -60,7 +60,7 @@ void DataDistributionMastershipManagerBase::OnALIVE(ALIVE* pALIVE)
 	ClusterHealthIterator it;
 	EnterCriticalSection(&m_csFlags);
 	m_IamNextPrimary = TRUE;
-	std::list<size_t> listToRemove;
+	std::list<int64_t> listToRemove;
 	for (it = clusterState.begin(); it != clusterState.end(); ++it)
 	{
 		if ((myTime - it->second->Uptime) > m_pDataDistributionManagerSubsystem->GetServerLostTimeout())
@@ -76,7 +76,7 @@ void DataDistributionMastershipManagerBase::OnALIVE(ALIVE* pALIVE)
 			}
 		}
 	}
-	std::list<size_t>::iterator it2;
+	std::list<int64_t>::iterator it2;
 	for (it2 = listToRemove.begin(); it2 != listToRemove.end(); ++it2)
 	{
 		delete clusterState.at(*it2);

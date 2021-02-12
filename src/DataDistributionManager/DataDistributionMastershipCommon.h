@@ -29,9 +29,9 @@ struct BaseKeepAlive
 {
 	int MessageLength;
 	DDM_KEEPALIVE_TYPE Type;
-	size_t ServerId;
+	int64_t ServerId;
 
-	BaseKeepAlive(DDM_KEEPALIVE_TYPE type, size_t serverId)
+	BaseKeepAlive(DDM_KEEPALIVE_TYPE type, int64_t serverId)
 	{
 		MessageLength = sizeof(BaseKeepAlive);
 		Type = type;
@@ -62,14 +62,14 @@ struct HELLO_WELCOME : BaseKeepAlive
 
 struct GOODBYE : BaseKeepAlive
 {
-	GOODBYE(size_t serverId) : BaseKeepAlive(DDM_KEEPALIVE_TYPE::GOODBYE, serverId) {}
+	GOODBYE(int64_t serverId) : BaseKeepAlive(DDM_KEEPALIVE_TYPE::GOODBYE, serverId) {}
 };
 
 struct ALIVE : BaseKeepAlive
 {
 	int64_t Uptime;
 	DDM_INSTANCE_STATE Status;
-	ALIVE(size_t serverId, int64_t uptime, DDM_INSTANCE_STATE status) : BaseKeepAlive(DDM_KEEPALIVE_TYPE::ALIVE, serverId)
+	ALIVE(int64_t serverId, int64_t uptime, DDM_INSTANCE_STATE status) : BaseKeepAlive(DDM_KEEPALIVE_TYPE::ALIVE, serverId)
 	{
 		Uptime = uptime;
 		Status = status;
@@ -81,7 +81,7 @@ struct STATECHANGEREQUEST : BaseKeepAlive
 	int64_t RequestId;
 	DDM_INSTANCE_STATE FutureStatus;
 	int64_t Uptime;
-	STATECHANGEREQUEST(size_t serverId, int64_t requestId, DDM_INSTANCE_STATE futureStatus, int64_t uptime) :BaseKeepAlive(DDM_KEEPALIVE_TYPE::STATECHANGEREQUEST, serverId)
+	STATECHANGEREQUEST(int64_t serverId, int64_t requestId, DDM_INSTANCE_STATE futureStatus, int64_t uptime) :BaseKeepAlive(DDM_KEEPALIVE_TYPE::STATECHANGEREQUEST, serverId)
 	{
 		RequestId = requestId;
 		FutureStatus = futureStatus;
@@ -94,7 +94,7 @@ struct STATECHANGERESPONSE : BaseKeepAlive
 	int64_t RequestId;
 	BOOL Accepted;
 	int Reason;
-	STATECHANGERESPONSE(size_t serverId, int64_t requestId, BOOL accepted, int reason) :BaseKeepAlive(DDM_KEEPALIVE_TYPE::STATECHANGERESPONSE, serverId)
+	STATECHANGERESPONSE(int64_t serverId, int64_t requestId, BOOL accepted, int reason) :BaseKeepAlive(DDM_KEEPALIVE_TYPE::STATECHANGERESPONSE, serverId)
 	{
 		RequestId = requestId;
 		Accepted = accepted;

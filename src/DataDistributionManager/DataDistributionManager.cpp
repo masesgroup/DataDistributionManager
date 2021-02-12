@@ -179,7 +179,7 @@ DataDistributionMastershipCallbackImpl::DataDistributionMastershipCallbackImpl(v
 	m_DataDistributionMastershipCallbacks.ChangedState = p8;
 }
 
-void DataDistributionMastershipCallbackImpl::OnClusterStateChange(DDM_CLUSTEREVENT change, size_t serverid)
+void DataDistributionMastershipCallbackImpl::OnClusterStateChange(DDM_CLUSTEREVENT change, int64_t serverid)
 {
 	if (m_DataDistributionMastershipCallbacks.OnClusterStateChange)
 	{
@@ -195,7 +195,7 @@ void DataDistributionMastershipCallbackImpl::OnStateChange(DDM_INSTANCE_STATE ne
 	}
 }
 
-void DataDistributionMastershipCallbackImpl::OnStateReady(void* pState, size_t len)
+void DataDistributionMastershipCallbackImpl::OnStateReady(void* pState, int64_t len)
 {
 	if (m_DataDistributionMastershipCallbacks.OnStateReady)
 	{
@@ -211,7 +211,7 @@ void DataDistributionMastershipCallbackImpl::OnRequestedState(void** pState, siz
 	}
 }
 
-void DataDistributionMastershipCallbackImpl::OnMultiplePrimary(size_t myId, size_t otherId)
+void DataDistributionMastershipCallbackImpl::OnMultiplePrimary(int64_t myId, int64_t otherId)
 {
 	if (m_DataDistributionMastershipCallbacks.OnMultiplePrimary)
 	{

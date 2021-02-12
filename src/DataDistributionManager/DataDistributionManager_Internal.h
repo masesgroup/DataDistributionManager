@@ -133,11 +133,11 @@ public:
 	DataDistributionMastershipCallbackImpl(void* opaque, dataDistributionOnClusterStateChange p1, dataDistributionOnStateChange p2,
 		dataDistributionOnStateReady p3, dataDistributionOnRequestedState p4, dataDistributionOnMultiplePrimary p5,
 		dataDistributionFirstStateChange p6, dataDistributionChangingState p7, dataDistributionChangedState p8);
-	virtual void OnClusterStateChange(DDM_CLUSTEREVENT change, size_t serverid) ;
+	virtual void OnClusterStateChange(DDM_CLUSTEREVENT change, int64_t serverid) ;
 	virtual void OnStateChange(DDM_INSTANCE_STATE newState, DDM_INSTANCE_STATE oldState) ;
-	virtual void OnStateReady(void* pState, size_t len) ;
+	virtual void OnStateReady(void* pState, int64_t len) ;
 	virtual void OnRequestedState(void** pState, size_t* len) ;
-	virtual void OnMultiplePrimary(size_t myId, size_t otherId) ;
+	virtual void OnMultiplePrimary(int64_t myId, int64_t otherId) ;
 	virtual void FirstStateChange(DDM_INSTANCE_STATE newState);
 	virtual void ChangingState(DDM_INSTANCE_STATE oldState, DDM_INSTANCE_STATE newState) ;
 	virtual void ChangedState(DDM_INSTANCE_STATE newState);
