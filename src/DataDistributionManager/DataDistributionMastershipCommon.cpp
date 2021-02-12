@@ -39,7 +39,7 @@ HRESULT DataDistributionMastershipCommon::Initialize(IDataDistributionSubsystem*
 		char szHost[255];
 		szHost[0] = '0';
 		gethostname(szHost, sizeof(szHost));
-		m_szServerName = _strdup( szHost);
+		m_szServerName = _strdup(szHost);
 	}
 	else m_szServerName = _strdup(szMyAddress);
 
@@ -57,6 +57,8 @@ HRESULT DataDistributionMastershipCommon::Initialize(IDataDistributionSubsystem*
 
 HRESULT DataDistributionMastershipCommon::Initialize()
 {
+	TRACESTART("DataDistributionCommon", "Initialize");
+
 	m_hKeepAlive = m_pDataDistributionManagerSubsystem->CreateChannel("KeepAlive", this);
 	if (!m_hKeepAlive) return E_FAIL;
 	return S_OK;
@@ -64,10 +66,11 @@ HRESULT DataDistributionMastershipCommon::Initialize()
 
 HRESULT DataDistributionMastershipCommon::Start(DWORD dwMilliseconds)
 {
+	TRACESTART("DataDistributionCommon", "Start");
+
 	if (m_hKeepAlive && m_pDataDistributionManagerSubsystem->StartChannel(m_hKeepAlive, dwMilliseconds))
 	{
 		HRESULT result = S_OK;
-		m_pDataDistributionManagerSubsystem->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "DataDistributionMastershipCommon", "Start", "Enter");
 		bKeepAliveRun = TRUE;
 		hKeepAliveThread = CreateThread(0, 0, keepAliveHandler, this, 0, &dwKeepAliveThrId);
 		auto res = WaitForSingleObject(h_evtKeepAlive, dwMilliseconds);
@@ -82,7 +85,6 @@ HRESULT DataDistributionMastershipCommon::Start(DWORD dwMilliseconds)
 		default:
 			break;
 		}
-		m_pDataDistributionManagerSubsystem->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "DataDistributionMastershipCommon", "Start", "Exit");
 		return result;
 	}
 
@@ -91,6 +93,8 @@ HRESULT DataDistributionMastershipCommon::Start(DWORD dwMilliseconds)
 
 HRESULT DataDistributionMastershipCommon::Stop(DWORD dwMilliseconds)
 {
+	TRACESTART("DataDistributionCommon", "Stop");
+
 	if (m_hKeepAlive && m_pDataDistributionManagerSubsystem->StopChannel(m_hKeepAlive, dwMilliseconds))
 	{
 		return S_OK;
@@ -121,25 +125,32 @@ void DataDistributionMastershipCommon::AddRandomToMyTime()
 	m_startupTime.AddNanoseconds(randomNum);
 }
 
-
-
 int DataDistributionMastershipCommon::SendKeepAlive()
 {
+	TRACESTART("DataDistributionCommon", "SendKeepAlive");
 
+	ALIVE alive(m_MyIdentifier, GetUpTime(), m_myState);
+	std::string keepAlive("KeepAlive");
+	HRESULT hRes = m_pDataDistributionManagerSubsystem->WriteOnChannel(m_hKeepAlive, keepAlive.c_str(), keepAlive.size(), &alive, sizeof(ALIVE));
 
-
+	if (FAILED(hRes))
+	{
+		LOG_ERROR0("WriteOnChannel failed");
+	}
 
 	return m_keepAliveInterval;
 }
 
 void DataDistributionMastershipCommon::OnUnderlyingEvent(const HANDLE channelHandle, const UnderlyingEventData* uEvent)
 {
+	TRACESTART("DataDistributionCommon", "OnUnderlyingEvent");
+
 	if (uEvent->IsDataAvailable)
 	{
 		std::string key(uEvent->Key, uEvent->KeyLen);
 		if (key != "KeepAlive")
 		{
-			m_pDataDistributionManagerSubsystem->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "DataDistributionMastershipCommon", "OnUnderlyingEvent", "Received an event with key %s", key.c_str());
+			LOG_ERROR("Received an event with key %s", key.c_str());
 			return;
 		}
 
@@ -209,7 +220,8 @@ void DataDistributionMastershipCommon::OnSTATECHANGERESPONSE(STATECHANGERESPONSE
 
 void DataDistributionMastershipCommon::ChangeMyState(DDM_INSTANCE_STATE newState)
 {
-	m_pDataDistributionManagerSubsystem->Log(DDM_LOG_LEVEL::INFO_LEVEL, "NoChannel", "ChangeState", "Value changing from %d to %d", m_myState, newState);
+	TRACESTART("DataDistributionCommon", "ChangeMyState");
+	LOG_INFO("Value changing from %d to %d", m_myState, newState);
 
 	EnterCriticalSection(&m_csState);
 
@@ -233,13 +245,15 @@ void DataDistributionMastershipCommon::ChangeMyState(DDM_INSTANCE_STATE newState
 	m_pMastershipCallback->ChangedState(newState);
 }
 
-void DataDistributionMastershipCommon::ChangeState(int64_t instanceId, DDM_INSTANCE_STATE)
+void DataDistributionMastershipCommon::ChangeState(int64_t instanceId, DDM_INSTANCE_STATE newState)
 {
-
+	TRACESTART("DataDistributionCommon", "ChangeState");
+	LOG_INFO("Value changing on %d to %d", instanceId, newState);
 }
 
 DDM_INSTANCE_STATE DataDistributionMastershipCommon::GetMyState()
 {
+	TRACESTART("DataDistributionCommon", "GetMyState");
 	DDM_INSTANCE_STATE state = DDM_INSTANCE_STATE::UNKNOWN;
 	EnterCriticalSection(&m_csState);
 	state = m_myState;
@@ -257,18 +271,35 @@ BOOL DataDistributionMastershipCommon::RequestIAmNextPrimary()
 	return m_IamNextPrimary;
 }
 
+void DataDistributionMastershipCommon::Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, ...)
+{
+	if (NULL == m_pDataDistributionManagerSubsystem) return;
+
+	va_list args = NULL;
+	va_start(args, format);
+	Log(level, sourceName, function, format, args);
+	va_end(args);
+}
+
+void DataDistributionMastershipCommon::Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, va_list args)
+{
+	if (NULL == m_pDataDistributionManagerSubsystem) return;
+	m_pDataDistributionManagerSubsystem->Log(level, sourceName, function, format, args);
+}
+
 void DataDistributionMastershipCommon::SetLocalServerId(int64_t identifier)
 {
+	TRACESTART("DataDistributionCommon", "SetLocalServerId");
 	if (m_bSystemRunning)
 	{
-		m_pDataDistributionManagerSubsystem->Log(DDM_LOG_LEVEL::INFO_LEVEL, "NoChannel", "SetLocalIdentifier", "Cannot change identifier during run.");
+		LOG_INFO0("Cannot change identifier during run.");
 		return;
 	}
 
 #ifdef _WIN64
-	m_pDataDistributionManagerSubsystem->Log(DDM_LOG_LEVEL::INFO_LEVEL, "NoChannel", "SetLocalServerId", "New identifier is %lld", identifier);
+	LOG_INFO("New identifier is %lld", identifier);
 #else
-	m_pDataDistributionManagerSubsystem->Log(DDM_LOG_LEVEL::INFO_LEVEL, "NoChannel", "SetLocalServerId", "New identifier is %d", identifier);
+	LOG_INFO("New identifier is %d", identifier);
 #endif
 
 	m_MyIdentifier = identifier;

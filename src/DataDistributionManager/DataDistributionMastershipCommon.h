@@ -102,7 +102,7 @@ struct STATECHANGERESPONSE : BaseKeepAlive
 	}
 };
 
-class __declspec(dllexport) DataDistributionMastershipCommon : public IDataDistributionMastershipCommon, protected IDataDistributionChannelCallback
+class __declspec(dllexport) DataDistributionMastershipCommon : public IDataDistributionMastershipCommon, protected IDataDistributionChannelCallback, protected IDataDistributionLog
 {
 public:
 	DataDistributionMastershipCommon();
@@ -124,6 +124,8 @@ public:
 	virtual int64_t GetMessageDelay();
 	int64_t GetUpTime();
 protected:
+	void Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, ...);
+	void Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, va_list args);
 	virtual void SetLocalServerId(int64_t);
 	virtual void SetPrimaryServerId(int64_t);
 	void AddRandomToMyTime();

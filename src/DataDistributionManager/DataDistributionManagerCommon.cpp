@@ -21,6 +21,7 @@
 
 DataDistributionCommon::DataDistributionCommon()
 {
+	m_SubSystemStarted = FALSE;
 	m_confFile = "";
 	m_ChannelTrailer = "";
 	m_ServerName = "";
@@ -69,6 +70,8 @@ HRESULT DataDistributionCommon::Initialize()
 
 void DataDistributionCommon::Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, ...)
 {
+	if (NULL == m_pDataDistributionManagerCallbacks) return;
+
 	va_list args = NULL;
 	va_start(args, format);
 	Log(level, sourceName, function, format, args);
@@ -78,9 +81,19 @@ void DataDistributionCommon::Log(const DDM_LOG_LEVEL level, const char* sourceNa
 #define LOG_LEN 1024
 void DataDistributionCommon::Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, va_list args)
 {
+	if (NULL == m_pDataDistributionManagerCallbacks) return;
+
 	char buffer[LOG_LEN];
-	vsnprintf_s(buffer, LOG_LEN, format, args);
-	if (m_pDataDistributionManagerCallbacks) m_pDataDistributionManagerCallbacks->OnLogging(level, sourceName, function, buffer);
+	memset(buffer, 0, sizeof(buffer));
+	int result = vsnprintf_s(buffer, _countof(buffer), _TRUNCATE, format, args);
+	if (result > 0)
+	{
+		m_pDataDistributionManagerCallbacks->OnLogging(level, sourceName, function, buffer);
+	}
+	else
+	{
+		m_pDataDistributionManagerCallbacks->OnLogging(level, sourceName, function, "Failed to write log");
+	}
 }
 
 size_t DataDistributionCommon::GetMaxMessageSize()
@@ -90,68 +103,71 @@ size_t DataDistributionCommon::GetMaxMessageSize()
 
 HANDLE DataDistributionCommon::CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction, const char* arrayParams[], int len)
 {
-	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "CreateChannel", "Not Implemented in subclass");
+	TRACESTART("DataDistributionCommon", "CreateChannel");
+	LOG_WARNING0("Not Implemented in subclass");
 	return NULL;
 }
 
 HRESULT DataDistributionCommon::StartChannel(HANDLE channelHandle, DWORD dwMilliseconds)
 {
-	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "StartChannel", "Not Implemented in subclass");
+	TRACESTART("DataDistributionCommon", "StartChannel");
+	LOG_WARNING0("Not Implemented in subclass");
 	return TRUE;
 }
 
 HRESULT DataDistributionCommon::StopChannel(HANDLE channelHandle, DWORD dwMilliseconds)
 {
-	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "StopChannel", "Not Implemented in subclass");
+	TRACESTART("DataDistributionCommon", "StopChannel");
+	LOG_WARNING0("Not Implemented in subclass");
 	return S_OK;
 }
 
 void DataDistributionCommon::SetParameter(HANDLE channelHandle, const char* paramName, const char* paramValue)
 {
-	Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "DataDistributionCommon", "SetParameter", "Writing %s with value %s", (paramName != NULL) ? paramName : "", (paramValue != NULL) ? paramValue : "");
+	TRACESTART("DataDistributionCommon", "SetParameter");
+	CAST_CHANNEL(ChannelConfiguration)
+	LOG_DEBUG("Channel %s - Writing %s with value %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", (paramName != NULL) ? paramName : "", (paramValue != NULL) ? paramValue : "");
 
 	if (NULL != channelHandle)
 	{
 		// Non global params
-		ChannelConfiguration* pTopicConfiguration = static_cast<ChannelConfiguration*>(channelHandle);
-
 		if (!strcmp(paramName, "datadistributionmanager.timeout.createchannel"))
 		{
-			pTopicConfiguration->SetCreateChannelTimeout(atoi(paramValue));
+			pChannelConfiguration->SetCreateChannelTimeout(atoi(paramValue));
 			return;
 		}
 		else if (!strcmp(paramName, "datadistributionmanager.timeout.channelseek"))
 		{
-			pTopicConfiguration->SetChannelSeekTimeout(atoi(paramValue));
+			pChannelConfiguration->SetChannelSeekTimeout(atoi(paramValue));
 			return;
 		}
 		else if (!strcmp(paramName, "datadistributionmanager.timeout.receive"))
 		{
-			pTopicConfiguration->SetMessageReceiveTimeout(atoi(paramValue));
+			pChannelConfiguration->SetMessageReceiveTimeout(atoi(paramValue));
 			return;
 		}
 		else if (!strcmp(paramName, "datadistributionmanager.timeout.keepalive"))
 		{
-			pTopicConfiguration->SetKeepAliveTimeout(atoi(paramValue));
+			pChannelConfiguration->SetKeepAliveTimeout(atoi(paramValue));
 			return;
 		}
 		else if (!strcmp(paramName, "datadistributionmanager.timeout.consumer"))
 		{
-			pTopicConfiguration->SetConsumerTimeout(atoi(paramValue));
+			pChannelConfiguration->SetConsumerTimeout(atoi(paramValue));
 			return;
 		}
 		else if (!strcmp(paramName, "datadistributionmanager.timeout.producer"))
 		{
-			pTopicConfiguration->SetProducerTimeout(atoi(paramValue));
+			pChannelConfiguration->SetProducerTimeout(atoi(paramValue));
 			return;
 		}
 		else if (!strcmp(paramName, "datadistributionmanager.commit.sync"))
 		{
 			if (!strcmp(paramValue, "true") ||
 				!strcmp(paramValue, "1"))
-				pTopicConfiguration->SetCommitSync(TRUE);
+				pChannelConfiguration->SetCommitSync(TRUE);
 			else
-				pTopicConfiguration->SetCommitSync(FALSE);
+				pChannelConfiguration->SetCommitSync(FALSE);
 			return;
 		}
 	}
@@ -177,7 +193,8 @@ void DataDistributionCommon::SetParameter(HANDLE channelHandle, const char* para
 
 void DataDistributionCommon::SetParameter(HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId, const char* paramValue)
 {
-	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "SetParameter", "Not Implemented in subclass");
+	TRACESTART("DataDistributionCommon", "SetParameter");
+	LOG_WARNING0("Not Implemented in subclass");
 }
 
 static const char* ConvertIToA(int value)
@@ -196,12 +213,12 @@ static const char* ConvertIToA(size_t value)
 
 const char* DataDistributionCommon::GetParameter(HANDLE channelHandle, const char* paramName)
 {
-	Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "DataDistributionCommon", "GetParameter", "Reading %s", (paramName != NULL) ? paramName : "");
+	TRACESTART("DataDistributionCommon", "GetParameter");
+	CAST_CHANNEL(ChannelConfiguration)
+	LOG_DEBUG("Channel %s - Reading %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", (paramName != NULL) ? paramName : "");
 
 	if (channelHandle != NULL)
 	{
-		ChannelConfiguration* pChannelConfiguration = static_cast<ChannelConfiguration*>(channelHandle);
-
 		if (!strcmp(paramName, "datadistributionmanager.CreateChannel"))
 		{
 			return ConvertIToA(pChannelConfiguration->GetCreateChannelTimeout());
@@ -249,46 +266,73 @@ const char* DataDistributionCommon::GetParameter(HANDLE channelHandle, const cha
 
 const char* DataDistributionCommon::GetParameter(HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId)
 {
-	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "GetParameter", "Not Implemented in subclass");
+	TRACESTART("DataDistributionCommon", "GetParameter");
+	LOG_WARNING0("Not Implemented in subclass");
 	return NULL;
 }
-HRESULT DataDistributionCommon::Lock(HANDLE channelHandle, DWORD timeout) { Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "Lock", "Not Implemented in subclass"); return E_FAIL; }
-HRESULT DataDistributionCommon::Unlock(HANDLE channelHandle) { Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "Unlock", "Not Implemented in subclass"); return E_FAIL; }
-HRESULT DataDistributionCommon::SeekChannel(HANDLE channelHandle, int64_t position) { Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "SeekChannel", "Not Implemented in subclass"); return E_FAIL; }
-HRESULT DataDistributionCommon::DeleteChannel(HANDLE channelHandle) { Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "DeleteChannel", "Not Implemented in subclass"); return E_FAIL; }
+
+HRESULT DataDistributionCommon::Lock(HANDLE channelHandle, DWORD timeout)
+{
+	TRACESTART("DataDistributionCommon", "Lock");
+	LOG_WARNING0("Not Implemented in subclass");
+	return E_FAIL;
+}
+
+HRESULT DataDistributionCommon::Unlock(HANDLE channelHandle)
+{
+	TRACESTART("DataDistributionCommon", "Unlock");
+	LOG_WARNING0("Not Implemented in subclass");
+	return E_FAIL;
+}
+
+HRESULT DataDistributionCommon::SeekChannel(HANDLE channelHandle, int64_t position)
+{
+	TRACESTART("DataDistributionCommon", "SeekChannel");
+	LOG_WARNING0("Not Implemented in subclass");
+	return E_FAIL;
+}
+
+HRESULT DataDistributionCommon::DeleteChannel(HANDLE channelHandle)
+{
+	TRACESTART("DataDistributionCommon", "DeleteChannel");
+	LOG_WARNING0("Not Implemented in subclass");
+	return E_FAIL;
+}
+
 HRESULT DataDistributionCommon::WriteOnChannel(HANDLE channelHandle, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll, const int64_t timestamp)
 {
-	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "WriteOnChannel", "Not Implemented in subclass");
+	TRACESTART("DataDistributionCommon", "WriteOnChannel");
+	LOG_WARNING0("Not Implemented in subclass");
 	return E_FAIL;
 }
 
 HRESULT DataDistributionCommon::ReadFromChannel(HANDLE channelHandle, int64_t offset, size_t *dataLen, void **param)
 {
-	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "ReadFromChannel", "Not Implemented in subclass");
-	return FALSE;
+	TRACESTART("DataDistributionCommon", "ReadFromChannel");
+	LOG_WARNING0("Not Implemented in subclass");
+	return S_FALSE;
 }
 
 HRESULT DataDistributionCommon::ChangeChannelDirection(HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction)
 {
-	Log(DDM_LOG_LEVEL::WARNING_LEVEL, "DataDistributionCommon", "ChangeChannelDirection", "Not Implemented in subclass");
-	return FALSE;
+	TRACESTART("DataDistributionCommon", "ChangeChannelDirection");
+	LOG_WARNING0("Not Implemented in subclass");
+	return S_FALSE;
 }
 
 HRESULT DataDistributionCommon::Start(DWORD dwMilliseconds)
 {
+	TRACESTART("DataDistributionCommon", "Start");
 	HRESULT status = S_OK;
-	Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "NoChannel", "Start", "Enter");
 	SetSubSystemStarted(TRUE);
-	Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "NoChannel", "Start", "Exit");
 	return status;
 }
 
 HRESULT DataDistributionCommon::Stop(DWORD dwMilliseconds)
 {
+	TRACESTART("DataDistributionCommon", "Start");
 	HRESULT status = S_OK;
-	Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "NoChannel", "Stop", "Enter");
 	SetSubSystemStarted(FALSE);
-	Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "NoChannel", "Stop", "Exit");
 	return status;
 }
 

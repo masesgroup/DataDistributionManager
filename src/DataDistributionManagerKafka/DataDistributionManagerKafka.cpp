@@ -32,7 +32,7 @@ DataDistributionManagerKafka::~DataDistributionManagerKafka()
 {
 }
 
-int DataDistributionManagerKafka::read_config_file(pChannelConfigurationKafka configuration, const char* arrayParams[], int len)
+int DataDistributionManagerKafka::read_config_file(ChannelConfigurationKafka* configuration, const char* arrayParams[], int len)
 {
 	// SHA512 of copyright calculated with https://www.fileformat.info/tool/hash.htm
 	static const byte sStringHash[] = "c444f7fa5bdbdd738661edc4c528c82bb9ed6f4efce9da0db9403b65035a5a970f87d62362c1f9a4f9d083e5c926460292aba19e5b179b3dd68ab584ce866a35";
@@ -52,7 +52,7 @@ int DataDistributionManagerKafka::read_config_file(pChannelConfigurationKafka co
 		size_t f = line.find("=");
 		if (f == std::string::npos)
 		{
-			configuration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "read_config_file", "Conf file: malformed line: %s", line.c_str());
+			configuration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "DataDistributionManagerKafka", "read_config_file", "Conf file: malformed line: %s", line.c_str());
 			return ERROR_INVALID_DATA;
 		}
 
@@ -67,7 +67,7 @@ int DataDistributionManagerKafka::read_config_file(pChannelConfigurationKafka co
 	return NO_ERROR;
 }
 
-int DataDistributionManagerKafka::conf_init(pChannelConfigurationKafka configuration, const char* arrayParams[], int len)
+int DataDistributionManagerKafka::conf_init(ChannelConfigurationKafka* configuration, const char* arrayParams[], int len)
 {
 	if (!configuration->pConnection_conf)
 		configuration->pConnection_conf = RdKafka::Conf::create(RdKafka::Conf::CONF_GLOBAL);
@@ -97,6 +97,8 @@ int DataDistributionManagerKafka::admin_create_topic(rd_kafka_t *use_rk,
 	const char *channelname, int partition_cnt,
 	int replication_factor, int timeout_ms)
 {
+	TRACESTART("DataDistributionManagerKafka", "admin_create_topic");
+
 	int retVal = NO_ERROR;
 
 	rd_kafka_NewTopic_t *newt[1];
@@ -129,7 +131,7 @@ int DataDistributionManagerKafka::admin_create_topic(rd_kafka_t *use_rk,
 	if (rkev == NULL)
 	{
 		retVal = ERROR_TIMEOUT;
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, "admin_create_channel", "Timeout on create Topic %s", channelname);
+		LOG_ERROR("Timeout on create Topic %s", channelname);
 		goto exitFun;
 	}
 
@@ -142,18 +144,18 @@ int DataDistributionManagerKafka::admin_create_topic(rd_kafka_t *use_rk,
 		if (RD_KAFKA_RESP_ERR_TOPIC_ALREADY_EXISTS == res)
 		{
 			const char* errorStr = rd_kafka_topic_result_error_string(terr[0]);
-			Log(DDM_LOG_LEVEL::INFO_LEVEL, "admin_create_channel", "%s", errorStr);
+			LOG_ERROR("%s", errorStr);
 			retVal = NO_ERROR;
 		}
 		else if (res != RD_KAFKA_RESP_ERR_NO_ERROR)
 		{
 			const char* errorStr = rd_kafka_topic_result_error_string(terr[0]);
-			Log(DDM_LOG_LEVEL::ERROR_LEVEL, "admin_create_channel", "%s", errorStr);
+			LOG_ERROR("%s", errorStr);
 			retVal = E_FAIL;
 		}
 		else
 		{
-			Log(DDM_LOG_LEVEL::ERROR_LEVEL, "admin_create_topic", "Topic %s created", rd_kafka_topic_result_name(terr[0]));
+			LOG_ERROR("Topic %s created", rd_kafka_topic_result_name(terr[0]));
 		}
 	}
 exitFun:
@@ -236,6 +238,7 @@ static std::string metadata_print(const std::string &channel, const RdKafka::Met
 
 HRESULT DataDistributionManagerKafka::Initialize()
 {
+	TRACESTART("DataDistributionManagerKafka", "Initialize");
 	if (read_config_file(NULL, GetArrayParams(), GetArrayParamsLen()) != NO_ERROR)
 	{
 		return E_FAIL;
@@ -246,37 +249,40 @@ HRESULT DataDistributionManagerKafka::Initialize()
 
 HRESULT DataDistributionManagerKafka::Lock(HANDLE channelHandle, DWORD timeout)
 {
-	pChannelConfigurationKafka pTopicConfiguration = static_cast<ChannelConfigurationKafka*>(channelHandle);
+	TRACESTART("DataDistributionManagerKafka", "Lock");
+	CAST_CHANNEL(ChannelConfigurationKafka);
 
 	if (!GetSubSystemStarted())
 	{
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "Lock", "SubSystem not started.");
-		pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, 0, "SubSystem not started.");
+		LOG_ERROR("Channel %s - SubSystem not started.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
+		pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, 0, "SubSystem not started.");
 		return E_FAIL;
 	}
 
-	return pTopicConfiguration->SetLockState();
+	return pChannelConfiguration->SetLockState();
 }
 
 HRESULT DataDistributionManagerKafka::Unlock(HANDLE channelHandle)
 {
-	pChannelConfigurationKafka pTopicConfiguration = static_cast<ChannelConfigurationKafka*>(channelHandle);
+	TRACESTART("DataDistributionManagerKafka", "Unlock");
+	CAST_CHANNEL(ChannelConfigurationKafka);
 
 	if (!GetSubSystemStarted())
 	{
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "Unlock", "SubSystem not started.");
-		pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, 0, "SubSystem not started.");
+		LOG_ERROR("Channel %s - SubSystem not started.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
+		pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, 0, "SubSystem not started.");
 		return E_FAIL;
 	}
 
-	return pTopicConfiguration->ResetLockState();
+	return pChannelConfiguration->ResetLockState();
 }
 
 HANDLE DataDistributionManagerKafka::CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction, const char* arrayParams[], int len)
 {
+	TRACESTART("DataDistributionManagerKafka", "CreateChannel");
 	if (!GetSubSystemStarted())
 	{
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, channelName, "CreateTopic", "SubSystem not started.");
+		LOG_ERROR("SubSystem not started. Channel: %s", channelName);
 		return NULL;
 	}
 
@@ -285,168 +291,172 @@ HANDLE DataDistributionManagerKafka::CreateChannel(const char* channelName, IDat
 	sTopicName = sTopicName.append(GetChannelTrailer());
 #endif
 
-	pChannelConfigurationKafka pTopicConfiguration = new ChannelConfigurationKafka(sTopicName.c_str(), direction, this, dataCb);
+	ChannelConfigurationKafka* pChannelConfiguration = new ChannelConfigurationKafka(sTopicName.c_str(), direction, this, dataCb);
 
 	std::string errstr;
 
-	int retVal = conf_init(pTopicConfiguration, (arrayParams == NULL) ? GetArrayParams() : arrayParams, (len == 0) ? GetArrayParamsLen() : len);
+	int retVal = conf_init(pChannelConfiguration, (arrayParams == NULL) ? GetArrayParams() : arrayParams, (len == 0) ? GetArrayParamsLen() : len);
 	if (retVal != NO_ERROR)
 	{
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "CreateTopic", "set conf_init error: %d", retVal);
+		LOG_ERROR("Channel %s - conf_init error: %d", pChannelConfiguration->GetChannelName(), retVal);
 		return NULL;
 	}
 
-	RdKafka::Conf::ConfResult result = pTopicConfiguration->pConnection_conf->set("default_topic_conf", pTopicConfiguration->pTopic_conf, errstr);
+	RdKafka::Conf::ConfResult result = pChannelConfiguration->pConnection_conf->set("default_topic_conf", pChannelConfiguration->pTopic_conf, errstr);
 	if (result != RdKafka::Conf::CONF_OK)
 	{
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "CreateTopic", "set default_topic_conf error: %s", errstr.c_str());
-		// TODO: log
+		LOG_ERROR("Channel %s - set default_topic_conf error: %s", pChannelConfiguration->GetChannelName(), errstr.c_str());
 		return NULL;
 	}
-	pTopicConfiguration->pRebalance_cb = new KafkaMessageManagerRebalanceCb(pTopicConfiguration);
-	if (pTopicConfiguration->pConnection_conf->set("rebalance_cb", pTopicConfiguration->pRebalance_cb, errstr) != RdKafka::Conf::ConfResult::CONF_OK)
+	pChannelConfiguration->pRebalance_cb = new KafkaMessageManagerRebalanceCb(pChannelConfiguration);
+	if (pChannelConfiguration->pConnection_conf->set("rebalance_cb", pChannelConfiguration->pRebalance_cb, errstr) != RdKafka::Conf::ConfResult::CONF_OK)
 	{
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "CreateTopic", "set rebalance_cb error: %s", errstr.c_str());
+		LOG_ERROR("Channel %s - set rebalance_cb error: %s", pChannelConfiguration->GetChannelName(), errstr.c_str());
 		return NULL;
 	}
-	pTopicConfiguration->pEvent_cb = new KafkaMessageManagerEventCb(pTopicConfiguration);
-	if (pTopicConfiguration->pConnection_conf->set("event_cb", pTopicConfiguration->pEvent_cb, errstr) != RdKafka::Conf::ConfResult::CONF_OK)
+	pChannelConfiguration->pEvent_cb = new KafkaMessageManagerEventCb(pChannelConfiguration);
+	if (pChannelConfiguration->pConnection_conf->set("event_cb", pChannelConfiguration->pEvent_cb, errstr) != RdKafka::Conf::ConfResult::CONF_OK)
 	{
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "CreateTopic", "set event_cb error: %s", errstr.c_str());
+		LOG_ERROR("Channel %s - set event_cb error: %s", pChannelConfiguration->GetChannelName(), errstr.c_str());
 		return NULL;
 	}
-	pTopicConfiguration->pConsume_cb = new KafkaMessageManagerConsumeCb(pTopicConfiguration);
-	if (pTopicConfiguration->pConnection_conf->set("consume_cb", pTopicConfiguration->pConsume_cb, errstr) != RdKafka::Conf::ConfResult::CONF_OK)
+	pChannelConfiguration->pConsume_cb = new KafkaMessageManagerConsumeCb(pChannelConfiguration);
+	if (pChannelConfiguration->pConnection_conf->set("consume_cb", pChannelConfiguration->pConsume_cb, errstr) != RdKafka::Conf::ConfResult::CONF_OK)
 	{
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "CreateTopic", "set consume_cb error: %s", errstr.c_str());
+		LOG_ERROR("Channel %s - set consume_cb error: %s", pChannelConfiguration->GetChannelName(), errstr.c_str());
 		return NULL;
 	}
 
-	pTopicConfiguration->pProducer = RdKafka::Producer::create(pTopicConfiguration->pConnection_conf, errstr);
-	if (!pTopicConfiguration->pProducer)
+	pChannelConfiguration->pProducer = RdKafka::Producer::create(pChannelConfiguration->pConnection_conf, errstr);
+	if (!pChannelConfiguration->pProducer)
 	{
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "CreateTopic", "pProducer RdKafka::Producer::create error: %s", errstr.c_str());
+		LOG_ERROR("Channel %s - pProducer RdKafka::Producer::create error: %s", pChannelConfiguration->GetChannelName(), errstr.c_str());
 		return NULL;
 	}
 
-	pTopicConfiguration->pConsumer = RdKafka::KafkaConsumer::create(pTopicConfiguration->pConnection_conf, errstr);
-	if (!pTopicConfiguration->pConsumer)
+	pChannelConfiguration->pConsumer = RdKafka::KafkaConsumer::create(pChannelConfiguration->pConnection_conf, errstr);
+	if (!pChannelConfiguration->pConsumer)
 	{
-		delete pTopicConfiguration->pProducer;
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "CreateTopic", "pConsumer RdKafka::KafkaConsumer::create error: %s", errstr.c_str());
+		delete pChannelConfiguration->pProducer;
+		LOG_ERROR("Channel %s - pConsumer RdKafka::KafkaConsumer::create error: %s", pChannelConfiguration->GetChannelName(), errstr.c_str());
 		return NULL;
 	}
 
-	if (pTopicConfiguration->m_CreateTopic && admin_create_topic(pTopicConfiguration->pProducer->c_ptr(), pTopicConfiguration->GetChannelName(), 1, pTopicConfiguration->m_TopicReplicationFactor, pTopicConfiguration->GetCreateChannelTimeout()) != NO_ERROR)
+	if (pChannelConfiguration->m_CreateTopic && admin_create_topic(pChannelConfiguration->pProducer->c_ptr(), pChannelConfiguration->GetChannelName(), 1, pChannelConfiguration->m_TopicReplicationFactor, pChannelConfiguration->GetCreateChannelTimeout()) != NO_ERROR)
 	{
-		delete pTopicConfiguration->pConsumer;
-		delete pTopicConfiguration->pProducer;
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "CreateTopic", "admin_create_topic %s failed", pTopicConfiguration->GetChannelName());
+		delete pChannelConfiguration->pConsumer;
+		delete pChannelConfiguration->pProducer;
+		LOG_ERROR("Channel %s - admin_create_topic failed", pChannelConfiguration->GetChannelName());
 		return NULL;
 	}
 
-	pTopicConfiguration->pTopicPartition = RdKafka::TopicPartition::create(sTopicName, 0);
-	pTopicConfiguration->pTopicPartitionVector = new std::vector<RdKafka::TopicPartition*>();
-	pTopicConfiguration->pTopicPartitionVector->push_back(pTopicConfiguration->pTopicPartition);
+	pChannelConfiguration->pTopicPartition = RdKafka::TopicPartition::create(sTopicName, 0);
+	pChannelConfiguration->pTopicPartitionVector = new std::vector<RdKafka::TopicPartition*>();
+	pChannelConfiguration->pTopicPartitionVector->push_back(pChannelConfiguration->pTopicPartition);
 
-	pTopicConfiguration->pTopic = RdKafka::Topic::create(pTopicConfiguration->pProducer, sTopicName, pTopicConfiguration->pTopic_conf, errstr);
-	if (!pTopicConfiguration->pTopic)
+	pChannelConfiguration->pTopic = RdKafka::Topic::create(pChannelConfiguration->pProducer, sTopicName, pChannelConfiguration->pTopic_conf, errstr);
+	if (!pChannelConfiguration->pTopic)
 	{
-		delete pTopicConfiguration->pConsumer;
-		delete pTopicConfiguration->pProducer;
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "Initialize", "pPrimaryTopic RdKafka::Topic::create error: %s", errstr.c_str());
+		delete pChannelConfiguration->pConsumer;
+		delete pChannelConfiguration->pProducer;
+		LOG_ERROR("Channel %s - pPrimaryTopic RdKafka::Topic::create error: %s", pChannelConfiguration->GetChannelName(), errstr.c_str());
 		return NULL;
 	}
 
-	if (pTopicConfiguration->m_DumpMetadata)
+	if (pChannelConfiguration->m_DumpMetadata)
 	{
 		class RdKafka::Metadata *metadata;
-		auto err = pTopicConfiguration->pProducer->metadata(false, pTopicConfiguration->pTopic, &metadata, pTopicConfiguration->GetCreateChannelTimeout());
+		auto err = pChannelConfiguration->pProducer->metadata(false, pChannelConfiguration->pTopic, &metadata, pChannelConfiguration->GetCreateChannelTimeout());
 
 		if (err != RdKafka::ERR_NO_ERROR)
 		{
-			Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "Initialize", "Failed to acquire metadata for topic %s: %s", pTopicConfiguration->GetChannelName(), RdKafka::err2str(err).c_str());
+			LOG_ERROR("Failed to acquire metadata for topic %s: %s", pChannelConfiguration->GetChannelName(), RdKafka::err2str(err).c_str());
 		}
 		else
 		{
 			auto resultStr = metadata_print(sTopicName, metadata);
-			Log(DDM_LOG_LEVEL::DEBUG_LEVEL, pTopicConfiguration->GetChannelName(), "Initialize", "%s", resultStr.c_str());
+			LOG_ERROR("Channel %s - %s", pChannelConfiguration->GetChannelName(), resultStr.c_str());
 		}
 	}
 
-	topicVector.push_back(pTopicConfiguration);
+	topicVector.push_back(pChannelConfiguration);
 
-	return pTopicConfiguration;
+	return pChannelConfiguration;
 }
 
 HRESULT DataDistributionManagerKafka::StartChannel(HANDLE channelHandle, DWORD dwMilliseconds)
 {
-	pChannelConfigurationKafka pTopicConfiguration = static_cast<ChannelConfigurationKafka*>(channelHandle);
+	TRACESTART("DataDistributionManagerKafka", "StartChannel");
+
+	CAST_CHANNEL(ChannelConfigurationKafka);
 
 	if (!GetSubSystemStarted())
 	{
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "Start", "SubSystem not started.");
-		pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, 0, "SubSystem not started.");
+		LOG_ERROR("Channel %s - SubSystem not started.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
+		pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, 0, "SubSystem not started.");
 		return E_FAIL;
 	}
 
-	HRESULT status = StartConsumerAndWait(pTopicConfiguration, dwMilliseconds);
+	HRESULT status = StartConsumerAndWait(pChannelConfiguration, dwMilliseconds);
 	if (FAILED(status)) return status;
-	status = StartPoll(pTopicConfiguration, dwMilliseconds);
+	status = StartPoll(pChannelConfiguration, dwMilliseconds);
 
 	return status;
 }
 
 HRESULT DataDistributionManagerKafka::StopChannel(HANDLE channelHandle, DWORD dwMilliseconds)
 {
-	pChannelConfigurationKafka pTopicConfiguration = static_cast<ChannelConfigurationKafka*>(channelHandle);
+	TRACESTART("DataDistributionManagerKafka", "StopChannel");
+	CAST_CHANNEL(ChannelConfigurationKafka);
 	if (!GetSubSystemStarted())
 	{
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "Stop", "SubSystem not started.");
-		pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, 0, "SubSystem not started.");
+		LOG_ERROR("Channel %s - SubSystem not started.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
+		pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, 0, "SubSystem not started.");
 		return E_FAIL;
 	}
 
-	StopConsumer(pTopicConfiguration);
-	StopPoll(pTopicConfiguration);
+	StopConsumer(pChannelConfiguration);
+	StopPoll(pChannelConfiguration);
 	return S_OK;
 }
 
 void DataDistributionManagerKafka::SetParameter(HANDLE channelHandle, const char* paramName, const char* paramValue)
 {
-	Log(DDM_LOG_LEVEL::INFO_LEVEL, "DataDistributionManagerKafka", "SetParameter", "Name: %s - Value: %s", (paramName != NULL) ? paramName : "", (paramValue != NULL) ? paramValue : "");
+	TRACESTART("DataDistributionManagerKafka", "SetParameter");
+
+	LOG_INFO("Channel %s - Name: %s - Value : %s", (paramName != NULL) ? paramName : "", (paramValue != NULL) ? paramValue : "");
 
 	DataDistributionCommon::SetParameter(channelHandle, paramName, paramValue);
 
 	std::string errstr;
-	pChannelConfigurationKafka pTopicConfiguration = static_cast<ChannelConfigurationKafka*>(channelHandle);
+	CAST_CHANNEL(ChannelConfigurationKafka);
 
 	if (!strcmp(paramName, "datadistributionmanager.kafka.producer.msgflags"))
 	{
-		pTopicConfiguration->m_ProducerMsgFlags = atoi(paramValue);
+		pChannelConfiguration->m_ProducerMsgFlags = atoi(paramValue);
 		return;
 	}
 	else if (!strcmp(paramName, "datadistributionmanager.kafka.topic.replicationfactor"))
 	{
-		pTopicConfiguration->m_TopicReplicationFactor = atoi(paramValue);
+		pChannelConfiguration->m_TopicReplicationFactor = atoi(paramValue);
 		return;
 	}
 	else if (!strcmp(paramName, "datadistributionmanager.kafka.topic.create"))
 	{
 		if (!strcmp(paramValue, "true") ||
 			!strcmp(paramValue, "1"))
-			pTopicConfiguration->m_CreateTopic = TRUE;
+			pChannelConfiguration->m_CreateTopic = TRUE;
 		else
-			pTopicConfiguration->m_CreateTopic = FALSE;
+			pChannelConfiguration->m_CreateTopic = FALSE;
 		return;
 	}
 	else if (!strcmp(paramName, "datadistributionmanager.kafka.topic.dumpmetadata"))
 	{
 		if (!strcmp(paramValue, "true") ||
 			!strcmp(paramValue, "1"))
-			pTopicConfiguration->m_DumpMetadata = TRUE;
+			pChannelConfiguration->m_DumpMetadata = TRUE;
 		else
-			pTopicConfiguration->m_DumpMetadata = FALSE;
+			pChannelConfiguration->m_DumpMetadata = FALSE;
 		return;
 	}
 
@@ -454,37 +464,37 @@ void DataDistributionManagerKafka::SetParameter(HANDLE channelHandle, const char
 	std::string v(paramValue);
 
 	RdKafka::Conf::ConfResult r = RdKafka::Conf::CONF_UNKNOWN;
-	std::string sTopicName = pTopicConfiguration->GetChannelName();
+	std::string sTopicName = pChannelConfiguration->GetChannelName();
 	std::string strToCheck = "datadistributionmanager.kafka.topic.";
 	if (n.substr(0, strToCheck.length()) == strToCheck)
 	{
-		r = pTopicConfiguration->pTopic_conf->set(n.substr(strToCheck.length()), v, errstr);
+		r = pChannelConfiguration->pTopic_conf->set(n.substr(strToCheck.length()), v, errstr);
 	}
 	if (r == RdKafka::Conf::CONF_UNKNOWN)
 	{
 		strToCheck = "datadistributionmanager.kafka.";
 		if (n.substr(0, strToCheck.length()) == strToCheck)
 		{
-			r = pTopicConfiguration->pConnection_conf->set(n.substr(strToCheck.length()), v, errstr);
+			r = pChannelConfiguration->pConnection_conf->set(n.substr(strToCheck.length()), v, errstr);
 		}
 	}
 
 	strToCheck = "datadistributionmanager.kafka." + sTopicName + ".topic.";
 	if (n.substr(0, strToCheck.length()) == strToCheck)
 	{
-		r = pTopicConfiguration->pTopic_conf->set(n.substr(strToCheck.length()), v, errstr);
+		r = pChannelConfiguration->pTopic_conf->set(n.substr(strToCheck.length()), v, errstr);
 	}
 	if (r == RdKafka::Conf::CONF_UNKNOWN)
 	{
 		strToCheck = "datadistributionmanager.kafka." + sTopicName + ".";
 		if (n.substr(0, strToCheck.length()) == strToCheck)
 		{
-			r = pTopicConfiguration->pConnection_conf->set(n.substr(strToCheck.length()), v, errstr);
+			r = pChannelConfiguration->pConnection_conf->set(n.substr(strToCheck.length()), v, errstr);
 		}
 	}
 
 	if (r != RdKafka::Conf::CONF_OK) {
-		pTopicConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "read_config_file", "Error set configuration: %s", errstr.c_str());
+		LOG_ERROR("Channel %s - Error set configuration: %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", errstr.c_str());
 	}
 }
 
@@ -504,24 +514,28 @@ static const char* ConvertIToA(size_t value)
 
 const char* DataDistributionManagerKafka::GetParameter(HANDLE channelHandle, const char* paramName)
 {
-	pChannelConfigurationKafka pTopicConfiguration = static_cast<ChannelConfigurationKafka*>(channelHandle);
+	TRACESTART("DataDistributionManagerKafka", "GetParameter");
+
+	CAST_CHANNEL(ChannelConfigurationKafka);
+
+	LOG_INFO("Channel %s - Name: %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", (paramName != NULL) ? paramName : "");
 
 	if (!strcmp(paramName, "datadistributionmanager.kafka.producer.msgflags"))
 	{
-		return ConvertIToA(pTopicConfiguration->m_ProducerMsgFlags);
+		return ConvertIToA(pChannelConfiguration->m_ProducerMsgFlags);
 	}
 	else if (!strcmp(paramName, "datadistributionmanager.kafka.topic.replicationfactor"))
 	{
-		return ConvertIToA(pTopicConfiguration->m_TopicReplicationFactor);
+		return ConvertIToA(pChannelConfiguration->m_TopicReplicationFactor);
 	}
 	else if (!strcmp(paramName, "datadistributionmanager.kafka.topic.create"))
 	{
-		if (pTopicConfiguration->m_CreateTopic) return "true";
+		if (pChannelConfiguration->m_CreateTopic) return "true";
 		else return "false";
 	}
 	else if (!strcmp(paramName, "datadistributionmanager.kafka.topic.dumpmetadata"))
 	{
-		if (pTopicConfiguration->m_DumpMetadata) return "true";
+		if (pChannelConfiguration->m_DumpMetadata) return "true";
 		else return "false";
 	}
 
@@ -529,37 +543,37 @@ const char* DataDistributionManagerKafka::GetParameter(HANDLE channelHandle, con
 	std::string v;
 
 	RdKafka::Conf::ConfResult r = RdKafka::Conf::CONF_UNKNOWN;
-	std::string sTopicName = pTopicConfiguration->GetChannelName();
+	std::string sTopicName = pChannelConfiguration->GetChannelName();
 	std::string strToCheck = "datadistributionmanager.kafka.channel.";
 	if (n.substr(0, strToCheck.length()) == strToCheck)
 	{
-		r = pTopicConfiguration->pTopic_conf->get(n.substr(strToCheck.length()), v);
+		r = pChannelConfiguration->pTopic_conf->get(n.substr(strToCheck.length()), v);
 	}
 	if (r == RdKafka::Conf::CONF_UNKNOWN)
 	{
 		strToCheck = "datadistributionmanager.kafka.";
 		if (n.substr(0, strToCheck.length()) == strToCheck)
 		{
-			r = pTopicConfiguration->pConnection_conf->get(n.substr(strToCheck.length()), v);
+			r = pChannelConfiguration->pConnection_conf->get(n.substr(strToCheck.length()), v);
 		}
 	}
 
 	strToCheck = "datadistributionmanager.kafka." + sTopicName + ".channel.";
 	if (n.substr(0, strToCheck.length()) == strToCheck)
 	{
-		r = pTopicConfiguration->pTopic_conf->get(n.substr(strToCheck.length()), v);
+		r = pChannelConfiguration->pTopic_conf->get(n.substr(strToCheck.length()), v);
 	}
 	if (r == RdKafka::Conf::CONF_UNKNOWN)
 	{
 		strToCheck = "datadistributionmanager.kafka." + sTopicName + ".";
 		if (n.substr(0, strToCheck.length()) == strToCheck)
 		{
-			r = pTopicConfiguration->pConnection_conf->get(n.substr(strToCheck.length()), v);
+			r = pChannelConfiguration->pConnection_conf->get(n.substr(strToCheck.length()), v);
 		}
 	}
 
 	if (r != RdKafka::Conf::CONF_OK) {
-		pTopicConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "GetParameter", "Error get configuration");
+		pChannelConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "GetParameter", "Error get configuration");
 	}
 	else return _strdup(v.c_str());
 
@@ -568,42 +582,44 @@ const char* DataDistributionManagerKafka::GetParameter(HANDLE channelHandle, con
 
 HRESULT DataDistributionManagerKafka::SeekChannel(HANDLE channelHandle, size_t position)
 {
+	TRACESTART("DataDistributionManagerKafka", "SeekChannel");
+
 	RdKafka::ErrorCode code;
-	pChannelConfigurationKafka pTopicConfiguration = static_cast<ChannelConfigurationKafka*>(channelHandle);
+	CAST_CHANNEL(ChannelConfigurationKafka);
 	if (!GetSubSystemStarted())
 	{
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "SeekTopic", "SubSystem not started.");
-		pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, 0, "SubSystem not started.");
+		LOG_ERROR("Channel %s - SubSystem not started.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
+		pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, 0, "SubSystem not started.");
 		return E_FAIL;
 	}
 
 	std::vector<RdKafka::TopicPartition*> partVector;
-	std::string sTopicName = pTopicConfiguration->GetChannelName();
+	std::string sTopicName = pChannelConfiguration->GetChannelName();
 	partVector.push_back(RdKafka::TopicPartition::create(sTopicName, 0, position));
-	code = pTopicConfiguration->pConsumer->offsetsForTimes(partVector, pTopicConfiguration->GetCreateChannelTimeout());
+	code = pChannelConfiguration->pConsumer->offsetsForTimes(partVector, pChannelConfiguration->GetCreateChannelTimeout());
 	for (unsigned int i = 0; i < partVector.size(); i++)
 	{
 #ifdef _WIN64
-		pTopicConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "SeekTopic", "pTopicConfiguration->pConsumer->offsetsForTimes [channel: %s offset:" PRId64 "]: error: %s", partVector[i]->topic().c_str(), partVector[i]->offset(), RdKafka::err2str(partVector[i]->err()).c_str());
+		LOG_ERROR("Channel %s - offsetsForTimes [channel: %s offset:" PRId64 "]: error: %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", partVector[i]->topic().c_str(), partVector[i]->offset(), RdKafka::err2str(partVector[i]->err()).c_str());
 #else
-		pTopicConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "SeekTopic", "pTopicConfiguration->pConsumer->offsetsForTimes [channel: %s offset: %ld ]: error: %s", partVector[i]->topic().c_str(), partVector[i]->offset(), RdKafka::err2str(partVector[i]->err()).c_str());
+		LOG_ERROR("Channel %s - offsetsForTimes [channel: %s offset: %ld ]: error: %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", partVector[i]->topic().c_str(), partVector[i]->offset(), RdKafka::err2str(partVector[i]->err()).c_str());
 #endif
 	}
 	if (code != RdKafka::ERR_NO_ERROR)
 	{
-		pTopicConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "SeekTopic", "pTopicConfiguration->pConsumer->offsetsForTimes error: %s", RdKafka::err2str(code).c_str());
-		pTopicConfiguration->bConsumerRun = FALSE;
-		SetEvent(pTopicConfiguration->h_evtConsumer);
+		LOG_ERROR("Channel %s - offsetsForTimes error: %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", RdKafka::err2str(code).c_str());
+		pChannelConfiguration->bConsumerRun = FALSE;
+		SetEvent(pChannelConfiguration->h_evtConsumer);
 		return E_FAIL;
 	}
 	else
 	{
 #ifdef _WIN64
-		pTopicConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "SeekTopic", "pTopicConfiguration->pConsumer->offsetsForTimes set offset to: " PRId64 "", partVector[0]->offset());
+		LOG_ERROR("Channel %s - offsetsForTimes set offset to: " PRId64 "", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", partVector[0]->offset());
 #else
-		pTopicConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "SeekTopic", "pTopicConfiguration->pConsumer->offsetsForTimes set offset to: %ld", partVector[0]->offset());
+		LOG_ERROR("Channel %s - pChannelConfiguration->pConsumer->offsetsForTimes set offset to: %ld", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", partVector[0]->offset());
 #endif
-		pTopicConfiguration->SetManagedOffset(partVector[0]->offset());
+		pChannelConfiguration->SetManagedOffset(partVector[0]->offset());
 	}
 
 	return S_OK;
@@ -611,11 +627,13 @@ HRESULT DataDistributionManagerKafka::SeekChannel(HANDLE channelHandle, size_t p
 
 HRESULT DataDistributionManagerKafka::DeleteChannel(HANDLE channelHandle)
 {
-	pChannelConfigurationKafka pTopicConfiguration = static_cast<ChannelConfigurationKafka*>(channelHandle);
+	TRACESTART("DataDistributionManagerKafka", "DeleteChannel");
+
+	CAST_CHANNEL(ChannelConfigurationKafka);
 	if (!GetSubSystemStarted())
 	{
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "DeleteTopic", "SubSystem not started.");
-		pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, 0, "SubSystem not started.");
+		LOG_ERROR("Channel %s - SubSystem not started.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
+		pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, 0, "SubSystem not started.");
 		return E_FAIL;
 	}
 
@@ -624,32 +642,35 @@ HRESULT DataDistributionManagerKafka::DeleteChannel(HANDLE channelHandle)
 
 HRESULT DataDistributionManagerKafka::WriteOnChannel(HANDLE channelHandle, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll, const int64_t timestamp)
 {
-	pChannelConfigurationKafka pTopicConfiguration = static_cast<ChannelConfigurationKafka*>(channelHandle);
+	TRACESTART("DataDistributionManagerKafka", "WriteOnChannel");
+	CAST_CHANNEL(ChannelConfigurationKafka);
+
 	if (!GetSubSystemStarted())
 	{
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "WriteOnTopic", "SubSystem not started.");
-		pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, 0, "SubSystem not started.");
+		LOG_ERROR("Channel %s - SubSystem not started.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
+		pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, 0, "SubSystem not started.");
 		return E_FAIL;
 	}
 
 	RdKafka::ErrorCode code;
 	if (timestamp != -1)
 	{
-		std::string sTopicName = pTopicConfiguration->GetChannelName();
-		code = pTopicConfiguration->pProducer->produce(sTopicName, 0, pTopicConfiguration->m_ProducerMsgFlags,
+		std::string sTopicName = pChannelConfiguration->GetChannelName();
+		code = pChannelConfiguration->pProducer->produce(sTopicName, 0, pChannelConfiguration->m_ProducerMsgFlags,
 			param, dataLen, key, keyLen, timestamp, (void*)this);
 	}
 	else
 	{
-		code = pTopicConfiguration->pProducer->produce(pTopicConfiguration->pTopic, 0, pTopicConfiguration->m_ProducerMsgFlags,
+		code = pChannelConfiguration->pProducer->produce(pChannelConfiguration->pTopic, 0, pChannelConfiguration->m_ProducerMsgFlags,
 			param, dataLen, key, keyLen, (void*)this);
 	}
 
 	if (code != RdKafka::ErrorCode::ERR_NO_ERROR)
 	{
+		LOG_ERROR("Channel %s - Write failed with reason %s.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", RdKafka::err2str(code).c_str());
 		DDM_UNDERLYING_ERROR_CONDITION thisCode = KafkaErrorMapper(code);
 
-		pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_WRITE_FAILED, code, RdKafka::err2str(code).c_str());
+		pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_WRITE_FAILED, code, RdKafka::err2str(code).c_str());
 		return E_FAIL;
 	}
 	return S_OK;
@@ -657,10 +678,12 @@ HRESULT DataDistributionManagerKafka::WriteOnChannel(HANDLE channelHandle, const
 
 HRESULT DataDistributionManagerKafka::ReadFromChannel(HANDLE channelHandle, int64_t offset, size_t *dataLen, void **param)
 {
-	pChannelConfigurationKafka pTopicConfiguration = static_cast<ChannelConfigurationKafka*>(channelHandle);
+	TRACESTART("DataDistributionManagerKafka", "ReadFromChannel");
+
+	CAST_CHANNEL(ChannelConfigurationKafka);
 	if (!GetSubSystemStarted())
 	{
-		Log(DDM_LOG_LEVEL::ERROR_LEVEL, pTopicConfiguration->GetChannelName(), "ReadFromTopic", "SubSystem not started.");
+		LOG_ERROR("Channel %s - SubSystem not started.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
 		return S_FALSE;
 	}
 
@@ -669,26 +692,30 @@ HRESULT DataDistributionManagerKafka::ReadFromChannel(HANDLE channelHandle, int6
 
 HRESULT DataDistributionManagerKafka::ChangeChannelDirection(HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction)
 {
-	pChannelConfigurationKafka pTopicConfiguration = static_cast<ChannelConfigurationKafka*>(channelHandle);
-	DDM_CHANNEL_DIRECTION oldDirection = pTopicConfiguration->GetDirection();
+	TRACESTART("DataDistributionManagerKafka", "ChangeChannelDirection");
 
-	if (GetSubSystemStarted())
+	CAST_CHANNEL(ChannelConfigurationKafka);
+	DDM_CHANNEL_DIRECTION oldDirection = pChannelConfiguration->GetDirection();
+
+	if (!GetSubSystemStarted())
 	{
-		// update internal state following the direction
-
-
+		LOG_ERROR("Channel %s - SubSystem not started.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
+		pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, 0, "SubSystem not started.");
+		return E_FAIL;
 	}
-	pTopicConfiguration->SetDirection(direction);
+	pChannelConfiguration->SetDirection(direction);
 	return S_OK;
 }
 
-HRESULT DataDistributionManagerKafka::StartConsumerAndWait(pChannelConfigurationKafka pTopicConfiguration, DWORD dwMilliseconds)
+HRESULT DataDistributionManagerKafka::StartConsumerAndWait(ChannelConfigurationKafka* pChannelConfiguration, DWORD dwMilliseconds)
 {
+	TRACESTART("DataDistributionManagerKafka", "StartConsumerAndWait");
+
 	HRESULT result = S_OK;
-	pTopicConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "StartConsumerAndWait", "Enter");
-	pTopicConfiguration->bConsumerRun = TRUE;
-	pTopicConfiguration->hConsumerThread = CreateThread(0, 0, consumerHandler, pTopicConfiguration, 0, &pTopicConfiguration->dwConsumerThrId);
-	auto res = WaitForSingleObject(pTopicConfiguration->h_evtConsumer, dwMilliseconds);
+	LOG_DEBUG("Channel %s - Enter.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
+	pChannelConfiguration->bConsumerRun = TRUE;
+	pChannelConfiguration->hConsumerThread = CreateThread(0, 0, consumerHandler, pChannelConfiguration, 0, &pChannelConfiguration->dwConsumerThrId);
+	auto res = WaitForSingleObject(pChannelConfiguration->h_evtConsumer, dwMilliseconds);
 	switch (res)
 	{
 	case WAIT_ABANDONED:
@@ -700,25 +727,28 @@ HRESULT DataDistributionManagerKafka::StartConsumerAndWait(pChannelConfiguration
 	default:
 		break;
 	}
-	pTopicConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "StartConsumerAndWait", "Exit");
+	LOG_DEBUG("Channel %s - Exit.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
 	return result;
 }
 
-void DataDistributionManagerKafka::StopConsumer(pChannelConfigurationKafka pTopicConfiguration)
+void DataDistributionManagerKafka::StopConsumer(ChannelConfigurationKafka* pChannelConfiguration)
 {
-	pTopicConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "StopConsumer", "Enter");
-	pTopicConfiguration->bConsumerRun = FALSE;
-	CloseHandle(pTopicConfiguration->hConsumerThread);
-	pTopicConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "StopConsumer", "Exit");
+	TRACESTART("DataDistributionManagerKafka", "StopConsumer");
+	LOG_DEBUG("Channel %s - Enter.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
+	pChannelConfiguration->bConsumerRun = FALSE;
+	CloseHandle(pChannelConfiguration->hConsumerThread);
+	LOG_DEBUG("Channel %s - Exit.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
 }
 
-HRESULT DataDistributionManagerKafka::StartPoll(pChannelConfigurationKafka pTopicConfiguration, DWORD dwMilliseconds)
+HRESULT DataDistributionManagerKafka::StartPoll(ChannelConfigurationKafka* pChannelConfiguration, DWORD dwMilliseconds)
 {
+	TRACESTART("DataDistributionManagerKafka", "StartPoll");
+
 	HRESULT result = S_OK;
-	pTopicConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "StartPoll", "Enter");
-	pTopicConfiguration->bPollRun = TRUE;
-	pTopicConfiguration->hPollThread = CreateThread(0, 0, pollHandler, pTopicConfiguration, 0, &pTopicConfiguration->dwPollThrId);
-	auto res = WaitForSingleObject(pTopicConfiguration->h_evtPoll, dwMilliseconds);
+	LOG_DEBUG("Channel %s - Enter.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
+	pChannelConfiguration->bPollRun = TRUE;
+	pChannelConfiguration->hPollThread = CreateThread(0, 0, pollHandler, pChannelConfiguration, 0, &pChannelConfiguration->dwPollThrId);
+	auto res = WaitForSingleObject(pChannelConfiguration->h_evtPoll, dwMilliseconds);
 	switch (res)
 	{
 	case WAIT_ABANDONED:
@@ -730,16 +760,18 @@ HRESULT DataDistributionManagerKafka::StartPoll(pChannelConfigurationKafka pTopi
 	default:
 		break;
 	}
-	pTopicConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "StartPoll", "Exit");
+	LOG_DEBUG("Channel %s - Exit.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
 	return result;
 }
 
-void DataDistributionManagerKafka::StopPoll(pChannelConfigurationKafka pTopicConfiguration)
+void DataDistributionManagerKafka::StopPoll(ChannelConfigurationKafka* pChannelConfiguration)
 {
-	pTopicConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "StopPoll", "Enter");
-	pTopicConfiguration->bPollRun = FALSE;
-	CloseHandle(pTopicConfiguration->hPollThread);
-	pTopicConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "StopPoll", "Exit");
+	TRACESTART("DataDistributionManagerKafka", "StopPoll");
+
+	LOG_DEBUG("Channel %s - Enter.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
+	pChannelConfiguration->bPollRun = FALSE;
+	CloseHandle(pChannelConfiguration->hPollThread);
+	LOG_DEBUG("Channel %s - Exit.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
 }
 
 DDM_UNDERLYING_ERROR_CONDITION DataDistributionManagerKafka::KafkaErrorMapper(RdKafka::ErrorCode code)
@@ -1031,59 +1063,59 @@ DDM_UNDERLYING_ERROR_CONDITION DataDistributionManagerKafka::KafkaErrorMapper(Rd
 
 DWORD __stdcall DataDistributionManagerKafka::consumerHandler(void * argh)
 {
-	pChannelConfigurationKafka pTopicConfiguration = static_cast<ChannelConfigurationKafka*>(argh);
+	ChannelConfigurationKafka* pChannelConfiguration = static_cast<ChannelConfigurationKafka*>(argh);
 
-	pTopicConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "consumerHandler", "Entering ");
+	pChannelConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "consumerHandler", "Entering ");
 
 	SmartTimeMeasureWrapper timeStart;
 
 	timeStart.ResetTime();
 
-	pTopicConfiguration->bConsumerRun = TRUE;
+	pChannelConfiguration->bConsumerRun = TRUE;
 
 	RdKafka::ErrorCode code;
 	RdKafka::Message *p_Msg;
 
 	std::vector<std::string> vector;
-	std::string sTopicName = pTopicConfiguration->GetChannelName();
+	std::string sTopicName = pChannelConfiguration->GetChannelName();
 	vector.push_back(sTopicName);
-	code = pTopicConfiguration->pConsumer->subscribe(vector);
+	code = pChannelConfiguration->pConsumer->subscribe(vector);
 	if (code != RdKafka::ERR_NO_ERROR)
 	{
-		pTopicConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "consumerHandler", "pTopicConfiguration->pConsumer->subscribe error: %s", RdKafka::err2str(code).c_str());
-		pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, code, "Failed to start subsystem: %s", RdKafka::err2str(code).c_str());
-		pTopicConfiguration->bConsumerRun = FALSE;
-		SetEvent(pTopicConfiguration->h_evtConsumer);
+		pChannelConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "consumerHandler", "pChannelConfiguration->pConsumer->subscribe error: %s", RdKafka::err2str(code).c_str());
+		pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, code, "Failed to start subsystem: %s", RdKafka::err2str(code).c_str());
+		pChannelConfiguration->bConsumerRun = FALSE;
+		SetEvent(pChannelConfiguration->h_evtConsumer);
 		return -1;
 	}
 
 	BOOL result = FALSE;
 	do
 	{
-		p_Msg = pTopicConfiguration->pConsumer->consume(10); // waiting first message to know if we are connected
+		p_Msg = pChannelConfiguration->pConsumer->consume(10); // waiting first message to know if we are connected
 		code = p_Msg->err();
-		if (code == RdKafka::ErrorCode::ERR_NO_ERROR) pTopicConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "primaryConsumerHandler", "Received Message in the loop");
-		result = code == RdKafka::ErrorCode::ERR__TIMED_OUT && !pTopicConfiguration->IsStartupStatusSet();
+		if (code == RdKafka::ErrorCode::ERR_NO_ERROR) pChannelConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "primaryConsumerHandler", "Received Message in the loop");
+		result = code == RdKafka::ErrorCode::ERR__TIMED_OUT && !pChannelConfiguration->IsStartupStatusSet();
 		if (result) delete p_Msg;
 	} while (result);
 
-	pTopicConfiguration->WaitStartupStatus(INFINITE);
+	pChannelConfiguration->WaitStartupStatus(INFINITE);
 
-	if (pTopicConfiguration->GetStartupStatus() != CHANNEL_STARTUP_TYPE::STARTED)
+	if (pChannelConfiguration->GetStartupStatus() != CHANNEL_STARTUP_TYPE::STARTED)
 	{
-		pTopicConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "consumerHandler", "pKafkaMessageManager->GetStartupStatus() is: %d", pTopicConfiguration->GetStartupStatus());
-		pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, 0, "Failed to start subsystem");
-		pTopicConfiguration->bConsumerRun = FALSE;
-		SetEvent(pTopicConfiguration->h_evtConsumer);
+		pChannelConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "consumerHandler", "pKafkaMessageManager->GetStartupStatus() is: %d", pChannelConfiguration->GetStartupStatus());
+		pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_SUBSYSTEM_NOT_STARTED, 0, "Failed to start subsystem");
+		pChannelConfiguration->bConsumerRun = FALSE;
+		SetEvent(pChannelConfiguration->h_evtConsumer);
 		return -1;
 	}
 
 	BOOL timeoutEmitted = FALSE;
-	SetEvent(pTopicConfiguration->h_evtConsumer);
+	SetEvent(pChannelConfiguration->h_evtConsumer);
 	timeStart.ResetTime();
 	do
 	{
-		pTopicConfiguration->WaitingFinishLockState(INFINITE);
+		pChannelConfiguration->WaitingFinishLockState(INFINITE);
 
 		BOOL deleteMsgOnExit = TRUE;
 		code = p_Msg->err();
@@ -1094,9 +1126,9 @@ DWORD __stdcall DataDistributionManagerKafka::consumerHandler(void * argh)
 		{
 			auto duration = timeStart.ElapsedMilliseconds();
 
-			if (!timeoutEmitted && duration > pTopicConfiguration->GetMessageReceiveTimeout()) // no message within m_MessageReceiveTimeout
+			if (!timeoutEmitted && duration > pChannelConfiguration->GetMessageReceiveTimeout()) // no message within m_MessageReceiveTimeout
 			{
-				pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_BEGIN, 0, "Elapsed timeout receiving packets.");
+				pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_BEGIN, 0, "Elapsed timeout receiving packets.");
 				timeoutEmitted = TRUE;
 			}
 		}
@@ -1105,52 +1137,52 @@ DWORD __stdcall DataDistributionManagerKafka::consumerHandler(void * argh)
 		{
 			if (timeoutEmitted)
 			{
-				pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_END, 0, "End timeout receiving packets.");
+				pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_END, 0, "End timeout receiving packets.");
 			}
 			timeoutEmitted = FALSE;
 			timeStart.ResetTime();
 
-			pTopicConfiguration->OnDataAvailable(p_Msg->key()->c_str(), p_Msg->key_len(), p_Msg->payload(), p_Msg->len());
+			pChannelConfiguration->OnDataAvailable(p_Msg->key()->c_str(), p_Msg->key_len(), p_Msg->payload(), p_Msg->len());
 
 			if (deleteMsgOnExit)
 			{
-				if (pTopicConfiguration->GetCommitSync())
+				if (pChannelConfiguration->GetCommitSync())
 				{
-					code = pTopicConfiguration->pConsumer->commitSync(p_Msg);
+					code = pChannelConfiguration->pConsumer->commitSync(p_Msg);
 				}
 				else
 				{
-					code = pTopicConfiguration->pConsumer->commitAsync(p_Msg);
+					code = pChannelConfiguration->pConsumer->commitAsync(p_Msg);
 				}
 				if (code != RdKafka::ERR_NO_ERROR)
 				{
-					pTopicConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "consumerHandler", "pTopicConfiguration->pConsumer->commitSync/commitAsync error: %s", RdKafka::err2str(code).c_str());
-					pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_COMMIT_FAILED, code, "Failed to commit message: %s", RdKafka::err2str(code).c_str());
+					pChannelConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "consumerHandler", "%s error: %s", pChannelConfiguration->GetCommitSync() ? "commitSync" : "commitAsync", RdKafka::err2str(code).c_str());
+					pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_COMMIT_FAILED, code, "Failed to commit message: %s", RdKafka::err2str(code).c_str());
 				}
-				pTopicConfiguration->SetManagedOffset(p_Msg->offset());
+				pChannelConfiguration->SetManagedOffset(p_Msg->offset());
 			}
 		}
 		break;
 		default:
-			pTopicConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_UNMAPPED_ERROR_CONDITION, code, RdKafka::err2str(code).c_str());
+			pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_UNMAPPED_ERROR_CONDITION, code, RdKafka::err2str(code).c_str());
 			break;
 		}
 		if (deleteMsgOnExit) delete p_Msg;
-	} while ((p_Msg = pTopicConfiguration->pConsumer->consume(pTopicConfiguration->GetConsumerTimeout())) != NULL && pTopicConfiguration->bConsumerRun);
+	} while ((p_Msg = pChannelConfiguration->pConsumer->consume(pChannelConfiguration->GetConsumerTimeout())) != NULL && pChannelConfiguration->bConsumerRun);
 
 	return S_OK;
 }
 
 DWORD __stdcall DataDistributionManagerKafka::pollHandler(void * argh)
 {
-	pChannelConfigurationKafka pTopicConfiguration = static_cast<ChannelConfigurationKafka*>(argh);
+	ChannelConfigurationKafka* pChannelConfiguration = static_cast<ChannelConfigurationKafka*>(argh);
 
-	SetEvent(pTopicConfiguration->h_evtPoll);
+	SetEvent(pChannelConfiguration->h_evtPoll);
 
-	while (pTopicConfiguration->bPollRun)
+	while (pChannelConfiguration->bPollRun)
 	{
-		int eventServed = pTopicConfiguration->pProducer->poll(pTopicConfiguration->GetProducerTimeout());
-		if (eventServed != 0) pTopicConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, pTopicConfiguration->GetChannelName(), "primaryPollHandler", "served %d events", eventServed);
+		int eventServed = pChannelConfiguration->pProducer->poll(pChannelConfiguration->GetProducerTimeout());
+		if (eventServed != 0) pChannelConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, pChannelConfiguration->GetChannelName(), "primaryPollHandler", "served %d events", eventServed);
 	}
 
 	return S_OK;

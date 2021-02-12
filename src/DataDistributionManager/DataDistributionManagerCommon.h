@@ -42,6 +42,7 @@
 #include <map>
 
 #include "SmartDataDistributionManager.h"
+#include "DataDistributionManagerLog.h"
 
 #ifndef USE_CTIME
 using namespace std::chrono;
@@ -59,7 +60,6 @@ public:
 	HRESULT Initialize(IDataDistributionCallback*, const char* arrayParams[], int len, const char* szMyAddress = NULL, const char* channelTrailer = NULL);
 	virtual HRESULT Initialize();
 	void Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, ...);
-#define LOG_LEN 1024
 	void Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, va_list args);
 
 	virtual HANDLE CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION::ALL, const char* arrayParams[] = NULL, int len = 0);
@@ -117,7 +117,7 @@ public:
 	void OnDataAvailable(const HANDLE channelHandle, const char* key, size_t keyLen, void* buffer, size_t len);
 	void OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, const char* subSystemReason, ...);
 	void OnConditionOrError(const HANDLE channelHandle, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, const char* subSystemReason, ...);
-	void Log(DDM_LOG_LEVEL level, const char* function, const char* format, ...);
+	void Log(const DDM_LOG_LEVEL level, const char* function, const char* format, ...);
 	void CompletelyDisconnected();
 	int64_t GetManagedOffset();
 	void SetManagedOffset(int64_t val);
@@ -170,8 +170,11 @@ private:
 	CHANNEL_STARTUP_TYPE m_StartupStatus;
 	DataDistributionCommon* m_pMainManager;
 	IDataDistributionChannelCallback* dataCb;
-	char* m_pChannelName;
+	const char* m_pChannelName;
 	DDM_CHANNEL_DIRECTION m_Direction;
 };
+
+#define CAST_CHANNEL_NAME(TYPE, VAR_NAME) TYPE* pChannelConfiguration = static_cast<TYPE*>(VAR_NAME);
+#define CAST_CHANNEL(TYPE) CAST_CHANNEL_NAME(TYPE, channelHandle)
 
 #endif // !defined(DATADISTRIBUTIONMANAGERCOMMON_H__INCLUDED_)

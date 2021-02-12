@@ -238,6 +238,7 @@
     <ClInclude Include="DataDistributionManager.h" />
     <ClInclude Include="DataDistributionManagerCommon.h" />
     <ClInclude Include="DataDistributionManagerEnums.h" />
+    <ClInclude Include="DataDistributionManagerLog.h" />
     <ClInclude Include="DataDistributionManager_c.h" />
     <ClInclude Include="DataDistributionManager_Internal.h" />
     <ClInclude Include="DataDistributionMastershipManagerBase.h" />
@@ -250,6 +251,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataDistributionManagerCommon.cpp" />
+    <ClCompile Include="DataDistributionManagerLog.cpp" />
     <ClCompile Include="DataDistributionManager_c.cpp" />
     <ClCompile Include="DataDistributionMastershipCommon.cpp" />
     <ClCompile Include="DataDistributionMastershipManagerBase.cpp" />

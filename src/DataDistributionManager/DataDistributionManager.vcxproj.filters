@@ -54,6 +54,9 @@
     <ClInclude Include="org_mases_datadistributionmanager_NativeInterface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DataDistributionManagerLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -81,6 +84,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="org_mases_datadistributionmanager_NativeInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataDistributionManagerLog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

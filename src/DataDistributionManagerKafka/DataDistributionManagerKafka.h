@@ -33,8 +33,6 @@ class KafkaMessageManagerConsumeCb;
 class KafkaMessageManagerRebalanceCb;
 class ChannelConfigurationKafka;
 
-typedef ChannelConfigurationKafka *pChannelConfigurationKafka;
-
 class DataDistributionManagerKafka : public DataDistributionCommon
 {
 public:
@@ -58,20 +56,18 @@ public:
 private:
 	int  m_ServerLostTimeout;
 	static DDM_UNDERLYING_ERROR_CONDITION KafkaErrorMapper(RdKafka::ErrorCode code);
-	int read_config_file(pChannelConfigurationKafka configuration, const char* arrayParams[], int len);
-	HRESULT StartKeepAliveAndWait(DWORD dwMilliseconds);
-	void StopKeepAlive();
-	HRESULT StartConsumerAndWait(pChannelConfigurationKafka conf, DWORD dwMilliseconds);
-	void StopConsumer(pChannelConfigurationKafka conf);
-	HRESULT StartPoll(pChannelConfigurationKafka conf, DWORD dwMilliseconds);
-	void StopPoll(pChannelConfigurationKafka conf);
-	int conf_init(pChannelConfigurationKafka configuration, const char* arrayParams[], int len);
+	int read_config_file(ChannelConfigurationKafka* configuration, const char* arrayParams[], int len);
+	HRESULT StartConsumerAndWait(ChannelConfigurationKafka* conf, DWORD dwMilliseconds);
+	void StopConsumer(ChannelConfigurationKafka* conf);
+	HRESULT StartPoll(ChannelConfigurationKafka* conf, DWORD dwMilliseconds);
+	void StopPoll(ChannelConfigurationKafka* conf);
+	int conf_init(ChannelConfigurationKafka* configuration, const char* arrayParams[], int len);
 	int admin_create_topic(rd_kafka_t *use_rk, const char *channelname, int partition_cnt, int replication_factor, int timeout_ms);
 
 	static DWORD __stdcall consumerHandler(void * argh);
 	static DWORD __stdcall pollHandler(void * argh);
 
-	std::vector<pChannelConfigurationKafka> topicVector;
+	std::vector<ChannelConfigurationKafka*> topicVector;
 };
 
 class ChannelConfigurationKafka : public ChannelConfiguration
@@ -136,11 +132,11 @@ public:
 class KafkaMessageManagerEventCb : public RdKafka::EventCb
 {
 private:
-	pChannelConfigurationKafka pTopicConfiguration;
+	ChannelConfigurationKafka* pChannelConfiguration;
 public:
 	KafkaMessageManagerEventCb(ChannelConfigurationKafka* manager)
 	{
-		pTopicConfiguration = manager;
+		pChannelConfiguration = manager;
 	}
 
 	void event_cb(RdKafka::Event &event)
@@ -153,34 +149,34 @@ public:
 			switch (code)
 			{
 			case RdKafka::ERR__ALL_BROKERS_DOWN:
-				if (!pTopicConfiguration->IsStartupStatusSet())
+				if (!pChannelConfiguration->IsStartupStatusSet())
 				{
-					pTopicConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "KafkaMessageManagerEventCb", "ERROR: %s %s", RdKafka::err2str(code).c_str(), event.str().c_str());
-					pTopicConfiguration->SetStartupStatus(CHANNEL_STARTUP_TYPE::DISCONNECTED);
+					pChannelConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "KafkaMessageManagerEventCb", "ERROR: %s %s", RdKafka::err2str(code).c_str(), event.str().c_str());
+					pChannelConfiguration->SetStartupStatus(CHANNEL_STARTUP_TYPE::DISCONNECTED);
 				}
 				else
 				{
-					pTopicConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "KafkaMessageManagerEventCb", "ERROR: %s %s", RdKafka::err2str(code).c_str(), event.str().c_str());
-					pTopicConfiguration->CompletelyDisconnected();
+					pChannelConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "KafkaMessageManagerEventCb", "ERROR: %s %s", RdKafka::err2str(code).c_str(), event.str().c_str());
+					pChannelConfiguration->CompletelyDisconnected();
 				}
 				break;
 			default:
-				pTopicConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerEventCb", "ERROR: %s %s", RdKafka::err2str(code).c_str(), event.str().c_str());
+				pChannelConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerEventCb", "ERROR: %s %s", RdKafka::err2str(code).c_str(), event.str().c_str());
 				break;
 			}
 		}
 		break;
 		case RdKafka::Event::EVENT_STATS:
-			pTopicConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerEventCb", "STATS: %s", event.str().c_str());
+			pChannelConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerEventCb", "STATS: %s", event.str().c_str());
 			break;
 		case RdKafka::Event::EVENT_LOG:
-			pTopicConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerEventCb", "LOG-%i-%s: %s", event.severity(), event.fac().c_str(), event.str().c_str());
+			pChannelConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerEventCb", "LOG-%i-%s: %s", event.severity(), event.fac().c_str(), event.str().c_str());
 			break;
 		case RdKafka::Event::EVENT_THROTTLE:
-			pTopicConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerEventCb", "THROTTLE: %s %s", RdKafka::err2str(event.err()).c_str(), event.str().c_str());
+			pChannelConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerEventCb", "THROTTLE: %s %s", RdKafka::err2str(event.err()).c_str(), event.str().c_str());
 			break;
 		default:
-			pTopicConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerEventCb", "EVENT: %s %s", RdKafka::err2str(event.err()).c_str(), event.str().c_str());
+			pChannelConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerEventCb", "EVENT: %s %s", RdKafka::err2str(event.err()).c_str(), event.str().c_str());
 			break;
 		}
 	}
@@ -189,11 +185,11 @@ public:
 class KafkaMessageManagerRebalanceCb : public RdKafka::RebalanceCb
 {
 private:
-	pChannelConfigurationKafka pTopicConfiguration;
+	ChannelConfigurationKafka* pChannelConfiguration;
 public:
 	KafkaMessageManagerRebalanceCb(ChannelConfigurationKafka* manager)
 	{
-		pTopicConfiguration = manager;
+		pChannelConfiguration = manager;
 	}
 	void rebalance_cb(RdKafka::KafkaConsumer *consumer,
 		RdKafka::ErrorCode err,
@@ -204,50 +200,50 @@ public:
 		case RdKafka::ERR__ASSIGN_PARTITIONS:
 		{
 			size_t partition_cnt = partitions.size();
-			pTopicConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerRebalanceCb", "partitions: %d - %s", partition_cnt, RdKafka::err2str(err).c_str());
+			pChannelConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerRebalanceCb", "partitions: %d - %s", partition_cnt, RdKafka::err2str(err).c_str());
 			for (size_t i = 0; i < partition_cnt; i++)
 			{
 				RdKafka::TopicPartition* pTopicPart = partitions.at(i);
-				int64_t nextOffset = pTopicConfiguration->GetManagedOffset();
+				int64_t nextOffset = pChannelConfiguration->GetManagedOffset();
 				if (nextOffset >= 0)
 				{
-					pTopicConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerRebalanceCb", "move forward partition offset: %" PRId64 "", pTopicPart->offset());
+					pChannelConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerRebalanceCb", "move forward partition offset: %" PRId64 "", pTopicPart->offset());
 					nextOffset += 1; // move forward the index
 				}
-				pTopicConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerRebalanceCb", "assigned channel %s - partition: %d - offset: %" PRId64 "", pTopicPart->topic().c_str(), pTopicPart->partition(), pTopicPart->offset());
+				pChannelConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerRebalanceCb", "assigned channel %s - partition: %d - offset: %" PRId64 "", pTopicPart->topic().c_str(), pTopicPart->partition(), pTopicPart->offset());
 				if (pTopicPart->offset() == RD_KAFKA_OFFSET_INVALID)
 				{
 					pTopicPart->set_offset(nextOffset);
 					int partition = pTopicPart->partition();
 					int64_t offset = pTopicPart->offset();
-					pTopicConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerRebalanceCb", "channel %s - partition: %d - changed offset: %" PRId64 "", pTopicPart->topic().c_str(), pTopicPart->partition(), pTopicPart->offset());
+					pChannelConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerRebalanceCb", "channel %s - partition: %d - changed offset: %" PRId64 "", pTopicPart->topic().c_str(), pTopicPart->partition(), pTopicPart->offset());
 				}
 			}
 
 			RdKafka::ErrorCode errorCode = consumer->assign(partitions);
 			if (errorCode != RdKafka::ERR_NO_ERROR)
 			{
-				pTopicConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerRebalanceCb", "consumer->assign error: %s", RdKafka::err2str(errorCode).c_str());
+				pChannelConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerRebalanceCb", "consumer->assign error: %s", RdKafka::err2str(errorCode).c_str());
 			}
 
-			if (!pTopicConfiguration->IsStartupStatusSet())
+			if (!pChannelConfiguration->IsStartupStatusSet())
 			{
-				pTopicConfiguration->SetStartupStatus(CHANNEL_STARTUP_TYPE::STARTED);
+				pChannelConfiguration->SetStartupStatus(CHANNEL_STARTUP_TYPE::STARTED);
 			}
 		}
 		break;
 		case RdKafka::ERR__REVOKE_PARTITIONS:
 		{
-			pTopicConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerRebalanceCb", "%s", RdKafka::err2str(err).c_str());
+			pChannelConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerRebalanceCb", "%s", RdKafka::err2str(err).c_str());
 			RdKafka::ErrorCode errorCode = consumer->unassign();
 			if (errorCode != RdKafka::ERR_NO_ERROR)
 			{
-				pTopicConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "KafkaMessageManagerRebalanceCb", "consumer->unassign error: %s", RdKafka::err2str(errorCode).c_str());
+				pChannelConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "KafkaMessageManagerRebalanceCb", "consumer->unassign error: %s", RdKafka::err2str(errorCode).c_str());
 			}
 		}
 		break;
 		default:
-			pTopicConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "KafkaMessageManagerRebalanceCb", "Error: %s", RdKafka::err2str(err).c_str());
+			pChannelConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "KafkaMessageManagerRebalanceCb", "Error: %s", RdKafka::err2str(err).c_str());
 			break;
 		}
 	}
@@ -256,17 +252,17 @@ public:
 class KafkaMessageManagerConsumeCb : public RdKafka::ConsumeCb
 {
 private:
-	pChannelConfigurationKafka pTopicConfiguration;
+	ChannelConfigurationKafka* pChannelConfiguration;
 public:
 	KafkaMessageManagerConsumeCb(ChannelConfigurationKafka* manager)
 	{
-		pTopicConfiguration = manager;
+		pChannelConfiguration = manager;
 	}
 
 	void consume_cb(RdKafka::Message &msg, void *opaque)
 	{
 		RdKafka::ErrorCode err = msg.err();
-		pTopicConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerConsumeCb", "%s", RdKafka::err2str(err).c_str());
+		pChannelConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerConsumeCb", "%s", RdKafka::err2str(err).c_str());
 
 		switch (msg.err())
 		{

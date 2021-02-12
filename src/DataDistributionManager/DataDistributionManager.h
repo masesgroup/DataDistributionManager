@@ -79,6 +79,13 @@ public:
 	static ITimeMeasureWrapper* create();
 };
 
+class __declspec(dllexport) IDataDistributionLog
+{
+public:
+	virtual void Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, ...) = 0;
+	virtual void Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, va_list args) = 0;
+};
+
 class __declspec(dllexport) IDataDistributionCallback
 {
 public:
@@ -207,13 +214,11 @@ public:
 	virtual	HRESULT Stop(DWORD dwMilliseconds) = 0;
 };
 
-class __declspec(dllexport) IDataDistributionSubsystem : public IDataDistributionTransport
+class __declspec(dllexport) IDataDistributionSubsystem : public IDataDistributionTransport, public IDataDistributionLog
 {
 public:
 	virtual HRESULT Initialize(IDataDistributionCallback*, const char* conf_file, const char* szMyAddress = NULL, const char* channelTrailer = NULL) = 0;
 	virtual HRESULT Initialize(IDataDistributionCallback*, const char* arrayParams[], int len, const char* szMyAddress = NULL, const char* channelTrailer = NULL) = 0;
-	virtual void Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, ...) = 0;
-	virtual void Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, va_list args) = 0;
 	virtual	IDataDistributionCallback* GetCallbacks() = 0;
 };
 

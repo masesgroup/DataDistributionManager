@@ -40,8 +40,6 @@
 
 class ChannelConfigurationOpenDDS;
 
-typedef ChannelConfigurationOpenDDS *pChannelConfigurationOpenDDS;
-
 class __declspec(dllexport) DataDistributionManagerOpenDDS : public DataDistributionCommon, public ACE_Log_Msg_Callback
 {
 public:
@@ -72,11 +70,11 @@ private:
 	HRESULT shutdown();
 	TimeBase::TimeT get_timestamp();
 	static DDS::Duration_t DurationFromMs(int ms);
-	HRESULT conf_init(pChannelConfigurationOpenDDS configuration, const char* arrayParams[], int len);
-	HRESULT read_config_file(pChannelConfigurationOpenDDS configuration, const char* arrayParams[], int len);
+	HRESULT conf_init(ChannelConfigurationOpenDDS* configuration, const char* arrayParams[], int len);
+	HRESULT read_config_file(ChannelConfigurationOpenDDS* configuration, const char* arrayParams[], int len);
 	void SetCmdLine(std::string cmdLine);
-	HRESULT StartConsumerAndWait(pChannelConfigurationOpenDDS pChannelConfiguration, DWORD dwMilliseconds);
-	void StopConsumer(pChannelConfigurationOpenDDS pChannelConfiguration);
+	HRESULT StartConsumerAndWait(ChannelConfigurationOpenDDS* pChannelConfiguration, DWORD dwMilliseconds);
+	void StopConsumer(ChannelConfigurationOpenDDS* pChannelConfiguration);
 	static DWORD __stdcall consumerHandler(void * argh);
 	static DWORD __stdcall readDataFromInfoRepo(void * argh);
 	HRESULT InitializeInfoRepo();
@@ -102,7 +100,7 @@ private:
 
 	int  m_ServerLostTimeout;
 
-	std::vector<pChannelConfigurationOpenDDS> channelVector;
+	std::vector<ChannelConfigurationOpenDDS*> channelVector;
 };
 
 class ChannelConfigurationOpenDDS : public ChannelConfiguration
