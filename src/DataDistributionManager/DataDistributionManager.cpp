@@ -388,13 +388,17 @@ HRESULT DataDistributionManagerImpl::Initialize(IDataDistributionCallback* callb
 	return Initialize(callbacks, arrayParams, len, szMyAddress, channelTrailer);
 }
 
-HRESULT DataDistributionManagerImpl::Initialize(IDataDistributionCallback* callbacks, const char* arrayParams[], int len, const char* szMyAddress, const char* channelTrailer)
+HRESULT DataDistributionManagerImpl::Initialize(IDataDistributionCallback* callbacks, const char* arrayParams[], int length, const char* szMyAddress, const char* channelTrailer)
 {
-	HRESULT res = read_config_file(arrayParams, len);
+	HRESULT res = read_config_file(arrayParams, length);
 	if (FAILED(res)) return res;
 
-	m_arrayParams = arrayParams;;
-	m_arrayParamsLen = len;
+	m_arrayParamsLen = length;
+	m_arrayParams = (const char**)malloc(m_arrayParamsLen * sizeof(const char*));
+	for (size_t i = 0; i < m_arrayParamsLen; i++)
+	{
+		m_arrayParams[i] = _strdup(arrayParams[i]);
+	}
 
 	if (m_ProtocolLib.length() == 0)
 	{
@@ -428,7 +432,7 @@ HRESULT DataDistributionManagerImpl::Initialize(IDataDistributionCallback* callb
 
 	pDataDistributionManagerSubsystem = static_cast<IDataDistributionSubsystem*>(createProc());
 
-	m_InitializedResult = pDataDistributionManagerSubsystem->Initialize(callbacks, arrayParams, len, szMyAddress, channelTrailer);
+	m_InitializedResult = pDataDistributionManagerSubsystem->Initialize(callbacks, m_arrayParams, m_arrayParamsLen, szMyAddress, channelTrailer);
 
 	if (FAILED(m_InitializedResult)) return m_InitializedResult;
 
