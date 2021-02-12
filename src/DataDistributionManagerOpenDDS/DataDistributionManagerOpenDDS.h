@@ -91,6 +91,7 @@ private:
 	char** m_argv;
 
 	::CORBA::Boolean m_bStartDCPSInfoRepo;
+	::CORBA::Boolean m_bDCPSInfoRepoLogOnApplication;
 	std::string	m_DCPSInfoRepoCmdLine;
 #define BUFSIZE 4096 
 

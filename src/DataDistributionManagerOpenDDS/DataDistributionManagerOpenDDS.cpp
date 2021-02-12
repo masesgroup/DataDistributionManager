@@ -47,6 +47,7 @@ DataDistributionManagerOpenDDS::DataDistributionManagerOpenDDS()
 	m_argc = 0;
 	m_argv = NULL;
 	m_bStartDCPSInfoRepo = FALSE;
+	m_bDCPSInfoRepoLogOnApplication = FALSE;
 	m_DCPSInfoRepoCmdLine = "";
 }
 
@@ -176,58 +177,61 @@ HRESULT DataDistributionManagerOpenDDS::InitializeInfoRepo()
 		std::string path = newFullPath.substr(0, newFullPath.size() - moduleName.size());
 
 		STARTUPINFO si;
-		PROCESS_INFORMATION pi;
-		SECURITY_ATTRIBUTES saAttr;
-
-		ZeroMemory(&saAttr, sizeof(saAttr));
-		saAttr.nLength = sizeof(SECURITY_ATTRIBUTES);
-		saAttr.bInheritHandle = TRUE;
-		saAttr.lpSecurityDescriptor = NULL;
-
-		// Create a pipe for the child process's STDOUT. 
-
-		if (!CreatePipe(&m_hChildStd_OUT_Rd, &m_hChildStd_OUT_Wr, &saAttr, 0))
-		{
-			LOG_ERROR("StdoutRd CreatePipe with error %x", HRESULT_FROM_WIN32(GetLastError()));
-			return HRESULT_FROM_WIN32(GetLastError());
-		}
-
-		// Ensure the read handle to the pipe for STDOUT is not inherited.
-
-		if (!SetHandleInformation(m_hChildStd_OUT_Rd, HANDLE_FLAG_INHERIT, 0))
-		{
-			LOG_ERROR("Stdout SetHandleInformation with error %x", HRESULT_FROM_WIN32(GetLastError()));
-			return HRESULT_FROM_WIN32(GetLastError());
-		}
-
 		ZeroMemory(&si, sizeof(si));
 		si.cb = sizeof(si);
-		si.hStdError = m_hChildStd_OUT_Wr;
-		si.hStdOutput = m_hChildStd_OUT_Wr;
-		// si.hStdInput = g_hChildStd_IN_Rd;
-		si.dwFlags |= STARTF_USESTDHANDLES;
 
+		PROCESS_INFORMATION pi;
 		ZeroMemory(&pi, sizeof(pi));
+
+		if (m_bDCPSInfoRepoLogOnApplication)
+		{
+			SECURITY_ATTRIBUTES saAttr;
+
+			ZeroMemory(&saAttr, sizeof(saAttr));
+			saAttr.nLength = sizeof(SECURITY_ATTRIBUTES);
+			saAttr.bInheritHandle = TRUE;
+			saAttr.lpSecurityDescriptor = NULL;
+
+			// Create a pipe for the child process's STDOUT. 
+
+			if (!CreatePipe(&m_hChildStd_OUT_Rd, &m_hChildStd_OUT_Wr, &saAttr, 0))
+			{
+				LOG_ERROR("StdoutRd CreatePipe with error %x", HRESULT_FROM_WIN32(GetLastError()));
+				return HRESULT_FROM_WIN32(GetLastError());
+			}
+
+			// Ensure the read handle to the pipe for STDOUT is not inherited.
+
+			if (!SetHandleInformation(m_hChildStd_OUT_Rd, HANDLE_FLAG_INHERIT, 0))
+			{
+				LOG_ERROR("Stdout SetHandleInformation with error %x", HRESULT_FROM_WIN32(GetLastError()));
+				return HRESULT_FROM_WIN32(GetLastError());
+			}
+
+			si.hStdError = m_hChildStd_OUT_Wr;
+			si.hStdOutput = m_hChildStd_OUT_Wr;
+			si.dwFlags |= STARTF_USESTDHANDLES;
+		}
 
 		std::string commandLine = path + "DCPSInfoRepo " + m_DCPSInfoRepoCmdLine;
 
 		// Start the child process. 
-		if (!CreateProcessA(NULL,			// No module name (use command line)
-			(TCHAR*)commandLine.c_str(),	// Command line
-			NULL,							// Process handle not inheritable
-			NULL,							// Thread handle not inheritable
-			TRUE,							// Set handle inheritance to FALSE
-			0,								// No creation flags
-			NULL,							// Use parent's environment block
-			NULL,							// Use parent's starting directory 
-			&si,							// Pointer to STARTUPINFO structure
-			&pi)							// Pointer to PROCESS_INFORMATION structure
+		if (!CreateProcessA(NULL,				// No module name (use command line)
+			(TCHAR*)commandLine.c_str(),		// Command line
+			NULL,								// Process handle not inheritable
+			NULL,								// Thread handle not inheritable
+			m_bDCPSInfoRepoLogOnApplication,	// Set handle inheritance to FALSE
+			0,									// No creation flags
+			NULL,								// Use parent's environment block
+			NULL,								// Use parent's starting directory 
+			&si,								// Pointer to STARTUPINFO structure
+			&pi)								// Pointer to PROCESS_INFORMATION structure
 			)
 		{
 			LOG_ERROR("CreateProcessA with error %x", HRESULT_FROM_WIN32(GetLastError()));
 			return HRESULT_FROM_WIN32(GetLastError());
 		}
-		else
+		else if (m_bDCPSInfoRepoLogOnApplication)
 		{
 			m_hreadDataFromInfoRepo = CreateThread(0, 0, readDataFromInfoRepo, this, 0, NULL);
 		}
@@ -554,6 +558,15 @@ void DataDistributionManagerOpenDDS::SetParameter(HANDLE channelHandle, const ch
 				m_bStartDCPSInfoRepo = false;
 			return;
 		}
+		else if (!strcmp(paramName, "datadistributionmanager.opendds.dcpsinforepo.logonapplication"))
+		{
+			if (!strcmp(paramValue, "true") ||
+				!strcmp(paramValue, "1"))
+				m_bDCPSInfoRepoLogOnApplication = true;
+			else
+				m_bDCPSInfoRepoLogOnApplication = false;
+			return;
+		}
 		else if (!strcmp(paramName, "datadistributionmanager.opendds.dcpsinforepo.cmdlineargs"))
 		{
 			m_DCPSInfoRepoCmdLine = paramValue;
@@ -599,6 +612,11 @@ const char* DataDistributionManagerOpenDDS::GetParameter(HANDLE channelHandle, c
 		else if (!strcmp(paramName, "datadistributionmanager.opendds.dcpsinforepo.autostart"))
 		{
 			if (m_bStartDCPSInfoRepo) return "true";
+			else return "false";
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.opendds.dcpsinforepo.logonapplication"))
+		{
+			if (m_bDCPSInfoRepoLogOnApplication) return "true";
 			else return "false";
 		}
 		else if (!strcmp(paramName, "datadistributionmanager.opendds.dcpsinforepo.cmdlineargs"))

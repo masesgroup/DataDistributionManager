@@ -27,6 +27,7 @@ import java.util.HashMap;
 public class OpenDDSConfiguration extends CommonConfiguration {
     HashMap<String, String> commandLineKeyValuePair = new HashMap<String, String>();
     final String DCPSInfoRepoAutostartKey = "datadistributionmanager.opendds.dcpsinforepo.autostart";
+    final String DCPSInfoRepoLogOnApplicationKey = "datadistributionmanager.opendds.dcpsinforepo.logonapplication";
     final String DCPSInfoRepoCommandLineKey = "datadistributionmanager.opendds.dcpsinforepo.cmdlineargs";
     final String CommandLineKey = "datadistributionmanager.opendds.cmdlineargs";
     final String DomainIdKey = "datadistributionmanager.opendds.domain_id";
@@ -57,6 +58,25 @@ public class OpenDDSConfiguration extends CommonConfiguration {
      */
     public void setDCPSInfoRepoAutostart(Boolean value) {
         keyValuePair.put(DCPSInfoRepoAutostartKey, value.toString());
+    }
+
+    /**
+     * Emits log in the application log
+     * 
+     * @return Emits log in the application log
+     */
+    public boolean getDCPSInfoRepoLogOnApplication() {
+        String value = keyValuePair.get(DCPSInfoRepoLogOnApplicationKey);
+        return (value == null) ? false : Boolean.parseBoolean(value);
+    }
+
+    /**
+     * Emits log in the application log
+     * 
+     * @param value Emits log in the application log
+     */
+    public void setDCPSInfoRepoLogOnApplication(Boolean value) {
+        keyValuePair.put(DCPSInfoRepoLogOnApplicationKey, value.toString());
     }
 
     /**

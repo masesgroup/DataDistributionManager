@@ -29,6 +29,7 @@ namespace MASES.DataDistributionManager.Bindings
     {
         Dictionary<string, string> commandLineKeyValuePair = new Dictionary<string, string>();
         const string DCPSInfoRepoAutostartKey = "datadistributionmanager.opendds.dcpsinforepo.autostart";
+        const string DCPSInfoRepoLogOnApplicationKey = "datadistributionmanager.opendds.dcpsinforepo.logonapplication";
         const string DCPSInfoRepoCommandLineKey = "datadistributionmanager.opendds.dcpsinforepo.cmdlineargs";
         const string CommandLineKey = "datadistributionmanager.opendds.cmdlineargs";
         const string DomainIdKey = "datadistributionmanager.opendds.domain_id";
@@ -57,6 +58,23 @@ namespace MASES.DataDistributionManager.Bindings
             set
             {
                 keyValuePair[DCPSInfoRepoAutostartKey] = value.ToString().ToLowerInvariant();
+            }
+        }
+
+        /// <summary>
+        /// Emits log in the application log
+        /// </summary>
+        public bool DCPSInfoRepoLogOnApplication
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(DCPSInfoRepoLogOnApplicationKey, out value);
+                return bool.Parse(value);
+            }
+            set
+            {
+                keyValuePair[DCPSInfoRepoLogOnApplicationKey] = value.ToString().ToLowerInvariant();
             }
         }
 
