@@ -35,6 +35,7 @@ public abstract class CommonConfiguration implements IConfiguration {
     final String KeepAliveTimeoutKey = "datadistributionmanager.timeout.keepalive";
     final String ConsumerTimeoutKey = "datadistributionmanager.timeout.consumer";
     final String ProducerTimeoutKey = "datadistributionmanager.timeout.producer";
+    final String CommitTimeoutKey = "datadistributionmanager.timeout.commit";
     final String CommitSyncKey = "datadistributionmanager.commit.sync";
 
     /**
@@ -237,6 +238,25 @@ public abstract class CommonConfiguration implements IConfiguration {
         keyValuePair.put(ProducerTimeoutKey, timeout.toString());
     }
 
+    /**
+     * The timeout on channel message commit
+     * 
+     * @return The commit timeout
+     */
+    public Integer getCommitTimeout() {
+        String value = keyValuePair.get(CommitTimeoutKey);
+        return (value == null) ? 0 : Integer.parseInt(value);
+    }
+
+    /**
+     * The timeout on channel message commit
+     * 
+     * @param timeout The commit timeout
+     */
+    public void setCommitTimeout(Integer timeout) {
+        keyValuePair.put(CommitTimeoutKey, timeout.toString());
+    }
+    
     /**
      * True to commit message in sync
      * 

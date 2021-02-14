@@ -161,6 +161,11 @@ void DataDistributionCommon::SetParameter(HANDLE channelHandle, const char* para
 			pChannelConfiguration->SetProducerTimeout(atoi(paramValue));
 			return;
 		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.commit"))
+		{
+			pChannelConfiguration->SetCommitTimeout(atoi(paramValue));
+			return;
+		}
 		else if (!strcmp(paramName, "datadistributionmanager.commit.sync"))
 		{
 			if (!strcmp(paramValue, "true") ||
@@ -242,6 +247,10 @@ const char* DataDistributionCommon::GetParameter(HANDLE channelHandle, const cha
 		else if (!strcmp(paramName, "datadistributionmanager.timeout.producer"))
 		{
 			return ConvertIToA(pChannelConfiguration->GetProducerTimeout());
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.timeout.commit"))
+		{
+			return ConvertIToA(pChannelConfiguration->GetCommitTimeout());
 		}
 		else if (!strcmp(paramName, "datadistributionmanager.commit.sync"))
 		{
@@ -395,6 +404,7 @@ ChannelConfiguration::ChannelConfiguration(const char* channelName, DDM_CHANNEL_
 	m_MessageReceiveTimeout = 10000;
 	m_ConsumerTimeout = 10;
 	m_ProducerTimeout = 1;
+	m_CommitTimeout = 10000;
 
 	m_lastRoutedOffset = -1;
 	m_lastManagedOffset = -1;
@@ -602,3 +612,6 @@ void ChannelConfiguration::SetConsumerTimeout(int val) { m_ConsumerTimeout = val
 
 int  ChannelConfiguration::GetProducerTimeout() { return m_ProducerTimeout; }
 void ChannelConfiguration::SetProducerTimeout(int val) { m_ProducerTimeout = val; }
+
+int  ChannelConfiguration::GetCommitTimeout() { return m_CommitTimeout; }
+void ChannelConfiguration::SetCommitTimeout(int val) { m_CommitTimeout = val; }

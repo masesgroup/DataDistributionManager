@@ -144,6 +144,8 @@ public:
 	void SetConsumerTimeout(int);
 	int  GetProducerTimeout();
 	void SetProducerTimeout(int);
+	int  GetCommitTimeout();
+	void SetCommitTimeout(int);
 protected:
 	CRITICAL_SECTION m_csFlags;
 	CRITICAL_SECTION m_csState;
@@ -159,6 +161,7 @@ private:
 	int  m_MessageReceiveTimeout;
 	int  m_ConsumerTimeout;
 	int  m_ProducerTimeout;
+	int  m_CommitTimeout;
 
 	BOOL bLockState;
 

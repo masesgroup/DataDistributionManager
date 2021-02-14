@@ -716,7 +716,7 @@ HRESULT DataDistributionManagerOpenDDS::WriteOnChannel(HANDLE channelHandle, con
 
 	if (waitAll)
 	{
-		DDS::Duration_t timeout = DataDistributionManagerOpenDDS::DurationFromMs(pChannelConfiguration->GetProducerTimeout());
+		DDS::Duration_t timeout = DataDistributionManagerOpenDDS::DurationFromMs(pChannelConfiguration->GetCommitTimeout());
 		retCode = pChannelConfiguration->channel_dw->wait_for_acknowledgments(timeout);
 		if (retCode != DDS::RETCODE_OK) {
 			ACE_ERROR((LM_ERROR, ACE_TEXT("(%P|%t) ERROR: SPY wait_for_acknowledgments returned %d.\n"), retCode));

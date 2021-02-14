@@ -36,6 +36,7 @@ namespace MASES.DataDistributionManager.Bindings
         const string KeepAliveTimeoutKey = "datadistributionmanager.timeout.keepalive";
         const string ConsumerTimeoutKey = "datadistributionmanager.timeout.consumer";
         const string ProducerTimeoutKey = "datadistributionmanager.timeout.producer";
+        const string CommitTimeoutKey = "datadistributionmanager.timeout.commit";
         const string CommitSyncKey = "datadistributionmanager.commit.sync";
 
         /// <summary>
@@ -216,6 +217,23 @@ namespace MASES.DataDistributionManager.Bindings
             set
             {
                 keyValuePair[ProducerTimeoutKey] = value.ToString();
+            }
+        }
+
+        /// <summary>
+        /// The timeout on channel message commit
+        /// </summary>
+        public uint CommitTimeout
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(CommitTimeoutKey, out value);
+                return uint.Parse(value);
+            }
+            set
+            {
+                keyValuePair[CommitTimeoutKey] = value.ToString();
             }
         }
 
