@@ -58,11 +58,11 @@ namespace ManagerTestNet
         static void Main(string[] args)
         {
             MySmartDataDistribution dataDistribution = new MySmartDataDistribution();
-
+            OpenDDSConfiguration conf = null;
             HRESULT hRes = HRESULT.S_OK;
             if (args.Length == 0)
             {
-                OpenDDSConfiguration conf = new OpenDDSConfiguration();
+                conf = new OpenDDSConfiguration();
                 conf.DCPSInfoRepoAutostart = true;
                 conf.DCPSInfoRepoCommandLine = "-ORBEndpoint iiop://localhost:12345";
                 conf.DCPSConfigFile = "dds_tcp_conf.ini";
@@ -94,22 +94,16 @@ namespace ManagerTestNet
 
             testChannel.StartChannel(uint.MaxValue);
 
-            byte[] buffer;
             uint counter = 100;
-
             int pid = Process.GetCurrentProcess().Id;
-
             var str = string.Format("{0:10}", pid);
-            buffer = Encoding.UTF8.GetBytes(str);
-
             DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.TRANSMITTER;
             Console.WriteLine("Starting sending...\n");
             while (true)
             {
-                if (direction.HasFlag(DDM_CHANNEL_DIRECTION.TRANSMITTER) ? testChannel.WriteOnChannel(null, buffer) : true)
+                if (direction.HasFlag(DDM_CHANNEL_DIRECTION.TRANSMITTER) ? testChannel.WriteOnChannel(null, str) : true)
                 {
                     str = string.Format("{0:10}", counter++);
-                    buffer = Encoding.UTF8.GetBytes(str);
                     if ((counter % THRESHOLD) == 0) Console.WriteLine("SendData Reached {0}", counter);
                 }
                 Thread.Sleep(1000);

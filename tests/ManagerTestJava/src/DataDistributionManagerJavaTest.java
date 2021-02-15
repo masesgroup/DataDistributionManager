@@ -30,8 +30,7 @@ public class DataDistributionManagerJavaTest {
 		if (args.length == 0) {
 			OpenDDSConfiguration conf = new OpenDDSConfiguration();
 			// set the full command line
-			// conf.setCommandLine("-DCPSConfigFile dds_tcp_conf.ini
-			// -DCPSTransportDebugLevel 10");
+			// conf.setCommandLine("-DCPSConfigFile dds_tcp_conf.ini -DCPSTransportDebugLevel 10");
 			// set direct values
 			conf.setDCPSInfoRepoAutostart(true);
 			conf.setDCPSInfoRepoCommandLine("-ORBEndpoint iiop://localhost:12345");
@@ -70,15 +69,13 @@ public class DataDistributionManagerJavaTest {
 			System.out.println("Starting sending...\n");
 			int counter = 100;
 			String str = "test";
-			byte[] buffer = str.getBytes(Charset.forName("ASCII"));
 			while (true) {
 				hRes = HRESULT.S_OK;
 				if (direction == DDM_CHANNEL_DIRECTION.TRANSMITTER) {
-					hRes = mytestTopic.WriteOnChannel(null, buffer, false, -1);
+					hRes = mytestTopic.WriteOnChannel(null, str);
 				}
 				if (hRes == HRESULT.S_OK) {
 					str = String.format("%d", counter++);
-					buffer = str.getBytes(Charset.forName("ASCII"));
 					if ((counter % THRESHOLD) == 0)
 						System.out.println(String.format("SendData Reached %d", counter));
 				}
