@@ -1,0 +1,136 @@
+/*
+*  Copyright 2021 MASES s.r.l.
+*
+*  Licensed under the Apache License, Version 2.0 (the "License");
+*  you may not use this file except in compliance with the License.
+*  You may obtain a copy of the License at
+*
+*  http://www.apache.org/licenses/LICENSE-2.0
+*
+*  Unless required by applicable law or agreed to in writing, software
+*  distributed under the License is distributed on an "AS IS" BASIS,
+*  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+*  See the License for the specific language governing permissions and
+*  limitations under the License.
+*
+*  Refer to LICENSE for more information.
+*/
+
+package org.mases.datadistributionmanager;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+/**
+ * The global configuration class
+ */
+public abstract class GlobalConfiguration implements IConfiguration {
+    public final String ProtocolKey = "datadistributionmanager.common.protocol";
+    public final String ProtocolLibraryKey = "datadistributionmanager.common.protolib";
+    public final String MaxMessageSizeKey = "datadistributionmanager.maxmessagesize";
+    public final String ServerLostTimeoutKey = "datadistributionmanager.timeout.serverlost";
+
+    /**
+     * The list of key/value pairs
+     */
+    protected HashMap<String, String> keyValuePair = new HashMap<String, String>();
+
+    GlobalConfiguration(String protocol, String protolib) {
+        setProtocol(protocol);
+        setProtocolLibrary(protolib);
+    }
+
+    /**
+     * The protocol to use (e.g. kafka, opendds)
+     * 
+     * @return The protocol
+     */
+    public String getProtocol() {
+        String value = keyValuePair.get(ProtocolKey);
+        return (value == null) ? "" : value;
+    }
+
+    /**
+     * The protocol to use (e.g. kafka, opendds)
+     * 
+     * @param protocol The protocol
+     */
+    public void setProtocol(String protocol) {
+        keyValuePair.put(ProtocolKey, protocol);
+    }
+
+    /**
+     * The protocol library to use
+     * 
+     * @return The protocol library
+     */
+    public String getProtocolLibrary() {
+        String value = keyValuePair.get(ProtocolLibraryKey);
+        return (value == null) ? "" : value;
+    }
+
+    /**
+     * The protocol library to use
+     * 
+     * @param protolib The protocol library
+     */
+    public void setProtocolLibrary(String protolib) {
+        keyValuePair.put(ProtocolLibraryKey, protolib);
+    }
+
+    /**
+     * The max message size managed
+     * 
+     * @return The max message size
+     */
+    public Integer getMaxMessageSize() {
+        String value = keyValuePair.get(MaxMessageSizeKey);
+        return (value == null) ? 0 : Integer.parseInt(value);
+    }
+
+    /**
+     * The max message size managed
+     * 
+     * @param msgSize The max message size
+     */
+    public void setMaxMessageSize(Integer msgSize) {
+        keyValuePair.put(MaxMessageSizeKey, msgSize.toString());
+    }
+
+    /**
+     * The timeout on server lost
+     * 
+     * @return The server lost timeout
+     */
+    public Integer getServerLostTimeout() {
+        String value = keyValuePair.get(ServerLostTimeoutKey);
+        return (value == null) ? 0 : Integer.parseInt(value);
+    }
+
+    /**
+     * The timeout on server lost
+     * 
+     * @param timeout The server lost timeout
+     */
+    public void setServerLostTimeout(Integer timeout) {
+        keyValuePair.put(ServerLostTimeoutKey, timeout.toString());
+    }
+
+    /**
+     * Checks the configuration for mandatory information
+     */
+    protected void CheckConfiguration() throws IllegalArgumentException {
+        if (!keyValuePair.containsKey(ProtocolKey) && !keyValuePair.containsKey(ProtocolLibraryKey)) {
+            throw new IllegalArgumentException("Missing Protocol or ProtocolLibrary");
+        }
+    }
+
+    public String[] getConfiguration() throws IllegalArgumentException {
+        ArrayList<String> lst = new ArrayList<String>();
+        for (String key : keyValuePair.keySet()) {
+            lst.add(String.format("%s=%s", key, keyValuePair.get(key)));
+        }
+        String[] array = new String[lst.size()];
+        return lst.toArray(array);
+    }
+}

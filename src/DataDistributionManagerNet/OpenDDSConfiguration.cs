@@ -28,13 +28,38 @@ namespace MASES.DataDistributionManager.Bindings
     public class OpenDDSConfiguration : CommonConfiguration
     {
         Dictionary<string, string> commandLineKeyValuePair = new Dictionary<string, string>();
-        const string DCPSInfoRepoAutostartKey = "datadistributionmanager.opendds.dcpsinforepo.autostart";
-        const string DCPSInfoRepoLogOnApplicationKey = "datadistributionmanager.opendds.dcpsinforepo.logonapplication";
-        const string DCPSInfoRepoCommandLineKey = "datadistributionmanager.opendds.dcpsinforepo.cmdlineargs";
-        const string CommandLineKey = "datadistributionmanager.opendds.cmdlineargs";
-        const string DomainIdKey = "datadistributionmanager.opendds.domain_id";
-        const string DCPSConfigFileKey = "DCPSConfigFile";
-        const string DCPSTransportDebugLevelKey = "DCPSTransportDebugLevel";
+        /// <summary>
+        /// Base property name of all specific configuration key of <see cref="KafkaConfiguration"/>
+        /// </summary>
+        public const string OpenDDSConfigurationBasePropertyKey = "datadistributionmanager.opendds.";
+        /// <summary>
+        /// Configuration key of <see cref="DCPSInfoRepoAutostart"/>
+        /// </summary>
+        public const string DCPSInfoRepoAutostartKey = "datadistributionmanager.opendds.dcpsinforepo.autostart";
+        /// <summary>
+        /// Configuration key of <see cref="DCPSInfoRepoLogOnApplication"/>
+        /// </summary>
+        public const string DCPSInfoRepoLogOnApplicationKey = "datadistributionmanager.opendds.dcpsinforepo.logonapplication";
+        /// <summary>
+        /// Configuration key of <see cref="DCPSInfoRepoCommandLine"/>
+        /// </summary>
+        public const string DCPSInfoRepoCommandLineKey = "datadistributionmanager.opendds.dcpsinforepo.cmdlineargs";
+        /// <summary>
+        /// Configuration key of <see cref="CommandLine"/>
+        /// </summary>
+        public const string CommandLineKey = "datadistributionmanager.opendds.cmdlineargs";
+        /// <summary>
+        /// Configuration key of <see cref="DomainId"/>
+        /// </summary>
+        public const string DomainIdKey = "datadistributionmanager.opendds.domain_id";
+        /// <summary>
+        /// Configuration key of <see cref="DCPSConfigFile"/>
+        /// </summary>
+        public const string DCPSConfigFileKey = "DCPSConfigFile";
+        /// <summary>
+        /// Configuration key of <see cref="DCPSTransportDebugLevel"/>
+        /// </summary>
+        public const string DCPSTransportDebugLevelKey = "DCPSTransportDebugLevel";
 
         /// <summary>
         /// Initialize a <see cref="OpenDDSConfiguration"/>
@@ -165,7 +190,7 @@ namespace MASES.DataDistributionManager.Bindings
             }
         }
 
-        /// <see cref="CommonConfiguration.CheckConfiguration"/>
+        /// <see cref="GlobalConfiguration.CheckConfiguration"/>
         protected override void CheckConfiguration()
         {
             base.CheckConfiguration();

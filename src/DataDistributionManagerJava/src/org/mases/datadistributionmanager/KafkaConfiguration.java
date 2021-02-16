@@ -22,17 +22,17 @@ package org.mases.datadistributionmanager;
  * The configuration class for Kafka
  */
 public class KafkaConfiguration extends CommonConfiguration {
-    final String KafkaConfigurationBaseProperty = "datadistributionmanager.kafka.";
-    final String ReplicationFactorKey = "datadistributionmanager.kafka.topic.replicationfactor";
-    final String BootstrapBrokersKey = "datadistributionmanager.kafka.metadata.broker.list";
-    final String DebugKey = "datadistributionmanager.kafka.debug";
-    final String ClientIdKey = "datadistributionmanager.kafka.client.id";
-    final String GroupIdKey = "datadistributionmanager.kafka.group.id";
-    final String TopicCreateKey = "datadistributionmanager.kafka.topic.create";
-    final String DumpMetadataKey = "datadistributionmanager.kafka.topic.dumpmetadata";
+    public final String KafkaConfigurationBaseProperty = "datadistributionmanager.kafka.";
+    public final String ReplicationFactorKey = "datadistributionmanager.kafka.topic.replicationfactor";
+    public final String BootstrapBrokersKey = "datadistributionmanager.kafka.metadata.broker.list";
+    public final String DebugKey = "datadistributionmanager.kafka.debug";
+    public final String ClientIdKey = "datadistributionmanager.kafka.client.id";
+    public final String GroupIdKey = "datadistributionmanager.kafka.group.id";
+    public final String TopicCreateKey = "datadistributionmanager.kafka.topic.create";
+    public final String DumpMetadataKey = "datadistributionmanager.kafka.topic.dumpmetadata";
 
     /**
-     * ctor
+     * Initialize a new instance of {@link KafkaConfiguration}
      */
     public KafkaConfiguration() {
         super("kafka", "DataDistributionManagerKafka.dll");

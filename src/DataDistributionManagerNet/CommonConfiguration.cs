@@ -22,83 +22,51 @@ using System.Collections.Generic;
 namespace MASES.DataDistributionManager.Bindings
 {
     /// <summary>
-    /// The general configuration class
+    /// The common configuration class
     /// </summary>
-    public abstract class CommonConfiguration : IConfiguration
+    public abstract class CommonConfiguration : GlobalConfiguration
     {
-        const string ProtocolKey = "datadistributionmanager.common.protocol";
-        const string ProtocolLibraryKey = "datadistributionmanager.common.protolib";
-        const string MaxMessageSizeKey = "datadistributionmanager.maxmessagesize";
-        const string CreateChannelTimeoutKey = "datadistributionmanager.timeout.createchannel";
-        const string ServerLostTimeoutKey = "datadistributionmanager.timeout.serverlost";
-        const string ChannelSeekTimeoutKey = "datadistributionmanager.timeout.channelseek";
-        const string ReceiveTimeoutKey = "datadistributionmanager.timeout.receive";
-        const string KeepAliveTimeoutKey = "datadistributionmanager.timeout.keepalive";
-        const string ConsumerTimeoutKey = "datadistributionmanager.timeout.consumer";
-        const string ProducerTimeoutKey = "datadistributionmanager.timeout.producer";
-        const string CommitTimeoutKey = "datadistributionmanager.timeout.commit";
-        const string CommitSyncKey = "datadistributionmanager.commit.sync";
+        /// <summary>
+        /// Configuration key of <see cref="CreateChannelTimeout"/>
+        /// </summary>
+        public const string CreateChannelTimeoutKey = "datadistributionmanager.timeout.createchannel";
+        /// <summary>
+        /// Configuration key of <see cref="ChannelSeekTimeout"/>
+        /// </summary>
+        public const string ChannelSeekTimeoutKey = "datadistributionmanager.timeout.channelseek";
+        /// <summary>
+        /// Configuration key of <see cref="ReceiveTimeout"/>
+        /// </summary>
+        public const string ReceiveTimeoutKey = "datadistributionmanager.timeout.receive";
+        /// <summary>
+        /// Configuration key of <see cref="KeepAliveTimeout"/>
+        /// </summary>
+        public const string KeepAliveTimeoutKey = "datadistributionmanager.timeout.keepalive";
+        /// <summary>
+        /// Configuration key of <see cref="ConsumerTimeout"/>
+        /// </summary>
+        public const string ConsumerTimeoutKey = "datadistributionmanager.timeout.consumer";
+        /// <summary>
+        /// Configuration key of <see cref="ProducerTimeout"/>
+        /// </summary>
+        public const string ProducerTimeoutKey = "datadistributionmanager.timeout.producer";
+        /// <summary>
+        /// Configuration key of <see cref="CommitTimeout"/>
+        /// </summary>
+        public const string CommitTimeoutKey = "datadistributionmanager.timeout.commit";
+        /// <summary>
+        /// Configuration key of <see cref="CommitSync"/>
+        /// </summary>
+        public const string CommitSyncKey = "datadistributionmanager.commit.sync";
 
         /// <summary>
-        /// The list of key/value pairs
+        /// Initialize a new <see cref="CommonConfiguration"/>
         /// </summary>
-        protected Dictionary<string, string> keyValuePair = new Dictionary<string, string>();
-
-        internal CommonConfiguration(string protocol, string protolib)
+        /// <param name="protocol">The protocol to use</param>
+        /// <param name="protolib">The protocol library to use</param>
+        public CommonConfiguration(string protocol, string protolib):
+            base(protocol, protolib)
         {
-            Protocol = protocol;
-            ProtocolLibrary = protolib;
-        }
-
-        /// <summary>
-        /// The protocol to use (e.g. kafka, opendds)
-        /// </summary>
-        public string Protocol
-        {
-            get
-            {
-                string value = string.Empty;
-                keyValuePair.TryGetValue(ProtocolKey, out value);
-                return value;
-            }
-            set
-            {
-                keyValuePair[ProtocolKey] = value;
-            }
-        }
-
-        /// <summary>
-        /// The protocol library to use
-        /// </summary>
-        public string ProtocolLibrary
-        {
-            get
-            {
-                string value = string.Empty;
-                keyValuePair.TryGetValue(ProtocolLibraryKey, out value);
-                return value;
-            }
-            set
-            {
-                keyValuePair[ProtocolLibraryKey] = value;
-            }
-        }
-
-        /// <summary>
-        /// The max message size managed
-        /// </summary>
-        public uint MaxMessageSize
-        {
-            get
-            {
-                string value = string.Empty;
-                keyValuePair.TryGetValue(MaxMessageSizeKey, out value);
-                return uint.Parse(value);
-            }
-            set
-            {
-                keyValuePair[MaxMessageSizeKey] = value.ToString();
-            }
         }
 
         /// <summary>
@@ -115,23 +83,6 @@ namespace MASES.DataDistributionManager.Bindings
             set
             {
                 keyValuePair[CreateChannelTimeoutKey] = value.ToString();
-            }
-        }
-
-        /// <summary>
-        /// The timeout on server lost
-        /// </summary>
-        public uint ServerLostTimeout
-        {
-            get
-            {
-                string value = string.Empty;
-                keyValuePair.TryGetValue(ServerLostTimeoutKey, out value);
-                return uint.Parse(value);
-            }
-            set
-            {
-                keyValuePair[ServerLostTimeoutKey] = value.ToString();
             }
         }
 
@@ -251,31 +202,6 @@ namespace MASES.DataDistributionManager.Bindings
             set
             {
                 keyValuePair[CommitSyncKey] = value.ToString().ToLowerInvariant();
-            }
-        }
-
-        /// <summary>
-        /// Checks the configuration for mandatory information
-        /// </summary>
-        protected virtual void CheckConfiguration()
-        {
-            if (!keyValuePair.ContainsKey(ProtocolKey) && !keyValuePair.ContainsKey(ProtocolLibraryKey))
-            {
-                throw new InvalidOperationException("Missing Protocol or ProtocolLibrary");
-            }
-        }
-
-        /// <see cref="IConfiguration.Configuration"/>
-        public virtual string[] Configuration
-        {
-            get
-            {
-                List<string> lst = new List<string>();
-                foreach (var item in keyValuePair)
-                {
-                    lst.Add(string.Format("{0}={1}", item.Key, item.Value));
-                }
-                return lst.ToArray();
             }
         }
     }

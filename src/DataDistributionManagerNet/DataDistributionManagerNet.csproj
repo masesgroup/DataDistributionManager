@@ -50,6 +50,7 @@
     <Compile Include="..\..\ProductInformation\ComponentVersion.cs">
       <Link>Properties\ComponentVersion.c</Link>
     </Compile>
+    <Compile Include="GlobalConfiguration.cs" />
     <Compile Include="CommonConfiguration.cs" />
     <Compile Include="IConfiguration.cs" />
     <Compile Include="Interop\ClusterHealthElement.cs" />

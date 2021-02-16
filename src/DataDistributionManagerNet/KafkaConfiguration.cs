@@ -25,14 +25,38 @@ namespace MASES.DataDistributionManager.Bindings
     /// </summary>
     public class KafkaConfiguration : CommonConfiguration
     {
-        const string KafkaConfigurationBaseProperty = "datadistributionmanager.kafka.";
-        const string ReplicationFactorKey = "datadistributionmanager.kafka.topic.replicationfactor";
-        const string BootstrapBrokersKey = "datadistributionmanager.kafka.metadata.broker.list";
-        const string DebugKey = "datadistributionmanager.kafka.debug";
-        const string ClientIdKey = "datadistributionmanager.kafka.client.id";
-        const string GroupIdKey = "datadistributionmanager.kafka.group.id";
-        const string TopicCreateKey = "datadistributionmanager.kafka.topic.create";
-        const string DumpMetadataKey = "datadistributionmanager.kafka.topic.dumpmetadata";
+        /// <summary>
+        /// Base property name of all specific configuration key of <see cref="KafkaConfiguration"/>
+        /// </summary>
+        public const string KafkaConfigurationBasePropertyKey = "datadistributionmanager.kafka.";
+        /// <summary>
+        /// Configuration key of <see cref="ReplicationFactor"/>
+        /// </summary>
+        public const string ReplicationFactorKey = "datadistributionmanager.kafka.topic.replicationfactor";
+        /// <summary>
+        /// Configuration key of <see cref="BootstrapBrokers"/>
+        /// </summary>
+        public const string BootstrapBrokersKey = "datadistributionmanager.kafka.metadata.broker.list";
+        /// <summary>
+        /// Configuration key of <see cref="Debug"/>
+        /// </summary>
+        public const string DebugKey = "datadistributionmanager.kafka.debug";
+        /// <summary>
+        /// Configuration key of <see cref="ClientId"/>
+        /// </summary>
+        public const string ClientIdKey = "datadistributionmanager.kafka.client.id";
+        /// <summary>
+        /// Configuration key of <see cref="GroupId"/>
+        /// </summary>
+        public const string GroupIdKey = "datadistributionmanager.kafka.group.id";
+        /// <summary>
+        /// Configuration key of <see cref="TopicCreate"/>
+        /// </summary>
+        public const string TopicCreateKey = "datadistributionmanager.kafka.topic.create";
+        /// <summary>
+        /// Configuration key of <see cref="DumpMetadata"/>
+        /// </summary>
+        public const string DumpMetadataKey = "datadistributionmanager.kafka.topic.dumpmetadata";
 
         /// <summary>
         /// Initialize a <see cref="KafkaConfiguration"/>
@@ -171,30 +195,30 @@ namespace MASES.DataDistributionManager.Bindings
             get
             {
                 string value = string.Empty;
-                if (property.StartsWith(KafkaConfigurationBaseProperty))
+                if (property.StartsWith(KafkaConfigurationBasePropertyKey))
                 {
                     keyValuePair.TryGetValue(property, out value);
                 }
                 else
                 {
-                    keyValuePair.TryGetValue(KafkaConfigurationBaseProperty + property, out value);
+                    keyValuePair.TryGetValue(KafkaConfigurationBasePropertyKey + property, out value);
                 }
                 return value;
             }
             set
             {
-                if (property.StartsWith(KafkaConfigurationBaseProperty))
+                if (property.StartsWith(KafkaConfigurationBasePropertyKey))
                 {
                     keyValuePair[property] = value;
                 }
                 else
                 {
-                    keyValuePair[KafkaConfigurationBaseProperty + property] = value;
+                    keyValuePair[KafkaConfigurationBasePropertyKey + property] = value;
                 }
             }
         }
 
-        /// <see cref="CommonConfiguration.CheckConfiguration"/>
+        /// <see cref="GlobalConfiguration.CheckConfiguration"/>
         protected override void CheckConfiguration()
         {
             base.CheckConfiguration();
