@@ -72,7 +72,7 @@ class NativeCallbackManager {
 
     }
 
-    void dataDistributionUnderlyingEvent(long opaque, long topicHandle, long uEvent) {
+    void dataDistributionUnderlyingEvent(long opaque, long channelHandle, long uEvent) {
 
     }
 

@@ -69,31 +69,43 @@ class NativeInterface {
                         String topicName, long dataCb, int direction, String[] arrayParams);
 
         static native long IDataDistributionSubsystem_StartChannel(long IDataDistributionSubsystem_instance,
-                        long topicHandle, long dwMilliseconds);
+                        long channelHandle, long dwMilliseconds);
 
         static native long IDataDistributionSubsystem_StopChannel(long IDataDistributionSubsystem_instance,
-                        long topicHandle, long dwMilliseconds);
+                        long channelHandle, long dwMilliseconds);
 
-        static native long IDataDistributionSubsystem_Lock(long IDataDistributionSubsystem_instance, long topicHandle,
+        static native void IDataDistributionSubsystem_SetParameter(long IDataDistributionSubsystem_instance,
+                        long channelHandle, String paramName, String paramValue);
+
+        static native void IDataDistributionSubsystem_SetParameter(long IDataDistributionSubsystem_instance,
+                        long channelHandle, int paramId, String paramValue);
+
+        static native String IDataDistributionSubsystem_GetParameter(long IDataDistributionSubsystem_instance,
+                        long channelHandle, String paramName);
+
+        static native String IDataDistributionSubsystem_GetParameter(long IDataDistributionSubsystem_instance,
+                        long channelHandle, int paramId);
+
+        static native long IDataDistributionSubsystem_Lock(long IDataDistributionSubsystem_instance, long channelHandle,
                         long timeout);
 
         static native long IDataDistributionSubsystem_Unlock(long IDataDistributionSubsystem_instance,
-                        long topicHandle);
+                        long channelHandle);
 
         static native long IDataDistributionSubsystem_SeekChannel(long IDataDistributionSubsystem_instance,
-                        long topicHandle, long position);
+                        long channelHandle, long position);
 
         static native long IDataDistributionSubsystem_DeleteChannel(long IDataDistributionSubsystem_instance,
-                        long topicHandle);
+                        long channelHandle);
 
         static native long IDataDistributionSubsystem_WriteOnChannel(long IDataDistributionSubsystem_instance,
-                        long topicHandle, String key, byte[] param, boolean waitAll, long timestamp);
+                        long channelHandle, String key, byte[] param, boolean waitAll, long timestamp);
 
         static native byte[] IDataDistributionSubsystem_ReadFromChannel(long IDataDistributionSubsystem_instance,
-                        long topicHandle, long offset, long length);
+                        long channelHandle, long offset, long length);
 
         static native long IDataDistributionSubsystem_ChangeDirectionOnChannel(long IDataDistributionSubsystem_instance,
-                        long topicHandle, int direction);
+                        long channelHandle, int direction);
 
         static native long IDataDistributionMastershipCommon_Start(long IDataDistribution_instance, int dwMilliseconds);
 
@@ -125,5 +137,4 @@ class NativeInterface {
         static native long IDataDistributionMastershipCommon_GetMessageDelay(long IDataDistribution_instance);
 
         static native long IDataDistributionMastershipCommon_GetUpTime(long IDataDistribution_instance);
-
 }

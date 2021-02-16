@@ -747,10 +747,10 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 	const char* pjStr;
 	jboolean isCopy = JNI_FALSE;
 
-	const char* ChannelName;
+	const char* channelName;
 
 	pjStr = env->GetStringUTFChars(jChannelName, &isCopy);
-	ChannelName = (pjStr != NULL) ? _strdup(pjStr) : NULL;
+	channelName = (pjStr != NULL) ? _strdup(pjStr) : NULL;
 	env->ReleaseStringUTFChars(jChannelName, pjStr);
 
 	int size = 0;
@@ -774,7 +774,7 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 		}
 	}
 
-	return (jlong)pIDataDistributionSubsystem->CreateChannel(ChannelName, pDataDistributionChannelCallbackContainer->pcb, (DDM_CHANNEL_DIRECTION)direction, array, size);
+	return (jlong)pIDataDistributionSubsystem->CreateChannel(channelName, pDataDistributionChannelCallbackContainer->pcb, (DDM_CHANNEL_DIRECTION)direction, array, size);
 }
 
 /*
@@ -799,6 +799,99 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem = (IDataDistributionSubsystem*)jIDataDistributionSubSystem;
 	return (jlong)pIDataDistributionSubsystem->StopChannel((HANDLE)jChannelHandle, jtimeout);
+}
+
+/*
+* Class:     org_mases_datadistributionmanager_NativeInterface
+* Method:    IDataDistributionSubsystem_SetParameter
+* Signature: (JJLjava/lang/String;Ljava/lang/String;)V
+*/
+JNIEXPORT void JNICALL Java_org_mases_datadistributionmanager_NativeInterface_IDataDistributionSubsystem_1SetParameter__JJLjava_lang_String_2Ljava_lang_String_2
+(JNIEnv * env, jclass caller, jlong jIDataDistributionSubSystem, jlong jChannelHandle, jstring jparamName, jstring jparamValue)
+{
+	IDataDistributionSubsystem* pIDataDistributionSubsystem = (IDataDistributionSubsystem*)jIDataDistributionSubSystem;
+
+	const char* pjStr;
+	jboolean isCopy = JNI_FALSE;
+
+	const char* paramName;
+	const char* paramValue;
+
+	pjStr = env->GetStringUTFChars(jparamName, &isCopy);
+	paramName = (pjStr != NULL) ? _strdup(pjStr) : NULL;
+	env->ReleaseStringUTFChars(jparamName, pjStr);
+
+	pjStr = env->GetStringUTFChars(jparamValue, &isCopy);
+	paramValue = (pjStr != NULL) ? _strdup(pjStr) : NULL;
+	env->ReleaseStringUTFChars(jparamValue, pjStr);
+
+	pIDataDistributionSubsystem->SetParameter((HANDLE)jChannelHandle, paramName, paramValue);
+
+	if (paramName != NULL) free((void*)paramName);
+	if (paramValue != NULL) free((void*)paramValue);
+}
+
+/*
+* Class:     org_mases_datadistributionmanager_NativeInterface
+* Method:    IDataDistributionSubsystem_SetParameter
+* Signature: (JJILjava/lang/String;)V
+*/
+JNIEXPORT void JNICALL Java_org_mases_datadistributionmanager_NativeInterface_IDataDistributionSubsystem_1SetParameter__JJILjava_lang_String_2
+(JNIEnv * env, jclass caller, jlong jIDataDistributionSubSystem, jlong jChannelHandle, jint jparamId, jstring jparamValue)
+{
+	IDataDistributionSubsystem* pIDataDistributionSubsystem = (IDataDistributionSubsystem*)jIDataDistributionSubSystem;
+
+	const char* pjStr;
+	jboolean isCopy = JNI_FALSE;
+
+	const char* paramValue;
+
+	pjStr = env->GetStringUTFChars(jparamValue, &isCopy);
+	paramValue = (pjStr != NULL) ? _strdup(pjStr) : NULL;
+	env->ReleaseStringUTFChars(jparamValue, pjStr);
+
+	pIDataDistributionSubsystem->SetParameter((HANDLE)jChannelHandle, (DDM_GENERAL_PARAMETER)jparamId, paramValue);
+
+	if (paramValue != NULL) free((void*)paramValue);
+}
+
+/*
+* Class:     org_mases_datadistributionmanager_NativeInterface
+* Method:    IDataDistributionSubsystem_GetParameter
+* Signature: (JJLjava/lang/String;)Ljava/lang/String;
+*/
+JNIEXPORT jstring JNICALL Java_org_mases_datadistributionmanager_NativeInterface_IDataDistributionSubsystem_1GetParameter__JJLjava_lang_String_2
+(JNIEnv * env, jclass caller, jlong jIDataDistributionSubSystem, jlong jChannelHandle, jstring jparamName)
+{
+	IDataDistributionSubsystem* pIDataDistributionSubsystem = (IDataDistributionSubsystem*)jIDataDistributionSubSystem;
+
+	const char* pjStr;
+	jboolean isCopy = JNI_FALSE;
+
+	const char* paramName;
+
+	pjStr = env->GetStringUTFChars(jparamName, &isCopy);
+	paramName = (pjStr != NULL) ? _strdup(pjStr) : NULL;
+	env->ReleaseStringUTFChars(jparamName, pjStr);
+
+	const char* paramValue = pIDataDistributionSubsystem->GetParameter((HANDLE)jChannelHandle, paramName);
+
+	if (paramName != NULL) free((void*)paramName);
+
+	return env->NewStringUTF(paramValue);
+}
+
+/*
+* Class:     org_mases_datadistributionmanager_NativeInterface
+* Method:    IDataDistributionSubsystem_GetParameter
+* Signature: (JJI)Ljava/lang/String;
+*/
+JNIEXPORT jstring JNICALL Java_org_mases_datadistributionmanager_NativeInterface_IDataDistributionSubsystem_1GetParameter__JJI
+(JNIEnv * env, jclass caller, jlong jIDataDistributionSubSystem, jlong jChannelHandle, jint jparamId)
+{
+	IDataDistributionSubsystem* pIDataDistributionSubsystem = (IDataDistributionSubsystem*)jIDataDistributionSubSystem;
+	const char* paramValue = pIDataDistributionSubsystem->GetParameter((HANDLE)jChannelHandle, (DDM_GENERAL_PARAMETER)jparamId);
+	return env->NewStringUTF(paramValue);
 }
 
 /*

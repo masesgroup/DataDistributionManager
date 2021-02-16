@@ -39,7 +39,7 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
      */
     public HRESULT StartChannel(int timeout) {
         long res = NativeInterface.IDataDistributionSubsystem_StartChannel(IDataDistributionSubsystemManager_ptr,
-                topicHandle, timeout);
+                channelHandle, timeout);
         return new HRESULT(res);
     }
 
@@ -51,8 +51,52 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
      */
     public HRESULT StopChannel(int timeout) {
         long res = NativeInterface.IDataDistributionSubsystem_StopChannel(IDataDistributionSubsystemManager_ptr,
-                topicHandle, timeout);
+                channelHandle, timeout);
         return new HRESULT(res);
+    }
+
+    /**
+     * Set parameter on channel
+     * 
+     * @param paramName  Parameter name to set
+     * @param paramValue Parameter value to set
+     */
+    public void SetParameter(String paramName, String paramValue) {
+        NativeInterface.IDataDistributionSubsystem_SetParameter(IDataDistributionSubsystemManager_ptr, channelHandle,
+                paramName, paramValue);
+    }
+
+    /**
+     * Set parameter on channel
+     * 
+     * @param paramId    Parameter {@link DDM_GENERAL_PARAMETER} to set
+     * @param paramValue Parameter value to set
+     */
+    public void SetParameter(DDM_GENERAL_PARAMETER paramId, String paramValue) {
+        NativeInterface.IDataDistributionSubsystem_SetParameter(IDataDistributionSubsystemManager_ptr, channelHandle,
+                paramId.atomicNumber, paramValue);
+    }
+
+    /**
+     * Get parameter from channel
+     * 
+     * @param paramName Parameter name to get
+     * @return Parameter value
+     */
+    public String GetParameter(String paramName) {
+        return NativeInterface.IDataDistributionSubsystem_GetParameter(IDataDistributionSubsystemManager_ptr,
+                channelHandle, paramName);
+    }
+
+    /**
+     * Get parameter from channel
+     * 
+     * @param paramId Parameter {@link DDM_GENERAL_PARAMETER} to get
+     * @return Parameter value
+     */
+    public String GetParameter(DDM_GENERAL_PARAMETER paramId) {
+        return NativeInterface.IDataDistributionSubsystem_GetParameter(IDataDistributionSubsystemManager_ptr,
+                channelHandle, paramId.atomicNumber);
     }
 
     /**
@@ -62,7 +106,7 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
      * @return {@link HRESULT}
      */
     public HRESULT Lock(int timeout) {
-        long res = NativeInterface.IDataDistributionSubsystem_Lock(IDataDistributionSubsystemManager_ptr, topicHandle,
+        long res = NativeInterface.IDataDistributionSubsystem_Lock(IDataDistributionSubsystemManager_ptr, channelHandle,
                 timeout);
         return new HRESULT(res);
     }
@@ -74,7 +118,7 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
      */
     public HRESULT Unlock() {
         long res = NativeInterface.IDataDistributionSubsystem_Unlock(IDataDistributionSubsystemManager_ptr,
-                topicHandle);
+                channelHandle);
         return new HRESULT(res);
     }
 
@@ -86,7 +130,7 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
      */
     public HRESULT SeekChannel(long position) {
         long res = NativeInterface.IDataDistributionSubsystem_SeekChannel(IDataDistributionSubsystemManager_ptr,
-                topicHandle, position);
+                channelHandle, position);
         return new HRESULT(res);
     }
 
@@ -130,29 +174,29 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
     /**
      * Writes on the channel
      * 
-     * @param key       The key to use
-     * @param buffer    The buffer to write in the channel
+     * @param key    The key to use
+     * @param buffer The buffer to write in the channel
      * @return {@link HRESULT}
      */
     public HRESULT WriteOnChannel(String key, byte[] buffer) {
         // Call unmanaged code
         long res = NativeInterface.IDataDistributionSubsystem_WriteOnChannel(IDataDistributionSubsystemManager_ptr,
-                topicHandle, key, buffer, false, -1);
+                channelHandle, key, buffer, false, -1);
         return new HRESULT(res);
     }
 
     /**
      * Writes on the channel
      * 
-     * @param key       The key to use
-     * @param buffer    The buffer to write in the channel
-     * @param waitAll   waits all write in the distributed environment
+     * @param key     The key to use
+     * @param buffer  The buffer to write in the channel
+     * @param waitAll waits all write in the distributed environment
      * @return {@link HRESULT}
      */
     public HRESULT WriteOnChannel(String key, byte[] buffer, boolean waitAll) {
         // Call unmanaged code
         long res = NativeInterface.IDataDistributionSubsystem_WriteOnChannel(IDataDistributionSubsystemManager_ptr,
-                topicHandle, key, buffer, waitAll, -1);
+                channelHandle, key, buffer, waitAll, -1);
         return new HRESULT(res);
     }
 
@@ -168,7 +212,7 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
     public HRESULT WriteOnChannel(String key, byte[] buffer, boolean waitAll, long timestamp) {
         // Call unmanaged code
         long res = NativeInterface.IDataDistributionSubsystem_WriteOnChannel(IDataDistributionSubsystemManager_ptr,
-                topicHandle, key, buffer, waitAll, timestamp);
+                channelHandle, key, buffer, waitAll, timestamp);
         return new HRESULT(res);
     }
 
@@ -181,7 +225,7 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
      */
     public byte[] ReadFromChannel(long offset, long length) {
         return NativeInterface.IDataDistributionSubsystem_ReadFromChannel(IDataDistributionSubsystemManager_ptr,
-                topicHandle, offset, length);
+                channelHandle, offset, length);
     }
 
     /**
@@ -192,7 +236,7 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
      */
     public HRESULT ChangeDirectionOnChannel(DDM_CHANNEL_DIRECTION direction) {
         long res = NativeInterface.IDataDistributionSubsystem_ChangeDirectionOnChannel(
-                IDataDistributionSubsystemManager_ptr, topicHandle, direction.atomicNumber);
+                IDataDistributionSubsystemManager_ptr, channelHandle, direction.atomicNumber);
         return new HRESULT(res);
     }
 
@@ -213,14 +257,14 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
      * @param channelName     The channel name
      * @param errorCode       The error code reported
      * @param nativeCode      The native code associated to the error if available
-     * @param subSystemReason A string with a reason from subsystem
+     * @param subSystemReason A String with a reason from subsystem
      */
     public void OnConditionOrError(String channelName, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode,
             String subSystemReason) {
 
     }
 
-    public void OnUnderlyingEvent(long opaque, long topicHandle, UnderlyingEvent uEvent) {
+    public void OnUnderlyingEvent(long opaque, long channelHandle, UnderlyingEvent uEvent) {
         if (uEvent.IsDataAvailable) {
             OnDataAvailable(uEvent.ChannelName, uEvent.Key, uEvent.Buffer);
         } else {
@@ -228,15 +272,15 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
         }
     }
 
-    public final void OnUnderlyingEvent(long opaque, long topicHandle, String topicName, int condition,
+    public final void OnUnderlyingEvent(long opaque, long channelHandle, String topicName, int condition,
             boolean isDataAvailable, String key, byte[] buffer, int nativeCode, String subSystemReason) {
-        OnUnderlyingEvent(opaque, topicHandle,
+        OnUnderlyingEvent(opaque, channelHandle,
                 new UnderlyingEvent(topicName, DDM_UNDERLYING_ERROR_CONDITION.valueOfAtomicNumber(condition),
                         isDataAvailable, key, buffer, nativeCode, subSystemReason));
     }
 
     DDM_CHANNEL_DIRECTION m_direction;
-    long topicHandle;
+    long channelHandle;
     long IDataDistributionSubsystemManager_ptr;
     long m_DataDistributionChannelCallbackLow;
 }

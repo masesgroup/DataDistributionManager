@@ -411,6 +411,50 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
     }
 
     /**
+     * Set global parameter
+     * 
+     * @param paramName  Parameter name to set
+     * @param paramValue Parameter value to set
+     */
+    public void SetParameter(String paramName, String paramValue) {
+        NativeInterface.IDataDistributionSubsystem_SetParameter(IDataDistributionSubsystemManager_ptr, 0, paramName,
+                paramValue);
+    }
+
+    /**
+     * Set global parameter
+     * 
+     * @param paramId    Parameter {@link DDM_GENERAL_PARAMETER} to set
+     * @param paramValue Parameter value to set
+     */
+    public void SetParameter(DDM_GENERAL_PARAMETER paramId, String paramValue) {
+        NativeInterface.IDataDistributionSubsystem_SetParameter(IDataDistributionSubsystemManager_ptr, 0,
+                paramId.atomicNumber, paramValue);
+    }
+
+    /**
+     * Get global parameter
+     * 
+     * @param paramName Parameter name to get
+     * @return Parameter value
+     */
+    public String GetParameter(String paramName) {
+        return NativeInterface.IDataDistributionSubsystem_GetParameter(IDataDistributionSubsystemManager_ptr, 0,
+                paramName);
+    }
+
+    /**
+     * Get global parameter
+     * 
+     * @param paramId Parameter {@link DDM_GENERAL_PARAMETER} to get
+     * @return Parameter value
+     */
+    public String GetParameter(DDM_GENERAL_PARAMETER paramId) {
+        return NativeInterface.IDataDistributionSubsystem_GetParameter(IDataDistributionSubsystemManager_ptr, 0,
+                paramId.atomicNumber);
+    }
+
+    /**
      * 
      * @param <T>         The class extending {@link SmartDataDistributionChannel}
      * @param clazz       The class to be instantiated
@@ -482,7 +526,7 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
 
         inm.m_direction = direction;
         inm.IDataDistributionSubsystemManager_ptr = IDataDistributionSubsystemManager_ptr;
-        inm.topicHandle = handle;
+        inm.channelHandle = handle;
 
         return (T) inm;
     }

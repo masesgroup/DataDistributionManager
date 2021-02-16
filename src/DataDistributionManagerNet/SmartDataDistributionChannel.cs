@@ -60,6 +60,42 @@ namespace MASES.DataDistributionManager.Bindings
             return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_StopChannel>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, timeout);
         }
         /// <summary>
+        /// Set parameter on channel
+        /// </summary>
+        /// <param name="paramName">Parameter to set</param>
+        /// <param name="paramValue">Value to set</param>
+        public void SetParameter(string paramName, string paramValue)
+        {
+            DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_SetParameter>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, paramName, paramValue);
+        }
+        /// <summary>
+        /// Set parameter on channel
+        /// </summary>
+        /// <param name="paramId"><see cref="DDM_GENERAL_PARAMETER"/> parameter to set</param>
+        /// <param name="paramValue">Value to set</param>
+        public void SetParameter(DDM_GENERAL_PARAMETER paramId, string paramValue)
+        {
+            DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_SetParameter2>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, paramId, paramValue);
+        }
+        /// <summary>
+        /// Set parameter on channel
+        /// </summary>
+        /// <param name="paramName">Parameter to set</param>
+        /// <returns>Parameter value</returns>
+        public string GetParameter(string paramName)
+        {
+            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_GetParameter>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, paramName);
+        }
+        /// <summary>
+        /// Set parameter on channel
+        /// </summary>
+        /// <param name="paramId"><see cref="DDM_GENERAL_PARAMETER"/> parameter to set</param>
+        /// <returns>Parameter value</returns>
+        public string GetParameter(DDM_GENERAL_PARAMETER paramId)
+        {
+            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_GetParameter2>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, paramId);
+        }
+        /// <summary>
         /// Lock the channel
         /// </summary>
         /// <param name="timeout">Timeout to acuire lock</param>
@@ -74,7 +110,7 @@ namespace MASES.DataDistributionManager.Bindings
         /// <returns><see cref="HRESULT"/></returns>
         public HRESULT Unlock()
         {
-          return  DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_Unlock>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle);
+            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_Unlock>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle);
         }
         /// <summary>
         /// Seek the channel
@@ -83,7 +119,7 @@ namespace MASES.DataDistributionManager.Bindings
         /// <returns><see cref="HRESULT"/></returns>
         public HRESULT SeekChannel(Int64 position)
         {
-           return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_SeekChannel>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, position);
+            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_SeekChannel>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, position);
         }
         /// <summary>
         /// Writes in the channel

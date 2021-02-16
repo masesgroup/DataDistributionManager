@@ -109,9 +109,11 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate void  IDataDistributionSubsystem_SetParameter2(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, DDM_GENERAL_PARAMETER paramId, [MarshalAs(UnmanagedType.LPStr)] string paramValue);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate IntPtr IDataDistributionSubsystem_GetParameter(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, [MarshalAs(UnmanagedType.LPStr)] string paramName);
+    [return: MarshalAs(UnmanagedType.LPStr)]
+    delegate string IDataDistributionSubsystem_GetParameter(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, [MarshalAs(UnmanagedType.LPStr)] string paramName);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate IntPtr IDataDistributionSubsystem_GetParameter2(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, DDM_GENERAL_PARAMETER paramId);
+    [return: MarshalAs(UnmanagedType.LPStr)]
+    delegate string IDataDistributionSubsystem_GetParameter2(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, DDM_GENERAL_PARAMETER paramId);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate HRESULT IDataDistributionSubsystem_Lock(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, uint timeout);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]

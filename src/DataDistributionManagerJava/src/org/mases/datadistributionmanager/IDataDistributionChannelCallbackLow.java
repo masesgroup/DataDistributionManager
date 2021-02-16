@@ -19,6 +19,6 @@
 package org.mases.datadistributionmanager;
 
 interface IDataDistributionChannelCallbackLow {
-    void OnUnderlyingEvent(long opaque, long topicHandle, String topicName, int condition, boolean isDataAvailable,
+    void OnUnderlyingEvent(long opaque, long channelHandle, String topicName, int condition, boolean isDataAvailable,
             String key, byte[] buffer, int nativeCode, String subSystemReason);
 }

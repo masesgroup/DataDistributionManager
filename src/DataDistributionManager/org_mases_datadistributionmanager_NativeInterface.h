@@ -185,6 +185,38 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 
 /*
  * Class:     org_mases_datadistributionmanager_NativeInterface
+ * Method:    IDataDistributionSubsystem_SetParameter
+ * Signature: (JJLjava/lang/String;Ljava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_org_mases_datadistributionmanager_NativeInterface_IDataDistributionSubsystem_1SetParameter__JJLjava_lang_String_2Ljava_lang_String_2
+  (JNIEnv *, jclass, jlong, jlong, jstring, jstring);
+
+/*
+ * Class:     org_mases_datadistributionmanager_NativeInterface
+ * Method:    IDataDistributionSubsystem_SetParameter
+ * Signature: (JJILjava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_org_mases_datadistributionmanager_NativeInterface_IDataDistributionSubsystem_1SetParameter__JJILjava_lang_String_2
+  (JNIEnv *, jclass, jlong, jlong, jint, jstring);
+
+/*
+ * Class:     org_mases_datadistributionmanager_NativeInterface
+ * Method:    IDataDistributionSubsystem_GetParameter
+ * Signature: (JJLjava/lang/String;)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_org_mases_datadistributionmanager_NativeInterface_IDataDistributionSubsystem_1GetParameter__JJLjava_lang_String_2
+  (JNIEnv *, jclass, jlong, jlong, jstring);
+
+/*
+ * Class:     org_mases_datadistributionmanager_NativeInterface
+ * Method:    IDataDistributionSubsystem_GetParameter
+ * Signature: (JJI)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_org_mases_datadistributionmanager_NativeInterface_IDataDistributionSubsystem_1GetParameter__JJI
+  (JNIEnv *, jclass, jlong, jlong, jint);
+
+/*
+ * Class:     org_mases_datadistributionmanager_NativeInterface
  * Method:    IDataDistributionSubsystem_Lock
  * Signature: (JJJ)J
  */

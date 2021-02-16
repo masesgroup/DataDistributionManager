@@ -333,7 +333,7 @@ HRESULT DataDistributionManagerImpl::read_config_file(const char* arrayParams[],
 	// SHA512 of copyright calculated with https://www.fileformat.info/tool/hash.htm
 	static const byte sStringHash[] = "c444f7fa5bdbdd738661edc4c528c82bb9ed6f4efce9da0db9403b65035a5a970f87d62362c1f9a4f9d083e5c926460292aba19e5b179b3dd68ab584ce866a35";
 
-	for (size_t i = 0; i < len; i++)
+	for (int i = 0; i < len; i++)
 	{
 		std::string line = arrayParams[i];
 
@@ -395,7 +395,7 @@ HRESULT DataDistributionManagerImpl::Initialize(IDataDistributionCallback* callb
 
 	m_arrayParamsLen = length;
 	m_arrayParams = (const char**)malloc(m_arrayParamsLen * sizeof(const char*));
-	for (size_t i = 0; i < m_arrayParamsLen; i++)
+	for (int i = 0; i < m_arrayParamsLen; i++)
 	{
 		m_arrayParams[i] = _strdup(arrayParams[i]);
 	}

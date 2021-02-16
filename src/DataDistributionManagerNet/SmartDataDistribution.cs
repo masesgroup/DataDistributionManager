@@ -197,7 +197,42 @@ namespace MASES.DataDistributionManager.Bindings
                 return null;
             }
         }
-
+        /// <summary>
+        /// Set global parameter
+        /// </summary>
+        /// <param name="paramName">Parameter to set</param>
+        /// <param name="paramValue">Value to set</param>
+        public void SetParameter(string paramName, string paramValue)
+        {
+            DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_SetParameter>().Invoke(IDataDistributionSubsystemManager_ptr, IntPtr.Zero, paramName, paramValue);
+        }
+        /// <summary>
+        /// Set global parameter
+        /// </summary>
+        /// <param name="paramId"><see cref="DDM_GENERAL_PARAMETER"/> parameter to set</param>
+        /// <param name="paramValue">Value to set</param>
+        public void SetParameter(DDM_GENERAL_PARAMETER paramId, string paramValue)
+        {
+            DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_SetParameter2>().Invoke(IDataDistributionSubsystemManager_ptr, IntPtr.Zero, paramId, paramValue);
+        }
+        /// <summary>
+        /// Get global parameter
+        /// </summary>
+        /// <param name="paramName">Parameter to set</param>
+        /// <returns>Parameter value</returns>
+        public string GetParameter(string paramName)
+        {
+            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_GetParameter>().Invoke(IDataDistributionSubsystemManager_ptr, IntPtr.Zero, paramName);
+        }
+        /// <summary>
+        /// Get global parameter
+        /// </summary>
+        /// <param name="paramId"><see cref="DDM_GENERAL_PARAMETER"/> parameter to set</param>
+        /// <returns>Parameter value</returns>
+        public string GetParameter(DDM_GENERAL_PARAMETER paramId)
+        {
+            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_GetParameter2>().Invoke(IDataDistributionSubsystemManager_ptr, IntPtr.Zero, paramId);
+        }
         /// <summary>
         /// Creates a channel
         /// </summary>
