@@ -27,6 +27,7 @@ DataDistributionCommon::DataDistributionCommon()
 	m_ServerName = "";
 	m_MaxMessageSize = 0;
 	m_ServerLostTimeout = 10000;
+	m_GlobalLogLevel = DDM_LOG_LEVEL::INFO_LEVEL;
 	m_pDataDistributionManagerCallbacks = NULL;
 }
 
@@ -71,6 +72,7 @@ HRESULT DataDistributionCommon::Initialize()
 void DataDistributionCommon::Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, ...)
 {
 	if (NULL == m_pDataDistributionManagerCallbacks) return;
+	if (m_GlobalLogLevel < level) return;
 
 	va_list args = NULL;
 	va_start(args, format);
@@ -82,6 +84,7 @@ void DataDistributionCommon::Log(const DDM_LOG_LEVEL level, const char* sourceNa
 void DataDistributionCommon::Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, va_list args)
 {
 	if (NULL == m_pDataDistributionManagerCallbacks) return;
+	if (m_GlobalLogLevel < level) return;
 
 	char buffer[LOG_LEN];
 	memset(buffer, 0, sizeof(buffer));
@@ -193,6 +196,11 @@ void DataDistributionCommon::SetParameter(HANDLE channelHandle, const char* para
 			SetServerLostTimeout(atoi(paramValue));
 			return;
 		}
+		else if (!strcmp(paramName, "datadistributionmanager.loglevel.global"))
+		{
+			SetGlobalLogLevel((DDM_LOG_LEVEL)atoi(paramValue));
+			return;
+		}
 	}
 }
 
@@ -267,6 +275,10 @@ const char* DataDistributionCommon::GetParameter(HANDLE channelHandle, const cha
 		else if (!strcmp(paramName, "datadistributionmanager.timeout.serverlost"))
 		{
 			return ConvertIToA(GetServerLostTimeout());
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.loglevel.global"))
+		{
+			return ConvertIToA((int)GetGlobalLogLevel());
 		}
 	}
 
@@ -379,6 +391,16 @@ void DataDistributionCommon::SetMaxMessageSize(size_t maxMessageSize)
 void DataDistributionCommon::SetServerLostTimeout(int timeout)
 {
 	m_ServerLostTimeout = timeout;
+}
+
+DDM_LOG_LEVEL DataDistributionCommon::GetGlobalLogLevel()
+{
+	return m_GlobalLogLevel;
+}
+
+void DataDistributionCommon::SetGlobalLogLevel(DDM_LOG_LEVEL level)
+{
+	m_GlobalLogLevel = level;
 }
 
 std::string DataDistributionCommon::GetConfigFile() { return m_confFile; }

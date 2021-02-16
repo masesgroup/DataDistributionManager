@@ -88,6 +88,8 @@ protected:
 	void SetSubSystemStarted(BOOL started);
 	void SetMaxMessageSize(size_t maxMessageSize);
 	void SetServerLostTimeout(int timeout);
+	DDM_LOG_LEVEL GetGlobalLogLevel();
+	void SetGlobalLogLevel(DDM_LOG_LEVEL level);
 	std::string GetConfigFile();
 	std::string GetChannelTrailer();
 	std::string GetServerName();
@@ -98,6 +100,7 @@ private:
 	int m_arrayParamsLen;
 	size_t m_MaxMessageSize;
 	int  m_ServerLostTimeout;
+	DDM_LOG_LEVEL m_GlobalLogLevel;
 	IDataDistributionCallback* m_pDataDistributionManagerCallbacks;
 	const char* m_confFile;
 	const char* m_ChannelTrailer;

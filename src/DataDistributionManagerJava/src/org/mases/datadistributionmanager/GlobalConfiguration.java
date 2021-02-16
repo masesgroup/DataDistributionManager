@@ -29,6 +29,7 @@ public abstract class GlobalConfiguration implements IConfiguration {
     public final String ProtocolLibraryKey = "datadistributionmanager.common.protolib";
     public final String MaxMessageSizeKey = "datadistributionmanager.maxmessagesize";
     public final String ServerLostTimeoutKey = "datadistributionmanager.timeout.serverlost";
+    public final String GlobalLogLevelKey = "datadistributionmanager.loglevel.global";
 
     /**
      * The list of key/value pairs
@@ -114,6 +115,25 @@ public abstract class GlobalConfiguration implements IConfiguration {
      */
     public void setServerLostTimeout(Integer timeout) {
         keyValuePair.put(ServerLostTimeoutKey, timeout.toString());
+    }
+
+    /**
+     * The global log value
+     * 
+     * @return The global log value
+     */
+    public DDM_LOG_LEVEL getGlobalLogLevel() {
+        String value = keyValuePair.get(GlobalLogLevelKey);
+        return DDM_LOG_LEVEL.valueOf(value);
+    }
+
+    /**
+     * The global log value
+     * 
+     * @param level The global log value
+     */
+    public void setGlobalLogLevel(DDM_LOG_LEVEL level) {
+        keyValuePair.put(GlobalLogLevelKey, Integer.toString(level.atomicNumber));
     }
 
     /**

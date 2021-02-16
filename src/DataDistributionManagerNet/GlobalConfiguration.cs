@@ -16,6 +16,7 @@
 *  Refer to LICENSE for more information.
 */
 
+using MASES.DataDistributionManager.Bindings.Interop;
 using System;
 using System.Collections.Generic;
 
@@ -42,6 +43,10 @@ namespace MASES.DataDistributionManager.Bindings
         /// Configuration key of <see cref="ServerLostTimeout"/>
         /// </summary>
         public const string ServerLostTimeoutKey = "datadistributionmanager.timeout.serverlost";
+        /// <summary>
+        /// Configuration key of <see cref="GlobalLogLevel"/>
+        /// </summary>
+        public const string GlobalLogLevelKey = "datadistributionmanager.loglevel.global"; 
 
         /// <summary>
         /// The list of key/value pairs
@@ -122,6 +127,22 @@ namespace MASES.DataDistributionManager.Bindings
             }
         }
 
+        /// <summary>
+        /// The global log value
+        /// </summary>
+        public DDM_LOG_LEVEL GlobalLogLevel
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(GlobalLogLevelKey, out value);
+                return (DDM_LOG_LEVEL)Enum.Parse(typeof(DDM_LOG_LEVEL), value);
+            }
+            set
+            {
+                keyValuePair[GlobalLogLevelKey] = ((int)value).ToString();
+            }
+        }
 
         /// <summary>
         /// Checks the configuration for mandatory information
