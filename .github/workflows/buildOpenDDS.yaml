@@ -143,7 +143,8 @@ jobs:
 
   # Verify if a build is needed
   check_changes:
-    needs: build_opendds_windows
+    needs: [check_opendds, build_opendds_windows]
+    if: always()
     name: Check changed files
     outputs:
       run_build_dds_windows: ${{ steps.check_files.outputs.run_build_dds_windows }}
