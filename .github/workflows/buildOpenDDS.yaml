@@ -170,7 +170,7 @@ jobs:
   # Now run "build_ddm_windows"
   build_ddm_windows:
     needs: check_changes
-    if: jobs.check_changes.outputs.run_build_ddm_windows == 'true'
+    if: "always() && needs.check_changes.outputs.run_build_ddm_windows == 'true'"
     # The type of runner that the job will run on
     runs-on: windows-2019
 
