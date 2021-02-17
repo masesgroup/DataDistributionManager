@@ -150,12 +150,13 @@ jobs:
       run_build_dds_windows: ${{ steps.check_files.outputs.run_build_dds_windows }}
     runs-on: ubuntu-latest
     steps:
-      - id: check_files
+      - id: get_changed_files
         uses: jitterbit/get-changed-files@v1
         with:
           format: 'csv'
-      - run: |
-          mapfile -d ',' -t added_modified_files < <(printf '%s,' '${{ steps.check_files.outputs.added_modified }}')
+      - id: check_files
+        run: |
+          mapfile -d ',' -t added_modified_files < <(printf '%s,' '${{ steps.get_changed_files.outputs.added_modified }}')
           for added_modified_file in "${added_modified_files[@]}"; do
               if [[ $added_modified_file == "src/"* ]]; then
                 echo "$added_modified_file file is under the directory 'src/'."
