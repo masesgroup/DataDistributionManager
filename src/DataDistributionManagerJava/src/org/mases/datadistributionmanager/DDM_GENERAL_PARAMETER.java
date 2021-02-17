@@ -84,4 +84,8 @@ public enum DDM_GENERAL_PARAMETER {
     public static DDM_GENERAL_PARAMETER valueOfAtomicNumber(int number) {
         return BY_ATOMIC_NUMBER.get(number);
     }
+
+    public String toIntString() {
+        return Integer.toString(atomicNumber);
+    }
 }

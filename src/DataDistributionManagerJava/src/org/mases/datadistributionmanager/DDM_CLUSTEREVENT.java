@@ -68,4 +68,8 @@ public enum DDM_CLUSTEREVENT {
     public static DDM_CLUSTEREVENT valueOfAtomicNumber(int number) {
         return BY_ATOMIC_NUMBER.get(number);
     }
+
+    public String toIntString() {
+        return Integer.toString(atomicNumber);
+    }
 }

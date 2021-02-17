@@ -72,4 +72,8 @@ public enum DDM_LOG_LEVEL {
     public static DDM_LOG_LEVEL valueOfAtomicNumber(int number) {
         return BY_ATOMIC_NUMBER.get(number);
     }
+
+    public String toIntString() {
+        return Integer.toString(atomicNumber);
+    }
 }

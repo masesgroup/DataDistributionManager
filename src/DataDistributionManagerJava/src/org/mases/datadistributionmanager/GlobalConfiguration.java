@@ -25,11 +25,11 @@ import java.util.HashMap;
  * The global configuration class
  */
 public abstract class GlobalConfiguration implements IConfiguration {
-    public final String ProtocolKey = "datadistributionmanager.common.protocol";
-    public final String ProtocolLibraryKey = "datadistributionmanager.common.protolib";
-    public final String MaxMessageSizeKey = "datadistributionmanager.maxmessagesize";
-    public final String ServerLostTimeoutKey = "datadistributionmanager.timeout.serverlost";
-    public final String GlobalLogLevelKey = "datadistributionmanager.loglevel.global";
+    public static final String ProtocolKey = "datadistributionmanager.common.protocol";
+    public static final String ProtocolLibraryKey = "datadistributionmanager.common.protolib";
+    public static final String MaxMessageSizeKey = "datadistributionmanager.maxmessagesize";
+    public static final String ServerLostTimeoutKey = "datadistributionmanager.timeout.serverlost";
+    public static final String GlobalLogLevelKey = "datadistributionmanager.loglevel.global";
 
     /**
      * The list of key/value pairs
@@ -124,7 +124,7 @@ public abstract class GlobalConfiguration implements IConfiguration {
      */
     public DDM_LOG_LEVEL getGlobalLogLevel() {
         String value = keyValuePair.get(GlobalLogLevelKey);
-        return DDM_LOG_LEVEL.valueOf(value);
+        return DDM_LOG_LEVEL.valueOfLabel(value);
     }
 
     /**
@@ -133,7 +133,7 @@ public abstract class GlobalConfiguration implements IConfiguration {
      * @param level The global log value
      */
     public void setGlobalLogLevel(DDM_LOG_LEVEL level) {
-        keyValuePair.put(GlobalLogLevelKey, Integer.toString(level.atomicNumber));
+        keyValuePair.put(GlobalLogLevelKey, level.toIntString());
     }
 
     /**

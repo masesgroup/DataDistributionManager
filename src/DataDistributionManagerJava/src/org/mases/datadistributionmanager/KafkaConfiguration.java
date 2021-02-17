@@ -22,14 +22,14 @@ package org.mases.datadistributionmanager;
  * The configuration class for Kafka
  */
 public class KafkaConfiguration extends CommonConfiguration {
-    public final String KafkaConfigurationBaseProperty = "datadistributionmanager.kafka.";
-    public final String ReplicationFactorKey = "datadistributionmanager.kafka.topic.replicationfactor";
-    public final String BootstrapBrokersKey = "datadistributionmanager.kafka.metadata.broker.list";
-    public final String DebugKey = "datadistributionmanager.kafka.debug";
-    public final String ClientIdKey = "datadistributionmanager.kafka.client.id";
-    public final String GroupIdKey = "datadistributionmanager.kafka.group.id";
-    public final String TopicCreateKey = "datadistributionmanager.kafka.topic.create";
-    public final String DumpMetadataKey = "datadistributionmanager.kafka.topic.dumpmetadata";
+    public static final String KafkaConfigurationBaseProperty = "datadistributionmanager.kafka.";
+    public static final String ReplicationFactorKey = "datadistributionmanager.kafka.topic.replicationfactor";
+    public static final String BootstrapBrokersKey = "datadistributionmanager.kafka.metadata.broker.list";
+    public static final String DebugKey = "datadistributionmanager.kafka.debug";
+    public static final String ClientIdKey = "datadistributionmanager.kafka.client.id";
+    public static final String GroupIdKey = "datadistributionmanager.kafka.group.id";
+    public static final String TopicCreateKey = "datadistributionmanager.kafka.topic.create";
+    public static final String DumpMetadataKey = "datadistributionmanager.kafka.topic.dumpmetadata";
 
     /**
      * Initialize a new instance of {@link KafkaConfiguration}

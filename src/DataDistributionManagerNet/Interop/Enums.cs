@@ -21,7 +21,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     /// <summary>
     /// General configuration parameters
     /// </summary>
-    public enum DDM_GENERAL_PARAMETER
+    public enum DDM_GENERAL_PARAMETER : int
     {
         /// <summary>
         /// Max message size
@@ -59,7 +59,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     /// <summary>
     /// Direction of the channel
     /// </summary>
-    public enum DDM_CHANNEL_DIRECTION
+    public enum DDM_CHANNEL_DIRECTION : int
     {
         /// <summary>
         /// Transmitter
@@ -77,7 +77,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     /// <summary>
     /// Log levels
     /// </summary>
-    public enum DDM_LOG_LEVEL
+    public enum DDM_LOG_LEVEL : int
     {
         /// <summary>
         /// Fatal
@@ -103,7 +103,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     /// <summary>
     /// Errors from undetlying layer
     /// </summary>
-    public enum DDM_UNDERLYING_ERROR_CONDITION
+    public enum DDM_UNDERLYING_ERROR_CONDITION : int
     {
         // Error section
         /// <summary>
@@ -168,7 +168,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     /// <summary>
     /// State of the instance
     /// </summary>
-    public enum DDM_INSTANCE_STATE
+    public enum DDM_INSTANCE_STATE : int
     {
         /// <summary>
         /// Unknown
@@ -206,7 +206,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     /// <summary>
     /// Cluster events
     /// </summary>
-    public enum DDM_CLUSTEREVENT
+    public enum DDM_CLUSTEREVENT : int
     {
         /// <summary>
         /// No event
@@ -228,7 +228,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     /// <summary>
     /// Startup state
     /// </summary>
-    public enum CHANNEL_STARTUP_TYPE
+    public enum CHANNEL_STARTUP_TYPE : int
     {
         /// <summary>
         /// Undefined

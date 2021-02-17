@@ -65,4 +65,8 @@ public enum DDM_CHANNEL_DIRECTION {
     public static DDM_CHANNEL_DIRECTION valueOfAtomicNumber(int number) {
         return BY_ATOMIC_NUMBER.get(number);
     }
+
+    public String toIntString() {
+        return Integer.toString(atomicNumber);
+    }
 }

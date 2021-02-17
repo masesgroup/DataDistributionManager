@@ -26,13 +26,13 @@ import java.util.HashMap;
  */
 public class OpenDDSConfiguration extends CommonConfiguration {
     HashMap<String, String> commandLineKeyValuePair = new HashMap<String, String>();
-    public final String DCPSInfoRepoAutostartKey = "datadistributionmanager.opendds.dcpsinforepo.autostart";
-    public final String DCPSInfoRepoLogOnApplicationKey = "datadistributionmanager.opendds.dcpsinforepo.logonapplication";
-    public final String DCPSInfoRepoCommandLineKey = "datadistributionmanager.opendds.dcpsinforepo.cmdlineargs";
-    public final String CommandLineKey = "datadistributionmanager.opendds.cmdlineargs";
-    public final String DomainIdKey = "datadistributionmanager.opendds.domain_id";
-    public final String DCPSConfigFileKey = "DCPSConfigFile";
-    public final String DCPSTransportDebugLevelKey = "DCPSTransportDebugLevel";
+    public static final String DCPSInfoRepoAutostartKey = "datadistributionmanager.opendds.dcpsinforepo.autostart";
+    public static final String DCPSInfoRepoLogOnApplicationKey = "datadistributionmanager.opendds.dcpsinforepo.logonapplication";
+    public static final String DCPSInfoRepoCommandLineKey = "datadistributionmanager.opendds.dcpsinforepo.cmdlineargs";
+    public static final String CommandLineKey = "datadistributionmanager.opendds.cmdlineargs";
+    public static final String DomainIdKey = "datadistributionmanager.opendds.domain_id";
+    public static final String DCPSConfigFileKey = "DCPSConfigFile";
+    public static final String DCPSTransportDebugLevelKey = "DCPSTransportDebugLevel";
 
     /**
      * Initialize a new instance of {@link OpenDDSConfiguration}

@@ -136,11 +136,11 @@ namespace MASES.DataDistributionManager.Bindings
             {
                 string value = string.Empty;
                 keyValuePair.TryGetValue(GlobalLogLevelKey, out value);
-                return (DDM_LOG_LEVEL)Enum.Parse(typeof(DDM_LOG_LEVEL), value);
+                return value.FromIntString<DDM_LOG_LEVEL>();
             }
             set
             {
-                keyValuePair[GlobalLogLevelKey] = ((int)value).ToString();
+                keyValuePair[GlobalLogLevelKey] = value.ToIntString();
             }
         }
 

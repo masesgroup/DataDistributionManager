@@ -109,4 +109,8 @@ public enum DDM_UNDERLYING_ERROR_CONDITION {
     public static DDM_UNDERLYING_ERROR_CONDITION valueOfAtomicNumber(int number) {
         return BY_ATOMIC_NUMBER.get(number);
     }
+
+    public String toIntString() {
+        return Integer.toString(atomicNumber);
+    }
 }

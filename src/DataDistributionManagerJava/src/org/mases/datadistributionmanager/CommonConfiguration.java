@@ -22,14 +22,14 @@ package org.mases.datadistributionmanager;
  * The common configuration class
  */
 public abstract class CommonConfiguration extends GlobalConfiguration {
-    public final String CreateChannelTimeoutKey = "datadistributionmanager.timeout.createchannel";
-    public final String ChannelSeekTimeoutKey = "datadistributionmanager.timeout.channelseek";
-    public final String ReceiveTimeoutKey = "datadistributionmanager.timeout.receive";
-    public final String KeepAliveTimeoutKey = "datadistributionmanager.timeout.keepalive";
-    public final String ConsumerTimeoutKey = "datadistributionmanager.timeout.consumer";
-    public final String ProducerTimeoutKey = "datadistributionmanager.timeout.producer";
-    public final String CommitTimeoutKey = "datadistributionmanager.timeout.commit";
-    public final String CommitSyncKey = "datadistributionmanager.commit.sync";
+    public static final String CreateChannelTimeoutKey = "datadistributionmanager.timeout.createchannel";
+    public static final String ChannelSeekTimeoutKey = "datadistributionmanager.timeout.channelseek";
+    public static final String ReceiveTimeoutKey = "datadistributionmanager.timeout.receive";
+    public static final String KeepAliveTimeoutKey = "datadistributionmanager.timeout.keepalive";
+    public static final String ConsumerTimeoutKey = "datadistributionmanager.timeout.consumer";
+    public static final String ProducerTimeoutKey = "datadistributionmanager.timeout.producer";
+    public static final String CommitTimeoutKey = "datadistributionmanager.timeout.commit";
+    public static final String CommitSyncKey = "datadistributionmanager.commit.sync";
 
     /**
      * Initialize a new instance of {@link CommonConfiguration}

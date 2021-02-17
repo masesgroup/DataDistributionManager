@@ -84,4 +84,8 @@ public enum DDM_INSTANCE_STATE {
     public static DDM_INSTANCE_STATE valueOfAtomicNumber(int number) {
         return BY_ATOMIC_NUMBER.get(number);
     }
+
+    public String toIntString() {
+        return Integer.toString(atomicNumber);
+    }
 }

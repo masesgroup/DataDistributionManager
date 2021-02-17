@@ -72,4 +72,8 @@ public enum CHANNEL_STARTUP_TYPE {
     public static CHANNEL_STARTUP_TYPE valueOfAtomicNumber(int number) {
         return BY_ATOMIC_NUMBER.get(number);
     }
+
+    public String toIntString() {
+        return Integer.toString(atomicNumber);
+    }
 }
