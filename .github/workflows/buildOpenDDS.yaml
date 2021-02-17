@@ -150,7 +150,7 @@ jobs:
       run_build_dds_windows: ${{ steps.check_files.outputs.run_build_dds_windows }}
     runs-on: ubuntu-latest
     steps:
-      - id: files
+      - id: check_files
         uses: jitterbit/get-changed-files@v1
         with:
           format: 'csv'

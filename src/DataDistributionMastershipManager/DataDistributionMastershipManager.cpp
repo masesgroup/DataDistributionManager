@@ -30,7 +30,6 @@ DataDistributionMastershipManager::DataDistributionMastershipManager() : DataDis
 
 DataDistributionMastershipManager::~DataDistributionMastershipManager()
 {
-
 }
 
 void DataDistributionMastershipManager::GetClusterIndexes(int64_t arraElements[], size_t* length)
