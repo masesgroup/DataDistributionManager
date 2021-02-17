@@ -147,7 +147,7 @@ jobs:
     if: always()
     name: Check changed files
     outputs:
-      run_build_dds_windows: ${{ steps.check_files.outputs.run_build_dds_windows }}
+      run_build_ddm_windows: ${{ steps.check_files.outputs.run_build_ddm_windows }}
     runs-on: ubuntu-latest
     steps:
       - id: get_changed_files
@@ -160,15 +160,15 @@ jobs:
           for added_modified_file in "${added_modified_files[@]}"; do
               if [[ $added_modified_file == "src/"* ]]; then
                 echo "$added_modified_file file is under the directory 'src/'."
-                echo "::set-output name=run_build_dds_windows::true"
+                echo "::set-output name=run_build_ddm_windows::true"
                 break
               fi
           done
 
-  # This workflow contains a single job called "build_windows"
+  # This workflow contains a single job called "build_dds_windows"
   build_dds_windows:
-    needs: check_changes
-    if: needs.check_changes.outputs.run_build_dds_windows == 'true'
+    needs: [check_opendds, build_opendds_windows, check_changes]
+    if: needs.check_changes.outputs.run_build_ddm_windows == 'true'
     # The type of runner that the job will run on
     runs-on: windows-2019
 
