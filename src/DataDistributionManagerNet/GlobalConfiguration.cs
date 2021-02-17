@@ -46,7 +46,7 @@ namespace MASES.DataDistributionManager.Bindings
         /// <summary>
         /// Configuration key of <see cref="GlobalLogLevel"/>
         /// </summary>
-        public const string GlobalLogLevelKey = "datadistributionmanager.loglevel.global"; 
+        public const string GlobalLogLevelKey = "datadistributionmanager.loglevel.global";
 
         /// <summary>
         /// The list of key/value pairs

@@ -16,9 +16,6 @@
 *  Refer to LICENSE for more information.
 */
 
-using System;
-using System.Collections.Generic;
-
 namespace MASES.DataDistributionManager.Bindings
 {
     /// <summary>
