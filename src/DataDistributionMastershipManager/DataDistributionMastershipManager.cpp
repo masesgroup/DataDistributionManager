@@ -25,7 +25,6 @@ extern "C" __declspec(dllexport) void* CreateObjectImplementation()
 
 DataDistributionMastershipManager::DataDistributionMastershipManager() : DataDistributionMastershipCommon()
 {
-
 }
 
 DataDistributionMastershipManager::~DataDistributionMastershipManager()
