@@ -16,13 +16,11 @@
 *  Refer to LICENSE for more information.
 */
 
-import java.nio.charset.Charset;
-
 import org.mases.datadistributionmanager.*;
 
 public class DataDistributionManagerJavaTest {
 	public static void main(String args[]) {
-		final int THRESHOLD = 1000;
+		final int THRESHOLD = 10;
 
 		DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.RECEIVER;
 		MySmartDataDistribution dataDistribution = new MySmartDataDistribution();

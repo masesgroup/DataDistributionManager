@@ -53,7 +53,7 @@ namespace ManagerTestNet
 
     class Program
     {
-        const int THRESHOLD = 1000;
+        const int THRESHOLD = 10;
 
         static void Main(string[] args)
         {
@@ -67,7 +67,6 @@ namespace ManagerTestNet
                 conf.DCPSInfoRepoCommandLine = "-ORBEndpoint iiop://localhost:12345";
                 conf.DCPSConfigFile = "dds_tcp_conf.ini";
                 conf.DCPSTransportDebugLevel = 10;
-
                 hRes = dataDistribution.Initialize(conf);
             }
             else
@@ -104,7 +103,10 @@ namespace ManagerTestNet
                 if (direction.HasFlag(DDM_CHANNEL_DIRECTION.TRANSMITTER) ? testChannel.WriteOnChannel(null, str) : true)
                 {
                     str = string.Format("{0:10}", counter++);
-                    if ((counter % THRESHOLD) == 0) Console.WriteLine("SendData Reached {0}", counter);
+                    if ((counter % THRESHOLD) == 0)
+                    {
+                        Console.WriteLine("SendData Reached {0}", counter);
+                    }
                 }
                 Thread.Sleep(1000);
             }
