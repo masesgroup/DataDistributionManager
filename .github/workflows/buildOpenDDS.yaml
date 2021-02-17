@@ -8,7 +8,7 @@ on:
   push:
     branches: [ master ]
 
-# This workflow contains two jobs called "check_opendds", "build_opendds_windows", "build_dds_windows"
+# This workflow contains two jobs called "check_opendds", "build_opendds_windows", "check_changes", "build_ddm_windows"
 jobs:
   # Verify if a build is needed
   check_opendds:
@@ -164,10 +164,12 @@ jobs:
                 break
               fi
           done
+      - name: Get run_build_ddm_windows
+        run: echo "The selected run_build_ddm_windows is ${{ steps.check_files.outputs.run_build_ddm_windows }}"
 
-  # This workflow contains a single job called "build_dds_windows"
-  build_dds_windows:
-    needs: [check_opendds, build_opendds_windows, check_changes]
+  # Now run "build_ddm_windows"
+  build_ddm_windows:
+    needs: check_changes
     if: needs.check_changes.outputs.run_build_ddm_windows == 'true'
     # The type of runner that the job will run on
     runs-on: windows-2019
