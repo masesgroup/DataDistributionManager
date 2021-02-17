@@ -69,9 +69,9 @@ cd ..\..
 * Generate the projects related to OpenDDS transport:
 
 ```
-cd DataDistributionManagerOpenDDS
+cd src\DataDistributionManagerOpenDDS
 GenerateFile.cmd
-cd..
+cd ..\..
 ```
 
 * Restore Nuget packages for solution DataDistributionManager.sln (or use nuget.exe or Visual Studio) to compile Apache Kafka transport
@@ -79,7 +79,7 @@ Restore NuGet Packages from command line (not needed if Visual Studio is used):
 
 > NOTE: NuGet.exe can be download from [NuGet](https://www.nuget.org/downloads)
 ```
-nuget.exe restore DataDistributionManager.sln
+nuget.exe restore src\DataDistributionManager.sln
 ```
 
 * Builds the Data Distribution Manager:
@@ -90,16 +90,16 @@ nuget.exe restore DataDistributionManager.sln
   ```
 
 ```
-msbuild /m -p:Configuration=Release,Platform=x64 DataDistributionManager.sln
-msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
+msbuild /m -p:Configuration=Release,Platform=x64 src\DataDistributionManager.sln
+msbuild /m -p:Configuration=Release,Platform=Win32 src\DataDistributionManager.sln
 ```
 * To generate Java binder execute:
 
 > NOTE: a JDK must be installed in the build machine:
 
 ```
-cd DataDistributionManagerJava
+cd src\DataDistributionManagerJava
 set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
 CreateJars.bat
-cd..
+cd ..\..
 ```
