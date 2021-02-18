@@ -2,24 +2,180 @@
 
 name: CI_BUILD
 
-# Controls when the action will run. Triggers the workflow after CI_BUILD_OPENDDS workflow is completed
-# only for the master branch
+# Controls when the action will run. Triggers the workflow on push
+# events but only for the master branch
 on:
-  workflow_run:
-    workflows: ["CI_BUILD_OPENDDS"]
-    branches: [master]
-    types: 
-      - completed
+  push:
+    branches: [ master ]
 
+# This workflow contains two jobs called "check_opendds", "build_opendds_windows", "check_changes", "build_ddm_windows"
 jobs:
-  # This workflow contains a single job called "build_windows"
-  build_windows:
-    if: ${{ github.event.workflow_run.conclusion == '_success' }}
+  # Verify if a build is needed
+  check_opendds:
+    name: Check artifact files
+    outputs:
+      build_opendds: ${{ steps.check_existsOpenDDS.outputs.build_opendds }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          submodules: 'true'
+    
+      - name: Exists OpenDDS
+        id: existsOpenDDS
+        continue-on-error: true
+        run: |
+          python $GITHUB_WORKSPACE/third_party/CommonTools/scripts/utilsftp.py -c check -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.15.zip -l $GITHUB_WORKSPACE/OpenDDS_Build_3.15.zip
+
+      - name: If failed we need to rebuild artifact
+        id: check_existsOpenDDS
+        if: ${{ steps.existsOpenDDS.outcome == 'failure' }}
+        run: echo '::set-output name=build_opendds::true'
+
+  build_opendds_windows:
+    needs: check_opendds
+    if: needs.check_opendds.outputs.build_opendds == 'true'
     # The type of runner that the job will run on
     runs-on: windows-2019
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # Runs a set of commands using the runners shell
+      # Support longpaths
+      - name: Support long paths
+        run: git config --system core.longpaths true
+      
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        with:
+          submodules: 'true'
+          
+      - name: set up msvc env
+        uses: ilammy/msvc-dev-cmd@v1.5.0
+
+      - name: Configure OpenDDS
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          configure
+
+      - name: Build OpenDDS x64
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          call setenv.cmd
+          msbuild -p:Configuration=Release,Platform=x64 -m DDS_TAOv2.sln
+
+      - name: Move OpenDDS x64 binaries
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          xcopy .\lib\*.dll ..\..\Output\x64\
+          xcopy .\lib\*.lib ..\..\Output\lib64\
+          xcopy .\bin\*.exe ..\..\Output\bin64\
+          xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x64\
+          xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib64\
+          xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin64\
+          
+      - name: Move OpenDDS x64 PDB
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          mkdir ..\..\OutputPdb
+          xcopy .\lib\*.pdb ..\..\OutputPdb\pdb64\
+          xcopy .\bin\*.pdb ..\..\OutputPdb\pdb64\
+          xcopy .\ACE_wrappers\lib\*.pdb ..\..\OutputPdb\pdb64\
+          xcopy .\ACE_wrappers\bin\*.pdb ..\..\OutputPdb\pdb64\
+
+      - name: Build OpenDDS x86
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          call setenv.cmd
+          msbuild -p:Configuration=Release,Platform=Win32 -m DDS_TAOv2.sln
+
+      - name: Move OpenDDS x86 binaries
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          xcopy .\lib\*.dll ..\..\Output\x86\
+          xcopy .\lib\*.lib ..\..\Output\lib32\
+          xcopy .\bin\*.exe ..\..\Output\bin32\
+          xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x86\
+          xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib32\
+          xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin32\
+
+      - name: Move OpenDDS x86 PDB
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          xcopy .\lib\*.pdb ..\..\OutputPdb\pdb32\
+          xcopy .\bin\*.pdb ..\..\OutputPdb\pdb32\
+          xcopy .\ACE_wrappers\lib\*.pdb ..\..\OutputPdb\pdb32\
+          xcopy .\ACE_wrappers\bin\*.pdb ..\..\OutputPdb\pdb32\
+
+      - name: Move setenv.cmd
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          xcopy setenv.cmd ..\..\Output\
+
+      - name: Prepare for packaging OpenDDS Binaries and PDB
+        run: |
+          Compress-Archive -Path .\Output\* -DestinationPath .\OpenDDS_Build_3.15.zip
+          Compress-Archive -Path .\OutputPdb\* -DestinationPath .\OpenDDS_PDB_Build_3.15.zip
+
+      - name: Prepare for packaging OpenDDS Headers
+        shell: cmd
+        run: |
+          7z a .\OpenDDS_Headers_3.15.zip .\third_party\OpenDDS\*.h -r
+          7z u .\OpenDDS_Headers_3.15.zip .\third_party\OpenDDS\*.inl -r
+
+      - name: Upload OpenDDS
+        shell: cmd
+        run: |
+          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_Build_3.15.zip
+          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_PDB_Build_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_PDB_Build_3.15.zip
+          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Headers_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_Headers_3.15.zip
+        env:
+          GITHUB_WORKSPACE: $GITHUB_WORKSPACE
+
+  # Verify if a build is needed
+  check_changes:
+    needs: [check_opendds, build_opendds_windows]
+    if: always()
+    name: Check changed files
+    outputs:
+      run_build_ddm_windows: ${{ steps.check_files.outputs.run_build_ddm_windows }}
+    runs-on: ubuntu-latest
+    steps:
+      - id: get_changed_files
+        uses: jitterbit/get-changed-files@v1
+        with:
+          format: 'csv'
+      - id: check_files
+        run: |
+          mapfile -d ',' -t added_modified_files < <(printf '%s,' '${{ steps.get_changed_files.outputs.added_modified }}')
+          for added_modified_file in "${added_modified_files[@]}"; do
+              if [[ $added_modified_file == "src/"* ]]; then
+                echo "$added_modified_file file is under the directory 'src/'."
+                echo "::set-output name=run_build_ddm_windows::true"
+                break
+              fi
+          done
+      - name: Get run_build_ddm_windows
+        run: echo "The selected run_build_ddm_windows is ${{ steps.check_files.outputs.run_build_ddm_windows }}"
+
+  # Now run "build_ddm_windows"
+  build_ddm_windows:
+    needs: check_changes
+    if: "always() && needs.check_changes.outputs.run_build_ddm_windows == 'true'"
+    # The type of runner that the job will run on
+    runs-on: windows-2019
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:   
       # Runs a set of commands using the runners shell
       # Support longpaths
       - name: Support long paths
