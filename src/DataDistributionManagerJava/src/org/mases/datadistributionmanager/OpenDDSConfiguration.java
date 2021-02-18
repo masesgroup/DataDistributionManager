@@ -42,6 +42,19 @@ public class OpenDDSConfiguration extends CommonConfiguration {
     }
 
     /**
+     * Duplicates a configuration
+     * 
+     * @param originalConf {@link IConfiguration} to duplicate
+     */
+    public OpenDDSConfiguration(IConfiguration originalConf) {
+        super(originalConf);
+        OpenDDSConfiguration conf = (OpenDDSConfiguration) originalConf;
+        if (conf != null) {
+            commandLineKeyValuePair = new HashMap<String, String>(conf.commandLineKeyValuePair);
+        }
+    }
+
+    /**
      * Automatically start DCPSInfoRepo
      * 
      * @return Automatically start DCPSInfoRepo

@@ -30,6 +30,7 @@ public abstract class CommonConfiguration extends GlobalConfiguration {
     public static final String ProducerTimeoutKey = "datadistributionmanager.timeout.producer";
     public static final String CommitTimeoutKey = "datadistributionmanager.timeout.commit";
     public static final String CommitSyncKey = "datadistributionmanager.commit.sync";
+    public static final String EventSyncKey = "datadistributionmanager.event.sync";
 
     /**
      * Initialize a new instance of {@link CommonConfiguration}
@@ -39,6 +40,15 @@ public abstract class CommonConfiguration extends GlobalConfiguration {
      */
     public CommonConfiguration(String protocol, String protolib) {
         super(protocol, protolib);
+    }
+
+    /**
+     * Duplicates a configuration
+     * 
+     * @param originalConf {@link IConfiguration} to duplicate
+     */
+    public CommonConfiguration(IConfiguration originalConf) {
+        super(originalConf);
     }
 
     /**
@@ -180,7 +190,7 @@ public abstract class CommonConfiguration extends GlobalConfiguration {
      * @return True to commit message in sync
      */
     public boolean getCommitSync() {
-        String value = keyValuePair.get(ProducerTimeoutKey);
+        String value = keyValuePair.get(CommitSyncKey);
         return (value == null) ? false : Boolean.parseBoolean(value);
     }
 
@@ -190,6 +200,25 @@ public abstract class CommonConfiguration extends GlobalConfiguration {
      * @param value True to commit message in sync
      */
     public void setCommitSync(Boolean value) {
-        keyValuePair.put(ProducerTimeoutKey, value.toString());
+        keyValuePair.put(CommitSyncKey, value.toString());
+    }
+
+    /**
+     * True to emit message receive events in sync
+     * 
+     * @return True to emit message receive events in sync
+     */
+    public boolean getEventSync() {
+        String value = keyValuePair.get(EventSyncKey);
+        return (value == null) ? false : Boolean.parseBoolean(value);
+    }
+
+    /**
+     * True to emit message receive events in sync
+     * 
+     * @param value True to emit message receive events in sync
+     */
+    public void setEventSync(Boolean value) {
+        keyValuePair.put(EventSyncKey, value.toString());
     }
 }

@@ -42,6 +42,17 @@ public abstract class GlobalConfiguration implements IConfiguration {
     }
 
     /**
+     * Duplicates a configuration
+     * @param originalConf {@link IConfiguration} to duplicate
+     */
+    GlobalConfiguration(IConfiguration originalConf) {
+        GlobalConfiguration conf = (GlobalConfiguration) originalConf;
+        if (conf != null) {
+            keyValuePair = new HashMap<String, String>(conf.keyValuePair);
+        }
+    }
+
+    /**
      * The protocol to use (e.g. kafka, opendds)
      * 
      * @return The protocol

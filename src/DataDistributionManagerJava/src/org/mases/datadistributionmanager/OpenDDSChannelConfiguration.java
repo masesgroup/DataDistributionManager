@@ -18,26 +18,13 @@
 
 package org.mases.datadistributionmanager;
 
-/**
- * The configuration class for Kafka
- */
-public class KafkaConfiguration extends CommonConfiguration {
-
-
-    /**
-     * Initialize a new instance of {@link KafkaConfiguration}
-     */
-    public KafkaConfiguration() {
-        super("kafka", "DataDistributionManagerKafka.dll");
-    }
-
+public class OpenDDSChannelConfiguration extends OpenDDSConfiguration {
     /**
      * Duplicates a configuration
      * 
-     * @param originalConf {@link IConfiguration} to duplicate
+     * @param originalConf {@link OpenDDSConfiguration} to duplicate
      */
-    public KafkaConfiguration(IConfiguration originalConf) {
+    public OpenDDSChannelConfiguration(OpenDDSConfiguration originalConf) {
         super(originalConf);
     }
-
 }

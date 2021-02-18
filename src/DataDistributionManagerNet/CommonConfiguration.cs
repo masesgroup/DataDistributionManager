@@ -55,6 +55,10 @@ namespace MASES.DataDistributionManager.Bindings
         /// Configuration key of <see cref="CommitSync"/>
         /// </summary>
         public const string CommitSyncKey = "datadistributionmanager.commit.sync";
+        /// <summary>
+        /// Configuration key of <see cref="EventSync"/>
+        /// </summary>
+        public const string EventSyncKey = "datadistributionmanager.event.sync";
 
         /// <summary>
         /// Initialize a new <see cref="CommonConfiguration"/>
@@ -64,6 +68,15 @@ namespace MASES.DataDistributionManager.Bindings
         public CommonConfiguration(string protocol, string protolib):
             base(protocol, protolib)
         {
+        }
+        /// <summary>
+        /// Duplicates a configuration
+        /// </summary>
+        /// <param name="originalConf"><see cref="IConfiguration"/> to duplicate</param>
+        public CommonConfiguration(IConfiguration originalConf)
+            : base(originalConf)
+        {
+
         }
 
         /// <summary>
@@ -199,6 +212,23 @@ namespace MASES.DataDistributionManager.Bindings
             set
             {
                 keyValuePair[CommitSyncKey] = value.ToString().ToLowerInvariant();
+            }
+        }
+
+        /// <summary>
+        /// True to emit message receive events in sync
+        /// </summary>
+        public bool EventSync
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(EventSyncKey, out value);
+                return bool.Parse(value);
+            }
+            set
+            {
+                keyValuePair[EventSyncKey] = value.ToString().ToLowerInvariant();
             }
         }
     }

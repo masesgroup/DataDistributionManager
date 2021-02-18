@@ -58,7 +58,9 @@
     <Compile Include="Interop\HRESULTType.cs" />
     <Compile Include="Interop\UnderlyingEvent.cs" />
     <Compile Include="ISmartDataDistributionMastership.cs" />
+    <Compile Include="KafkaChannelConfiguration.cs" />
     <Compile Include="KafkaConfiguration.cs" />
+    <Compile Include="OpenDDSChannelConfiguration.cs" />
     <Compile Include="OpenDDSConfiguration.cs" />
     <Compile Include="SmartDataDistribution.cs" />
     <Compile Include="SmartDataDistributionChannel.cs" />

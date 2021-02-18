@@ -68,7 +68,19 @@ namespace MASES.DataDistributionManager.Bindings
             : base("opendds", "DataDistributionManagerOpenDDS.dll")
         {
         }
-
+        /// <summary>
+        /// Duplicates a configuration
+        /// </summary>
+        /// <param name="originalConf"><see cref="IConfiguration"/> to duplicate</param>
+        public OpenDDSConfiguration(IConfiguration originalConf)
+            : base(originalConf)
+        {
+            OpenDDSConfiguration conf = originalConf as OpenDDSConfiguration;
+            if (conf !=null)
+            {
+                commandLineKeyValuePair = new Dictionary<string, string>(conf.commandLineKeyValuePair);
+            }
+        }
         /// <summary>
         /// Automatically start DCPSInfoRepo
         /// </summary>

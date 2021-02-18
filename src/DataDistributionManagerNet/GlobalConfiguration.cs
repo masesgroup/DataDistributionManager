@@ -58,6 +58,18 @@ namespace MASES.DataDistributionManager.Bindings
             Protocol = protocol;
             ProtocolLibrary = protolib;
         }
+        /// <summary>
+        /// Duplicates a configuration
+        /// </summary>
+        /// <param name="originalConf"><see cref="IConfiguration"/> to duplicate</param>
+        internal GlobalConfiguration(IConfiguration originalConf)
+        {
+            GlobalConfiguration conf = originalConf as GlobalConfiguration;
+            if (conf != null)
+            {
+                keyValuePair = new Dictionary<string, string>(conf.keyValuePair);
+            }
+        }
 
         /// <summary>
         /// The protocol to use (e.g. kafka, opendds)

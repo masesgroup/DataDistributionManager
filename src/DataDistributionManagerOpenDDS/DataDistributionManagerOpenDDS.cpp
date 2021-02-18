@@ -94,6 +94,11 @@ DDM_UNDERLYING_ERROR_CONDITION DataDistributionManagerOpenDDS::OpenDDSErrorMappe
 
 HRESULT DataDistributionManagerOpenDDS::conf_init(ChannelConfigurationOpenDDS* configuration, const char* arrayParams[], int len)
 {
+	if (NULL != configuration)
+	{
+		CreateQos(configuration);
+	}
+
 	return read_config_file(configuration, arrayParams, len);
 }
 
@@ -258,6 +263,45 @@ DWORD __stdcall DataDistributionManagerOpenDDS::readDataFromInfoRepo(void * argh
 	return 0;
 }
 
+HRESULT DataDistributionManagerOpenDDS::CreateQos(ChannelConfigurationOpenDDS* pChannelConfiguration)
+{
+	// Get QoS to use for our two channels
+	// Could also use TOPIC_QOS_DEFAULT instead
+	m_participant->get_default_topic_qos(pChannelConfiguration->m_channel_qos);
+
+	DDS::Duration_t duration;
+	duration.sec = 10;
+	duration.nanosec = 0;
+
+	pChannelConfiguration->m_channel_qos.deadline.period = duration;
+
+	// Get QoS to use for our two channels
+	// Could also use PUBLISHER_QOS_DEFAULT instead
+	m_participant->get_default_publisher_qos(pChannelConfiguration->m_publisher_qos);
+
+	// Get the default QoS for our Data Writers
+	// Could also use DATAWRITER_QOS_DEFAULT
+	pChannelConfiguration->publisher->get_default_datawriter_qos(pChannelConfiguration->m_dw_qos);
+
+	duration.sec = 10;
+	duration.nanosec = 0;
+
+	pChannelConfiguration->m_dw_qos.deadline.period = duration;
+
+	// Get QoS to use for our two channels
+	// Could also use SUBSCRIBER_QOS_DEFAULT instead
+	m_participant->get_default_subscriber_qos(pChannelConfiguration->m_subscriber_qos);
+
+	pChannelConfiguration->subscriber->get_default_datareader_qos(pChannelConfiguration->m_dr_qos);
+
+	duration.sec = 10;
+	duration.nanosec = 0;
+
+	pChannelConfiguration->m_dr_qos.deadline.period = duration;
+
+	return S_OK;
+}
+
 HRESULT DataDistributionManagerOpenDDS::Initialize()
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "Initialize");
@@ -280,9 +324,11 @@ HRESULT DataDistributionManagerOpenDDS::Initialize()
 		return E_FAIL;
 	}
 
+	m_dpf->get_default_participant_qos(m_domain_partecipant_qos);
+
 	m_participant = m_dpf->create_participant(
 		m_domainId,
-		PARTICIPANT_QOS_DEFAULT,
+		m_domain_partecipant_qos,
 		DDS::DomainParticipantListener::_nil(),
 		::OpenDDS::DCPS::DEFAULT_STATUS_MASK);
 
@@ -332,16 +378,6 @@ HRESULT DataDistributionManagerOpenDDS::Initialize()
 		return E_FAIL;
 	}
 
-	// Get QoS to use for our two channels
-	// Could also use TOPIC_QOS_DEFAULT instead
-	m_participant->get_default_topic_qos(m_default_channel_qos);
-
-	DDS::Duration_t duration;
-	duration.sec = 10;
-	duration.nanosec = 0;
-
-	m_default_channel_qos.deadline.period = duration;
-
 	return hr;
 }
 
@@ -349,7 +385,7 @@ HRESULT DataDistributionManagerOpenDDS::Lock(HANDLE channelHandle, DWORD timeout
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "Lock");
 
-	CAST_CHANNEL(ChannelConfigurationOpenDDS)
+	CAST_CHANNEL(ChannelConfigurationOpenDDS);
 	if (!GetSubSystemStarted())
 	{
 		LOG_ERROR("Channel %s - SubSystem not started.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
@@ -363,7 +399,7 @@ HRESULT DataDistributionManagerOpenDDS::Unlock(HANDLE channelHandle)
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "Unlock");
 
-	CAST_CHANNEL(ChannelConfigurationOpenDDS)
+	CAST_CHANNEL(ChannelConfigurationOpenDDS);
 	if (!GetSubSystemStarted())
 	{
 		LOG_ERROR("Channel %s - SubSystem not started.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
@@ -390,8 +426,6 @@ HANDLE DataDistributionManagerOpenDDS::CreateChannel(const char* channelName, ID
 
 	ChannelConfigurationOpenDDS* pChannelConfiguration = new ChannelConfigurationOpenDDS(sChannelName.c_str(), direction, this, dataCb);
 
-	std::string errstr;
-
 	int retVal = conf_init(pChannelConfiguration, (arrayParams == NULL) ? GetArrayParams() : arrayParams, (len == 0) ? GetArrayParamsLen() : len);
 	if (retVal != NO_ERROR)
 	{
@@ -399,20 +433,10 @@ HANDLE DataDistributionManagerOpenDDS::CreateChannel(const char* channelName, ID
 		return NULL;
 	}
 
-	// Get QoS to use for our two channels
-	// Could also use TOPIC_QOS_DEFAULT instead
-	m_participant->get_default_topic_qos(m_default_channel_qos);
-
-	DDS::Duration_t duration;
-	duration.sec = 10;
-	duration.nanosec = 0;
-
-	m_default_channel_qos.deadline.period = duration;
-
 	// Create a channel for the Quote type...
 	pChannelConfiguration->channel_channel = m_participant->create_topic(pChannelConfiguration->GetChannelName(),
 		DATADISTRIBUTION_SCHEMA_OPENDDSMSG_TYPE,
-		m_default_channel_qos,
+		pChannelConfiguration->m_channel_qos,
 		DDS::TopicListener::_nil(),
 		::OpenDDS::DCPS::DEFAULT_STATUS_MASK);
 
@@ -421,22 +445,13 @@ HANDLE DataDistributionManagerOpenDDS::CreateChannel(const char* channelName, ID
 		return NULL;
 	}
 
-	pChannelConfiguration->publisher = m_participant->create_publisher(PUBLISHER_QOS_DEFAULT,
+	pChannelConfiguration->publisher = m_participant->create_publisher(pChannelConfiguration->m_publisher_qos,
 		DDS::PublisherListener::_nil(),
 		::OpenDDS::DCPS::DEFAULT_STATUS_MASK);
 
-	// Get the default QoS for our Data Writers
-	// Could also use DATAWRITER_QOS_DEFAULT
-	pChannelConfiguration->publisher->get_default_datawriter_qos(pChannelConfiguration->dw_default_qos);
-
-	duration.sec = 10;
-	duration.nanosec = 0;
-
-	pChannelConfiguration->dw_default_qos.deadline.period = duration;
-
 	// Create a Primary DataWriter for the Quote channel
 	pChannelConfiguration->channel_base_dw = pChannelConfiguration->publisher->create_datawriter(pChannelConfiguration->channel_channel.in(),
-		pChannelConfiguration->dw_default_qos,
+		pChannelConfiguration->m_dw_qos,
 		DDS::DataWriterListener::_nil(),
 		::OpenDDS::DCPS::DEFAULT_STATUS_MASK);
 	if (CORBA::is_nil(pChannelConfiguration->channel_base_dw.in())) {
@@ -452,7 +467,7 @@ HANDLE DataDistributionManagerOpenDDS::CreateChannel(const char* channelName, ID
 
 	// Create a subscriber for the two channels
 	// (SUBSCRIBER_QOS_DEFAULT is defined in Marked_Default_Qos.h)
-	pChannelConfiguration->subscriber = m_participant->create_subscriber(SUBSCRIBER_QOS_DEFAULT,
+	pChannelConfiguration->subscriber = m_participant->create_subscriber(pChannelConfiguration->m_subscriber_qos,
 		DDS::SubscriberListener::_nil(),
 		::OpenDDS::DCPS::DEFAULT_STATUS_MASK);
 	if (CORBA::is_nil(pChannelConfiguration->subscriber.in())) {
@@ -462,16 +477,9 @@ HANDLE DataDistributionManagerOpenDDS::CreateChannel(const char* channelName, ID
 
 	// Create DataReaders and DataReaderListeners for the
 
-	pChannelConfiguration->channel_listener = DDS::DataReaderListener::_nil(); //  new CommonDataReaderListenerImpl(pChannelConfiguration);
-	pChannelConfiguration->subscriber->get_default_datareader_qos(pChannelConfiguration->dr_default_qos);
-
-	duration.sec = 10;
-	duration.nanosec = 0;
-
-	pChannelConfiguration->dr_default_qos.deadline.period = duration;
-
+	pChannelConfiguration->channel_listener = pChannelConfiguration->GetEventSync() ? DDS::DataReaderListener::_nil() : new CommonDataReaderListenerImpl(pChannelConfiguration);
 	pChannelConfiguration->channel_base_dr = pChannelConfiguration->subscriber->create_datareader(pChannelConfiguration->channel_channel.in(),
-		pChannelConfiguration->dr_default_qos,
+		pChannelConfiguration->m_dr_qos,
 		pChannelConfiguration->channel_listener.in(),
 		::OpenDDS::DCPS::DEFAULT_STATUS_MASK);
 
@@ -495,7 +503,7 @@ HRESULT DataDistributionManagerOpenDDS::StartChannel(HANDLE channelHandle, DWORD
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "StartChannel");
 
-	CAST_CHANNEL(ChannelConfigurationOpenDDS)
+	CAST_CHANNEL(ChannelConfigurationOpenDDS);
 
 	if (!GetSubSystemStarted())
 	{
@@ -511,7 +519,7 @@ HRESULT DataDistributionManagerOpenDDS::StopChannel(HANDLE channelHandle, DWORD 
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "StopChannel");
 
-	CAST_CHANNEL(ChannelConfigurationOpenDDS)
+	CAST_CHANNEL(ChannelConfigurationOpenDDS);
 	if (!GetSubSystemStarted())
 	{
 		LOG_ERROR("Channel %s - SubSystem not started.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
@@ -525,7 +533,7 @@ void DataDistributionManagerOpenDDS::SetParameter(HANDLE channelHandle, const ch
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "SetParameter");
 
-	CAST_CHANNEL(ChannelConfigurationOpenDDS)
+	CAST_CHANNEL(ChannelConfigurationOpenDDS);
 
 	LOG_INFO("Channel %s - Name: %s - Value: %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", (paramName != NULL) ? paramName : "", (paramValue != NULL) ? paramValue : "");
 
@@ -534,7 +542,7 @@ void DataDistributionManagerOpenDDS::SetParameter(HANDLE channelHandle, const ch
 	if (NULL != channelHandle)
 	{
 		// Non global params
-		
+
 	}
 	else
 	{
@@ -592,12 +600,13 @@ static const char* ConvertIToA(size_t value)
 const char* DataDistributionManagerOpenDDS::GetParameter(HANDLE channelHandle, const char* paramName)
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "GetParameter");
-	CAST_CHANNEL(ChannelConfigurationOpenDDS)
+	CAST_CHANNEL(ChannelConfigurationOpenDDS);
+
 	LOG_INFO("Channel %s - Name: %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", (paramName != NULL) ? paramName : "");
 
 	if (NULL != channelHandle)
 	{
-		
+
 	}
 	else
 	{
@@ -631,7 +640,7 @@ HRESULT DataDistributionManagerOpenDDS::SeekChannel(HANDLE channelHandle, size_t
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "SeekChannel");
 
-	CAST_CHANNEL(ChannelConfigurationOpenDDS)
+	CAST_CHANNEL(ChannelConfigurationOpenDDS);
 
 	if (!GetSubSystemStarted())
 	{
@@ -647,7 +656,7 @@ HRESULT DataDistributionManagerOpenDDS::DeleteChannel(HANDLE channelHandle)
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "DeleteChannel");
 
-	CAST_CHANNEL(ChannelConfigurationOpenDDS)
+	CAST_CHANNEL(ChannelConfigurationOpenDDS);
 
 	if (!GetSubSystemStarted())
 	{
@@ -663,7 +672,7 @@ HRESULT DataDistributionManagerOpenDDS::WriteOnChannel(HANDLE channelHandle, con
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "WriteOnChannel");
 
-	CAST_CHANNEL(ChannelConfigurationOpenDDS)
+	CAST_CHANNEL(ChannelConfigurationOpenDDS);
 
 	if (!GetSubSystemStarted())
 	{
@@ -733,7 +742,7 @@ HRESULT DataDistributionManagerOpenDDS::ReadFromChannel(HANDLE channelHandle, in
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "ReadFromChannel");
 
-	CAST_CHANNEL(ChannelConfigurationOpenDDS)
+	CAST_CHANNEL(ChannelConfigurationOpenDDS);
 
 	if (!GetSubSystemStarted())
 	{
@@ -748,7 +757,7 @@ HRESULT DataDistributionManagerOpenDDS::ReadFromChannel(HANDLE channelHandle, in
 HRESULT DataDistributionManagerOpenDDS::ChangeChannelDirection(HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction)
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "ReadFromChannel");
-	CAST_CHANNEL(ChannelConfigurationOpenDDS)
+	CAST_CHANNEL(ChannelConfigurationOpenDDS);
 
 	DDM_CHANNEL_DIRECTION oldDirection = pChannelConfiguration->GetDirection();
 

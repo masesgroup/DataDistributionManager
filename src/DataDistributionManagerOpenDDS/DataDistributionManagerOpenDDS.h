@@ -78,17 +78,18 @@ private:
 	static DWORD __stdcall consumerHandler(void * argh);
 	static DWORD __stdcall readDataFromInfoRepo(void * argh);
 	HRESULT InitializeInfoRepo();
+	HRESULT CreateQos(ChannelConfigurationOpenDDS* configuration);
 private:
 	::DDS::DomainId_t m_domainId;
 	DataDistributionSchema::OpenDDSMsgTypeSupport_var openddsmsg_servant;
 	DDS::DomainParticipantFactory_var m_dpf;
 	DDS::DomainParticipant_var m_participant;
-	DDS::TopicQos m_default_channel_qos;
-
 	std::string	m_cmdLine;
 	ACE_ARGV_T<char>* m_myArgs;
 	int m_argc;
 	char** m_argv;
+
+	::DDS::DomainParticipantQos m_domain_partecipant_qos;
 
 	::CORBA::Boolean m_bStartDCPSInfoRepo;
 	::CORBA::Boolean m_bDCPSInfoRepoLogOnApplication;
@@ -114,15 +115,18 @@ public:
 	}
 
 	DDS::Topic_var channel_channel;
-
 	DDS::Publisher_var publisher;
-	DDS::DataWriterQos dw_default_qos;
+
+	DDS::DataWriterQos m_dw_qos;
+	DDS::TopicQos m_channel_qos;
+	DDS::PublisherQos m_publisher_qos;
+	DDS::SubscriberQos m_subscriber_qos;
 
 	DDS::DataWriter_var channel_base_dw;
 	DataDistributionSchema::OpenDDSMsgDataWriter_var channel_dw;
 
 	DDS::Subscriber_var subscriber;
-	DDS::DataReaderQos dr_default_qos;
+	DDS::DataReaderQos m_dr_qos;
 
 	DDS::DataReaderListener_var channel_listener;
 	DDS::DataReader_var channel_base_dr;

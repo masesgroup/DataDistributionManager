@@ -135,6 +135,8 @@ public:
 
 	BOOL GetCommitSync();
 	void SetCommitSync(BOOL);
+	BOOL GetEventSync();
+	void SetEventSync(BOOL val);
 	int  GetCreateChannelTimeout();
 	void SetCreateChannelTimeout(int);
 	int  GetChannelSeekTimeout();
@@ -158,6 +160,7 @@ protected:
 
 private:
 	BOOL m_CommitSync;
+	BOOL m_EventSync;
 	int  m_CreateChannelTimeout;
 	int  m_ChannelSeekTimeout;
 	int  m_KeepAliveTimeout;

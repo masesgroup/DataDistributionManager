@@ -178,6 +178,15 @@ void DataDistributionCommon::SetParameter(HANDLE channelHandle, const char* para
 				pChannelConfiguration->SetCommitSync(FALSE);
 			return;
 		}
+		else if (!strcmp(paramName, "datadistributionmanager.event.sync"))
+		{
+			if (!strcmp(paramValue, "true") ||
+				!strcmp(paramValue, "1"))
+				pChannelConfiguration->SetCommitSync(TRUE);
+			else
+				pChannelConfiguration->SetCommitSync(FALSE);
+			return;
+		}
 	}
 	else
 	{
@@ -420,6 +429,7 @@ ChannelConfiguration::ChannelConfiguration(const char* channelName, DDM_CHANNEL_
 	m_StartupStatus = CHANNEL_STARTUP_TYPE::UNDEFINED;
 
 	m_CommitSync = TRUE;
+	m_EventSync = TRUE;
 	m_CreateChannelTimeout = 10000;
 	m_ChannelSeekTimeout = 10000;
 	m_KeepAliveTimeout = 1000;
@@ -616,6 +626,9 @@ void ChannelConfiguration::WaitingFinishLockState(DWORD dwMilliseconds)
 
 BOOL ChannelConfiguration::GetCommitSync() { return m_CommitSync; }
 void ChannelConfiguration::SetCommitSync(BOOL val) { m_CommitSync = val; }
+
+BOOL ChannelConfiguration::GetEventSync() { return m_EventSync; }
+void ChannelConfiguration::SetEventSync(BOOL val) { m_EventSync = val; }
 
 int  ChannelConfiguration::GetCreateChannelTimeout() { return m_CreateChannelTimeout; }
 void ChannelConfiguration::SetCreateChannelTimeout(int val) { m_CreateChannelTimeout = val; }
