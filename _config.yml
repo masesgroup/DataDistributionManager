@@ -19,7 +19,9 @@ defaults:
         overlay_color: "#333"
         overlay_filter: 0.5
         actions:
+          - label: "Nuget"
+            url: "https://www.nuget.org/packages/DataDistributionManager/"
           - label: "Browse repository"
-            url: "https://github.com/masesgroup/JCOReflector"
+            url: "https://github.com/masesgroup/DataDistributionManager"
           - label: "Download"
-            url: "https://github.com/masesgroup/JCOReflector/releases/"
+            url: "https://github.com/masesgroup/DataDistributionManager/releases/"
