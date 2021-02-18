@@ -1,0 +1,23 @@
+main:
+  - title: "Home"
+    url: https://masesgroup.github.io/
+  - title: "Sinapse Platform"
+    url: https://masesgroup.github.io/sinapse/
+  - title: "JCOBridge"
+    url: https://masesgroup.github.io/JCOBridge/
+  - title: "JCOReflector"
+    url: https://masesgroup.github.io/JCOReflector/
+  - title: "JCO SWT Bridge"
+    url: https://masesgroup.github.io/JCOSWTBridge/
+  - title: "JCOBridge Examples"
+    url: https://masesgroup.github.io/JCOBridge-Examples
+  - title: "Data Distribution Manager"
+    url: https://masesgroup.github.io/DataDistributionManager
+    
+sidebar_elements:
+  - title: External links
+    children:
+      - title: "Sinapse Platform Official site"
+        url: https://www.sinapsesystem.com
+      - title: "JCOBridge Official site"
+        url: https://www.jcobridge.com
