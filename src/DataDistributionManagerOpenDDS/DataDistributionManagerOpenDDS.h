@@ -78,7 +78,12 @@ private:
 	static DWORD __stdcall consumerHandler(void * argh);
 	static DWORD __stdcall readDataFromInfoRepo(void * argh);
 	HRESULT InitializeInfoRepo();
-	HRESULT CreateQos(ChannelConfigurationOpenDDS* configuration);
+	void SetDomainParticipantQos(DDS::DomainParticipantQos* qos, const char* arrayParams[], int len);
+	void SetTopicQos(DDS::TopicQos* qos, const char* arrayParams[], int len);
+	void SetPublisherQos(DDS::PublisherQos* qos, const char* arrayParams[], int len);
+	void SetSubscriberQos(DDS::SubscriberQos* qos, const char* arrayParams[], int len);
+	void SetDataWriterQos(DDS::DataWriterQos* qos, const char* arrayParams[], int len);
+	void SetDataReaderQos(DDS::DataReaderQos* qos, const char* arrayParams[], int len);
 private:
 	::DDS::DomainId_t m_domainId;
 	DataDistributionSchema::OpenDDSMsgTypeSupport_var openddsmsg_servant;

@@ -17,6 +17,8 @@
 */
 
 import org.mases.datadistributionmanager.*;
+import org.mases.datadistributionmanager.OpenDDSConfiguration.DCPSInfoRepoConfiguration;
+import org.mases.datadistributionmanager.OpenDDSConfiguration.OpenDDSArgsConfiguration;
 
 public class DataDistributionManagerJavaTest {
 	public static void main(String args[]) {
@@ -25,15 +27,30 @@ public class DataDistributionManagerJavaTest {
 		DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.RECEIVER;
 		MySmartDataDistribution dataDistribution = new MySmartDataDistribution();
 		HRESULT hRes = HRESULT.S_OK;
+		OpenDDSConfiguration conf = new OpenDDSConfiguration();
 		if (args.length == 0) {
-			OpenDDSConfiguration conf = new OpenDDSConfiguration();
+			OpenDDSArgsConfiguration argsConf = conf.new OpenDDSArgsConfiguration();
 			// set the full command line
-			// conf.setCommandLine("-DCPSConfigFile dds_tcp_conf.ini -DCPSTransportDebugLevel 10");
-			// set direct values
-			conf.setDCPSInfoRepoAutostart(true);
-			conf.setDCPSInfoRepoCommandLine("-ORBEndpoint iiop://localhost:12345");
-			conf.setDCPSConfigFile("dds_tcp_conf.ini");
-			conf.setDCPSTransportDebugLevel(10);
+			// argsConf.setCommandLine("-DCPSConfigFile dds_tcp_conf.ini
+			// -DCPSTransportDebugLevel 10");
+			argsConf.setDCPSConfigFile("dds_tcp_conf.ini");
+			argsConf.setDCPSTransportDebugLevel(10);
+			conf.setOpenDDSArgs(argsConf);
+			DCPSInfoRepoConfiguration infoRepo = conf.new DCPSInfoRepoConfiguration(true, "-ORBEndpoint iiop://localhost:12345");
+			conf.setDCPSInfoRepo(infoRepo);
+			DomainParticipantQosConfiguration domainPartQos = new DomainParticipantQosConfiguration();
+			domainPartQos.EntityFactoryQosPolicy = new EntityFactoryQosPolicyConfiguration();
+			domainPartQos.EntityFactoryQosPolicy.setAutoenableCreatedEntities(true);
+			domainPartQos.UserDataQosPolicy = new UserDataQosPolicyConfiguration();
+			domainPartQos.UserDataQosPolicy.setValue(new Byte[] { 102, 105 });
+			domainPartQos.PropertyQosPolicy = new PropertyQosPolicyConfiguration();
+			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_IDENTITY_CA = domainPartQos.PropertyQosPolicy.new Property("ciao", false);
+			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_IDENTITY_CERT = domainPartQos.PropertyQosPolicy.new Property("ciao", false);
+			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_IDENTITY_PRIVKEY = domainPartQos.PropertyQosPolicy.new Property("ciao", false);
+			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_PERM_CA = domainPartQos.PropertyQosPolicy.new Property("ciao", false);
+			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_PERM_DOC = domainPartQos.PropertyQosPolicy.new Property("ciao", false);
+			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_PERM_GOV_DOC = domainPartQos.PropertyQosPolicy.new Property("ciao", false);
+			conf.setDomainParticipantQos(domainPartQos);
 			String[] confRes = conf.getConfiguration();
 			hRes = dataDistribution.Initialize(conf);
 		} else {
@@ -50,7 +67,8 @@ public class DataDistributionManagerJavaTest {
 		if (hRes.getFailed()) {
 			return;
 		}
-
+		OpenDDSChannelConfiguration channelConf = new OpenDDSChannelConfiguration(conf);
+		String[] channelConfRes = channelConf.getConfiguration();
 		MySmartDataDistributionTopic mytestTopic;
 		try {
 			mytestTopic = dataDistribution.CeateSmartChannel(MySmartDataDistributionTopic.class, "test");

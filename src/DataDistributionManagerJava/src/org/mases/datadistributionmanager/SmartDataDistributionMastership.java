@@ -73,7 +73,8 @@ class SmartDataDistributionMastership implements ISmartDataDistributionMastershi
         long[] indexes = NativeInterface
                 .IDataDistributionMastershipCommon_GetClusterIndexes(IDataDistribution_instance);
         for (long l : indexes) {
-            ClusterHealthElement elem =  NativeInterface.IDataDistributionMastershipCommon_GetClusterHealth(IDataDistribution_instance, l );
+            ClusterHealthElement elem = NativeInterface
+                    .IDataDistributionMastershipCommon_GetClusterHealth(IDataDistribution_instance, l);
             map.put(l, elem);
         }
         return map;

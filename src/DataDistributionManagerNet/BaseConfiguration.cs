@@ -16,34 +16,40 @@
 *  Refer to LICENSE for more information.
 */
 
-using System;
+using System.Collections.Generic;
 
 namespace MASES.DataDistributionManager.Bindings
 {
     /// <summary>
-    /// The configuration class for Kafka
+    /// The base configuration class
     /// </summary>
-    public class KafkaConfiguration : CommonConfiguration
+    public abstract class BaseConfiguration : IConfiguration
     {
         /// <summary>
-        /// Initialize a <see cref="KafkaConfiguration"/>
+        /// The list of key/value pairs
         /// </summary>
-        public KafkaConfiguration()
-#if DEBUG
-             : base("kafka", "DataDistributionManagerKafkad.dll")
-#else
-            : base("kafka", "DataDistributionManagerKafka.dll")
-#endif
-        {
-        }
+        protected Dictionary<string, string> keyValuePair = new Dictionary<string, string>();
+
         /// <summary>
-        /// Duplicates a configuration
+        /// Checks the configuration for mandatory information
         /// </summary>
-        /// <param name="originalConf"><see cref="IConfiguration"/> to duplicate</param>
-        public KafkaConfiguration(IConfiguration originalConf)
-            : base(originalConf)
+        protected virtual void CheckConfiguration()
         {
 
+        }
+
+        /// <see cref="IConfiguration.Configuration"/>
+        public virtual string[] Configuration
+        {
+            get
+            {
+                List<string> lst = new List<string>();
+                foreach (var item in keyValuePair)
+                {
+                    lst.Add(string.Format("{0}={1}", item.Key, item.Value));
+                }
+                return lst.ToArray();
+            }
         }
     }
 }

@@ -94,11 +94,6 @@ DDM_UNDERLYING_ERROR_CONDITION DataDistributionManagerOpenDDS::OpenDDSErrorMappe
 
 HRESULT DataDistributionManagerOpenDDS::conf_init(ChannelConfigurationOpenDDS* configuration, const char* arrayParams[], int len)
 {
-	if (NULL != configuration)
-	{
-		CreateQos(configuration);
-	}
-
 	return read_config_file(configuration, arrayParams, len);
 }
 
@@ -174,7 +169,11 @@ HRESULT DataDistributionManagerOpenDDS::InitializeInfoRepo()
 	{
 		// get path of DataDistributionManagerOpenDDS.dll because DCPSInfoRepo is in the same folder
 		TCHAR oldPath[64 * 1024];
+#if DEBUG
+		std::string moduleName("DataDistributionManagerOpenDDSd.dll");
+#else
 		std::string moduleName("DataDistributionManagerOpenDDS.dll");
+#endif
 		TCHAR pathToDll[MAX_PATH];
 		HMODULE ddm_Module = GetModuleHandle(moduleName.c_str());
 		DWORD moduleNameLen = GetModuleFileName(ddm_Module, pathToDll, MAX_PATH);
@@ -263,45 +262,6 @@ DWORD __stdcall DataDistributionManagerOpenDDS::readDataFromInfoRepo(void * argh
 	return 0;
 }
 
-HRESULT DataDistributionManagerOpenDDS::CreateQos(ChannelConfigurationOpenDDS* pChannelConfiguration)
-{
-	// Get QoS to use for our two channels
-	// Could also use TOPIC_QOS_DEFAULT instead
-	m_participant->get_default_topic_qos(pChannelConfiguration->m_channel_qos);
-
-	DDS::Duration_t duration;
-	duration.sec = 10;
-	duration.nanosec = 0;
-
-	pChannelConfiguration->m_channel_qos.deadline.period = duration;
-
-	// Get QoS to use for our two channels
-	// Could also use PUBLISHER_QOS_DEFAULT instead
-	m_participant->get_default_publisher_qos(pChannelConfiguration->m_publisher_qos);
-
-	// Get the default QoS for our Data Writers
-	// Could also use DATAWRITER_QOS_DEFAULT
-	pChannelConfiguration->publisher->get_default_datawriter_qos(pChannelConfiguration->m_dw_qos);
-
-	duration.sec = 10;
-	duration.nanosec = 0;
-
-	pChannelConfiguration->m_dw_qos.deadline.period = duration;
-
-	// Get QoS to use for our two channels
-	// Could also use SUBSCRIBER_QOS_DEFAULT instead
-	m_participant->get_default_subscriber_qos(pChannelConfiguration->m_subscriber_qos);
-
-	pChannelConfiguration->subscriber->get_default_datareader_qos(pChannelConfiguration->m_dr_qos);
-
-	duration.sec = 10;
-	duration.nanosec = 0;
-
-	pChannelConfiguration->m_dr_qos.deadline.period = duration;
-
-	return S_OK;
-}
-
 HRESULT DataDistributionManagerOpenDDS::Initialize()
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "Initialize");
@@ -325,6 +285,8 @@ HRESULT DataDistributionManagerOpenDDS::Initialize()
 	}
 
 	m_dpf->get_default_participant_qos(m_domain_partecipant_qos);
+
+	SetDomainParticipantQos(&m_domain_partecipant_qos, GetArrayParams(), GetArrayParamsLen());
 
 	m_participant = m_dpf->create_participant(
 		m_domainId,
@@ -409,6 +371,704 @@ HRESULT DataDistributionManagerOpenDDS::Unlock(HANDLE channelHandle)
 	return pChannelConfiguration->ResetLockState();
 }
 
+static void ConvertMillisecondsToDuration(DDS::Duration_t* duration, int value)
+{
+	duration->sec = value / 1000;
+	duration->nanosec = (value % 1000) * 1000000;
+}
+
+static void ConvertMillisecondsToDuration(DDS::Duration_t* duration, const char* value)
+{
+	int millisecods = atoi(value);
+	ConvertMillisecondsToDuration(duration, millisecods);
+}
+
+static const char* ConvertHexStringToByteArray(const char* value)
+{
+	const char *pos = value;
+	size_t elements = strlen(value) / 2;
+	char* val = (char*)calloc(elements, sizeof(char));
+	for (size_t count = 0; count < strlen(value) / 2; count++)
+	{
+		sscanf(pos, "%2hhx", &val[count]);
+		pos += 2;
+	}
+	return val;
+}
+
+static const char* ConvertIToA(int value)
+{
+	return _strdup(itoa(value, NULL, 0));
+}
+
+static const char* ConvertIToA(size_t value)
+{
+#ifdef _WIN64
+	return _strdup(_ui64toa(value, NULL, 0));
+#else
+	return _strdup(itoa(value, NULL, 0));
+#endif
+}
+
+/* List of all policies strings: replace qos with the right qos set (topicqos, publisherqos, subscriberqos, datawriterqos, datareaderqos)
+
+"datadistributionmanager.opendds.qos.propertyqospolicy.value";
+"datadistributionmanager.opendds.qos.propertyqospolicy.binary_value";
+
+"datadistributionmanager.opendds.qos.durabilityqospolicy.kind";
+
+"datadistributionmanager.opendds.qos.durabilityserviceqospolicy.service_cleanup_delay";
+"datadistributionmanager.opendds.qos.durabilityserviceqospolicy.kind";
+"datadistributionmanager.opendds.qos.durabilityserviceqospolicy.history_depth";
+"datadistributionmanager.opendds.qos.durabilityserviceqospolicy.max_samples";
+"datadistributionmanager.opendds.qos.durabilityserviceqospolicy.max_instances";
+"datadistributionmanager.opendds.qos.durabilityserviceqospolicy.max_samples_per_instance";
+
+"datadistributionmanager.opendds.qos.deadlineqospolicy.period";
+
+"datadistributionmanager.opendds.qos.latencybudgetqospolicy.period";
+
+"datadistributionmanager.opendds.qos.livelinessqospolicy.kind";
+"datadistributionmanager.opendds.qos.livelinessqospolicy.lease_duration";
+
+"datadistributionmanager.opendds.qos.reliabilityqospolicy.kind";
+"datadistributionmanager.opendds.qos.reliabilityqospolicy.max_blocking_time";
+
+"datadistributionmanager.opendds.qos.destinationorderqospolicy.kind";
+
+"datadistributionmanager.opendds.qos.historyqospolicy.kind";
+"datadistributionmanager.opendds.qos.historyqospolicy.depth";
+
+"datadistributionmanager.opendds.qos.resourcelimitsqospolicy.max_samples";
+"datadistributionmanager.opendds.qos.resourcelimitsqospolicy.max_instances";
+"datadistributionmanager.opendds.qos.resourcelimitsqospolicy.max_samples_per_instance";
+
+"datadistributionmanager.opendds.qos.transportpriorityqospolicy.value";
+
+"datadistributionmanager.opendds.qos.lifespanqospolicy.duration";
+
+"datadistributionmanager.opendds.qos.ownershipqospolicy.kind";
+
+"datadistributionmanager.opendds.qos.ownershipstrengthqospolicy.value";
+
+"datadistributionmanager.opendds.qos.writerdatalifecycleqospolicy.autodispose_unregistered_instances";
+
+"datadistributionmanager.opendds.qos.presentationqospolicy.access_scope";
+"datadistributionmanager.opendds.qos.presentationqospolicy.coherent_access";
+"datadistributionmanager.opendds.qos.presentationqospolicy.ordered_access";
+
+"datadistributionmanager.opendds.qos.partitionqospolicy.name";
+
+"datadistributionmanager.opendds.qos.timebasedfilterqospolicy.minimum_separation";
+
+"datadistributionmanager.opendds.qos.readerdatalifecycleqospolicy.autopurge_nowriter_samples_delay";
+"datadistributionmanager.opendds.qos.readerdatalifecycleqospolicy.autopurge_disposed_samples_delay";
+
+"datadistributionmanager.opendds.qos.entityfactoryqospolicy.autoenable_created_entities";
+
+"datadistributionmanager.opendds.qos.userdataqospolicy.value";
+
+"datadistributionmanager.opendds.qos.topicdataqospolicy.value";
+
+"datadistributionmanager.opendds.qos.groupdataqospolicy.value";
+*/
+
+void DataDistributionManagerOpenDDS::SetDomainParticipantQos(DDS::DomainParticipantQos* qos, const char* arrayParams[], int len)
+{
+	for (size_t i = 0; i < len; i++)
+	{
+		std::string line(arrayParams[i]);
+
+		/* Trim string */
+		line.erase(0, line.find_first_not_of("\t "));
+		line.erase(line.find_last_not_of("\t ") + 1);
+
+		if (line.length() == 0 ||
+			line.substr(0, 1) == "#")
+			continue;
+
+		size_t f = line.find("=");
+		if (f == std::string::npos)
+		{
+			Log(DDM_LOG_LEVEL::ERROR_LEVEL, "DataDistributionManagerOpenDDS", "SetDomainParticipantQos", "Conf file: malformed line: %s", line.c_str());
+			continue;
+		}
+
+		std::string n = line.substr(0, f);
+		std::string v = line.substr(f + 1);
+
+		// DDS::UserDataQosPolicy user_data;
+		if (n == "datadistributionmanager.opendds.domainparticipantqos.userdataqospolicy.value")
+		{
+			qos->user_data.value.replace((::CORBA::ULong)v.size() / 2, (::CORBA::ULong)v.size() / 2, (::CORBA::Octet*)ConvertHexStringToByteArray(v.c_str()), true);
+		}
+		// DDS::EntityFactoryQosPolicy entity_factory;
+		else if (n == "datadistributionmanager.opendds.domainparticipantqos.entityfactoryqospolicy.autoenable_created_entities")
+		{
+			if (v == "true" || v == "1")
+				qos->entity_factory.autoenable_created_entities = true;
+			else
+				qos->entity_factory.autoenable_created_entities = false;
+		}
+		// DDS::PropertyQosPolicy property;
+		else if (n == "datadistributionmanager.opendds.domainparticipantqos.propertyqospolicy.value")
+		{
+			std::istringstream input(v);
+			std::string line_value;
+			while (std::getline(input, line_value, '|'))
+			{
+				/* Trim string */
+				std::string propName = line_value.substr(0, line_value.find_first_of(";"));
+				line_value = line_value.erase(0, line_value.find_first_of(";") + 1);
+				std::string propVal = line_value.substr(0, line_value.find_first_of(";"));
+				line_value = line_value.erase(0, line_value.find_first_of(";") + 1);
+				std::string propagate = line_value;
+				bool bpropagate = false;
+
+				if (propagate == "true" || v == "1")
+					bpropagate = true;
+				else
+					bpropagate = false;
+
+				const DDS::Property_t prop = { propName.c_str(), propVal.c_str(), bpropagate };
+				const unsigned int propertyLen = qos->property.value.length();
+				qos->property.value.length(propertyLen + 1);
+				qos->property.value[propertyLen] = prop;
+			}
+		}
+		else if (n == "datadistributionmanager.opendds.domainparticipantqos.propertyqospolicy.binary_value")
+		{
+
+		}
+	}
+}
+
+void DataDistributionManagerOpenDDS::SetTopicQos(DDS::TopicQos* qos, const char* arrayParams[], int len)
+{
+	ConvertMillisecondsToDuration(&qos->deadline.period, 10001);
+
+	for (size_t i = 0; i < len; i++)
+	{
+		std::string line(arrayParams[i]);
+
+		/* Trim string */
+		line.erase(0, line.find_first_not_of("\t "));
+		line.erase(line.find_last_not_of("\t ") + 1);
+
+		if (line.length() == 0 ||
+			line.substr(0, 1) == "#")
+			continue;
+
+		size_t f = line.find("=");
+		if (f == std::string::npos)
+		{
+			Log(DDM_LOG_LEVEL::ERROR_LEVEL, "DataDistributionManagerOpenDDS", "SetTopicQos", "Conf file: malformed line: %s", line.c_str());
+			continue;
+		}
+
+		std::string n = line.substr(0, f);
+		std::string v = line.substr(f + 1);
+
+		// DDS::TopicDataQosPolicy topic_data;
+		if (n == "datadistributionmanager.opendds.topicqos.topicdataqospolicy.value")
+		{
+			qos->topic_data.value.replace((::CORBA::ULong)v.size() / 2, (::CORBA::ULong)v.size() / 2, (::CORBA::Octet*)ConvertHexStringToByteArray(v.c_str()), true);
+		}
+		// DDS::DurabilityQosPolicy durability;
+		else if (n == "datadistributionmanager.opendds.topicqos.durabilityqospolicy.kind")
+		{
+			qos->durability.kind = (DDS::DurabilityQosPolicyKind)atoi(v.c_str());
+		}
+		// DDS::DurabilityServiceQosPolicy durability_service;
+		else if (n == "datadistributionmanager.opendds.topicqos.durabilityserviceqospolicy.service_cleanup_delay")
+		{
+			ConvertMillisecondsToDuration(&qos->durability_service.service_cleanup_delay, v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.topicqos.durabilityserviceqospolicy.kind")
+		{
+			qos->durability_service.history_kind = (DDS::HistoryQosPolicyKind)atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.topicqos.durabilityserviceqospolicy.history_depth")
+		{
+			qos->durability_service.history_depth = atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.topicqos.durabilityserviceqospolicy.max_samples")
+		{
+			qos->durability_service.max_samples = atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.topicqos.durabilityserviceqospolicy.max_instances")
+		{
+			qos->durability_service.max_instances = atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.topicqos.durabilityserviceqospolicy.max_samples_per_instance")
+		{
+			qos->durability_service.max_samples_per_instance = atoi(v.c_str());
+		}
+		// DDS::DeadlineQosPolicy deadline;
+		else if (n == "datadistributionmanager.opendds.topicqos.deadlineqospolicy.period")
+		{
+			ConvertMillisecondsToDuration(&qos->deadline.period, v.c_str());
+		}
+		// DDS::LatencyBudgetQosPolicy latency_budget;
+		else if (n == "datadistributionmanager.opendds.topicqos.latencybudgetqospolicy.period")
+		{		
+			ConvertMillisecondsToDuration(&qos->latency_budget.duration, v.c_str());
+		}
+		// DDS::LivelinessQosPolicy liveliness;
+		else if (n == "datadistributionmanager.opendds.topicqos.livelinessqospolicy.kind")
+		{
+			qos->liveliness.kind = (DDS::LivelinessQosPolicyKind)atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.topicqos.livelinessqospolicy.lease_duration")
+		{
+			ConvertMillisecondsToDuration(&qos->liveliness.lease_duration, v.c_str());
+		}
+		// DDS::ReliabilityQosPolicy reliability;
+		else if (n == "datadistributionmanager.opendds.topicqos.reliabilityqospolicy.kind")
+		{
+			qos->reliability.kind = (DDS::ReliabilityQosPolicyKind)atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.topicqos.reliabilityqospolicy.max_blocking_time")
+		{
+			ConvertMillisecondsToDuration(&qos->reliability.max_blocking_time, v.c_str());
+		}
+		// DDS::DestinationOrderQosPolicy destination_order;
+		else if (n == "datadistributionmanager.opendds.topicqos.destinationorderqospolicy.kind")
+		{
+			qos->destination_order.kind = (DDS::DestinationOrderQosPolicyKind)atoi(v.c_str());
+		}
+		// DDS::HistoryQosPolicy history;
+		else if (n == "datadistributionmanager.opendds.topicqos.historyqospolicy.kind")
+		{
+			qos->history.kind = (DDS::HistoryQosPolicyKind)atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.topicqos.historyqospolicy.depth")
+		{
+			qos->history.depth = atoi( v.c_str());
+		}
+		// DDS::ResourceLimitsQosPolicy resource_limits;
+		else if (n == "datadistributionmanager.opendds.topicqos.resourcelimitsqospolicy.max_instances")
+		{
+			qos->resource_limits.max_instances = atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.topicqos.resourcelimitsqospolicy.max_samples")
+		{
+			qos->resource_limits.max_samples = atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.topicqos.resourcelimitsqospolicy.depth")
+		{
+			qos->resource_limits.max_samples_per_instance = atoi(v.c_str());
+		}
+		// DDS::TransportPriorityQosPolicy transport_priority;
+		else if (n == "datadistributionmanager.opendds.topicqos.transportpriorityqospolicy.value")
+		{
+			qos->transport_priority.value = atoi(v.c_str());
+		}
+		// DDS::LifespanQosPolicy lifespan;
+		else if (n == "datadistributionmanager.opendds.topicqos.lifespanqospolicy.duration")
+		{
+			ConvertMillisecondsToDuration(&qos->lifespan.duration, v.c_str());
+		}
+		// DDS::OwnershipQosPolicy ownership;
+		else if (n == "datadistributionmanager.opendds.topicqos.ownershipqospolicy.kind")
+		{
+			qos->ownership.kind = (DDS::OwnershipQosPolicyKind)atoi(v.c_str());
+		}
+	}
+}
+
+void DataDistributionManagerOpenDDS::SetPublisherQos(DDS::PublisherQos* qos, const char* arrayParams[], int len)
+{
+	for (size_t i = 0; i < len; i++)
+	{
+		std::string line(arrayParams[i]);
+
+		/* Trim string */
+		line.erase(0, line.find_first_not_of("\t "));
+		line.erase(line.find_last_not_of("\t ") + 1);
+
+		if (line.length() == 0 ||
+			line.substr(0, 1) == "#")
+			continue;
+
+		size_t f = line.find("=");
+		if (f == std::string::npos)
+		{
+			Log(DDM_LOG_LEVEL::ERROR_LEVEL, "DataDistributionManagerOpenDDS", "SetPublisherQos", "Conf file: malformed line: %s", line.c_str());
+			continue;
+		}
+
+		std::string n = line.substr(0, f);
+		std::string v = line.substr(f + 1);
+
+		// DDS::PresentationQosPolicy presentation;
+		if (n == "datadistributionmanager.opendds.publisherqos.presentationqospolicy.access_scope")
+		{
+			qos->presentation.access_scope = (DDS::PresentationQosPolicyAccessScopeKind)atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.publisherqos.presentationqospolicy.coherent_access")
+		{
+			if (v == "true" || v == "1")
+				qos->presentation.coherent_access = true;
+			else
+				qos->presentation.coherent_access = false;
+		}
+		else if (n == "datadistributionmanager.opendds.publisherqos.presentationqospolicy.ordered_access")
+		{
+			if (v == "true" || v == "1")
+				qos->presentation.ordered_access = true;
+			else
+				qos->presentation.ordered_access = false;
+		}
+		// DDS::PartitionQosPolicy partition;
+		else if (n == "datadistributionmanager.opendds.publisherqos.partitionqospolicy.name")
+		{
+			char** p = (char**)malloc(sizeof(char*));
+			*p = _strdup(v.c_str());
+			qos->partition.name.replace(v.length(), v.length(), p, true);
+		}
+		// DDS::GroupDataQosPolicy group_data;
+		else if (n == "datadistributionmanager.opendds.publisherqos.groupdataqospolicy.value")
+		{
+			qos->group_data.value.replace((::CORBA::ULong)v.size() / 2, (::CORBA::ULong)v.size() / 2, (::CORBA::Octet*)ConvertHexStringToByteArray(v.c_str()), true);
+		}
+		// DDS::EntityFactoryQosPolicy entity_factory;
+		else if (n == "datadistributionmanager.opendds.publisherqos.entityfactoryqospolicy.autoenable_created_entities")
+		{
+			if (v == "true" || v == "1")
+				qos->entity_factory.autoenable_created_entities = true;
+			else
+				qos->entity_factory.autoenable_created_entities = false;
+		}
+	}
+}
+
+void DataDistributionManagerOpenDDS::SetSubscriberQos(DDS::SubscriberQos* qos, const char* arrayParams[], int len)
+{
+	for (size_t i = 0; i < len; i++)
+	{
+		std::string line(arrayParams[i]);
+
+		/* Trim string */
+		line.erase(0, line.find_first_not_of("\t "));
+		line.erase(line.find_last_not_of("\t ") + 1);
+
+		if (line.length() == 0 ||
+			line.substr(0, 1) == "#")
+			continue;
+
+		size_t f = line.find("=");
+		if (f == std::string::npos)
+		{
+			Log(DDM_LOG_LEVEL::ERROR_LEVEL, "DataDistributionManagerOpenDDS", "SetSubscriberQos", "Conf file: malformed line: %s", line.c_str());
+			continue;
+		}
+
+		std::string n = line.substr(0, f);
+		std::string v = line.substr(f + 1);
+
+		// DDS::PresentationQosPolicy presentation;
+		if (n == "datadistributionmanager.opendds.subscriberqos.presentationqospolicy.access_scope")
+		{
+			qos->presentation.access_scope = (DDS::PresentationQosPolicyAccessScopeKind)atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.subscriberqos.presentationqospolicy.coherent_access")
+		{
+			if (v == "true" || v == "1")
+				qos->presentation.coherent_access = true;
+			else
+				qos->presentation.coherent_access = false;
+		}
+		else if (n == "datadistributionmanager.opendds.subscriberqos.presentationqospolicy.ordered_access")
+		{
+			if (v == "true" || v == "1")
+				qos->presentation.ordered_access = true;
+			else
+				qos->presentation.ordered_access = false;
+		}
+		// DDS::PartitionQosPolicy partition;
+		else if (n == "datadistributionmanager.opendds.subscriberqos.partitionqospolicy.name")
+		{
+			char** p = (char**)malloc(sizeof(char*));
+			*p = _strdup(v.c_str());
+			qos->partition.name.replace(v.length(), v.length(), p, true);
+		}
+		// DDS::GroupDataQosPolicy group_data;
+		else if (n == "datadistributionmanager.opendds.subscriberqos.groupdataqospolicy.value")
+		{
+			qos->group_data.value.replace((::CORBA::ULong)v.size() / 2, (::CORBA::ULong)v.size() / 2, (::CORBA::Octet*)ConvertHexStringToByteArray(v.c_str()), true);
+		}
+		// DDS::EntityFactoryQosPolicy entity_factory;
+		else if (n == "datadistributionmanager.opendds.subscriberqos.entityfactoryqospolicy.autoenable_created_entities")
+		{
+			if (v == "true" || v == "1")
+				qos->entity_factory.autoenable_created_entities = true;
+			else
+				qos->entity_factory.autoenable_created_entities = false;
+		}
+	}
+}
+
+void DataDistributionManagerOpenDDS::SetDataWriterQos(DDS::DataWriterQos* qos, const char* arrayParams[], int len)
+{
+	ConvertMillisecondsToDuration(&qos->deadline.period, 10001);
+
+	for (size_t i = 0; i < len; i++)
+	{
+		std::string line(arrayParams[i]);
+
+		/* Trim string */
+		line.erase(0, line.find_first_not_of("\t "));
+		line.erase(line.find_last_not_of("\t ") + 1);
+
+		if (line.length() == 0 ||
+			line.substr(0, 1) == "#")
+			continue;
+
+		size_t f = line.find("=");
+		if (f == std::string::npos)
+		{
+			Log(DDM_LOG_LEVEL::ERROR_LEVEL, "DataDistributionManagerOpenDDS", "SetDataWriterQos", "Conf file: malformed line: %s", line.c_str());
+			continue;
+		}
+
+		std::string n = line.substr(0, f);
+		std::string v = line.substr(f + 1);
+
+		// DDS::DurabilityQosPolicy durability;
+		if (n == "datadistributionmanager.opendds.datawriterqos.durabilityqospolicy.kind")
+		{
+			qos->durability.kind = (DDS::DurabilityQosPolicyKind)atoi(v.c_str());
+		}
+		// DDS::DurabilityServiceQosPolicy durability_service;
+		else if (n == "datadistributionmanager.opendds.datawriterqos.durabilityserviceqospolicy.service_cleanup_delay")
+		{
+			ConvertMillisecondsToDuration(&qos->durability_service.service_cleanup_delay, v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.datawriterqos.durabilityserviceqospolicy.kind")
+		{
+			qos->durability_service.history_kind = (DDS::HistoryQosPolicyKind)atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.datawriterqos.durabilityserviceqospolicy.history_depth")
+		{
+			qos->durability_service.history_depth = atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.datawriterqos.durabilityserviceqospolicy.max_samples")
+		{
+			qos->durability_service.max_samples = atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.datawriterqos.durabilityserviceqospolicy.max_instances")
+		{
+			qos->durability_service.max_instances = atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.datawriterqos.durabilityserviceqospolicy.max_samples_per_instance")
+		{
+			qos->durability_service.max_samples_per_instance = atoi(v.c_str());
+		}
+		// DDS::DeadlineQosPolicy deadline;
+		else if (n == "datadistributionmanager.opendds.datawriterqos.deadlineqospolicy.period")
+		{
+			ConvertMillisecondsToDuration(&qos->deadline.period, v.c_str());
+		}
+		// DDS::LatencyBudgetQosPolicy latency_budget;
+		else if (n == "datadistributionmanager.opendds.datawriterqos.latencybudgetqospolicy.period")
+		{
+			ConvertMillisecondsToDuration(&qos->latency_budget.duration, v.c_str());
+		}
+		// DDS::LivelinessQosPolicy liveliness;
+		else if (n == "datadistributionmanager.opendds.datawriterqos.livelinessqospolicy.kind")
+		{
+			qos->liveliness.kind = (DDS::LivelinessQosPolicyKind)atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.datawriterqos.livelinessqospolicy.lease_duration")
+		{
+			ConvertMillisecondsToDuration(&qos->liveliness.lease_duration, v.c_str());
+		}
+		// DDS::ReliabilityQosPolicy reliability;
+		else if (n == "datadistributionmanager.opendds.datawriterqos.reliabilityqospolicy.kind")
+		{
+			qos->reliability.kind = (DDS::ReliabilityQosPolicyKind)atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.datawriterqos.reliabilityqospolicy.max_blocking_time")
+		{
+			ConvertMillisecondsToDuration(&qos->reliability.max_blocking_time, v.c_str());
+		}
+		// DDS::DestinationOrderQosPolicy destination_order;
+		else if (n == "datadistributionmanager.opendds.datawriterqos.destinationorderqospolicy.kind")
+		{
+			qos->destination_order.kind = (DDS::DestinationOrderQosPolicyKind)atoi(v.c_str());
+		}
+		// DDS::HistoryQosPolicy history;
+		else if (n == "datadistributionmanager.opendds.datawriterqos.historyqospolicy.kind")
+		{
+			qos->history.kind = (DDS::HistoryQosPolicyKind)atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.datawriterqos.historyqospolicy.depth")
+		{
+			qos->history.depth = atoi(v.c_str());
+		}
+		// DDS::ResourceLimitsQosPolicy resource_limits;
+		else if (n == "datadistributionmanager.opendds.datawriterqos.resourcelimitsqospolicy.max_instances")
+		{
+			qos->resource_limits.max_instances = atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.datawriterqos.resourcelimitsqospolicy.max_samples")
+		{
+			qos->resource_limits.max_samples = atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.datawriterqos.resourcelimitsqospolicy.depth")
+		{
+			qos->resource_limits.max_samples_per_instance = atoi(v.c_str());
+		}
+		// DDS::TransportPriorityQosPolicy transport_priority;
+		else if (n == "datadistributionmanager.opendds.datawriterqos.transportpriorityqospolicy.value")
+		{
+			qos->transport_priority.value = atoi(v.c_str());
+		}
+		// DDS::LifespanQosPolicy lifespan;
+		else if (n == "datadistributionmanager.opendds.datawriterqos.lifespanqospolicy.duration")
+		{
+			ConvertMillisecondsToDuration(&qos->lifespan.duration, v.c_str());
+		}
+		// DDS::UserDataQosPolicy user_data;
+		else if (n == "datadistributionmanager.opendds.datawriterqos.userdataqospolicy.value")
+		{
+			qos->user_data.value.replace((::CORBA::ULong)v.size() / 2, (::CORBA::ULong)v.size() / 2, (::CORBA::Octet*)ConvertHexStringToByteArray(v.c_str()), true);
+		}
+		// DDS::OwnershipQosPolicy ownership;
+		else if (n == "datadistributionmanager.opendds.datawriterqos.ownershipqospolicy.kind")
+		{
+			qos->ownership.kind = (DDS::OwnershipQosPolicyKind)atoi(v.c_str());
+		}
+		// DDS::OwnershipStrengthQosPolicy ownership_strength;
+		else if (n == "datadistributionmanager.opendds.datawriterqos.ownershipstrengthqospolicy.value")
+		{
+			qos->ownership_strength.value = atoi(v.c_str());
+		}
+		// DDS::WriterDataLifecycleQosPolicy writer_data_lifecycle;
+		else if (n == "datadistributionmanager.opendds.datawriterqos.writerdatalifecycleqospolicy.autodispose_unregistered_instances")
+		{
+			if (v == "true" || v == "1")
+				qos->writer_data_lifecycle.autodispose_unregistered_instances = true;
+			else
+				qos->writer_data_lifecycle.autodispose_unregistered_instances = false;
+		}
+	}
+}
+
+void DataDistributionManagerOpenDDS::SetDataReaderQos(DDS::DataReaderQos* qos, const char* arrayParams[], int len)
+{
+	ConvertMillisecondsToDuration(&qos->deadline.period, 10001);
+
+	for (size_t i = 0; i < len; i++)
+	{
+		std::string line(arrayParams[i]);
+
+		/* Trim string */
+		line.erase(0, line.find_first_not_of("\t "));
+		line.erase(line.find_last_not_of("\t ") + 1);
+
+		if (line.length() == 0 ||
+			line.substr(0, 1) == "#")
+			continue;
+
+		size_t f = line.find("=");
+		if (f == std::string::npos)
+		{
+			Log(DDM_LOG_LEVEL::ERROR_LEVEL, "DataDistributionManagerOpenDDS", "SetDataReaderQos", "Conf file: malformed line: %s", line.c_str());
+			continue;
+		}
+
+		std::string n = line.substr(0, f);
+		std::string v = line.substr(f + 1);
+
+		// DDS::DurabilityQosPolicy durability;
+		if (n == "datadistributionmanager.opendds.datareaderqos.durabilityqospolicy.kind")
+		{
+			qos->durability.kind = (DDS::DurabilityQosPolicyKind)atoi(v.c_str());
+		}
+		// DDS::DeadlineQosPolicy deadline;
+		else if (n == "datadistributionmanager.opendds.datareaderqos.deadlineqospolicy.period")
+		{
+			ConvertMillisecondsToDuration(&qos->deadline.period, v.c_str());
+		}
+		// DDS::LatencyBudgetQosPolicy latency_budget;
+		else if (n == "datadistributionmanager.opendds.datareaderqos.latencybudgetqospolicy.period")
+		{
+			ConvertMillisecondsToDuration(&qos->latency_budget.duration, v.c_str());
+		}
+		// DDS::LivelinessQosPolicy liveliness;
+		else if (n == "datadistributionmanager.opendds.datareaderqos.livelinessqospolicy.kind")
+		{
+			qos->liveliness.kind = (DDS::LivelinessQosPolicyKind)atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.datareaderqos.livelinessqospolicy.lease_duration")
+		{
+			ConvertMillisecondsToDuration(&qos->liveliness.lease_duration, v.c_str());
+		}
+		// DDS::ReliabilityQosPolicy reliability;
+		else if (n == "datadistributionmanager.opendds.datareaderqos.reliabilityqospolicy.kind")
+		{
+			qos->reliability.kind = (DDS::ReliabilityQosPolicyKind)atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.datareaderqos.reliabilityqospolicy.max_blocking_time")
+		{
+			ConvertMillisecondsToDuration(&qos->reliability.max_blocking_time, v.c_str());
+		}
+		// DDS::DestinationOrderQosPolicy destination_order;
+		else if (n == "datadistributionmanager.opendds.datareaderqos.destinationorderqospolicy.kind")
+		{
+			qos->destination_order.kind = (DDS::DestinationOrderQosPolicyKind)atoi(v.c_str());
+		}
+		// DDS::HistoryQosPolicy history;
+		else if (n == "datadistributionmanager.opendds.datareaderqos.historyqospolicy.kind")
+		{
+			qos->history.kind = (DDS::HistoryQosPolicyKind)atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.datareaderqos.historyqospolicy.depth")
+		{
+			qos->history.depth = atoi(v.c_str());
+		}
+		// DDS::ResourceLimitsQosPolicy resource_limits;
+		else if (n == "datadistributionmanager.opendds.datareaderqos.resourcelimitsqospolicy.max_instances")
+		{
+			qos->resource_limits.max_instances = atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.datareaderqos.resourcelimitsqospolicy.max_samples")
+		{
+			qos->resource_limits.max_samples = atoi(v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.datareaderqos.resourcelimitsqospolicy.max_samples_per_instance")
+		{
+			qos->resource_limits.max_samples_per_instance = atoi(v.c_str());
+		}
+		// DDS::UserDataQosPolicy user_data;
+		else if (n == "datadistributionmanager.opendds.datareaderqos.userdataqospolicy.value")
+		{
+			qos->user_data.value.replace((::CORBA::ULong)v.size() / 2, (::CORBA::ULong)v.size() / 2, (::CORBA::Octet*)ConvertHexStringToByteArray(v.c_str()), true);
+		}
+		// DDS::OwnershipQosPolicy ownership;
+		else if (n == "datadistributionmanager.opendds.datareaderqos.ownershipqospolicy.kind")
+		{
+			qos->ownership.kind = (DDS::OwnershipQosPolicyKind)atoi(v.c_str());
+		}
+		// DDS::TimeBasedFilterQosPolicy time_based_filter;
+		else if (n == "datadistributionmanager.opendds.datareaderqos.timebasedfilterqospolicy.minimum_separation")
+		{
+			ConvertMillisecondsToDuration(&qos->time_based_filter.minimum_separation, v.c_str());
+		}
+		// DDS::ReaderDataLifecycleQosPolicy reader_data_lifecycle;
+		else if (n == "datadistributionmanager.opendds.datareaderqos.readerdatalifecycleqospolicy.autopurge_nowriter_samples_delay")
+		{
+			ConvertMillisecondsToDuration(&qos->reader_data_lifecycle.autopurge_nowriter_samples_delay, v.c_str());
+		}
+		else if (n == "datadistributionmanager.opendds.datareaderqos.readerdatalifecycleqospolicy.autopurge_disposed_samples_delay")
+		{
+			ConvertMillisecondsToDuration(&qos->reader_data_lifecycle.autopurge_disposed_samples_delay, v.c_str());
+		}
+	}
+}
+
 HANDLE DataDistributionManagerOpenDDS::CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction, const char* arrayParams[], int len)
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "CreateChannel");
@@ -433,7 +1093,13 @@ HANDLE DataDistributionManagerOpenDDS::CreateChannel(const char* channelName, ID
 		return NULL;
 	}
 
-	// Create a channel for the Quote type...
+	// Get QoS to use for our two channels
+	// Could also use TOPIC_QOS_DEFAULT instead
+	m_participant->get_default_topic_qos(pChannelConfiguration->m_channel_qos);
+
+	SetTopicQos(&pChannelConfiguration->m_channel_qos, (arrayParams == NULL) ? GetArrayParams() : arrayParams, (len == 0) ? GetArrayParamsLen() : len);
+
+	// Create a channel for the DATADISTRIBUTION_SCHEMA_OPENDDSMSG_TYPE type...
 	pChannelConfiguration->channel_channel = m_participant->create_topic(pChannelConfiguration->GetChannelName(),
 		DATADISTRIBUTION_SCHEMA_OPENDDSMSG_TYPE,
 		pChannelConfiguration->m_channel_qos,
@@ -445,11 +1111,23 @@ HANDLE DataDistributionManagerOpenDDS::CreateChannel(const char* channelName, ID
 		return NULL;
 	}
 
+	// Get QoS to use for our two channels
+	// Could also use PUBLISHER_QOS_DEFAULT instead
+	m_participant->get_default_publisher_qos(pChannelConfiguration->m_publisher_qos);
+
+	SetPublisherQos(&pChannelConfiguration->m_publisher_qos, (arrayParams == NULL) ? GetArrayParams() : arrayParams, (len == 0) ? GetArrayParamsLen() : len);
+
 	pChannelConfiguration->publisher = m_participant->create_publisher(pChannelConfiguration->m_publisher_qos,
 		DDS::PublisherListener::_nil(),
 		::OpenDDS::DCPS::DEFAULT_STATUS_MASK);
 
-	// Create a Primary DataWriter for the Quote channel
+	// Get the default QoS for our Data Writers
+	// Could also use DATAWRITER_QOS_DEFAULT
+	pChannelConfiguration->publisher->get_default_datawriter_qos(pChannelConfiguration->m_dw_qos);
+
+	SetDataWriterQos(&pChannelConfiguration->m_dw_qos, (arrayParams == NULL) ? GetArrayParams() : arrayParams, (len == 0) ? GetArrayParamsLen() : len);
+
+	// Create a Primary DataWriter for the DATADISTRIBUTION_SCHEMA_OPENDDSMSG_TYPE channel
 	pChannelConfiguration->channel_base_dw = pChannelConfiguration->publisher->create_datawriter(pChannelConfiguration->channel_channel.in(),
 		pChannelConfiguration->m_dw_qos,
 		DDS::DataWriterListener::_nil(),
@@ -465,6 +1143,12 @@ HANDLE DataDistributionManagerOpenDDS::CreateChannel(const char* channelName, ID
 		return NULL;
 	}
 
+	// Get QoS to use for our two channels
+	// Could also use SUBSCRIBER_QOS_DEFAULT instead
+	m_participant->get_default_subscriber_qos(pChannelConfiguration->m_subscriber_qos);
+
+	SetSubscriberQos(&pChannelConfiguration->m_subscriber_qos, (arrayParams == NULL) ? GetArrayParams() : arrayParams, (len == 0) ? GetArrayParamsLen() : len);
+
 	// Create a subscriber for the two channels
 	// (SUBSCRIBER_QOS_DEFAULT is defined in Marked_Default_Qos.h)
 	pChannelConfiguration->subscriber = m_participant->create_subscriber(pChannelConfiguration->m_subscriber_qos,
@@ -475,8 +1159,11 @@ HANDLE DataDistributionManagerOpenDDS::CreateChannel(const char* channelName, ID
 		return NULL;
 	}
 
-	// Create DataReaders and DataReaderListeners for the
+	pChannelConfiguration->subscriber->get_default_datareader_qos(pChannelConfiguration->m_dr_qos);
 
+	SetDataReaderQos(&pChannelConfiguration->m_dr_qos, (arrayParams == NULL) ? GetArrayParams() : arrayParams, (len == 0) ? GetArrayParamsLen() : len);
+
+	// Create DataReaders and DataReaderListeners for the
 	pChannelConfiguration->channel_listener = pChannelConfiguration->GetEventSync() ? DDS::DataReaderListener::_nil() : new CommonDataReaderListenerImpl(pChannelConfiguration);
 	pChannelConfiguration->channel_base_dr = pChannelConfiguration->subscriber->create_datareader(pChannelConfiguration->channel_channel.in(),
 		pChannelConfiguration->m_dr_qos,
@@ -542,7 +1229,6 @@ void DataDistributionManagerOpenDDS::SetParameter(HANDLE channelHandle, const ch
 	if (NULL != channelHandle)
 	{
 		// Non global params
-
 	}
 	else
 	{
@@ -580,21 +1266,8 @@ void DataDistributionManagerOpenDDS::SetParameter(HANDLE channelHandle, const ch
 			m_DCPSInfoRepoCmdLine = paramValue;
 			return;
 		}
+
 	}
-}
-
-static const char* ConvertIToA(int value)
-{
-	return _strdup(itoa(value, NULL, 0));
-}
-
-static const char* ConvertIToA(size_t value)
-{
-#ifdef _WIN64
-	return _strdup(_ui64toa(value, NULL, 0));
-#else
-	return _strdup(itoa(value, NULL, 0));
-#endif
 }
 
 const char* DataDistributionManagerOpenDDS::GetParameter(HANDLE channelHandle, const char* paramName)

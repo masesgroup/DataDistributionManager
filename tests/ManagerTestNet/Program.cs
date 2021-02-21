@@ -60,13 +60,38 @@ namespace ManagerTestNet
             MySmartDataDistribution dataDistribution = new MySmartDataDistribution();
             OpenDDSConfiguration conf = null;
             HRESULT hRes = HRESULT.S_OK;
+
             if (args.Length == 0)
             {
-                conf = new OpenDDSConfiguration();
-                conf.DCPSInfoRepoAutostart = true;
-                conf.DCPSInfoRepoCommandLine = "-ORBEndpoint iiop://localhost:12345";
-                conf.DCPSConfigFile = "dds_tcp_conf.ini";
-                conf.DCPSTransportDebugLevel = 10;
+                conf = new OpenDDSConfiguration()
+                {
+                    OpenDDSArgs = new OpenDDSConfiguration.OpenDDSArgsConfiguration()
+                    {
+                        DCPSConfigFile = "dds_tcp_conf.ini",
+                        DCPSTransportDebugLevel = 10,
+                    },
+                    DCPSInfoRepo = new OpenDDSConfiguration.DCPSInfoRepoConfiguration()
+                    {
+                        Autostart = true,
+                        CommandLine = "-ORBEndpoint iiop://localhost:12345",
+                    },
+                    DomainParticipantQos = new DomainParticipantQosConfiguration()
+                    {
+                        EntityFactoryQosPolicy = new EntityFactoryQosPolicyConfiguration()
+                        {
+                            AutoenableCreatedEntities = true
+                        },
+                        PropertyQosPolicy = new PropertyQosPolicyConfiguration()
+                        {
+                            DDSSEC_PROP_IDENTITY_CA = new PropertyQosPolicyConfiguration.Property("1"),
+                            DDSSEC_PROP_IDENTITY_CERT = new PropertyQosPolicyConfiguration.Property("2"),
+                            DDSSEC_PROP_IDENTITY_PRIVKEY = new PropertyQosPolicyConfiguration.Property("3"),
+                            DDSSEC_PROP_PERM_CA = new PropertyQosPolicyConfiguration.Property("4"),
+                            DDSSEC_PROP_PERM_DOC = new PropertyQosPolicyConfiguration.Property("5"),
+                            DDSSEC_PROP_PERM_GOV_DOC = new PropertyQosPolicyConfiguration.Property("6", true),
+                        }
+                    }
+                };
                 hRes = dataDistribution.Initialize(conf);
             }
             else
@@ -87,7 +112,29 @@ namespace ManagerTestNet
                 return;
             }
 
-            MySmartDataDistributionChannel testChannel = dataDistribution.CreateSmartChannel<MySmartDataDistributionChannel>("test");
+            OpenDDSChannelConfiguration channelConf = new OpenDDSChannelConfiguration(conf)
+            {
+                TopicQos = new TopicQosConfiguration()
+                {
+                    TopicDataQosPolicy = new TopicDataQosPolicyConfiguration()
+                    {
+                        Value = new byte[] { 100, 23 }
+                    },
+                    DurabilityQosPolicy = new DurabilityQosPolicyConfiguration()
+                    {
+                        DurabilityQosPolicy = DurabilityQosPolicyConfiguration.DurabilityQosPolicyKind.TRANSIENT_DURABILITY_QOS
+                    }
+                },
+                SubscriberQos = new SubscriberQosConfiguration()
+                {
+                    EntityFactoryQosPolicy = new EntityFactoryQosPolicyConfiguration()
+                    {
+                        AutoenableCreatedEntities = true
+                    }
+                }
+            };
+
+            MySmartDataDistributionChannel testChannel = dataDistribution.CreateSmartChannel<MySmartDataDistributionChannel>("test", channelConf);
 
             Console.WriteLine("After CreateSmartChannel...\n");
 

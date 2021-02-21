@@ -18,9 +18,10 @@
 
 package org.mases.datadistributionmanager;
 
-interface IDataDistributionCallbackLow
-{
+interface IDataDistributionCallbackLow {
     String OnConfiguration(long opaque, String key, String value);
+
     void OnLogging(long opaque, int logLevel, String source, String function, String errorStr);
+
     void OnCompletelyDisconnected(long opaque, String topicName, String reason);
 }

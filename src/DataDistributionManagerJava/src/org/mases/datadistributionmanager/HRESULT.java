@@ -17,6 +17,7 @@
 */
 
 package org.mases.datadistributionmanager;
+
 /**
  * Java mapper of Windows HRESULT
  */

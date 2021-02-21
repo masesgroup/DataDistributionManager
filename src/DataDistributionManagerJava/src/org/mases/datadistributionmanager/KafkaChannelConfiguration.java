@@ -28,14 +28,15 @@ public class KafkaChannelConfiguration extends KafkaConfiguration {
     public static final String TopicCreateKey = "datadistributionmanager.kafka.topic.create";
     public static final String DumpMetadataKey = "datadistributionmanager.kafka.topic.dumpmetadata";
 
-      /**
+    /**
      * Duplicates a configuration
      * 
      * @param originalConf {@link KafkaConfiguration} to duplicate
      */
     public KafkaChannelConfiguration(KafkaConfiguration originalConf) {
         super(originalConf);
-    }  
+    }
+
     /**
      * 
      * @return The client id to be used

@@ -25,7 +25,7 @@ namespace MASES.DataDistributionManager.Bindings
     /// <summary>
     /// The global configuration class
     /// </summary>
-    public abstract class GlobalConfiguration : IConfiguration
+    public abstract class GlobalConfiguration : BaseConfiguration
     {
         /// <summary>
         /// Configuration key of <see cref="Protocol"/>
@@ -47,11 +47,6 @@ namespace MASES.DataDistributionManager.Bindings
         /// Configuration key of <see cref="GlobalLogLevel"/>
         /// </summary>
         public const string GlobalLogLevelKey = "datadistributionmanager.loglevel.global";
-
-        /// <summary>
-        /// The list of key/value pairs
-        /// </summary>
-        protected Dictionary<string, string> keyValuePair = new Dictionary<string, string>();
 
         internal GlobalConfiguration(string protocol, string protolib)
         {
@@ -159,25 +154,11 @@ namespace MASES.DataDistributionManager.Bindings
         /// <summary>
         /// Checks the configuration for mandatory information
         /// </summary>
-        protected virtual void CheckConfiguration()
+        protected override void CheckConfiguration()
         {
             if (!keyValuePair.ContainsKey(ProtocolKey) && !keyValuePair.ContainsKey(ProtocolLibraryKey))
             {
                 throw new InvalidOperationException("Missing Protocol or ProtocolLibrary");
-            }
-        }
-
-        /// <see cref="IConfiguration.Configuration"/>
-        public virtual string[] Configuration
-        {
-            get
-            {
-                List<string> lst = new List<string>();
-                foreach (var item in keyValuePair)
-                {
-                    lst.Add(string.Format("{0}={1}", item.Key, item.Value));
-                }
-                return lst.ToArray();
             }
         }
     }

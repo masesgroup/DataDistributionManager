@@ -241,7 +241,7 @@ namespace MASES.DataDistributionManager.Bindings
         /// <param name="direction">The <see cref="DDM_CHANNEL_DIRECTION"/>. Default is <see cref="DDM_CHANNEL_DIRECTION.ALL"/></param>
         /// <param name="arrayParams">Specific parameters which override main parameters</param>
         /// <returns>An allocated instance of <typeparamref name="T"/></returns>
-        public T CreateSmartChannel<T>(string channelName, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.ALL, string[] arrayParams = null)
+        public T CreateSmartChannel<T>(string channelName, string[] arrayParams, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.ALL)
             where T : SmartDataDistributionChannel
         {
             T smartChannelReference = Activator.CreateInstance(typeof(T)) as T;
@@ -269,10 +269,10 @@ namespace MASES.DataDistributionManager.Bindings
         /// <param name="direction">The <see cref="DDM_CHANNEL_DIRECTION"/>. Default is <see cref="DDM_CHANNEL_DIRECTION.ALL"/></param>
         /// <param name="configuration">The configuration coming from an instance of <see cref="IConfiguration"/></param>
         /// <returns>An allocated instance of <typeparamref name="T"/></returns>
-        public T CreateSmartChannel2<T>(string channelName, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.ALL, IConfiguration configuration = null)
+        public T CreateSmartChannel<T>(string channelName, IConfiguration configuration = null, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.ALL)
             where T : SmartDataDistributionChannel
         {
-            return CreateSmartChannel<T>(channelName, direction, (configuration != null) ? configuration.Configuration : null);
+            return CreateSmartChannel<T>(channelName, (configuration != null) ? configuration.Configuration : null, direction);
         }
 
         #region IDataDistributionCallback

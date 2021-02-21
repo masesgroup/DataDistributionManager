@@ -413,7 +413,11 @@ HRESULT DataDistributionManagerImpl::Initialize(IDataDistributionCallback* callb
 	// add DataDistributionManager.dll folder in the PATH variable to load DLLs
 	TCHAR oldPath[64 * 1024];
 	GetEnvironmentVariable("PATH", oldPath, 64 * 1024);
+#if _DEBUG
+	std::string moduleName("DataDistributionManagerd.dll");
+#else
 	std::string moduleName("DataDistributionManager.dll");
+#endif
 	TCHAR pathToDll[MAX_PATH];
 	HMODULE ddm_Module = GetModuleHandle(moduleName.c_str());
 	DWORD moduleNameLen = GetModuleFileName(ddm_Module, pathToDll, MAX_PATH);

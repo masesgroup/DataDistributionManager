@@ -464,21 +464,22 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      */
     public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String channelName)
             throws Throwable {
-        return CeateSmartChannel(clazz, channelName, DDM_CHANNEL_DIRECTION.ALL, (IConfiguration) null);
+        return CeateSmartChannel(clazz, channelName, (IConfiguration) null, DDM_CHANNEL_DIRECTION.ALL);
     }
 
     /**
      * 
-     * @param <T>         The class extending {@link SmartDataDistributionChannel}
-     * @param clazz       The class to be instantiated
-     * @param channelName The channel name
-     * @param direction   The {@link DDM_CHANNEL_DIRECTION} of the channel
+     * @param <T>           The class extending {@link SmartDataDistributionChannel}
+     * @param clazz         The class to be instantiated
+     * @param channelName   The channel name
+     * @param configuration The configuration coming from an instance of
+     *                      {@link IConfiguration}
      * @return The allocated instance
      * @throws Throwable
      */
     public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String channelName,
-            DDM_CHANNEL_DIRECTION direction) throws Throwable {
-        return CeateSmartChannel(clazz, channelName, direction, (IConfiguration) null);
+            IConfiguration configuration) throws Throwable {
+        return CeateSmartChannel(clazz, channelName, configuration, DDM_CHANNEL_DIRECTION.ALL);
     }
 
     /**
@@ -493,7 +494,7 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @throws Throwable
      */
     public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String channelName,
-            DDM_CHANNEL_DIRECTION direction, IConfiguration configuration) throws Throwable {
+            IConfiguration configuration, DDM_CHANNEL_DIRECTION direction) throws Throwable {
         return CeateSmartChannel(clazz, channelName, direction,
                 (configuration == null) ? null : configuration.getConfiguration());
     }

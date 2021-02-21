@@ -23,7 +23,6 @@ package org.mases.datadistributionmanager;
  */
 public class KafkaConfiguration extends CommonConfiguration {
 
-
     /**
      * Initialize a new instance of {@link KafkaConfiguration}
      */

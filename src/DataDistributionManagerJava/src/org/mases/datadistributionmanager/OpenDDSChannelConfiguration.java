@@ -18,7 +18,10 @@
 
 package org.mases.datadistributionmanager;
 
+import java.util.ArrayList;
+
 public class OpenDDSChannelConfiguration extends OpenDDSConfiguration {
+
     /**
      * Duplicates a configuration
      * 
@@ -26,5 +29,65 @@ public class OpenDDSChannelConfiguration extends OpenDDSConfiguration {
      */
     public OpenDDSChannelConfiguration(OpenDDSConfiguration originalConf) {
         super(originalConf);
+    }
+
+    /// <summary>
+    /// The configuration of <see cref="TopicQosConfiguration"/>
+    /// </summary>
+    public TopicQosConfiguration TopicQos;
+
+    /// <summary>
+    /// The configuration of <see cref="PublisherQosConfiguration"/>
+    /// </summary>
+    public PublisherQosConfiguration PublisherQos;
+
+    /// <summary>
+    /// The configuration of <see cref="SubscriberQosConfiguration"/>
+    /// </summary>
+    public SubscriberQosConfiguration SubscriberQos;
+
+    /// <summary>
+    /// The configuration of <see cref="DataReaderQosConfiguration"/>
+    /// </summary>
+    public DataReaderQosConfiguration DataReaderQos;
+
+    /// <summary>
+    /// The configuration of <see cref="SubscriberQosConfiguration"/>
+    /// </summary>
+    public DataWriterQosConfiguration DataWriterQos;
+
+    /// <summary>
+    /// Creates configuration for QoS policies
+    /// </summary>
+    protected String[] PolicyBuilder(String[] parameters) {
+        ArrayList<String> lst = new ArrayList<String>();
+        if (TopicQos != null) {
+            for (String value : TopicQos.getConfiguration()) {
+                lst.add(value);
+            }
+        }
+        if (PublisherQos != null) {
+            for (String value : PublisherQos.getConfiguration()) {
+                lst.add(value);
+            }
+        }
+        if (SubscriberQos != null) {
+            for (String value : SubscriberQos.getConfiguration()) {
+                lst.add(value);
+            }
+        }
+        if (DataReaderQos != null) {
+            for (String value : DataReaderQos.getConfiguration()) {
+                lst.add(value);
+            }
+        }
+        if (DataWriterQos != null) {
+            for (String value : DataWriterQos.getConfiguration()) {
+                lst.add(value);
+            }
+        }
+
+        String[] array = new String[lst.size()];
+        return lst.toArray(array);
     }
 }

@@ -25,46 +25,41 @@ class NativeCallbackManager {
     private static final Map<IDataDistributionChannelCallbackLow, Long> BY_IDataDistributionChannelCallbackLow = new HashMap<>();
     private static final Map<IDataDistributionMastershipCallbackLow, Long> BY_IDataDistributionMastershipCallbackLow = new HashMap<>();
 
-    public static long RegisterCallback(IDataDistributionCallbackLow callbacks)
-    {
+    public static long RegisterCallback(IDataDistributionCallbackLow callbacks) {
         long remoteReference = NativeInterface.DataDistributionCallback_create(callbacks);
         BY_IDataDistributionCallbackLow.put(callbacks, remoteReference);
         return remoteReference;
     }
 
-    public static void UnregisterCallback(IDataDistributionCallbackLow callbacks)
-    {
-       Long result = BY_IDataDistributionCallbackLow.get(callbacks);
+    public static void UnregisterCallback(IDataDistributionCallbackLow callbacks) {
+        Long result = BY_IDataDistributionCallbackLow.get(callbacks);
         NativeInterface.DataDistributionCallback_delete(result.longValue());
     }
 
-    public static long RegisterCallback(IDataDistributionChannelCallbackLow callbacks)
-    {
+    public static long RegisterCallback(IDataDistributionChannelCallbackLow callbacks) {
         long remoteReference = NativeInterface.DataDistributionChannelCallback_create(callbacks);
         BY_IDataDistributionChannelCallbackLow.put(callbacks, remoteReference);
         return remoteReference;
     }
 
-    public static void UnregisterCallback(IDataDistributionChannelCallbackLow callbacks)
-    {
-       Long result = BY_IDataDistributionChannelCallbackLow.get(callbacks);
+    public static void UnregisterCallback(IDataDistributionChannelCallbackLow callbacks) {
+        Long result = BY_IDataDistributionChannelCallbackLow.get(callbacks);
         NativeInterface.DataDistributionChannelCallback_delete(result.longValue());
     }
 
-    public static long RegisterCallback(IDataDistributionMastershipCallbackLow callbacks)
-    {
+    public static long RegisterCallback(IDataDistributionMastershipCallbackLow callbacks) {
         long remoteReference = NativeInterface.DataDistributionMastershipCallback_create(callbacks);
         BY_IDataDistributionMastershipCallbackLow.put(callbacks, remoteReference);
         return remoteReference;
     }
 
-    public static void UnregisterCallback(IDataDistributionMastershipCallbackLow callbacks)
-    {
-       Long result = BY_IDataDistributionMastershipCallbackLow.get(callbacks);
+    public static void UnregisterCallback(IDataDistributionMastershipCallbackLow callbacks) {
+        Long result = BY_IDataDistributionMastershipCallbackLow.get(callbacks);
         NativeInterface.DataDistributionMastershipCallback_delete(result.longValue());
     }
 
-    void dataDistributionLoggingCb(Object opaque, DDM_LOG_LEVEL level, String source, String function, String errorStr) {
+    void dataDistributionLoggingCb(Object opaque, DDM_LOG_LEVEL level, String source, String function,
+            String errorStr) {
 
     }
 

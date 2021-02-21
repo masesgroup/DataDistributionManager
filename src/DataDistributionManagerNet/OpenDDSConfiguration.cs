@@ -27,45 +27,282 @@ namespace MASES.DataDistributionManager.Bindings
     /// </summary>
     public class OpenDDSConfiguration : CommonConfiguration
     {
-        Dictionary<string, string> commandLineKeyValuePair = new Dictionary<string, string>();
+        #region OpenDDSArgsConfiguration
         /// <summary>
-        /// Base property name of all specific configuration key of <see cref="KafkaConfiguration"/>
+        /// Class managing OpenDDSArgs
+        /// </summary>
+        public class OpenDDSArgsConfiguration : BaseConfiguration
+        {
+            Dictionary<string, string> commandLineKeyValuePair = new Dictionary<string, string>();
+
+            /// <summary>
+            /// Configuration key of <see cref="DCPSConfigFile"/>
+            /// </summary>
+            public const string DCPSConfigFileKey = "DCPSConfigFile";
+            /// <summary>
+            /// Configuration key of <see cref="DCPSTransportDebugLevel"/>
+            /// </summary>
+            public const string DCPSTransportDebugLevelKey = "DCPSTransportDebugLevel";
+            /// <summary>
+            /// Configuration key of <see cref="CommandLine"/>
+            /// </summary>
+            public const string CommandLineKey = "datadistributionmanager.opendds.cmdlineargs";
+            /// <summary>
+            /// Initialize a new instance of <see cref="OpenDDSArgsConfiguration"/>
+            /// </summary>
+            public OpenDDSArgsConfiguration()
+            {
+            }
+            /// <summary>
+            /// Initialize a new instance of <see cref="OpenDDSArgsConfiguration"/>
+            /// </summary>
+            /// <param name="dCPSConfigFile">The command line parameters of DCPSConfigFile</param>
+            public OpenDDSArgsConfiguration(string dCPSConfigFile)
+            {
+                DCPSConfigFile = dCPSConfigFile;
+            }
+
+            /// <summary>
+            /// The command line parameters of DCPSConfigFile
+            /// </summary>
+            public string DCPSConfigFile
+            {
+                get
+                {
+                    string value = string.Empty;
+                    commandLineKeyValuePair.TryGetValue(DCPSConfigFileKey, out value);
+                    return value;
+                }
+                set
+                {
+                    commandLineKeyValuePair[DCPSConfigFileKey] = value;
+                }
+            }
+
+            /// <summary>
+            /// The command line parameters of DCPSTransportDebugLevel
+            /// </summary>
+            public uint DCPSTransportDebugLevel
+            {
+                get
+                {
+                    string value = string.Empty;
+                    commandLineKeyValuePair.TryGetValue(DCPSTransportDebugLevelKey, out value);
+                    return uint.Parse(value);
+                }
+                set
+                {
+                    commandLineKeyValuePair[DCPSTransportDebugLevelKey] = value.ToString();
+                }
+            }
+
+            /// <summary>
+            /// The command line to be used on DCPSInfoRepo executable
+            /// </summary>
+            public string CommandLine
+            {
+                get
+                {
+                    string value = string.Empty;
+                    keyValuePair.TryGetValue(CommandLineKey, out value);
+                    return value;
+                }
+                set
+                {
+                    keyValuePair[CommandLineKey] = value;
+                }
+            }
+            string commandLineBuilder()
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach (var item in commandLineKeyValuePair)
+                {
+                    sb.AppendFormat("-{0} {1} ", item.Key, item.Value);
+                }
+                return string.Format("{0}={1}", CommandLineKey, sb.ToString());
+            }
+
+
+            /// <see cref="BaseConfiguration.CheckConfiguration"/>
+            protected override void CheckConfiguration()
+            {
+                base.CheckConfiguration();
+                if (!keyValuePair.ContainsKey(CommandLineKey) && commandLineKeyValuePair.Count == 0)
+                {
+                    throw new InvalidOperationException("Missing CommandLine");
+                }
+            }
+
+            /// <see cref="IConfiguration.Configuration"/>
+            public override string[] Configuration
+            {
+                get
+                {
+                    CheckConfiguration();
+                    if (!keyValuePair.ContainsKey(CommandLineKey))
+                    {
+                        List<string> lst = new List<string>();
+                        lst.AddRange(base.Configuration);
+                        lst.Add(commandLineBuilder());
+                        return lst.ToArray();
+                    }
+                    else return base.Configuration;
+                }
+            }
+        }
+        #endregion
+
+        #region DCPSInfoRepoConfiguration
+        /// <summary>
+        /// Class managing DCPSInfoRepo
+        /// </summary>
+        public class DCPSInfoRepoConfiguration : BaseConfiguration
+        {
+            /// <summary>
+            /// Configuration key of <see cref="Autostart"/>
+            /// </summary>
+            public const string DCPSInfoRepoAutostartKey = "datadistributionmanager.opendds.dcpsinforepo.autostart";
+            /// <summary>
+            /// Configuration key of <see cref="LogOnApplication"/>
+            /// </summary>
+            public const string DCPSInfoRepoLogOnApplicationKey = "datadistributionmanager.opendds.dcpsinforepo.logonapplication";
+            /// <summary>
+            /// Configuration key of <see cref="CommandLine"/>
+            /// </summary>
+            public const string DCPSInfoRepoCommandLineKey = "datadistributionmanager.opendds.dcpsinforepo.cmdlineargs";
+            /// <summary>
+            /// Initialize a new instance of <see cref="DCPSInfoRepoConfiguration"/>
+            /// </summary>
+            public DCPSInfoRepoConfiguration()
+            {
+            }
+            /// <summary>
+            /// Initialize a new instance of <see cref="DCPSInfoRepoConfiguration"/>
+            /// </summary>
+            /// <param name="autostart">Automatically starts DCPSInfoRepo</param>
+            /// <param name="commandLine">Command line to use with DCPSInfoRepo</param>
+            public DCPSInfoRepoConfiguration(bool autostart, string commandLine)
+            {
+                Autostart = autostart;
+                CommandLine = commandLine;
+            }
+
+            /// <summary>
+            /// Automatically start DCPSInfoRepo
+            /// </summary>
+            public bool Autostart
+            {
+                get
+                {
+                    string value = string.Empty;
+                    keyValuePair.TryGetValue(DCPSInfoRepoAutostartKey, out value);
+                    return bool.Parse(value);
+                }
+                set
+                {
+                    keyValuePair[DCPSInfoRepoAutostartKey] = value.ToString().ToLowerInvariant();
+                }
+            }
+
+            /// <summary>
+            /// Emits log in the application log
+            /// </summary>
+            public bool LogOnApplication
+            {
+                get
+                {
+                    string value = string.Empty;
+                    keyValuePair.TryGetValue(DCPSInfoRepoLogOnApplicationKey, out value);
+                    return bool.Parse(value);
+                }
+                set
+                {
+                    keyValuePair[DCPSInfoRepoLogOnApplicationKey] = value.ToString().ToLowerInvariant();
+                }
+            }
+
+            /// <summary>
+            /// The command line to be used on DCPSInfoRepo executable
+            /// </summary>
+            public string CommandLine
+            {
+                get
+                {
+                    string value = string.Empty;
+                    keyValuePair.TryGetValue(DCPSInfoRepoCommandLineKey, out value);
+                    return value;
+                }
+                set
+                {
+                    keyValuePair[DCPSInfoRepoCommandLineKey] = value;
+                }
+            }
+        }
+        #endregion
+/*
+        #region DomainParticipantQosConfiguration
+        /// <summary>
+        /// Class managing DomainParticipantQos
+        /// </summary>
+        public class DomainParticipantQosConfiguration : BaseConfiguration
+        {
+            /// <summary>
+            /// Configuration key of <see cref="EntityFactoryQosPolicy"/>
+            /// </summary>
+            public const string EntityFactoryQosPolicyPropertyKey = "datadistributionmanager.opendds.qos.domainparticipant.entityfactoryqospolicy";
+            /// <summary>
+            /// Initialize a new instance of <see cref="DomainParticipantQosConfiguration"/>
+            /// </summary>
+            public DomainParticipantQosConfiguration()
+            {
+                EntityFactoryQosPolicy = true;
+            }
+            /// <summary>
+            /// Initialize a new instance of <see cref="DomainParticipantQosConfiguration"/>
+            /// </summary>
+            /// <param name="entityFactoryQosPolicy">Value to use for EntityFactoryQosPolicy</param>
+            public DomainParticipantQosConfiguration(bool entityFactoryQosPolicy)
+            {
+                EntityFactoryQosPolicy = entityFactoryQosPolicy;
+            }
+
+            /// <summary>
+            /// Automatically start DCPSInfoRepo
+            /// </summary>
+            public bool EntityFactoryQosPolicy
+            {
+                get
+                {
+                    string value = string.Empty;
+                    keyValuePair.TryGetValue(EntityFactoryQosPolicyPropertyKey, out value);
+                    return bool.Parse(value);
+                }
+                set
+                {
+                    keyValuePair[EntityFactoryQosPolicyPropertyKey] = value.ToString().ToLowerInvariant();
+                }
+            }
+        }
+        #endregion
+*/
+        /// <summary>
+        /// Base property name of all specific configuration key of <see cref="OpenDDSConfiguration"/>
         /// </summary>
         public const string OpenDDSConfigurationBasePropertyKey = "datadistributionmanager.opendds.";
-        /// <summary>
-        /// Configuration key of <see cref="DCPSInfoRepoAutostart"/>
-        /// </summary>
-        public const string DCPSInfoRepoAutostartKey = "datadistributionmanager.opendds.dcpsinforepo.autostart";
-        /// <summary>
-        /// Configuration key of <see cref="DCPSInfoRepoLogOnApplication"/>
-        /// </summary>
-        public const string DCPSInfoRepoLogOnApplicationKey = "datadistributionmanager.opendds.dcpsinforepo.logonapplication";
-        /// <summary>
-        /// Configuration key of <see cref="DCPSInfoRepoCommandLine"/>
-        /// </summary>
-        public const string DCPSInfoRepoCommandLineKey = "datadistributionmanager.opendds.dcpsinforepo.cmdlineargs";
-        /// <summary>
-        /// Configuration key of <see cref="CommandLine"/>
-        /// </summary>
-        public const string CommandLineKey = "datadistributionmanager.opendds.cmdlineargs";
         /// <summary>
         /// Configuration key of <see cref="DomainId"/>
         /// </summary>
         public const string DomainIdKey = "datadistributionmanager.opendds.domain_id";
-        /// <summary>
-        /// Configuration key of <see cref="DCPSConfigFile"/>
-        /// </summary>
-        public const string DCPSConfigFileKey = "DCPSConfigFile";
-        /// <summary>
-        /// Configuration key of <see cref="DCPSTransportDebugLevel"/>
-        /// </summary>
-        public const string DCPSTransportDebugLevelKey = "DCPSTransportDebugLevel";
 
         /// <summary>
         /// Initialize a <see cref="OpenDDSConfiguration"/>
         /// </summary>
         public OpenDDSConfiguration()
+#if DEBUG
+            : base("opendds", "DataDistributionManagerOpenDDSd.dll")
+#else
             : base("opendds", "DataDistributionManagerOpenDDS.dll")
+#endif
         {
         }
         /// <summary>
@@ -76,112 +313,11 @@ namespace MASES.DataDistributionManager.Bindings
             : base(originalConf)
         {
             OpenDDSConfiguration conf = originalConf as OpenDDSConfiguration;
-            if (conf !=null)
+            if (conf != null)
             {
-                commandLineKeyValuePair = new Dictionary<string, string>(conf.commandLineKeyValuePair);
-            }
-        }
-        /// <summary>
-        /// Automatically start DCPSInfoRepo
-        /// </summary>
-        public bool DCPSInfoRepoAutostart
-        {
-            get
-            {
-                string value = string.Empty;
-                keyValuePair.TryGetValue(DCPSInfoRepoAutostartKey, out value);
-                return bool.Parse(value);
-            }
-            set
-            {
-                keyValuePair[DCPSInfoRepoAutostartKey] = value.ToString().ToLowerInvariant();
-            }
-        }
-
-        /// <summary>
-        /// Emits log in the application log
-        /// </summary>
-        public bool DCPSInfoRepoLogOnApplication
-        {
-            get
-            {
-                string value = string.Empty;
-                keyValuePair.TryGetValue(DCPSInfoRepoLogOnApplicationKey, out value);
-                return bool.Parse(value);
-            }
-            set
-            {
-                keyValuePair[DCPSInfoRepoLogOnApplicationKey] = value.ToString().ToLowerInvariant();
-            }
-        }
-
-        /// <summary>
-        /// The command line to be used on DCPSInfoRepo executable
-        /// </summary>
-        public string DCPSInfoRepoCommandLine
-        {
-            get
-            {
-                string value = string.Empty;
-                keyValuePair.TryGetValue(DCPSInfoRepoCommandLineKey, out value);
-                return value;
-            }
-            set
-            {
-                keyValuePair[DCPSInfoRepoCommandLineKey] = value;
-            }
-        }
-
-        /// <summary>
-        /// The command line parameters of DCPSConfigFile
-        /// </summary>
-        public string DCPSConfigFile
-        {
-            get
-            {
-                string value = string.Empty;
-                commandLineKeyValuePair.TryGetValue(DCPSConfigFileKey, out value);
-                return value;
-            }
-            set
-            {
-                commandLineKeyValuePair[DCPSConfigFileKey] = value;
-            }
-        }
-
-        /// <summary>
-        /// The command line parameters of DCPSTransportDebugLevel
-        /// </summary>
-        public uint DCPSTransportDebugLevel
-        {
-            get
-            {
-                string value = string.Empty;
-                commandLineKeyValuePair.TryGetValue(DCPSTransportDebugLevelKey, out value);
-                return uint.Parse(value);
-            }
-            set
-            {
-                commandLineKeyValuePair[DCPSTransportDebugLevelKey] = value.ToString();
-            }
-        }
-
-        /// <summary>
-        /// The command line parameters to initialize OpenDDS (e.g. -DCPSConfigFile ../../Configuration/dds_tcp_conf.ini -DCPSTransportDebugLevel 10)
-        /// </summary>
-        /// <remarks>Set a value to null remove the property</remarks>
-        public string CommandLine
-        {
-            get
-            {
-                string value = string.Empty;
-                keyValuePair.TryGetValue(CommandLineKey, out value);
-                return value;
-            }
-            set
-            {
-                if (value == null) keyValuePair.Remove(CommandLineKey);
-                else keyValuePair[CommandLineKey] = value;
+                OpenDDSArgs = conf.OpenDDSArgs;
+                DCPSInfoRepo = conf.DCPSInfoRepo;
+                DomainParticipantQos = conf.DomainParticipantQos;
             }
         }
 
@@ -202,24 +338,31 @@ namespace MASES.DataDistributionManager.Bindings
             }
         }
 
-        /// <see cref="GlobalConfiguration.CheckConfiguration"/>
-        protected override void CheckConfiguration()
-        {
-            base.CheckConfiguration();
-            if (!keyValuePair.ContainsKey(CommandLineKey) && commandLineKeyValuePair.Count == 0)
-            {
-                throw new InvalidOperationException("Missing CommandLine");
-            }
-        }
+        /// <summary>
+        /// The configuration of <see cref="OpenDDSArgsConfiguration"/>
+        /// </summary>
+        public OpenDDSArgsConfiguration OpenDDSArgs { get; set; }
 
-        string commandLineBuilder()
+        /// <summary>
+        /// The configuration of <see cref="DCPSInfoRepoConfiguration"/>
+        /// </summary>
+        public DCPSInfoRepoConfiguration DCPSInfoRepo { get; set; }
+
+        /// <summary>
+        /// The configuration of <see cref="DomainParticipantQosConfiguration"/>
+        /// </summary>
+        public DomainParticipantQosConfiguration DomainParticipantQos { get; set; }
+
+        /// <summary>
+        /// Creates configuration for QoS policies
+        /// </summary>
+        protected virtual string[] PolicyBuilder(string[] parameters)
         {
-            StringBuilder sb = new StringBuilder();
-            foreach (var item in commandLineKeyValuePair)
-            {
-                sb.AppendFormat("-{0} {1} ", item.Key, item.Value);
-            }
-            return string.Format("{0}={1}", CommandLineKey, sb.ToString());
+            List<string> lst = new List<string>(parameters);
+            if (OpenDDSArgs != null) lst.AddRange(OpenDDSArgs.Configuration);
+            if (DCPSInfoRepo != null) lst.AddRange(DCPSInfoRepo.Configuration);
+            if (DomainParticipantQos != null) lst.AddRange(DomainParticipantQos.Configuration);
+            return lst.ToArray();
         }
 
         /// <see cref="IConfiguration.Configuration"/>
@@ -227,15 +370,7 @@ namespace MASES.DataDistributionManager.Bindings
         {
             get
             {
-                CheckConfiguration();
-                if (!keyValuePair.ContainsKey(CommandLineKey))
-                {
-                    List<string> lst = new List<string>();
-                    lst.AddRange(base.Configuration);
-                    lst.Add(commandLineBuilder());
-                    return lst.ToArray();
-                }
-                else return base.Configuration;
+                return PolicyBuilder(base.Configuration);
             }
         }
     }

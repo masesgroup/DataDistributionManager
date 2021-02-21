@@ -20,14 +20,14 @@
 
 module DataDistributionSchema
 {
-#pragma DCPS_DATA_TYPE "DataDistributionSchema::OpenDDSMsg"
-#pragma DCPS_DATA_KEY "DataDistributionSchema::OpenDDSMsg key"
+// #pragma DCPS_DATA_TYPE "DataDistributionSchema::OpenDDSMsg"
+// #pragma DCPS_DATA_KEY "DataDistributionSchema::OpenDDSMsg key"
 
 	typedef sequence<octet> OctetSeq;
-
+	@topic
 	struct OpenDDSMsg
 	{
-		string key;
+		@key string key;
 		unsigned long msgSize;
 		OctetSeq buffer;
 	};
