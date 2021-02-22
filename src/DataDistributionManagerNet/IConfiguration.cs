@@ -26,6 +26,7 @@ namespace MASES.DataDistributionManager.Bindings
         /// <summary>
         /// The configuration parameters to use written as key=value
         /// </summary>
+        /// <value>The list of key/value pairs</value>
         string[] Configuration { get; }
     }
 }

@@ -28,7 +28,7 @@ namespace MASES.DataDistributionManager.Bindings
         /// <summary>
         /// The list of key/value pairs
         /// </summary>
-        protected Dictionary<string, string> keyValuePair = new Dictionary<string, string>();
+        internal protected Dictionary<string, string> keyValuePair = new Dictionary<string, string>();
 
         /// <summary>
         /// Checks the configuration for mandatory information

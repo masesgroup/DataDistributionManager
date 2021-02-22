@@ -347,6 +347,15 @@ jobs:
           set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
           CreateJar.bat
           cd ..\..
+          
+      - name: Clear documentation folder 
+        run: Remove-Item .\docs\* -Recurse -Force
+
+      - name: Build documentation
+        run: |
+          choco install docfx
+          cd Documentation
+          docfx
 
       - uses: nuget/setup-nuget@v1
         with:
@@ -367,3 +376,15 @@ jobs:
         with:
           name: DataDistributionManager.zip
           path: .\OutputPackage\DataDistributionManager.zip
+          
+      - name: Extract commit SHA
+        run: |
+          echo "GITHUB_COMMIT_MESSAGE=$(echo $GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v5
+        with:
+          add: '.\docs\*.*'
+          message: Update documentation after commit ${{ env.GITHUB_COMMIT_MESSAGE }}
+          
