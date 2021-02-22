@@ -17,6 +17,7 @@
 */
 
 using MASES.DataDistributionManager.Bindings;
+using MASES.DataDistributionManager.Bindings.Configuration;
 using MASES.DataDistributionManager.Bindings.Interop;
 using System;
 using System.Diagnostics;
@@ -73,7 +74,7 @@ namespace ManagerTestNet
                     DCPSInfoRepo = new OpenDDSConfiguration.DCPSInfoRepoConfiguration()
                     {
                         Autostart = true,
-                        CommandLine = "-ORBEndpoint iiop://localhost:12345",
+                        ORBEndpoint = "iiop://localhost:12345",
                     },
                     DomainParticipantQos = new DomainParticipantQosConfiguration()
                     {
@@ -122,7 +123,7 @@ namespace ManagerTestNet
                     },
                     DurabilityQosPolicy = new DurabilityQosPolicyConfiguration()
                     {
-                        DurabilityQosPolicy = DurabilityQosPolicyConfiguration.DurabilityQosPolicyKind.TRANSIENT_DURABILITY_QOS
+                        Kind = DurabilityQosPolicyConfiguration.DurabilityQosPolicyKind.TRANSIENT_DURABILITY_QOS
                     }
                 },
                 SubscriberQos = new SubscriberQosConfiguration()

@@ -17,8 +17,9 @@
 */
 
 import org.mases.datadistributionmanager.*;
-import org.mases.datadistributionmanager.OpenDDSConfiguration.DCPSInfoRepoConfiguration;
-import org.mases.datadistributionmanager.OpenDDSConfiguration.OpenDDSArgsConfiguration;
+import org.mases.datadistributionmanager.configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration;
+import org.mases.datadistributionmanager.configuration.OpenDDSConfiguration.OpenDDSArgsConfiguration;
+import org.mases.datadistributionmanager.configuration.*;
 
 public class DataDistributionManagerJavaTest {
 	public static void main(String args[]) {
