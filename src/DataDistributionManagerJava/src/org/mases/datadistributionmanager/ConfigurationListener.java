@@ -22,7 +22,7 @@ package org.mases.datadistributionmanager;
  * Implementation of {@link IConfigurationListener}
  */
 public class ConfigurationListener implements IConfigurationListener {
-    public String OnConfiguration(String key, String value) {
+    public String OnConfiguration(String channelName, String key, String value) {
         return value;
     }
 }

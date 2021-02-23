@@ -131,11 +131,11 @@ DataDistributionCallbackImpl::DataDistributionCallbackImpl(const void* opaqueCal
 	m_DataDistributionManagerCallbacks.OnCompletelyDisconnected = completelyDisconnectedCb;
 }
 
-const char* DataDistributionCallbackImpl::OnConfiguration(const char* key, const char* value)
+const char* DataDistributionCallbackImpl::OnConfiguration(const char * channelName, const char* key, const char* value)
 {
 	if (m_DataDistributionManagerCallbacks.OnConfiguration)
 	{
-		return m_DataDistributionManagerCallbacks.OnConfiguration(m_DataDistributionManagerCallbacks.OpaqueCallbackReceiver, key, value);
+		return m_DataDistributionManagerCallbacks.OnConfiguration(m_DataDistributionManagerCallbacks.OpaqueCallbackReceiver, channelName, key, value);
 	}
 
 	return value;

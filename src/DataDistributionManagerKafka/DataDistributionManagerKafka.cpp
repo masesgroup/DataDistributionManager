@@ -59,7 +59,7 @@ int DataDistributionManagerKafka::read_config_file(ChannelConfigurationKafka* co
 		std::string n = line.substr(0, f);
 		std::string v = line.substr(f + 1);
 
-		v = CheckConfigurationParameter(n, v);
+		v = CheckConfigurationParameter((NULL != configuration) ? configuration->GetChannelName() : NULL, n, v);
 
 		SetParameter(configuration, n.c_str(), v.c_str());
 	}

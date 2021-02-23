@@ -32,7 +32,7 @@
 
 #include "DataDistributionManagerEnums.h"
 
-typedef const char*(__cdecl *dataDistributionConfigurationCb) (const void* opaque, const char* key, const char* value);
+typedef const char*(__cdecl *dataDistributionConfigurationCb) (const void* opaque, const char * channelName, const char* key, const char* value);
 typedef void(__cdecl *dataDistributionLoggingCb) (const void* opaque, const DDM_LOG_LEVEL level, const char* source, const char* function, const char* errorStr);
 typedef void(__cdecl *dataDistributionCompletelyDisconnectedCb) (const void* opaque, const char* source, const char* errorStr);
 
@@ -89,7 +89,7 @@ public:
 class __declspec(dllexport) IDataDistributionCallback
 {
 public:
-	virtual const char * OnConfiguration(const char * key, const char * value) = 0;
+	virtual const char * OnConfiguration(const char * channelName, const char * key, const char * value) = 0;
 	virtual void OnLogging(DDM_LOG_LEVEL, const char *, const char*, const char*) = 0;
 	virtual void OnCompletelyDisconnected(const char * channelName, const char* reason) = 0;
 };

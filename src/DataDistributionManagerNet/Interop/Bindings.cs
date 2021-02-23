@@ -29,7 +29,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
 
     interface IDataDistributionCallbackLow
     {
-        string OnConfiguration(IntPtr opaque, string key, string value);
+        string OnConfiguration(IntPtr opaque, string channelName, string key, string value);
         void OnLogging(IntPtr opaque, DDM_LOG_LEVEL logLevel, string source, string function, string errorStr);
         void OnCompletelyDisconnected(IntPtr opaque, string channelName, string reason);
     }
@@ -112,9 +112,9 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         }
 
         [return: MarshalAs(UnmanagedType.LPStr)]
-        string dataDistributionConfigurationCb([In]IntPtr opaque, [In][MarshalAs(UnmanagedType.LPStr)] string key, [In][MarshalAs(UnmanagedType.LPStr)] string value)
+        string dataDistributionConfigurationCb([In]IntPtr opaque, [In][MarshalAs(UnmanagedType.LPStr)] string channelName, [In][MarshalAs(UnmanagedType.LPStr)] string key, [In][MarshalAs(UnmanagedType.LPStr)] string value)
         {
-            return IDataDistributionCallback_cbs.OnConfiguration(opaque, key, value);
+            return IDataDistributionCallback_cbs.OnConfiguration(opaque, channelName, key, value);
         }
 
         void dataDistributionLoggingCb(IntPtr opaque, DDM_LOG_LEVEL level, [In][MarshalAs(UnmanagedType.LPStr)] string source, [In][MarshalAs(UnmanagedType.LPStr)] string function, [In][MarshalAs(UnmanagedType.LPStr)] string errorStr)

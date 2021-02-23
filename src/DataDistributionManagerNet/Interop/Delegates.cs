@@ -25,7 +25,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     [return: MarshalAs(UnmanagedType.LPStr)]
-    delegate string dataDistributionConfigurationCb([In]IntPtr opaque, [In][MarshalAs(UnmanagedType.LPStr)] string key, [In][MarshalAs(UnmanagedType.LPStr)] string value);
+    delegate string dataDistributionConfigurationCb([In]IntPtr opaque, [In][MarshalAs(UnmanagedType.LPStr)] string channelName, [In][MarshalAs(UnmanagedType.LPStr)] string key, [In][MarshalAs(UnmanagedType.LPStr)] string value);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate void dataDistributionLoggingCb([In]IntPtr opaque, [In]DDM_LOG_LEVEL level, [In][MarshalAs(UnmanagedType.LPStr)] string source, [In][MarshalAs(UnmanagedType.LPStr)] string function, [In][MarshalAs(UnmanagedType.LPStr)] string errorStr);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]

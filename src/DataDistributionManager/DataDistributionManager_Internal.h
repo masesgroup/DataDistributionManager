@@ -90,7 +90,7 @@ class DataDistributionCallbackImpl : public DataDistributionCallback
 {
 public:
 	DataDistributionCallbackImpl(const void*, dataDistributionConfigurationCb, dataDistributionLoggingCb, dataDistributionCompletelyDisconnectedCb);
-	virtual const char* OnConfiguration(const char* key, const char* value);
+	virtual const char* OnConfiguration(const char * channelName, const char* key, const char* value);
 	virtual void OnLogging(DDM_LOG_LEVEL, const char*, const char*, const char*);
 	virtual void OnCompletelyDisconnected(const char*, const char*);
 private:

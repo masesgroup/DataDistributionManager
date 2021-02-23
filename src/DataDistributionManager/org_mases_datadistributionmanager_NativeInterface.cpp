@@ -127,20 +127,22 @@ struct DataDistributionCallbackContainer
 	IDataDistributionCallback* pcb;
 };
 
-const char * dataDistributionConfigurationCbJava(const void* opaque, const char * key, const char * value)
+const char * dataDistributionConfigurationCbJava(const void* opaque, const char * channelName, const char * key, const char * value)
 {
 	BOOL attached;
 	JNIEnv* env = NewEnv("Configuration", &attached);
 	DataDistributionCallbackContainer* p = (DataDistributionCallbackContainer*)opaque;
+	jstring jchannelName = env->NewStringUTF(channelName);
 	jstring jkey = env->NewStringUTF(key);
 	jstring jvalue = env->NewStringUTF(value);
 
-	jmethodID callbackMethodId = env->GetMethodID(p->thisClass, "OnConfiguration", "(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;");
+	jmethodID callbackMethodId = env->GetMethodID(p->thisClass, "OnConfiguration", "(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;");
 
-	jobject res = env->CallObjectMethod(p->jthis, callbackMethodId, (jlong)p, jkey, jvalue);
+	jobject res = env->CallObjectMethod(p->jthis, callbackMethodId, (jlong)p, jchannelName, jkey, jvalue);
 
 	CheckAndRaise(env);
 
+	env->DeleteLocalRef(jchannelName);
 	env->DeleteLocalRef(jkey);
 	env->DeleteLocalRef(jvalue);
 

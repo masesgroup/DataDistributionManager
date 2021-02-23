@@ -84,7 +84,7 @@ public:
 	IDataDistributionCallback* GetCallbacks();
 	BOOL GetSubSystemStarted();
 protected:
-	std::string CheckConfigurationParameter(std::string key, std::string value);
+	std::string CheckConfigurationParameter(const char * channelName, std::string key, std::string value);
 	void SetSubSystemStarted(BOOL started);
 	void SetMaxMessageSize(size_t maxMessageSize);
 	void SetServerLostTimeout(int timeout);

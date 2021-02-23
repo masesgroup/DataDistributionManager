@@ -376,9 +376,9 @@ int DataDistributionCommon::GetServerLostTimeout()
 	return m_ServerLostTimeout;
 }
 
-std::string DataDistributionCommon::CheckConfigurationParameter(std::string key, std::string value)
+std::string DataDistributionCommon::CheckConfigurationParameter(const char * channelName, std::string key, std::string value)
 {
-	if (m_pDataDistributionManagerCallbacks) return m_pDataDistributionManagerCallbacks->OnConfiguration(key.c_str(), value.c_str());
+	if (m_pDataDistributionManagerCallbacks) return m_pDataDistributionManagerCallbacks->OnConfiguration(channelName, key.c_str(), value.c_str());
 	return value;
 }
 

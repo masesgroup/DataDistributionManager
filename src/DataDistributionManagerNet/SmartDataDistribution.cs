@@ -50,16 +50,22 @@ namespace MASES.DataDistributionManager.Bindings
     };
     #endregion
 
-    #region Configuration
+    #region ConfigurationEventArgs
     /// <summary>
-    /// Event args for <see cref="ISmartDataDistribution.Configuration"/> event
+    /// Event args for <see cref="ISmartDataDistribution.ConfigurationEvent"/> event
     /// </summary>
     public class ConfigurationEventArgs : EventArgs
     {
-        internal ConfigurationEventArgs(string key, string value)
+        internal ConfigurationEventArgs(string channelName, string key, string value)
         {
-
+            ChannelName = channelName;
+            Key = key;
+            Value = value;
         }
+        /// <summary>
+        /// The configuration key
+        /// </summary>
+        public string ChannelName { get; private set; }
         /// <summary>
         /// The configuration key
         /// </summary>
@@ -73,7 +79,7 @@ namespace MASES.DataDistributionManager.Bindings
 
     #region LoggingEventArgs
     /// <summary>
-    /// Event args for <see cref="ISmartDataDistribution.Logging"/> event
+    /// Event args for <see cref="ISmartDataDistribution.LoggingEvent"/> event
     /// </summary>
     public class LoggingEventArgs : EventArgs
     {
@@ -105,7 +111,7 @@ namespace MASES.DataDistributionManager.Bindings
 
     #region CompletelyDisconnectedEventArgs
     /// <summary>
-    /// Event args for <see cref="ISmartDataDistribution.CompletelyDisconnected"/> event
+    /// Event args for <see cref="ISmartDataDistribution.CompletelyDisconnectedEvent"/> event
     /// </summary>
     public class CompletelyDisconnectedEventArgs : EventArgs
     {
@@ -127,7 +133,7 @@ namespace MASES.DataDistributionManager.Bindings
 
     #region ClusterStateChangeEventArgs
     /// <summary>
-    /// Event args for <see cref="ISmartDataDistribution.ClusterStateChange"/> event
+    /// Event args for <see cref="ISmartDataDistribution.ClusterStateChangeEvent"/> event
     /// </summary>
     public class ClusterStateChangeEventArgs : EventArgs
     {
@@ -149,7 +155,7 @@ namespace MASES.DataDistributionManager.Bindings
 
     #region StateChangeEventArgs
     /// <summary>
-    /// Event args for <see cref="ISmartDataDistribution.StateChange"/> event
+    /// Event args for <see cref="ISmartDataDistribution.StateChangeEvent"/> event
     /// </summary>
     public class StateChangeEventArgs : EventArgs
     {
@@ -171,7 +177,7 @@ namespace MASES.DataDistributionManager.Bindings
 
     #region StateReadyEventArgs
     /// <summary>
-    /// Event args for <see cref="ISmartDataDistribution.StateReady"/> event
+    /// Event args for <see cref="ISmartDataDistribution.StateReadyEvent"/> event
     /// </summary>
     public class StateReadyEventArgs : EventArgs
     {
@@ -203,7 +209,7 @@ namespace MASES.DataDistributionManager.Bindings
 
     #region RequestedStateEventArgs
     /// <summary>
-    /// Event args for <see cref="ISmartDataDistribution.RequestedState"/> event
+    /// Event args for <see cref="ISmartDataDistribution.RequestedStateEvent"/> event
     /// </summary>
     public class RequestedStateEventArgs : EventArgs
     {
@@ -225,7 +231,7 @@ namespace MASES.DataDistributionManager.Bindings
 
     #region MultiplePrimaryEventArgs
     /// <summary>
-    /// Event args for <see cref="ISmartDataDistribution.MultiplePrimary"/> event
+    /// Event args for <see cref="ISmartDataDistribution.MultiplePrimaryEvent"/> event
     /// </summary>
     public class MultiplePrimaryEventArgs : EventArgs
     {
@@ -247,7 +253,7 @@ namespace MASES.DataDistributionManager.Bindings
 
     #region FirstStateChangeEventArgs
     /// <summary>
-    /// Event args for <see cref="ISmartDataDistribution.FirstStateChange"/> event
+    /// Event args for <see cref="ISmartDataDistribution.FirstStateChangeEvent"/> event
     /// </summary>
     public class FirstStateChangeEventArgs : EventArgs
     {
@@ -264,7 +270,7 @@ namespace MASES.DataDistributionManager.Bindings
 
     #region ChangingStateEventArgs
     /// <summary>
-    /// Event args for <see cref="ISmartDataDistribution.ChangingState"/> event
+    /// Event args for <see cref="ISmartDataDistribution.ChangingStateEvent"/> event
     /// </summary>
     public class ChangingStateEventArgs : EventArgs
     {
@@ -286,7 +292,7 @@ namespace MASES.DataDistributionManager.Bindings
 
     #region ChangedStateEventArgs
     /// <summary>
-    /// Event args for <see cref="ISmartDataDistribution.ChangedState"/> event
+    /// Event args for <see cref="ISmartDataDistribution.ChangedStateEvent"/> event
     /// </summary>
     public class ChangedStateEventArgs : EventArgs
     {
@@ -418,10 +424,11 @@ namespace MASES.DataDistributionManager.Bindings
         /// <summary>
         /// Called when a configuration parameter shall be checked
         /// </summary>
+        /// <param name="channelName">The channel requesting. null for global parameters</param>
         /// <param name="key">The parameter key</param>
         /// <param name="value">The parameter value</param>
         /// <returns>The new value associated to the <paramref name="key"/></returns>
-        string OnConfiguration(string key, string value);
+        string OnConfiguration(string channelName, string key, string value);
         /// <summary>
         /// Called when a log is emitted
         /// </summary>
@@ -698,15 +705,15 @@ namespace MASES.DataDistributionManager.Bindings
         }
 
         #region IDataDistributionCallback
-        string IDataDistributionCallbackLow.OnConfiguration(IntPtr IDataDistribution_nativePtr, string key, string value)
+        string IDataDistributionCallbackLow.OnConfiguration(IntPtr IDataDistribution_nativePtr, string channelName, string key, string value)
         {
             if (ConfigurationEvent != null)
             {
-                var args = new ConfigurationEventArgs(key, value);
+                var args = new ConfigurationEventArgs(channelName, key, value);
                 ConfigurationEvent(this, args);
                 return args.Value;
             }
-            else return this.OnConfiguration(key, value);
+            else return this.OnConfiguration(channelName, key, value);
         }
 
         void IDataDistributionCallbackLow.OnLogging(IntPtr IDataDistribution_nativePtr, DDM_LOG_LEVEL level, string source, string function, string errStr)
@@ -721,7 +728,7 @@ namespace MASES.DataDistributionManager.Bindings
             CompletelyDisconnectedEvent?.Invoke(this, new CompletelyDisconnectedEventArgs(channelName, reason));
         }
         /// <inheritdoc/>
-        public virtual string OnConfiguration(string key, string value)
+        public virtual string OnConfiguration(string channelName, string key, string value)
         {
             return value;
         }

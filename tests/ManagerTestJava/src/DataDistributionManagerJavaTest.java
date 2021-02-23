@@ -37,7 +37,8 @@ public class DataDistributionManagerJavaTest {
 			argsConf.setDCPSConfigFile("dds_tcp_conf.ini");
 			argsConf.setDCPSTransportDebugLevel(10);
 			conf.setOpenDDSArgs(argsConf);
-			DCPSInfoRepoConfiguration infoRepo = conf.new DCPSInfoRepoConfiguration(true, "-ORBEndpoint iiop://localhost:12345");
+			DCPSInfoRepoConfiguration infoRepo = conf.new DCPSInfoRepoConfiguration(true,
+					"-ORBEndpoint iiop://localhost:12345");
 			conf.setDCPSInfoRepo(infoRepo);
 			DomainParticipantQosConfiguration domainPartQos = new DomainParticipantQosConfiguration();
 			domainPartQos.EntityFactoryQosPolicy = new EntityFactoryQosPolicyConfiguration();
@@ -45,12 +46,18 @@ public class DataDistributionManagerJavaTest {
 			domainPartQos.UserDataQosPolicy = new UserDataQosPolicyConfiguration();
 			domainPartQos.UserDataQosPolicy.setValue(new Byte[] { 102, 105 });
 			domainPartQos.PropertyQosPolicy = new PropertyQosPolicyConfiguration();
-			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_IDENTITY_CA = domainPartQos.PropertyQosPolicy.new Property("ciao", false);
-			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_IDENTITY_CERT = domainPartQos.PropertyQosPolicy.new Property("ciao", false);
-			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_IDENTITY_PRIVKEY = domainPartQos.PropertyQosPolicy.new Property("ciao", false);
-			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_PERM_CA = domainPartQos.PropertyQosPolicy.new Property("ciao", false);
-			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_PERM_DOC = domainPartQos.PropertyQosPolicy.new Property("ciao", false);
-			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_PERM_GOV_DOC = domainPartQos.PropertyQosPolicy.new Property("ciao", false);
+			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_IDENTITY_CA = domainPartQos.PropertyQosPolicy.new Property("1",
+					false);
+			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_IDENTITY_CERT = domainPartQos.PropertyQosPolicy.new Property(
+					"2", false);
+			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_IDENTITY_PRIVKEY = domainPartQos.PropertyQosPolicy.new Property(
+					"3", false);
+			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_PERM_CA = domainPartQos.PropertyQosPolicy.new Property("4",
+					false);
+			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_PERM_DOC = domainPartQos.PropertyQosPolicy.new Property("5",
+					false);
+			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_PERM_GOV_DOC = domainPartQos.PropertyQosPolicy.new Property("6",
+					false);
 			conf.setDomainParticipantQos(domainPartQos);
 			String[] confRes = conf.getConfiguration();
 			hRes = dataDistribution.Initialize(conf);

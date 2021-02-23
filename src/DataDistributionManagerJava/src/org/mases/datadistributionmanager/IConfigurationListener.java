@@ -17,6 +17,7 @@
 */
 
 package org.mases.datadistributionmanager;
+
 /**
  * Listener for configuration validation
  */
@@ -24,9 +25,10 @@ public interface IConfigurationListener {
     /**
      * Request a configuration validation
      * 
-     * @param key   The configuration key
-     * @param value The configuration value
+     * @param channelName The channel requesting. null for global parameters
+     * @param key         The configuration key
+     * @param value       The configuration value
      * @return The value or an updated one
      */
-    String OnConfiguration(String key, String value);
+    String OnConfiguration(String channelName, String key, String value);
 }

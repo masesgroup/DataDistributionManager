@@ -28,6 +28,11 @@ namespace ManagerTestNet
 {
     class MySmartDataDistribution : SmartDataDistribution
     {
+        public override string OnConfiguration(string channelName, string key, string value)
+        {
+            return base.OnConfiguration(channelName, key, value);
+        }
+
         public override void OnLogging(DDM_LOG_LEVEL level, string source, string function, string errStr)
         {
             base.OnLogging(level, source, function, errStr);

@@ -562,25 +562,27 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
         m_IConfigurationListener_listeners.removeListener(listener);
     }
 
-    public final String OnConfiguration(long IDataDistribution_nativePtr, String key, String value) {
+    public final String OnConfiguration(long IDataDistribution_nativePtr, String channelName, String key,
+            String value) {
         if (m_IConfigurationListener_listeners.hasElements()) {
             String retVal = value;
             for (IConfigurationListener iConfigurationListener : m_IConfigurationListener_listeners) {
-                retVal = iConfigurationListener.OnConfiguration(key, value);
+                retVal = iConfigurationListener.OnConfiguration(channelName, key, value);
             }
             return retVal;
         } else
-            return this.OnConfiguration(key, value);
+            return this.OnConfiguration(channelName, key, value);
     }
 
     /**
      * Request a configuration validation
      * 
-     * @param key   The configuration key
-     * @param value The configuration value
+     * @param channelName The channel requesting. null for global parameters
+     * @param key         The configuration key
+     * @param value       The configuration value
      * @return The value or an updated one
      */
-    public String OnConfiguration(String key, String value) {
+    public String OnConfiguration(String channelName, String key, String value) {
         return value;
     }
 

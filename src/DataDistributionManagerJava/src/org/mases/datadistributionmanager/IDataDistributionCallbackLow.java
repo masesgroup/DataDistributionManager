@@ -19,7 +19,7 @@
 package org.mases.datadistributionmanager;
 
 interface IDataDistributionCallbackLow {
-    String OnConfiguration(long opaque, String key, String value);
+    String OnConfiguration(long opaque, String channelName, String key, String value);
 
     void OnLogging(long opaque, int logLevel, String source, String function, String errorStr);
 
