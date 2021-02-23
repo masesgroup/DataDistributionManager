@@ -19,17 +19,21 @@
 package org.mases.datadistributionmanager.configuration;
 
 import org.mases.datadistributionmanager.BaseConfiguration;
-
+/**
+ * The configuration class for LifespanQosPolicy. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+ */
 public class LifespanQosPolicyConfiguration extends BaseConfiguration {
-    /// <summary>
-    /// Configuration key of <see cref="Period"/>
-    /// </summary>
     public static final String DurationPropertyKey = "datadistributionmanager.opendds.qos.lifespanqospolicy.duration";
 
-    /// <summary>
-    /// Initialize a new instance of <see
-    /// cref="LifespanQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * Initialize a new {@link LifespanQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public LifespanQosPolicyConfiguration() {
     }
 

@@ -21,8 +21,24 @@ package org.mases.datadistributionmanager.configuration;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * The configuration class for PresentationQosPolicyAccessScopeKind. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+ */
 public enum ReliabilityQosPolicyKind {
+    /**
+     * See <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     BEST_EFFORT_RELIABILITY_QOS("BEST_EFFORT_RELIABILITY_QOS", 0X0),
+    /**
+     * See <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     RELIABLE_RELIABILITY_QOS("RELIABLE_RELIABILITY_QOS", 0X1);
 
     private static final Map<String, ReliabilityQosPolicyKind> BY_LABEL = new HashMap<>();

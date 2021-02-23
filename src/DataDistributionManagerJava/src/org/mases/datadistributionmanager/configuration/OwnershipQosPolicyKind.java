@@ -21,8 +21,25 @@ package org.mases.datadistributionmanager.configuration;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * The configuration class for OwnershipQosPolicyKind. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+ */
 public enum OwnershipQosPolicyKind {
-    SHARED_OWNERSHIP_QOS("SHARED_OWNERSHIP_QOS", 0X0), EXCLUSIVE_OWNERSHIP_QOS("EXCLUSIVE_OWNERSHIP_QOS", 0X1);
+    /**
+     * See <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
+    SHARED_OWNERSHIP_QOS("SHARED_OWNERSHIP_QOS", 0X0),
+    /**
+     * See <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
+    EXCLUSIVE_OWNERSHIP_QOS("EXCLUSIVE_OWNERSHIP_QOS", 0X1);
 
     private static final Map<String, OwnershipQosPolicyKind> BY_LABEL = new HashMap<>();
     private static final Map<Integer, OwnershipQosPolicyKind> BY_ATOMIC_NUMBER = new HashMap<>();

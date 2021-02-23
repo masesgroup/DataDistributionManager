@@ -21,16 +21,21 @@ package org.mases.datadistributionmanager.configuration;
 import org.mases.datadistributionmanager.BaseConfiguration;
 import java.util.ArrayList;
 
+/**
+ * The configuration class for GroupDataQosPolicy. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+ */
 public class GroupDataQosPolicyConfiguration extends BaseConfiguration {
-    /// <summary>
-    /// Configuration key of <see cref="Period"/>
-    /// </summary>
     public static final String ValuePropertyKey = "datadistributionmanager.opendds.qos.groupdataqospolicy.value";
 
-    /// <summary>
-    /// Initialize a new instance of <see
-    /// cref="GroupDataQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * Initialize a new {@link GroupDataQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public GroupDataQosPolicyConfiguration() {
     }
 

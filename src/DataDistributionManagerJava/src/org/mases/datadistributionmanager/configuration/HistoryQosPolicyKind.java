@@ -21,8 +21,25 @@ package org.mases.datadistributionmanager.configuration;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * The configuration class for HistoryQosPolicyKind. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+ */
 public enum HistoryQosPolicyKind {
-    KEEP_LAST_HISTORY_QOS("KEEP_LAST_HISTORY_QOS", 0X0), KEEP_ALL_HISTORY_QOS("KEEP_ALL_HISTORY_QOS", 0X1);
+    /**
+     * See <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
+    KEEP_LAST_HISTORY_QOS("KEEP_LAST_HISTORY_QOS", 0X0),
+    /**
+     * See <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
+    KEEP_ALL_HISTORY_QOS("KEEP_ALL_HISTORY_QOS", 0X1);
 
     private static final Map<String, HistoryQosPolicyKind> BY_LABEL = new HashMap<>();
     private static final Map<Integer, HistoryQosPolicyKind> BY_ATOMIC_NUMBER = new HashMap<>();

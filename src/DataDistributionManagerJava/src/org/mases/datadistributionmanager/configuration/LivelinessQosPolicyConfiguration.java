@@ -21,32 +21,34 @@ package org.mases.datadistributionmanager.configuration;
 import org.mases.datadistributionmanager.BaseConfiguration;
 
 /**
- * Class managing LivelinessQosPolicy
+ * The configuration class for LivelinessQosPolicy. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
  */
 public class LivelinessQosPolicyConfiguration extends BaseConfiguration {
-    /// <summary>
-    /// Configuration key of <see cref="LeaseDuration"/>
-    /// </summary>
     public static final String KindPropertyKey = "datadistributionmanager.opendds.qos.livelinessqospolicy.kind";
-    /// <summary>
-    /// Configuration key of <see cref="LeaseDuration"/>
-    /// </summary>
     public static final String LeaseDurationPropertyKey = "datadistributionmanager.opendds.qos.livelinessqospolicy.lease_duration";
 
-    /// <summary>
-    /// Initialize a new instance of <see
-    /// cref="LivelinessQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * Initialize a new {@link LivelinessQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public LivelinessQosPolicyConfiguration() {
 
     }
 
-    /// <summary>
-    /// Initialize a new instance of <see
-    /// cref="LivelinessQosPolicyConfiguration"/>
-    /// </summary>
-    /// <param name="historyQosPolicy">Value to use for <see
-    /// name="HistoryQosPolicyKind"/></param>
+    /**
+     * Initialize a new {@link LivelinessQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     * 
+     * @param kind See OpenDDS documentation
+     * @param period See OpenDDS documentation
+     */
     public LivelinessQosPolicyConfiguration(LivelinessQosPolicyKind kind, Integer period) {
         setKind(kind);
         setLeaseDuration(period);

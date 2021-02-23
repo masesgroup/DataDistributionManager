@@ -21,7 +21,10 @@ package org.mases.datadistributionmanager.configuration;
 import org.mases.datadistributionmanager.BaseConfiguration;
 
 /**
- * Class managing DurabilityQosPolicy
+ * The configuration class for DurabilityQosPolicy. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
  */
 public class DurabilityQosPolicyConfiguration extends BaseConfiguration {
     /**

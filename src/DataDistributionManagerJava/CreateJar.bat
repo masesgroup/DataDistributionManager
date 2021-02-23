@@ -3,8 +3,8 @@
 rmdir /Q /S Output
 mkdir Output
 
-rmdir /Q /S Javadoc
-mkdir Javadoc
+rmdir /Q /S javadoc
+mkdir javadoc
 
 "%JDK_ROOT_FOLDER%\bin\javac.exe" -Xlint:deprecation --source 8 --target 8 -d ./Output ./src/org/mases/datadistributionmanager/*.java ./src/org/mases/datadistributionmanager/configuration/*.java
 IF %ERRORLEVEL% NEQ 0 GOTO ERROR

@@ -21,10 +21,36 @@ package org.mases.datadistributionmanager.configuration;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * The configuration class for DurabilityQosPolicyKind. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+ */
 public enum DurabilityQosPolicyKind {
+    /**
+     * See <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     VOLATILE_DURABILITY_QOS("VOLATILE_DURABILITY_QOS", 0X0),
+    /**
+     * See <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     TRANSIENT_LOCAL_DURABILITY_QOS("TRANSIENT_LOCAL_DURABILITY_QOS", 0X1),
+    /**
+     * See <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     TRANSIENT_DURABILITY_QOS("TRANSIENT_DURABILITY_QOS", 0X2),
+    /**
+     * See <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     PERSISTENT_DURABILITY_QOS("PERSISTENT_DURABILITY_QOS", 0X3);
 
     private static final Map<String, DurabilityQosPolicyKind> BY_LABEL = new HashMap<>();

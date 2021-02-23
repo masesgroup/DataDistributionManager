@@ -295,11 +295,21 @@ public class OpenDDSConfiguration extends CommonConfiguration {
             keyValuePair.put(DCPSInfoRepoCommandLineKey, value);
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @return See OpenDDS documentation
+         */
         public String getORBSvcConf() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoORBSvcConfKey);
             return value;
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @param value See OpenDDS documentation
+         */
         public void setORBSvcConf(String value) {
             if (value == null)
                 commandLineKeyValuePair.remove(DCPSInfoRepoORBSvcConfKey);
@@ -307,11 +317,21 @@ public class OpenDDSConfiguration extends CommonConfiguration {
                 commandLineKeyValuePair.put(DCPSInfoRepoORBSvcConfKey, value);
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @return See OpenDDS documentation
+         */
         public String getORBEndpoint() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoORBEndpointKey);
             return value;
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @param value See OpenDDS documentation
+         */
         public void setORBEndpoint(String value) {
             if (value == null)
                 commandLineKeyValuePair.remove(DCPSInfoRepoORBEndpointKey);
@@ -319,11 +339,21 @@ public class OpenDDSConfiguration extends CommonConfiguration {
                 commandLineKeyValuePair.put(DCPSInfoRepoORBEndpointKey, value);
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @return See OpenDDS documentation
+         */
         public String getORBListenEndpoints() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoORBListenEndpointsKey);
             return value;
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @param value See OpenDDS documentation
+         */
         public void setORBListenEndpoints(String value) {
             if (value == null)
                 commandLineKeyValuePair.remove(DCPSInfoRepoORBListenEndpointsKey);
@@ -331,11 +361,21 @@ public class OpenDDSConfiguration extends CommonConfiguration {
                 commandLineKeyValuePair.put(DCPSInfoRepoORBListenEndpointsKey, value);
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @return See OpenDDS documentation
+         */
         public String getIorFile() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoIorFileKey);
             return value;
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @param value See OpenDDS documentation
+         */
         public void setIorFile(String value) {
             if (value == null)
                 commandLineKeyValuePair.remove(DCPSInfoRepoIorFileKey);
@@ -343,6 +383,11 @@ public class OpenDDSConfiguration extends CommonConfiguration {
                 commandLineKeyValuePair.put(DCPSInfoRepoIorFileKey, value);
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @return See OpenDDS documentation
+         */
         public boolean getNOBITS() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoNOBITSKey);
             if (value != null && value == "1")
@@ -350,6 +395,11 @@ public class OpenDDSConfiguration extends CommonConfiguration {
             return false;
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @param value See OpenDDS documentation
+         */
         public void setNOBITS(boolean value) {
             if (value == true)
                 commandLineKeyValuePair.put(DCPSInfoRepoNOBITSKey, "1");
@@ -357,11 +407,21 @@ public class OpenDDSConfiguration extends CommonConfiguration {
                 commandLineKeyValuePair.put(DCPSInfoRepoNOBITSKey, "0");
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @return See OpenDDS documentation
+         */
         public String getListeningAddress() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoListeningAddressKey);
             return value;
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @param value See OpenDDS documentation
+         */
         public void setListeningAddress(String value) {
             if (value == null)
                 commandLineKeyValuePair.remove(DCPSInfoRepoListeningAddressKey);
@@ -369,6 +429,11 @@ public class OpenDDSConfiguration extends CommonConfiguration {
                 commandLineKeyValuePair.put(DCPSInfoRepoListeningAddressKey, value);
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @return See OpenDDS documentation
+         */
         public boolean getVerboseLogging() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoVerboseLoggingKey);
             if (value != null && value == "1")
@@ -376,6 +441,11 @@ public class OpenDDSConfiguration extends CommonConfiguration {
             return false;
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @param value See OpenDDS documentation
+         */
         public void setVerboseLogging(boolean value) {
             if (value == true)
                 commandLineKeyValuePair.put(DCPSInfoRepoVerboseLoggingKey, "1");
@@ -383,11 +453,21 @@ public class OpenDDSConfiguration extends CommonConfiguration {
                 commandLineKeyValuePair.put(DCPSInfoRepoVerboseLoggingKey, "0");
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @return See OpenDDS documentation
+         */
         public String getPersistenceFile() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoPersistenceFileKey);
             return value;
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @param value See OpenDDS documentation
+         */
         public void setPersistenceFile(String value) {
             if (value == null)
                 commandLineKeyValuePair.remove(DCPSInfoRepoPersistenceFileKey);
@@ -395,6 +475,11 @@ public class OpenDDSConfiguration extends CommonConfiguration {
                 commandLineKeyValuePair.put(DCPSInfoRepoPersistenceFileKey, value);
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @return See OpenDDS documentation
+         */
         public boolean getResurrect() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoResurrectKey);
             if (value != null && value == "1")
@@ -402,6 +487,11 @@ public class OpenDDSConfiguration extends CommonConfiguration {
             return false;
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @param value See OpenDDS documentation
+         */
         public void setResurrect(boolean value) {
             if (value == true)
                 commandLineKeyValuePair.put(DCPSInfoRepoResurrectKey, "1");
@@ -409,6 +499,11 @@ public class OpenDDSConfiguration extends CommonConfiguration {
                 commandLineKeyValuePair.put(DCPSInfoRepoResurrectKey, "0");
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @return See OpenDDS documentation
+         */
         public boolean getPersistenceReset() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoPersistenceResetKey);
             if (value != null && value == "1")
@@ -416,6 +511,11 @@ public class OpenDDSConfiguration extends CommonConfiguration {
             return false;
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @param value See OpenDDS documentation
+         */
         public void setPersistenceReset(boolean value) {
             if (value == true)
                 commandLineKeyValuePair.put(DCPSInfoRepoPersistenceResetKey, "1");
@@ -423,11 +523,21 @@ public class OpenDDSConfiguration extends CommonConfiguration {
                 commandLineKeyValuePair.put(DCPSInfoRepoPersistenceResetKey, "0");
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @return See OpenDDS documentation
+         */
         public String getFederatorConfig() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoFederatorConfigKey);
             return value;
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @param value See OpenDDS documentation
+         */
         public void setFederatorConfig(String value) {
             if (value == null)
                 commandLineKeyValuePair.remove(DCPSInfoRepoFederatorConfigKey);
@@ -435,20 +545,40 @@ public class OpenDDSConfiguration extends CommonConfiguration {
                 commandLineKeyValuePair.put(DCPSInfoRepoFederatorConfigKey, value);
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @return See OpenDDS documentation
+         */
         public Integer getFederationId() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoFederationIdKey);
             return (value == null) ? 0 : Integer.parseInt(value);
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @param value See OpenDDS documentation
+         */
         public void setFederationId(Integer value) {
             commandLineKeyValuePair.put(DCPSInfoRepoFederationIdKey, value.toString());
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @return See OpenDDS documentation
+         */
         public String getFederateWith() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoFederateWithKey);
             return value;
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @param value See OpenDDS documentation
+         */
         public void setFederateWith(String value) {
             if (value == null)
                 commandLineKeyValuePair.remove(DCPSInfoRepoFederateWithKey);
@@ -456,20 +586,40 @@ public class OpenDDSConfiguration extends CommonConfiguration {
                 commandLineKeyValuePair.put(DCPSInfoRepoFederateWithKey, value);
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @return See OpenDDS documentation
+         */
         public Integer getReassociateDelay() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoReassociateDelayKey);
             return (value == null) ? 0 : Integer.parseInt(value);
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @param value See OpenDDS documentation
+         */
         public void setReassociateDelay(Integer value) {
             commandLineKeyValuePair.put(DCPSInfoRepoReassociateDelayKey, value.toString());
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @return See OpenDDS documentation
+         */
         public Integer getDispatchingCheckDelay() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoDispatchingCheckDelayKey);
             return (value == null) ? 0 : Integer.parseInt(value);
         }
 
+        /**
+         * See OpenDDS documentation
+         * 
+         * @param value See OpenDDS documentation
+         */
         public void setDispatchingCheckDelay(Integer value) {
             commandLineKeyValuePair.put(DCPSInfoRepoDispatchingCheckDelayKey, value.toString());
         }

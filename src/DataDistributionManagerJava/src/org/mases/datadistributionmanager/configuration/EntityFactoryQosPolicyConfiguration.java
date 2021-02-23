@@ -19,16 +19,22 @@
 package org.mases.datadistributionmanager.configuration;
 
 import org.mases.datadistributionmanager.BaseConfiguration;
+
+/**
+ * The configuration class for EntityFactoryQosPolicy. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+ */
 public class EntityFactoryQosPolicyConfiguration extends BaseConfiguration {
-    /// <summary>
-    /// Configuration key of <see cref="Period"/>
-    /// </summary>
     public static final String AutoenableCreatedEntitiesPropertyKey = "datadistributionmanager.opendds.qos.entityfactoryqospolicy.autoenable_created_entities";
 
-    /// <summary>
-    /// Initialize a new instance of <see
-    /// cref="EntityFactoryQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * Initialize a new {@link EntityFactoryQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public EntityFactoryQosPolicyConfiguration() {
     }
 

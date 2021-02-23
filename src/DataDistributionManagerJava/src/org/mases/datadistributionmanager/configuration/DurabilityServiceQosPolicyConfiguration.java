@@ -21,50 +21,26 @@ package org.mases.datadistributionmanager.configuration;
 import org.mases.datadistributionmanager.BaseConfiguration;
 
 /**
- * Class managing DurabilityQosPolicy
+ * The configuration class for DurabilityServiceQosPolicy. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
  */
 public class DurabilityServiceQosPolicyConfiguration extends BaseConfiguration {
-    /// <summary>
-    /// Configuration key of <see cref="ServiceCleanupDelay"/>
-    /// </summary>
     public static final String ServiceCleanupDelayPropertyKey = "datadistributionmanager.opendds.qos.durabilityserviceqospolicy.service_cleanup_delay";
-    /// <summary>
-    /// Configuration key of <see cref="HistoryQosPolicy"/>
-    /// </summary>
     public static final String KindPropertyKey = "datadistributionmanager.opendds.qos.durabilityserviceqospolicy.kind";
-    /// <summary>
-    /// Configuration key of <see cref="HistoryDepth"/>
-    /// </summary>
     public static final String HistoryDepthPropertyKey = "datadistributionmanager.opendds.qos.durabilityserviceqospolicy.history_depth";
-    /// <summary>
-    /// Configuration key of <see cref="MaxSamples"/>
-    /// </summary>
     public static final String MaxSamplesPropertyKey = "datadistributionmanager.opendds.qos.durabilityserviceqospolicy.max_samples";
-    /// <summary>
-    /// Configuration key of <see cref="MaxInstances"/>
-    /// </summary>
     public static final String MaxInstancesPropertyKey = "datadistributionmanager.opendds.qos.durabilityserviceqospolicy.max_instances";
-    /// <summary>
-    /// Configuration key of <see cref="MaxSamplesPerInstance"/>
-    /// </summary>
     public static final String MaxSamplesPerInstancePropertyKey = "datadistributionmanager.opendds.qos.durabilityserviceqospolicy.max_samples_per_instance";
 
-    /// <summary>
-    /// Initialize a new instance of <see
-    /// cref="DurabilityServiceQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * Initialize a new {@link DurabilityServiceQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public DurabilityServiceQosPolicyConfiguration() {
-
-    }
-
-    /// <summary>
-    /// Initialize a new instance of <see
-    /// cref="DurabilityServiceQosPolicyConfiguration"/>
-    /// </summary>
-    /// <param name="historyQosPolicy">Value to use for <see
-    /// name="HistoryQosPolicyKind"/></param>
-    public DurabilityServiceQosPolicyConfiguration(HistoryQosPolicyKind kind) {
-        setKind(kind);
     }
 
     /**

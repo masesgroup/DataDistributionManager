@@ -24,9 +24,6 @@ import org.mases.datadistributionmanager.BaseConfiguration;
  * Class managing OwnershipQosPolicy
  */
 public class OwnershipQosPolicyConfiguration extends BaseConfiguration {
-    /**
-     * Configuration key of OwnershipQosPolicy property
-     */
     public static final String KindPropertyKey = "datadistributionmanager.opendds.qos.ownershipqospolicy.kind";
 
     /**

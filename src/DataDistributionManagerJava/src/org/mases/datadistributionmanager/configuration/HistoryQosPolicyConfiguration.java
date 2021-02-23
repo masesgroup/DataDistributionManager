@@ -21,32 +21,33 @@ package org.mases.datadistributionmanager.configuration;
 import org.mases.datadistributionmanager.BaseConfiguration;
 
 /**
- * Class managing HistoryQosPolicy
+ * The configuration class for HistoryQosPolicy. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
  */
 public class HistoryQosPolicyConfiguration extends BaseConfiguration {
-    /// <summary>
-    /// Configuration key of <see cref="Kind"/>
-    /// </summary>
     public static final String KindPropertyKey = "datadistributionmanager.opendds.qos.historyqospolicy.kind";
-    /// <summary>
-    /// Configuration key of <see cref="Depth"/>
-    /// </summary>
     public static final String DepthPropertyKey = "datadistributionmanager.opendds.qos.historyqospolicy.depth";
 
-    /// <summary>
-    /// Initialize a new instance of <see
-    /// cref="HistoryQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * Initialize a new {@link HistoryQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public HistoryQosPolicyConfiguration() {
 
     }
 
-    /// <summary>
-    /// Initialize a new instance of <see
-    /// cref="HistoryQosPolicyConfiguration"/>
-    /// </summary>
-    /// <param name="historyQosPolicy">Value to use for <see
-    /// name="HistoryQosPolicyKind"/></param>
+    /**
+     * Initialize a new {@link HistoryQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     * @param kind {@link HistoryQosPolicyKind}. See OpenDDS documentation
+     * @param period See OpenDDS documentation 
+     */
     public HistoryQosPolicyConfiguration(HistoryQosPolicyKind kind, Integer period) {
         setKind(kind);
         setDepth(period);

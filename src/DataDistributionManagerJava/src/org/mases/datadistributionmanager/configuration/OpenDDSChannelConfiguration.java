@@ -31,34 +31,51 @@ public class OpenDDSChannelConfiguration extends OpenDDSConfiguration {
         super(originalConf);
     }
 
-    /// <summary>
-    /// The configuration of <see cref="TopicQosConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration class for TopicQos. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public TopicQosConfiguration TopicQos;
 
-    /// <summary>
-    /// The configuration of <see cref="PublisherQosConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration class for PublisherQos. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public PublisherQosConfiguration PublisherQos;
 
-    /// <summary>
-    /// The configuration of <see cref="SubscriberQosConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration class for SubscriberQos. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public SubscriberQosConfiguration SubscriberQos;
 
-    /// <summary>
-    /// The configuration of <see cref="DataReaderQosConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration class for DataReaderQos. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public DataReaderQosConfiguration DataReaderQos;
 
-    /// <summary>
-    /// The configuration of <see cref="SubscriberQosConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration class for DataWriterQos. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public DataWriterQosConfiguration DataWriterQos;
 
-    /// <summary>
-    /// Creates configuration for QoS policies
-    /// </summary>
+    /**
+     * Creates configuration for QoS policies
+     * @param parameters Input parameters
+     * @return updated parameters
+     */
     protected String[] PolicyBuilder(String[] parameters) {
         ArrayList<String> lst = new ArrayList<String>();
         if (TopicQos != null) {

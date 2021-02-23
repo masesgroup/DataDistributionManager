@@ -19,24 +19,31 @@
 package org.mases.datadistributionmanager.configuration;
 
 import org.mases.datadistributionmanager.BaseConfiguration;
-
+/**
+ * The configuration class for LatencyBudgetQosPolicy. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+ */
 public class LatencyBudgetQosPolicyConfiguration extends BaseConfiguration {
-    /// <summary>
-    /// Configuration key of <see cref="Period"/>
-    /// </summary>
     public static final String PeriodPropertyKey = "datadistributionmanager.opendds.qos.latencybudgetqospolicy.period";
 
-    /// <summary>
-    /// Initialize a new instance of <see
-    /// cref="LatencyBudgetQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * Initialize a new {@link LatencyBudgetQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public LatencyBudgetQosPolicyConfiguration() {
     }
 
-    /// <summary>
-    /// Initialize a new instance of <see
-    /// cref="LatencyBudgetQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * Initialize a new {@link LatencyBudgetQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     * @param period See OpenDDS documentation
+     */
     public LatencyBudgetQosPolicyConfiguration(int period) {
         setPeriod(period);
     }
