@@ -22,35 +22,43 @@ import org.mases.datadistributionmanager.BaseConfiguration;
 
 import java.util.ArrayList;
 
-/// <summary>
-/// The configuration class for DataWriterQos
-/// </summary>
+/**
+ * The configuration class for DomainParticipantQos. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+ */
 public class DomainParticipantQosConfiguration extends BaseConfiguration {
-    /// <summary>
-    /// Base property name of all specific configuration key of <see
-    /// cref="DomainParticipantQosConfiguration"/>
-    /// </summary>
     public static final String DomainParticipantQosBasePropertyKey = "datadistributionmanager.opendds.domainparticipantqos";
 
-    /// <summary>
-    /// Initialize a <see cref="DomainParticipantQosConfiguration"/>
-    /// </summary>
+    /**
+     * Initialize a {@link DomainParticipantQosConfiguration}
+     */
     public DomainParticipantQosConfiguration() {
     }
 
-    /// <summary>
-    /// The configuration of <see cref="UserDataQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link UserDataQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public UserDataQosPolicyConfiguration UserDataQosPolicy;
 
-    /// <summary>
-    /// The configuration of <see cref="EntityFactoryQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link EntityFactoryQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public EntityFactoryQosPolicyConfiguration EntityFactoryQosPolicy;
 
-    /// <summary>
-    /// The configuration of <see cref="PropertyQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link PropertyQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public PropertyQosPolicyConfiguration PropertyQosPolicy;
 
     String[] replacer(String[] input) {
@@ -62,9 +70,12 @@ public class DomainParticipantQosConfiguration extends BaseConfiguration {
         return array;
     }
 
-    /// <summary>
-    /// Creates configuration for QoS policies
-    /// </summary>
+    /**
+     * Creates configuration for QoS policies
+     * 
+     * @param parameters Input parameters
+     * @return updated parameters
+     */
     protected String[] PolicyBuilder(String[] parameters) {
         ArrayList<String> lst = new ArrayList<String>();
         if (UserDataQosPolicy != null) {
@@ -86,7 +97,6 @@ public class DomainParticipantQosConfiguration extends BaseConfiguration {
         return lst.toArray(array);
     }
 
-    /// <see cref="IConfiguration.Configuration"/>
     public String[] getConfiguration() {
         return PolicyBuilder(super.getConfiguration());
     }

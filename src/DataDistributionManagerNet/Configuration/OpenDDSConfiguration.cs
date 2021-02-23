@@ -29,7 +29,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
     {
         #region OpenDDSArgsConfiguration
         /// <summary>
-        /// Class managing OpenDDSArgs
+        /// Class managing OpenDDSArgs. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public class OpenDDSArgsConfiguration : BaseConfiguration
         {
@@ -163,7 +163,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
 
         #region DCPSInfoRepoConfiguration
         /// <summary>
-        /// Class managing DCPSInfoRepo
+        /// Class managing DCPSInfoRepo. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public class DCPSInfoRepoConfiguration : BaseConfiguration
         {

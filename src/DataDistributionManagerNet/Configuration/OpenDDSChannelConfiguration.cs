@@ -79,35 +79,35 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public Property DDSSEC_PROP_IDENTITY_CA { get; set; }
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public Property DDSSEC_PROP_IDENTITY_CERT { get; set; }
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public Property DDSSEC_PROP_IDENTITY_PRIVKEY { get; set; }
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public Property DDSSEC_PROP_IDENTITY_PRIVKEY_PWD { get; set; }
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public Property DDSSEC_PROP_PERM_CA { get; set; }
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public Property DDSSEC_PROP_PERM_GOV_DOC { get; set; }
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public Property DDSSEC_PROP_PERM_DOC { get; set; }
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public override string[] Configuration
         {
@@ -143,24 +143,24 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
     public class DurabilityQosPolicyConfiguration : BaseConfiguration
     {
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public enum DurabilityQosPolicyKind
         {
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             VOLATILE_DURABILITY_QOS,
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             TRANSIENT_LOCAL_DURABILITY_QOS,
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             TRANSIENT_DURABILITY_QOS,
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             PERSISTENT_DURABILITY_QOS
         }
@@ -185,7 +185,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public DurabilityQosPolicyKind Kind
         {
@@ -210,16 +210,16 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
     public class DurabilityServiceQosPolicyConfiguration : BaseConfiguration
     {
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public enum HistoryQosPolicyKind
         {
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             KEEP_LAST_HISTORY_QOS,
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             KEEP_ALL_HISTORY_QOS
         }
@@ -265,7 +265,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public int ServiceCleanupDelay
         {
@@ -282,7 +282,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public HistoryQosPolicyKind Kind
         {
@@ -299,7 +299,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public int HistoryDepth
         {
@@ -316,7 +316,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public int MaxSamples
         {
@@ -333,7 +333,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public int MaxInstances
         {
@@ -350,7 +350,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public int MaxSamplesPerInstance
         {
@@ -393,7 +393,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public int Period
         {
@@ -436,7 +436,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public int Period
         {
@@ -461,20 +461,20 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
     public class LivelinessQosPolicyConfiguration : BaseConfiguration
     {
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public enum LivelinessQosPolicyKind
         {
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             AUTOMATIC_LIVELINESS_QOS,
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             MANUAL_BY_PARTICIPANT_LIVELINESS_QOS,
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             MANUAL_BY_TOPIC_LIVELINESS_QOS
         }
@@ -502,7 +502,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public LivelinessQosPolicyKind Kind
         {
@@ -519,7 +519,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public int LeaseDuration
         {
@@ -544,16 +544,16 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
     public class ReliabilityQosPolicyConfiguration : BaseConfiguration
     {
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public enum ReliabilityQosPolicyKind
         {
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             BEST_EFFORT_RELIABILITY_QOS,
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             RELIABLE_RELIABILITY_QOS
         }
@@ -581,7 +581,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public ReliabilityQosPolicyKind Kind
         {
@@ -598,7 +598,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public int MaxBlockingTime
         {
@@ -623,16 +623,16 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
     public class DestinationOrderQosPolicyConfiguration : BaseConfiguration
     {
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public enum DestinationOrderQosPolicyKind
         {
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             BY_RECEPTION_TIMESTAMP_DESTINATIONORDER_QOS,
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             BY_SOURCE_TIMESTAMP_DESTINATIONORDER_QOS
         }
@@ -655,7 +655,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public DestinationOrderQosPolicyKind Kind
         {
@@ -680,16 +680,16 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
     public class HistoryQosPolicyConfiguration : BaseConfiguration
     {
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public enum HistoryQosPolicyKind
         {
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             KEEP_LAST_HISTORY_QOS,
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             KEEP_ALL_HISTORY_QOS
         }
@@ -717,7 +717,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public HistoryQosPolicyKind Kind
         {
@@ -734,7 +734,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public int Depth
         {
@@ -778,7 +778,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public int MaxSamples
         {
@@ -795,7 +795,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public int MaxInstances
         {
@@ -812,7 +812,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public int MaxSamplesPerInstance
         {
@@ -848,7 +848,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public int Value
         {
@@ -884,7 +884,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public int Duration
         {
@@ -909,16 +909,16 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
     public class OwnershipQosPolicyConfiguration : BaseConfiguration
     {
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public enum OwnershipQosPolicyKind
         {
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             SHARED_OWNERSHIP_QOS,
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             EXCLUSIVE_OWNERSHIP_QOS
         }
@@ -943,7 +943,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public OwnershipQosPolicyKind Kind
         {
@@ -979,7 +979,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public int Value
         {
@@ -1015,7 +1015,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public bool AutodisposeUnregisteredInstances
         {
@@ -1040,20 +1040,20 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
     public class PresentationQosPolicyConfiguration : BaseConfiguration
     {
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public enum PresentationQosPolicyAccessScopeKind
         {
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             INSTANCE_PRESENTATION_QOS,
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             TOPIC_PRESENTATION_QOS,
             /// <summary>
-            /// See OpenDDS documentation
+            /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
             /// </summary>
             GROUP_PRESENTATION_QOS
         }
@@ -1077,7 +1077,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public PresentationQosPolicyAccessScopeKind AccessScope
         {
@@ -1094,7 +1094,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public bool CoherentAccess
         {
@@ -1111,7 +1111,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public bool OrderedAccess
         {
@@ -1147,7 +1147,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public string Name
         {
@@ -1184,7 +1184,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public int MinimumSeparation
         {
@@ -1225,7 +1225,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public int AutopurgeNowriterSamplesDelay
         {
@@ -1242,7 +1242,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public int AutopurgeDisposedSamplesDelay
         {
@@ -1287,7 +1287,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public bool AutoenableCreatedEntities
         {
@@ -1323,7 +1323,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public byte[] Value
         {
@@ -1373,7 +1373,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public byte[] Value
         {
@@ -1422,7 +1422,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// See OpenDDS documentation
+        /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public byte[] Value
         {
@@ -1470,77 +1470,77 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         public DataWriterQosConfiguration() { }
 
         /// <summary>
-        /// The configuration of <see cref="DurabilityQosPolicyConfiguration"/>
+        /// The configuration of <see cref="DurabilityQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public DurabilityQosPolicyConfiguration DurabilityQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="DurabilityServiceQosPolicyConfiguration"/>
+        /// The configuration of <see cref="DurabilityServiceQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public DurabilityServiceQosPolicyConfiguration DurabilityServiceQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="DeadlineQosPolicyConfiguration"/>
+        /// The configuration of <see cref="DeadlineQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public DeadlineQosPolicyConfiguration DeadlineQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="LatencyBudgetQosPolicyConfiguration"/>
+        /// The configuration of <see cref="LatencyBudgetQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public LatencyBudgetQosPolicyConfiguration LatencyBudgetQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="LivelinessQosPolicyConfiguration"/>
+        /// The configuration of <see cref="LivelinessQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public LivelinessQosPolicyConfiguration LivelinessQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="ReliabilityQosPolicyConfiguration"/>
+        /// The configuration of <see cref="ReliabilityQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public ReliabilityQosPolicyConfiguration ReliabilityQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="DestinationOrderQosPolicyConfiguration"/>
+        /// The configuration of <see cref="DestinationOrderQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public DestinationOrderQosPolicyConfiguration DestinationOrderQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="HistoryQosPolicyConfiguration"/>
+        /// The configuration of <see cref="HistoryQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public HistoryQosPolicyConfiguration HistoryQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="ResourceLimitsQosPolicyConfiguration"/>
+        /// The configuration of <see cref="ResourceLimitsQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public ResourceLimitsQosPolicyConfiguration ResourceLimitsQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="TransportPriorityQosPolicyConfiguration"/>
+        /// The configuration of <see cref="TransportPriorityQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public TransportPriorityQosPolicyConfiguration TransportPriorityQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="LifespanQosPolicyConfiguration"/>
+        /// The configuration of <see cref="LifespanQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public LifespanQosPolicyConfiguration LifespanQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="UserDataQosPolicyConfiguration"/>
+        /// The configuration of <see cref="UserDataQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public UserDataQosPolicyConfiguration UserDataQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="OwnershipQosPolicyConfiguration"/>
+        /// The configuration of <see cref="OwnershipQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public OwnershipQosPolicyConfiguration OwnershipQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="OwnershipStrengthQosPolicyConfiguration"/>
+        /// The configuration of <see cref="OwnershipStrengthQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public OwnershipStrengthQosPolicyConfiguration OwnershipStrengthQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="WriterDataLifecycleQosPolicyConfiguration"/>
+        /// The configuration of <see cref="WriterDataLifecycleQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public WriterDataLifecycleQosPolicyConfiguration WriterDataLifecycleQosPolicy { get; set; }
 
@@ -1606,57 +1606,57 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         public DataReaderQosConfiguration() { }
 
         /// <summary>
-        /// The configuration of <see cref="DurabilityQosPolicyConfiguration"/>
+        /// The configuration of <see cref="DurabilityQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public DurabilityQosPolicyConfiguration DurabilityQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="DeadlineQosPolicyConfiguration"/>
+        /// The configuration of <see cref="DeadlineQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public DeadlineQosPolicyConfiguration DeadlineQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="LatencyBudgetQosPolicyConfiguration"/>
+        /// The configuration of <see cref="LatencyBudgetQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public LatencyBudgetQosPolicyConfiguration LatencyBudgetQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="LivelinessQosPolicyConfiguration"/>
+        /// The configuration of <see cref="LivelinessQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public LivelinessQosPolicyConfiguration LivelinessQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="ReliabilityQosPolicyConfiguration"/>
+        /// The configuration of <see cref="ReliabilityQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public ReliabilityQosPolicyConfiguration ReliabilityQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="DestinationOrderQosPolicyConfiguration"/>
+        /// The configuration of <see cref="DestinationOrderQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public DestinationOrderQosPolicyConfiguration DestinationOrderQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="HistoryQosPolicyConfiguration"/>
+        /// The configuration of <see cref="HistoryQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public HistoryQosPolicyConfiguration HistoryQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="ResourceLimitsQosPolicyConfiguration"/>
+        /// The configuration of <see cref="ResourceLimitsQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public ResourceLimitsQosPolicyConfiguration ResourceLimitsQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="OwnershipQosPolicyConfiguration"/>
+        /// The configuration of <see cref="OwnershipQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public OwnershipQosPolicyConfiguration OwnershipQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="TimeBasedFilterQosPolicyConfiguration"/>
+        /// The configuration of <see cref="TimeBasedFilterQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public TimeBasedFilterQosPolicyConfiguration TimeBasedFilterQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="ReaderDataLifecycleQosPolicyConfiguration"/>
+        /// The configuration of <see cref="ReaderDataLifecycleQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public ReaderDataLifecycleQosPolicyConfiguration ReaderDataLifecycleQosPolicy { get; set; }
 
@@ -1718,67 +1718,67 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         public TopicQosConfiguration() { }
 
         /// <summary>
-        /// The configuration of <see cref="TopicDataQosPolicyConfiguration"/>
+        /// The configuration of <see cref="TopicDataQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public TopicDataQosPolicyConfiguration TopicDataQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="DurabilityQosPolicyConfiguration"/>
+        /// The configuration of <see cref="DurabilityQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public DurabilityQosPolicyConfiguration DurabilityQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="DurabilityServiceQosPolicyConfiguration"/>
+        /// The configuration of <see cref="DurabilityServiceQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public DurabilityServiceQosPolicyConfiguration DurabilityServiceQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="DeadlineQosPolicyConfiguration"/>
+        /// The configuration of <see cref="DeadlineQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public DeadlineQosPolicyConfiguration DeadlineQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="LatencyBudgetQosPolicyConfiguration"/>
+        /// The configuration of <see cref="LatencyBudgetQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public LatencyBudgetQosPolicyConfiguration LatencyBudgetQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="LivelinessQosPolicyConfiguration"/>
+        /// The configuration of <see cref="LivelinessQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public LivelinessQosPolicyConfiguration LivelinessQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="ReliabilityQosPolicyConfiguration"/>
+        /// The configuration of <see cref="ReliabilityQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public ReliabilityQosPolicyConfiguration ReliabilityQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="DestinationOrderQosPolicyConfiguration"/>
+        /// The configuration of <see cref="DestinationOrderQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public DestinationOrderQosPolicyConfiguration DestinationOrderQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="HistoryQosPolicyConfiguration"/>
+        /// The configuration of <see cref="HistoryQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public HistoryQosPolicyConfiguration HistoryQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="ResourceLimitsQosPolicyConfiguration"/>
+        /// The configuration of <see cref="ResourceLimitsQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public ResourceLimitsQosPolicyConfiguration ResourceLimitsQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="TransportPriorityQosPolicyConfiguration"/>
+        /// The configuration of <see cref="TransportPriorityQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public TransportPriorityQosPolicyConfiguration TransportPriorityQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="LifespanQosPolicyConfiguration"/>
+        /// The configuration of <see cref="LifespanQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public LifespanQosPolicyConfiguration LifespanQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="OwnershipQosPolicyConfiguration"/>
+        /// The configuration of <see cref="OwnershipQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public OwnershipQosPolicyConfiguration OwnershipQosPolicy { get; set; }
 
@@ -1842,22 +1842,22 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         public PublisherQosConfiguration() { }
 
         /// <summary>
-        /// The configuration of <see cref="PresentationQosPolicyConfiguration"/>
+        /// The configuration of <see cref="PresentationQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public PresentationQosPolicyConfiguration PresentationQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="PartitionQosPolicyConfiguration"/>
+        /// The configuration of <see cref="PartitionQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public PartitionQosPolicyConfiguration PartitionQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="GroupDataQosPolicyConfiguration"/>
+        /// The configuration of <see cref="GroupDataQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public GroupDataQosPolicyConfiguration GroupDataQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="LatencyBudgetQosPolicyConfiguration"/>
+        /// The configuration of <see cref="LatencyBudgetQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public EntityFactoryQosPolicyConfiguration EntityFactoryQosPolicy { get; set; }
 
@@ -1912,22 +1912,22 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         public SubscriberQosConfiguration() { }
 
         /// <summary>
-        /// The configuration of <see cref="PresentationQosPolicyConfiguration"/>
+        /// The configuration of <see cref="PresentationQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public PresentationQosPolicyConfiguration PresentationQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="PartitionQosPolicyConfiguration"/>
+        /// The configuration of <see cref="PartitionQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public PartitionQosPolicyConfiguration PartitionQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="GroupDataQosPolicyConfiguration"/>
+        /// The configuration of <see cref="GroupDataQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public GroupDataQosPolicyConfiguration GroupDataQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="LatencyBudgetQosPolicyConfiguration"/>
+        /// The configuration of <see cref="LatencyBudgetQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public EntityFactoryQosPolicyConfiguration EntityFactoryQosPolicy { get; set; }
 
@@ -1982,17 +1982,17 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         public DomainParticipantQosConfiguration() { }
 
         /// <summary>
-        /// The configuration of <see cref="UserDataQosPolicyConfiguration"/>
+        /// The configuration of <see cref="UserDataQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public UserDataQosPolicyConfiguration UserDataQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="EntityFactoryQosPolicyConfiguration"/>
+        /// The configuration of <see cref="EntityFactoryQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public EntityFactoryQosPolicyConfiguration EntityFactoryQosPolicy { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="PropertyQosPolicyConfiguration"/>
+        /// The configuration of <see cref="PropertyQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public PropertyQosPolicyConfiguration PropertyQosPolicy { get; set; }
 
@@ -2046,27 +2046,27 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
-        /// The configuration of <see cref="TopicQosConfiguration"/>
+        /// The configuration of <see cref="TopicQosConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public TopicQosConfiguration TopicQos { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="PublisherQosConfiguration"/>
+        /// The configuration of <see cref="PublisherQosConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public PublisherQosConfiguration PublisherQos { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="SubscriberQosConfiguration"/>
+        /// The configuration of <see cref="SubscriberQosConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public SubscriberQosConfiguration SubscriberQos { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="DataReaderQosConfiguration"/>
+        /// The configuration of <see cref="DataReaderQosConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public DataReaderQosConfiguration DataReaderQos { get; set; }
 
         /// <summary>
-        /// The configuration of <see cref="SubscriberQosConfiguration"/>
+        /// The configuration of <see cref="SubscriberQosConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
         public DataWriterQosConfiguration DataWriterQos { get; set; }
 

@@ -22,95 +22,138 @@ import org.mases.datadistributionmanager.BaseConfiguration;
 
 import java.util.ArrayList;
 
-/// <summary>
-/// The configuration class for DataWriterQos
-/// </summary>
+/**
+ * The configuration class for DataWriterQos. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+ */
 public class DataWriterQosConfiguration extends BaseConfiguration {
-    /// <summary>
-    /// Base property name of all specific configuration key of <see
-    /// cref="DataWriterQosConfiguration"/>
-    /// </summary>
     public static final String DataWriterQosBasePropertyKey = "datadistributionmanager.opendds.datawriterqos";
 
-    /// <summary>
-    /// Initialize a <see cref="DataWriterQosConfiguration"/>
-    /// </summary>
+    /**
+     * Initialize a {@link DataWriterQosConfiguration}
+     */
     public DataWriterQosConfiguration() {
     }
 
-    /// <summary>
-    /// The configuration of <see cref="DurabilityQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link DurabilityQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public DurabilityQosPolicyConfiguration DurabilityQosPolicy;
 
-    /// <summary>
-    /// The configuration of <see cref="DurabilityServiceQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link DurabilityServiceQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public DurabilityServiceQosPolicyConfiguration DurabilityServiceQosPolicy;
 
-    /// <summary>
-    /// The configuration of <see cref="DeadlineQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link DeadlineQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public DeadlineQosPolicyConfiguration DeadlineQosPolicy;
 
-    /// <summary>
-    /// The configuration of <see cref="LatencyBudgetQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link LatencyBudgetQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public LatencyBudgetQosPolicyConfiguration LatencyBudgetQosPolicy;
 
-    /// <summary>
-    /// The configuration of <see cref="LivelinessQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link LivelinessQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public LivelinessQosPolicyConfiguration LivelinessQosPolicy;
 
-    /// <summary>
-    /// The configuration of <see cref="ReliabilityQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link ReliabilityQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public ReliabilityQosPolicyConfiguration ReliabilityQosPolicy;
 
-    /// <summary>
-    /// The configuration of <see cref="DestinationOrderQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link DestinationOrderQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public DestinationOrderQosPolicyConfiguration DestinationOrderQosPolicy;
 
-    /// <summary>
-    /// The configuration of <see cref="HistoryQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link HistoryQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public HistoryQosPolicyConfiguration HistoryQosPolicy;
 
-    /// <summary>
-    /// The configuration of <see cref="ResourceLimitsQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link ResourceLimitsQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public ResourceLimitsQosPolicyConfiguration ResourceLimitsQosPolicy;
-
-    /// <summary>
-    /// The configuration of <see cref="TransportPriorityQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link TransportPriorityQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public TransportPriorityQosPolicyConfiguration TransportPriorityQosPolicy;
 
-    /// <summary>
-    /// The configuration of <see cref="LifespanQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link LifespanQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public LifespanQosPolicyConfiguration LifespanQosPolicy;
 
-    /// <summary>
-    /// The configuration of <see cref="UserDataQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link UserDataQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public UserDataQosPolicyConfiguration UserDataQosPolicy;
 
-    /// <summary>
-    /// The configuration of <see cref="OwnershipQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link OwnershipQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public OwnershipQosPolicyConfiguration OwnershipQosPolicy;
 
-    /// <summary>
-    /// The configuration of <see cref="OwnershipStrengthQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link OwnershipStrengthQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public OwnershipStrengthQosPolicyConfiguration OwnershipStrengthQosPolicy;
 
-    /// <summary>
-    /// The configuration of <see cref="WriterDataLifecycleQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link WriterDataLifecycleQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public WriterDataLifecycleQosPolicyConfiguration WriterDataLifecycleQosPolicy;
 
     String[] replacer(String[] input) {
@@ -121,9 +164,11 @@ public class DataWriterQosConfiguration extends BaseConfiguration {
         return array;
     }
 
-    /// <summary>
-    /// Creates configuration for QoS policies
-    /// </summary>
+    /**
+     * Creates configuration for QoS policies
+     * @param parameters Input parameters
+     * @return updated parameters
+     */
     protected String[] PolicyBuilder(String[] parameters) {
         ArrayList<String> lst = new ArrayList<String>();
         if (DurabilityQosPolicy != null) {
@@ -205,7 +250,6 @@ public class DataWriterQosConfiguration extends BaseConfiguration {
         return lst.toArray(array);
     }
 
-    /// <see cref="IConfiguration.Configuration"/>
     public String[] getConfiguration() {
         return PolicyBuilder(super.getConfiguration());
     }

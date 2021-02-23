@@ -20,23 +20,19 @@ package org.mases.datadistributionmanager.configuration;
 
 import org.mases.datadistributionmanager.BaseConfiguration;
 
+/**
+ * The configuration class for DeadlineQosPolicy. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+ */
 public class DeadlineQosPolicyConfiguration extends BaseConfiguration {
-    /// <summary>
-    /// Configuration key of <see cref="Period"/>
-    /// </summary>
     public static final String PeriodPropertyKey = "datadistributionmanager.opendds.qos.deadlineqospolicy.period";
 
-    /// <summary>
-    /// Initialize a new instance of <see cref="DeadlineQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * Initialize a {@link DeadlineQosPolicyConfiguration}
+     */
     public DeadlineQosPolicyConfiguration() {
-    }
-
-    /// <summary>
-    /// Initialize a new instance of <see cref="DeadlineQosPolicyConfiguration"/>
-    /// </summary>
-    public DeadlineQosPolicyConfiguration(int period) {
-        setPeriod(period);
     }
 
     /**

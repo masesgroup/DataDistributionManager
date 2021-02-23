@@ -21,6 +21,11 @@ package org.mases.datadistributionmanager.configuration;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * See OpenDDS documentation
+ * 
+ * @param value See OpenDDS documentation
+ */
 public enum DestinationOrderQosPolicyKind {
     BY_RECEPTION_TIMESTAMP_DESTINATIONORDER_QOS("BY_RECEPTION_TIMESTAMP_DESTINATIONORDER_QOS", 0X0),
     BY_SOURCE_TIMESTAMP_DESTINATIONORDER_QOS("BY_SOURCE_TIMESTAMP_DESTINATIONORDER_QOS", 0X1);
