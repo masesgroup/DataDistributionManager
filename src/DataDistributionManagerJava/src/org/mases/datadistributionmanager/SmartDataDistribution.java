@@ -32,6 +32,18 @@ import java.util.zip.ZipInputStream;
  * Main class to activate Data Distribution Manager
  */
 public class SmartDataDistribution implements IDataDistributionCallbackLow, IDataDistributionMastershipCallbackLow {
+    SynchronizedEventsManager<IConfigurationListener> m_IConfigurationListener_listeners = new SynchronizedEventsManager<>();
+    SynchronizedEventsManager<ILoggingListener> m_ILoggingListener_listeners = new SynchronizedEventsManager<>();
+    SynchronizedEventsManager<ICompletelyDisconnectedListener> m_ICompletelyDisconnectedListener_listeners = new SynchronizedEventsManager<>();
+    SynchronizedEventsManager<IClusterStateChangeListener> m_IClusterStateChangeListener_listeners = new SynchronizedEventsManager<>();
+    SynchronizedEventsManager<IStateChangeListener> m_IStateChangeListener_listeners = new SynchronizedEventsManager<>();
+    SynchronizedEventsManager<IStateReadyListener> m_IStateReadyListener_listeners = new SynchronizedEventsManager<>();
+    SynchronizedEventsManager<IRequestedStateListener> m_IRequestedStateListener_listeners = new SynchronizedEventsManager<>();
+    SynchronizedEventsManager<IMultiplePrimaryListener> m_IMultiplePrimaryListener_listeners = new SynchronizedEventsManager<>();
+    SynchronizedEventsManager<IFirstStateChangeListener> m_IFirstStateChangeListener_listeners = new SynchronizedEventsManager<>();
+    SynchronizedEventsManager<IChangingStateListener> m_IChangingStateListener_listeners = new SynchronizedEventsManager<>();
+    SynchronizedEventsManager<IChangedStateListener> m_IChangedStateListener_listeners = new SynchronizedEventsManager<>();
+
     long m_DataDistributionCallbackLow;
     long m_DataDistributionMastershipCallbackLow;
     long IDataDistribution_ptr;
@@ -532,95 +544,403 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
         return (T) inm;
     }
 
-    public final String OnConfiguration(long IDataDistribution_nativePtr, String key, String value) {
-        return this.OnConfiguration(key, value);
+    /**
+     * Adds a {@link IConfigurationListener} listener
+     * 
+     * @param listener {@link IConfigurationListener} listener to add
+     */
+    public void addListener(IConfigurationListener listener) {
+        m_IConfigurationListener_listeners.addListener(listener);
     }
 
+    /**
+     * Removes a {@link IConfigurationListener} listener
+     * 
+     * @param listener {@link IConfigurationListener} listener to remove
+     */
+    public void removeListener(IConfigurationListener listener) {
+        m_IConfigurationListener_listeners.removeListener(listener);
+    }
+
+    public final String OnConfiguration(long IDataDistribution_nativePtr, String key, String value) {
+        if (m_IConfigurationListener_listeners.hasElements()) {
+            String retVal = value;
+            for (IConfigurationListener iConfigurationListener : m_IConfigurationListener_listeners) {
+                retVal = iConfigurationListener.OnConfiguration(key, value);
+            }
+            return retVal;
+        } else
+            return this.OnConfiguration(key, value);
+    }
+
+    /**
+     * Request a configuration validation
+     * 
+     * @param key   The configuration key
+     * @param value The configuration value
+     * @return The value or an updated one
+     */
     public String OnConfiguration(String key, String value) {
         return value;
+    }
+
+    /**
+     * Adds a {@link ILoggingListener} listener
+     * 
+     * @param listener {@link ILoggingListener} listener to add
+     */
+    public void addListener(ILoggingListener listener) {
+        m_ILoggingListener_listeners.addListener(listener);
+    }
+
+    /**
+     * Removes a {@link ILoggingListener} listener
+     * 
+     * @param listener {@link ILoggingListener} listener to remove
+     */
+    public void removeListener(ILoggingListener listener) {
+        m_ILoggingListener_listeners.removeListener(listener);
     }
 
     public final void OnLogging(long IDataDistribution_nativePtr, int level, String source, String function,
             String errStr) {
         this.OnLogging(DDM_LOG_LEVEL.valueOfAtomicNumber(level), source, function, errStr);
+        for (ILoggingListener iLoggingListener : m_ILoggingListener_listeners) {
+            iLoggingListener.OnLogging(DDM_LOG_LEVEL.valueOfAtomicNumber(level), source, function, errStr);
+        }
     }
 
-    public void OnLogging(DDM_LOG_LEVEL level, String source, String function, String errStr) {
+    /**
+     * Emits logs
+     * 
+     * @param level    {@link DDM_LOG_LEVEL} log level
+     * @param source   The log source
+     * @param function The function source
+     * @param logStr   The log string
+     */
+    public void OnLogging(DDM_LOG_LEVEL level, String source, String function, String logStr) {
 
+    }
+
+    /**
+     * Adds a {@link ICompletelyDisconnectedListener} listener
+     * 
+     * @param listener {@link ICompletelyDisconnectedListener} listener to add
+     */
+    public void addListener(ICompletelyDisconnectedListener listener) {
+        m_ICompletelyDisconnectedListener_listeners.addListener(listener);
+    }
+
+    /**
+     * Removes a {@link ICompletelyDisconnectedListener} listener
+     * 
+     * @param listener {@link ICompletelyDisconnectedListener} listener to remove
+     */
+    public void removeListener(ICompletelyDisconnectedListener listener) {
+        m_ICompletelyDisconnectedListener_listeners.removeListener(listener);
     }
 
     public void OnCompletelyDisconnected(long IDataDistribution_nativePtr, String channelName, String reason) {
         OnCompletelyDisconnected(channelName, reason);
+        for (ICompletelyDisconnectedListener iCompletelyDisconnectedListener : m_ICompletelyDisconnectedListener_listeners) {
+            iCompletelyDisconnectedListener.OnCompletelyDisconnected(channelName, reason);
+        }
     }
 
+    /**
+     * Called when a critical condition disconnects the instance from the server
+     * 
+     * @param channelName The channel name
+     * @param reason      Disconnection reason
+     */
     public void OnCompletelyDisconnected(String channelName, String reason) {
 
     }
 
     // IDataDistributionMastershipCallback
-    public final void OnClusterStateChange(long IDataDistribution_nativePtr, int change, long serverid) {
-        OnClusterStateChange(DDM_CLUSTEREVENT.valueOfAtomicNumber(change), serverid);
+
+    /**
+     * Adds a {@link IClusterStateChangeListener} listener
+     * 
+     * @param listener {@link IClusterStateChangeListener} listener to add
+     */
+    public void addListener(IClusterStateChangeListener listener) {
+        m_IClusterStateChangeListener_listeners.addListener(listener);
     }
 
+    /**
+     * Removes a {@link IClusterStateChangeListener} listener
+     * 
+     * @param listener {@link IClusterStateChangeListener} listener to remove
+     */
+    public void removeListener(IClusterStateChangeListener listener) {
+        m_IClusterStateChangeListener_listeners.removeListener(listener);
+    }
+
+    public final void OnClusterStateChange(long IDataDistribution_nativePtr, int change, long serverid) {
+        DDM_CLUSTEREVENT changDDM = DDM_CLUSTEREVENT.valueOfAtomicNumber(change);
+        OnClusterStateChange(changDDM, serverid);
+        for (IClusterStateChangeListener iClusterStateChangeListener : m_IClusterStateChangeListener_listeners) {
+            iClusterStateChangeListener.OnClusterStateChange(changDDM, serverid);
+        }
+    }
+
+    /**
+     * The cluster has changed its state
+     * 
+     * @param change   New cluster event
+     * @param serverid Server has emitted event
+     */
     public void OnClusterStateChange(DDM_CLUSTEREVENT change, long serverid) {
 
     }
 
-    public final void OnStateChange(long IDataDistribution_nativePtr, int newState, int oldState) {
-        OnStateChange(DDM_INSTANCE_STATE.valueOfAtomicNumber(newState),
-                DDM_INSTANCE_STATE.valueOfAtomicNumber(oldState));
+    /**
+     * Adds a {@link IStateChangeListener} listener
+     * 
+     * @param listener {@link IStateChangeListener} listener to add
+     */
+    public void addListener(IStateChangeListener listener) {
+        m_IStateChangeListener_listeners.addListener(listener);
     }
 
+    /**
+     * Removes a {@link IStateChangeListener} listener
+     * 
+     * @param listener {@link IStateChangeListener} listener to remove
+     */
+    public void removeListener(IStateChangeListener listener) {
+        m_IStateChangeListener_listeners.removeListener(listener);
+    }
+
+    public final void OnStateChange(long IDataDistribution_nativePtr, int newState, int oldState) {
+        DDM_INSTANCE_STATE newStateDDM = DDM_INSTANCE_STATE.valueOfAtomicNumber(newState);
+        DDM_INSTANCE_STATE oldStateDDM = DDM_INSTANCE_STATE.valueOfAtomicNumber(oldState);
+        OnStateChange(newStateDDM, oldStateDDM);
+        for (IStateChangeListener iStateChangeListener : m_IStateChangeListener_listeners) {
+            iStateChangeListener.OnStateChange(newStateDDM, oldStateDDM);
+        }
+    }
+
+    /**
+     * My state has changed
+     * 
+     * @param newState New state
+     * @param oldState Old state
+     */
     public void OnStateChange(DDM_INSTANCE_STATE newState, DDM_INSTANCE_STATE oldState) {
 
     }
 
-    public final void OnStateReady(long IDataDistribution_nativePtr, byte[] buffer) {
-        OnStateReady(buffer);
+    /**
+     * Adds a {@link IStateReadyListener} listener
+     * 
+     * @param listener {@link IStateReadyListener} listener to add
+     */
+    public void addListener(IStateReadyListener listener) {
+        m_IStateReadyListener_listeners.addListener(listener);
     }
 
+    /**
+     * Removes a {@link IStateReadyListener} listener
+     * 
+     * @param listener {@link IStateReadyListener} listener to remove
+     */
+    public void removeListener(IStateReadyListener listener) {
+        m_IStateReadyListener_listeners.removeListener(listener);
+    }
+
+    public final void OnStateReady(long IDataDistribution_nativePtr, byte[] buffer) {
+        OnStateReady(buffer);
+        for (IStateReadyListener iStateReadyListener : m_IStateReadyListener_listeners) {
+            iStateReadyListener.OnStateReady(buffer);
+        }
+    }
+
+    /**
+     * The state is ready to be used
+     * 
+     * @param buffer The buffer state receiver
+     */
     public void OnStateReady(byte[] buffer) {
 
     }
 
-    public final void OnRequestedState(long IDataDistribution_nativePtr, byte[] buffer) {
-        OnRequestedState(buffer);
+    /**
+     * Adds a {@link IRequestedStateListener} listener
+     * 
+     * @param listener {@link IRequestedStateListener} listener to add
+     */
+    public void addListener(IRequestedStateListener listener) {
+        m_IRequestedStateListener_listeners.addListener(listener);
     }
 
+    /**
+     * Removes a {@link IRequestedStateListener} listener
+     * 
+     * @param listener {@link IRequestedStateListener} listener to remove
+     */
+    public void removeListener(IRequestedStateListener listener) {
+        m_IRequestedStateListener_listeners.removeListener(listener);
+    }
+
+    public final void OnRequestedState(long IDataDistribution_nativePtr, byte[] buffer) {
+        if (m_IRequestedStateListener_listeners.hasElements()) {
+            for (IRequestedStateListener iRequestedStateListener : m_IRequestedStateListener_listeners) {
+                iRequestedStateListener.OnRequestedState(buffer);
+            }
+        } else
+            OnRequestedState(buffer);
+    }
+
+    /**
+     * Called when a state transfer was requested
+     * 
+     * @param buffer Pointer to the buffer
+     */
     public void OnRequestedState(byte[] buffer) {
 
     }
 
-    public final void OnMultiplePrimary(long IDataDistribution_nativePtr, long myId, long otherId) {
-        OnMultiplePrimary(myId, otherId);
+    /**
+     * Adds a {@link IMultiplePrimaryListener} listener
+     * 
+     * @param listener {@link IMultiplePrimaryListener} listener to add
+     */
+    public void addListener(IMultiplePrimaryListener listener) {
+        m_IMultiplePrimaryListener_listeners.addListener(listener);
     }
 
+    /**
+     * Removes a {@link IMultiplePrimaryListener} listener
+     * 
+     * @param listener {@link IMultiplePrimaryListener} listener to remove
+     */
+    public void removeListener(IMultiplePrimaryListener listener) {
+        m_IMultiplePrimaryListener_listeners.removeListener(listener);
+    }
+
+    public final void OnMultiplePrimary(long IDataDistribution_nativePtr, long myId, long otherId) {
+        OnMultiplePrimary(myId, otherId);
+        for (IMultiplePrimaryListener iMultiplePrimaryListener : m_IMultiplePrimaryListener_listeners) {
+            iMultiplePrimaryListener.OnMultiplePrimary(myId, otherId);
+        }
+    }
+
+    /**
+     * There are multiple primary server in the cluster
+     * 
+     * @param myId    My identifier
+     * @param otherId Other identifier which is primary
+     */
     public void OnMultiplePrimary(long myId, long otherId) {
 
     }
 
-    public final void FirstStateChange(long IDataDistribution_nativePtr, int newState) {
-        FirstStateChange(DDM_INSTANCE_STATE.valueOfAtomicNumber(newState));
+    /**
+     * Adds a {@link IFirstStateChangeListener} listener
+     * 
+     * @param listener {@link IFirstStateChangeListener} listener to add
+     */
+    public void addListener(IFirstStateChangeListener listener) {
+        m_IFirstStateChangeListener_listeners.addListener(listener);
     }
 
-    public void FirstStateChange(DDM_INSTANCE_STATE newState) {
+    /**
+     * Removes a {@link IFirstStateChangeListener} listener
+     * 
+     * @param listener {@link IFirstStateChangeListener} listener to remove
+     */
+    public void removeListener(IFirstStateChangeListener listener) {
+        m_IFirstStateChangeListener_listeners.removeListener(listener);
+    }
 
+    public final void FirstStateChange(long IDataDistribution_nativePtr, int newState) {
+        DDM_INSTANCE_STATE state = DDM_INSTANCE_STATE.valueOfAtomicNumber(newState);
+        OnFirstStateChange(state);
+        for (IFirstStateChangeListener iFirstStateChangeListener : m_IFirstStateChangeListener_listeners) {
+            iFirstStateChangeListener.OnFirstStateChange(state);
+        }
+    }
+
+    /**
+     * Called the first time there is state change
+     * 
+     * @param newState New state
+     */
+    public void OnFirstStateChange(DDM_INSTANCE_STATE newState) {
+
+    }
+
+    /**
+     * Adds a {@link IChangingStateListener} listener
+     * 
+     * @param listener {@link IChangingStateListener} listener to add
+     */
+    public void addListener(IChangingStateListener listener) {
+        m_IChangingStateListener_listeners.addListener(listener);
+    }
+
+    /**
+     * Removes a {@link IChangingStateListener} listener
+     * 
+     * @param listener {@link IChangingStateListener} listener to remove
+     */
+    public void removeListener(IChangingStateListener listener) {
+        m_IChangingStateListener_listeners.removeListener(listener);
     }
 
     public final void ChangingState(long IDataDistribution_nativePtr, int oldState, int newState) {
-        ChangingState(DDM_INSTANCE_STATE.valueOfAtomicNumber(oldState),
-                DDM_INSTANCE_STATE.valueOfAtomicNumber(newState));
+        DDM_INSTANCE_STATE oS = DDM_INSTANCE_STATE.valueOfAtomicNumber(oldState);
+        DDM_INSTANCE_STATE nS = DDM_INSTANCE_STATE.valueOfAtomicNumber(newState);
+        OnChangingState(oS, nS);
+        for (IChangingStateListener iChangingStateListener : m_IChangingStateListener_listeners) {
+            iChangingStateListener.OnChangingState(oS, nS);
+        }
     }
 
-    public void ChangingState(DDM_INSTANCE_STATE oldState, DDM_INSTANCE_STATE newState) {
+    /**
+     * The state is starting to change
+     * 
+     * @param oldState Old state
+     * @param newState New state
+     */
+    public void OnChangingState(DDM_INSTANCE_STATE oldState, DDM_INSTANCE_STATE newState) {
 
+    }
+
+    /**
+     * Adds a {@link IChangedStateListener} listener
+     * 
+     * @param listener {@link IChangedStateListener} listener to add
+     */
+    public void addListener(IChangedStateListener listener) {
+        m_IChangedStateListener_listeners.addListener(listener);
+    }
+
+    /**
+     * Removes a {@link IChangedStateListener} listener
+     * 
+     * @param listener {@link IChangedStateListener} listener to remove
+     */
+    public void removeListener(IChangedStateListener listener) {
+        m_IChangedStateListener_listeners.removeListener(listener);
     }
 
     public final void ChangedState(long IDataDistribution_nativePtr, int newState) {
-        ChangedState(DDM_INSTANCE_STATE.valueOfAtomicNumber(newState));
+        DDM_INSTANCE_STATE s = DDM_INSTANCE_STATE.valueOfAtomicNumber(newState);
+        OnChangedState(s);
+        for (IChangedStateListener iChangedStateListener : m_IChangedStateListener_listeners) {
+            iChangedStateListener.OnChangedState(s);
+        }
     }
 
-    public void ChangedState(DDM_INSTANCE_STATE newState) {
+    /**
+     * The state has changed
+     * 
+     * @param newState New state
+     */
+    public void OnChangedState(DDM_INSTANCE_STATE newState) {
 
     }
 }

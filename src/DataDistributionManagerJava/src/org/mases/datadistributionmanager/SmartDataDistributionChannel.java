@@ -24,6 +24,9 @@ import java.nio.charset.Charset;
  * Main class managing channel
  */
 public class SmartDataDistributionChannel implements IDataDistributionChannelCallbackLow {
+    SynchronizedEventsManager<IDataAvailableListener> m_IDataAvailable_listeners = new SynchronizedEventsManager<>();
+    SynchronizedEventsManager<IConditionOrErrorListener> m_IConditionOrError_listeners = new SynchronizedEventsManager<>();
+
     /**
      * Ctor
      */
@@ -241,6 +244,24 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
     }
 
     /**
+     * Adds a {@link IDataAvailableListener} listener
+     * 
+     * @param listener {@link IDataAvailableListener} listener to add
+     */
+    public void addListener(IDataAvailableListener listener) {
+        m_IDataAvailable_listeners.addListener(listener);
+    }
+
+    /**
+     * Removes a {@link IDataAvailableListener} listener
+     * 
+     * @param listener {@link IDataAvailableListener} listener to remove
+     */
+    public void removeListener(IDataAvailableListener listener) {
+        m_IDataAvailable_listeners.removeListener(listener);
+    }
+
+    /**
      * Called when a data is available
      * 
      * @param channelName The channel with data
@@ -249,6 +270,24 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
      */
     public void OnDataAvailable(String channelName, String key, byte[] buffer) {
 
+    }
+
+    /**
+     * Adds a {@link IConditionOrErrorListener} listener
+     * 
+     * @param listener {@link IConditionOrErrorListener} listener to add
+     */
+    public synchronized void addListener(IConditionOrErrorListener listener) {
+        m_IConditionOrError_listeners.addListener(listener);
+    }
+
+    /**
+     * Removes a {@link IConditionOrErrorListener} listener
+     * 
+     * @param listener {@link IConditionOrErrorListener} listener to remove
+     */
+    public synchronized void removeListener(IConditionOrErrorListener listener) {
+        m_IConditionOrError_listeners.removeListener(listener);
     }
 
     /**
@@ -267,8 +306,21 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
     public void OnUnderlyingEvent(long opaque, long channelHandle, UnderlyingEvent uEvent) {
         if (uEvent.IsDataAvailable) {
             OnDataAvailable(uEvent.ChannelName, uEvent.Key, uEvent.Buffer);
+            for (IDataAvailableListener iDataAvailable : m_IDataAvailable_listeners) {
+                try {
+                    iDataAvailable.OnDataAvailable(uEvent.ChannelName, uEvent.Key, uEvent.Buffer);
+                } catch (Throwable throwable) {
+                }
+            }
         } else {
             OnConditionOrError(uEvent.ChannelName, uEvent.Condition, uEvent.NativeCode, uEvent.SubSystemReason);
+            for (IConditionOrErrorListener iConditionOrError : m_IConditionOrError_listeners) {
+                try {
+                    iConditionOrError.OnConditionOrError(uEvent.ChannelName, uEvent.Condition, uEvent.NativeCode,
+                            uEvent.SubSystemReason);
+                } catch (Throwable throwable) {
+                }
+            }
         }
     }
 

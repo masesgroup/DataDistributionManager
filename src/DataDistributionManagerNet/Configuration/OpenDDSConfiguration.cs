@@ -767,7 +767,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             return lst.ToArray();
         }
 
-        /// <see cref="IConfiguration.Configuration"/>
+        /// <inheritdoc/>
         public override string[] Configuration
         {
             get

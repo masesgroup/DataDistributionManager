@@ -151,9 +151,7 @@ namespace MASES.DataDistributionManager.Bindings
             }
         }
 
-        /// <summary>
-        /// Checks the configuration for mandatory information
-        /// </summary>
+        /// <inheritdoc/>
         protected override void CheckConfiguration()
         {
             if (!keyValuePair.ContainsKey(ProtocolKey) && !keyValuePair.ContainsKey(ProtocolLibraryKey))

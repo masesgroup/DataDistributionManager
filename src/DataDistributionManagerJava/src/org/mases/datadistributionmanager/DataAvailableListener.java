@@ -16,17 +16,13 @@
 *  Refer to LICENSE for more information.
 */
 
-import org.mases.datadistributionmanager.*;
+package org.mases.datadistributionmanager;
 
-public class MySmartDataDistributionTopic extends SmartDataDistributionChannel {
+/**
+ * Implementation of {@link IDataAvailableListener}
+ */
+public class DataAvailableListener implements IDataAvailableListener {
     public void OnDataAvailable(String channelName, String key, byte[] buffer) {
-        String s = new String(buffer);
-        System.out.println(String.format("Channel %s with key %s is saying %s", channelName, key, s));
-    }
 
-    public void OnConditionOrError(String channelName, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode,
-            String subSystemReason) {
-        System.out.println(String.format("Channel %s with errorCode %s nativeCode %d subSystemReason %s", channelName,
-                (errorCode != null) ? errorCode.name() : "", nativeCode, subSystemReason));
     }
 }

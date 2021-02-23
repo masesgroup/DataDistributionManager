@@ -25,10 +25,7 @@ namespace MASES.DataDistributionManager.Bindings
     /// </summary>
     public abstract class BaseConfiguration : IConfiguration
     {
-        /// <summary>
-        /// The list of key/value pairs
-        /// </summary>
-        internal protected Dictionary<string, string> keyValuePair = new Dictionary<string, string>();
+        internal Dictionary<string, string> keyValuePair = new Dictionary<string, string>();
 
         /// <summary>
         /// Checks the configuration for mandatory information
@@ -38,7 +35,7 @@ namespace MASES.DataDistributionManager.Bindings
 
         }
 
-        /// <see cref="IConfiguration.Configuration"/>
+        /// <inheritdoc/>
         public virtual string[] Configuration
         {
             get

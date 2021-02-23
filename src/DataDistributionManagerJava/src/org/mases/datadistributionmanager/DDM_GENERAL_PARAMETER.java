@@ -21,7 +21,7 @@ package org.mases.datadistributionmanager;
 import java.util.*;
 
 /**
- * Direction of the channel
+ * General configuration parameters
  */
 public enum DDM_GENERAL_PARAMETER {
     /**

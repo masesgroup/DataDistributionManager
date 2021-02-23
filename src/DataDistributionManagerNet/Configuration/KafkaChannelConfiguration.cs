@@ -219,7 +219,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             }
         }
 
-        /// <see cref="GlobalConfiguration.CheckConfiguration"/>
+        /// <inheritdoc/>
         protected override void CheckConfiguration()
         {
             base.CheckConfiguration();
@@ -237,7 +237,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             }
         }
 
-        /// <see cref="IConfiguration.Configuration"/>
+        /// <inheritdoc/>
         public override string[] Configuration
         {
             get

@@ -26,39 +26,14 @@ using System.Threading;
 
 namespace ManagerTestNet
 {
-    class MySmartDataDistribution : SmartDataDistribution
-    {
-        public override void OnLogging(DDM_LOG_LEVEL level, string source, string function, string errStr)
-        {
-            base.OnLogging(level, source, function, errStr);
-
-            Console.WriteLine("Timestamp: {0} Source: {1} Function: {2} - {3}", DateTime.Now, source, function, errStr);
-        }
-
-    };
-
-    class MySmartDataDistributionChannel : SmartDataDistributionChannel
-    {
-        public override void OnDataAvailable(string channelName, string key, byte[] buffer)
-        {
-            var str = Encoding.UTF8.GetString(buffer);
-            Console.WriteLine("Received data from {0} with key {1} and buffer {2}", channelName, key, str);
-        }
-
-        public override void OnConditionOrError(string channelName, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, string subSystemReason)
-        {
-            base.OnConditionOrError(channelName, errorCode, nativeCode, subSystemReason);
-        }
-    };
-
-
     class Program
     {
         const int THRESHOLD = 10;
 
         static void Main(string[] args)
         {
-            MySmartDataDistribution dataDistribution = new MySmartDataDistribution();
+            SmartDataDistribution dataDistribution = new SmartDataDistribution();
+            dataDistribution.LoggingEvent += DataDistribution_LoggingEvent;
             OpenDDSConfiguration conf = null;
             HRESULT hRes = HRESULT.S_OK;
 
@@ -135,7 +110,9 @@ namespace ManagerTestNet
                 }
             };
 
-            MySmartDataDistributionChannel testChannel = dataDistribution.CreateSmartChannel<MySmartDataDistributionChannel>("test", channelConf);
+            SmartDataDistributionChannel testChannel = dataDistribution.CreateSmartChannel<SmartDataDistributionChannel>("test", channelConf);
+            testChannel.DataAvailable += TestChannel_DataAvailable;
+            testChannel.ConditionOrError += TestChannel_ConditionOrError;
 
             Console.WriteLine("After CreateSmartChannel...\n");
 
@@ -160,9 +137,19 @@ namespace ManagerTestNet
             }
         }
 
-        private static void DataDistribution_Logging(object sender, LoggingEventArgs e)
+        private static void TestChannel_ConditionOrError(object sender, ConditionOrErrorEventArgs e)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Received event from {0} with ErrorCode {1} NativeCode {2} SubSystemReason {3}", e.ChannelName, e.ErrorCode, e.NativeCode, e.SubSystemReason);
+        }
+
+        private static void TestChannel_DataAvailable(object sender, DataAvailableEventArgs e)
+        {
+            Console.WriteLine("Received data from {0} with key {1} and buffer {2}", e.ChannelName, e.Key, e.DecodedString);
+        }
+
+        private static void DataDistribution_LoggingEvent(object sender, LoggingEventArgs e)
+        {
+            Console.WriteLine("Timestamp: {0} Source: {1} Function: {2} - {3}", DateTime.Now, e.Source, e.Function, e.LogString);
         }
     }
 }

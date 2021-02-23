@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace MASES.DataDistributionManager.Bindings
 {
     /// <summary>
-    /// Interface to manage undrlying mastersip manager
+    /// Interface to manage underlying mastersip manager
     /// </summary>
     public interface ISmartDataDistributionMastership
     {

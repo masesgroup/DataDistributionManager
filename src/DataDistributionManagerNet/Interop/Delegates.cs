@@ -21,6 +21,8 @@ using System.Runtime.InteropServices;
 
 namespace MASES.DataDistributionManager.Bindings.Interop
 {
+    #region generic callback
+
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     [return: MarshalAs(UnmanagedType.LPStr)]
     delegate string dataDistributionConfigurationCb([In]IntPtr opaque, [In][MarshalAs(UnmanagedType.LPStr)] string key, [In][MarshalAs(UnmanagedType.LPStr)] string value);
@@ -47,24 +49,38 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate void dataDistributionChangedState(IntPtr opaque, DDM_INSTANCE_STATE newState);
 
+    #endregion
+
+    #region DataDistribution
+
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate IntPtr DataDistribution_create();
+    #endregion
+
+    #region DataDistributionCallback
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate IntPtr DataDistributionCallback_create(IntPtr opaque, dataDistributionConfigurationCb configurationCb, dataDistributionLoggingCb logCb, dataDistributionCompletelyDisconnectedCb disconnectedCb);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate void DataDistributionCallback_delete(IntPtr ddcb);
+    #endregion
+
+    #region DataDistributionChannelCallback
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate IntPtr DataDistributionChannelCallback_create(IntPtr opaque, dataDistributionUnderlyingEvent uEventCb);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate void DataDistributionChannelCallback_delete(IntPtr ddtcb);
+    #endregion
+
+    #region DataDistributionMastershipCallback
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate IntPtr DataDistributionMastershipCallback_create(IntPtr opaque, dataDistributionOnClusterStateChange p1, dataDistributionOnStateChange p2,
                                                               dataDistributionOnStateReady p3, dataDistributionOnRequestedState p4, dataDistributionOnMultiplePrimary p5,
                                                               dataDistributionFirstStateChange p6, dataDistributionChangingState p7, dataDistributionChangedState p8);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate void DataDistributionMastershipCallback_delete(IntPtr ddmcb);
+    #endregion
 
-    // IDataDistribution interface
+    #region IDataDistribution interface
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate HRESULT IDataDistribution_Initialize(IntPtr IDataDistribution_instance, IntPtr iddcb,
                                                      [MarshalAs(UnmanagedType.LPStr)] string conf_file,
@@ -87,8 +103,9 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     delegate IntPtr IDataDistribution_GetProtocolLib(IntPtr IDataDistribution_instance);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate IntPtr IDataDistribution_GetMastershipLib(IntPtr IDataDistribution_instance);
+    #endregion
 
-    // IDataDistributionSubsystem interface
+    #region IDataDistributionSubsystem interface
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate int IDataDistributionSubsystem_GetServerLostTimeout(IntPtr IDataDistributionSubsystem_instance);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
@@ -105,9 +122,9 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate HRESULT IDataDistributionSubsystem_StopChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, uint dwMilliseconds);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate void  IDataDistributionSubsystem_SetParameter(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, [MarshalAs(UnmanagedType.LPStr)] string paramName, [MarshalAs(UnmanagedType.LPStr)] string paramValue);
+    delegate void IDataDistributionSubsystem_SetParameter(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, [MarshalAs(UnmanagedType.LPStr)] string paramName, [MarshalAs(UnmanagedType.LPStr)] string paramValue);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate void  IDataDistributionSubsystem_SetParameter2(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, DDM_GENERAL_PARAMETER paramId, [MarshalAs(UnmanagedType.LPStr)] string paramValue);
+    delegate void IDataDistributionSubsystem_SetParameter2(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, DDM_GENERAL_PARAMETER paramId, [MarshalAs(UnmanagedType.LPStr)] string paramValue);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     [return: MarshalAs(UnmanagedType.LPStr)]
     delegate string IDataDistributionSubsystem_GetParameter(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, [MarshalAs(UnmanagedType.LPStr)] string paramName);
@@ -133,38 +150,42 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate HRESULT IDataDistributionSubsystem_ChangeChannelDirection(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, DDM_CHANNEL_DIRECTION direction);
 
+    #endregion
+
+    #region IDataDistributionMastershipCommon
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT  IDataDistributionMastershipCommon_Initialize(IntPtr IDataDistribution_instance, IntPtr iddmcb, 
-                                                                   [MarshalAs(UnmanagedType.LPStr)] string szMyAddress = null, 
+    delegate HRESULT IDataDistributionMastershipCommon_Initialize(IntPtr IDataDistribution_instance, IntPtr iddmcb,
+                                                                   [MarshalAs(UnmanagedType.LPStr)] string szMyAddress = null,
                                                                    [In][MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPStr)] string[] arrayParams = null, int len = 0);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT  IDataDistributionMastershipCommon_Start(IntPtr IDataDistribution_instance, uint dwMilliseconds);
+    delegate HRESULT IDataDistributionMastershipCommon_Start(IntPtr IDataDistribution_instance, uint dwMilliseconds);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT  IDataDistributionMastershipCommon_Stop(IntPtr IDataDistribution_instance, uint dwMilliseconds);
+    delegate HRESULT IDataDistributionMastershipCommon_Stop(IntPtr IDataDistribution_instance, uint dwMilliseconds);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate bool IDataDistributionMastershipCommon_GetIamNextPrimary(IntPtr IDataDistribution_instance);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate bool IDataDistributionMastershipCommon_RequestIAmNextPrimary(IntPtr IDataDistribution_instance);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate void IDataDistributionMastershipCommon_GetClusterIndexes(IntPtr IDataDistribution_instance, 
-                                                                      [In, Out][MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.I8)] Int64[]  arrayElements, 
+    delegate void IDataDistributionMastershipCommon_GetClusterIndexes(IntPtr IDataDistribution_instance,
+                                                                      [In, Out][MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.I8)] Int64[] arrayElements,
                                                                       [In, Out] IntPtr dataLen);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate DDM_INSTANCE_STATE IDataDistributionMastershipCommon_GetStateOf(IntPtr IDataDistribution_instance, [In] Int64 index);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate IntPtr IDataDistributionMastershipCommon_GetClusterHealth(IntPtr IDataDistribution_instance, [In] Int64 index);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate DDM_INSTANCE_STATE  IDataDistributionMastershipCommon_GetMyState(IntPtr IDataDistribution_instance);
+    delegate DDM_INSTANCE_STATE IDataDistributionMastershipCommon_GetMyState(IntPtr IDataDistribution_instance);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate void  IDataDistributionMastershipCommon_ChangeMyState(IntPtr IDataDistribution_instance, DDM_INSTANCE_STATE newState);
+    delegate void IDataDistributionMastershipCommon_ChangeMyState(IntPtr IDataDistribution_instance, DDM_INSTANCE_STATE newState);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate void  IDataDistributionMastershipCommon_ChangeState(IntPtr IDataDistribution_instance, Int64 instanceId, DDM_INSTANCE_STATE newState);
+    delegate void IDataDistributionMastershipCommon_ChangeState(IntPtr IDataDistribution_instance, Int64 instanceId, DDM_INSTANCE_STATE newState);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate Int64 IDataDistributionMastershipCommon_GetLocalServerId(IntPtr IDataDistribution_instance);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate Int64 IDataDistributionMastershipCommon_GetPrimaryServerId(IntPtr IDataDistribution_instance);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate Int64  IDataDistributionMastershipCommon_GetMessageDelay(IntPtr IDataDistribution_instance);
+    delegate Int64 IDataDistributionMastershipCommon_GetMessageDelay(IntPtr IDataDistribution_instance);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate Int64 IDataDistributionMastershipCommon_GetUpTime(IntPtr IDataDistribution_instance);
+    #endregion
 }

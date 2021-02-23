@@ -1578,7 +1578,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             return lst.ToArray();
         }
 
-        /// <see cref="IConfiguration.Configuration"/>
+        /// <inheritdoc/>
         public override string[] Configuration
         {
             get
@@ -1690,7 +1690,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             return lst.ToArray();
         }
 
-        /// <see cref="IConfiguration.Configuration"/>
+        /// <inheritdoc/>
         public override string[] Configuration
         {
             get
@@ -1814,7 +1814,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             return lst.ToArray();
         }
 
-        /// <see cref="IConfiguration.Configuration"/>
+        /// <inheritdoc/>
         public override string[] Configuration
         {
             get
@@ -1884,7 +1884,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             return lst.ToArray();
         }
 
-        /// <see cref="IConfiguration.Configuration"/>
+        /// <inheritdoc/>
         public override string[] Configuration
         {
             get
@@ -1954,7 +1954,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             return lst.ToArray();
         }
 
-        /// <see cref="IConfiguration.Configuration"/>
+        /// <inheritdoc/>
         public override string[] Configuration
         {
             get
@@ -2018,7 +2018,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             return lst.ToArray();
         }
 
-        /// <see cref="IConfiguration.Configuration"/>
+        /// <inheritdoc/>
         public override string[] Configuration
         {
             get
@@ -2070,7 +2070,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         /// </summary>
         public DataWriterQosConfiguration DataWriterQos { get; set; }
 
-        /// <see cref="OpenDDSConfiguration.PolicyBuilder(string[])"/>
+        /// <inheritdoc/>
         protected override string[] PolicyBuilder(string[] parameters)
         {
             List<string> lst = new List<string>(base.PolicyBuilder(parameters));

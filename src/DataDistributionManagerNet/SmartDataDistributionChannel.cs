@@ -19,13 +19,201 @@
 using MASES.DataDistributionManager.Bindings.Interop;
 using System;
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace MASES.DataDistributionManager.Bindings
 {
+
+    #region DataAvailableEventArgs
+    /// <summary>
+    /// Event args for <see cref="ISmartDataDistributionChannel.DataAvailable"/> event
+    /// </summary>
+    public class DataAvailableEventArgs : EventArgs
+    {
+        internal DataAvailableEventArgs(string channelName, string key, byte[] buffer)
+        {
+            ChannelName = channelName;
+            Key = key;
+            Buffer = buffer;
+            try
+            {
+                DecodedString = Encoding.UTF8.GetString(Buffer);
+            }
+            catch { }
+        }
+        /// <summary>
+        /// The channel name emitting data
+        /// </summary>
+        public string ChannelName { get; private set; }
+        /// <summary>
+        /// The key associated to the message
+        /// </summary>
+        public string Key { get; private set; }
+        /// <summary>
+        /// The data buffer received
+        /// </summary>
+        public byte[] Buffer { get; private set; }
+        /// <summary>
+        /// The decoded string if the buffer contains an UTF8 encoded string
+        /// </summary>
+        public string DecodedString { get; private set; }
+    }
+    #endregion
+
+    #region ConditionOrErrorEventArgs
+    /// <summary>
+    /// Event args for <see cref="ISmartDataDistributionChannel.ConditionOrError"/> event
+    /// </summary>
+    public class ConditionOrErrorEventArgs : EventArgs
+    {
+        internal ConditionOrErrorEventArgs(string channelName, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, string subSystemReason)
+        {
+            ChannelName = channelName;
+            ErrorCode = errorCode;
+            NativeCode = nativeCode;
+            SubSystemReason = subSystemReason;
+        }
+        /// <summary>
+        /// The channel name emitting data
+        /// </summary>
+        public string ChannelName { get; private set; }
+        /// <summary>
+        /// The <see cref="DDM_UNDERLYING_ERROR_CONDITION"/>
+        /// </summary>
+        public DDM_UNDERLYING_ERROR_CONDITION ErrorCode { get; private set; }
+        /// <summary>
+        /// The native code from transport layer
+        /// </summary>
+        public int NativeCode { get; private set; }
+        /// <summary>
+        /// The decoded reason from subsystem
+        /// </summary>
+        public string SubSystemReason { get; private set; }
+    }
+    #endregion
+
+    #region ISmartDataDistributionChannel
+    /// <summary>
+    /// Interface to interact with channel
+    /// </summary>
+    public interface ISmartDataDistributionChannel
+    {
+        /// <summary>
+        /// Starts the channel
+        /// </summary>
+        /// <param name="timeout">Timeout in ms</param>
+        /// <returns><see cref="HRESULT"/></returns>
+        HRESULT StartChannel(uint timeout);
+        /// <summary>
+        /// Stops the channel
+        /// </summary>
+        /// <param name="timeout">Timeout in ms</param>
+        /// <returns><see cref="HRESULT"/></returns>
+        HRESULT StopChannel(uint timeout);
+        /// <summary>
+        /// Set parameter on channel
+        /// </summary>
+        /// <param name="paramName">Parameter to set</param>
+        /// <param name="paramValue">Value to set</param>
+        void SetParameter(string paramName, string paramValue);
+        /// <summary>
+        /// Set parameter on channel
+        /// </summary>
+        /// <param name="paramId"><see cref="DDM_GENERAL_PARAMETER"/> parameter to set</param>
+        /// <param name="paramValue">Value to set</param>
+        void SetParameter(DDM_GENERAL_PARAMETER paramId, string paramValue);
+        /// <summary>
+        /// Set parameter on channel
+        /// </summary>
+        /// <param name="paramName">Parameter to set</param>
+        /// <returns>Parameter value</returns>
+        string GetParameter(string paramName);
+        /// <summary>
+        /// Set parameter on channel
+        /// </summary>
+        /// <param name="paramId"><see cref="DDM_GENERAL_PARAMETER"/> parameter to set</param>
+        /// <returns>Parameter value</returns>
+        string GetParameter(DDM_GENERAL_PARAMETER paramId);
+        /// <summary>
+        /// Lock the channel
+        /// </summary>
+        /// <param name="timeout">Timeout to acuire lock</param>
+        /// <returns><see cref="HRESULT"/></returns>
+        HRESULT Lock(uint timeout);
+        /// <summary>
+        /// Unlock the channel
+        /// </summary>
+        /// <returns><see cref="HRESULT"/></returns>
+        HRESULT Unlock();
+        /// <summary>
+        /// Seek the channel
+        /// </summary>
+        /// <param name="position">Seek poisition</param>
+        /// <returns><see cref="HRESULT"/></returns>
+        HRESULT SeekChannel(Int64 position);
+        /// <summary>
+        /// Writes in the channel
+        /// </summary>
+        /// <param name="key">Key to use in the channel message</param>
+        /// <param name="value">The <see cref="string"/> to write in the channel</param>
+        /// <param name="waitAll">Wait a complete acknowledge from the peers</param>
+        /// <param name="timestamp">timestamp to associated to the message</param>
+        /// <returns></returns>
+        HRESULT WriteOnChannel(string key, string value, bool waitAll = false, Int64 timestamp = -1);
+        /// <summary>
+        /// Writes in the channel
+        /// </summary>
+        /// <param name="key">Key to use in the channel message</param>
+        /// <param name="buffer">The data buffer in the channel message</param>
+        /// <param name="waitAll">Wait a complete acknowledge from the peers</param>
+        /// <param name="timestamp">timestamp to associated to the message</param>
+        /// <returns></returns>
+        HRESULT WriteOnChannel(string key, byte[] buffer, bool waitAll = false, Int64 timestamp = -1);
+        /// <summary>
+        /// Reads data from channel
+        /// </summary>
+        /// <param name="offset">Position where read begins</param>
+        /// <param name="length">Number of elements to read</param>
+        /// <param name="buffer">Result buffer</param>
+        /// <returns><see cref="HRESULT"/></returns>
+        HRESULT ReadFromChannel(Int64 offset, long length, out byte[] buffer);
+        /// <summary>
+        /// Changes channel direction
+        /// </summary>
+        /// <param name="direction">New <see cref="DDM_CHANNEL_DIRECTION"/></param>
+        /// <returns><see cref="HRESULT"/></returns>
+        HRESULT ChangeChannelDirection(DDM_CHANNEL_DIRECTION direction);
+        /// <summary>
+        /// Called when a data is available
+        /// </summary>
+        /// <param name="channelName">The channel with data</param>
+        /// <param name="key">Message key</param>
+        /// <param name="buffer">Message buffer</param>
+        void OnDataAvailable(string channelName, string key, byte[] buffer);
+        /// <summary>
+        /// Called when an event condition is raised from subsystem
+        /// </summary>
+        /// <param name="channelName">The channel name</param>
+        /// <param name="errorCode">The error code reported</param>
+        /// <param name="nativeCode">The native code associated to the error if available</param>
+        /// <param name="subSystemReason">A string with a reason from subsystem</param>
+        void OnConditionOrError(string channelName, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, string subSystemReason);
+        /// <summary>
+        /// Event to receive messages when data are available
+        /// </summary>
+        event EventHandler<DataAvailableEventArgs> DataAvailable;
+        /// <summary>
+        /// Event to receive condition or errors
+        /// </summary>
+        event EventHandler<ConditionOrErrorEventArgs> ConditionOrError;
+    }
+    #endregion
+
+    #region SmartDataDistributionChannel
     /// <summary>
     /// Main class managing channel
     /// </summary>
-    public class SmartDataDistributionChannel : IDataDistributionChannelCallbackLow
+    public class SmartDataDistributionChannel : ISmartDataDistributionChannel,  IDataDistributionChannelCallbackLow
     {
         /// <summary>
         /// Ctor
@@ -41,107 +229,58 @@ namespace MASES.DataDistributionManager.Bindings
         {
 
         }
-        /// <summary>
-        /// Starts the channel
-        /// </summary>
-        /// <param name="timeout">Timeout in ms</param>
-        /// <returns><see cref="HRESULT"/></returns>
+        /// <inheritdoc/>
         public HRESULT StartChannel(uint timeout)
         {
             return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_StartChannel>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, timeout);
         }
-        /// <summary>
-        /// Stops the channel
-        /// </summary>
-        /// <param name="timeout">Timeout in ms</param>
-        /// <returns><see cref="HRESULT"/></returns>
+        /// <inheritdoc/>
         public HRESULT StopChannel(uint timeout)
         {
             return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_StopChannel>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, timeout);
         }
-        /// <summary>
-        /// Set parameter on channel
-        /// </summary>
-        /// <param name="paramName">Parameter to set</param>
-        /// <param name="paramValue">Value to set</param>
+        /// <inheritdoc/>
         public void SetParameter(string paramName, string paramValue)
         {
             DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_SetParameter>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, paramName, paramValue);
         }
-        /// <summary>
-        /// Set parameter on channel
-        /// </summary>
-        /// <param name="paramId"><see cref="DDM_GENERAL_PARAMETER"/> parameter to set</param>
-        /// <param name="paramValue">Value to set</param>
+        /// <inheritdoc/>
         public void SetParameter(DDM_GENERAL_PARAMETER paramId, string paramValue)
         {
             DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_SetParameter2>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, paramId, paramValue);
         }
-        /// <summary>
-        /// Set parameter on channel
-        /// </summary>
-        /// <param name="paramName">Parameter to set</param>
-        /// <returns>Parameter value</returns>
+        /// <inheritdoc/>
         public string GetParameter(string paramName)
         {
             return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_GetParameter>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, paramName);
         }
-        /// <summary>
-        /// Set parameter on channel
-        /// </summary>
-        /// <param name="paramId"><see cref="DDM_GENERAL_PARAMETER"/> parameter to set</param>
-        /// <returns>Parameter value</returns>
+        /// <inheritdoc/>
         public string GetParameter(DDM_GENERAL_PARAMETER paramId)
         {
             return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_GetParameter2>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, paramId);
         }
-        /// <summary>
-        /// Lock the channel
-        /// </summary>
-        /// <param name="timeout">Timeout to acuire lock</param>
-        /// <returns><see cref="HRESULT"/></returns>
+        /// <inheritdoc/>
         public HRESULT Lock(uint timeout)
         {
             return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_Lock>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, timeout);
         }
-        /// <summary>
-        /// Unlock the channel
-        /// </summary>
-        /// <returns><see cref="HRESULT"/></returns>
+        /// <inheritdoc/>
         public HRESULT Unlock()
         {
             return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_Unlock>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle);
         }
-        /// <summary>
-        /// Seek the channel
-        /// </summary>
-        /// <param name="position">Seek poisition</param>
-        /// <returns><see cref="HRESULT"/></returns>
+        /// <inheritdoc/>
         public HRESULT SeekChannel(Int64 position)
         {
             return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_SeekChannel>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, position);
         }
-        /// <summary>
-        /// Writes in the channel
-        /// </summary>
-        /// <param name="key">Key to use in the channel message</param>
-        /// <param name="value">The <see cref="string"/> to write in the channel</param>
-        /// <param name="waitAll">Wait a complete acknowledge from the peers</param>
-        /// <param name="timestamp">timestamp to associated to the message</param>
-        /// <returns></returns>
+        /// <inheritdoc/>
         public HRESULT WriteOnChannel(string key, string value, bool waitAll = false, Int64 timestamp = -1)
         {
             byte[] buffer = System.Text.Encoding.UTF8.GetBytes(value);
             return WriteOnChannel(key, buffer, waitAll, timestamp);
         }
-        /// <summary>
-        /// Writes in the channel
-        /// </summary>
-        /// <param name="key">Key to use in the channel message</param>
-        /// <param name="buffer">The data buffer in the channel message</param>
-        /// <param name="waitAll">Wait a complete acknowledge from the peers</param>
-        /// <param name="timestamp">timestamp to associated to the message</param>
-        /// <returns></returns>
+        /// <inheritdoc/>
         public HRESULT WriteOnChannel(string key, byte[] buffer, bool waitAll = false, Int64 timestamp = -1)
         {
             IntPtr unmanagedPointer = Marshal.AllocHGlobal(buffer.Length);
@@ -157,13 +296,7 @@ namespace MASES.DataDistributionManager.Bindings
                 Marshal.FreeHGlobal(unmanagedPointer);
             }
         }
-        /// <summary>
-        /// Reads data from channel
-        /// </summary>
-        /// <param name="offset">Position where read begins</param>
-        /// <param name="length">Number of elements to read</param>
-        /// <param name="buffer">Result buffer</param>
-        /// <returns><see cref="HRESULT"/></returns>
+        /// <inheritdoc/>
         public HRESULT ReadFromChannel(Int64 offset, long length, out byte[] buffer)
         {
             try
@@ -186,36 +319,25 @@ namespace MASES.DataDistributionManager.Bindings
             {
             }
         }
-        /// <summary>
-        /// Changes channel direction
-        /// </summary>
-        /// <param name="direction">New <see cref="DDM_CHANNEL_DIRECTION"/></param>
-        /// <returns><see cref="HRESULT"/></returns>
+        /// <inheritdoc/>
         public HRESULT ChangeChannelDirection(DDM_CHANNEL_DIRECTION direction)
         {
             return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_ChangeChannelDirection>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, direction);
         }
-        /// <summary>
-        /// Called when a data is available
-        /// </summary>
-        /// <param name="channelName">The channel with data</param>
-        /// <param name="key">Message key</param>
-        /// <param name="buffer">Message buffer</param>
+        /// <inheritdoc/>
         public virtual void OnDataAvailable(string channelName, string key, byte[] buffer)
         {
 
         }
-        /// <summary>
-        /// Called when an event condition is raised from subsystem
-        /// </summary>
-        /// <param name="channelName">The channel name</param>
-        /// <param name="errorCode">The error code reported</param>
-        /// <param name="nativeCode">The native code associated to the error if available</param>
-        /// <param name="subSystemReason">A string with a reason from subsystem</param>
+        /// <inheritdoc/>
         public virtual void OnConditionOrError(string channelName, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, string subSystemReason)
         {
 
         }
+        /// <inheritdoc/>
+        public event EventHandler<DataAvailableEventArgs> DataAvailable;
+        /// <inheritdoc/>
+        public event EventHandler<ConditionOrErrorEventArgs> ConditionOrError;
 
         void IDataDistributionChannelCallbackLow.OnUnderlyingEvent(IntPtr opaque, IntPtr channelHandle, UnderlyingEvent uEvent)
         {
@@ -233,10 +355,12 @@ namespace MASES.DataDistributionManager.Bindings
                 }
                 catch (Exception ex) { key = ex.Message; }
                 OnDataAvailable(uEvent.ChannelName, key, data);
+                DataAvailable?.Invoke(this, new DataAvailableEventArgs(uEvent.ChannelName, key, data));
             }
             else
             {
                 OnConditionOrError(uEvent.ChannelName, uEvent.Condition, uEvent.NativeCode, uEvent.SubSystemReason);
+                ConditionOrError?.Invoke(this, new ConditionOrErrorEventArgs(uEvent.ChannelName, uEvent.Condition, uEvent.NativeCode, uEvent.SubSystemReason));
             }
         }
 
@@ -245,4 +369,5 @@ namespace MASES.DataDistributionManager.Bindings
         internal IntPtr IDataDistributionSubsystemManager_ptr;
         internal DataDistributionChannelCallbackLow m_DataDistributionChannelCallbackLow;
     }
+    #endregion
 }
