@@ -1,0 +1,2139 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/a/DataDistributionManager/DataDistributionManager/Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/allclasses-index.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/allclasses-index.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/allpackages-index.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/allpackages-index.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/constant-values.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/constant-values.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/deprecated-list.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/deprecated-list.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/element-list",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/element-list"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/help-doc.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/help-doc.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/index-all.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/index-all.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/index.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/index.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/member-search-index.js",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/member-search-index.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/member-search-index.zip",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/member-search-index.zip"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/BaseConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/BaseConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/CHANNEL_STARTUP_TYPE.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/CHANNEL_STARTUP_TYPE.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/ClusterHealthElement.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/ClusterHealthElement.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/CommonConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/CommonConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/DDM_CHANNEL_DIRECTION.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/DDM_CHANNEL_DIRECTION.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/DDM_CLUSTEREVENT.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/DDM_CLUSTEREVENT.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/DDM_GENERAL_PARAMETER.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/DDM_GENERAL_PARAMETER.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/DDM_INSTANCE_STATE.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/DDM_INSTANCE_STATE.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/DDM_LOG_LEVEL.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/DDM_LOG_LEVEL.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/DDM_UNDERLYING_ERROR_CONDITION.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/DDM_UNDERLYING_ERROR_CONDITION.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/GlobalConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/GlobalConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/HRESULT.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/HRESULT.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/IConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/IConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/ISmartDataDistributionMastership.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/ISmartDataDistributionMastership.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/SmartDataDistribution.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/SmartDataDistribution.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/SmartDataDistributionChannel.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/SmartDataDistributionChannel.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/UnderlyingEvent.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/UnderlyingEvent.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/DataReaderQosConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/DataReaderQosConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/DataWriterQosConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/DataWriterQosConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/DeadlineQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/DeadlineQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyKind.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyKind.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/DomainParticipantQosConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/DomainParticipantQosConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyKind.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyKind.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/DurabilityServiceQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/DurabilityServiceQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/EntityFactoryQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/EntityFactoryQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/GroupDataQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/GroupDataQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyKind.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyKind.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/KafkaChannelConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/KafkaChannelConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/KafkaConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/KafkaConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/LatencyBudgetQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/LatencyBudgetQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/LifespanQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/LifespanQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyKind.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyKind.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/OpenDDSChannelConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/OpenDDSChannelConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.DCPSInfoRepoConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.DCPSInfoRepoConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.OpenDDSArgsConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.OpenDDSArgsConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyKind.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyKind.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/OwnershipStrengthQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/OwnershipStrengthQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/PartitionQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/PartitionQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyAccessScopeKind.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyAccessScopeKind.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.Property.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.Property.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/PublisherQosConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/PublisherQosConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/ReaderDataLifecycleQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/ReaderDataLifecycleQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyKind.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyKind.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/ResourceLimitsQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/ResourceLimitsQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/SubscriberQosConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/SubscriberQosConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/TimeBasedFilterQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/TimeBasedFilterQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/TopicDataQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/TopicDataQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/TopicQosConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/TopicQosConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/TransportPriorityQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/TransportPriorityQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/UserDataQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/UserDataQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/WriterDataLifecycleQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/WriterDataLifecycleQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/package-summary.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/package-summary.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/package-tree.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/package-tree.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/package-summary.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/package-summary.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/package-tree.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/org/mases/datadistributionmanager/package-tree.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/overview-summary.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/overview-summary.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/overview-tree.html",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/overview-tree.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/package-search-index.js",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/package-search-index.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/package-search-index.zip",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/package-search-index.zip"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/resources/glass.png",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/resources/glass.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/resources/x.png",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/resources/x.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/external/jquery/jquery.js",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/external/jquery/jquery.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-bg_glass_55_fbf9ee_1x400.png",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/images/ui-bg_glass_55_fbf9ee_1x400.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-bg_glass_65_dadada_1x400.png",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/images/ui-bg_glass_65_dadada_1x400.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-bg_glass_75_dadada_1x400.png",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/images/ui-bg_glass_75_dadada_1x400.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-bg_glass_75_e6e6e6_1x400.png",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/images/ui-bg_glass_75_e6e6e6_1x400.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-bg_glass_95_fef1ec_1x400.png",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/images/ui-bg_glass_95_fef1ec_1x400.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-bg_highlight-soft_75_cccccc_1x100.png",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/images/ui-bg_highlight-soft_75_cccccc_1x100.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-icons_222222_256x240.png",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/images/ui-icons_222222_256x240.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-icons_2e83ff_256x240.png",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/images/ui-icons_2e83ff_256x240.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-icons_454545_256x240.png",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/images/ui-icons_454545_256x240.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-icons_888888_256x240.png",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/images/ui-icons_888888_256x240.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-icons_cd0a0a_256x240.png",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/images/ui-icons_cd0a0a_256x240.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jquery-3.4.1.js",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/jquery-3.4.1.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jquery-ui.css",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/jquery-ui.css"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jquery-ui.js",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/jquery-ui.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jquery-ui.min.css",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/jquery-ui.min.css"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jquery-ui.min.js",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/jquery-ui.min.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jquery-ui.structure.css",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/jquery-ui.structure.css"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jquery-ui.structure.min.css",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/jquery-ui.structure.min.css"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.js",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.min.js",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.min.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jszip-utils/dist/jszip-utils.js",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/jszip-utils/dist/jszip-utils.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jszip-utils/dist/jszip-utils.min.js",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/jszip-utils/dist/jszip-utils.min.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jszip/dist/jszip.js",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/jszip/dist/jszip.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jszip/dist/jszip.min.js",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script-dir/jszip/dist/jszip.min.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script.js",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/script.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/search.js",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/search.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/stylesheet.css",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/stylesheet.css"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/type-search-index.js",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/type-search-index.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/type-search-index.zip",
+      "output": {
+        "resource": {
+          "relative_path": "Javadoc/type-search-index.zip"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.BaseConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.BaseConfiguration.html",
+          "hash": "ZePmE1bBIPhpr2U4gKB1fg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.ClusterHealthElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.ClusterHealthElement.html",
+          "hash": "uqHYAXXXVBn+a2hVH0Z4gg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.CommonConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.CommonConfiguration.html",
+          "hash": "Sm8PTtyWUMNyzOr/3vZx0A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DataReaderQosConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DataReaderQosConfiguration.html",
+          "hash": "Y3R/ygNiWxy15VcVyhbEqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DataWriterQosConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DataWriterQosConfiguration.html",
+          "hash": "HVvGUAIUorr+yzksSJ8aeg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DeadlineQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DeadlineQosPolicyConfiguration.html",
+          "hash": "9tvE7MSNi5SxrVLVy/51ug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DestinationOrderQosPolicyConfiguration.DestinationOrderQosPolicyKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DestinationOrderQosPolicyConfiguration.DestinationOrderQosPolicyKind.html",
+          "hash": "2EG9xaKfyFAfpSh3p/xKdA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DestinationOrderQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DestinationOrderQosPolicyConfiguration.html",
+          "hash": "9Mn+wDMOZ5x8NTOPK+T8Kw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DomainParticipantQosConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DomainParticipantQosConfiguration.html",
+          "hash": "aCKWoxoBz9jAKb5/pHxkLA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityQosPolicyConfiguration.DurabilityQosPolicyKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityQosPolicyConfiguration.DurabilityQosPolicyKind.html",
+          "hash": "2QwlszjkWqnNJQhRQfQzAQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityQosPolicyConfiguration.html",
+          "hash": "RBwiVYMkLCDCgfmbSqKd0g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityServiceQosPolicyConfiguration.HistoryQosPolicyKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityServiceQosPolicyConfiguration.HistoryQosPolicyKind.html",
+          "hash": "rlmAJeySUcSMuvcvWSXsLg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityServiceQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityServiceQosPolicyConfiguration.html",
+          "hash": "vIF544l7/+KMiCDMvIrkSw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.EntityFactoryQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.EntityFactoryQosPolicyConfiguration.html",
+          "hash": "KE67xok2e/cefU+lpxIckw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.GroupDataQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.GroupDataQosPolicyConfiguration.html",
+          "hash": "ADLa945uF93uUdLz34LLGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.HistoryQosPolicyKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.HistoryQosPolicyKind.html",
+          "hash": "wZ/EKbuDx4Xq+RThixyvng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.html",
+          "hash": "+O/k+hXCx8njtlX2+Ex7/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html",
+          "hash": "XHdooqgT4LmssRYM78ngzg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaConfiguration.html",
+          "hash": "LH5G7/WQ12sAoq4LVNaJKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LatencyBudgetQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LatencyBudgetQosPolicyConfiguration.html",
+          "hash": "Tohw4VvNZw6hVI9ZwjO5fQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LifespanQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LifespanQosPolicyConfiguration.html",
+          "hash": "D7cxSq17+iDmnEhhxnSyAg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration.LivelinessQosPolicyKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration.LivelinessQosPolicyKind.html",
+          "hash": "ViO3U6Y9UckiQ8ZCIZ7Muw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration.html",
+          "hash": "ts0DtDZIhxbsANlALM8wTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSChannelConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSChannelConfiguration.html",
+          "hash": "pPwiVzZMgnZ2rjSrBT5mDg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html",
+          "hash": "JnHr7d34EjTIxavfGBjrcg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.OpenDDSArgsConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.OpenDDSArgsConfiguration.html",
+          "hash": "zCvIr5rH+ZmVEHEJWAhXbA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.html",
+          "hash": "h8H/KrHI7aaZktcUfBjXog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipQosPolicyConfiguration.OwnershipQosPolicyKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipQosPolicyConfiguration.OwnershipQosPolicyKind.html",
+          "hash": "afTHV9MoZM5TvHxQdCOXpw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipQosPolicyConfiguration.html",
+          "hash": "M5UB4iMbGyveUARj0NyNzg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipStrengthQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipStrengthQosPolicyConfiguration.html",
+          "hash": "eWGAArC/BIllPahsmLracA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionQosPolicyConfiguration.html",
+          "hash": "OspmDt93d3EAzpkcy9YqUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PresentationQosPolicyConfiguration.PresentationQosPolicyAccessScopeKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PresentationQosPolicyConfiguration.PresentationQosPolicyAccessScopeKind.html",
+          "hash": "+3qYiHJcZl9N2Zj6IFxWEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PresentationQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PresentationQosPolicyConfiguration.html",
+          "hash": "TeQlzrp33vxT5b3UZ18YSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.Property.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.Property.html",
+          "hash": "06d7cvzrIRBR9Yebt3n4/Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.html",
+          "hash": "BworrNUlGXKj/pp6rifggA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PublisherQosConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PublisherQosConfiguration.html",
+          "hash": "8opp/uBn9wY2kBV+mqVvLA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ReaderDataLifecycleQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ReaderDataLifecycleQosPolicyConfiguration.html",
+          "hash": "Ccgh7Ecm3aSTn16evb76/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ReliabilityQosPolicyConfiguration.ReliabilityQosPolicyKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ReliabilityQosPolicyConfiguration.ReliabilityQosPolicyKind.html",
+          "hash": "VCH3QQ3ZeI7rQ4KEOG3QTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ReliabilityQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ReliabilityQosPolicyConfiguration.html",
+          "hash": "pO88RznNOB5ZtqbBHUZgzQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ResourceLimitsQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ResourceLimitsQosPolicyConfiguration.html",
+          "hash": "lQmM4ajtrmu98YNdW9P6Jw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SubscriberQosConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SubscriberQosConfiguration.html",
+          "hash": "ivO9xuczZ5sYG/nJ/zIIlw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TimeBasedFilterQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TimeBasedFilterQosPolicyConfiguration.html",
+          "hash": "jOxaJFJh7IfOiqXAUfztIQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TopicDataQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TopicDataQosPolicyConfiguration.html",
+          "hash": "vNYX4+HBxdRhX/HrTIysjw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TopicQosConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TopicQosConfiguration.html",
+          "hash": "zFDNZdrwNWstVd3k8AplMw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TransportPriorityQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TransportPriorityQosPolicyConfiguration.html",
+          "hash": "3RxPBo7Q655chbBM6dF7lQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.UserDataQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.UserDataQosPolicyConfiguration.html",
+          "hash": "xAtLqt1d2iDoH2LwK6hUiw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.WriterDataLifecycleQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.WriterDataLifecycleQosPolicyConfiguration.html",
+          "hash": "+ET4X/tzm2uQ2mnWfElvWA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.html",
+          "hash": "hQv4DXp/USMQgURHdmtYCA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.GlobalConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.GlobalConfiguration.html",
+          "hash": "5Vc1pGzolGCnTvf9FnExig=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.HelperClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.HelperClass.html",
+          "hash": "aWj5GjK1cBb7XCkh3JyMKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.IConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.IConfiguration.html",
+          "hash": "IMlt/EFDWGsoAic13uNr6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.html",
+          "hash": "BylutYbGSzmXsLCLwlLFCQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.html",
+          "hash": "/9rU9iQ67xd8vKpp5zk7+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_CHANNEL_DIRECTION.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_CHANNEL_DIRECTION.html",
+          "hash": "BU2FI1GlsaMSHT0W8VEvhw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT.html",
+          "hash": "Iwr2z86Fdodj01pO9QtdIw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_GENERAL_PARAMETER.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_GENERAL_PARAMETER.html",
+          "hash": "fNf5Mesd/ly8vin9s+DpDQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE.html",
+          "hash": "npXMgu7z2Gz+IveUMlHd8A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_LOG_LEVEL.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_LOG_LEVEL.html",
+          "hash": "iNBR9uIVHcTPA47Z5ITvPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_UNDERLYING_ERROR_CONDITION.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_UNDERLYING_ERROR_CONDITION.html",
+          "hash": "8g/L1vQBEq4QA2njTWiRDg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.HRESULT.HResultException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.HRESULT.HResultException.html",
+          "hash": "d/iHTcGzS945L56q3XrOlw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.HRESULT.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.HRESULT.html",
+          "hash": "yOjHOKW/qcxQkQfbMAKi7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.html",
+          "hash": "Wi7W5JWbuL+WBV9HYpmXeQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html",
+          "hash": "o6/jHrSILJ8j+5o94JkNYQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html",
+          "hash": "iPrf+/fFpve6unk5aKNy+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.html",
+          "hash": "Bq7MxwF87HzgHV8Lsx9auA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "H9PQNSafkb1EgBcYT/lkaA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "WdF5xrFNGRnofzNZivTdQw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "6+qX/aRe5oBUGN/8xGqGoA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "gB8AESyvNru97tzIZofEEg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "yIj9JYjfdS6FUGjSFx1Hug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "MOTuIkT/Le1C8dwPfBu+NA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 65,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
