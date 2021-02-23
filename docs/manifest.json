@@ -5,10 +5,10 @@
   "files": [
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/allclasses-index.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/allclasses-index.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/allclasses-index.html"
+          "relative_path": "javadoc/allclasses-index.html"
         }
       },
       "is_incremental": false,
@@ -16,10 +16,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/allpackages-index.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/allpackages-index.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/allpackages-index.html"
+          "relative_path": "javadoc/allpackages-index.html"
         }
       },
       "is_incremental": false,
@@ -27,10 +27,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/constant-values.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/constant-values.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/constant-values.html"
+          "relative_path": "javadoc/constant-values.html"
         }
       },
       "is_incremental": false,
@@ -38,10 +38,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/deprecated-list.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/deprecated-list.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/deprecated-list.html"
+          "relative_path": "javadoc/deprecated-list.html"
         }
       },
       "is_incremental": false,
@@ -49,10 +49,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/element-list",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/element-list",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/element-list"
+          "relative_path": "javadoc/element-list"
         }
       },
       "is_incremental": false,
@@ -60,10 +60,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/help-doc.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/help-doc.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/help-doc.html"
+          "relative_path": "javadoc/help-doc.html"
         }
       },
       "is_incremental": false,
@@ -71,10 +71,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/index-all.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/index-all.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/index-all.html"
+          "relative_path": "javadoc/index-all.html"
         }
       },
       "is_incremental": false,
@@ -82,10 +82,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/index.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/index.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/index.html"
+          "relative_path": "javadoc/index.html"
         }
       },
       "is_incremental": false,
@@ -93,10 +93,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/member-search-index.js",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/member-search-index.js",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/member-search-index.js"
+          "relative_path": "javadoc/member-search-index.js"
         }
       },
       "is_incremental": false,
@@ -104,10 +104,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/member-search-index.zip",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/member-search-index.zip",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/member-search-index.zip"
+          "relative_path": "javadoc/member-search-index.zip"
         }
       },
       "is_incremental": false,
@@ -115,10 +115,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/BaseConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/BaseConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/BaseConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/BaseConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -126,10 +126,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/CHANNEL_STARTUP_TYPE.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/CHANNEL_STARTUP_TYPE.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/CHANNEL_STARTUP_TYPE.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/CHANNEL_STARTUP_TYPE.html"
         }
       },
       "is_incremental": false,
@@ -137,10 +137,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/ClusterHealthElement.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/ClusterHealthElement.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/ClusterHealthElement.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/ClusterHealthElement.html"
         }
       },
       "is_incremental": false,
@@ -148,10 +148,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/CommonConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/CommonConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/CommonConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/CommonConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -159,10 +159,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/DDM_CHANNEL_DIRECTION.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/DDM_CHANNEL_DIRECTION.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/DDM_CHANNEL_DIRECTION.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_CHANNEL_DIRECTION.html"
         }
       },
       "is_incremental": false,
@@ -170,10 +170,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/DDM_CLUSTEREVENT.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/DDM_CLUSTEREVENT.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/DDM_CLUSTEREVENT.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_CLUSTEREVENT.html"
         }
       },
       "is_incremental": false,
@@ -181,10 +181,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/DDM_GENERAL_PARAMETER.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/DDM_GENERAL_PARAMETER.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/DDM_GENERAL_PARAMETER.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_GENERAL_PARAMETER.html"
         }
       },
       "is_incremental": false,
@@ -192,10 +192,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/DDM_INSTANCE_STATE.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/DDM_INSTANCE_STATE.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/DDM_INSTANCE_STATE.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_INSTANCE_STATE.html"
         }
       },
       "is_incremental": false,
@@ -203,10 +203,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/DDM_LOG_LEVEL.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/DDM_LOG_LEVEL.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/DDM_LOG_LEVEL.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_LOG_LEVEL.html"
         }
       },
       "is_incremental": false,
@@ -214,10 +214,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/DDM_UNDERLYING_ERROR_CONDITION.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/DDM_UNDERLYING_ERROR_CONDITION.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/DDM_UNDERLYING_ERROR_CONDITION.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_UNDERLYING_ERROR_CONDITION.html"
         }
       },
       "is_incremental": false,
@@ -225,10 +225,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/GlobalConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/GlobalConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/GlobalConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/GlobalConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -236,10 +236,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/HRESULT.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/HRESULT.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/HRESULT.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/HRESULT.html"
         }
       },
       "is_incremental": false,
@@ -247,10 +247,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/IConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/IConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/IConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/IConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -258,10 +258,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/ISmartDataDistributionMastership.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/ISmartDataDistributionMastership.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/ISmartDataDistributionMastership.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/ISmartDataDistributionMastership.html"
         }
       },
       "is_incremental": false,
@@ -269,10 +269,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/SmartDataDistribution.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/SmartDataDistribution.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/SmartDataDistribution.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/SmartDataDistribution.html"
         }
       },
       "is_incremental": false,
@@ -280,10 +280,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/SmartDataDistributionChannel.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/SmartDataDistributionChannel.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/SmartDataDistributionChannel.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/SmartDataDistributionChannel.html"
         }
       },
       "is_incremental": false,
@@ -291,10 +291,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/UnderlyingEvent.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/UnderlyingEvent.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/UnderlyingEvent.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/UnderlyingEvent.html"
         }
       },
       "is_incremental": false,
@@ -302,10 +302,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/DataReaderQosConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/DataReaderQosConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/DataReaderQosConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DataReaderQosConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -313,10 +313,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/DataWriterQosConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/DataWriterQosConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/DataWriterQosConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DataWriterQosConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -324,10 +324,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/DeadlineQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/DeadlineQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/DeadlineQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DeadlineQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -335,10 +335,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -346,10 +346,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyKind.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyKind.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyKind.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyKind.html"
         }
       },
       "is_incremental": false,
@@ -357,10 +357,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/DomainParticipantQosConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/DomainParticipantQosConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/DomainParticipantQosConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DomainParticipantQosConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -368,10 +368,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -379,10 +379,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyKind.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyKind.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyKind.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyKind.html"
         }
       },
       "is_incremental": false,
@@ -390,10 +390,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/DurabilityServiceQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/DurabilityServiceQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/DurabilityServiceQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DurabilityServiceQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -401,10 +401,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/EntityFactoryQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/EntityFactoryQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/EntityFactoryQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/EntityFactoryQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -412,10 +412,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/GroupDataQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/GroupDataQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/GroupDataQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/GroupDataQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -423,10 +423,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -434,10 +434,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyKind.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyKind.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyKind.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyKind.html"
         }
       },
       "is_incremental": false,
@@ -445,10 +445,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/KafkaChannelConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/KafkaChannelConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/KafkaChannelConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/KafkaChannelConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -456,10 +456,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/KafkaConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/KafkaConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/KafkaConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/KafkaConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -467,10 +467,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/LatencyBudgetQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/LatencyBudgetQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/LatencyBudgetQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/LatencyBudgetQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -478,10 +478,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/LifespanQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/LifespanQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/LifespanQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/LifespanQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -489,10 +489,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -500,10 +500,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyKind.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyKind.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyKind.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyKind.html"
         }
       },
       "is_incremental": false,
@@ -511,10 +511,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/OpenDDSChannelConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/OpenDDSChannelConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/OpenDDSChannelConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OpenDDSChannelConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -522,10 +522,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.DCPSInfoRepoConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.DCPSInfoRepoConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.DCPSInfoRepoConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.DCPSInfoRepoConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -533,10 +533,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.OpenDDSArgsConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.OpenDDSArgsConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.OpenDDSArgsConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.OpenDDSArgsConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -544,10 +544,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -555,10 +555,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -566,10 +566,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyKind.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyKind.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyKind.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyKind.html"
         }
       },
       "is_incremental": false,
@@ -577,10 +577,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/OwnershipStrengthQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/OwnershipStrengthQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/OwnershipStrengthQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OwnershipStrengthQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -588,10 +588,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/PartitionQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/PartitionQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/PartitionQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/PartitionQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -599,10 +599,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyAccessScopeKind.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyAccessScopeKind.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyAccessScopeKind.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyAccessScopeKind.html"
         }
       },
       "is_incremental": false,
@@ -610,10 +610,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -621,10 +621,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.Property.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.Property.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.Property.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.Property.html"
         }
       },
       "is_incremental": false,
@@ -632,10 +632,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -643,10 +643,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/PublisherQosConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/PublisherQosConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/PublisherQosConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/PublisherQosConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -654,10 +654,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/ReaderDataLifecycleQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/ReaderDataLifecycleQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/ReaderDataLifecycleQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/ReaderDataLifecycleQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -665,10 +665,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -676,10 +676,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyKind.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyKind.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyKind.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyKind.html"
         }
       },
       "is_incremental": false,
@@ -687,10 +687,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/ResourceLimitsQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/ResourceLimitsQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/ResourceLimitsQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/ResourceLimitsQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -698,10 +698,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/SubscriberQosConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/SubscriberQosConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/SubscriberQosConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/SubscriberQosConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -709,10 +709,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/TimeBasedFilterQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/TimeBasedFilterQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/TimeBasedFilterQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/TimeBasedFilterQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -720,10 +720,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/TopicDataQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/TopicDataQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/TopicDataQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/TopicDataQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -731,10 +731,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/TopicQosConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/TopicQosConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/TopicQosConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/TopicQosConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -742,10 +742,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/TransportPriorityQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/TransportPriorityQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/TransportPriorityQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/TransportPriorityQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -753,10 +753,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/UserDataQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/UserDataQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/UserDataQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/UserDataQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -764,10 +764,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/WriterDataLifecycleQosPolicyConfiguration.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/WriterDataLifecycleQosPolicyConfiguration.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/WriterDataLifecycleQosPolicyConfiguration.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/WriterDataLifecycleQosPolicyConfiguration.html"
         }
       },
       "is_incremental": false,
@@ -775,10 +775,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/package-summary.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/package-summary.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/package-summary.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/package-summary.html"
         }
       },
       "is_incremental": false,
@@ -786,10 +786,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/configuration/package-tree.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/package-tree.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/configuration/package-tree.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/package-tree.html"
         }
       },
       "is_incremental": false,
@@ -797,10 +797,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/package-summary.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/package-summary.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/package-summary.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/package-summary.html"
         }
       },
       "is_incremental": false,
@@ -808,10 +808,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/org/mases/datadistributionmanager/package-tree.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/package-tree.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/org/mases/datadistributionmanager/package-tree.html"
+          "relative_path": "javadoc/org/mases/datadistributionmanager/package-tree.html"
         }
       },
       "is_incremental": false,
@@ -819,10 +819,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/overview-summary.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/overview-summary.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/overview-summary.html"
+          "relative_path": "javadoc/overview-summary.html"
         }
       },
       "is_incremental": false,
@@ -830,10 +830,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/overview-tree.html",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/overview-tree.html",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/overview-tree.html"
+          "relative_path": "javadoc/overview-tree.html"
         }
       },
       "is_incremental": false,
@@ -841,10 +841,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/package-search-index.js",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/package-search-index.js",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/package-search-index.js"
+          "relative_path": "javadoc/package-search-index.js"
         }
       },
       "is_incremental": false,
@@ -852,10 +852,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/package-search-index.zip",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/package-search-index.zip",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/package-search-index.zip"
+          "relative_path": "javadoc/package-search-index.zip"
         }
       },
       "is_incremental": false,
@@ -863,10 +863,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/resources/glass.png",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/resources/glass.png",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/resources/glass.png"
+          "relative_path": "javadoc/resources/glass.png"
         }
       },
       "is_incremental": false,
@@ -874,10 +874,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/resources/x.png",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/resources/x.png",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/resources/x.png"
+          "relative_path": "javadoc/resources/x.png"
         }
       },
       "is_incremental": false,
@@ -885,10 +885,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/external/jquery/jquery.js",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/external/jquery/jquery.js",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/external/jquery/jquery.js"
+          "relative_path": "javadoc/script-dir/external/jquery/jquery.js"
         }
       },
       "is_incremental": false,
@@ -896,10 +896,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-bg_glass_55_fbf9ee_1x400.png",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/images/ui-bg_glass_55_fbf9ee_1x400.png",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/images/ui-bg_glass_55_fbf9ee_1x400.png"
+          "relative_path": "javadoc/script-dir/images/ui-bg_glass_55_fbf9ee_1x400.png"
         }
       },
       "is_incremental": false,
@@ -907,10 +907,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-bg_glass_65_dadada_1x400.png",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/images/ui-bg_glass_65_dadada_1x400.png",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/images/ui-bg_glass_65_dadada_1x400.png"
+          "relative_path": "javadoc/script-dir/images/ui-bg_glass_65_dadada_1x400.png"
         }
       },
       "is_incremental": false,
@@ -918,10 +918,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-bg_glass_75_dadada_1x400.png",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/images/ui-bg_glass_75_dadada_1x400.png",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/images/ui-bg_glass_75_dadada_1x400.png"
+          "relative_path": "javadoc/script-dir/images/ui-bg_glass_75_dadada_1x400.png"
         }
       },
       "is_incremental": false,
@@ -929,10 +929,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-bg_glass_75_e6e6e6_1x400.png",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/images/ui-bg_glass_75_e6e6e6_1x400.png",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/images/ui-bg_glass_75_e6e6e6_1x400.png"
+          "relative_path": "javadoc/script-dir/images/ui-bg_glass_75_e6e6e6_1x400.png"
         }
       },
       "is_incremental": false,
@@ -940,10 +940,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-bg_glass_95_fef1ec_1x400.png",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/images/ui-bg_glass_95_fef1ec_1x400.png",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/images/ui-bg_glass_95_fef1ec_1x400.png"
+          "relative_path": "javadoc/script-dir/images/ui-bg_glass_95_fef1ec_1x400.png"
         }
       },
       "is_incremental": false,
@@ -951,10 +951,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-bg_highlight-soft_75_cccccc_1x100.png",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/images/ui-bg_highlight-soft_75_cccccc_1x100.png",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/images/ui-bg_highlight-soft_75_cccccc_1x100.png"
+          "relative_path": "javadoc/script-dir/images/ui-bg_highlight-soft_75_cccccc_1x100.png"
         }
       },
       "is_incremental": false,
@@ -962,10 +962,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-icons_222222_256x240.png",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/images/ui-icons_222222_256x240.png",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/images/ui-icons_222222_256x240.png"
+          "relative_path": "javadoc/script-dir/images/ui-icons_222222_256x240.png"
         }
       },
       "is_incremental": false,
@@ -973,10 +973,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-icons_2e83ff_256x240.png",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/images/ui-icons_2e83ff_256x240.png",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/images/ui-icons_2e83ff_256x240.png"
+          "relative_path": "javadoc/script-dir/images/ui-icons_2e83ff_256x240.png"
         }
       },
       "is_incremental": false,
@@ -984,10 +984,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-icons_454545_256x240.png",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/images/ui-icons_454545_256x240.png",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/images/ui-icons_454545_256x240.png"
+          "relative_path": "javadoc/script-dir/images/ui-icons_454545_256x240.png"
         }
       },
       "is_incremental": false,
@@ -995,10 +995,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-icons_888888_256x240.png",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/images/ui-icons_888888_256x240.png",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/images/ui-icons_888888_256x240.png"
+          "relative_path": "javadoc/script-dir/images/ui-icons_888888_256x240.png"
         }
       },
       "is_incremental": false,
@@ -1006,10 +1006,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/images/ui-icons_cd0a0a_256x240.png",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/images/ui-icons_cd0a0a_256x240.png",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/images/ui-icons_cd0a0a_256x240.png"
+          "relative_path": "javadoc/script-dir/images/ui-icons_cd0a0a_256x240.png"
         }
       },
       "is_incremental": false,
@@ -1017,10 +1017,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jquery-3.4.1.js",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/jquery-3.4.1.js",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/jquery-3.4.1.js"
+          "relative_path": "javadoc/script-dir/jquery-3.4.1.js"
         }
       },
       "is_incremental": false,
@@ -1028,10 +1028,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jquery-ui.css",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/jquery-ui.css",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/jquery-ui.css"
+          "relative_path": "javadoc/script-dir/jquery-ui.css"
         }
       },
       "is_incremental": false,
@@ -1039,10 +1039,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jquery-ui.js",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/jquery-ui.js",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/jquery-ui.js"
+          "relative_path": "javadoc/script-dir/jquery-ui.js"
         }
       },
       "is_incremental": false,
@@ -1050,10 +1050,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jquery-ui.min.css",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/jquery-ui.min.css",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/jquery-ui.min.css"
+          "relative_path": "javadoc/script-dir/jquery-ui.min.css"
         }
       },
       "is_incremental": false,
@@ -1061,10 +1061,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jquery-ui.min.js",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/jquery-ui.min.js",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/jquery-ui.min.js"
+          "relative_path": "javadoc/script-dir/jquery-ui.min.js"
         }
       },
       "is_incremental": false,
@@ -1072,10 +1072,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jquery-ui.structure.css",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/jquery-ui.structure.css",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/jquery-ui.structure.css"
+          "relative_path": "javadoc/script-dir/jquery-ui.structure.css"
         }
       },
       "is_incremental": false,
@@ -1083,10 +1083,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jquery-ui.structure.min.css",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/jquery-ui.structure.min.css",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/jquery-ui.structure.min.css"
+          "relative_path": "javadoc/script-dir/jquery-ui.structure.min.css"
         }
       },
       "is_incremental": false,
@@ -1094,10 +1094,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.js",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.js",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.js"
+          "relative_path": "javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.js"
         }
       },
       "is_incremental": false,
@@ -1105,10 +1105,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.min.js",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.min.js",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.min.js"
+          "relative_path": "javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.min.js"
         }
       },
       "is_incremental": false,
@@ -1116,10 +1116,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jszip-utils/dist/jszip-utils.js",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/jszip-utils/dist/jszip-utils.js",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/jszip-utils/dist/jszip-utils.js"
+          "relative_path": "javadoc/script-dir/jszip-utils/dist/jszip-utils.js"
         }
       },
       "is_incremental": false,
@@ -1127,10 +1127,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jszip-utils/dist/jszip-utils.min.js",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/jszip-utils/dist/jszip-utils.min.js",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/jszip-utils/dist/jszip-utils.min.js"
+          "relative_path": "javadoc/script-dir/jszip-utils/dist/jszip-utils.min.js"
         }
       },
       "is_incremental": false,
@@ -1138,10 +1138,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jszip/dist/jszip.js",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/jszip/dist/jszip.js",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/jszip/dist/jszip.js"
+          "relative_path": "javadoc/script-dir/jszip/dist/jszip.js"
         }
       },
       "is_incremental": false,
@@ -1149,10 +1149,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script-dir/jszip/dist/jszip.min.js",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script-dir/jszip/dist/jszip.min.js",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script-dir/jszip/dist/jszip.min.js"
+          "relative_path": "javadoc/script-dir/jszip/dist/jszip.min.js"
         }
       },
       "is_incremental": false,
@@ -1160,10 +1160,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/script.js",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/script.js",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/script.js"
+          "relative_path": "javadoc/script.js"
         }
       },
       "is_incremental": false,
@@ -1171,10 +1171,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/search.js",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/search.js",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/search.js"
+          "relative_path": "javadoc/search.js"
         }
       },
       "is_incremental": false,
@@ -1182,10 +1182,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/stylesheet.css",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/stylesheet.css",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/stylesheet.css"
+          "relative_path": "javadoc/stylesheet.css"
         }
       },
       "is_incremental": false,
@@ -1193,10 +1193,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/type-search-index.js",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/type-search-index.js",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/type-search-index.js"
+          "relative_path": "javadoc/type-search-index.js"
         }
       },
       "is_incremental": false,
@@ -1204,10 +1204,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/Javadoc/type-search-index.zip",
+      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/type-search-index.zip",
       "output": {
         "resource": {
-          "relative_path": "Javadoc/type-search-index.zip"
+          "relative_path": "javadoc/type-search-index.zip"
         }
       },
       "is_incremental": false,
