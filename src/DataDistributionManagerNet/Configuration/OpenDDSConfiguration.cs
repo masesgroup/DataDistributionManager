@@ -76,6 +76,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 set
                 {
                     commandLineKeyValuePair[DCPSConfigFileKey] = value;
+                    EmitPropertyChanged("DCPSConfigFile");
                 }
             }
 
@@ -93,6 +94,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 set
                 {
                     commandLineKeyValuePair[DCPSTransportDebugLevelKey] = value.ToString();
+                    EmitPropertyChanged("DCPSTransportDebugLevel");
                 }
             }
 
@@ -112,6 +114,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 {
                     if (value == null) keyValuePair.Remove(CommandLineKey);
                     else keyValuePair[CommandLineKey] = value;
+                    EmitPropertyChanged("CommandLine");
                 }
             }
 
@@ -277,6 +280,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 set
                 {
                     keyValuePair[DCPSInfoRepoAutostartKey] = value.ToString().ToLowerInvariant();
+                    EmitPropertyChanged("Autostart");
                 }
             }
 
@@ -294,6 +298,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 set
                 {
                     keyValuePair[DCPSInfoRepoLogOnApplicationKey] = value.ToString().ToLowerInvariant();
+                    EmitPropertyChanged("LogOnApplication");
                 }
             }
             /// <summary>
@@ -311,6 +316,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 {
                     if (value == null) commandLineKeyValuePair.Remove(DCPSInfoRepoORBSvcConfKey);
                     else commandLineKeyValuePair[DCPSInfoRepoORBSvcConfKey] = value;
+                    EmitPropertyChanged("ORBSvcConf");
                 }
             }
 
@@ -329,6 +335,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 {
                     if (value == null) commandLineKeyValuePair.Remove(DCPSInfoRepoORBEndpointKey);
                     else commandLineKeyValuePair[DCPSInfoRepoORBEndpointKey] = value;
+                    EmitPropertyChanged("ORBEndpoint");
                 }
             }
 
@@ -347,6 +354,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 {
                     if (value == null) commandLineKeyValuePair.Remove(DCPSInfoRepoORBListenEndpointsKey);
                     else commandLineKeyValuePair[DCPSInfoRepoORBListenEndpointsKey] = value;
+                    EmitPropertyChanged("ORBListenEndpoints");
                 }
             }
 
@@ -365,6 +373,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 {
                     if (value == null) commandLineKeyValuePair.Remove(DCPSInfoRepoIorFileKey);
                     else commandLineKeyValuePair[DCPSInfoRepoIorFileKey] = value;
+                    EmitPropertyChanged("IorFile");
                 }
             }
 
@@ -389,6 +398,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                         commandLineKeyValuePair[DCPSInfoRepoNOBITSKey] = string.Empty;
                     }
                     else commandLineKeyValuePair.Remove(DCPSInfoRepoNOBITSKey);
+                    EmitPropertyChanged("NOBITS");
                 }
             }
 
@@ -407,6 +417,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 {
                     if (value == null) commandLineKeyValuePair.Remove(DCPSInfoRepoListeningAddressKey);
                     else commandLineKeyValuePair[DCPSInfoRepoListeningAddressKey] = value;
+                    EmitPropertyChanged("ListeningAddress");
                 }
             }
 
@@ -431,6 +442,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                         commandLineKeyValuePair[DCPSInfoRepoVerboseLoggingKey] = string.Empty;
                     }
                     else commandLineKeyValuePair.Remove(DCPSInfoRepoVerboseLoggingKey);
+                    EmitPropertyChanged("VerboseLogging");
                 }
             }
 
@@ -449,6 +461,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 {
                     if (value == null) commandLineKeyValuePair.Remove(DCPSInfoRepoPersistenceFileKey);
                     else commandLineKeyValuePair[DCPSInfoRepoPersistenceFileKey] = value;
+                    EmitPropertyChanged("PersistenceFile");
                 }
             }
 
@@ -473,6 +486,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                         commandLineKeyValuePair[DCPSInfoRepoResurrectKey] = "1";
                     }
                     else commandLineKeyValuePair[DCPSInfoRepoResurrectKey] = "0"; ;
+                    EmitPropertyChanged("Resurrect");
                 }
             }
 
@@ -496,7 +510,8 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                     {
                         commandLineKeyValuePair[DCPSInfoRepoPersistenceResetKey] = "1";
                     }
-                    else commandLineKeyValuePair[DCPSInfoRepoPersistenceResetKey] = "0"; ;
+                    else commandLineKeyValuePair[DCPSInfoRepoPersistenceResetKey] = "0";
+                    EmitPropertyChanged("PersistenceReset");
                 }
             }
 
@@ -515,6 +530,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 {
                     if (value == null) commandLineKeyValuePair.Remove(DCPSInfoRepoFederatorConfigKey);
                     else commandLineKeyValuePair[DCPSInfoRepoFederatorConfigKey] = value;
+                    EmitPropertyChanged("FederatorConfig");
                 }
             }
 
@@ -532,6 +548,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 set
                 {
                     commandLineKeyValuePair[DCPSInfoRepoFederationIdKey] = value.ToString();
+                    EmitPropertyChanged("FederationId");
                 }
             }
 
@@ -550,6 +567,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 {
                     if (value == null) commandLineKeyValuePair.Remove(DCPSInfoRepoFederateWithKey);
                     else commandLineKeyValuePair[DCPSInfoRepoFederateWithKey] = value;
+                    EmitPropertyChanged("FederateWith");
                 }
             }
 
@@ -567,6 +585,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 set
                 {
                     commandLineKeyValuePair[DCPSInfoRepoReassociateDelayKey] = value.ToString();
+                    EmitPropertyChanged("ReassociateDelay");
                 }
             }
 
@@ -584,6 +603,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 set
                 {
                     commandLineKeyValuePair[DCPSInfoRepoDispatchingCheckDelayKey] = value.ToString();
+                    EmitPropertyChanged("DispatchingCheckDelay");
                 }
             }
 
@@ -603,6 +623,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 {
                     if (value == null) keyValuePair.Remove(DCPSInfoRepoCommandLineKey);
                     else keyValuePair[DCPSInfoRepoCommandLineKey] = value;
+                    EmitPropertyChanged("CommandLine");
                 }
             }
 
@@ -698,6 +719,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[DomainIdKey] = value.ToString();
+                EmitPropertyChanged("DomainId");
             }
         }
 
@@ -737,23 +759,26 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                     default: throw new ArgumentException("Value is not in correct range");
                 }
                 keyValuePair[DCPSDebugLevelKey] = value.ToString();
+                EmitPropertyChanged("DCPSDebugLevel");
             }
         }
-
+        OpenDDSArgsConfiguration openDDSArgs = null;
         /// <summary>
         /// The configuration of <see cref="OpenDDSArgsConfiguration"/>
         /// </summary>
-        public OpenDDSArgsConfiguration OpenDDSArgs { get; set; }
+        public OpenDDSArgsConfiguration OpenDDSArgs { get { return openDDSArgs; } set { openDDSArgs = value;  EmitPropertyChanged("OpenDDSArgs"); } }
 
+        DCPSInfoRepoConfiguration dCPSInfoRepo = null;
         /// <summary>
         /// The configuration of <see cref="DCPSInfoRepoConfiguration"/>
         /// </summary>
-        public DCPSInfoRepoConfiguration DCPSInfoRepo { get; set; }
+        public DCPSInfoRepoConfiguration DCPSInfoRepo { get { return dCPSInfoRepo; } set { dCPSInfoRepo = value; EmitPropertyChanged("DCPSInfoRepo"); } }
 
+        DomainParticipantQosConfiguration domainParticipantQos = null;
         /// <summary>
         /// The configuration of <see cref="DomainParticipantQosConfiguration"/>
         /// </summary>
-        public DomainParticipantQosConfiguration DomainParticipantQos { get; set; }
+        public DomainParticipantQosConfiguration DomainParticipantQos { get { return domainParticipantQos; } set { domainParticipantQos = value; EmitPropertyChanged("DomainParticipantQos"); } }
 
         /// <summary>
         /// Creates configuration for QoS policies

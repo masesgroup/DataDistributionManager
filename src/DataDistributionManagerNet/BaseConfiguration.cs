@@ -17,15 +17,26 @@
 */
 
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace MASES.DataDistributionManager.Bindings
 {
     /// <summary>
     /// The base configuration class
     /// </summary>
-    public abstract class BaseConfiguration : IConfiguration
+    public abstract class BaseConfiguration : IConfiguration, INotifyPropertyChanged
     {
         internal Dictionary<string, string> keyValuePair = new Dictionary<string, string>();
+        /// <inheritdoc/>
+        public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// Emits <see cref="BaseConfiguration.PropertyChanged"/>
+        /// </summary>
+        /// <param name="propertyName">Property changed</param>
+        protected void EmitPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         /// <summary>
         /// Checks the configuration for mandatory information

@@ -81,6 +81,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[ClientIdKey] = value;
+                EmitPropertyChanged("ClientId");
             }
         }
 
@@ -98,6 +99,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[GroupIdKey] = value;
+                EmitPropertyChanged("GroupId");
             }
         }
 
@@ -115,6 +117,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[DebugKey] = value;
+                EmitPropertyChanged("Debug");
             }
         }
 
@@ -132,6 +135,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[BootstrapBrokersKey] = value;
+                EmitPropertyChanged("BootstrapBrokers");
             }
         }
 
@@ -149,6 +153,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[ReplicationFactorKey] = value.ToString();
+                EmitPropertyChanged("ReplicationFactor");
             }
         }
 
@@ -166,6 +171,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[TopicCreateKey] = value.ToString().ToLowerInvariant();
+                EmitPropertyChanged("TopicCreate");
             }
         }
 
@@ -183,6 +189,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[DumpMetadataKey] = value.ToString().ToLowerInvariant();
+                EmitPropertyChanged("DumpMetadata");
             }
         }
 
@@ -216,6 +223,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 {
                     keyValuePair[KafkaConfigurationBasePropertyKey + property] = value;
                 }
+                EmitPropertyChanged(property);
             }
         }
 

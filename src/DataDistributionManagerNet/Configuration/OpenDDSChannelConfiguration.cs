@@ -32,7 +32,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         /// <summary>
         /// A single property
         /// </summary>
-        public class Property
+        public class Property : BaseConfiguration
         {
             /// <summary>
             /// Initialize a new <see cref="Property"/>
@@ -52,14 +52,17 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 Propagate = propagate;
             }
 
+            string _Value = null;
             /// <summary>
             /// The value
             /// </summary>
-            public string Value { get; set; }
+            public string Value { get { return _Value; } set { _Value = value; EmitPropertyChanged("Value"); } }
+
+            bool propagate = false;
             /// <summary>
             /// True to propagate
             /// </summary>
-            public bool Propagate { get; set; }
+            public bool Propagate { get { return propagate; } set { propagate = value; EmitPropertyChanged("Propagate"); } }
         }
         #endregion
 
@@ -78,34 +81,41 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         {
         }
 
+        Property _DDSSEC_PROP_IDENTITY_CA = null;
+        Property _DDSSEC_PROP_IDENTITY_CERT = null;
+        Property _DDSSEC_PROP_IDENTITY_PRIVKEY = null;
+        Property _DDSSEC_PROP_IDENTITY_PRIVKEY_PWD = null;
+        Property _DDSSEC_PROP_PERM_CA = null;
+        Property _DDSSEC_PROP_PERM_GOV_DOC = null;
+        Property _DDSSEC_PROP_PERM_DOC = null;
         /// <summary>
         /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public Property DDSSEC_PROP_IDENTITY_CA { get; set; }
+        public Property DDSSEC_PROP_IDENTITY_CA { get { return _DDSSEC_PROP_IDENTITY_CA; } set { _DDSSEC_PROP_IDENTITY_CA = value; EmitPropertyChanged("DDSSEC_PROP_IDENTITY_CA"); } }
         /// <summary>
         /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public Property DDSSEC_PROP_IDENTITY_CERT { get; set; }
+        public Property DDSSEC_PROP_IDENTITY_CERT { get { return _DDSSEC_PROP_IDENTITY_CERT; } set { _DDSSEC_PROP_IDENTITY_CERT = value; EmitPropertyChanged("DDSSEC_PROP_IDENTITY_CERT"); } }
         /// <summary>
         /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public Property DDSSEC_PROP_IDENTITY_PRIVKEY { get; set; }
+        public Property DDSSEC_PROP_IDENTITY_PRIVKEY { get { return _DDSSEC_PROP_IDENTITY_PRIVKEY; } set { _DDSSEC_PROP_IDENTITY_PRIVKEY = value; EmitPropertyChanged("DDSSEC_PROP_IDENTITY_PRIVKEY"); } }
         /// <summary>
         /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public Property DDSSEC_PROP_IDENTITY_PRIVKEY_PWD { get; set; }
+        public Property DDSSEC_PROP_IDENTITY_PRIVKEY_PWD { get { return _DDSSEC_PROP_IDENTITY_PRIVKEY_PWD; } set { _DDSSEC_PROP_IDENTITY_PRIVKEY_PWD = value; EmitPropertyChanged("DDSSEC_PROP_IDENTITY_PRIVKEY_PWD"); } }
         /// <summary>
         /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public Property DDSSEC_PROP_PERM_CA { get; set; }
+        public Property DDSSEC_PROP_PERM_CA { get { return _DDSSEC_PROP_PERM_CA; } set { _DDSSEC_PROP_PERM_CA = value; EmitPropertyChanged("DDSSEC_PROP_PERM_CA"); } }
         /// <summary>
         /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public Property DDSSEC_PROP_PERM_GOV_DOC { get; set; }
+        public Property DDSSEC_PROP_PERM_GOV_DOC { get { return _DDSSEC_PROP_PERM_GOV_DOC; } set { _DDSSEC_PROP_PERM_GOV_DOC = value; EmitPropertyChanged("DDSSEC_PROP_PERM_GOV_DOC"); } }
         /// <summary>
         /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public Property DDSSEC_PROP_PERM_DOC { get; set; }
+        public Property DDSSEC_PROP_PERM_DOC { get { return _DDSSEC_PROP_PERM_DOC; } set { _DDSSEC_PROP_PERM_DOC = value; EmitPropertyChanged("DDSSEC_PROP_PERM_DOC"); } }
         /// <summary>
         /// See OpenDDS documentation at http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
@@ -198,6 +208,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[KindPropertyKey] = ((int)value).ToString().ToLowerInvariant();
+                EmitPropertyChanged("Kind");
             }
         }
     }
@@ -278,6 +289,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[ServiceCleanupDelayPropertyKey] = value.ToString();
+                EmitPropertyChanged("ServiceCleanupDelay");
             }
         }
 
@@ -295,6 +307,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[KindPropertyKey] = ((int)value).ToString().ToLowerInvariant();
+                EmitPropertyChanged("Kind");
             }
         }
 
@@ -312,6 +325,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[HistoryDepthPropertyKey] = value.ToString();
+                EmitPropertyChanged("HistoryDepth");
             }
         }
 
@@ -329,6 +343,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[MaxSamplesPropertyKey] = value.ToString();
+                EmitPropertyChanged("MaxSamples");
             }
         }
 
@@ -346,6 +361,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[MaxInstancesPropertyKey] = value.ToString();
+                EmitPropertyChanged("MaxInstances");
             }
         }
 
@@ -363,6 +379,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[MaxSamplesPerInstancePropertyKey] = value.ToString();
+                EmitPropertyChanged("MaxSamplesPerInstance");
             }
         }
     }
@@ -406,6 +423,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[PeriodPropertyKey] = value.ToString();
+                EmitPropertyChanged("Period");
             }
         }
     }
@@ -449,6 +467,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[PeriodPropertyKey] = value.ToString();
+                EmitPropertyChanged("Period");
             }
         }
     }
@@ -515,6 +534,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[KindPropertyKey] = ((int)value).ToString().ToLowerInvariant();
+                EmitPropertyChanged("Kind");
             }
         }
 
@@ -532,6 +552,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[LeaseDurationPropertyKey] = value.ToString();
+                EmitPropertyChanged("LeaseDuration");
             }
         }
     }
@@ -594,6 +615,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[KindPropertyKey] = ((int)value).ToString().ToLowerInvariant();
+                EmitPropertyChanged("Kind");
             }
         }
 
@@ -611,6 +633,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[MaxBlockingTimePropertyKey] = value.ToString();
+                EmitPropertyChanged("MaxBlockingTime");
             }
         }
     }
@@ -668,6 +691,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[KindPropertyKey] = ((int)value).ToString().ToLowerInvariant();
+                EmitPropertyChanged("Kind");
             }
         }
     }
@@ -730,6 +754,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[KindPropertyKey] = ((int)value).ToString().ToLowerInvariant();
+                EmitPropertyChanged("Kind");
             }
         }
 
@@ -747,6 +772,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[DepthPropertyKey] = value.ToString();
+                EmitPropertyChanged("Depth");
             }
         }
     }
@@ -791,6 +817,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[MaxSamplesPropertyKey] = value.ToString();
+                EmitPropertyChanged("MaxSamples");
             }
         }
 
@@ -808,6 +835,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[MaxInstancesPropertyKey] = value.ToString();
+                EmitPropertyChanged("MaxInstances");
             }
         }
 
@@ -825,6 +853,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[MaxSamplesPerInstancePropertyKey] = value.ToString();
+                EmitPropertyChanged("MaxSamplesPerInstance");
             }
         }
     }
@@ -861,6 +890,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[ValuePropertyKey] = value.ToString();
+                EmitPropertyChanged("Value");
             }
         }
     }
@@ -897,6 +927,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[DurationPropertyKey] = value.ToString();
+                EmitPropertyChanged("Duration");
             }
         }
     }
@@ -956,6 +987,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[KindPropertyKey] = ((int)value).ToString().ToLowerInvariant();
+                EmitPropertyChanged("Kind");
             }
         }
     }
@@ -992,6 +1024,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[ValuePropertyKey] = value.ToString();
+                EmitPropertyChanged("Value");
             }
         }
     }
@@ -1028,6 +1061,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[AutodisposeUnregisteredInstancesPropertyKey] = value.ToString().ToLowerInvariant();
+                EmitPropertyChanged("AutodisposeUnregisteredInstances");
             }
         }
     }
@@ -1090,6 +1124,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[AccessScopePropertyKey] = ((int)value).ToString().ToLowerInvariant();
+                EmitPropertyChanged("AccessScope");
             }
         }
 
@@ -1107,6 +1142,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[CoherentAccessPropertyKey] = value.ToString().ToLowerInvariant();
+                EmitPropertyChanged("CoherentAccess");
             }
         }
 
@@ -1124,6 +1160,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[OrderedAccessPropertyKey] = value.ToString().ToLowerInvariant();
+                EmitPropertyChanged("OrderedAccess");
             }
         }
     }
@@ -1160,6 +1197,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[NamePropertyKey] = value;
+                EmitPropertyChanged("Name");
             }
         }
 
@@ -1197,6 +1235,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[MinimumSeparationPropertyKey] = value.ToString();
+                EmitPropertyChanged("MinimumSeparation");
             }
         }
 
@@ -1238,6 +1277,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[AutopurgeNowriterSamplesDelayPropertyKey] = value.ToString();
+                EmitPropertyChanged("AutopurgeNowriterSamplesDelay");
             }
         }
 
@@ -1255,6 +1295,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[AutopurgeDisposedSamplesDelayPropertyKey] = value.ToString();
+                EmitPropertyChanged("AutopurgeDisposedSamplesDelay");
             }
         }
     }
@@ -1300,6 +1341,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             set
             {
                 keyValuePair[AutoenableCreatedEntitiesPropertyKey] = value.ToString().ToLowerInvariant();
+                EmitPropertyChanged("AutoenableCreatedEntities");
             }
         }
     }
@@ -1350,6 +1392,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                     builder.Append(value[i].ToString("x2"));
                 }
                 keyValuePair[ValuePropertyKey] = builder.ToString();
+                EmitPropertyChanged("Value");
             }
         }
     }
@@ -1399,6 +1442,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                     builder.Append(value[i].ToString("x2"));
                 }
                 keyValuePair[ValuePropertyKey] = builder.ToString();
+                EmitPropertyChanged("Value");
             }
         }
     }
@@ -1448,6 +1492,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                     builder.Append(value[i].ToString("x2"));
                 }
                 keyValuePair[ValuePropertyKey] = builder.ToString();
+                EmitPropertyChanged("Value");
             }
         }
     }
@@ -1469,80 +1514,95 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         /// </summary>
         public DataWriterQosConfiguration() { }
 
+        DurabilityQosPolicyConfiguration durabilityQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="DurabilityQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public DurabilityQosPolicyConfiguration DurabilityQosPolicy { get; set; }
+        public DurabilityQosPolicyConfiguration DurabilityQosPolicy { get { return durabilityQosPolicy; } set { durabilityQosPolicy = value; EmitPropertyChanged("DurabilityQosPolicy"); } }
 
+        DurabilityServiceQosPolicyConfiguration durabilityServiceQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="DurabilityServiceQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public DurabilityServiceQosPolicyConfiguration DurabilityServiceQosPolicy { get; set; }
+        public DurabilityServiceQosPolicyConfiguration DurabilityServiceQosPolicy { get { return durabilityServiceQosPolicy; } set { durabilityServiceQosPolicy = value; EmitPropertyChanged("DurabilityServiceQosPolicy"); } }
 
+        DeadlineQosPolicyConfiguration deadlineQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="DeadlineQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public DeadlineQosPolicyConfiguration DeadlineQosPolicy { get; set; }
+        public DeadlineQosPolicyConfiguration DeadlineQosPolicy { get { return deadlineQosPolicy; } set { deadlineQosPolicy = value; EmitPropertyChanged("DeadlineQosPolicy"); } }
 
+        LatencyBudgetQosPolicyConfiguration latencyBudgetQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="LatencyBudgetQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public LatencyBudgetQosPolicyConfiguration LatencyBudgetQosPolicy { get; set; }
+        public LatencyBudgetQosPolicyConfiguration LatencyBudgetQosPolicy { get { return latencyBudgetQosPolicy; } set { latencyBudgetQosPolicy = value; EmitPropertyChanged("LatencyBudgetQosPolicy"); } }
 
+        LivelinessQosPolicyConfiguration livelinessQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="LivelinessQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public LivelinessQosPolicyConfiguration LivelinessQosPolicy { get; set; }
+        public LivelinessQosPolicyConfiguration LivelinessQosPolicy { get { return livelinessQosPolicy; } set { livelinessQosPolicy = value; EmitPropertyChanged("LivelinessQosPolicy"); } }
 
+        ReliabilityQosPolicyConfiguration reliabilityQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="ReliabilityQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public ReliabilityQosPolicyConfiguration ReliabilityQosPolicy { get; set; }
+        public ReliabilityQosPolicyConfiguration ReliabilityQosPolicy { get { return reliabilityQosPolicy; } set { reliabilityQosPolicy = value; EmitPropertyChanged("ReliabilityQosPolicy"); } }
 
+        DestinationOrderQosPolicyConfiguration destinationOrderQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="DestinationOrderQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public DestinationOrderQosPolicyConfiguration DestinationOrderQosPolicy { get; set; }
+        public DestinationOrderQosPolicyConfiguration DestinationOrderQosPolicy { get { return destinationOrderQosPolicy; } set { destinationOrderQosPolicy = value; EmitPropertyChanged("DestinationOrderQosPolicy"); } }
 
+        HistoryQosPolicyConfiguration historyQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="HistoryQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public HistoryQosPolicyConfiguration HistoryQosPolicy { get; set; }
+        public HistoryQosPolicyConfiguration HistoryQosPolicy { get { return historyQosPolicy; } set { historyQosPolicy = value; EmitPropertyChanged("HistoryQosPolicy"); } }
 
+        ResourceLimitsQosPolicyConfiguration resourceLimitsQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="ResourceLimitsQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public ResourceLimitsQosPolicyConfiguration ResourceLimitsQosPolicy { get; set; }
+        public ResourceLimitsQosPolicyConfiguration ResourceLimitsQosPolicy { get { return resourceLimitsQosPolicy; } set { resourceLimitsQosPolicy = value; EmitPropertyChanged("ResourceLimitsQosPolicy"); } }
 
+        TransportPriorityQosPolicyConfiguration transportPriorityQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="TransportPriorityQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public TransportPriorityQosPolicyConfiguration TransportPriorityQosPolicy { get; set; }
+        public TransportPriorityQosPolicyConfiguration TransportPriorityQosPolicy { get { return transportPriorityQosPolicy; } set { transportPriorityQosPolicy = value; EmitPropertyChanged("TransportPriorityQosPolicy"); } }
 
+        LifespanQosPolicyConfiguration lifespanQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="LifespanQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public LifespanQosPolicyConfiguration LifespanQosPolicy { get; set; }
+        public LifespanQosPolicyConfiguration LifespanQosPolicy { get { return lifespanQosPolicy; } set { lifespanQosPolicy = value; EmitPropertyChanged("LifespanQosPolicy"); } }
 
+        UserDataQosPolicyConfiguration userDataQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="UserDataQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public UserDataQosPolicyConfiguration UserDataQosPolicy { get; set; }
+        public UserDataQosPolicyConfiguration UserDataQosPolicy { get { return userDataQosPolicy; } set { userDataQosPolicy = value; EmitPropertyChanged("UserDataQosPolicy"); } }
 
+        OwnershipQosPolicyConfiguration ownershipQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="OwnershipQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public OwnershipQosPolicyConfiguration OwnershipQosPolicy { get; set; }
+        public OwnershipQosPolicyConfiguration OwnershipQosPolicy { get { return ownershipQosPolicy; } set { ownershipQosPolicy = value; EmitPropertyChanged("OwnershipQosPolicy"); } }
 
+        OwnershipStrengthQosPolicyConfiguration ownershipStrengthQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="OwnershipStrengthQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public OwnershipStrengthQosPolicyConfiguration OwnershipStrengthQosPolicy { get; set; }
+        public OwnershipStrengthQosPolicyConfiguration OwnershipStrengthQosPolicy { get { return ownershipStrengthQosPolicy; } set { ownershipStrengthQosPolicy = value; EmitPropertyChanged("OwnershipStrengthQosPolicy"); } }
 
+        WriterDataLifecycleQosPolicyConfiguration writerDataLifecycleQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="WriterDataLifecycleQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public WriterDataLifecycleQosPolicyConfiguration WriterDataLifecycleQosPolicy { get; set; }
+        public WriterDataLifecycleQosPolicyConfiguration WriterDataLifecycleQosPolicy { get { return writerDataLifecycleQosPolicy; } set { writerDataLifecycleQosPolicy = value; EmitPropertyChanged("WriterDataLifecycleQosPolicy"); } }
 
         IEnumerable<string> replacer(IEnumerable<string> input)
         {
@@ -1605,60 +1665,71 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         /// </summary>
         public DataReaderQosConfiguration() { }
 
+        DurabilityQosPolicyConfiguration durabilityQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="DurabilityQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public DurabilityQosPolicyConfiguration DurabilityQosPolicy { get; set; }
+        public DurabilityQosPolicyConfiguration DurabilityQosPolicy { get { return durabilityQosPolicy; } set { durabilityQosPolicy = value; EmitPropertyChanged("DurabilityQosPolicy"); } }
 
+        DeadlineQosPolicyConfiguration deadlineQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="DeadlineQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public DeadlineQosPolicyConfiguration DeadlineQosPolicy { get; set; }
+        public DeadlineQosPolicyConfiguration DeadlineQosPolicy { get { return deadlineQosPolicy; } set { deadlineQosPolicy = value; EmitPropertyChanged("DeadlineQosPolicy"); } }
 
+        LatencyBudgetQosPolicyConfiguration latencyBudgetQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="LatencyBudgetQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public LatencyBudgetQosPolicyConfiguration LatencyBudgetQosPolicy { get; set; }
+        public LatencyBudgetQosPolicyConfiguration LatencyBudgetQosPolicy { get { return latencyBudgetQosPolicy; } set { latencyBudgetQosPolicy = value; EmitPropertyChanged("LatencyBudgetQosPolicy"); } }
 
+        LivelinessQosPolicyConfiguration livelinessQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="LivelinessQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public LivelinessQosPolicyConfiguration LivelinessQosPolicy { get; set; }
+        public LivelinessQosPolicyConfiguration LivelinessQosPolicy { get { return livelinessQosPolicy; } set { livelinessQosPolicy = value; EmitPropertyChanged("LivelinessQosPolicy"); } }
 
+        ReliabilityQosPolicyConfiguration reliabilityQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="ReliabilityQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public ReliabilityQosPolicyConfiguration ReliabilityQosPolicy { get; set; }
+        public ReliabilityQosPolicyConfiguration ReliabilityQosPolicy { get { return reliabilityQosPolicy; } set { reliabilityQosPolicy = value; EmitPropertyChanged("ReliabilityQosPolicy"); } }
 
+        DestinationOrderQosPolicyConfiguration destinationOrderQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="DestinationOrderQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public DestinationOrderQosPolicyConfiguration DestinationOrderQosPolicy { get; set; }
+        public DestinationOrderQosPolicyConfiguration DestinationOrderQosPolicy { get { return destinationOrderQosPolicy; } set { destinationOrderQosPolicy = value; EmitPropertyChanged("DestinationOrderQosPolicy"); } }
 
+        HistoryQosPolicyConfiguration historyQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="HistoryQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public HistoryQosPolicyConfiguration HistoryQosPolicy { get; set; }
+        public HistoryQosPolicyConfiguration HistoryQosPolicy { get { return historyQosPolicy; } set { historyQosPolicy = value; EmitPropertyChanged("HistoryQosPolicy"); } }
 
+        ResourceLimitsQosPolicyConfiguration resourceLimitsQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="ResourceLimitsQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public ResourceLimitsQosPolicyConfiguration ResourceLimitsQosPolicy { get; set; }
+        public ResourceLimitsQosPolicyConfiguration ResourceLimitsQosPolicy { get { return resourceLimitsQosPolicy; } set { resourceLimitsQosPolicy = value; EmitPropertyChanged("ResourceLimitsQosPolicy"); } }
 
+        OwnershipQosPolicyConfiguration ownershipQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="OwnershipQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public OwnershipQosPolicyConfiguration OwnershipQosPolicy { get; set; }
+        public OwnershipQosPolicyConfiguration OwnershipQosPolicy { get { return ownershipQosPolicy; } set { ownershipQosPolicy = value; EmitPropertyChanged("OwnershipQosPolicy"); } }
 
+        TimeBasedFilterQosPolicyConfiguration timeBasedFilterQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="TimeBasedFilterQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public TimeBasedFilterQosPolicyConfiguration TimeBasedFilterQosPolicy { get; set; }
+        public TimeBasedFilterQosPolicyConfiguration TimeBasedFilterQosPolicy { get { return timeBasedFilterQosPolicy; } set { timeBasedFilterQosPolicy = value; EmitPropertyChanged("TimeBasedFilterQosPolicy"); } }
 
+        ReaderDataLifecycleQosPolicyConfiguration readerDataLifecycleQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="ReaderDataLifecycleQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public ReaderDataLifecycleQosPolicyConfiguration ReaderDataLifecycleQosPolicy { get; set; }
+        public ReaderDataLifecycleQosPolicyConfiguration ReaderDataLifecycleQosPolicy { get { return readerDataLifecycleQosPolicy; } set { readerDataLifecycleQosPolicy = value; EmitPropertyChanged("ReaderDataLifecycleQosPolicy"); } }
 
         IEnumerable<string> replacer(IEnumerable<string> input)
         {
@@ -1717,70 +1788,83 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         /// </summary>
         public TopicQosConfiguration() { }
 
+        TopicDataQosPolicyConfiguration topicDataQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="TopicDataQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public TopicDataQosPolicyConfiguration TopicDataQosPolicy { get; set; }
+        public TopicDataQosPolicyConfiguration TopicDataQosPolicy { get { return topicDataQosPolicy; } set { topicDataQosPolicy = value; EmitPropertyChanged("TopicDataQosPolicy"); } }
 
+        DurabilityQosPolicyConfiguration durabilityQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="DurabilityQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public DurabilityQosPolicyConfiguration DurabilityQosPolicy { get; set; }
+        public DurabilityQosPolicyConfiguration DurabilityQosPolicy { get { return durabilityQosPolicy; } set { durabilityQosPolicy = value; EmitPropertyChanged("DurabilityQosPolicy"); } }
 
+        DurabilityServiceQosPolicyConfiguration durabilityServiceQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="DurabilityServiceQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public DurabilityServiceQosPolicyConfiguration DurabilityServiceQosPolicy { get; set; }
+        public DurabilityServiceQosPolicyConfiguration DurabilityServiceQosPolicy { get { return durabilityServiceQosPolicy; } set { durabilityServiceQosPolicy = value; EmitPropertyChanged("DurabilityServiceQosPolicy"); } }
 
+        DeadlineQosPolicyConfiguration deadlineQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="DeadlineQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public DeadlineQosPolicyConfiguration DeadlineQosPolicy { get; set; }
+        public DeadlineQosPolicyConfiguration DeadlineQosPolicy { get { return deadlineQosPolicy; } set { deadlineQosPolicy = value; EmitPropertyChanged("DeadlineQosPolicy"); } }
 
+        LatencyBudgetQosPolicyConfiguration latencyBudgetQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="LatencyBudgetQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public LatencyBudgetQosPolicyConfiguration LatencyBudgetQosPolicy { get; set; }
+        public LatencyBudgetQosPolicyConfiguration LatencyBudgetQosPolicy { get { return latencyBudgetQosPolicy; } set { latencyBudgetQosPolicy = value; EmitPropertyChanged("LatencyBudgetQosPolicy"); } }
 
+        LivelinessQosPolicyConfiguration livelinessQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="LivelinessQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public LivelinessQosPolicyConfiguration LivelinessQosPolicy { get; set; }
+        public LivelinessQosPolicyConfiguration LivelinessQosPolicy { get { return livelinessQosPolicy; } set { livelinessQosPolicy = value; EmitPropertyChanged("LivelinessQosPolicy"); } }
 
+        ReliabilityQosPolicyConfiguration reliabilityQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="ReliabilityQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public ReliabilityQosPolicyConfiguration ReliabilityQosPolicy { get; set; }
+        public ReliabilityQosPolicyConfiguration ReliabilityQosPolicy { get { return reliabilityQosPolicy; } set { reliabilityQosPolicy = value; EmitPropertyChanged("ReliabilityQosPolicy"); } }
 
+        DestinationOrderQosPolicyConfiguration destinationOrderQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="DestinationOrderQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public DestinationOrderQosPolicyConfiguration DestinationOrderQosPolicy { get; set; }
+        public DestinationOrderQosPolicyConfiguration DestinationOrderQosPolicy { get { return destinationOrderQosPolicy; } set { destinationOrderQosPolicy = value; EmitPropertyChanged("DestinationOrderQosPolicy"); } }
 
+        HistoryQosPolicyConfiguration historyQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="HistoryQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public HistoryQosPolicyConfiguration HistoryQosPolicy { get; set; }
+        public HistoryQosPolicyConfiguration HistoryQosPolicy { get { return historyQosPolicy; } set { historyQosPolicy = value; EmitPropertyChanged("HistoryQosPolicy"); } }
 
+        ResourceLimitsQosPolicyConfiguration resourceLimitsQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="ResourceLimitsQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public ResourceLimitsQosPolicyConfiguration ResourceLimitsQosPolicy { get; set; }
+        public ResourceLimitsQosPolicyConfiguration ResourceLimitsQosPolicy { get { return resourceLimitsQosPolicy; } set { resourceLimitsQosPolicy = value; EmitPropertyChanged("ResourceLimitsQosPolicy"); } }
 
+        TransportPriorityQosPolicyConfiguration transportPriorityQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="TransportPriorityQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public TransportPriorityQosPolicyConfiguration TransportPriorityQosPolicy { get; set; }
+        public TransportPriorityQosPolicyConfiguration TransportPriorityQosPolicy { get { return transportPriorityQosPolicy; } set { transportPriorityQosPolicy = value; EmitPropertyChanged("TransportPriorityQosPolicy"); } }
 
+        LifespanQosPolicyConfiguration lifespanQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="LifespanQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public LifespanQosPolicyConfiguration LifespanQosPolicy { get; set; }
+        public LifespanQosPolicyConfiguration LifespanQosPolicy { get { return lifespanQosPolicy; } set { lifespanQosPolicy = value; EmitPropertyChanged("LifespanQosPolicy"); } }
 
+        OwnershipQosPolicyConfiguration ownershipQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="OwnershipQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public OwnershipQosPolicyConfiguration OwnershipQosPolicy { get; set; }
+        public OwnershipQosPolicyConfiguration OwnershipQosPolicy { get { return ownershipQosPolicy; } set { ownershipQosPolicy = value; EmitPropertyChanged("OwnershipQosPolicy"); } }
 
         IEnumerable<string> replacer(IEnumerable<string> input)
         {
@@ -1841,25 +1925,29 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         /// </summary>
         public PublisherQosConfiguration() { }
 
+        PresentationQosPolicyConfiguration presentationQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="PresentationQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public PresentationQosPolicyConfiguration PresentationQosPolicy { get; set; }
+        public PresentationQosPolicyConfiguration PresentationQosPolicy { get { return presentationQosPolicy; } set { presentationQosPolicy = value; EmitPropertyChanged("PresentationQosPolicy"); } }
 
+        PartitionQosPolicyConfiguration partitionQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="PartitionQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public PartitionQosPolicyConfiguration PartitionQosPolicy { get; set; }
+        public PartitionQosPolicyConfiguration PartitionQosPolicy { get { return partitionQosPolicy; } set { partitionQosPolicy = value; EmitPropertyChanged("PartitionQosPolicy"); } }
 
+        GroupDataQosPolicyConfiguration groupDataQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="GroupDataQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public GroupDataQosPolicyConfiguration GroupDataQosPolicy { get; set; }
+        public GroupDataQosPolicyConfiguration GroupDataQosPolicy { get { return groupDataQosPolicy; } set { groupDataQosPolicy = value; EmitPropertyChanged("GroupDataQosPolicy"); } }
 
+        EntityFactoryQosPolicyConfiguration entityFactoryQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="LatencyBudgetQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public EntityFactoryQosPolicyConfiguration EntityFactoryQosPolicy { get; set; }
+        public EntityFactoryQosPolicyConfiguration EntityFactoryQosPolicy { get { return entityFactoryQosPolicy; } set { entityFactoryQosPolicy = value; EmitPropertyChanged("EntityFactoryQosPolicy"); } }
 
         IEnumerable<string> replacer(IEnumerable<string> input)
         {
@@ -1911,25 +1999,29 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         /// </summary>
         public SubscriberQosConfiguration() { }
 
+        PresentationQosPolicyConfiguration presentationQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="PresentationQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public PresentationQosPolicyConfiguration PresentationQosPolicy { get; set; }
+        public PresentationQosPolicyConfiguration PresentationQosPolicy { get { return presentationQosPolicy; } set { presentationQosPolicy = value; EmitPropertyChanged("PresentationQosPolicy"); } }
 
+        PartitionQosPolicyConfiguration partitionQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="PartitionQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public PartitionQosPolicyConfiguration PartitionQosPolicy { get; set; }
+        public PartitionQosPolicyConfiguration PartitionQosPolicy { get { return partitionQosPolicy; } set { partitionQosPolicy = value; EmitPropertyChanged("PartitionQosPolicy"); } }
 
+        GroupDataQosPolicyConfiguration groupDataQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="GroupDataQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public GroupDataQosPolicyConfiguration GroupDataQosPolicy { get; set; }
+        public GroupDataQosPolicyConfiguration GroupDataQosPolicy { get { return groupDataQosPolicy; } set { groupDataQosPolicy = value; EmitPropertyChanged("GroupDataQosPolicy"); } }
 
+        EntityFactoryQosPolicyConfiguration entityFactoryQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="LatencyBudgetQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public EntityFactoryQosPolicyConfiguration EntityFactoryQosPolicy { get; set; }
+        public EntityFactoryQosPolicyConfiguration EntityFactoryQosPolicy { get { return entityFactoryQosPolicy; } set { entityFactoryQosPolicy = value; EmitPropertyChanged("EntityFactoryQosPolicy"); } }
 
         IEnumerable<string> replacer(IEnumerable<string> input)
         {
@@ -1981,20 +2073,23 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         /// </summary>
         public DomainParticipantQosConfiguration() { }
 
+        UserDataQosPolicyConfiguration userDataQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="UserDataQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public UserDataQosPolicyConfiguration UserDataQosPolicy { get; set; }
+        public UserDataQosPolicyConfiguration UserDataQosPolicy { get { return userDataQosPolicy; } set { userDataQosPolicy = value; EmitPropertyChanged("UserDataQosPolicy"); } }
 
+        EntityFactoryQosPolicyConfiguration entityFactoryQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="EntityFactoryQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public EntityFactoryQosPolicyConfiguration EntityFactoryQosPolicy { get; set; }
+        public EntityFactoryQosPolicyConfiguration EntityFactoryQosPolicy { get { return entityFactoryQosPolicy; } set { entityFactoryQosPolicy = value; EmitPropertyChanged("EntityFactoryQosPolicy"); } }
 
+        PropertyQosPolicyConfiguration propertyQosPolicy = null;
         /// <summary>
         /// The configuration of <see cref="PropertyQosPolicyConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public PropertyQosPolicyConfiguration PropertyQosPolicy { get; set; }
+        public PropertyQosPolicyConfiguration PropertyQosPolicy { get { return propertyQosPolicy; } set { propertyQosPolicy = value; EmitPropertyChanged("PropertyQosPolicy"); } }
 
         IEnumerable<string> replacer(IEnumerable<string> input)
         {
@@ -2045,30 +2140,35 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
 
         }
 
+        TopicQosConfiguration topicQos = null;
         /// <summary>
         /// The configuration of <see cref="TopicQosConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public TopicQosConfiguration TopicQos { get; set; }
+        public TopicQosConfiguration TopicQos { get { return topicQos; } set { topicQos = value; EmitPropertyChanged("TopicQos"); } }
 
+        PublisherQosConfiguration publisherQos = null;
         /// <summary>
         /// The configuration of <see cref="PublisherQosConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public PublisherQosConfiguration PublisherQos { get; set; }
+        public PublisherQosConfiguration PublisherQos { get { return publisherQos; } set { publisherQos = value; EmitPropertyChanged("PublisherQos"); } }
 
+        SubscriberQosConfiguration subscriberQos = null;
         /// <summary>
         /// The configuration of <see cref="SubscriberQosConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public SubscriberQosConfiguration SubscriberQos { get; set; }
+        public SubscriberQosConfiguration SubscriberQos { get { return subscriberQos; } set { subscriberQos = value; EmitPropertyChanged("SubscriberQos"); } }
 
+        DataReaderQosConfiguration dataReaderQos = null;
         /// <summary>
         /// The configuration of <see cref="DataReaderQosConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public DataReaderQosConfiguration DataReaderQos { get; set; }
+        public DataReaderQosConfiguration DataReaderQos { get { return dataReaderQos; } set { dataReaderQos = value; EmitPropertyChanged("DataReaderQos"); } }
 
+        DataWriterQosConfiguration dataWriterQos = null;
         /// <summary>
         /// The configuration of <see cref="SubscriberQosConfiguration"/>. See http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf
         /// </summary>
-        public DataWriterQosConfiguration DataWriterQos { get; set; }
+        public DataWriterQosConfiguration DataWriterQos { get { return dataWriterQos; } set { dataWriterQos = value; EmitPropertyChanged("DataWriterQos"); } }
 
         /// <inheritdoc/>
         protected override string[] PolicyBuilder(string[] parameters)

@@ -93,6 +93,7 @@ namespace MASES.DataDistributionManager.Bindings
             set
             {
                 keyValuePair[CreateChannelTimeoutKey] = value.ToString();
+                EmitPropertyChanged("CreateChannelTimeout");
             }
         }
 
@@ -110,6 +111,7 @@ namespace MASES.DataDistributionManager.Bindings
             set
             {
                 keyValuePair[ChannelSeekTimeoutKey] = value.ToString();
+                EmitPropertyChanged("ChannelSeekTimeout");
             }
         }
 
@@ -127,6 +129,7 @@ namespace MASES.DataDistributionManager.Bindings
             set
             {
                 keyValuePair[ReceiveTimeoutKey] = value.ToString();
+                EmitPropertyChanged("ReceiveTimeout");
             }
         }
 
@@ -144,6 +147,7 @@ namespace MASES.DataDistributionManager.Bindings
             set
             {
                 keyValuePair[KeepAliveTimeoutKey] = value.ToString();
+                EmitPropertyChanged("KeepAliveTimeout");
             }
         }
 
@@ -161,6 +165,7 @@ namespace MASES.DataDistributionManager.Bindings
             set
             {
                 keyValuePair[ConsumerTimeoutKey] = value.ToString();
+                EmitPropertyChanged("ConsumerTimeout");
             }
         }
 
@@ -178,6 +183,7 @@ namespace MASES.DataDistributionManager.Bindings
             set
             {
                 keyValuePair[ProducerTimeoutKey] = value.ToString();
+                EmitPropertyChanged("ProducerTimeout");
             }
         }
 
@@ -195,6 +201,7 @@ namespace MASES.DataDistributionManager.Bindings
             set
             {
                 keyValuePair[CommitTimeoutKey] = value.ToString();
+                EmitPropertyChanged("CommitTimeout");
             }
         }
 
@@ -212,6 +219,7 @@ namespace MASES.DataDistributionManager.Bindings
             set
             {
                 keyValuePair[CommitSyncKey] = value.ToString().ToLowerInvariant();
+                EmitPropertyChanged("CommitSync");
             }
         }
 
@@ -229,6 +237,7 @@ namespace MASES.DataDistributionManager.Bindings
             set
             {
                 keyValuePair[EventSyncKey] = value.ToString().ToLowerInvariant();
+                EmitPropertyChanged("EventSync");
             }
         }
     }
