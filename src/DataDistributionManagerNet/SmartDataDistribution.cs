@@ -458,8 +458,8 @@ namespace MASES.DataDistributionManager.Bindings
         /// <summary>
         /// The cluster has changed its state
         /// </summary>
-        /// <param name="change">New state</param>
-        /// <param name="serverid">Server has changed state</param>
+        /// <param name="change">New cluster event</param>
+        /// <param name="serverid">Server has emitted event</param>
         void OnClusterStateChange(DDM_CLUSTEREVENT change, Int64 serverid);
         /// <summary>
         /// My state has changed

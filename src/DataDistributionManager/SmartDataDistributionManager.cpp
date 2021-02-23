@@ -234,7 +234,7 @@ void SmartDataDistributionBase::OnCompletelyDisconnected(const char * channelNam
 }
 
 // IDataDistributionMastershipCallback
-void SmartDataDistributionBase::OnClusterStateChange(DDM_CLUSTEREVENT change, size_t serverid)
+void SmartDataDistributionBase::OnClusterStateChange(DDM_CLUSTEREVENT change, int64_t serverid)
 {
 
 }
@@ -244,7 +244,7 @@ void SmartDataDistributionBase::OnStateChange(DDM_INSTANCE_STATE newState, DDM_I
 
 }
 
-void SmartDataDistributionBase::OnStateReady(void* pState, size_t len)
+void SmartDataDistributionBase::OnStateReady(void* pState, int64_t len)
 {
 
 }
@@ -254,7 +254,7 @@ void SmartDataDistributionBase::OnRequestedState(void** pState, size_t* len)
 
 }
 
-void SmartDataDistributionBase::OnMultiplePrimary(size_t, size_t)
+void SmartDataDistributionBase::OnMultiplePrimary(int64_t myId, int64_t otherId)
 {
 
 }

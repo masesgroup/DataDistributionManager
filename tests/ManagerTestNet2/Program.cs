@@ -21,7 +21,6 @@ using MASES.DataDistributionManager.Bindings.Configuration;
 using MASES.DataDistributionManager.Bindings.Interop;
 using System;
 using System.Diagnostics;
-using System.Text;
 using System.Threading;
 
 namespace ManagerTestNet

@@ -59,7 +59,6 @@ void stateChangeCallback(void*, DDM_INSTANCE_STATE state)
 void masterDataCallbackFun(void*, void* pPointer, size_t len)
 {
 	static unsigned int callCounter = 0;
-	unsigned int counter;
 	if ((callCounter % THRESHOLD) == 0) printf("masterDataCallbackFun Reached %d\n", callCounter);
 	++callCounter;
 }
@@ -72,7 +71,6 @@ void masterStateCallbackFun(void*, size_t masterId, void* pPointer, size_t len)
 BOOL slaveDataCallbackFun(void*, void* pPointer, size_t len)
 {
 	static unsigned int callCounter = 0;
-	unsigned int counter;
 	if ((callCounter % THRESHOLD) == 0) printf("slaveDataCallbackFun Reached %d\n", callCounter);
 	++callCounter;
 	return FALSE;
@@ -211,7 +209,7 @@ class MySmartDataDistributionChannel : public SmartDataDistributionChannel
 {
 	void OnDataAvailable(const char* key, size_t keyLen, const void* buffer, const size_t len)
 	{
-		printf("Data from %s with key %s and buffer is %s", GetChannelName(), key, buffer);
+		printf("Data from %s with key %s and buffer is %s", GetChannelName(), key, (char*)buffer);
 	}
 
 	void OnConditionOrError(const DDM_UNDERLYING_ERROR_CONDITION errorCode, const int nativeCode, const char* subSystemReason)
@@ -245,7 +243,7 @@ int smartCaller(BOOL sendData, const char* confFilePath)
 	sprintf(buffer, "%10d", pid);
 
 	MySmartDataDistribution dataDistribution;
-	MySmartDataDistributionChannel* provaChannel;
+	MySmartDataDistributionChannel* testChannel;
 
 	if (dataDistribution.Initialize(confFilePath, buffer, "KafkaManager") != S_OK)
 	{
@@ -264,9 +262,9 @@ int smartCaller(BOOL sendData, const char* confFilePath)
 
 	printf("After StartMasterConsumerAndWait...\n");
 
-	provaChannel = dataDistribution.CreateSmartChannel("prova");
+	testChannel = dataDistribution.CreateSmartChannel("prova");
 
-	if (provaChannel->StartChannel(INFINITE) != S_OK)
+	if (testChannel->StartChannel(INFINITE) != S_OK)
 	{
 		std::string str;
 		std::getline(std::cin, str);
@@ -276,7 +274,7 @@ int smartCaller(BOOL sendData, const char* confFilePath)
 	printf("Starting sending...\n");
 	while (true)
 	{
-		if ((sendData ? provaChannel->WriteOnChannel(NULL, 0, buffer, 10) : S_OK) == S_OK)
+		if ((sendData ? testChannel->WriteOnChannel(NULL, 0, buffer, 10) : S_OK) == S_OK)
 		{
 			sprintf(buffer, "%10d", counter++);
 			if ((counter % THRESHOLD) == 0) printf("SendData Reached %d\n", counter);
