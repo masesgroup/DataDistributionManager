@@ -21,24 +21,48 @@ package org.mases.datadistributionmanager.configuration;
 import org.mases.datadistributionmanager.BaseConfiguration;
 
 /**
- * Class managing OwnershipQosPolicy
+ * The configuration class for OwnershipQosPolicy. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
  */
 public class OwnershipQosPolicyConfiguration extends BaseConfiguration {
     public static final String KindPropertyKey = "datadistributionmanager.opendds.qos.ownershipqospolicy.kind";
 
     /**
-     * Configuration key of OwnershipQosPolicy property
+     * Initialize a new {@link OwnershipQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
+    public OwnershipQosPolicyConfiguration() {
+    }
+
+    /**
+     * Initialize a new {@link OwnershipQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @param kind {@link OwnershipQosPolicyKind}
+     * @param kind See OpenDDS documentation at <a href=
+     *             "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *             target=
+     *             "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public OwnershipQosPolicyConfiguration(OwnershipQosPolicyKind kind) {
         setKind(kind);
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @return See OpenDDS documentation
+     * @return See OpenDDS documentation at <a href=
+     *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *         target=
+     *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public OwnershipQosPolicyKind getKind() {
         String value = keyValuePair.get(KindPropertyKey);
@@ -46,9 +70,15 @@ public class OwnershipQosPolicyConfiguration extends BaseConfiguration {
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @param value See OpenDDS documentation
+     * @param value See OpenDDS documentation at <a href=
+     *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *              target=
+     *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public void setKind(OwnershipQosPolicyKind value) {
         keyValuePair.put(KindPropertyKey, value.toIntString());

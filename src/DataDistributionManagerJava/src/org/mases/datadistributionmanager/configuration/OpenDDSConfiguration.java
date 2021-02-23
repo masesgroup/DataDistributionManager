@@ -296,9 +296,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @return See OpenDDS documentation
+         * @return See OpenDDS documentation at <a href=
+         *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *         target=
+         *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public String getORBSvcConf() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoORBSvcConfKey);
@@ -306,9 +312,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @param value See OpenDDS documentation
+         * @param value See OpenDDS documentation at <a href=
+         *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *              target=
+         *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public void setORBSvcConf(String value) {
             if (value == null)
@@ -318,9 +330,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @return See OpenDDS documentation
+         * @return See OpenDDS documentation at <a href=
+         *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *         target=
+         *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public String getORBEndpoint() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoORBEndpointKey);
@@ -328,9 +346,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @param value See OpenDDS documentation
+         * @param value See OpenDDS documentation at <a href=
+         *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *              target=
+         *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public void setORBEndpoint(String value) {
             if (value == null)
@@ -340,9 +364,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @return See OpenDDS documentation
+         * @return See OpenDDS documentation at <a href=
+         *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *         target=
+         *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public String getORBListenEndpoints() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoORBListenEndpointsKey);
@@ -350,9 +380,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @param value See OpenDDS documentation
+         * @param value See OpenDDS documentation at <a href=
+         *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *              target=
+         *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public void setORBListenEndpoints(String value) {
             if (value == null)
@@ -362,9 +398,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @return See OpenDDS documentation
+         * @return See OpenDDS documentation at <a href=
+         *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *         target=
+         *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public String getIorFile() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoIorFileKey);
@@ -372,9 +414,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @param value See OpenDDS documentation
+         * @param value See OpenDDS documentation at <a href=
+         *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *              target=
+         *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public void setIorFile(String value) {
             if (value == null)
@@ -384,9 +432,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @return See OpenDDS documentation
+         * @return See OpenDDS documentation at <a href=
+         *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *         target=
+         *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public boolean getNOBITS() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoNOBITSKey);
@@ -396,9 +450,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @param value See OpenDDS documentation
+         * @param value See OpenDDS documentation at <a href=
+         *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *              target=
+         *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public void setNOBITS(boolean value) {
             if (value == true)
@@ -408,9 +468,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @return See OpenDDS documentation
+         * @return See OpenDDS documentation at <a href=
+         *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *         target=
+         *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public String getListeningAddress() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoListeningAddressKey);
@@ -418,9 +484,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @param value See OpenDDS documentation
+         * @param value See OpenDDS documentation at <a href=
+         *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *              target=
+         *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public void setListeningAddress(String value) {
             if (value == null)
@@ -430,9 +502,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @return See OpenDDS documentation
+         * @return See OpenDDS documentation at <a href=
+         *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *         target=
+         *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public boolean getVerboseLogging() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoVerboseLoggingKey);
@@ -442,9 +520,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @param value See OpenDDS documentation
+         * @param value See OpenDDS documentation at <a href=
+         *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *              target=
+         *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public void setVerboseLogging(boolean value) {
             if (value == true)
@@ -454,9 +538,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @return See OpenDDS documentation
+         * @return See OpenDDS documentation at <a href=
+         *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *         target=
+         *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public String getPersistenceFile() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoPersistenceFileKey);
@@ -464,9 +554,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @param value See OpenDDS documentation
+         * @param value See OpenDDS documentation at <a href=
+         *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *              target=
+         *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public void setPersistenceFile(String value) {
             if (value == null)
@@ -476,9 +572,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @return See OpenDDS documentation
+         * @return See OpenDDS documentation at <a href=
+         *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *         target=
+         *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public boolean getResurrect() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoResurrectKey);
@@ -488,9 +590,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @param value See OpenDDS documentation
+         * @param value See OpenDDS documentation at <a href=
+         *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *              target=
+         *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public void setResurrect(boolean value) {
             if (value == true)
@@ -500,9 +608,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @return See OpenDDS documentation
+         * @return See OpenDDS documentation at <a href=
+         *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *         target=
+         *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public boolean getPersistenceReset() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoPersistenceResetKey);
@@ -512,9 +626,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @param value See OpenDDS documentation
+         * @param value See OpenDDS documentation at <a href=
+         *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *              target=
+         *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public void setPersistenceReset(boolean value) {
             if (value == true)
@@ -524,9 +644,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @return See OpenDDS documentation
+         * @return See OpenDDS documentation at <a href=
+         *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *         target=
+         *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public String getFederatorConfig() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoFederatorConfigKey);
@@ -534,9 +660,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @param value See OpenDDS documentation
+         * @param value See OpenDDS documentation at <a href=
+         *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *              target=
+         *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public void setFederatorConfig(String value) {
             if (value == null)
@@ -546,9 +678,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @return See OpenDDS documentation
+         * @return See OpenDDS documentation at <a href=
+         *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *         target=
+         *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public Integer getFederationId() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoFederationIdKey);
@@ -556,18 +694,30 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @param value See OpenDDS documentation
+         * @param value See OpenDDS documentation at <a href=
+         *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *              target=
+         *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public void setFederationId(Integer value) {
             commandLineKeyValuePair.put(DCPSInfoRepoFederationIdKey, value.toString());
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @return See OpenDDS documentation
+         * @return See OpenDDS documentation at <a href=
+         *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *         target=
+         *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public String getFederateWith() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoFederateWithKey);
@@ -575,9 +725,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @param value See OpenDDS documentation
+         * @param value See OpenDDS documentation at <a href=
+         *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *              target=
+         *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public void setFederateWith(String value) {
             if (value == null)
@@ -587,9 +743,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @return See OpenDDS documentation
+         * @return See OpenDDS documentation at <a href=
+         *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *         target=
+         *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public Integer getReassociateDelay() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoReassociateDelayKey);
@@ -597,18 +759,30 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @param value See OpenDDS documentation
+         * @param value See OpenDDS documentation at <a href=
+         *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *              target=
+         *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public void setReassociateDelay(Integer value) {
             commandLineKeyValuePair.put(DCPSInfoRepoReassociateDelayKey, value.toString());
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @return See OpenDDS documentation
+         * @return See OpenDDS documentation at <a href=
+         *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *         target=
+         *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public Integer getDispatchingCheckDelay() {
             String value = commandLineKeyValuePair.get(DCPSInfoRepoDispatchingCheckDelayKey);
@@ -616,9 +790,15 @@ public class OpenDDSConfiguration extends CommonConfiguration {
         }
 
         /**
-         * See OpenDDS documentation
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          * 
-         * @param value See OpenDDS documentation
+         * @param value See OpenDDS documentation at <a href=
+         *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         *              target=
+         *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
          */
         public void setDispatchingCheckDelay(Integer value) {
             commandLineKeyValuePair.put(DCPSInfoRepoDispatchingCheckDelayKey, value.toString());

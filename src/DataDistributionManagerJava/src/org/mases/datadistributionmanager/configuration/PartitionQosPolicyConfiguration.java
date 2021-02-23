@@ -20,23 +20,34 @@ package org.mases.datadistributionmanager.configuration;
 
 import org.mases.datadistributionmanager.BaseConfiguration;
 
+/**
+ * The configuration class for PartitionQosPolicy. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+ */
 public class PartitionQosPolicyConfiguration extends BaseConfiguration {
-    /// <summary>
-    /// Configuration key of <see cref="Period"/>
-    /// </summary>
     public static final String NamePropertyKey = "datadistributionmanager.opendds.qos.partitionqospolicy.name";
 
-    /// <summary>
-    /// Initialize a new instance of <see
-    /// cref="PartitionQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * Initialize a new {@link PartitionQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public PartitionQosPolicyConfiguration() {
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @return See OpenDDS documentation
+     * @return See OpenDDS documentation at <a href=
+     *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *         target=
+     *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public String getName() {
         String value = keyValuePair.get(NamePropertyKey);
@@ -44,9 +55,15 @@ public class PartitionQosPolicyConfiguration extends BaseConfiguration {
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @param value See OpenDDS documentation
+     * @param value See OpenDDS documentation at <a href=
+     *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *              target=
+     *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public void setName(String value) {
         keyValuePair.put(NamePropertyKey, value);

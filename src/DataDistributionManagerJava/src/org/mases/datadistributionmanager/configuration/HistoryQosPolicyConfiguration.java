@@ -45,8 +45,16 @@ public class HistoryQosPolicyConfiguration extends BaseConfiguration {
      * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
      * target=
      * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
-     * @param kind {@link HistoryQosPolicyKind}. See OpenDDS documentation
-     * @param period See OpenDDS documentation 
+     * 
+     * @param kind   {@link HistoryQosPolicyKind}. See OpenDDS documentation at
+     *               <a href=
+     *               "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *               target=
+     *               "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     * @param period See OpenDDS documentation at <a href=
+     *               "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *               target=
+     *               "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public HistoryQosPolicyConfiguration(HistoryQosPolicyKind kind, Integer period) {
         setKind(kind);
@@ -54,9 +62,15 @@ public class HistoryQosPolicyConfiguration extends BaseConfiguration {
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @return See OpenDDS documentation
+     * @return See OpenDDS documentation at <a href=
+     *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *         target=
+     *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public HistoryQosPolicyKind getKind() {
         String value = keyValuePair.get(KindPropertyKey);
@@ -64,18 +78,30 @@ public class HistoryQosPolicyConfiguration extends BaseConfiguration {
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @param value See OpenDDS documentation
+     * @param value See OpenDDS documentation at <a href=
+     *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *              target=
+     *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public void setKind(HistoryQosPolicyKind value) {
         keyValuePair.put(KindPropertyKey, value.toIntString());
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @return See OpenDDS documentation
+     * @return See OpenDDS documentation at <a href=
+     *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *         target=
+     *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public Integer getDepth() {
         String value = keyValuePair.get(DepthPropertyKey);
@@ -83,9 +109,15 @@ public class HistoryQosPolicyConfiguration extends BaseConfiguration {
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @param value See OpenDDS documentation
+     * @param value See OpenDDS documentation at <a href=
+     *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *              target=
+     *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public void setDepth(Integer value) {
         keyValuePair.put(DepthPropertyKey, value.toString());

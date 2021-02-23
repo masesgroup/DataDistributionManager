@@ -23,99 +23,157 @@ import org.mases.datadistributionmanager.BaseConfiguration;
 import java.util.ArrayList;
 
 /**
- * Class managing PropertyQosPolicy
+ * The configuration class for PropertyQosPolicy. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
  */
 public class PropertyQosPolicyConfiguration extends BaseConfiguration {
-        /// <summary>
-        /// A single property
-        /// </summary>
+        /**
+         * The configuration class for {@link Property}. See
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+         */
         public class Property {
-                /// <summary>
-                /// Initialize a new <see cref="Property"/>
-                /// </summary>
+                /**
+                 * Initialize a new {@link Property}. See
+                 * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+                 * target=
+                 * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+                 */
                 public Property() {
                 }
 
-                /// <summary>
-                /// Initialize a new <see cref="Property"/>
-                /// </summary>
-                /// <param name="value">Value to use (file: or data:)</param>
-                /// <param name="propagate">True to propagate. Default is false</param>
+                /**
+                 * Initialize a new {@link Property}. See
+                 * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+                 * target=
+                 * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+                 * 
+                 * @param value See OpenDDS documentation at <a href=
+                 *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+                 *              target=
+                 *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+                 */
                 public Property(String value) {
                         Value = value;
                         Propagate = false;
                 }
 
-                /// <summary>
-                /// Initialize a new <see cref="Property"/>
-                /// </summary>
-                /// <param name="value">Value to use (file: or data:)</param>
-                /// <param name="propagate">True to propagate. Default is false</param>
+                /**
+                 * Initialize a new {@link Property}. See
+                 * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+                 * target=
+                 * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+                 * 
+                 * @param value     See OpenDDS documentation at <a href=
+                 *                  "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+                 *                  target=
+                 *                  "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+                 * @param propagate See OpenDDS documentation at <a href=
+                 *                  "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+                 *                  target=
+                 *                  "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+                 */
                 public Property(String value, Boolean propagate) {
                         Value = value;
                         Propagate = propagate;
                 }
 
-                /// <summary>
-                /// The value
-                /// </summary>
+                /**
+                 * See OpenDDS documentation at
+                 * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+                 * target=
+                 * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+                 * 
+                 */
                 public String Value;
-
+                /**
+                 * See OpenDDS documentation at
+                 * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+                 * target=
+                 * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+                 * 
+                 */
                 public Boolean Propagate;
         }
 
-        /// <summary>
-        /// Configuration key of <see cref="PropertyQosPolicyConfiguration"/>
-        /// </summary>
         public static final String PropertyQosPolicyValuePropertyKey = "datadistributionmanager.opendds.qos.propertyqospolicy.value";
-        /// <summary>
-        /// Configuration key of <see cref="PropertyQosPolicyConfiguration"/>
-        /// </summary>
         public static final String PropertyQosPolicyBinaryValuePropertyKey = "datadistributionmanager.opendds.qos.propertyqospolicy.binary_value";
 
-        /// <summary>
-        /// Initialize a new instance of <see cref="PropertyQosPolicyConfiguration"/>
-        /// </summary>
+        /**
+         * Initialize a new {@link PropertyQosPolicyConfiguration}. See
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+         */
         public PropertyQosPolicyConfiguration() {
         }
 
-        /// <summary>
-        /// See OpenDDS documentation
-        /// </summary>
+        /**
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+         * 
+         */
         public Property DDSSEC_PROP_IDENTITY_CA;
-        /// <summary>
-        /// See OpenDDS documentation
-        /// </summary>
+        /**
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+         * 
+         */
         public Property DDSSEC_PROP_IDENTITY_CERT;
-        /// <summary>
-        /// See OpenDDS documentation
-        /// </summary>
+        /**
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+         * 
+         */
         public Property DDSSEC_PROP_IDENTITY_PRIVKEY;
-        /// <summary>
-        /// See OpenDDS documentation
-        /// </summary>
+        /**
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+         * 
+         */
         public Property DDSSEC_PROP_IDENTITY_PRIVKEY_PWD;
-        /// <summary>
-        /// See OpenDDS documentation
-        /// </summary>
+        /**
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+         * 
+         */
         public Property DDSSEC_PROP_PERM_CA;
-        /// <summary>
-        /// See OpenDDS documentation
-        /// </summary>
+        /**
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+         * 
+         */
         public Property DDSSEC_PROP_PERM_GOV_DOC;
-        /// <summary>
-        /// See OpenDDS documentation
-        /// </summary>
+        /**
+         * See OpenDDS documentation at
+         * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+         * target=
+         * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+         * 
+         */
         public Property DDSSEC_PROP_PERM_DOC;
 
-        /// <summary>
-        /// See OpenDDS documentation
-        /// </summary>
         public String[] getConfiguration() {
                 if (DDSSEC_PROP_IDENTITY_CA == null || DDSSEC_PROP_IDENTITY_CERT == null
                                 || DDSSEC_PROP_IDENTITY_PRIVKEY == null || DDSSEC_PROP_PERM_CA == null
                                 || DDSSEC_PROP_PERM_GOV_DOC == null || DDSSEC_PROP_PERM_DOC == null) {
-                        throw new IllegalArgumentException("Only DDSSEC_PROP_IDENTITY_PRIVKEY_PWD can be null in PropertyQosPolicyConfiguration");
+                        throw new IllegalArgumentException(
+                                        "Only DDSSEC_PROP_IDENTITY_PRIVKEY_PWD can be null in PropertyQosPolicyConfiguration");
                 }
 
                 StringBuilder sb = new StringBuilder();

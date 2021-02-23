@@ -42,9 +42,15 @@ public class DurabilityQosPolicyConfiguration extends BaseConfiguration {
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @return See OpenDDS documentation
+     * @return See OpenDDS documentation at <a href=
+     *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *         target=
+     *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public DurabilityQosPolicyKind getKind() {
         String value = keyValuePair.get(KindPropertyKey);
@@ -52,9 +58,15 @@ public class DurabilityQosPolicyConfiguration extends BaseConfiguration {
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @param value See OpenDDS documentation
+     * @param value See OpenDDS documentation at <a href=
+     *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *              target=
+     *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public void setKind(DurabilityQosPolicyKind value) {
         keyValuePair.put(KindPropertyKey, value.toIntString());

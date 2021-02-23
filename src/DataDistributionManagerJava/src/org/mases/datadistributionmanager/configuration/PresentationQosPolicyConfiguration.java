@@ -19,35 +19,38 @@
 package org.mases.datadistributionmanager.configuration;
 
 import org.mases.datadistributionmanager.BaseConfiguration;
+
 /**
- * Class managing LivelinessQosPolicy
+ * The configuration class for PresentationQosPolicy. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
  */
 public class PresentationQosPolicyConfiguration extends BaseConfiguration {
-    /// <summary>
-    /// Configuration key of <see cref="LeaseDuration"/>
-    /// </summary>
     public static final String AccessScopePropertyKey = "datadistributionmanager.opendds.qos.presentationqospolicy.access_scope";
-    /// <summary>
-    /// Configuration key of <see cref="LeaseDuration"/>
-    /// </summary>
     public static final String CoherentAccessPropertyKey = "datadistributionmanager.opendds.qos.presentationqospolicy.coherent_access";
-    /// <summary>
-    /// Configuration key of <see cref="LeaseDuration"/>
-    /// </summary>
     public static final String OrderedAccessPropertyKey = "datadistributionmanager.opendds.qos.presentationqospolicy.ordered_access";
 
-    /// <summary>
-    /// Initialize a new instance of <see
-    /// cref="PresentationQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * Initialize a new {@link PresentationQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public PresentationQosPolicyConfiguration() {
 
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @return See OpenDDS documentation
+     * @return See OpenDDS documentation at <a href=
+     *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *         target=
+     *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public PresentationQosPolicyAccessScopeKind getAccessScope() {
         String value = keyValuePair.get(AccessScopePropertyKey);
@@ -55,18 +58,30 @@ public class PresentationQosPolicyConfiguration extends BaseConfiguration {
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @param value See OpenDDS documentation
+     * @param value See OpenDDS documentation at <a href=
+     *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *              target=
+     *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public void setAccessScope(PresentationQosPolicyAccessScopeKind value) {
         keyValuePair.put(AccessScopePropertyKey, value.toIntString());
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @return See OpenDDS documentation
+     * @return See OpenDDS documentation at <a href=
+     *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *         target=
+     *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public Boolean getCoherentAccess() {
         String value = keyValuePair.get(CoherentAccessPropertyKey);
@@ -74,18 +89,30 @@ public class PresentationQosPolicyConfiguration extends BaseConfiguration {
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @param value See OpenDDS documentation
+     * @param value See OpenDDS documentation at <a href=
+     *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *              target=
+     *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public void setCoherentAccess(Boolean value) {
         keyValuePair.put(CoherentAccessPropertyKey, value.toString());
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @return See OpenDDS documentation
+     * @return See OpenDDS documentation at <a href=
+     *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *         target=
+     *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public Boolean getOrderedAccess() {
         String value = keyValuePair.get(OrderedAccessPropertyKey);
@@ -93,9 +120,15 @@ public class PresentationQosPolicyConfiguration extends BaseConfiguration {
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @param value See OpenDDS documentation
+     * @param value See OpenDDS documentation at <a href=
+     *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *              target=
+     *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public void setOrderedAccess(Boolean value) {
         keyValuePair.put(OrderedAccessPropertyKey, value.toString());

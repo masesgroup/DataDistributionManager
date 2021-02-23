@@ -20,23 +20,34 @@ package org.mases.datadistributionmanager.configuration;
 
 import org.mases.datadistributionmanager.BaseConfiguration;
 
+/**
+ * The configuration class for WriterDataLifecycleQosPolicy. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+ */
 public class WriterDataLifecycleQosPolicyConfiguration extends BaseConfiguration {
-    /// <summary>
-    /// Configuration key of <see cref="Period"/>
-    /// </summary>
     public static final String AutodisposeUnregisteredInstancesPropertyKey = "datadistributionmanager.opendds.qos.writerdatalifecycleqospolicy.autodispose_unregistered_instances";
 
-    /// <summary>
-    /// Initialize a new instance of <see
-    /// cref="WriterDataLifecycleQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * Initialize a new {@link WriterDataLifecycleQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public WriterDataLifecycleQosPolicyConfiguration() {
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @return See OpenDDS documentation
+     * @return See OpenDDS documentation at <a href=
+     *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *         target=
+     *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public Boolean getAutodisposeUnregisteredInstances() {
         String value = keyValuePair.get(AutodisposeUnregisteredInstancesPropertyKey);
@@ -44,9 +55,15 @@ public class WriterDataLifecycleQosPolicyConfiguration extends BaseConfiguration
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @param value See OpenDDS documentation
+     * @param value See OpenDDS documentation at <a href=
+     *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *              target=
+     *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public void setAutodisposeUnregisteredInstances(Boolean value) {
         keyValuePair.put(AutodisposeUnregisteredInstancesPropertyKey, value.toString());

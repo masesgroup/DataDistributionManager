@@ -166,6 +166,7 @@ public class DataWriterQosConfiguration extends BaseConfiguration {
 
     /**
      * Creates configuration for QoS policies
+     * 
      * @param parameters Input parameters
      * @return updated parameters
      */

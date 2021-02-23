@@ -73,6 +73,7 @@ public class OpenDDSChannelConfiguration extends OpenDDSConfiguration {
 
     /**
      * Creates configuration for QoS policies
+     * 
      * @param parameters Input parameters
      * @return updated parameters
      */

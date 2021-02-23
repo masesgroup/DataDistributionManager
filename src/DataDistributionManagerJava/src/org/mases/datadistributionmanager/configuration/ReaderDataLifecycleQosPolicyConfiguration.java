@@ -20,27 +20,35 @@ package org.mases.datadistributionmanager.configuration;
 
 import org.mases.datadistributionmanager.BaseConfiguration;
 
+/**
+ * The configuration class for ReaderDataLifecycleQosPolicy. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+ */
 public class ReaderDataLifecycleQosPolicyConfiguration extends BaseConfiguration {
-    /// <summary>
-    /// Configuration key of <see cref="Period"/>
-    /// </summary>
     public static final String AutopurgeNowriterSamplesDelayPropertyKey = "datadistributionmanager.opendds.qos.readerdatalifecycleqospolicy.autopurge_nowriter_samples_delay";
-    /// <summary>
-    /// Configuration key of <see cref="Period"/>
-    /// </summary>
     public static final String AutopurgeDisposedSamplesDelayPropertyKey = "datadistributionmanager.opendds.qos.readerdatalifecycleqospolicy.autopurge_disposed_samples_delay";
 
-    /// <summary>
-    /// Initialize a new instance of <see
-    /// cref="ReaderDataLifecycleQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * Initialize a new {@link ReaderDataLifecycleQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public ReaderDataLifecycleQosPolicyConfiguration() {
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @return See OpenDDS documentation
+     * @return See OpenDDS documentation at <a href=
+     *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *         target=
+     *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public Integer getAutopurgeNowriterSamplesDelay() {
         String value = keyValuePair.get(AutopurgeNowriterSamplesDelayPropertyKey);
@@ -48,18 +56,30 @@ public class ReaderDataLifecycleQosPolicyConfiguration extends BaseConfiguration
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @param value See OpenDDS documentation
+     * @param value See OpenDDS documentation at <a href=
+     *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *              target=
+     *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public void setAutopurgeNowriterSamplesDelay(Integer value) {
         keyValuePair.put(AutopurgeNowriterSamplesDelayPropertyKey, value.toString());
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @return See OpenDDS documentation
+     * @return See OpenDDS documentation at <a href=
+     *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *         target=
+     *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public Integer getAutopurgeDisposedSamplesDelay() {
         String value = keyValuePair.get(AutopurgeDisposedSamplesDelayPropertyKey);
@@ -67,9 +87,15 @@ public class ReaderDataLifecycleQosPolicyConfiguration extends BaseConfiguration
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @param value See OpenDDS documentation
+     * @param value See OpenDDS documentation at <a href=
+     *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *              target=
+     *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public void setAutopurgeDisposedSamplesDelay(Integer value) {
         keyValuePair.put(AutopurgeDisposedSamplesDelayPropertyKey, value.toString());

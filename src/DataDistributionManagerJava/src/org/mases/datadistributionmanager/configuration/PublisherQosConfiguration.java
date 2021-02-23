@@ -22,40 +22,53 @@ import org.mases.datadistributionmanager.BaseConfiguration;
 
 import java.util.ArrayList;
 
-/// <summary>
-/// The configuration class for DataWriterQos
-/// </summary>
+/**
+ * The configuration class for PublisherQos. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+ */
 public class PublisherQosConfiguration extends BaseConfiguration {
-    /// <summary>
-    /// Base property name of all specific configuration key of <see
-    /// cref="PublisherQosConfiguration"/>
-    /// </summary>
     public static final String PublisherQosBasePropertyKey = "datadistributionmanager.opendds.publisherqos";
 
-    /// <summary>
-    /// Initialize a <see cref="PublisherQosConfiguration"/>
-    /// </summary>
+    /**
+     * Initialize a new {@link PublisherQosConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public PublisherQosConfiguration() {
     }
 
-    /// <summary>
-    /// The configuration of <see cref="PresentationQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link PresentationQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public PresentationQosPolicyConfiguration PresentationQosPolicy;
 
-    /// <summary>
-    /// The configuration of <see cref="PartitionQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link PartitionQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public PartitionQosPolicyConfiguration PartitionQosPolicy;
-
-    /// <summary>
-    /// The configuration of <see cref="GroupDataQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link GroupDataQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public GroupDataQosPolicyConfiguration GroupDataQosPolicy;
 
-    /// <summary>
-    /// The configuration of <see cref="LatencyBudgetQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * The configuration of {@link EntityFactoryQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public EntityFactoryQosPolicyConfiguration EntityFactoryQosPolicy;
 
     String[] replacer(String[] input) {
@@ -66,9 +79,12 @@ public class PublisherQosConfiguration extends BaseConfiguration {
         return array;
     }
 
-    /// <summary>
-    /// Creates configuration for QoS policies
-    /// </summary>
+    /**
+     * Creates configuration for QoS policies
+     * 
+     * @param parameters Input parameters
+     * @return updated parameters
+     */
     protected String[] PolicyBuilder(String[] parameters) {
         ArrayList<String> lst = new ArrayList<String>();
         if (PresentationQosPolicy != null) {
@@ -95,7 +111,6 @@ public class PublisherQosConfiguration extends BaseConfiguration {
         return lst.toArray(array);
     }
 
-    /// <see cref="IConfiguration.Configuration"/>
     public String[] getConfiguration() {
         return PolicyBuilder(super.getConfiguration());
     }

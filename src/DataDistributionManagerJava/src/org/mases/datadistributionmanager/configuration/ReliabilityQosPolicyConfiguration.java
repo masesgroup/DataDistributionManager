@@ -21,41 +21,55 @@ package org.mases.datadistributionmanager.configuration;
 import org.mases.datadistributionmanager.BaseConfiguration;
 
 /**
- * Class managing LivelinessQosPolicy
+ * The configuration class for ReliabilityQosPolicy. See
+ * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+ * target=
+ * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
  */
 public class ReliabilityQosPolicyConfiguration extends BaseConfiguration {
-    /// <summary>
-    /// Configuration key of <see cref="LeaseDuration"/>
-    /// </summary>
     public static final String KindPropertyKey = "datadistributionmanager.opendds.qos.reliabilityqospolicy.kind";
-    /// <summary>
-    /// Configuration key of <see cref="LeaseDuration"/>
-    /// </summary>
     public static final String MaxBlockingTimePropertyKey = "datadistributionmanager.opendds.qos.reliabilityqospolicy.max_blocking_time";
 
-    /// <summary>
-    /// Initialize a new instance of <see
-    /// cref="ReliabilityQosPolicyConfiguration"/>
-    /// </summary>
+    /**
+     * Initialize a new {@link ReliabilityQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public ReliabilityQosPolicyConfiguration() {
 
     }
 
-    /// <summary>
-    /// Initialize a new instance of <see
-    /// cref="ReliabilityQosPolicyConfiguration"/>
-    /// </summary>
-    /// <param name="historyQosPolicy">Value to use for <see
-    /// name="HistoryQosPolicyKind"/></param>
+    /**
+     * Initialize a new {@link ReliabilityQosPolicyConfiguration}. See
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     * 
+     * @param kind   See OpenDDS documentation at <a href=
+     *               "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *               target=
+     *               "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     * @param period See OpenDDS documentation at <a href=
+     *               "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *               target=
+     *               "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     */
     public ReliabilityQosPolicyConfiguration(ReliabilityQosPolicyKind kind, Integer period) {
         setKind(kind);
         setMaxBlockingTime(period);
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @return See OpenDDS documentation
+     * @return See OpenDDS documentation at <a href=
+     *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *         target=
+     *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public ReliabilityQosPolicyKind getKind() {
         String value = keyValuePair.get(KindPropertyKey);
@@ -63,18 +77,30 @@ public class ReliabilityQosPolicyConfiguration extends BaseConfiguration {
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @param value See OpenDDS documentation
+     * @param value See OpenDDS documentation at <a href=
+     *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *              target=
+     *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public void setKind(ReliabilityQosPolicyKind value) {
         keyValuePair.put(KindPropertyKey, value.toIntString());
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @return See OpenDDS documentation
+     * @return See OpenDDS documentation at <a href=
+     *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *         target=
+     *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public Integer getMaxBlockingTime() {
         String value = keyValuePair.get(MaxBlockingTimePropertyKey);
@@ -82,9 +108,15 @@ public class ReliabilityQosPolicyConfiguration extends BaseConfiguration {
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @param value See OpenDDS documentation
+     * @param value See OpenDDS documentation at <a href=
+     *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *              target=
+     *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public void setMaxBlockingTime(Integer value) {
         keyValuePair.put(MaxBlockingTimePropertyKey, value.toString());

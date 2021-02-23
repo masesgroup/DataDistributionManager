@@ -19,6 +19,7 @@
 package org.mases.datadistributionmanager.configuration;
 
 import org.mases.datadistributionmanager.BaseConfiguration;
+
 /**
  * The configuration class for LatencyBudgetQosPolicy. See
  * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
@@ -42,16 +43,26 @@ public class LatencyBudgetQosPolicyConfiguration extends BaseConfiguration {
      * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
      * target=
      * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
-     * @param period See OpenDDS documentation
+     * 
+     * @param period See OpenDDS documentation at <a href=
+     *               "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *               target=
+     *               "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public LatencyBudgetQosPolicyConfiguration(int period) {
         setPeriod(period);
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @return See OpenDDS documentation
+     * @return See OpenDDS documentation at <a href=
+     *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *         target=
+     *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public Integer getPeriod() {
         String value = keyValuePair.get(PeriodPropertyKey);
@@ -59,9 +70,15 @@ public class LatencyBudgetQosPolicyConfiguration extends BaseConfiguration {
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @param value See OpenDDS documentation
+     * @param value See OpenDDS documentation at <a href=
+     *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *              target=
+     *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public void setPeriod(Integer value) {
         keyValuePair.put(PeriodPropertyKey, value.toString());

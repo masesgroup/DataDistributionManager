@@ -46,8 +46,14 @@ public class LivelinessQosPolicyConfiguration extends BaseConfiguration {
      * target=
      * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @param kind See OpenDDS documentation
-     * @param period See OpenDDS documentation
+     * @param kind   See OpenDDS documentation at <a href=
+     *               "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *               target=
+     *               "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
+     * @param period See OpenDDS documentation at <a href=
+     *               "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *               target=
+     *               "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public LivelinessQosPolicyConfiguration(LivelinessQosPolicyKind kind, Integer period) {
         setKind(kind);
@@ -55,9 +61,15 @@ public class LivelinessQosPolicyConfiguration extends BaseConfiguration {
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @return See OpenDDS documentation
+     * @return See OpenDDS documentation at <a href=
+     *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *         target=
+     *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public LivelinessQosPolicyKind getKind() {
         String value = keyValuePair.get(KindPropertyKey);
@@ -65,18 +77,30 @@ public class LivelinessQosPolicyConfiguration extends BaseConfiguration {
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @param value See OpenDDS documentation
+     * @param value See OpenDDS documentation at <a href=
+     *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *              target=
+     *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public void setKind(LivelinessQosPolicyKind value) {
         keyValuePair.put(KindPropertyKey, value.toIntString());
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @return See OpenDDS documentation
+     * @return See OpenDDS documentation at <a href=
+     *         "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *         target=
+     *         "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public Integer getLeaseDuration() {
         String value = keyValuePair.get(LeaseDurationPropertyKey);
@@ -84,9 +108,15 @@ public class LivelinessQosPolicyConfiguration extends BaseConfiguration {
     }
 
     /**
-     * See OpenDDS documentation
+     * See OpenDDS documentation at
+     * <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     * target=
+     * "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      * 
-     * @param value See OpenDDS documentation
+     * @param value See OpenDDS documentation at <a href=
+     *              "http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf"
+     *              target=
+     *              "_top">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a>
      */
     public void setLeaseDuration(Integer value) {
         keyValuePair.put(LeaseDurationPropertyKey, value.toString());
