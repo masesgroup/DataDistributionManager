@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"org.mases.datadistributionmanager"},{"l":"org.mases.datadistributionmanager.configuration"}]
