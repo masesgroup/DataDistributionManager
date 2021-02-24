@@ -39,6 +39,25 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.BaseConfiguration.Configuration
   nameWithType: BaseConfiguration.Configuration
+- uid: MASES.DataDistributionManager.Bindings.BaseConfiguration.EmitPropertyChanged(System.String)
+  name: EmitPropertyChanged(String)
+  href: api/MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_EmitPropertyChanged_System_String_
+  commentId: M:MASES.DataDistributionManager.Bindings.BaseConfiguration.EmitPropertyChanged(System.String)
+  fullName: MASES.DataDistributionManager.Bindings.BaseConfiguration.EmitPropertyChanged(System.String)
+  nameWithType: BaseConfiguration.EmitPropertyChanged(String)
+- uid: MASES.DataDistributionManager.Bindings.BaseConfiguration.EmitPropertyChanged*
+  name: EmitPropertyChanged
+  href: api/MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_EmitPropertyChanged_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.BaseConfiguration.EmitPropertyChanged
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.BaseConfiguration.EmitPropertyChanged
+  nameWithType: BaseConfiguration.EmitPropertyChanged
+- uid: MASES.DataDistributionManager.Bindings.BaseConfiguration.PropertyChanged
+  name: PropertyChanged
+  href: api/MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_PropertyChanged
+  commentId: E:MASES.DataDistributionManager.Bindings.BaseConfiguration.PropertyChanged
+  fullName: MASES.DataDistributionManager.Bindings.BaseConfiguration.PropertyChanged
+  nameWithType: BaseConfiguration.PropertyChanged
 - uid: MASES.DataDistributionManager.Bindings.ChangedStateEventArgs
   name: ChangedStateEventArgs
   href: api/MASES.DataDistributionManager.Bindings.ChangedStateEventArgs.html
@@ -3899,6 +3918,19 @@ references:
   commentId: T:MASES.DataDistributionManager.Bindings.ConfigurationEventArgs
   fullName: MASES.DataDistributionManager.Bindings.ConfigurationEventArgs
   nameWithType: ConfigurationEventArgs
+- uid: MASES.DataDistributionManager.Bindings.ConfigurationEventArgs.ChannelName
+  name: ChannelName
+  href: api/MASES.DataDistributionManager.Bindings.ConfigurationEventArgs.html#MASES_DataDistributionManager_Bindings_ConfigurationEventArgs_ChannelName
+  commentId: P:MASES.DataDistributionManager.Bindings.ConfigurationEventArgs.ChannelName
+  fullName: MASES.DataDistributionManager.Bindings.ConfigurationEventArgs.ChannelName
+  nameWithType: ConfigurationEventArgs.ChannelName
+- uid: MASES.DataDistributionManager.Bindings.ConfigurationEventArgs.ChannelName*
+  name: ChannelName
+  href: api/MASES.DataDistributionManager.Bindings.ConfigurationEventArgs.html#MASES_DataDistributionManager_Bindings_ConfigurationEventArgs_ChannelName_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.ConfigurationEventArgs.ChannelName
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.ConfigurationEventArgs.ChannelName
+  nameWithType: ConfigurationEventArgs.ChannelName
 - uid: MASES.DataDistributionManager.Bindings.ConfigurationEventArgs.Key
   name: Key
   href: api/MASES.DataDistributionManager.Bindings.ConfigurationEventArgs.html#MASES_DataDistributionManager_Bindings_ConfigurationEventArgs_Key
@@ -11943,12 +11975,12 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnCompletelyDisconnected
   nameWithType: ISmartDataDistribution.OnCompletelyDisconnected
-- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnConfiguration(System.String,System.String)
-  name: OnConfiguration(String, String)
-  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.html#MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnConfiguration_System_String_System_String_
-  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnConfiguration(System.String,System.String)
-  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnConfiguration(System.String, System.String)
-  nameWithType: ISmartDataDistribution.OnConfiguration(String, String)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnConfiguration(System.String,System.String,System.String)
+  name: OnConfiguration(String, String, String)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.html#MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnConfiguration_System_String_System_String_System_String_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnConfiguration(System.String,System.String,System.String)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnConfiguration(System.String, System.String, System.String)
+  nameWithType: ISmartDataDistribution.OnConfiguration(String, String, String)
 - uid: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnConfiguration*
   name: OnConfiguration
   href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.html#MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnConfiguration_
@@ -13088,12 +13120,12 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnCompletelyDisconnected
   nameWithType: SmartDataDistribution.OnCompletelyDisconnected
-- uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnConfiguration(System.String,System.String)
-  name: OnConfiguration(String, String)
-  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_OnConfiguration_System_String_System_String_
-  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnConfiguration(System.String,System.String)
-  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnConfiguration(System.String, System.String)
-  nameWithType: SmartDataDistribution.OnConfiguration(String, String)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnConfiguration(System.String,System.String,System.String)
+  name: OnConfiguration(String, String, String)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_OnConfiguration_System_String_System_String_System_String_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnConfiguration(System.String,System.String,System.String)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnConfiguration(System.String, System.String, System.String)
+  nameWithType: SmartDataDistribution.OnConfiguration(String, String, String)
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnConfiguration*
   name: OnConfiguration
   href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_OnConfiguration_

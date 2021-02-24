@@ -79,10 +79,28 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">PropertyQosPolicyConfiguration.Property</span></div>
+    <div class="level1"><a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html">BaseConfiguration</a></div>
+    <div class="level2"><span class="xref">PropertyQosPolicyConfiguration.Property</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="MASES.DataDistributionManager.Bindings.IConfiguration.html">IConfiguration</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_PropertyChanged">BaseConfiguration.PropertyChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_EmitPropertyChanged_System_String_">BaseConfiguration.EmitPropertyChanged(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_CheckConfiguration">BaseConfiguration.CheckConfiguration()</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_Configuration">BaseConfiguration.Configuration</a>
+    </div>
     <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
     </div>
@@ -109,7 +127,7 @@
   <h6><strong>Assembly</strong>: DataDistributionManagerNet.dll</h6>
   <h5 id="MASES_DataDistributionManager_Bindings_Configuration_PropertyQosPolicyConfiguration_Property_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Property</code></pre>
+    <pre><code class="lang-csharp hljs">public class Property : BaseConfiguration, IConfiguration, INotifyPropertyChanged</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -176,7 +194,7 @@
     <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_PropertyQosPolicyConfiguration_Property_Propagate.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.Property.Propagate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSChannelConfiguration.cs/#L62">View Source</a>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSChannelConfiguration.cs/#L65">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_Configuration_PropertyQosPolicyConfiguration_Property_Propagate_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.Property.Propagate*"></a>
   <h4 id="MASES_DataDistributionManager_Bindings_Configuration_PropertyQosPolicyConfiguration_Property_Propagate" data-uid="MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.Property.Propagate">Propagate</h4>
@@ -207,7 +225,7 @@
     <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_PropertyQosPolicyConfiguration_Property_Value.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.Property.Value%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSChannelConfiguration.cs/#L58">View Source</a>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSChannelConfiguration.cs/#L59">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_Configuration_PropertyQosPolicyConfiguration_Property_Value_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.Property.Value*"></a>
   <h4 id="MASES_DataDistributionManager_Bindings_Configuration_PropertyQosPolicyConfiguration_Property_Value" data-uid="MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.Property.Value">Value</h4>
@@ -233,6 +251,13 @@
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.IConfiguration.html">IConfiguration</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">System.ComponentModel.INotifyPropertyChanged</a>
+  </div>
 </article>
           </div>
           

@@ -88,6 +88,7 @@
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="MASES.DataDistributionManager.Bindings.IConfiguration.html">IConfiguration</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -176,6 +177,12 @@
       <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_GlobalLogLevel">GlobalConfiguration.GlobalLogLevel</a>
     </div>
     <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_PropertyChanged">BaseConfiguration.PropertyChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_EmitPropertyChanged_System_String_">BaseConfiguration.EmitPropertyChanged(String)</a>
+    </div>
+    <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
     </div>
     <div>
@@ -201,7 +208,7 @@
   <h6><strong>Assembly</strong>: DataDistributionManagerNet.dll</h6>
   <h5 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class KafkaChannelConfiguration : KafkaConfiguration, IConfiguration</code></pre>
+    <pre><code class="lang-csharp hljs">public class KafkaChannelConfiguration : KafkaConfiguration, IConfiguration, INotifyPropertyChanged</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -488,7 +495,7 @@
     <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_BootstrapBrokers.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.BootstrapBrokers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L124">View Source</a>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L127">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_BootstrapBrokers_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.BootstrapBrokers*"></a>
   <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_BootstrapBrokers" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.BootstrapBrokers">BootstrapBrokers</h4>
@@ -550,7 +557,7 @@
     <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_Configuration.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.Configuration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L241">View Source</a>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L249">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_Configuration_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.Configuration*"></a>
   <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_Configuration" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.Configuration">Configuration</h4>
@@ -584,7 +591,7 @@
     <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_Debug.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.Debug%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L107">View Source</a>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L109">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_Debug_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.Debug*"></a>
   <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_Debug" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.Debug">Debug</h4>
@@ -615,7 +622,7 @@
     <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_DumpMetadata.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.DumpMetadata%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L175">View Source</a>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L181">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_DumpMetadata_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.DumpMetadata*"></a>
   <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_DumpMetadata" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.DumpMetadata">DumpMetadata</h4>
@@ -646,7 +653,7 @@
     <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_GroupId.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.GroupId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L90">View Source</a>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L91">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_GroupId_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.GroupId*"></a>
   <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_GroupId" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.GroupId">GroupId</h4>
@@ -677,7 +684,7 @@
     <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_Item_System_String_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.Item(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L194">View Source</a>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L201">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_Item_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.Item*"></a>
   <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_Item_System_String_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.Item(System.String)">Item[String]</h4>
@@ -727,7 +734,7 @@
     <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ReplicationFactor.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ReplicationFactor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L141">View Source</a>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L145">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ReplicationFactor_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ReplicationFactor*"></a>
   <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ReplicationFactor" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ReplicationFactor">ReplicationFactor</h4>
@@ -758,7 +765,7 @@
     <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TopicCreate.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TopicCreate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L158">View Source</a>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L163">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TopicCreate_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TopicCreate*"></a>
   <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TopicCreate" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TopicCreate">TopicCreate</h4>
@@ -791,7 +798,7 @@
     <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_CheckConfiguration.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.CheckConfiguration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L223">View Source</a>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L231">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_CheckConfiguration_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.CheckConfiguration*"></a>
   <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_CheckConfiguration" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.CheckConfiguration">CheckConfiguration()</h4>
@@ -807,6 +814,9 @@
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="MASES.DataDistributionManager.Bindings.IConfiguration.html">IConfiguration</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">System.ComponentModel.INotifyPropertyChanged</a>
   </div>
 </article>
           </div>

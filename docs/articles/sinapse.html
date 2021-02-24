@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Sinapse platform: the definitive solution for Agile development | Data Distribution Manager website </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Sinapse platform: the definitive solution for Agile development | Data Distribution Manager website ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="sinapse-platform-the-definitive-solution-for-agile-development">Sinapse platform: the definitive solution for Agile development</h1>
+
+<p>We use <strong>Data Distribution Manager</strong> as the core of <a href="https://www.sinapsesystem.com">Sinapse</a> High Avalailablity.
+Sinapse is able to distribute, across multiple servers, workflows execution, balance load conditions and can recover from servers failure using a distributed system based on Data Distribution Manager.</p>
+<p>A simple overview, from our presentations, is as the following one:</p>
+<p><kbd><img src="/images/sinapse_overview.png?raw=true" alt="Sinapse Multi-server message bus" title="Sinapse Multi-server message bus"></kbd></p>
+<p>To be interoperable Sinapse front-end is based on <a href="https://opcfoundation.org/about/opc-technologies/opc-ua/">OPC-UA</a> protocol, the backend is based on a specific version of <strong>Data Distribution Manager</strong>.</p>
+<h2 id="messages-as-the-glue">Messages as the glue</h2>
+<p>Sinapse platform is genral purpose module based platform: modules communication is based on serializable structured messages.
+All Sinapse modules are insulated and doesn't know anthing about other modules, there is a loosely-coupled linkage between them: modules use serializable messages to exchange information between them. During run-time, Sinapse core make aware a module about the message.
+These messages are exchanged from the modules of Sinapse platform using the reliable common bus.</p>
+<p>An overview of a single message is as the following figure:</p>
+<p><kbd><img src="/images/message_overview.png?raw=true" alt="Message overview" title="Message overview"></kbd></p>
+<h2 id="dynamic-processor">Dynamic processor</h2>
+<p>The messages are processed using a multi-level, multiple language configurable engine:</p>
+<p><kbd><img src="/images/module_engine.png?raw=true" alt="Module engine" title="Module engine"></kbd></p>
+<p>The engine receives in input the message, analyze it and output one, or more resulting messages. The engine hosts a scriptable engine and scripts can be updated at run-time.</p>
+<h2 id="standalone-versus-multi-server">Standalone versus multi-server</h2>
+<p>The messages to, and from, modules are exchanged using the multi-server message bus and disptached to all Sinapse servers involved in the configuration.
+In a sandalone condition, oly one server is in execution and dos not need the full bus features, while in other conditions the multi-server bus is mandatory.</p>
+<h3 id="standalone">Standalone</h3>
+<p>Below two figures which describes the above sentence within a production plant.Starting, in a simple scenario, with a single Sinapse server:</p>
+<p><img src="/images/sinapse_sidebyside.png?raw=true" alt="Side by side" title="Side by side"></p>
+<h3 id="fault-toleranceload-balancing">Fault tolerance/Load balancing</h3>
+<p>It is possible to add High Availability adding more servers in the configuration:</p>
+<p><img src="/images/sinapse_ft_lb.png?raw=true" alt="Fault tolerance/Load balancing" title="Fault tolerance/Load balancing"></p>
+<p>The above servers communicates each other over a specific version of <strong>Data Distribution Manager</strong>.</p>
+<h2 id="workflows">Workflows</h2>
+<p>Below an explanation of what happens when multiple servers are involved in a workflows.
+All workflows in the figures can be spawned across balanced servers for High Availability.</p>
+<h3 id="single-server-workflow">Single server workflow</h3>
+<p>Starting from a single server, the following figure shows a simple workflow which link a PLC to a database:</p>
+<p><img src="/images/sinapse_workflow.png?raw=true" alt="Simple workflow" title="Simple workflow"></p>
+<h3 id="multiple-servers-workflow">Multiple servers workflow</h3>
+<p>Starting from the previous workflow, if each server executes its own workflow, they can be chained along multiple servers creating a multiple-server workflow:</p>
+<p><img src="/images/sinapse_multiple_workflow.png?raw=true" alt="Multiple workflows" title="Multiple workflows"></p>
+<p>If the article is interesting and want to know more on Sinapse platform go on <a href="https://sinapsesystem.com/">Sinapse platform</a> website.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/Documentation/articles/sinapse.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © 2021 MASES s.r.l..<br>Generated by <strong>DocFX</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

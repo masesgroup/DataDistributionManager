@@ -86,9 +86,16 @@
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="MASES.DataDistributionManager.Bindings.IConfiguration.html">IConfiguration</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_PropertyChanged">BaseConfiguration.PropertyChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_EmitPropertyChanged_System_String_">BaseConfiguration.EmitPropertyChanged(String)</a>
+    </div>
     <div>
       <a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_Configuration">BaseConfiguration.Configuration</a>
     </div>
@@ -118,7 +125,7 @@
   <h6><strong>Assembly</strong>: DataDistributionManagerNet.dll</h6>
   <h5 id="MASES_DataDistributionManager_Bindings_GlobalConfiguration_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class GlobalConfiguration : BaseConfiguration, IConfiguration</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class GlobalConfiguration : BaseConfiguration, IConfiguration, INotifyPropertyChanged</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -279,7 +286,7 @@
     <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_GlobalConfiguration_GlobalLogLevel.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.GlobalConfiguration.GlobalLogLevel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/GlobalConfiguration.cs/#L140">View Source</a>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/GlobalConfiguration.cs/#L144">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_GlobalConfiguration_GlobalLogLevel_" data-uid="MASES.DataDistributionManager.Bindings.GlobalConfiguration.GlobalLogLevel*"></a>
   <h4 id="MASES_DataDistributionManager_Bindings_GlobalConfiguration_GlobalLogLevel" data-uid="MASES.DataDistributionManager.Bindings.GlobalConfiguration.GlobalLogLevel">GlobalLogLevel</h4>
@@ -310,7 +317,7 @@
     <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_GlobalConfiguration_MaxMessageSize.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.GlobalConfiguration.MaxMessageSize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/GlobalConfiguration.cs/#L106">View Source</a>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/GlobalConfiguration.cs/#L108">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_GlobalConfiguration_MaxMessageSize_" data-uid="MASES.DataDistributionManager.Bindings.GlobalConfiguration.MaxMessageSize*"></a>
   <h4 id="MASES_DataDistributionManager_Bindings_GlobalConfiguration_MaxMessageSize" data-uid="MASES.DataDistributionManager.Bindings.GlobalConfiguration.MaxMessageSize">MaxMessageSize</h4>
@@ -372,7 +379,7 @@
     <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_GlobalConfiguration_ProtocolLibrary.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.GlobalConfiguration.ProtocolLibrary%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/GlobalConfiguration.cs/#L89">View Source</a>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/GlobalConfiguration.cs/#L90">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_GlobalConfiguration_ProtocolLibrary_" data-uid="MASES.DataDistributionManager.Bindings.GlobalConfiguration.ProtocolLibrary*"></a>
   <h4 id="MASES_DataDistributionManager_Bindings_GlobalConfiguration_ProtocolLibrary" data-uid="MASES.DataDistributionManager.Bindings.GlobalConfiguration.ProtocolLibrary">ProtocolLibrary</h4>
@@ -403,7 +410,7 @@
     <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_GlobalConfiguration_ServerLostTimeout.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.GlobalConfiguration.ServerLostTimeout%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/GlobalConfiguration.cs/#L123">View Source</a>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/GlobalConfiguration.cs/#L126">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_GlobalConfiguration_ServerLostTimeout_" data-uid="MASES.DataDistributionManager.Bindings.GlobalConfiguration.ServerLostTimeout*"></a>
   <h4 id="MASES_DataDistributionManager_Bindings_GlobalConfiguration_ServerLostTimeout" data-uid="MASES.DataDistributionManager.Bindings.GlobalConfiguration.ServerLostTimeout">ServerLostTimeout</h4>
@@ -436,7 +443,7 @@
     <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_GlobalConfiguration_CheckConfiguration.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.GlobalConfiguration.CheckConfiguration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/GlobalConfiguration.cs/#L155">View Source</a>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/GlobalConfiguration.cs/#L160">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_GlobalConfiguration_CheckConfiguration_" data-uid="MASES.DataDistributionManager.Bindings.GlobalConfiguration.CheckConfiguration*"></a>
   <h4 id="MASES_DataDistributionManager_Bindings_GlobalConfiguration_CheckConfiguration" data-uid="MASES.DataDistributionManager.Bindings.GlobalConfiguration.CheckConfiguration">CheckConfiguration()</h4>
@@ -452,6 +459,9 @@
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="MASES.DataDistributionManager.Bindings.IConfiguration.html">IConfiguration</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">System.ComponentModel.INotifyPropertyChanged</a>
   </div>
 </article>
           </div>
