@@ -9,6 +9,8 @@
     <LangVersion>6</LangVersion>
     <AssemblyName>DataDistributionManagerNet</AssemblyName>
     <PackageId>DataDistributionManagerNet</PackageId>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>DataDistributionManagerNet.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>

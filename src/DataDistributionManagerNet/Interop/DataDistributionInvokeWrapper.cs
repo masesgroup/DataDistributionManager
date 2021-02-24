@@ -106,12 +106,20 @@ namespace MASES.DataDistributionManager.Bindings.Interop
 #else
         static string libName = "DataDistributionManager.dll";
 #endif
+        internal static string DataDistributionManagerNetPath
+        {
+            get
+            {
+                var thisAssemblyPath = typeof(DataDistributionManagerInvokeWrapper).Assembly.Location;
+                return Path.GetDirectoryName(thisAssemblyPath);
+            }
+        }
 
         internal static string DataDistributionManagerLibrary
         {
             get
             {
-                var tmpLib = Path.Combine(Environment.Is64BitProcess ? "x64" : "x86", libName);
+                var tmpLib = Path.Combine(DataDistributionManagerNetPath, Environment.Is64BitProcess ? "x64" : "x86", libName);
                 return System.IO.Path.GetFullPath(tmpLib);
             }
             set { libName = value; }
