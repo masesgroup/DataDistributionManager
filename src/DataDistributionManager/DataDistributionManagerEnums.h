@@ -66,14 +66,14 @@
  */
 typedef enum class DDM_GENERAL_PARAMETER
 {
-	MAX_MESSAGE_SIZE = 0x1, /**< Max message size */
-	SERVER_LOST_TIMEOUT , /**< Server lost timeout */
-	CREATE_CHANNEL_TIMEOUT , /**< Create channel timeout */
-	CHANNEL_SEEK_TIMEOUT , /**< Seek channel timeout */
-	FIRST_CONNECTION_TIMEOUT , /**< Timeout on first connection */
-	KEEP_ALIVE_TIMEOUT , /**< Timeout of Keep Alive */
-	CONSUMER_TIMEOUT , /**< Consumer timeout */
-	PRODUCER_TIMEOUT , /**< Producer timeout */
+	MAX_MESSAGE_SIZE = 0x1,	  /**< Max message size */
+	SERVER_LOST_TIMEOUT,	  /**< Server lost timeout */
+	CREATE_CHANNEL_TIMEOUT,	  /**< Create channel timeout */
+	CHANNEL_SEEK_TIMEOUT,	  /**< Seek channel timeout */
+	FIRST_CONNECTION_TIMEOUT, /**< Timeout on first connection */
+	KEEP_ALIVE_TIMEOUT,		  /**< Timeout of Keep Alive */
+	CONSUMER_TIMEOUT,		  /**< Consumer timeout */
+	PRODUCER_TIMEOUT,		  /**< Producer timeout */
 } DDM_GENERAL_PARAMETER;
 /**
  * @enum DDM_CHANNEL_DIRECTION
@@ -86,8 +86,8 @@ typedef enum class DDM_GENERAL_PARAMETER
  */
 typedef enum class DDM_CHANNEL_DIRECTION
 {
-	TRANSMITTER = 0x1, /**< Transmitter */
-	RECEIVER = 0x2, /**< Receiver */
+	TRANSMITTER = 0x1,			  /**< Transmitter */
+	RECEIVER = 0x2,				  /**< Receiver */
 	ALL = TRANSMITTER | RECEIVER, /**< Both */
 } DDM_CHANNEL_DIRECTION;
 /**
@@ -102,12 +102,12 @@ typedef enum class DDM_CHANNEL_DIRECTION
  * @sa IDataDistributionCallback:OnLogging
  */
 typedef enum class DDM_LOG_LEVEL
-{ 
-	FATAL_LEVEL = 0x1, /**< Fatal */
-	ERROR_LEVEL = 0x2, /**< Error */
+{
+	FATAL_LEVEL = 0x1,	 /**< Fatal */
+	ERROR_LEVEL = 0x2,	 /**< Error */
 	WARNING_LEVEL = 0x4, /**< Warning */
-	INFO_LEVEL = 0x8, /**< Info */
-	DEBUG_LEVEL = 0x10, /**< Debug */
+	INFO_LEVEL = 0x8,	 /**< Info */
+	DEBUG_LEVEL = 0x10,	 /**< Debug */
 } DDM_LOG_LEVEL;
 /**
  * @enum DDM_INSTANCE_STATE
@@ -127,15 +127,15 @@ typedef enum class DDM_LOG_LEVEL
  * @sa IDataDistributionMastershipCallback::ChangedState()
  */
 typedef enum class DDM_INSTANCE_STATE
-{ 
-	UNKNOWN, /**< Unknown */
-	PRIMARY, /**< Primary */
-	FOLLOWER, /**< Follower */
-	ALONE, /**< Alone */
-	STOPPING, /**< Stopping */
+{
+	UNKNOWN,	 /**< Unknown */
+	PRIMARY,	 /**< Primary */
+	FOLLOWER,	 /**< Follower */
+	ALONE,		 /**< Alone */
+	STOPPING,	 /**< Stopping */
 	GOING_ALONE, /**< Going alone */
-	OBSERVER, /**< Observer */
-	COMMAND /**< Command sender */
+	OBSERVER,	 /**< Observer */
+	COMMAND		 /**< Command sender */
 } DDM_INSTANCE_STATE;
 /**
  * @enum DDM_CLUSTEREVENT
@@ -148,10 +148,10 @@ typedef enum class DDM_INSTANCE_STATE
  * @sa IDataDistributionMastershipCallback::OnClusterStateChange()
  */
 typedef enum class DDM_CLUSTEREVENT
-{ 
-	NOEVENT = 0x1, /**< No event */
-	ADDSERVER = 0x2, /**< A server was added in the cluster */
-	LOSTSERVER = 0x4, /**< A server was lost in the cluster */
+{
+	NOEVENT = 0x1,	   /**< No event */
+	ADDSERVER = 0x2,   /**< A server was added in the cluster */
+	LOSTSERVER = 0x4,  /**< A server was lost in the cluster */
 	REMOVESERVER = 0x8 /**< A server was removed from the cluster */
 } DDM_CLUSTEREVENT;
 /**
@@ -170,19 +170,19 @@ typedef enum class DDM_UNDERLYING_ERROR_CONDITION
 	DDM_NO_ERROR_CONDITION = 0, /**< No error */
 
 	DDM_UNMAPPED_ERROR_CONDITION = 0x10000000, /**< Unmapped error */
-	DDM_FATAL_ERROR, /**< Fatal */
-	DDM_TIMEOUT, /**< Timeout occurred */
-	DDM_INVALID_DATA, /**< Invalid data */
-	DDM_SUBSYSTEM_NOT_STARTED, /**< Subsystem not started */
-	DDM_WRITE_FAILED, /**< Failed on write */
-	DDM_COMMIT_FAILED, /**< Commit failed */
+	DDM_FATAL_ERROR,						   /**< Fatal */
+	DDM_TIMEOUT,							   /**< Timeout occurred */
+	DDM_INVALID_DATA,						   /**< Invalid data */
+	DDM_SUBSYSTEM_NOT_STARTED,				   /**< Subsystem not started */
+	DDM_WRITE_FAILED,						   /**< Failed on write */
+	DDM_COMMIT_FAILED,						   /**< Commit failed */
 
 	// Condition section
-	DATA_AVAILABLE = 0x20000000, /**< Data are available */
-	DDM_END_OF_STREAM, /**< Reached end of stream */
-	DDM_NO_DATA_RETURNED, /**<  No data returned */
-	DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_BEGIN, /**< Timeout elapsed waiting for messages from the channel */
-	DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_END, /**< End timeout condition waiting for messages from the channel */
+	DATA_AVAILABLE = 0x20000000,				/**< Data are available */
+	DDM_END_OF_STREAM,							/**< Reached end of stream */
+	DDM_NO_DATA_RETURNED,						/**<  No data returned */
+	DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_BEGIN,	/**< Timeout elapsed waiting for messages from the channel */
+	DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_END,	/**< End timeout condition waiting for messages from the channel */
 	DDM_ELAPSED_MESSAGE_ACKNOWLEDGMENT_TIMEOUT, /**< Timeout on acknowledgment */
 } DDM_UNDERLYING_ERROR_CONDITION;
 
