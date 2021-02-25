@@ -18,7 +18,7 @@
 
 #include "DataDistributionMastershipManager.h"
 
-extern "C" __declspec(dllexport) void* CreateObjectImplementation()
+extern "C" DDM_EXPORT void* CreateObjectImplementation()
 {
 	return static_cast<void*> (new DataDistributionMastershipManager);
 }

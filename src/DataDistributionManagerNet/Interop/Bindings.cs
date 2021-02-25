@@ -79,7 +79,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         void Unlock(IntPtr channelHandle);
         void SeekChannel(IntPtr channelHandle, Int64 position);
         void DeleteChannel(IntPtr channelHandle);
-        bool WriteOnChannel(IntPtr channelHandle, [MarshalAs(UnmanagedType.LPStr)] string key, Int64 keyLen, IntPtr param, Int64 dataLen, bool waitAll = false, Int64 timestamp = -1);
+        bool WriteOnChannel(IntPtr channelHandle, [MarshalAs(UnmanagedType.LPStr)] string key, Int64 keyLen, IntPtr param, Int64 dataLen, bool waitAll = false, Int64 timestamp = SmartDataDistributionChannel.DDM_NO_TIMESTAMP);
         bool ReadFromChannel(IntPtr channelHandle, IntPtr param, IntPtr dataLen, Int64 offset);
     };
 

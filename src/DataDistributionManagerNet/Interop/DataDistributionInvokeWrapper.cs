@@ -258,7 +258,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         public delegate bool IDataDistributionSubsystem_WriteOnChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle,
                                                                       [MarshalAs(UnmanagedType.LPStr)] string key, IntPtr keyLen,
                                                                       IntPtr param, IntPtr dataLen,
-                                                                      bool waitAll = false, Int64 timestamp = -1);
+                                                                      bool waitAll = false, Int64 timestamp = SmartDataDistributionChannel.DDM_NO_TIMESTAMP);
         public delegate bool IDataDistributionSubsystem_ReadFromChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle,
                                                                        [In, Out] IntPtr param, [In, Out]IntPtr dataLen, long offset);
     }

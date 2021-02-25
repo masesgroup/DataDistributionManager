@@ -18,7 +18,7 @@
 
 #include "DataDistributionManagerKafka.h"
 
-extern "C" __declspec(dllexport) void* CreateObjectImplementation()
+extern "C" DDM_EXPORT void* CreateObjectImplementation()
 {
 	return static_cast<void*> (new DataDistributionManagerKafka);
 }
@@ -653,7 +653,7 @@ HRESULT DataDistributionManagerKafka::WriteOnChannel(HANDLE channelHandle, const
 	}
 
 	RdKafka::ErrorCode code;
-	if (timestamp != -1)
+	if (timestamp != DDM_NO_TIMESTAMP)
 	{
 		std::string sTopicName = pChannelConfiguration->GetChannelName();
 		code = pChannelConfiguration->pProducer->produce(sTopicName, 0, pChannelConfiguration->m_ProducerMsgFlags,

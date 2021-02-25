@@ -18,7 +18,7 @@
 
 project(*Common) : dcps, svc_utils {
   sharedname     = DataDistributionManagerOpenDDS
-  dynamicflags   = NOGDI;DATADISTRIBUTIONSCHEMACOMMON_BUILD_DLL
+  dynamicflags   = DDM_EXPORTS;_WINSOCK_DEPRECATED_NO_WARNINGS;NOGDI;DATADISTRIBUTIONSCHEMACOMMON_BUILD_DLL
   
   specific {  
 	Win32::libout = ..\..\Output\x86

@@ -24,6 +24,11 @@ import java.nio.charset.Charset;
  * Main class managing channel
  */
 public class SmartDataDistributionChannel implements IDataDistributionChannelCallbackLow {
+    /**
+     * No timestamp value
+     */
+    public final long DDM_NO_TIMESTAMP = -1;
+
     SynchronizedEventsManager<IDataAvailableListener> m_IDataAvailable_listeners = new SynchronizedEventsManager<>();
     SynchronizedEventsManager<IConditionOrErrorListener> m_IConditionOrError_listeners = new SynchronizedEventsManager<>();
 
@@ -145,7 +150,7 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
      * @return {@link HRESULT}
      */
     public HRESULT WriteOnChannel(String key, String value) {
-        return WriteOnChannel(key, value, false, -1);
+        return WriteOnChannel(key, value, false, DDM_NO_TIMESTAMP);
     }
 
     /**
@@ -157,7 +162,7 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
      * @return {@link HRESULT}
      */
     public HRESULT WriteOnChannel(String key, String value, boolean waitAll) {
-        return WriteOnChannel(key, value, waitAll, -1);
+        return WriteOnChannel(key, value, waitAll, DDM_NO_TIMESTAMP);
     }
 
     /**
@@ -184,7 +189,7 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
     public HRESULT WriteOnChannel(String key, byte[] buffer) {
         // Call unmanaged code
         long res = NativeInterface.IDataDistributionSubsystem_WriteOnChannel(IDataDistributionSubsystemManager_ptr,
-                channelHandle, key, buffer, false, -1);
+                channelHandle, key, buffer, false, DDM_NO_TIMESTAMP);
         return new HRESULT(res);
     }
 
@@ -199,7 +204,7 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
     public HRESULT WriteOnChannel(String key, byte[] buffer, boolean waitAll) {
         // Call unmanaged code
         long res = NativeInterface.IDataDistributionSubsystem_WriteOnChannel(IDataDistributionSubsystemManager_ptr,
-                channelHandle, key, buffer, waitAll, -1);
+                channelHandle, key, buffer, waitAll, DDM_NO_TIMESTAMP);
         return new HRESULT(res);
     }
 

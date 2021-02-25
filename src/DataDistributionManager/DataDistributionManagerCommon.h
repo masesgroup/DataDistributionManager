@@ -48,7 +48,26 @@
 using namespace std::chrono;
 #endif
 
-class __declspec(dllexport) DataDistributionCommon : public IDataDistributionSubsystem
+/**
+* @enum CHANNEL_STARTUP_TYPE
+*
+* @brief CHANNEL_STARTUP_TYPE type.
+*
+* Startup status
+*
+* @sa dataDistributionOnClusterStateChange
+* @sa IDataDistributionMastershipCallback::OnClusterStateChange()
+*/
+typedef enum class CHANNEL_STARTUP_TYPE
+{
+	UNDEFINED = 0x1, /**< Undefined */
+	CREATED = 0x2, /**< Created */
+	STARTED = 0X4, /**< Started */
+	STOPPED = 0X8, /**< Stopped */
+	DISCONNECTED = 0x10 /**< Disconnected */
+} CHANNEL_STARTUP_TYPE;
+
+class DDM_EXPORT DataDistributionCommon : public IDataDistributionSubsystem
 {
 public:
 	static HRESULT ConvertConfFile(const char* conf_file, const char*** arrayParams, int* len);
@@ -73,7 +92,7 @@ public:
 	virtual HRESULT Unlock(HANDLE channelHandle);
 	virtual HRESULT SeekChannel(HANDLE channelHandle, int64_t position);
 	virtual HRESULT DeleteChannel(HANDLE channelHandle);
-	virtual HRESULT WriteOnChannel(HANDLE channelHandle, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll = FALSE, const int64_t timestamp = -1);
+	virtual HRESULT WriteOnChannel(HANDLE channelHandle, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP);
 	virtual HRESULT ReadFromChannel(HANDLE channelHandle, int64_t offset, size_t *dataLen, void **param);
 	virtual HRESULT ChangeChannelDirection(HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction);
 
@@ -108,7 +127,7 @@ private:
 	BOOL m_SubSystemStarted;
 };
 
-class __declspec(dllexport) ChannelConfiguration
+class DDM_EXPORT ChannelConfiguration
 {
 public:
 	ChannelConfiguration(const char* channelName, DDM_CHANNEL_DIRECTION direction, DataDistributionCommon* mainManager, IDataDistributionChannelCallback* Cb);

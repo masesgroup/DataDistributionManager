@@ -25,7 +25,7 @@
 
 #include "SmartDataDistributionManager.h"
 
-class __declspec(dllexport) DataDistributionLog
+class DDM_EXPORT DataDistributionLog
 {
 public:
 	DataDistributionLog(IDataDistributionLog* pLog, const char* source, const char* function);

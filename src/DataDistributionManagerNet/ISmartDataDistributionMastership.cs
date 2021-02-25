@@ -52,9 +52,9 @@ namespace MASES.DataDistributionManager.Bindings
         /// <param name="newState">Expected <see cref="DDM_INSTANCE_STATE"/></param>
         void ChangeState(Int64 instanceId, DDM_INSTANCE_STATE newState);
         /// <summary>
-        /// Check if this is the next primary server
+        /// Request to be the next primary server
         /// </summary>
-        /// <returns>True if this server is the next primary</returns>
+        /// <returns>True in case of success</returns>
         bool RequestIAmNextPrimary();
         /// <summary>
         /// Verify if this server will be elected as next primary

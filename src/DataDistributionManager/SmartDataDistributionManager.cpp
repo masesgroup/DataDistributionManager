@@ -218,7 +218,7 @@ std::string SmartDataDistributionBase::GetMastershipLib()
 }
 
 // IDataDistributionCallback
-const char * SmartDataDistributionBase::OnConfiguration(const char * key, const char * value)
+const char * SmartDataDistributionBase::OnConfiguration(const char *channelName, const char * key, const char * value)
 {
 	return value;
 }

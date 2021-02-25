@@ -19,110 +19,491 @@
 #if !defined(SMARTDATADISTRIBUTIONMANAGER_H__INCLUDED_)
 #define SMARTDATADISTRIBUTIONMANAGER_H__INCLUDED_
 
+/**
+ * @file SmartDataDistributionManager.h
+ * @brief DataDistributionManager library.
+ *
+ * SmartDataDistributionManager.h contains the public C++ API for Smart management of DataDistributionManager.
+ * The API is documented in this file as comments prefixing the class,
+ * function, type, enum, define, etc.
+ * The C++ interface is STD C++ '03 compliant and adheres to the
+ * Google C++ Style Guide.
+ *
+ * @tableofcontents
+ */
+
+/**@cond NO_DOC*/
 #include "DataDistributionManager.h"
 #include <vector>
 
-class __declspec(dllexport) SmartTimeMeasureWrapper : public ITimeMeasureWrapper
+/**@endcond*/
+
+/**
+ * @brief Smart class to manage ITimeMeasureWrapper
+ *
+ * A smart manager for timing
+ */
+class DDM_EXPORT SmartTimeMeasureWrapper : public ITimeMeasureWrapper
 {
 public:
+	/**
+	 * @brief Initialize a new SmartTimeMeasureWrapper
+	 */
 	SmartTimeMeasureWrapper();
+	/**
+	 * @brief Destructor of SmartTimeMeasureWrapper
+	 */
 	~SmartTimeMeasureWrapper();
+	/**
+	 * @brief Reset the timer
+	 *
+	 * Reset the timer information to zero
+	 *
+	 */
 	void ResetTime();
-
+	/**
+	 * @brief Reports the elapsed time in milliseconds
+	 *
+	 * Use to function to get the elapsed time in milliseconds
+	 *
+	 * @returns the elapsed time in milliseconds
+	 */
 	int64_t ElapsedMilliseconds();
-
+	/**
+	 * @brief Reports the elapsed time in microseconds
+	 *
+	 * Use to function to get the elapsed time in microseconds
+	 *
+	 * @returns the elapsed time in microseconds
+	 */
 	int64_t ElapsedMicroseconds();
-
+	/**
+	 * @brief Reports the elapsed time in nanoseconds
+	 *
+	 * Use to function to get the elapsed time in nanoseconds
+	 *
+	 * @returns the elapsed time in nanoseconds
+	 */
 	int64_t ElapsedNanoseconds();
-
+	/**
+	 * @brief Adds nanoseconds time to actual value
+	 *
+	 * Use to function to add \p time nanoseconds to current value
+	 * 
+	 * \p time the nanoseconds to be added
+	 * 
+	 */
 	void AddNanoseconds(unsigned int time);
+
 private:
-	ITimeMeasureWrapper* m_pITimeMeasureWrapper;
+	ITimeMeasureWrapper *m_pITimeMeasureWrapper;
 };
 
-class __declspec(dllexport) SmartDataDistributionChannel : protected IDataDistributionChannelCallback
+/**
+ * @brief Smart class to manage IDataDistributionChannelCallback
+ *
+ * A smart manager for channels
+ */
+class DDM_EXPORT SmartDataDistributionChannel : protected IDataDistributionChannelCallback
 {
 public:
+	/**
+	 * @brief Initialize a new SmartDataDistributionChannel
+	 */
 	SmartDataDistributionChannel();
+
 protected:
+	/**
+	 * @brief Destructor of SmartDataDistributionChannel
+	 */
 	~SmartDataDistributionChannel();
+
 public:
+	/**
+	 * @brief Returns the DDM_CHANNEL_DIRECTION channel direction
+	 */
 	DDM_CHANNEL_DIRECTION GetDirection();
-	void SetInformation(const char* channelName, IDataDistributionChannelBase* pIDataDistributionChannelBase, HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction);
-	HRESULT StartChannel(DWORD dwMilliseconds);
-	HRESULT StopChannel(DWORD dwMilliseconds);
+	/**
+	 * @brief Sets information on SmartDataDistributionChannel
+	 * 
+	 * \p channelName the channel name
+	 * \p pIDataDistributionChannelBase pointer to IDataDistributionChannelBase instance
+	 * \p channelHandle the HANDLE to the channel
+	 * \p direction DDM_CHANNEL_DIRECTION direction
+	 * 
+	 */
+	void SetInformation(const char *channelName, IDataDistributionChannelBase *pIDataDistributionChannelBase, HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction);
+	/**
+	 * @brief Starts the channel
+	 *
+	 * \p timeout the operation timeout in milliseconds
+	 * 
+	 * @returns the HRESULT of the operation
+	 */
+	HRESULT StartChannel(DWORD timeout);
+	/**
+	 * @brief Stops the channel
+	 *
+	 * \p timeout the operation timeout in milliseconds
+	 * 
+	 * @returns the HRESULT of the operation
+	 */
+	HRESULT StopChannel(DWORD timeout);
+	/**
+	 * @brief Locks the channel
+	 *
+	 * \p timeout the operation timeout in milliseconds
+	 * 
+	 * @returns the HRESULT of the operation
+	 */
 	HRESULT Lock(DWORD timeout);
+	/**
+	 * @brief Unlock the channel
+	 * 
+	 * @returns the HRESULT of the operation
+	 */
 	HRESULT Unlock();
+	/**
+	 * @brief Seeks the channel
+	 *
+	 * \p position the new channel position
+	 * 
+	 * @returns the HRESULT of the operation
+	 */
 	HRESULT SeekChannel(int64_t position);
-	HRESULT WriteOnChannel(const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll = FALSE, const int64_t timestamp = -1);
-	HRESULT ReadFromChannel(int64_t offset, size_t *dataLen, void **param);
+	/**
+	 * @brief Writes data on the channel
+	 *
+	 * \p key the key of the message to write, it can be NULL
+	 * \p keyLen the length of the key
+	 * \p buffer the buffer to write on the channel, it cannot be NULL
+	 * \p bufferLen the length of the buffer to write
+	 * \p waitAll set to TRUE to wait a complete message dispatch, default is FALSE. @remarks it depends on underlying implementation
+	 * \p timestamp a timestamp associable to the message, default is DDM_NO_TIMESTAMP and means no timestamp written
+	 * 
+	 * @returns the HRESULT of the operation
+	 */
+	HRESULT WriteOnChannel(const char *key, size_t keyLen, void *buffer, size_t bufferLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP);
+	/**
+	 * @brief Reads data from the channel
+	 *
+	 * \p offset offset to read info from
+	 * \p dataLen pointer will receive length of data read
+	 * \p buffer the buffer to receive data from the channel, it cannot be NULL
+	 * 
+	 * @returns the HRESULT of the operation
+	 */
+	HRESULT ReadFromChannel(int64_t offset, size_t *dataLen, void **buffer);
+	/**
+	 * @brief Change the DDM_CHANNEL_DIRECTION of the channel
+	 *
+	 * \p direction DDM_CHANNEL_DIRECTION direction
+	 * 
+	 * @returns the HRESULT of the operation
+	 */
 	HRESULT ChangeChannelDirection(DDM_CHANNEL_DIRECTION direction);
-	const char* GetChannelName();
-	virtual void OnDataAvailable(const char* key, size_t keyLen, const void* buffer, const size_t len);
-	virtual void OnDataAvailable(const std::string key, const void* buffer, const size_t len);
-	virtual void OnConditionOrError(const DDM_UNDERLYING_ERROR_CONDITION errorCode, const int nativeCode, const char* subSystemReason);
+	/**
+	 * @brief Returns the channel name
+	 * 
+	 * @returns the channel name
+	 */
+	const char *GetChannelName();
+	/**
+	 * @brief Function to override to receive data available
+	 * 
+	 * \p key the key of the message, NULL if the key was omitted in transmission
+	 * \p keyLen the length of key
+	 * \p buffer the data buffer received
+	 * \p len the length of the buffer
+	 * 
+	 */
+	virtual void OnDataAvailable(const char *key, size_t keyLen, const void *buffer, const size_t len);
+	/**
+	 * @brief Function to override to receive data available
+	 * 
+	 * \p key the key of the message, NULL if the key was omitted in transmission
+	 * \p buffer the data buffer received
+	 * \p len the length of the buffer
+	 * 
+	 */
+	virtual void OnDataAvailable(const std::string key, const void *buffer, const size_t len);
+	/**
+	 * @brief Function to override to receive condition or error
+	 * 
+	 * \p errorCode the DDM_UNDERLYING_ERROR_CONDITION error or condition
+	 * \p nativeCode the native code from transport subsystem
+	 * \p subSystemReason reason from transport subsystem
+	 * 
+	 */
+	virtual void OnConditionOrError(const DDM_UNDERLYING_ERROR_CONDITION errorCode, const int nativeCode, const char *subSystemReason);
+	/**
+	 * @brief Function to override to receive condition or error
+	 * 
+	 * \p errorCode the DDM_UNDERLYING_ERROR_CONDITION error or condition
+	 * \p nativeCode the native code from transport subsystem
+	 * \p subSystemReason reason from transport subsystem
+	 * 
+	 */
 	virtual void OnConditionOrError(const DDM_UNDERLYING_ERROR_CONDITION errorCode, const int nativeCode, const std::string subSystemReason);
+
 protected:
-	virtual void OnUnderlyingEvent(const HANDLE channelHandle, const UnderlyingEventData* uEvent);
+	/**
+	 * @brief Function to override to receive UnderlyingEventData
+	 * 
+	 * \p channelHandle the HANDLE of the channel
+	 * \p uEvent the UnderlyingEventData received from transport subsystem
+	 * 
+	 */
+	virtual void OnUnderlyingEvent(const HANDLE channelHandle, const UnderlyingEventData *uEvent);
+
 private:
-	const char* m_ChannelName;
+	const char *m_ChannelName;
 	HANDLE m_channelHandle;
-	IDataDistributionChannelBase* m_pIDataDistributionChannelBase;
+	IDataDistributionChannelBase *m_pIDataDistributionChannelBase;
 	DDM_CHANNEL_DIRECTION m_Direction;
 };
 
-class __declspec(dllexport) SmartDataDistributionBase : protected IDataDistributionCallback, protected IDataDistributionMastershipCallback
+/**
+ * @brief Smart class to manage IDataDistributionCallback and IDataDistributionMastershipCallback
+ *
+ * The main class to manage Data Distribution
+ */
+class DDM_EXPORT SmartDataDistributionBase : protected IDataDistributionCallback, protected IDataDistributionMastershipCallback
 {
 public:
+	/**
+	 * @brief Initialize a new SmartDataDistributionBase
+	 */
 	SmartDataDistributionBase();
+	/**
+	 * @brief Destructor of SmartDataDistributionBase
+	 */
 	~SmartDataDistributionBase();
-	HRESULT Initialize(const char* conf_file, const char* szMyAddress = 0, const char* channelTrailer = 0);
-	HRESULT Initialize(const char* arrayParams[], int len, const char* szMyAddress = 0, const char* channelTrailer = 0);
-	HRESULT RequestMastershipManager(const char* szMyAddress = NULL, const char* arrayParams[] = NULL, int len = 0);
-	BOOL Start(DWORD dwMilliseconds);
-	BOOL Stop(DWORD dwMilliseconds);
+	/**
+	 * @brief Initialize SmartDataDistributionBase system
+	 *
+	 * \p conf_file the external ASCII configuration file with lines written as key=value
+	 * \p hostAddress optional host address or host name
+	 * \p channelTrailer the optional trailer to be appended to channel name when each channel is created
+	 * 
+	 * @returns the HRESULT of the operation
+	 */
+	HRESULT Initialize(const char *conf_file, const char *hostAddress = 0, const char *channelTrailer = 0);
+	/**
+	 * @brief Initialize IDataDistribution instance
+	 *
+	 * \p arrayParams an array of string in the form key=value
+	 * \p len length of \p arrayParams
+	 * \p hostAddress optional host address or host name
+	 * \p channelTrailer the optional trailer to be appended to channel name when each channel is created
+	 * 
+	 * @returns the HRESULT of the operation
+	 */
+	HRESULT Initialize(const char *arrayParams[], int len, const char *hostAddress = 0, const char *channelTrailer = 0);
+	/**
+	 * @brief Allocate and initialize the mastership manager
+	 *
+	 * \p hostAddress optional host address or host name
+	 * \p arrayParams an array of string in the form key=value
+	 * \p len length of \p arrayParams
+	 * 
+	 * @returns the HRESULT of the operation
+	 */
+	HRESULT RequestMastershipManager(const char *hostAddress = NULL, const char *arrayParams[] = NULL, int len = 0);
+	/**
+	 * @brief Start the common manager
+	 *
+	 * \p timeout the operation timeout in milliseconds
+	 * 
+	 * @returns the HRESULT of the operation
+	 */
+	BOOL Start(DWORD timeout);
+	/**
+	 * @brief Stop the common manager
+	 *
+	 * \p timeout the operation timeout in milliseconds
+	 * 
+	 * @returns the HRESULT of the operation
+	 */
+	BOOL Stop(DWORD timeout);
+	/**
+	 * @brief Returns the protocol in use from IDataDistribution instance
+	 * 
+	 * @returns the protocol name
+	 */
 	std::string GetProtocol();
+	/**
+	 * @brief Returns the protocol library in use from IDataDistribution instance
+	 * 
+	 * @returns the protocol library name
+	 */
 	std::string GetProtocolLib();
+	/**
+	 * @brief Returns the mastership library in use from IDataDistribution instance
+	 * 
+	 * @returns the mastership library name
+	 */
 	std::string GetMastershipLib();
+
 protected:
 	// IDataDistributionCallback
-	virtual const char * OnConfiguration(const char * key, const char * value);
-	virtual void OnLogging(DDM_LOG_LEVEL, const char *, const char*, const char*);
-	virtual void OnCompletelyDisconnected(const char * channelName, const char* reason);
+	/**
+	* @brief Function invoked during configuration validation
+	*
+	* The callback is usable to override configuration parameters in some special conditions.
+	* \p channelName reports the channel involved (null for global parameters),
+	* \p key is the parameter key to be checked and \p value is the actual value.
+	* @return \p value if no change is needed, otherwise any new string value according to the expected parameter type
+	*/
+	virtual const char *OnConfiguration(const char *channelName, const char *key, const char *value);
+	/**
+	 * @brief Function invoked when a log is emitted from subsystem.
+	 *
+	 * The callback is usable to receive log information.
+	 * \p level is the DDM_LOG_LEVEL of the log reported
+	 * \p source is the module source name of the log
+	 * \p function is the function, within the module, reporting the log
+	 * @return \p logStr is the reported log string
+	 *
+	 * @sa IDataDistributionLog::Log
+	 *
+	 */
+	virtual void OnLogging(DDM_LOG_LEVEL level, const char * source, const char * function, const char * logStr);
+	/**
+	 * @brief Callback invoked on a complete disconnection.
+	 *
+	 * Callback invoked when subsystem detects a complete disconnection from central server or other peers.
+	 * \p channelName reports the disconnected channel
+	 * \p reason is the reason of disconnection.
+	 *
+	 */
+	virtual void OnCompletelyDisconnected(const char *channelName, const char *reason);
 	// IDataDistributionMastershipCallback
+	/**
+	 * @brief Callback invoked to report cluster state change.
+	 *
+	 * Callback invoked when subsystem needs to report a cluster state change.
+	 * 
+	 * \p change reports the DDM_CLUSTEREVENT event
+	 * \p serverid the server id reporting the change
+	 *
+	 */
 	virtual void OnClusterStateChange(DDM_CLUSTEREVENT change, int64_t serverid);
+	/**
+	 * @brief Callback invoked to report a state change.
+	 *
+	 * Callback invoked when subsystem needs to report a state change.
+	 * 
+	 * \p newState reports the new DDM_INSTANCE_STATE state
+	 * \p oldState reports the new DDM_INSTANCE_STATE state
+	 *
+	 */
 	virtual void OnStateChange(DDM_INSTANCE_STATE newState, DDM_INSTANCE_STATE oldState);
-	virtual void OnStateReady(void* pState, int64_t len);
-	virtual void OnRequestedState(void** pState, size_t* len);
+	/**
+	 * @brief Callback invoked when a state transfer is completed
+	 *
+	 * Callback invoked when subsystem needs to report a completed state transfer
+	 * 
+	 * \p pState pointer to the buffer of the state
+	 * \p len the length of the buffer
+	 *
+	 */
+	virtual void OnStateReady(void *pState, int64_t len);
+	/**
+	 * @brief Callback invoked when a state transfer is requested
+	 *
+	 * Callback invoked when subsystem needs to request a state transfer. Fill \p pState and \p len with state information
+	 * 
+	 * \p pState pointer to the buffer of the state
+	 * \p len the length of the buffer
+	 *
+	 */
+	virtual void OnRequestedState(void **pState, size_t *len);
+	/**
+	 * @brief Callback invoked when multiple primary server are detected
+	 *
+	 * Callback invoked when subsystem needs to report there are multiple primary server are detected
+	 * 
+	 * \p myId my primary identifier
+	 * \p otherId other primary identifier
+	 *
+	 */
 	virtual void OnMultiplePrimary(int64_t myId, int64_t otherId);
+	/**
+	 * @brief Callback invoked to report a first state change
+	 *
+	 * Callback invoked when subsystem needs to to report a first state change
+	 * 
+	 * \p newState DDM_INSTANCE_STATE state
+	 *
+	 */
 	virtual void FirstStateChange(DDM_INSTANCE_STATE newState);
-	virtual void ChangingState(DDM_INSTANCE_STATE oldState, DDM_INSTANCE_STATE newState);
-	virtual void ChangedState(DDM_INSTANCE_STATE newState);
+	/**
+	 * @brief Callback invoked to report a starting instance state change
+	 *
+	 * Callback invoked when subsystem needs to report a state change.
+	 * 
+	 * \p futureState reports the future DDM_INSTANCE_STATE state
+	 * \p actualState reports the actual DDM_INSTANCE_STATE state
+	 *
+	 */
+	virtual void ChangingState(DDM_INSTANCE_STATE actualState, DDM_INSTANCE_STATE futureState);
+	/**
+	 * @brief Callback invoked to report a finished instance state change
+	 *
+	 * Callback invoked when subsystem needs to report a state change.
+	 * 
+	 * \p actualState reports the actual DDM_INSTANCE_STATE state
+	 *
+	 */
+	virtual void ChangedState(DDM_INSTANCE_STATE actualState);
+
 protected:
-	IDataDistribution* m_pIDataDistribution;
-	IDataDistributionMastershipCommon* m_pIDataDistributionMastershipCommon;
+	IDataDistribution *m_pIDataDistribution;
+	IDataDistributionMastershipCommon *m_pIDataDistributionMastershipCommon;
 	HRESULT m_pInitializeHRESULT;
 };
 
+/**
+ * @brief Smart class to manage DataDistribution
+ * 
+ * @tparam T The class inherited from SmartDataDistributionChannel
+ */
 template <typename T>
-class __declspec(dllexport) SmartDataDistribution : public SmartDataDistributionBase
+class DDM_EXPORT SmartDataDistribution : public SmartDataDistributionBase
 {
 public:
+	/**
+	 * @brief Initialize a new SmartDataDistribution
+	 */
 	SmartDataDistribution() : SmartDataDistributionBase() {}
+	/**
+	 * @brief Destructor of SmartDataDistribution
+	 */
 	~SmartDataDistribution() {}
-	T* CreateSmartChannel(const char* channelName, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION::ALL, const char* arrayParams[] = NULL, int len = 0)
+	/**
+	 * @brief Creates a new smart channel
+	 *
+	 * \p channelName the name of the channel
+	 * \p direction DDM_CHANNEL_DIRECTION direction, default is DDM_CHANNEL_DIRECTION::ALL
+	 * \p arrayParams an array of string in the form key=value to override parameters passed into IDataDistribution::Initialize
+	 * \p len length of arrayParams
+	 * 
+	 * @return T* the allocated instance
+	 */
+	T *CreateSmartChannel(const char *channelName, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION::ALL, const char *arrayParams[] = NULL, int len = 0)
 	{
 		static_assert(std::is_base_of<SmartDataDistributionChannel, T>::value, "type parameter of this class must derive from SmartDataDistributionChannel");
-		if (m_pInitializeHRESULT != S_OK) return NULL;
-		T* pSmartChannelT = new T();
-		SmartDataDistributionChannel* pSmartChannel = (SmartDataDistributionChannel*)pSmartChannelT;
-		IDataDistributionChannelBase* pChannelBase = m_pIDataDistribution->GetSubsystemManager();
-		HANDLE channelHandle = pChannelBase->CreateChannel(channelName, (IDataDistributionChannelCallback*)pSmartChannel, direction, arrayParams, len);
+		if (m_pInitializeHRESULT != S_OK)
+			return NULL;
+		T *pSmartChannelT = new T();
+		SmartDataDistributionChannel *pSmartChannel = (SmartDataDistributionChannel *)pSmartChannelT;
+		IDataDistributionChannelBase *pChannelBase = m_pIDataDistribution->GetSubsystemManager();
+		HANDLE channelHandle = pChannelBase->CreateChannel(channelName, (IDataDistributionChannelCallback *)pSmartChannel, direction, arrayParams, len);
 		pSmartChannel->SetInformation(channelName, pChannelBase, channelHandle, direction);
 
 		return pSmartChannelT;
 	}
 };
-
 
 #endif // End SMARTDATADISTRIBUTIONMANAGER_H__INCLUDED_

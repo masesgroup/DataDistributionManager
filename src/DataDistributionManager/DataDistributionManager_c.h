@@ -19,7 +19,7 @@
 #ifndef _Included_DataDistributionManager_c
 #define _Included_DataDistributionManager_c
 
-#define DLLEXPORT __declspec(dllexport)
+#define DLLEXPORT DDM_EXPORT
 #define DLLIMPORT __declspec(dllimport)
 #define DLLCALL __cdecl
 

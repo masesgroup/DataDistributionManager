@@ -474,9 +474,9 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @return The allocated instance
      * @throws Throwable
      */
-    public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String channelName)
+    public <T extends SmartDataDistributionChannel> T CreateSmartChannel(Class<T> clazz, String channelName)
             throws Throwable {
-        return CeateSmartChannel(clazz, channelName, (IConfiguration) null, DDM_CHANNEL_DIRECTION.ALL);
+        return CreateSmartChannel(clazz, channelName, (IConfiguration) null, DDM_CHANNEL_DIRECTION.ALL);
     }
 
     /**
@@ -489,9 +489,9 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @return The allocated instance
      * @throws Throwable
      */
-    public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String channelName,
+    public <T extends SmartDataDistributionChannel> T CreateSmartChannel(Class<T> clazz, String channelName,
             IConfiguration configuration) throws Throwable {
-        return CeateSmartChannel(clazz, channelName, configuration, DDM_CHANNEL_DIRECTION.ALL);
+        return CreateSmartChannel(clazz, channelName, configuration, DDM_CHANNEL_DIRECTION.ALL);
     }
 
     /**
@@ -505,9 +505,9 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @return The allocated instance
      * @throws Throwable
      */
-    public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String channelName,
+    public <T extends SmartDataDistributionChannel> T CreateSmartChannel(Class<T> clazz, String channelName,
             IConfiguration configuration, DDM_CHANNEL_DIRECTION direction) throws Throwable {
-        return CeateSmartChannel(clazz, channelName, direction,
+        return CreateSmartChannel(clazz, channelName, direction,
                 (configuration == null) ? null : configuration.getConfiguration());
     }
 
@@ -522,7 +522,7 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @throws Throwable
      */
     @SuppressWarnings("unchecked")
-    public <T extends SmartDataDistributionChannel> T CeateSmartChannel(Class<T> clazz, String channelName,
+    public <T extends SmartDataDistributionChannel> T CreateSmartChannel(Class<T> clazz, String channelName,
             DDM_CHANNEL_DIRECTION direction, String[] arrayParams) throws Throwable {
         if (IDataDistributionSubsystemManager_ptr == 0)
             return null;

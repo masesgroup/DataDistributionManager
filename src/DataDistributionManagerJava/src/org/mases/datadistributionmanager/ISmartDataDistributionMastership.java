@@ -56,9 +56,9 @@ public interface ISmartDataDistributionMastership {
     void ChangeState(long instanceId, DDM_INSTANCE_STATE newState);
 
     /**
-     * Check if this is the next primary server
+     * Request to be the next primary server
      * 
-     * @return True if this server is the next primary
+     * @return True in case of success
      */
     boolean RequestIAmNextPrimary();
 

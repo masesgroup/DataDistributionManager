@@ -28,7 +28,7 @@
 
 const char* DATADISTRIBUTION_SCHEMA_OPENDDSMSG_TYPE = "OpenDDS Msg Type";
 
-extern "C" __declspec(dllexport) void* CreateObjectImplementation()
+extern "C" DDM_EXPORT void* CreateObjectImplementation()
 {
 	return static_cast<void*> (new DataDistributionManagerOpenDDS);
 }
@@ -168,7 +168,6 @@ HRESULT DataDistributionManagerOpenDDS::InitializeInfoRepo()
 	if (m_bStartDCPSInfoRepo)
 	{
 		// get path of DataDistributionManagerOpenDDS.dll because DCPSInfoRepo is in the same folder
-		TCHAR oldPath[64 * 1024];
 #if DEBUG
 		std::string moduleName("DataDistributionManagerOpenDDSd.dll");
 #else
@@ -1376,7 +1375,7 @@ HRESULT DataDistributionManagerOpenDDS::WriteOnChannel(HANDLE channelHandle, con
 	}
 
 	msg_handle = pChannelConfiguration->channel_dw->register_instance(msg);
-	if (timestamp != -1)
+	if (timestamp != DDM_NO_TIMESTAMP)
 	{
 #pragma warning "create time"
 		::DDS::Time_t time;

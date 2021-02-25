@@ -97,16 +97,6 @@ namespace MASES.DataDistributionManager.Bindings
             return ToString((int)level);
         }
 
-        /// <summary>
-        /// Converts enum in string
-        /// </summary>
-        /// <param name="level"><see cref="CHANNEL_STARTUP_TYPE"/></param>
-        /// <returns>Numeric string representation</returns>
-        public static string ToIntString(this CHANNEL_STARTUP_TYPE level)
-        {
-            return ToString((int)level);
-        }
-
         static string ToString(int val)
         {
             return val.ToString();

@@ -25,6 +25,16 @@
 
 #include "DataDistributionManagerCommon.h"
 
+typedef enum class DDM_KEEPALIVE_TYPE
+{
+	ALIVE = 0x1,
+	HELLO = 0x2,
+	WELCOME = 0x4,
+	GOODBYE = 0x8,
+	STATECHANGEREQUEST = 0x10,
+	STATECHANGERESPONSE = 0x20,
+} DDM_KEEPALIVE_TYPE;
+
 struct BaseKeepAlive
 {
 	int MessageLength;
@@ -102,7 +112,7 @@ struct STATECHANGERESPONSE : BaseKeepAlive
 	}
 };
 
-class __declspec(dllexport) DataDistributionMastershipCommon : public IDataDistributionMastershipCommon, protected IDataDistributionChannelCallback, protected IDataDistributionLog
+class DDM_EXPORT DataDistributionMastershipCommon : public IDataDistributionMastershipCommon, protected IDataDistributionChannelCallback, protected IDataDistributionLog
 {
 public:
 	DataDistributionMastershipCommon();

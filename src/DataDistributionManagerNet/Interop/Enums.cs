@@ -101,7 +101,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         DEBUG_LEVEL = 0x10
     };
     /// <summary>
-    /// Errors from undetlying layer
+    /// Errors or conditions from underlying layer
     /// </summary>
     public enum DDM_UNDERLYING_ERROR_CONDITION : int
     {
@@ -224,31 +224,5 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         /// A server was removed from the cluster
         /// </summary>
         REMOVESERVER = 0x8
-    };
-    /// <summary>
-    /// Startup state
-    /// </summary>
-    public enum CHANNEL_STARTUP_TYPE : int
-    {
-        /// <summary>
-        /// Undefined
-        /// </summary>
-        UNDEFINED = 0x1,
-        /// <summary>
-        /// Created
-        /// </summary>
-        CREATED = 0x2,
-        /// <summary>
-        /// Started
-        /// </summary>
-        STARTED = 0X4,
-        /// <summary>
-        /// Stopped
-        /// </summary>
-        STOPPED = 0X8,
-        /// <summary>
-        /// Disconnected
-        /// </summary>
-        DISCONNECTED = 0x10
     };
 }

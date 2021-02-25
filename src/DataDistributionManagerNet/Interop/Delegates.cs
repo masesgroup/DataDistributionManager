@@ -143,7 +143,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     delegate HRESULT IDataDistributionSubsystem_WriteOnChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle,
                                                                  [MarshalAs(UnmanagedType.LPStr)] string key, IntPtr keyLen,
                                                                  IntPtr param, IntPtr dataLen,
-                                                                 bool waitAll = false, Int64 timestamp = -1);
+                                                                 bool waitAll = false, Int64 timestamp = SmartDataDistributionChannel.DDM_NO_TIMESTAMP);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate HRESULT IDataDistributionSubsystem_ReadFromChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle,
                                                                   long offset, [In, Out] IntPtr dataLen, [In, Out]IntPtr buffer);
@@ -166,7 +166,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate bool IDataDistributionMastershipCommon_RequestIAmNextPrimary(IntPtr IDataDistribution_instance);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    [return: MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.I8))]
+    [return: MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.I8)]
     delegate Int64[] IDataDistributionMastershipCommon_GetClusterIndexes(IntPtr IDataDistribution_instance, [In, Out] IntPtr dataLen);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate DDM_INSTANCE_STATE IDataDistributionMastershipCommon_GetStateOf(IntPtr IDataDistribution_instance, [In] Int64 index);

@@ -976,10 +976,9 @@ namespace MASES.DataDistributionManager.Bindings
             {
                 IDictionary<Int64, ClusterHealthElement> result = new Dictionary<Int64, ClusterHealthElement>();
 
-                Int64[] arrayElements = null;
                 IntPtr length = IntPtr.Zero;
 
-                DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionMastershipCommon_GetClusterIndexes>().Invoke(IDataDistribution_ptr, arrayElements, length);
+                Int64[] arrayElements = DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionMastershipCommon_GetClusterIndexes>().Invoke(IDataDistribution_ptr, length);
 
                 if (length != IntPtr.Zero && arrayElements != null)
                 {
