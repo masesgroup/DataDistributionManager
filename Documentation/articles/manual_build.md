@@ -1,6 +1,6 @@
 # How to build
-
-The following steps are needed to build Data Distribution Manager manually:
+Build the DataDistributionManager is often not needed as the users can use the released Jar files and/or NuGet packages. 
+Anyway the following steps are needed to build Data Distribution Manager manually:
 
 * Clone the repository from [Github DataDistributionManager](https://github.com/masesgroup/DataDistributionManager)
 

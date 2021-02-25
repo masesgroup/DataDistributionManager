@@ -351,6 +351,11 @@ jobs:
       - name: Clear documentation folder 
         run: Remove-Item .\docs\* -Recurse -Force
 
+      - name: Create C/C++ documentation folder 
+        uses: mattnotmitt/doxygen-action@v1
+        with:
+          working-directory: 'Documentation'
+
       - name: Build documentation
         run: |
           choco install docfx

@@ -18,7 +18,9 @@
       {
         "files": [
           "api/**.yml",
-          "api/index.md"
+          "api/index.md",
+          "javadoc/root.md",
+          "cppdoc/root.md"
         ]
       },
       {
@@ -41,6 +43,12 @@
           "javadoc/**"
         ],
 		"src": "../src/DataDistributionManagerJava"
+      },
+      {
+        "files": [
+          "cppdoc/html/**"
+        ],
+		"src": ".."
       }
     ],
     "overwrite": [
