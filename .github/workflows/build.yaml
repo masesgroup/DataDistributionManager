@@ -358,6 +358,14 @@ jobs:
           Expand-Archive -LiteralPath '.\doxygen-1.9.1.windows.x64.bin.zip' -DestinationPath .\ -Force
           doxygen
 
+      - name: Expand Doxygen package
+        run: Expand-Archive -LiteralPath '.\Documentation\doxygen-1.9.1.windows.x64.bin.zip' -DestinationPath .\Documentation -Force
+
+      - name: Create C/C++ documentation
+        run: |
+          cd Documentation
+          doxygen
+
       - name: Build documentation
         run: |
           choco install docfx

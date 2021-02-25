@@ -131,6 +131,8 @@ public:
 	 * \p channelHandle the HANDLE to the channel
 	 * \p direction DDM_CHANNEL_DIRECTION direction
 	 * 
+	 * @remarks Used from SmartDataDistribution::CreateSmartChannel
+	 * 
 	 */
 	void SetInformation(const char *channelName, IDataDistributionChannelBase *pIDataDistributionChannelBase, HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction);
 	/**
@@ -368,7 +370,7 @@ protected:
 	 * @sa IDataDistributionLog::Log
 	 *
 	 */
-	virtual void OnLogging(DDM_LOG_LEVEL level, const char * source, const char * function, const char * logStr);
+	virtual void OnLogging(DDM_LOG_LEVEL level, const char *source, const char *function, const char *logStr);
 	/**
 	 * @brief Callback invoked on a complete disconnection.
 	 *
