@@ -766,7 +766,7 @@ namespace MASES.DataDistributionManager.Bindings
             OnClusterStateChange(change, serverid);
             ClusterStateChangeEvent?.Invoke(this, new ClusterStateChangeEventArgs(change, serverid));
         }
- 
+
         void IDataDistributionMastershipCallbackLow.OnStateChange(IntPtr IDataDistribution_nativePtr, DDM_INSTANCE_STATE newState, DDM_INSTANCE_STATE oldState)
         {
             OnStateChange(newState, oldState);

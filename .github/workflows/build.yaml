@@ -358,9 +358,10 @@ jobs:
         run: Expand-Archive -LiteralPath '.\doxygen-1.9.1.windows.x64.bin.zip' -DestinationPath .\Documentation -Force
 
       - name: Create C/C++ documentation
+        shell: cmd
         run: |
           cd Documentation
-          doxygen
+          doxygen Doxyfile
 
       - name: Build documentation
         run: |
