@@ -22,14 +22,25 @@ package org.mases.datadistributionmanager;
  * Container of cluster instance information
  */
 public class ClusterHealthElement {
+    final long ServerId;
     final DDM_INSTANCE_STATE Status;
     final long Uptime;
     final long LastContactTime;
 
-    ClusterHealthElement(int status, long uptime, long lastContactTime) {
+    ClusterHealthElement(long serverId, int status, long uptime, long lastContactTime) {
+        this.ServerId = serverId;
         this.Status = DDM_INSTANCE_STATE.valueOfAtomicNumber(status);
         this.Uptime = uptime;
         this.LastContactTime = lastContactTime;
+    }
+
+    /**
+     * Server identifier
+     * 
+     * @return The server id
+     */
+    public long getServerId() {
+        return ServerId;
     }
 
     /**

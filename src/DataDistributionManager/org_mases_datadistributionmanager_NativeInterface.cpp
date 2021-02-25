@@ -1112,7 +1112,7 @@ JNIEXPORT jobject JNICALL Java_org_mases_datadistributionmanager_NativeInterface
 	jclass clazz = env->FindClass("org/mases/businesscontinuity/ClusterHealthElement");
 	if (!clazz) return NULL;
 	jmethodID ctor = env->GetMethodID(clazz, "<init>", "(IJJ)V");
-	jobject result = env->NewObject(clazz, ctor, info->Status, info->Uptime, info->LastContactTime);
+	jobject result = env->NewObject(clazz, ctor, info->ServerId, info->Status, info->Uptime, info->LastContactTime);
 	env->DeleteLocalRef(clazz);
 
 	return result;

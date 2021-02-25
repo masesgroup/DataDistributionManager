@@ -48,10 +48,11 @@ void DataDistributionMastershipManagerBase::OnALIVE(ALIVE* pALIVE)
 	else
 	{
 		ClusterHealthElement* data = new ClusterHealthElement();
+		data->ServerId = pALIVE->ServerId;
 		data->Status = pALIVE->Status;
 		data->Uptime = pALIVE->Uptime;
 		data->LastContactTime = GetUpTime();
-		clusterState.insert(std::pair<int64_t, ClusterHealthElement*>(pALIVE->ServerId, data));
+		clusterState.insert(std::pair<int64_t, ClusterHealthElement*>(data->ServerId, data));
 		m_pMastershipCallback->OnClusterStateChange(DDM_CLUSTEREVENT::ADDSERVER, pALIVE->ServerId);
 	}
 	bool addRandomTime = false;

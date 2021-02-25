@@ -31,10 +31,15 @@ namespace MASES.DataDistributionManager.Bindings
     {
         internal ClusterHealthElement(ClusterHealthElementStruct s)
         {
+            this.ServerId = s.ServerId;
             this.Status = s.Status;
             this.Uptime = s.Uptime;
             this.LastContactTime = s.LastContactTime;
         }
+        /// <summary>
+        /// Instance status
+        /// </summary>
+        public Int64 ServerId { get; private set; }
         /// <summary>
         /// Instance status
         /// </summary>

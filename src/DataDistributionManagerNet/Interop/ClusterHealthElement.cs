@@ -24,6 +24,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     [StructLayout(LayoutKind.Sequential)]
     struct ClusterHealthElementStruct
     {
+        public Int64 ServerId;
         public DDM_INSTANCE_STATE Status;
         public Int64 Uptime;
         public Int64 LastContactTime;

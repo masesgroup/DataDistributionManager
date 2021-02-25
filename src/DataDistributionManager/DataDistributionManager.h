@@ -96,6 +96,7 @@ typedef void(__cdecl *dataDistributionCompletelyDisconnectedCb)(const void *opaq
  */
 struct ClusterHealthElement
 {
+	int64_t ServerId;          /*!< The server id of the instance */
 	DDM_INSTANCE_STATE Status; /*!< The DDM_INSTANCE_STATE status of the instance */
 	int64_t Uptime;			   /*!< The uptime reported from the instance */
 	int64_t LastContactTime;   /*!< Last time the server contacted this instance */
