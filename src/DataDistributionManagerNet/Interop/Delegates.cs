@@ -166,9 +166,8 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate bool IDataDistributionMastershipCommon_RequestIAmNextPrimary(IntPtr IDataDistribution_instance);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate void IDataDistributionMastershipCommon_GetClusterIndexes(IntPtr IDataDistribution_instance,
-                                                                      [In, Out][MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.I8)] Int64[] arrayElements,
-                                                                      [In, Out] IntPtr dataLen);
+    [return: MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.I8))]
+    delegate Int64[] IDataDistributionMastershipCommon_GetClusterIndexes(IntPtr IDataDistribution_instance, [In, Out] IntPtr dataLen);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate DDM_INSTANCE_STATE IDataDistributionMastershipCommon_GetStateOf(IntPtr IDataDistribution_instance, [In] Int64 index);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]

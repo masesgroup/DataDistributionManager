@@ -22,6 +22,7 @@ using System.Collections.Generic;
 
 namespace MASES.DataDistributionManager.Bindings
 {
+    #region ISmartDataDistributionMastership
     /// <summary>
     /// Interface to manage underlying mastersip manager
     /// </summary>
@@ -89,4 +90,5 @@ namespace MASES.DataDistributionManager.Bindings
         /// </summary>
         Int64 UpTime { get; }
     }
+    #endregion
 }

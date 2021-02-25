@@ -113,7 +113,7 @@ public:
 	virtual HRESULT Stop(DWORD dwMilliseconds);
 	virtual BOOL GetIamNextPrimary();
 	virtual BOOL RequestIAmNextPrimary();
-	virtual void GetClusterIndexes(int64_t arraElements[], size_t* length) = 0;
+	virtual int64_t* GetClusterIndexes(size_t* length) = 0;
 	virtual DDM_INSTANCE_STATE GetStateOf(int64_t serverId) = 0;
 	virtual ClusterHealth GetClusterHealth() = 0;
 	virtual DDM_INSTANCE_STATE GetMyState();

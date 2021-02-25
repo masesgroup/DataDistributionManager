@@ -265,13 +265,15 @@ DLLEXPORT BOOL DLLCALL IDataDistributionMastershipCommon_RequestIAmNextPrimary(v
 	return FALSE;
 }
 
-DLLEXPORT void DLLCALL IDataDistributionMastershipCommon_GetClusterIndexes(void* IDataDistribution_instance, int64_t arrayElements[], size_t* length)
+DLLEXPORT int64_t* DLLCALL IDataDistributionMastershipCommon_GetClusterIndexes(void* IDataDistribution_instance, size_t* length)
 {
 	IDataDistribution* pIDataDistribution_instance = static_cast<IDataDistribution*>(IDataDistribution_instance);
 	if (pIDataDistribution_instance->GetMastershipManager() != NULL)
 	{
-		pIDataDistribution_instance->GetMastershipManager()->GetClusterIndexes(arrayElements, length);
+		return pIDataDistribution_instance->GetMastershipManager()->GetClusterIndexes(length);
 	}
+	*length = 0;
+	return NULL;
 }
 
 DLLEXPORT DDM_INSTANCE_STATE DLLCALL IDataDistributionMastershipCommon_GetStateOf(void* IDataDistribution_instance, int64_t index)

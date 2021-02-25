@@ -953,10 +953,9 @@ namespace MASES.DataDistributionManager.Bindings
             {
                 IDictionary<Int64, DDM_INSTANCE_STATE> result = new Dictionary<Int64, DDM_INSTANCE_STATE>();
 
-                Int64[] arrayElements = null;
                 IntPtr length = IntPtr.Zero;
 
-                DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionMastershipCommon_GetClusterIndexes>().Invoke(IDataDistribution_ptr, arrayElements, length);
+                Int64[] arrayElements = DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionMastershipCommon_GetClusterIndexes>().Invoke(IDataDistribution_ptr, length);
 
                 if (length != IntPtr.Zero && arrayElements != null)
                 {

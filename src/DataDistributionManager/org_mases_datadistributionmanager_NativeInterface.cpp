@@ -1069,9 +1069,8 @@ JNIEXPORT jlongArray JNICALL Java_org_mases_datadistributionmanager_NativeInterf
 	IDataDistribution* pIDataDistribution = (IDataDistribution*)jIDataDistribution;
 	if (pIDataDistribution->GetMastershipManager() == NULL) return NULL;
 
-	int64_t* arrayElements = NULL;
 	size_t length;
-	pIDataDistribution->GetMastershipManager()->GetClusterIndexes(arrayElements, &length);
+	int64_t* arrayElements = pIDataDistribution->GetMastershipManager()->GetClusterIndexes(&length);
 	jlongArray jArray = NULL;
 	if (length != 0)
 	{

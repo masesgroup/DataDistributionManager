@@ -31,7 +31,10 @@
 #endif /* _INC_WINDOWS */
 
 #include "DataDistributionManagerEnums.h"
-
+/**
+ * @brief 
+ * 
+ */
 typedef const char*(__cdecl *dataDistributionConfigurationCb) (const void* opaque, const char * channelName, const char* key, const char* value);
 typedef void(__cdecl *dataDistributionLoggingCb) (const void* opaque, const DDM_LOG_LEVEL level, const char* source, const char* function, const char* errorStr);
 typedef void(__cdecl *dataDistributionCompletelyDisconnectedCb) (const void* opaque, const char* source, const char* errorStr);
@@ -42,23 +45,30 @@ struct ClusterHealthElement
 	int64_t Uptime;
 	int64_t LastContactTime;
 };
-
-struct ClusterStateElement
-{
-	size_t ServerId;
-	DDM_INSTANCE_STATE Status;
-
-	ClusterStateElement(size_t serverId, DDM_INSTANCE_STATE status)
-	{
-		ServerId = serverId;
-		Status = status;
-	}
-};
+///*! \class ClusterStateElement
+//    \brief A class con.
+//
+//    A more detailed class description.
+//*/
+//struct ClusterStateElement
+//{
+//	int64_t ServerId; /*!< Server identifier */
+//	DDM_INSTANCE_STATE Status; /*!< Status of server  */
+//
+//	ClusterStateElement(int64_t serverId, DDM_INSTANCE_STATE status)
+//	{
+//		ServerId = serverId;
+//		Status = status;
+//	}
+//};
 
 class IDataDistributionMastershipCallback;
 class IDataDistributionMastershipCommon;
 class IDataDistributionSubsystem;
-
+/**
+ * @brief Construct a new declspec object
+ * 
+ */
 class __declspec(dllexport) ITimeMeasureWrapper
 {
 public:
@@ -233,7 +243,7 @@ public:
 	virtual HRESULT Stop(DWORD dwMilliseconds) = 0;
 	virtual BOOL GetIamNextPrimary() = 0;
 	virtual BOOL RequestIAmNextPrimary() = 0;
-	virtual void GetClusterIndexes(int64_t arraElements[], size_t* length) = 0;
+	virtual int64_t* GetClusterIndexes(size_t* length) = 0;
 	virtual DDM_INSTANCE_STATE GetStateOf(int64_t serverId) = 0;
 	virtual ClusterHealth GetClusterHealth() = 0;
 	virtual DDM_INSTANCE_STATE GetMyState() = 0;

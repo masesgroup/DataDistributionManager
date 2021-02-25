@@ -78,7 +78,7 @@ extern "C" {
 	DLLEXPORT HRESULT DLLCALL IDataDistributionMastershipCommon_Stop(void* IDataDistribution_instance, DWORD dwMilliseconds);
 	DLLEXPORT BOOL DLLCALL IDataDistributionMastershipCommon_GetIamNextPrimary(void* IDataDistribution_instance);
 	DLLEXPORT BOOL DLLCALL IDataDistributionMastershipCommon_RequestIAmNextPrimary(void* IDataDistribution_instance);
-	DLLEXPORT void DLLCALL IDataDistributionMastershipCommon_GetClusterIndexes(void* IDataDistribution_instance, int64_t arrayElements[], size_t* length);
+	DLLEXPORT int64_t* DLLCALL IDataDistributionMastershipCommon_GetClusterIndexes(void* IDataDistribution_instance, size_t* length);
 	DLLEXPORT DDM_INSTANCE_STATE DLLCALL IDataDistributionMastershipCommon_GetStateOf(void* IDataDistribution_instance, int64_t index);
 	DLLEXPORT void* DLLCALL IDataDistributionMastershipCommon_GetClusterHealth(void* IDataDistribution_instance, int64_t index);
 	DLLEXPORT DDM_INSTANCE_STATE DLLCALL IDataDistributionMastershipCommon_GetMyState(void* IDataDistribution_instance);

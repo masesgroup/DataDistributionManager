@@ -32,13 +32,13 @@ DataDistributionMastershipManager::~DataDistributionMastershipManager()
 {
 }
 
-void DataDistributionMastershipManager::GetClusterIndexes(int64_t arraElements[], size_t* length)
+int64_t* DataDistributionMastershipManager::GetClusterIndexes(size_t* length)
 {
 	ClusterHealthIterator it;
 
 	EnterCriticalSection(&m_csFlags);
 	*length = clusterState.size();
-	*arraElements = (int64_t)malloc(sizeof(int64_t) * (*length));
+	int64_t* arraElements = (int64_t*)malloc(sizeof(int64_t) * (*length));
 	size_t counter = 0;
 	for (it = clusterState.begin(); it != clusterState.end(); ++it)
 	{
@@ -46,6 +46,7 @@ void DataDistributionMastershipManager::GetClusterIndexes(int64_t arraElements[]
 		counter++;
 	}
 	LeaveCriticalSection(&m_csFlags);
+	return arraElements;
 }
 
 DDM_INSTANCE_STATE DataDistributionMastershipManager::GetStateOf(int64_t serverId)
