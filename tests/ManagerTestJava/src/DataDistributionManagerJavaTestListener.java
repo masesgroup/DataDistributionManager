@@ -84,7 +84,7 @@ public class DataDistributionManagerJavaTestListener {
 		String[] channelConfRes = channelConf.getConfiguration();
 		SmartDataDistributionChannel mytestTopic;
 		try {
-			mytestTopic = dataDistribution.CeateSmartChannel(SmartDataDistributionChannel.class, "test");
+			mytestTopic = dataDistribution.CreateSmartChannel(SmartDataDistributionChannel.class, "test");
 		} catch (Throwable e) {
 			e.printStackTrace();
 			return;
