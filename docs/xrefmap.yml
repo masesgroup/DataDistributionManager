@@ -128,6 +128,19 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.ClusterHealthElement.LastContactTime
   nameWithType: ClusterHealthElement.LastContactTime
+- uid: MASES.DataDistributionManager.Bindings.ClusterHealthElement.ServerId
+  name: ServerId
+  href: api/MASES.DataDistributionManager.Bindings.ClusterHealthElement.html#MASES_DataDistributionManager_Bindings_ClusterHealthElement_ServerId
+  commentId: P:MASES.DataDistributionManager.Bindings.ClusterHealthElement.ServerId
+  fullName: MASES.DataDistributionManager.Bindings.ClusterHealthElement.ServerId
+  nameWithType: ClusterHealthElement.ServerId
+- uid: MASES.DataDistributionManager.Bindings.ClusterHealthElement.ServerId*
+  name: ServerId
+  href: api/MASES.DataDistributionManager.Bindings.ClusterHealthElement.html#MASES_DataDistributionManager_Bindings_ClusterHealthElement_ServerId_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.ClusterHealthElement.ServerId
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.ClusterHealthElement.ServerId
+  nameWithType: ClusterHealthElement.ServerId
 - uid: MASES.DataDistributionManager.Bindings.ClusterHealthElement.Status
   name: Status
   href: api/MASES.DataDistributionManager.Bindings.ClusterHealthElement.html#MASES_DataDistributionManager_Bindings_ClusterHealthElement_Status
@@ -4170,12 +4183,6 @@ references:
   fullName.vb: MASES.DataDistributionManager.Bindings.HelperClass.FromIntString(Of T)(System.String)
   nameWithType: HelperClass.FromIntString<T>(String)
   nameWithType.vb: HelperClass.FromIntString(Of T)(String)
-- uid: MASES.DataDistributionManager.Bindings.HelperClass.ToIntString(MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE)
-  name: ToIntString(CHANNEL_STARTUP_TYPE)
-  href: api/MASES.DataDistributionManager.Bindings.HelperClass.html#MASES_DataDistributionManager_Bindings_HelperClass_ToIntString_MASES_DataDistributionManager_Bindings_Interop_CHANNEL_STARTUP_TYPE_
-  commentId: M:MASES.DataDistributionManager.Bindings.HelperClass.ToIntString(MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE)
-  fullName: MASES.DataDistributionManager.Bindings.HelperClass.ToIntString(MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE)
-  nameWithType: HelperClass.ToIntString(CHANNEL_STARTUP_TYPE)
 - uid: MASES.DataDistributionManager.Bindings.HelperClass.ToIntString(MASES.DataDistributionManager.Bindings.Interop.DDM_CHANNEL_DIRECTION)
   name: ToIntString(DDM_CHANNEL_DIRECTION)
   href: api/MASES.DataDistributionManager.Bindings.HelperClass.html#MASES_DataDistributionManager_Bindings_HelperClass_ToIntString_MASES_DataDistributionManager_Bindings_Interop_DDM_CHANNEL_DIRECTION_
@@ -4244,42 +4251,6 @@ references:
   commentId: N:MASES.DataDistributionManager.Bindings.Interop
   fullName: MASES.DataDistributionManager.Bindings.Interop
   nameWithType: MASES.DataDistributionManager.Bindings.Interop
-- uid: MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE
-  name: CHANNEL_STARTUP_TYPE
-  href: api/MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.html
-  commentId: T:MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE
-  fullName: MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE
-  nameWithType: CHANNEL_STARTUP_TYPE
-- uid: MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.CREATED
-  name: CREATED
-  href: api/MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.html#MASES_DataDistributionManager_Bindings_Interop_CHANNEL_STARTUP_TYPE_CREATED
-  commentId: F:MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.CREATED
-  fullName: MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.CREATED
-  nameWithType: CHANNEL_STARTUP_TYPE.CREATED
-- uid: MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.DISCONNECTED
-  name: DISCONNECTED
-  href: api/MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.html#MASES_DataDistributionManager_Bindings_Interop_CHANNEL_STARTUP_TYPE_DISCONNECTED
-  commentId: F:MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.DISCONNECTED
-  fullName: MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.DISCONNECTED
-  nameWithType: CHANNEL_STARTUP_TYPE.DISCONNECTED
-- uid: MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.STARTED
-  name: STARTED
-  href: api/MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.html#MASES_DataDistributionManager_Bindings_Interop_CHANNEL_STARTUP_TYPE_STARTED
-  commentId: F:MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.STARTED
-  fullName: MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.STARTED
-  nameWithType: CHANNEL_STARTUP_TYPE.STARTED
-- uid: MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.STOPPED
-  name: STOPPED
-  href: api/MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.html#MASES_DataDistributionManager_Bindings_Interop_CHANNEL_STARTUP_TYPE_STOPPED
-  commentId: F:MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.STOPPED
-  fullName: MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.STOPPED
-  nameWithType: CHANNEL_STARTUP_TYPE.STOPPED
-- uid: MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.UNDEFINED
-  name: UNDEFINED
-  href: api/MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.html#MASES_DataDistributionManager_Bindings_Interop_CHANNEL_STARTUP_TYPE_UNDEFINED
-  commentId: F:MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.UNDEFINED
-  fullName: MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.UNDEFINED
-  nameWithType: CHANNEL_STARTUP_TYPE.UNDEFINED
 - uid: MASES.DataDistributionManager.Bindings.Interop.DDM_CHANNEL_DIRECTION
   name: DDM_CHANNEL_DIRECTION
   href: api/MASES.DataDistributionManager.Bindings.Interop.DDM_CHANNEL_DIRECTION.html
@@ -13360,6 +13331,12 @@ references:
   commentId: E:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.DataAvailable
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.DataAvailable
   nameWithType: SmartDataDistributionChannel.DataAvailable
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.DDM_NO_TIMESTAMP
+  name: DDM_NO_TIMESTAMP
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_DDM_NO_TIMESTAMP
+  commentId: F:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.DDM_NO_TIMESTAMP
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.DDM_NO_TIMESTAMP
+  nameWithType: SmartDataDistributionChannel.DDM_NO_TIMESTAMP
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.Finalize
   name: Finalize()
   href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_Finalize

@@ -5,6 +5,3174 @@
   "files": [
     {
       "type": "Resource",
+      "source_relative_path": "../cppdoc/html/_data_distribution_manager_8h.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/_data_distribution_manager_8h.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/_data_distribution_manager_8h.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/_data_distribution_manager_8h.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/_data_distribution_manager_8h_source.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/_data_distribution_manager_8h_source.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/_data_distribution_manager_enums_8h.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/_data_distribution_manager_enums_8h.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/_data_distribution_manager_enums_8h.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/_data_distribution_manager_enums_8h.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/_data_distribution_manager_enums_8h_source.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/_data_distribution_manager_enums_8h_source.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/_smart_data_distribution_manager_8h.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/_smart_data_distribution_manager_8h.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/_smart_data_distribution_manager_8h_source.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/_smart_data_distribution_manager_8h_source.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/annotated.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/annotated.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/annotated_dup.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/annotated_dup.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/bc_s.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/bc_s.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/bdwn.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/bdwn.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_data_distribution-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_data_distribution-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_data_distribution.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_data_distribution.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_data_distribution.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_data_distribution.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_data_distribution_callback-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_data_distribution_callback-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_data_distribution_callback.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_data_distribution_callback.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_data_distribution_callback.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_data_distribution_callback.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_data_distribution_channel_callback-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_data_distribution_channel_callback-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_data_distribution_channel_callback.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_data_distribution_channel_callback.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_data_distribution_mastership_callback-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_data_distribution_mastership_callback-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_data_distribution_mastership_callback.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_data_distribution_mastership_callback.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_callback-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_callback-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_callback.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_callback.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_callback.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_callback.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_callback.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_callback.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_channel_base-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_channel_base-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_channel_base.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_channel_base.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_channel_base.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_channel_base.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_channel_base.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_channel_base.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_channel_callback-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_channel_callback-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_channel_callback.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_channel_callback.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_channel_callback.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_channel_callback.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_channel_callback.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_channel_callback.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_log-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_log-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_log.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_log.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_log.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_log.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_log.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_log.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_mastership_callback-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_mastership_callback-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_mastership_callback.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_mastership_callback.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_mastership_callback.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_mastership_callback.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_mastership_callback.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_mastership_callback.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_mastership_common-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_mastership_common-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_mastership_common.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_mastership_common.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_mastership_common.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_mastership_common.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_subsystem-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_subsystem-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_subsystem.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_subsystem.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_subsystem.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_subsystem.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_subsystem.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_subsystem.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_transport-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_transport-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_transport.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_transport.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_transport.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_transport.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_data_distribution_transport.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_data_distribution_transport.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_time_measure_wrapper-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_time_measure_wrapper-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_time_measure_wrapper.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_time_measure_wrapper.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_time_measure_wrapper.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_time_measure_wrapper.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_i_time_measure_wrapper.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_i_time_measure_wrapper.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_smart_data_distribution-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_smart_data_distribution-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_smart_data_distribution.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_smart_data_distribution.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_smart_data_distribution.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_smart_data_distribution.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_smart_data_distribution.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_smart_data_distribution.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_smart_data_distribution_base-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_smart_data_distribution_base-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_smart_data_distribution_base.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_smart_data_distribution_base.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_smart_data_distribution_base.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_smart_data_distribution_base.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_smart_data_distribution_base.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_smart_data_distribution_base.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_smart_data_distribution_channel-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_smart_data_distribution_channel-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_smart_data_distribution_channel.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_smart_data_distribution_channel.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_smart_data_distribution_channel.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_smart_data_distribution_channel.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_smart_data_distribution_channel.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_smart_data_distribution_channel.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_smart_time_measure_wrapper-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_smart_time_measure_wrapper-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_smart_time_measure_wrapper.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_smart_time_measure_wrapper.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_smart_time_measure_wrapper.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_smart_time_measure_wrapper.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_smart_time_measure_wrapper.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_smart_time_measure_wrapper.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_time_measure_wrapper-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_time_measure_wrapper-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/class_time_measure_wrapper.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/class_time_measure_wrapper.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classes.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classes.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/closed.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/closed.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/cpp_stylesheet.css",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/cpp_stylesheet.css"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/dir_0e099674140bac0b8ced8c77ca527ef9.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/dir_0e099674140bac0b8ced8c77ca527ef9.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/dir_0e099674140bac0b8ced8c77ca527ef9.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/dir_0e099674140bac0b8ced8c77ca527ef9.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/dir_68267d1309a1af8e8297ef4c3efbcdba.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/dir_68267d1309a1af8e8297ef4c3efbcdba.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/dir_68267d1309a1af8e8297ef4c3efbcdba.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/dir_68267d1309a1af8e8297ef4c3efbcdba.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/doc.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/doc.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/doxygen.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/doxygen.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/dynsections.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/dynsections.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/files.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/files.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/files_dup.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/files_dup.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/folderclosed.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/folderclosed.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/folderopen.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/folderopen.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/functions.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/functions.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/functions_func.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/functions_func.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/functions_vars.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/functions_vars.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/globals.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/globals.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/globals_defs.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/globals_defs.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/globals_enum.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/globals_enum.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/globals_type.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/globals_type.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/hierarchy.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/hierarchy.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/hierarchy.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/hierarchy.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/index.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/index.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/jquery.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/jquery.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/menu.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/menu.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/menudata.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/menudata.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/nav_f.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/nav_f.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/nav_g.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/nav_g.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/nav_h.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/nav_h.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/navtree.css",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/navtree.css"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/navtree.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/navtree.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/navtreedata.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/navtreedata.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/navtreeindex0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/navtreeindex0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/open.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/open.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/resize.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/resize.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_0.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_0.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_1.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_1.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_1.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_1.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_10.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_10.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_10.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_10.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_11.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_11.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_11.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_11.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_12.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_12.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_12.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_12.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_13.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_13.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_13.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_13.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_2.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_2.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_2.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_2.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_3.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_3.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_3.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_3.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_4.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_4.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_4.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_4.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_5.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_5.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_5.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_5.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_6.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_6.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_6.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_6.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_7.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_7.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_7.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_7.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_8.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_8.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_8.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_8.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_9.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_9.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_9.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_9.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_a.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_a.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_a.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_a.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_b.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_b.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_b.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_b.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_c.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_c.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_c.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_c.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_d.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_d.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_d.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_d.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_e.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_e.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_e.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_e.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_f.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_f.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_f.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_f.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_0.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_0.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_1.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_1.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_1.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_1.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_2.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_2.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_2.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_2.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_3.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_3.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_3.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_3.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_4.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_4.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_4.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_4.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_5.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_5.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_5.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_5.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/close.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/close.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/defines_0.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/defines_0.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/defines_0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/defines_0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enums_0.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enums_0.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enums_0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enums_0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_0.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_0.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_1.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_1.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_1.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_1.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_10.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_10.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_10.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_10.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_11.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_11.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_11.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_11.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_2.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_2.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_2.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_2.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_3.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_3.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_3.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_3.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_4.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_4.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_4.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_4.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_5.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_5.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_5.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_5.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_6.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_6.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_6.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_6.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_7.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_7.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_7.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_7.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_8.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_8.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_8.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_8.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_9.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_9.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_9.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_9.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_a.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_a.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_a.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_a.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_b.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_b.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_b.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_b.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_c.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_c.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_c.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_c.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_d.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_d.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_d.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_d.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_e.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_e.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_e.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_e.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_f.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_f.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_f.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_f.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/files_0.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/files_0.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/files_0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/files_0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/files_1.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/files_1.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/files_1.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/files_1.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_0.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_0.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_1.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_1.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_1.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_1.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_2.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_2.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_2.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_2.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_3.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_3.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_3.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_3.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_4.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_4.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_4.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_4.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_5.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_5.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_5.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_5.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_6.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_6.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_6.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_6.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_7.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_7.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_7.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_7.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_8.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_8.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_8.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_8.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_9.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_9.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_9.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_9.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_a.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_a.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_a.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_a.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_b.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_b.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_b.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_b.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_c.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_c.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_c.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_c.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_d.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_d.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_d.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_d.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/mag_sel.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/mag_sel.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/nomatches.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/nomatches.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/search.css",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/search.css"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/search.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/search.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/search_l.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/search_l.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/search_m.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/search_m.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/search_r.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/search_r.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/searchdata.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/searchdata.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/typedefs_0.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/typedefs_0.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/typedefs_0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/typedefs_0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/typedefs_1.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/typedefs_1.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/typedefs_1.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/typedefs_1.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/typedefs_2.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/typedefs_2.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/typedefs_2.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/typedefs_2.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/typedefs_3.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/typedefs_3.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/typedefs_3.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/typedefs_3.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_0.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_0.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_1.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_1.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_1.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_1.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_2.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_2.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_2.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_2.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_3.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_3.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_3.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_3.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_4.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_4.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_4.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_4.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_5.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_5.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_5.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_5.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_6.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_6.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_6.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_6.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_7.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_7.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_7.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_7.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_8.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_8.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_8.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_8.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/splitbar.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/splitbar.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/struct_cluster_health_element-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/struct_cluster_health_element-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/struct_cluster_health_element.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/struct_cluster_health_element.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/struct_cluster_health_element.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/struct_cluster_health_element.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/struct_underlying_event_data-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/struct_underlying_event_data-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/struct_underlying_event_data.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/struct_underlying_event_data.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/struct_underlying_event_data.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/struct_underlying_event_data.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/sync_off.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/sync_off.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/sync_on.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/sync_on.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/tab_a.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/tab_a.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/tab_b.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/tab_b.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/tab_h.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/tab_h.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/tab_s.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/tab_s.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/tabs.css",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/tabs.css"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "../src/DataDistributionManagerJava/javadoc/allclasses-index.html",
       "output": {
         "resource": {
@@ -119,17 +3287,6 @@
       "output": {
         "resource": {
           "relative_path": "javadoc/org/mases/datadistributionmanager/BaseConfiguration.html"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../src/DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/CHANNEL_STARTUP_TYPE.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/CHANNEL_STARTUP_TYPE.html"
         }
       },
       "is_incremental": false,
@@ -1517,7 +4674,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ChangedStateEventArgs.html",
-          "hash": "ATmEaJO9X2sHF85dfKC0/g=="
+          "hash": "05TDlYxmH0DogfpSnIp1Ig=="
         }
       },
       "is_incremental": false,
@@ -1529,7 +4686,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ChangingStateEventArgs.html",
-          "hash": "LIFSdqXL0aY10DUzraGKXA=="
+          "hash": "LCEBB4RZN1X54UObl+oCLw=="
         }
       },
       "is_incremental": false,
@@ -1541,7 +4698,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ClusterHealthElement.html",
-          "hash": "baD5pxEMKwXBNvQlRVrj7Q=="
+          "hash": "T8L+lsufNhyRCNbAm1kmpA=="
         }
       },
       "is_incremental": false,
@@ -1553,7 +4710,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ClusterStateChangeEventArgs.html",
-          "hash": "IhPz8vvpf6L8oUld0F34Yw=="
+          "hash": "J2Rs/P2iWi6QGsG21nNPWw=="
         }
       },
       "is_incremental": false,
@@ -1577,7 +4734,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.CompletelyDisconnectedEventArgs.html",
-          "hash": "4WSqQ0NAagz/94J8jq27kA=="
+          "hash": "7XAa89PLBHghGRKAVtA6lw=="
         }
       },
       "is_incremental": false,
@@ -2141,7 +5298,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ConfigurationEventArgs.html",
-          "hash": "XpuBZOGOgONNmm5KW64mLg=="
+          "hash": "YBW7DA3x97M9ymd3O8CyGg=="
         }
       },
       "is_incremental": false,
@@ -2165,7 +5322,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.FirstStateChangeEventArgs.html",
-          "hash": "JgAxBrOGEOc8j4H23aGvWw=="
+          "hash": "ZXuhEzWET2ev6rtDg65ilw=="
         }
       },
       "is_incremental": false,
@@ -2189,7 +5346,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.HelperClass.html",
-          "hash": "3sBTiVx+F7p9n+Wf5sxHfA=="
+          "hash": "Uynp5AeVVeyTZt43tVN9Fg=="
         }
       },
       "is_incremental": false,
@@ -2213,7 +5370,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.html",
-          "hash": "+wKsLmtfy3KFXGkR2hoB4w=="
+          "hash": "ghlCqUR8NAPj1QcfCNXD/A=="
         }
       },
       "is_incremental": false,
@@ -2237,19 +5394,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.html",
-          "hash": "Ypz76psJG0iDqq5xr5PP4g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.CHANNEL_STARTUP_TYPE.html",
-          "hash": "vLPXLa8luR5DPpKg5NHsqQ=="
+          "hash": "0tbQl5cOe1oRUvqelk4qPA=="
         }
       },
       "is_incremental": false,
@@ -2321,7 +5466,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_UNDERLYING_ERROR_CONDITION.html",
-          "hash": "zBJryFI0vUhStkgl/yk9Mg=="
+          "hash": "rBeJwoLw62fvfoxG2V4+2A=="
         }
       },
       "is_incremental": false,
@@ -2357,7 +5502,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.html",
-          "hash": "wpXwS/s/aHn5i0kK8izAJg=="
+          "hash": "Wcid7lqjzjrJP2vrGt8sgw=="
         }
       },
       "is_incremental": false,
@@ -2369,7 +5514,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.LoggingEventArgs.html",
-          "hash": "/cMqvxu8qTgb4ovYrm6j0Q=="
+          "hash": "7rWABwgvM0h3EPgDv/Kuew=="
         }
       },
       "is_incremental": false,
@@ -2381,7 +5526,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.MultiplePrimaryEventArgs.html",
-          "hash": "r4gpMBXDsXJVI407Bu38aQ=="
+          "hash": "kgktJJcCBYl+BBy8PVNnPg=="
         }
       },
       "is_incremental": false,
@@ -2393,7 +5538,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.RequestedStateEventArgs.html",
-          "hash": "iVwy8IPcLk1Q/P6PGeBCTw=="
+          "hash": "Kjt3+ACcDte4AFjI/QROyg=="
         }
       },
       "is_incremental": false,
@@ -2405,7 +5550,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html",
-          "hash": "TKv2DcJpTnsNsLnYDVjUnw=="
+          "hash": "dRKHdboyNADChtqhFH1COg=="
         }
       },
       "is_incremental": false,
@@ -2417,7 +5562,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html",
-          "hash": "SglNRUbNrIBKAh3Pg4lfVg=="
+          "hash": "jHRHG488DZP6u8hRZgk3BQ=="
         }
       },
       "is_incremental": false,
@@ -2429,7 +5574,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.StateChangeEventArgs.html",
-          "hash": "PYKUREYID7yFw6CSnJw5TQ=="
+          "hash": "bd+UASdrJ1I0mdYBKhVSsQ=="
         }
       },
       "is_incremental": false,
@@ -2441,7 +5586,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.StateReadyEventArgs.html",
-          "hash": "YUf/fKMEOlnC0Cg3UTxuKA=="
+          "hash": "eDpt3656izEi8rv5plAU3g=="
         }
       },
       "is_incremental": false,
@@ -2477,22 +5622,19 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "aVFRuSQP6WhjGaFXLVsbFA=="
+          "hash": "z4Cn+0hWR+B3ACF2HjGCEQ=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "articles/intro.md",
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "zwd4D6n0jcNq+dRiEkm0IA=="
+          "hash": "2teXXccxGQpWnQFTH8tRDA=="
         }
       },
       "is_incremental": false,
@@ -2504,7 +5646,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/legacy_application_revamp.html",
-          "hash": "vl4mwjcvLZvtkUYR8cPepg=="
+          "hash": "/eb/aNvFNCC3QPfeGyQ1VA=="
         }
       },
       "is_incremental": false,
@@ -2516,7 +5658,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/manual_build.html",
-          "hash": "SJMDhnuCKYwZOfAThpD+AA=="
+          "hash": "3KxkyMtt4WfdHPa8mdWYvg=="
         }
       },
       "is_incremental": false,
@@ -2528,7 +5670,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/sinapse.html",
-          "hash": "2zNrwyUWLUDsXvSSXhC1SQ=="
+          "hash": "pcjnR10BZZXC1U/b4Q2LAA=="
         }
       },
       "is_incremental": false,
@@ -2547,15 +5689,38 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "articles/usage.md",
       "output": {
         ".html": {
           "relative_path": "articles/usage.html",
-          "hash": "sF0/HJrVC4nx45k1ihOP4A=="
+          "hash": "g4GwUQXGAfBr/+Z8IQhlmQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "cppdoc/root.md",
+      "output": {
+        ".html": {
+          "relative_path": "cppdoc/root.html",
+          "hash": "LNB+/8AmXdRnFhiISPp45A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/COM_Cloud.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/COM_Cloud.png"
         }
       },
       "is_incremental": false,
@@ -2687,12 +5852,24 @@
       "log_codes": [
         "InvalidFileLink"
       ],
+      "type": "Conceptual",
+      "source_relative_path": "javadoc/root.md",
+      "output": {
+        ".html": {
+          "relative_path": "javadoc/root.html",
+          "hash": "FKr6GKdHSWApEQW7ABONJw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "Lvb57XPUt4AViAzZVqT9NQ=="
+          "hash": "x1w1MK5MGrPw9jO8isDlHA=="
         }
       },
       "is_incremental": false,
@@ -2713,13 +5890,13 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 7,
+          "total_file_count": 9,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 80,
+          "total_file_count": 79,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
