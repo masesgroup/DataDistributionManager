@@ -351,15 +351,11 @@ jobs:
       - name: Clear documentation folder 
         run: Remove-Item .\docs\* -Recurse -Force
 
-      - name: Download Doxygen tool and create C/C++ documentation folder 
-        run: |
-          cd Documentation
-          C:\msys64\usr\bin\wget.exe https://doxygen.nl/files/doxygen-1.9.1.windows.x64.bin.zip
-          Expand-Archive -LiteralPath '.\doxygen-1.9.1.windows.x64.bin.zip' -DestinationPath .\ -Force
-          doxygen
+      - name: Download Doxygen tool
+        run: C:\msys64\usr\bin\wget.exe https://doxygen.nl/files/doxygen-1.9.1.windows.x64.bin.zip
 
       - name: Expand Doxygen package
-        run: Expand-Archive -LiteralPath '.\Documentation\doxygen-1.9.1.windows.x64.bin.zip' -DestinationPath .\Documentation -Force
+        run: Expand-Archive -LiteralPath '.\doxygen-1.9.1.windows.x64.bin.zip' -DestinationPath .\Documentation -Force
 
       - name: Create C/C++ documentation
         run: |

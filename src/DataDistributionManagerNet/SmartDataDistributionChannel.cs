@@ -213,7 +213,7 @@ namespace MASES.DataDistributionManager.Bindings
     /// <summary>
     /// Main class managing channel
     /// </summary>
-    public class SmartDataDistributionChannel : ISmartDataDistributionChannel,  IDataDistributionChannelCallbackLow
+    public class SmartDataDistributionChannel : ISmartDataDistributionChannel, IDataDistributionChannelCallbackLow
     {
         /// <summary>
         /// No timestamp value
