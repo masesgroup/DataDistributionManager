@@ -349,24 +349,24 @@ jobs:
           cd ..\..
           
       - name: Clear documentation folder 
-        run: Remove-Item .\docs\* -Recurse -Force
+        run: Remove-Item .\docs\* -Recurse -Force -Exclude .nojekyll,_config.yml
 
       - name: Download Doxygen tool
         run: C:\msys64\usr\bin\wget.exe https://doxygen.nl/files/doxygen-1.9.1.windows.x64.bin.zip
 
       - name: Expand Doxygen package
-        run: Expand-Archive -LiteralPath '.\doxygen-1.9.1.windows.x64.bin.zip' -DestinationPath .\Documentation -Force
+        run: Expand-Archive -LiteralPath '.\doxygen-1.9.1.windows.x64.bin.zip' -DestinationPath .\src\Documentation -Force
 
       - name: Create C/C++ documentation
         shell: cmd
         run: |
-          cd Documentation
+          cd src\Documentation
           doxygen Doxyfile
 
       - name: Build documentation
         run: |
           choco install docfx
-          cd Documentation
+          cd src\Documentation
           docfx
 
       - uses: nuget/setup-nuget@v1

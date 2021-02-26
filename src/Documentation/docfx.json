@@ -42,7 +42,7 @@
         "files": [
           "javadoc/**"
         ],
-		"src": "../src/DataDistributionManagerJava"
+		"src": "../DataDistributionManagerJava"
       },
       {
         "files": [
@@ -74,7 +74,7 @@
 
       }
     },
-    "dest": "../docs",
+    "dest": "../../docs",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
