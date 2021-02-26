@@ -393,11 +393,14 @@ HRESULT DataDistributionManagerImpl::Initialize(IDataDistributionCallback* callb
 	HRESULT res = read_config_file(arrayParams, length);
 	if (FAILED(res)) return res;
 
-	m_arrayParamsLen = length;
-	m_arrayParams = (const char**)malloc(m_arrayParamsLen * sizeof(const char*));
-	for (int i = 0; i < m_arrayParamsLen; i++)
+	m_arrayParamsLen = (arrayParams != NULL) ? length : 0;
+	if (arrayParams != NULL)
 	{
-		m_arrayParams[i] = _strdup(arrayParams[i]);
+		m_arrayParams = (const char**)malloc(m_arrayParamsLen * sizeof(const char*));
+		for (int i = 0; i < m_arrayParamsLen; i++)
+		{
+			m_arrayParams[i] = _strdup(arrayParams[i]);
+		}
 	}
 
 	if (m_ProtocolLib.length() == 0)

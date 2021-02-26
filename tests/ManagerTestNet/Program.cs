@@ -155,7 +155,7 @@ namespace ManagerTestNet
             int pid = Process.GetCurrentProcess().Id;
             var str = string.Format("{0:10}", pid);
 
-            Console.WriteLine("Starting sending...\n");
+            Console.WriteLine("Starting operations...\n");
             while (true)
             {
                 if (direction.HasFlag(DDM_CHANNEL_DIRECTION.TRANSMITTER) ? testChannel.WriteOnChannel(null, str) : true)

@@ -30,7 +30,7 @@ DataDistributionMastershipCommon::DataDistributionMastershipCommon()
 	m_startupTime.ResetTime();
 }
 
-HRESULT DataDistributionMastershipCommon::Initialize(IDataDistributionSubsystem* transportManager, IDataDistributionMastershipCallback* cbs, const char* szMyAddress, const char* arrayParams[], int len)
+HRESULT DataDistributionMastershipCommon::Initialize(IDataDistributionSubsystem* transportManager, IDataDistributionMastershipCallback* cbs, const char* szMyAddress, const char* arrayParams[], int length)
 {
 	std::string server1Name;
 
@@ -43,8 +43,15 @@ HRESULT DataDistributionMastershipCommon::Initialize(IDataDistributionSubsystem*
 	}
 	else m_szServerName = _strdup(szMyAddress);
 
-	m_arrayParams = arrayParams;
-	m_arrayParamsLen = len;
+	m_arrayParamsLen = (arrayParams != NULL) ? length : 0;
+	if (arrayParams != NULL)
+	{
+		m_arrayParams = (const char**)malloc(m_arrayParamsLen * sizeof(const char*));
+		for (int i = 0; i < m_arrayParamsLen; i++)
+		{
+			m_arrayParams[i] = _strdup(arrayParams[i]);
+		}
+	}
 
 	m_pDataDistributionManagerSubsystem = transportManager;
 	m_pMastershipCallback = cbs;

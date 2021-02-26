@@ -107,12 +107,15 @@ public class DataDistributionManagerJavaTest {
 			while (true) {
 				hRes = HRESULT.S_OK;
 				if (direction == DDM_CHANNEL_DIRECTION.TRANSMITTER) {
-					hRes = mytestTopic.WriteOnChannel(null, str);
-				}
-				if (hRes == HRESULT.S_OK) {
-					str = String.format("%d", counter++);
-					if ((counter % THRESHOLD) == 0)
-						System.out.println(String.format("SendData Reached %d", counter));
+					hRes = mytestTopic.WriteOnChannel(str);
+					if (hRes == HRESULT.S_OK) {
+						str = String.format("%d", counter++);
+						if ((counter % THRESHOLD) == 0) {
+							String key = String.format("SendData Reached %d", counter);
+							hRes = mytestTopic.WriteOnChannel(key, str);
+							System.out.println(key);
+						}
+					}
 				}
 				Thread.sleep(1000);
 			}

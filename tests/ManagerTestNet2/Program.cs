@@ -31,7 +31,7 @@ namespace ManagerTestNet
 
         static void Main(string[] args)
         {
-            DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.TRANSMITTER;
+            DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.RECEIVER;
 
             SmartDataDistribution dataDistribution = new SmartDataDistribution();
             dataDistribution.LoggingEvent += DataDistribution_LoggingEvent;
@@ -51,8 +51,8 @@ namespace ManagerTestNet
                     {
                         Autostart = direction.HasFlag(DDM_CHANNEL_DIRECTION.RECEIVER), // start only on receiver
                         Monitor = true,
-                        //Resurrect = true,
-                        //PersistenceFile = "persistance.file",
+                        Resurrect = true,
+                        PersistenceFile = "persistance.file",
                         ORBEndpoint = "iiop://localhost:12345",
                     },
                     DomainParticipantQos = new DomainParticipantQosConfiguration()
@@ -126,15 +126,17 @@ namespace ManagerTestNet
             int pid = Process.GetCurrentProcess().Id;
             var str = string.Format("{0:10}", pid);
 
-            Console.WriteLine("Starting sending...\n");
+            Console.WriteLine("Starting operations...\n");
             while (true)
             {
-                if (direction.HasFlag(DDM_CHANNEL_DIRECTION.TRANSMITTER) ? testChannel.WriteOnChannel(null, str) : true)
+                if (direction.HasFlag(DDM_CHANNEL_DIRECTION.TRANSMITTER) ? testChannel.WriteOnChannel(str) : true)
                 {
                     str = string.Format("{0:10}", counter++);
                     if ((counter % THRESHOLD) == 0)
                     {
-                        Console.WriteLine("SendData Reached {0}", counter);
+                        string key = string.Format("SendData Reached {0}", counter);
+                        testChannel.WriteOnChannel(key, str);
+                        Console.WriteLine(key);
                     }
                 }
                 Thread.Sleep(1000);

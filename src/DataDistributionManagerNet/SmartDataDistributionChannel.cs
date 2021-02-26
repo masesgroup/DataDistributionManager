@@ -23,7 +23,6 @@ using System.Text;
 
 namespace MASES.DataDistributionManager.Bindings
 {
-
     #region DataAvailableEventArgs
     /// <summary>
     /// Event args for <see cref="ISmartDataDistributionChannel.DataAvailable"/> event
@@ -154,12 +153,28 @@ namespace MASES.DataDistributionManager.Bindings
         /// <summary>
         /// Writes in the channel
         /// </summary>
+        /// <param name="value">The <see cref="string"/> to write in the channel</param>
+        /// <param name="waitAll">Wait a complete acknowledge from the peers</param>
+        /// <param name="timestamp">timestamp to associated to the message</param>
+        /// <returns></returns>
+        HRESULT WriteOnChannel(string value, bool waitAll = false, Int64 timestamp = SmartDataDistributionChannel.DDM_NO_TIMESTAMP);
+        /// <summary>
+        /// Writes in the channel
+        /// </summary>
         /// <param name="key">Key to use in the channel message</param>
         /// <param name="value">The <see cref="string"/> to write in the channel</param>
         /// <param name="waitAll">Wait a complete acknowledge from the peers</param>
         /// <param name="timestamp">timestamp to associated to the message</param>
         /// <returns></returns>
         HRESULT WriteOnChannel(string key, string value, bool waitAll = false, Int64 timestamp = SmartDataDistributionChannel.DDM_NO_TIMESTAMP);
+        /// <summary>
+        /// Writes in the channel
+        /// </summary>
+        /// <param name="buffer">The data buffer in the channel message</param>
+        /// <param name="waitAll">Wait a complete acknowledge from the peers</param>
+        /// <param name="timestamp">timestamp to associated to the message</param>
+        /// <returns></returns>
+        HRESULT WriteOnChannel(byte[] buffer, bool waitAll = false, Int64 timestamp = SmartDataDistributionChannel.DDM_NO_TIMESTAMP);
         /// <summary>
         /// Writes in the channel
         /// </summary>
@@ -280,10 +295,32 @@ namespace MASES.DataDistributionManager.Bindings
             return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_SeekChannel>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, position);
         }
         /// <inheritdoc/>
+        public HRESULT WriteOnChannel(string value, bool waitAll = false, Int64 timestamp = DDM_NO_TIMESTAMP)
+        {
+            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(value);
+            return WriteOnChannel(null, buffer, waitAll, timestamp);
+        }
+        /// <inheritdoc/>
         public HRESULT WriteOnChannel(string key, string value, bool waitAll = false, Int64 timestamp = DDM_NO_TIMESTAMP)
         {
             byte[] buffer = System.Text.Encoding.UTF8.GetBytes(value);
             return WriteOnChannel(key, buffer, waitAll, timestamp);
+        }
+        /// <inheritdoc/>
+        public HRESULT WriteOnChannel(byte[] buffer, bool waitAll = false, Int64 timestamp = DDM_NO_TIMESTAMP)
+        {
+            IntPtr unmanagedPointer = Marshal.AllocHGlobal(buffer.Length);
+            try
+            {
+                Marshal.Copy(buffer, 0, unmanagedPointer, buffer.Length);
+                // Call unmanaged code 
+                return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_WriteOnChannel>().Invoke(
+                    IDataDistributionSubsystemManager_ptr, channelHandle, null, IntPtr.Zero, unmanagedPointer, new IntPtr(buffer.Length), waitAll, timestamp);
+            }
+            finally
+            {
+                Marshal.FreeHGlobal(unmanagedPointer);
+            }
         }
         /// <inheritdoc/>
         public HRESULT WriteOnChannel(string key, byte[] buffer, bool waitAll = false, Int64 timestamp = DDM_NO_TIMESTAMP)

@@ -1114,6 +1114,11 @@ HANDLE DataDistributionManagerOpenDDS::CreateChannel(const char* channelName, ID
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "CreateChannel");
 
+	if (channelName == NULL)
+	{
+		LOG_ERROR0("Channel name cannot be NULL");
+	}
+
 	if (!GetSubSystemStarted())
 	{
 		LOG_ERROR("SubSystem not started. Channel: %s", channelName);
@@ -1263,6 +1268,12 @@ void DataDistributionManagerOpenDDS::SetParameter(HANDLE channelHandle, const ch
 
 	CAST_CHANNEL(ChannelConfigurationOpenDDS);
 
+	if (paramName == NULL || paramValue == NULL)
+	{
+		LOG_ERROR("Channel %s - INPUT PARAMETERS CANNOT BE NULL", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
+		return;
+	}
+
 	LOG_INFO("Channel %s - Name: %s - Value: %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", (paramName != NULL) ? paramName : "", (paramValue != NULL) ? paramValue : "");
 
 	DataDistributionCommon::SetParameter(channelHandle, paramName, paramValue);
@@ -1329,6 +1340,12 @@ const char* DataDistributionManagerOpenDDS::GetParameter(HANDLE channelHandle, c
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "GetParameter");
 	CAST_CHANNEL(ChannelConfigurationOpenDDS);
+
+	if (paramName == NULL)
+	{
+		LOG_ERROR("Channel %s - INPUT PARAMETER CANNOT BE NULL", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
+		return NULL;
+	}
 
 	LOG_INFO("Channel %s - Name: %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", (paramName != NULL) ? paramName : "");
 
@@ -1418,8 +1435,13 @@ HRESULT DataDistributionManagerOpenDDS::WriteOnChannel(HANDLE channelHandle, con
 
 	DataDistributionSchema::OpenDDSMsg msg;
 	msg.key = (key == NULL) ? "DefaultKey" : key;
-	msg.msgSize = dataLen;
-	msg.buffer = (dataLen != 0) ? DataDistributionSchema::OctetSeq(dataLen, dataLen, (::CORBA::Octet*)buffer, false) : NULL;
+	msg.msgSize = (buffer != NULL) ? dataLen : 0;
+	if (dataLen != 0 && buffer != NULL)
+	{
+		::CORBA::Octet* lBuffer = (::CORBA::Octet*)calloc(dataLen, sizeof(::CORBA::Octet));
+		memcpy(lBuffer, buffer, dataLen);
+		msg.buffer.replace(dataLen, dataLen, lBuffer, true);
+	}
 
 	DataDistributionSchema::OpenDDSMsgDataWriter_var generic_dw;
 	DDS::InstanceHandle_t msg_handle;

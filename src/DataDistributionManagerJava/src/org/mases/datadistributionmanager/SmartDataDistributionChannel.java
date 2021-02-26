@@ -145,6 +145,16 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
     /**
      * Writes on the channel
      * 
+     * @param value The {@link String} to write in the channel
+     * @return {@link HRESULT}
+     */
+    public HRESULT WriteOnChannel(String value) {
+        return WriteOnChannel(null, value, false, DDM_NO_TIMESTAMP);
+    }
+
+    /**
+     * Writes on the channel
+     * 
      * @param key   The key to use
      * @param value The {@link String} to write in the channel
      * @return {@link HRESULT}
@@ -177,6 +187,19 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
     public HRESULT WriteOnChannel(String key, String value, boolean waitAll, long timestamp) {
         byte[] buffer = value.getBytes(Charset.forName("UTF8"));
         return WriteOnChannel(key, buffer, waitAll, timestamp);
+    }
+
+    /**
+     * Writes on the channel
+     * 
+     * @param buffer The buffer to write in the channel
+     * @return {@link HRESULT}
+     */
+    public HRESULT WriteOnChannel(byte[] buffer) {
+        // Call unmanaged code
+        long res = NativeInterface.IDataDistributionSubsystem_WriteOnChannel(IDataDistributionSubsystemManager_ptr,
+                channelHandle, null, buffer, false, DDM_NO_TIMESTAMP);
+        return new HRESULT(res);
     }
 
     /**

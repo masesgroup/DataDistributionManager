@@ -128,7 +128,14 @@ HRESULT DataDistributionCommon::StopChannel(HANDLE channelHandle, DWORD dwMillis
 void DataDistributionCommon::SetParameter(HANDLE channelHandle, const char* paramName, const char* paramValue)
 {
 	TRACESTART("DataDistributionCommon", "SetParameter");
-	CAST_CHANNEL(ChannelConfiguration)
+	CAST_CHANNEL(ChannelConfiguration);
+
+	if (paramName == NULL || paramValue == NULL)
+	{
+		LOG_ERROR("Channel %s - INPUT PARAMETERS CANNOT BE NULL", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
+		return;
+	}
+
 	LOG_DEBUG("Channel %s - Writing %s with value %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", (paramName != NULL) ? paramName : "", (paramValue != NULL) ? paramValue : "");
 
 	if (NULL != channelHandle)
@@ -217,6 +224,13 @@ void DataDistributionCommon::SetParameter(HANDLE channelHandle, DDM_GENERAL_PARA
 {
 	TRACESTART("DataDistributionCommon", "SetParameter");
 	LOG_WARNING0("Not Implemented in subclass");
+	CAST_CHANNEL(ChannelConfiguration);
+
+	if (paramValue == NULL)
+	{
+		LOG_ERROR("Channel %s - INPUT PARAMETER CANNOT BE NULL", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
+		return;
+	}
 }
 
 static const char* ConvertIToA(int value)
@@ -236,7 +250,14 @@ static const char* ConvertIToA(size_t value)
 const char* DataDistributionCommon::GetParameter(HANDLE channelHandle, const char* paramName)
 {
 	TRACESTART("DataDistributionCommon", "GetParameter");
-	CAST_CHANNEL(ChannelConfiguration)
+	CAST_CHANNEL(ChannelConfiguration);
+
+	if (paramName == NULL)
+	{
+		LOG_ERROR("Channel %s - INPUT PARAMETER CANNOT BE NULL", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
+		return NULL;
+	}
+
 	LOG_DEBUG("Channel %s - Reading %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", (paramName != NULL) ? paramName : "");
 
 	if (channelHandle != NULL)

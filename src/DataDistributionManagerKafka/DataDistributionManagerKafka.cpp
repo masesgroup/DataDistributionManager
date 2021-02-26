@@ -280,6 +280,12 @@ HRESULT DataDistributionManagerKafka::Unlock(HANDLE channelHandle)
 HANDLE DataDistributionManagerKafka::CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction, const char* arrayParams[], int len)
 {
 	TRACESTART("DataDistributionManagerKafka", "CreateChannel");
+
+	if (channelName == NULL)
+	{
+		LOG_ERROR0("Channel name cannot be NULL");
+	}
+
 	if (!GetSubSystemStarted())
 	{
 		LOG_ERROR("SubSystem not started. Channel: %s", channelName);
@@ -424,12 +430,18 @@ void DataDistributionManagerKafka::SetParameter(HANDLE channelHandle, const char
 {
 	TRACESTART("DataDistributionManagerKafka", "SetParameter");
 
-	LOG_INFO("Channel %s - Name: %s - Value : %s", (paramName != NULL) ? paramName : "", (paramValue != NULL) ? paramValue : "");
-
-	DataDistributionCommon::SetParameter(channelHandle, paramName, paramValue);
-
 	std::string errstr;
 	CAST_CHANNEL(ChannelConfigurationKafka);
+
+	if (paramName == NULL || paramValue == NULL)
+	{
+		LOG_ERROR("Channel %s - INPUT PARAMETERS CANNOT BE NULL", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
+		return;
+	}
+
+	LOG_INFO("Channel %s - Name: %s - Value : %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", (paramName != NULL) ? paramName : "", (paramValue != NULL) ? paramValue : "");
+
+	DataDistributionCommon::SetParameter(channelHandle, paramName, paramValue);
 
 	if (!strcmp(paramName, "datadistributionmanager.kafka.producer.msgflags"))
 	{
@@ -517,6 +529,12 @@ const char* DataDistributionManagerKafka::GetParameter(HANDLE channelHandle, con
 	TRACESTART("DataDistributionManagerKafka", "GetParameter");
 
 	CAST_CHANNEL(ChannelConfigurationKafka);
+
+	if (paramName == NULL)
+	{
+		LOG_ERROR("Channel %s - INPUT PARAMETER CANNOT BE NULL", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel");
+		return NULL;
+	}
 
 	LOG_INFO("Channel %s - Name: %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", (paramName != NULL) ? paramName : "");
 
@@ -640,7 +658,7 @@ HRESULT DataDistributionManagerKafka::DeleteChannel(HANDLE channelHandle)
 	return S_OK;
 }
 
-HRESULT DataDistributionManagerKafka::WriteOnChannel(HANDLE channelHandle, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll, const int64_t timestamp)
+HRESULT DataDistributionManagerKafka::WriteOnChannel(HANDLE channelHandle, const char* key, size_t keyLen, void *buffer, size_t dataLen, const BOOL waitAll, const int64_t timestamp)
 {
 	TRACESTART("DataDistributionManagerKafka", "WriteOnChannel");
 	CAST_CHANNEL(ChannelConfigurationKafka);
@@ -657,18 +675,23 @@ HRESULT DataDistributionManagerKafka::WriteOnChannel(HANDLE channelHandle, const
 	{
 		std::string sTopicName = pChannelConfiguration->GetChannelName();
 		code = pChannelConfiguration->pProducer->produce(sTopicName, 0, pChannelConfiguration->m_ProducerMsgFlags,
-			param, dataLen, key, keyLen, timestamp, (void*)this);
+			buffer, dataLen, key, keyLen, timestamp, (void*)this);
 	}
 	else
 	{
 		code = pChannelConfiguration->pProducer->produce(pChannelConfiguration->pTopic, 0, pChannelConfiguration->m_ProducerMsgFlags,
-			param, dataLen, key, keyLen, (void*)this);
+			buffer, dataLen, key, keyLen, (void*)this);
 	}
 
 	if (code != RdKafka::ErrorCode::ERR_NO_ERROR)
 	{
 		LOG_ERROR("Channel %s - Write failed with reason %s.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", RdKafka::err2str(code).c_str());
 		DDM_UNDERLYING_ERROR_CONDITION thisCode = KafkaErrorMapper(code);
+
+		if ((pChannelConfiguration->m_ProducerMsgFlags & RdKafka::Producer::RK_MSG_FREE) == RdKafka::Producer::RK_MSG_FREE)
+		{
+			free(buffer);
+		}
 
 		pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_WRITE_FAILED, code, RdKafka::err2str(code).c_str());
 		return E_FAIL;
