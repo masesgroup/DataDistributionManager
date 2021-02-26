@@ -77,6 +77,7 @@ private:
 	void StopConsumer(ChannelConfigurationOpenDDS* pChannelConfiguration);
 	static DWORD __stdcall consumerHandler(void * argh);
 	static DWORD __stdcall readDataFromInfoRepo(void * argh);
+	static DWORD __stdcall monitorInfoRepo(void * argh);
 	HRESULT InitializeInfoRepo();
 	void SetDomainParticipantQos(DDS::DomainParticipantQos* qos, const char* arrayParams[], int len);
 	void SetTopicQos(DDS::TopicQos* qos, const char* arrayParams[], int len);
@@ -98,12 +99,15 @@ private:
 
 	::CORBA::Boolean m_bStartDCPSInfoRepo;
 	::CORBA::Boolean m_bDCPSInfoRepoLogOnApplication;
+	::CORBA::Boolean m_bDCPSInfoRepoMonitor;
 	std::string	m_DCPSInfoRepoCmdLine;
 #define BUFSIZE 4096 
 
 	HANDLE m_hChildStd_OUT_Rd;
 	HANDLE m_hChildStd_OUT_Wr;
 	HANDLE m_hreadDataFromInfoRepo;
+	HANDLE m_hMonitorInfoRepo;
+	PROCESS_INFORMATION m_piDCPSInfoRepo;
 
 	int  m_ServerLostTimeout;
 

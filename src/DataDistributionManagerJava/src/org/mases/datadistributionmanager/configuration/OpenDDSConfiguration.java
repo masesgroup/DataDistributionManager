@@ -156,6 +156,7 @@ public class OpenDDSConfiguration extends CommonConfiguration {
      */
     public class DCPSInfoRepoConfiguration extends BaseConfiguration {
         public static final String DCPSInfoRepoAutostartKey = "datadistributionmanager.opendds.dcpsinforepo.autostart";
+        public static final String DCPSInfoRepoMonitorKey = "datadistributionmanager.opendds.dcpsinforepo.monitor";
         public static final String DCPSInfoRepoLogOnApplicationKey = "datadistributionmanager.opendds.dcpsinforepo.logonapplication";
         public static final String DCPSInfoRepoCommandLineKey = "datadistributionmanager.opendds.dcpsinforepo.cmdlineargs";
 
@@ -255,6 +256,25 @@ public class OpenDDSConfiguration extends CommonConfiguration {
          */
         public void setAutostart(Boolean value) {
             keyValuePair.put(DCPSInfoRepoAutostartKey, value.toString());
+        }
+
+        /**
+         * Monitors DCPSInfoRepo process
+         * 
+         * @return Monitors DCPSInfoRepo process
+         */
+        public boolean getMonitor() {
+            String value = keyValuePair.get(DCPSInfoRepoMonitorKey);
+            return (value == null) ? false : Boolean.parseBoolean(value);
+        }
+
+        /**
+         * Monitors DCPSInfoRepo process
+         * 
+         * @param value Monitors DCPSInfoRepo process
+         */
+        public void setMonitor(Boolean value) {
+            keyValuePair.put(DCPSInfoRepoMonitorKey, value.toString());
         }
 
         /**
@@ -814,9 +834,20 @@ public class OpenDDSConfiguration extends CommonConfiguration {
 
         protected void CheckConfiguration() {
             super.CheckConfiguration();
-            if (!keyValuePair.containsKey(DCPSInfoRepoCommandLineKey)) {
-                if (commandLineKeyValuePair.size() == 0) {
-                    throw new IllegalArgumentException("Missing CommandLine");
+            if (keyValuePair.containsKey(DCPSInfoRepoAutostartKey) && getAutostart()) {
+                if (!keyValuePair.containsKey(DCPSInfoRepoCommandLineKey) && commandLineKeyValuePair.size() == 0) {
+                        throw new IllegalArgumentException("Missing CommandLine");
+                } else if (keyValuePair.containsKey(DCPSInfoRepoMonitorKey)) {
+                    if (keyValuePair.containsKey(DCPSInfoRepoCommandLineKey)) {
+                        if (!getCommandLine().contains("-" + DCPSInfoRepoResurrectKey + " ")
+                                && !getCommandLine().contains("-" + DCPSInfoRepoPersistenceFileKey + " ")) {
+                            throw new IllegalArgumentException("Missing Resurrect and PersistenceFile information");
+                        }
+                    } else if (commandLineKeyValuePair.size() == 0
+                            || (!commandLineKeyValuePair.containsKey(DCPSInfoRepoResurrectKey)
+                                    && !commandLineKeyValuePair.containsKey(DCPSInfoRepoPersistenceFileKey))) {
+                        throw new IllegalArgumentException("Missing Resurrect and PersistenceFile information");
+                    }
                 }
             }
         }

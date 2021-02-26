@@ -29,13 +29,13 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     {
         [MarshalAs(UnmanagedType.LPStr)]
         public string ChannelName;
-        public DDM_UNDERLYING_ERROR_CONDITION Condition;
         [MarshalAs(UnmanagedType.U1)]
         public bool IsDataAvailable;
         public IntPtr Key;
         public IntPtr KeyLen;
         public IntPtr Buffer;
         public IntPtr BufferLength;
+        public DDM_UNDERLYING_ERROR_CONDITION Condition;
         [MarshalAs(UnmanagedType.I4)]
         public int NativeCode;
         [MarshalAs(UnmanagedType.LPStr)]

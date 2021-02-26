@@ -176,6 +176,10 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             /// </summary>
             public const string DCPSInfoRepoAutostartKey = "datadistributionmanager.opendds.dcpsinforepo.autostart";
             /// <summary>
+            /// Configuration key of <see cref="Autostart"/>
+            /// </summary>
+            public const string DCPSInfoRepoMonitorKey = "datadistributionmanager.opendds.dcpsinforepo.monitor";
+            /// <summary>
             /// Configuration key of <see cref="LogOnApplication"/>
             /// </summary>
             public const string DCPSInfoRepoLogOnApplicationKey = "datadistributionmanager.opendds.dcpsinforepo.logonapplication";
@@ -281,6 +285,24 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
                 {
                     keyValuePair[DCPSInfoRepoAutostartKey] = value.ToString().ToLowerInvariant();
                     EmitPropertyChanged("Autostart");
+                }
+            }
+
+            /// <summary>
+            /// Monitors DCPSInfoRepo process
+            /// </summary>
+            public bool Monitor
+            {
+                get
+                {
+                    string value = string.Empty;
+                    keyValuePair.TryGetValue(DCPSInfoRepoMonitorKey, out value);
+                    return bool.Parse(value);
+                }
+                set
+                {
+                    keyValuePair[DCPSInfoRepoMonitorKey] = value.ToString().ToLowerInvariant();
+                    EmitPropertyChanged("Monitor");
                 }
             }
 
@@ -641,9 +663,26 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             protected override void CheckConfiguration()
             {
                 base.CheckConfiguration();
-                if (!keyValuePair.ContainsKey(DCPSInfoRepoCommandLineKey) && commandLineKeyValuePair.Count == 0)
+                if (keyValuePair.ContainsKey(DCPSInfoRepoAutostartKey) && Autostart)
                 {
-                    throw new InvalidOperationException("Missing CommandLine");
+                    if (!keyValuePair.ContainsKey(DCPSInfoRepoCommandLineKey) && commandLineKeyValuePair.Count == 0)
+                    {
+                        throw new InvalidOperationException("Missing CommandLine");
+                    }
+                    else if (keyValuePair.ContainsKey(DCPSInfoRepoMonitorKey))
+                    {
+                        if (keyValuePair.ContainsKey(DCPSInfoRepoCommandLineKey))
+                        {
+                            if (!CommandLine.Contains("-" + DCPSInfoRepoResurrectKey + " ") && !CommandLine.Contains("-" + DCPSInfoRepoPersistenceFileKey + " "))
+                            {
+                                throw new InvalidOperationException("Missing Resurrect and PersistenceFile information");
+                            }
+                        }
+                        else if (commandLineKeyValuePair.Count == 0 || (!commandLineKeyValuePair.ContainsKey(DCPSInfoRepoResurrectKey) && !commandLineKeyValuePair.ContainsKey(DCPSInfoRepoPersistenceFileKey)))
+                        {
+                            throw new InvalidOperationException("Missing Resurrect and PersistenceFile information");
+                        }
+                    }
                 }
             }
 
@@ -766,7 +805,7 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         /// <summary>
         /// The configuration of <see cref="OpenDDSArgsConfiguration"/>
         /// </summary>
-        public OpenDDSArgsConfiguration OpenDDSArgs { get { return openDDSArgs; } set { openDDSArgs = value;  EmitPropertyChanged("OpenDDSArgs"); } }
+        public OpenDDSArgsConfiguration OpenDDSArgs { get { return openDDSArgs; } set { openDDSArgs = value; EmitPropertyChanged("OpenDDSArgs"); } }
 
         DCPSInfoRepoConfiguration dCPSInfoRepo = null;
         /// <summary>

@@ -31,6 +31,8 @@ namespace ManagerTestNet
 
         static void Main(string[] args)
         {
+            DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.TRANSMITTER;
+
             SmartDataDistribution dataDistribution = new SmartDataDistribution();
             dataDistribution.LoggingEvent += DataDistribution_LoggingEvent;
             OpenDDSConfiguration conf = null;
@@ -47,7 +49,10 @@ namespace ManagerTestNet
                     },
                     DCPSInfoRepo = new OpenDDSConfiguration.DCPSInfoRepoConfiguration()
                     {
-                        Autostart = true,
+                        Autostart = direction.HasFlag(DDM_CHANNEL_DIRECTION.RECEIVER), // start only on receiver
+                        Monitor = true,
+                        //Resurrect = true,
+                        //PersistenceFile = "persistance.file",
                         ORBEndpoint = "iiop://localhost:12345",
                     },
                     DomainParticipantQos = new DomainParticipantQosConfiguration()
@@ -120,7 +125,7 @@ namespace ManagerTestNet
             uint counter = 100;
             int pid = Process.GetCurrentProcess().Id;
             var str = string.Format("{0:10}", pid);
-            DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.TRANSMITTER;
+
             Console.WriteLine("Starting sending...\n");
             while (true)
             {

@@ -47,8 +47,11 @@ DataDistributionManagerOpenDDS::DataDistributionManagerOpenDDS()
 	m_argc = 0;
 	m_argv = NULL;
 	m_bStartDCPSInfoRepo = FALSE;
+	m_bDCPSInfoRepoMonitor = FALSE;
 	m_bDCPSInfoRepoLogOnApplication = FALSE;
 	m_DCPSInfoRepoCmdLine = "";
+	m_hreadDataFromInfoRepo = NULL;
+	m_hMonitorInfoRepo = NULL;
 }
 
 DataDistributionManagerOpenDDS::~DataDistributionManagerOpenDDS()
@@ -164,6 +167,7 @@ HRESULT DataDistributionManagerOpenDDS::InitializeInfoRepo()
 	m_hChildStd_OUT_Rd = NULL;
 	m_hChildStd_OUT_Wr = NULL;
 	m_hreadDataFromInfoRepo = NULL;
+	m_hMonitorInfoRepo = NULL;
 
 	if (m_bStartDCPSInfoRepo)
 	{
@@ -183,8 +187,7 @@ HRESULT DataDistributionManagerOpenDDS::InitializeInfoRepo()
 		ZeroMemory(&si, sizeof(si));
 		si.cb = sizeof(si);
 
-		PROCESS_INFORMATION pi;
-		ZeroMemory(&pi, sizeof(pi));
+		ZeroMemory(&m_piDCPSInfoRepo, sizeof(m_piDCPSInfoRepo));
 
 		if (m_bDCPSInfoRepoLogOnApplication)
 		{
@@ -228,7 +231,7 @@ HRESULT DataDistributionManagerOpenDDS::InitializeInfoRepo()
 			NULL,								// Use parent's environment block
 			NULL,								// Use parent's starting directory 
 			&si,								// Pointer to STARTUPINFO structure
-			&pi)								// Pointer to PROCESS_INFORMATION structure
+			&m_piDCPSInfoRepo)					// Pointer to PROCESS_INFORMATION structure
 			)
 		{
 			LOG_ERROR("CreateProcessA with error %x", HRESULT_FROM_WIN32(GetLastError()));
@@ -238,6 +241,10 @@ HRESULT DataDistributionManagerOpenDDS::InitializeInfoRepo()
 		{
 			m_hreadDataFromInfoRepo = CreateThread(0, 0, readDataFromInfoRepo, this, 0, NULL);
 		}
+
+		m_hMonitorInfoRepo = CreateThread(0, 0, monitorInfoRepo, this, 0, NULL);
+
+		LOG_INFO("DCPSInfoRepo running with cmd line %s", commandLine.c_str());
 	}
 	return S_OK;
 }
@@ -261,6 +268,31 @@ DWORD __stdcall DataDistributionManagerOpenDDS::readDataFromInfoRepo(void * argh
 	return 0;
 }
 
+DWORD __stdcall DataDistributionManagerOpenDDS::monitorInfoRepo(void * argh)
+{
+	DWORD dwRead;
+	CHAR chBuf[BUFSIZE];
+	BOOL bSuccess = FALSE;
+	DataDistributionManagerOpenDDS* pDataDistributionManagerOpenDDS = static_cast<DataDistributionManagerOpenDDS*>(argh);
+
+	// Wait until child process exits.
+	WaitForSingleObject(pDataDistributionManagerOpenDDS->m_piDCPSInfoRepo.hProcess, INFINITE);
+	CloseHandle(pDataDistributionManagerOpenDDS->m_hChildStd_OUT_Wr);
+	CloseHandle(pDataDistributionManagerOpenDDS->m_hChildStd_OUT_Rd);
+	// Close process and thread handles. 
+	CloseHandle(pDataDistributionManagerOpenDDS->m_piDCPSInfoRepo.hProcess);
+	CloseHandle(pDataDistributionManagerOpenDDS->m_piDCPSInfoRepo.hThread);
+
+	if (pDataDistributionManagerOpenDDS->GetSubSystemStarted())
+	{
+		pDataDistributionManagerOpenDDS->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "DataDistributionManagerOpenDDS", "monitorInfoRepo", "Detected DCPSInfoRepo closed unexpectedly. Automatic restart will be initiated.");
+		// subsystem was not shutdown, restart info repo
+		pDataDistributionManagerOpenDDS->InitializeInfoRepo();
+	}
+
+	return 0;
+}
+
 HRESULT DataDistributionManagerOpenDDS::Initialize()
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "Initialize");
@@ -269,6 +301,15 @@ HRESULT DataDistributionManagerOpenDDS::Initialize()
 	if (read_config_file(NULL, GetArrayParams(), GetArrayParamsLen()) != NO_ERROR)
 	{
 		return E_FAIL;
+	}
+
+	if (m_bDCPSInfoRepoMonitor)
+	{
+		if (m_DCPSInfoRepoCmdLine.find_first_of("-r") == std::string::npos || m_DCPSInfoRepoCmdLine.find_first_of("-file") == std::string::npos)
+		{
+			LOG_ERROR("DCPSInfoRepo command line \"%s\" miss mandatory switch -r and -file");
+			return E_FAIL;
+		}
 	}
 
 	hr = InitializeInfoRepo();
@@ -611,7 +652,7 @@ void DataDistributionManagerOpenDDS::SetTopicQos(DDS::TopicQos* qos, const char*
 		}
 		// DDS::LatencyBudgetQosPolicy latency_budget;
 		else if (n == "datadistributionmanager.opendds.topicqos.latencybudgetqospolicy.period")
-		{		
+		{
 			ConvertMillisecondsToDuration(&qos->latency_budget.duration, v.c_str());
 		}
 		// DDS::LivelinessQosPolicy liveliness;
@@ -644,7 +685,7 @@ void DataDistributionManagerOpenDDS::SetTopicQos(DDS::TopicQos* qos, const char*
 		}
 		else if (n == "datadistributionmanager.opendds.topicqos.historyqospolicy.depth")
 		{
-			qos->history.depth = atoi( v.c_str());
+			qos->history.depth = atoi(v.c_str());
 		}
 		// DDS::ResourceLimitsQosPolicy resource_limits;
 		else if (n == "datadistributionmanager.opendds.topicqos.resourcelimitsqospolicy.max_instances")
@@ -1257,6 +1298,15 @@ void DataDistributionManagerOpenDDS::SetParameter(HANDLE channelHandle, const ch
 				m_bStartDCPSInfoRepo = false;
 			return;
 		}
+		else if (!strcmp(paramName, "datadistributionmanager.opendds.dcpsinforepo.monitor"))
+		{
+			if (!strcmp(paramValue, "true") ||
+				!strcmp(paramValue, "1"))
+				m_bDCPSInfoRepoMonitor = true;
+			else
+				m_bDCPSInfoRepoMonitor = false;
+			return;
+		}
 		else if (!strcmp(paramName, "datadistributionmanager.opendds.dcpsinforepo.logonapplication"))
 		{
 			if (!strcmp(paramValue, "true") ||
@@ -1299,6 +1349,11 @@ const char* DataDistributionManagerOpenDDS::GetParameter(HANDLE channelHandle, c
 		else if (!strcmp(paramName, "datadistributionmanager.opendds.dcpsinforepo.autostart"))
 		{
 			if (m_bStartDCPSInfoRepo) return "true";
+			else return "false";
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.opendds.dcpsinforepo.monitor"))
+		{
+			if (m_bDCPSInfoRepoMonitor) return "true";
 			else return "false";
 		}
 		else if (!strcmp(paramName, "datadistributionmanager.opendds.dcpsinforepo.logonapplication"))
@@ -1458,6 +1513,7 @@ HRESULT DataDistributionManagerOpenDDS::Stop(DWORD milliseconds)
 	if (m_hChildStd_OUT_Rd) CloseHandle(m_hChildStd_OUT_Rd);
 	if (m_hChildStd_OUT_Wr) CloseHandle(m_hChildStd_OUT_Wr);
 	if (m_hreadDataFromInfoRepo) CloseHandle(m_hreadDataFromInfoRepo);
+	if (m_hMonitorInfoRepo) CloseHandle(m_hMonitorInfoRepo);
 
 	return shutdown();
 }
