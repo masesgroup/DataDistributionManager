@@ -1,0 +1,863 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class KafkaChannelConfiguration
+   | Data Distribution Manager website </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class KafkaChannelConfiguration
+   | Data Distribution Manager website ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration">
+  
+  
+  <h1 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration" class="text-break">Class KafkaChannelConfiguration
+  </h1>
+  <div class="markdown level0 summary"><p>The configuration class for Kafka channel</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html">BaseConfiguration</a></div>
+    <div class="level2"><a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html">GlobalConfiguration</a></div>
+    <div class="level3"><a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html">CommonConfiguration</a></div>
+    <div class="level4"><a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.KafkaConfiguration.html">KafkaConfiguration</a></div>
+    <div class="level5"><span class="xref">KafkaChannelConfiguration</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="MASES.DataDistributionManager.Bindings.IConfiguration.html">IConfiguration</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_CreateChannelTimeoutKey">CommonConfiguration.CreateChannelTimeoutKey</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_ChannelSeekTimeoutKey">CommonConfiguration.ChannelSeekTimeoutKey</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_ReceiveTimeoutKey">CommonConfiguration.ReceiveTimeoutKey</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_KeepAliveTimeoutKey">CommonConfiguration.KeepAliveTimeoutKey</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_ConsumerTimeoutKey">CommonConfiguration.ConsumerTimeoutKey</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_ProducerTimeoutKey">CommonConfiguration.ProducerTimeoutKey</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitTimeoutKey">CommonConfiguration.CommitTimeoutKey</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitSyncKey">CommonConfiguration.CommitSyncKey</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_EventSyncKey">CommonConfiguration.EventSyncKey</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_CreateChannelTimeout">CommonConfiguration.CreateChannelTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_ChannelSeekTimeout">CommonConfiguration.ChannelSeekTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_ReceiveTimeout">CommonConfiguration.ReceiveTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_KeepAliveTimeout">CommonConfiguration.KeepAliveTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_ConsumerTimeout">CommonConfiguration.ConsumerTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_ProducerTimeout">CommonConfiguration.ProducerTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitTimeout">CommonConfiguration.CommitTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitSync">CommonConfiguration.CommitSync</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_EventSync">CommonConfiguration.EventSync</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_ProtocolKey">GlobalConfiguration.ProtocolKey</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_ProtocolLibraryKey">GlobalConfiguration.ProtocolLibraryKey</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_MaxMessageSizeKey">GlobalConfiguration.MaxMessageSizeKey</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_ServerLostTimeoutKey">GlobalConfiguration.ServerLostTimeoutKey</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_GlobalLogLevelKey">GlobalConfiguration.GlobalLogLevelKey</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_Protocol">GlobalConfiguration.Protocol</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_ProtocolLibrary">GlobalConfiguration.ProtocolLibrary</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_MaxMessageSize">GlobalConfiguration.MaxMessageSize</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_ServerLostTimeout">GlobalConfiguration.ServerLostTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_GlobalLogLevel">GlobalConfiguration.GlobalLogLevel</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_PropertyChanged">BaseConfiguration.PropertyChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_EmitPropertyChanged_System_String_">BaseConfiguration.EmitPropertyChanged(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.html">MASES.DataDistributionManager.Bindings.Configuration</a></h6>
+  <h6><strong>Assembly</strong>: DataDistributionManagerNet.dll</h6>
+  <h5 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class KafkaChannelConfiguration : KafkaConfiguration, IConfiguration, INotifyPropertyChanged</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration__ctor_MASES_DataDistributionManager_Bindings_Configuration_KafkaConfiguration_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.%23ctor(MASES.DataDistributionManager.Bindings.Configuration.KafkaConfiguration)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L65">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration__ctor_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.#ctor*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration__ctor_MASES_DataDistributionManager_Bindings_Configuration_KafkaConfiguration_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.#ctor(MASES.DataDistributionManager.Bindings.Configuration.KafkaConfiguration)">KafkaChannelConfiguration(KafkaConfiguration)</h4>
+  <div class="markdown level1 summary"><p>Duplicates a configuration</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KafkaChannelConfiguration(KafkaConfiguration originalConf)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.KafkaConfiguration.html">KafkaConfiguration</a></td>
+        <td><span class="parametername">originalConf</span></td>
+        <td><p><a class="xref" href="MASES.DataDistributionManager.Bindings.IConfiguration.html">IConfiguration</a> to duplicate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_BootstrapBrokersKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.BootstrapBrokersKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L39">View Source</a>
+  </span>
+  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_BootstrapBrokersKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.BootstrapBrokersKey">BootstrapBrokersKey</h4>
+  <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_BootstrapBrokers">BootstrapBrokers</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string BootstrapBrokersKey = &quot;datadistributionmanager.kafka.metadata.broker.list&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ClientIdKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ClientIdKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L47">View Source</a>
+  </span>
+  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ClientIdKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ClientIdKey">ClientIdKey</h4>
+  <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ClientId">ClientId</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string ClientIdKey = &quot;datadistributionmanager.kafka.client.id&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_DebugKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.DebugKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L43">View Source</a>
+  </span>
+  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_DebugKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.DebugKey">DebugKey</h4>
+  <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_Debug">Debug</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DebugKey = &quot;datadistributionmanager.kafka.debug&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_DumpMetadataKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.DumpMetadataKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L59">View Source</a>
+  </span>
+  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_DumpMetadataKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.DumpMetadataKey">DumpMetadataKey</h4>
+  <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_DumpMetadata">DumpMetadata</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DumpMetadataKey = &quot;datadistributionmanager.kafka.topic.dumpmetadata&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_GroupIdKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.GroupIdKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L51">View Source</a>
+  </span>
+  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_GroupIdKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.GroupIdKey">GroupIdKey</h4>
+  <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_GroupId">GroupId</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string GroupIdKey = &quot;datadistributionmanager.kafka.group.id&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_KafkaConfigurationBasePropertyKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.KafkaConfigurationBasePropertyKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L31">View Source</a>
+  </span>
+  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_KafkaConfigurationBasePropertyKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.KafkaConfigurationBasePropertyKey">KafkaConfigurationBasePropertyKey</h4>
+  <div class="markdown level1 summary"><p>Base property name of all specific configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.KafkaConfiguration.html">KafkaConfiguration</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string KafkaConfigurationBasePropertyKey = &quot;datadistributionmanager.kafka.&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ReplicationFactorKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ReplicationFactorKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L35">View Source</a>
+  </span>
+  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ReplicationFactorKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ReplicationFactorKey">ReplicationFactorKey</h4>
+  <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ReplicationFactor">ReplicationFactor</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string ReplicationFactorKey = &quot;datadistributionmanager.kafka.topic.replicationfactor&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TopicCreateKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TopicCreateKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L55">View Source</a>
+  </span>
+  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TopicCreateKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TopicCreateKey">TopicCreateKey</h4>
+  <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TopicCreate">TopicCreate</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string TopicCreateKey = &quot;datadistributionmanager.kafka.topic.create&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_BootstrapBrokers.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.BootstrapBrokers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L127">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_BootstrapBrokers_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.BootstrapBrokers*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_BootstrapBrokers" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.BootstrapBrokers">BootstrapBrokers</h4>
+  <div class="markdown level1 summary"><p>The bootstrap broker(s) to be used as Comma Separated Value(s)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string BootstrapBrokers { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ClientId.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ClientId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L73">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ClientId_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ClientId*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ClientId" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ClientId">ClientId</h4>
+  <div class="markdown level1 summary"><p>The client id to be used</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ClientId { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_Configuration.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.Configuration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L249">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_Configuration_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.Configuration*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_Configuration" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.Configuration">Configuration</h4>
+  <div class="markdown level1 summary"><p>The configuration parameters to use written as key=value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string[] Configuration { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>[]</td>
+        <td><p>The list of key/value pairs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_Configuration">BaseConfiguration.Configuration</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_Debug.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.Debug%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L109">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_Debug_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.Debug*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_Debug" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.Debug">Debug</h4>
+  <div class="markdown level1 summary"><p>The debug level (e.g. metadata,topic,msg,broker)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Debug { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_DumpMetadata.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.DumpMetadata%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L181">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_DumpMetadata_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.DumpMetadata*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_DumpMetadata" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.DumpMetadata">DumpMetadata</h4>
+  <div class="markdown level1 summary"><p>True to dump metadata</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DumpMetadata { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_GroupId.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.GroupId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L91">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_GroupId_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.GroupId*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_GroupId" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.GroupId">GroupId</h4>
+  <div class="markdown level1 summary"><p>The group id to be used</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GroupId { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_Item_System_String_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.Item(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L201">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_Item_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.Item*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_Item_System_String_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.Item(System.String)">Item[String]</h4>
+  <div class="markdown level1 summary"><p>Generic setter/getter for all configuration properties related to librdkafka (see <a href="https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md">https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md</a>)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string this[string property] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">property</span></td>
+        <td><p>The property name</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The property value</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ReplicationFactor.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ReplicationFactor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L145">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ReplicationFactor_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ReplicationFactor*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ReplicationFactor" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ReplicationFactor">ReplicationFactor</h4>
+  <div class="markdown level1 summary"><p>The replication factor to be used</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint ReplicationFactor { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TopicCreate.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TopicCreate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L163">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TopicCreate_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TopicCreate*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TopicCreate" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TopicCreate">TopicCreate</h4>
+  <div class="markdown level1 summary"><p>True to request a create topic</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TopicCreate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_CheckConfiguration.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.CheckConfiguration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L231">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_CheckConfiguration_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.CheckConfiguration*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_CheckConfiguration" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.CheckConfiguration">CheckConfiguration()</h4>
+  <div class="markdown level1 summary"><p>Checks the configuration for mandatory information</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void CheckConfiguration()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_CheckConfiguration">GlobalConfiguration.CheckConfiguration()</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.IConfiguration.html">IConfiguration</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">System.ComponentModel.INotifyPropertyChanged</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/KafkaChannelConfiguration.cs/#L26" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © 2021 MASES s.r.l..<br>Generated by <strong>DocFX</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
