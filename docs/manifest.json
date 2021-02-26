@@ -4746,7 +4746,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.html",
-          "hash": "rkieXWzclJdhsNhMQLWYCA=="
+          "hash": "3vuLDVHKx9VwTWnfTg5h0A=="
         }
       },
       "is_incremental": false,
@@ -5010,7 +5010,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html",
-          "hash": "RlRkRm1r/HuxCEPh1GlNbA=="
+          "hash": "N2B1Ej0YxQAamj5lXy/ndQ=="
         }
       },
       "is_incremental": false,
@@ -5034,7 +5034,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.html",
-          "hash": "jhNgJg26LMbGaNv6svuj4Q=="
+          "hash": "XbfYeI6utu1wz2jlkcvX5w=="
         }
       },
       "is_incremental": false,
@@ -5310,7 +5310,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.html",
-          "hash": "4rAiFiL1KKoz7MLVsluJQw=="
+          "hash": "2aGM+4VIk9Ku1RSKpg0PQw=="
         }
       },
       "is_incremental": false,
@@ -5382,7 +5382,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html",
-          "hash": "dZ2/ZpjOV9Nw3AJiaIRqoQ=="
+          "hash": "CxBiiJXpuC+L53URT3xB4g=="
         }
       },
       "is_incremental": false,
@@ -5562,7 +5562,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html",
-          "hash": "jHRHG488DZP6u8hRZgk3BQ=="
+          "hash": "ONVDmuEFfHB0MaDtGXIGsg=="
         }
       },
       "is_incremental": false,
@@ -5630,6 +5630,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/examples.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/examples.html",
+          "hash": "AwZziyUZ8elUpqSlOgLyMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/intro.md",
       "output": {
         ".html": {
@@ -5682,7 +5694,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "uwYwgojVWb/uiKnsNQepGA=="
+          "hash": "Jd0j12QEZC4ExJiSh8SO4g=="
         }
       },
       "is_incremental": false,
@@ -5890,7 +5902,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 9,
+          "total_file_count": 10,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {

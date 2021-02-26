@@ -2225,6 +2225,12 @@ references:
   commentId: F:MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoLogOnApplicationKey
   fullName: MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoLogOnApplicationKey
   nameWithType: OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoLogOnApplicationKey
+- uid: MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoMonitorKey
+  name: DCPSInfoRepoMonitorKey
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoMonitorKey
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoMonitorKey
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoMonitorKey
+  nameWithType: OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoMonitorKey
 - uid: MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoNOBITSKey
   name: DCPSInfoRepoNOBITSKey
   href: api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoNOBITSKey
@@ -2370,6 +2376,19 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.LogOnApplication
   nameWithType: OpenDDSConfiguration.DCPSInfoRepoConfiguration.LogOnApplication
+- uid: MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Monitor
+  name: Monitor
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Monitor
+  commentId: P:MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Monitor
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Monitor
+  nameWithType: OpenDDSConfiguration.DCPSInfoRepoConfiguration.Monitor
+- uid: MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Monitor*
+  name: Monitor
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Monitor_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Monitor
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Monitor
+  nameWithType: OpenDDSConfiguration.DCPSInfoRepoConfiguration.Monitor
 - uid: MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.NOBITS
   name: NOBITS
   href: api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_NOBITS
@@ -12321,6 +12340,21 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.Unlock
   nameWithType: ISmartDataDistributionChannel.Unlock
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.Byte[],System.Boolean,System.Int64)
+  name: WriteOnChannel(Byte[], Boolean, Int64)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_WriteOnChannel_System_Byte___System_Boolean_System_Int64_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.Byte[],System.Boolean,System.Int64)
+  name.vb: WriteOnChannel(Byte(), Boolean, Int64)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.Byte[], System.Boolean, System.Int64)
+  fullName.vb: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.Byte(), System.Boolean, System.Int64)
+  nameWithType: ISmartDataDistributionChannel.WriteOnChannel(Byte[], Boolean, Int64)
+  nameWithType.vb: ISmartDataDistributionChannel.WriteOnChannel(Byte(), Boolean, Int64)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String,System.Boolean,System.Int64)
+  name: WriteOnChannel(String, Boolean, Int64)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_WriteOnChannel_System_String_System_Boolean_System_Int64_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String,System.Boolean,System.Int64)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String, System.Boolean, System.Int64)
+  nameWithType: ISmartDataDistributionChannel.WriteOnChannel(String, Boolean, Int64)
 - uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String,System.Byte[],System.Boolean,System.Int64)
   name: WriteOnChannel(String, Byte[], Boolean, Int64)
   href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_WriteOnChannel_System_String_System_Byte___System_Boolean_System_Int64_
@@ -13498,6 +13532,21 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.Unlock
   nameWithType: SmartDataDistributionChannel.Unlock
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.Byte[],System.Boolean,System.Int64)
+  name: WriteOnChannel(Byte[], Boolean, Int64)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_Byte___System_Boolean_System_Int64_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.Byte[],System.Boolean,System.Int64)
+  name.vb: WriteOnChannel(Byte(), Boolean, Int64)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.Byte[], System.Boolean, System.Int64)
+  fullName.vb: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.Byte(), System.Boolean, System.Int64)
+  nameWithType: SmartDataDistributionChannel.WriteOnChannel(Byte[], Boolean, Int64)
+  nameWithType.vb: SmartDataDistributionChannel.WriteOnChannel(Byte(), Boolean, Int64)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.Boolean,System.Int64)
+  name: WriteOnChannel(String, Boolean, Int64)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_Boolean_System_Int64_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.Boolean,System.Int64)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String, System.Boolean, System.Int64)
+  nameWithType: SmartDataDistributionChannel.WriteOnChannel(String, Boolean, Int64)
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.Byte[],System.Boolean,System.Int64)
   name: WriteOnChannel(String, Byte[], Boolean, Int64)
   href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_Byte___System_Boolean_System_Int64_
