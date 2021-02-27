@@ -49,7 +49,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_data_distribution_manager_8h.html"
+"DataDistributionManagerEnums_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

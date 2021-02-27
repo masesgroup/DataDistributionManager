@@ -1,7 +1,0 @@
-var struct_cluster_health_element =
-[
-    [ "LastContactTime", "struct_cluster_health_element.html#af32653422bf871996c5bea87d351c18d", null ],
-    [ "ServerId", "struct_cluster_health_element.html#aa3733ab9e950b3b34555acaeb9b957ce", null ],
-    [ "Status", "struct_cluster_health_element.html#a9e5328dad0c7a4347135e54c2237ab54", null ],
-    [ "Uptime", "struct_cluster_health_element.html#ae776992a7e2e2c79ae8d87d3ce2e79b3", null ]
-];
