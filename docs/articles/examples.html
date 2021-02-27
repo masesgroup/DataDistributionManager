@@ -69,6 +69,9 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="datadistributionmanager-example">DataDistributionManager example</h1>
 
+<blockquote>
+<p>NOTE: the examples use OpenDDS to avoid an external Apache Kafka server</p>
+</blockquote>
 <h2 id="net">.NET</h2>
 <p>To execute the <em>dotnet</em> example do the following steps:</p>
 <ol>
@@ -117,7 +120,7 @@ $&gt; cd java\TransmitterReceiver
 <pre><code>$&gt; set JDK_ROOT_FOLDER=[YOUR_PATH_TO_JDK_FOLDER]
 </code></pre>
 <ol start="4">
-<li>Put the <strong>datadistributionmanager.jar</strong> file in the application folder, the file is available at (latest release)[https://github.com/marcocappolimases/DataDistributionManager/releases/latest]</li>
+<li>Put the <strong>datadistributionmanager.jar</strong> file in the application folder, the file is available at <a href="https://github.com/masesgroup/DataDistributionManager/releases/latest">latest release</a></li>
 <li>Compile the java source</li>
 </ol>
 <pre><code>$&gt; compile.bat
@@ -127,7 +130,7 @@ $&gt; cd java\TransmitterReceiver
 </ol>
 <pre><code>$&gt; startreceiver.bat
 </code></pre>
-<p>This start the receiver and will also start the DCPSInfoRepo.exe</p>
+<p>This start the receiver and will also start the <strong>DCPSInfoRepo.exe</strong></p>
 <ol start="7">
 <li>open a new windows command prompt and do steps 2 and 3</li>
 <li>execute the example as transmitter</li>
