@@ -1,5 +1,9 @@
 # DataDistributionManager example 
 
+>
+> NOTE: the examples use OpenDDS to avoid an external Apache Kafka server
+>
+
 ## .NET
 
 To execute the *dotnet* example do the following steps:
@@ -49,7 +53,7 @@ $> cd java\TransmitterReceiver
 ```
 $> set JDK_ROOT_FOLDER=[YOUR_PATH_TO_JDK_FOLDER]
 ```
-4. Put the **datadistributionmanager.jar** file in the application folder, the file is available at (latest release)[https://github.com/marcocappolimases/DataDistributionManager/releases/latest]
+4. Put the **datadistributionmanager.jar** file in the application folder, the file is available at [latest release](https://github.com/masesgroup/DataDistributionManager/releases/latest)
 5. Compile the java source
 ```
 $> compile.bat
@@ -58,7 +62,7 @@ $> compile.bat
 ```
 $> startreceiver.bat
 ```
-This start the receiver and will also start the DCPSInfoRepo.exe
+This start the receiver and will also start the **DCPSInfoRepo.exe**
 
 7. open a new windows command prompt and do steps 2 and 3
 8. execute the example as transmitter
