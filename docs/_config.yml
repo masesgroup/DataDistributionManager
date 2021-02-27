@@ -2,12 +2,12 @@ plugins:
   - jekyll-sitemap
   
 include: 
-  - cppdoc/html/_data_distribution_manager_8h.html
-  - cppdoc/html/_data_distribution_manager_8h.js
-  - cppdoc/html/_data_distribution_manager_8h_source.html
-  - cppdoc/html/_data_distribution_manager_enums_8h.html
-  - cppdoc/html/_data_distribution_manager_enums_8h.js
-  - cppdoc/html/_data_distribution_manager_enums_8h_source.html
-  - cppdoc/html/_smart_data_distribution_manager_8h.html
-  - cppdoc/html/_smart_data_distribution_manager_8h_source.html
+  - /cppdoc/html/_data_distribution_manager_8h.html
+  - /cppdoc/html/_data_distribution_manager_8h.js
+  - /cppdoc/html/_data_distribution_manager_8h_source.html
+  - /cppdoc/html/_data_distribution_manager_enums_8h.html
+  - /cppdoc/html/_data_distribution_manager_enums_8h.js
+  - /cppdoc/html/_data_distribution_manager_enums_8h_source.html
+  - /cppdoc/html/_smart_data_distribution_manager_8h.html
+  - /cppdoc/html/_smart_data_distribution_manager_8h_source.html
   
