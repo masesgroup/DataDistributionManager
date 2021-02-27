@@ -1,4 +1,5 @@
 plugins:
   - jekyll-sitemap
   
-include: cppdoc
+include: 
+  - cppdoc/
