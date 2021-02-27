@@ -45,14 +45,14 @@ jobs:
         shell: cmd
         run: |
           cd third_party\CommonTools\Output
-          VersionGenerator %GITHUB_WORKSPACE%\ProductInformation\Version.cs %GITHUB_WORKSPACE%\ProductInformation ${{ env.GITHUB_COMMIT_MESSAGE }}
+          VersionGenerator %GITHUB_WORKSPACE%\src\ProductInformation\Version.cs %GITHUB_WORKSPACE%\src\ProductInformation ${{ env.GITHUB_COMMIT_MESSAGE }}
         env:
           GITHUB_WORKSPACE: $GITHUB_WORKSPACE
 
       - name: Prepare nuget
         shell: cmd
         run: |
-          third_party\CommonTools\Output\PlaceHolderReplacer.exe .\ProductInformation\Version.cs .\packaging\nuget\datadistributionmanager.nuspec >> .\nuget_version.txt
+          third_party\CommonTools\Output\PlaceHolderReplacer.exe .\src\ProductInformation\Version.cs .\packaging\nuget\datadistributionmanager.nuspec >> .\nuget_version.txt
 
       - name: Store version
         run: |
