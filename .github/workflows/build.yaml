@@ -349,7 +349,7 @@ jobs:
           cd ..\..
           
       - name: Clear documentation folder 
-        run: Remove-Item .\docs\* -Recurse -Force -Exclude .nojekyll,_config.yml
+        run: Remove-Item .\docs\* -Recurse -Force -Exclude _config.yml
 
       - name: Download Doxygen tool
         run: C:\msys64\usr\bin\wget.exe https://doxygen.nl/files/doxygen-1.9.1.windows.x64.bin.zip
@@ -397,6 +397,8 @@ jobs:
       - name: Commit changes
         uses: EndBug/add-and-commit@v5
         with:
+          author_name: github-actions
+          author_email: 41898282+github-actions[bot]@users.noreply.github.com
           add: '.\docs\*.*'
           message: Update documentation after commit ${{ env.GITHUB_COMMIT_MESSAGE }}
           
