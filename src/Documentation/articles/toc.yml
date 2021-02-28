@@ -1,0 +1,13 @@
+- name: Introduction
+  href: intro.md
+- name: Build
+  href: manual_build.md
+- name: Examples
+  href: examples.md
+- name: Usages
+  href: usage.md
+  items:
+    - name: Sinapse platform
+      href: sinapse.md
+    - name: Legacy COM application
+      href: legacy_application_revamp.md

@@ -16,20 +16,62 @@
 *  Refer to LICENSE for more information.
 */
 
-import java.nio.charset.Charset;
-
 import org.mases.datadistributionmanager.*;
+import org.mases.datadistributionmanager.configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration;
+import org.mases.datadistributionmanager.configuration.OpenDDSConfiguration.OpenDDSArgsConfiguration;
+import org.mases.datadistributionmanager.configuration.*;
 
 public class DataDistributionManagerJavaTest {
 	public static void main(String args[]) {
-		final int THRESHOLD = 1000;
+		final int THRESHOLD = 10;
 
 		DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.RECEIVER;
-
 		MySmartDataDistribution dataDistribution = new MySmartDataDistribution();
-		String str = "test";
-		HRESULT hRes = dataDistribution.Initialize(
-				"../../Configuration/OpenDDSManager.conf", str, "KafkaManager");
+		HRESULT hRes = HRESULT.S_OK;
+		OpenDDSConfiguration conf = new OpenDDSConfiguration();
+		if (args.length == 0) {
+			OpenDDSArgsConfiguration argsConf = conf.new OpenDDSArgsConfiguration();
+			// set the full command line
+			// argsConf.setCommandLine("-DCPSConfigFile dds_tcp_conf.ini
+			// -DCPSTransportDebugLevel 10");
+			argsConf.setDCPSConfigFile("dds_tcp_conf.ini");
+			argsConf.setDCPSTransportDebugLevel(10);
+			conf.setOpenDDSArgs(argsConf);
+			if (direction == DDM_CHANNEL_DIRECTION.RECEIVER) {
+				// start info repo on receiver
+				DCPSInfoRepoConfiguration infoRepo = conf.new DCPSInfoRepoConfiguration();
+				infoRepo.setAutostart(true);
+				infoRepo.setORBEndpoint("iiop://localhost:12345");
+				infoRepo.setMonitor(true);
+				infoRepo.setResurrect(true);
+				infoRepo.setPersistenceFile("persistance.file");
+				conf.setDCPSInfoRepo(infoRepo);
+			}
+
+			DomainParticipantQosConfiguration domainPartQos = new DomainParticipantQosConfiguration();
+			domainPartQos.EntityFactoryQosPolicy = new EntityFactoryQosPolicyConfiguration();
+			domainPartQos.EntityFactoryQosPolicy.setAutoenableCreatedEntities(true);
+			domainPartQos.UserDataQosPolicy = new UserDataQosPolicyConfiguration();
+			domainPartQos.UserDataQosPolicy.setValue(new Byte[] { 102, 105 });
+			domainPartQos.PropertyQosPolicy = new PropertyQosPolicyConfiguration();
+			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_IDENTITY_CA = domainPartQos.PropertyQosPolicy.new Property("1",
+					false);
+			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_IDENTITY_CERT = domainPartQos.PropertyQosPolicy.new Property(
+					"2", false);
+			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_IDENTITY_PRIVKEY = domainPartQos.PropertyQosPolicy.new Property(
+					"3", false);
+			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_PERM_CA = domainPartQos.PropertyQosPolicy.new Property("4",
+					false);
+			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_PERM_DOC = domainPartQos.PropertyQosPolicy.new Property("5",
+					false);
+			domainPartQos.PropertyQosPolicy.DDSSEC_PROP_PERM_GOV_DOC = domainPartQos.PropertyQosPolicy.new Property("6",
+					false);
+			conf.setDomainParticipantQos(domainPartQos);
+			String[] confRes = conf.getConfiguration();
+			hRes = dataDistribution.Initialize(conf);
+		} else {
+			hRes = dataDistribution.Initialize(args[0]);
+		}
 
 		if (hRes.getFailed()) {
 			System.out.println("Error in configuration.");
@@ -41,36 +83,39 @@ public class DataDistributionManagerJavaTest {
 		if (hRes.getFailed()) {
 			return;
 		}
-
+		OpenDDSChannelConfiguration channelConf = new OpenDDSChannelConfiguration(conf);
+		String[] channelConfRes = channelConf.getConfiguration();
 		MySmartDataDistributionTopic mytestTopic;
 		try {
-			mytestTopic = dataDistribution.CeateSmartChannel(MySmartDataDistributionTopic.class, "test",
-					DDM_CHANNEL_DIRECTION.RECEIVER, null);
-		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+			mytestTopic = dataDistribution.CreateSmartChannel(MySmartDataDistributionTopic.class, "test");
+		} catch (Throwable e) {
 			e.printStackTrace();
 			return;
 		}
 
-		System.out.println("After StartMasterConsumerAndWait...\n");
+		System.out.println("After CeateSmartChannel...\n");
 
 		mytestTopic.StartChannel(10000);
 
 		try {
-			System.out.println("Starting sending...\n");
-
+			if (direction == DDM_CHANNEL_DIRECTION.TRANSMITTER)
+				System.out.println("Starting sending...\n");
+			else if (direction == DDM_CHANNEL_DIRECTION.RECEIVER)
+				System.out.println("Waiting messages...\n");
 			int counter = 100;
-
-			byte[] buffer = str.getBytes(Charset.forName("ASCII"));
+			String str = "test";
 			while (true) {
 				hRes = HRESULT.S_OK;
 				if (direction == DDM_CHANNEL_DIRECTION.TRANSMITTER) {
-					hRes = mytestTopic.WriteOnChannel(null, buffer, false, -1);
-				}
-				if (hRes == HRESULT.S_OK) {
-					str = String.format("{0:10}", counter++);
-					buffer = str.getBytes(Charset.forName("ASCII"));
-					if ((counter % THRESHOLD) == 0)
-						System.out.println(String.format("SendData Reached {0}", counter));
+					hRes = mytestTopic.WriteOnChannel(str);
+					if (hRes == HRESULT.S_OK) {
+						str = String.format("%d", counter++);
+						if ((counter % THRESHOLD) == 0) {
+							String key = String.format("SendData Reached %d", counter);
+							hRes = mytestTopic.WriteOnChannel(key, str);
+							System.out.println(key);
+						}
+					}
 				}
 				Thread.sleep(1000);
 			}

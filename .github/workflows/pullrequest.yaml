@@ -1,0 +1,207 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI_PULLREQUEST
+
+# Controls when the action will run. Triggers the workflow on pull request
+# events but only for the master branch
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  # This workflow contains a single job called "build_release"
+  build_pullrequest:
+    # The type of runner that the job will run on
+    runs-on: windows-2019
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Runs a set of commands using the runners shell
+      # Support longpaths
+      - name: Support long paths
+        run: git config --system core.longpaths true
+      
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it                                                                                  
+      - uses: actions/checkout@v2
+        with:
+          submodules: 'true'
+          
+      - name: set up msvc env
+        uses: ilammy/msvc-dev-cmd@v1.5.0
+      
+      - name: Build Common Tools
+        shell: cmd
+        run: |
+          cd third_party\CommonTools
+          msbuild -p:Configuration=Release,Platform="Any CPU" -m CommonTools.sln
+
+      - name: Extract commit SHA
+        run: |
+          echo "GITHUB_COMMIT_MESSAGE=$(echo $GITHUB_SHA)" >> $GITHUB_ENV
+        shell: bash
+       
+      - name: Prepare version
+        shell: cmd
+        run: |
+          cd third_party\CommonTools\Output
+          VersionGenerator %GITHUB_WORKSPACE%\src\ProductInformation\Version.cs %GITHUB_WORKSPACE%\src\ProductInformation ${{ env.GITHUB_COMMIT_MESSAGE }}
+        env:
+          GITHUB_WORKSPACE: $GITHUB_WORKSPACE
+
+      - name: Prepare nuget
+        shell: cmd
+        run: |
+          third_party\CommonTools\Output\PlaceHolderReplacer.exe .\src\ProductInformation\Version.cs .\packaging\nuget\datadistributionmanager.nuspec >> .\nuget_version.txt
+
+      - name: Store version
+        run: |
+          echo "NUGET_PACKAGE_VERSION=$(cat nuget_version.txt)" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Verify Nuget version in file
+        run: |
+          type .\packaging\nuget\datadistributionmanager.nuspec
+          echo ${{ env.NUGET_PACKAGE_VERSION }}
+        shell: cmd
+ 
+      - name: Configure OpenDDS
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          configure
+
+      - name: Build OpenDDS x64
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          call setenv.cmd
+          msbuild -p:Configuration=Release,Platform=x64 -m DDS_TAOv2.sln
+
+      - name: Move OpenDDS x64
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          xcopy .\lib\*.dll ..\..\Output\x64\
+          xcopy .\lib\*.pdb ..\..\Output\pdb64\
+          xcopy .\lib\*.lib ..\..\Output\lib64\
+          xcopy .\bin\*.exe ..\..\Output\bin64\
+          xcopy .\bin\*.pdb ..\..\Output\pdb64\
+          xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x64\
+          xcopy .\ACE_wrappers\lib\*.pdb ..\..\Output\pdb64\
+          xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib64\
+          xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin64\
+          xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb64\
+
+      - name: Build OpenDDS x86
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          call setenv.cmd
+          msbuild -p:Configuration=Release,Platform=Win32 -m DDS_TAOv2.sln
+
+      - name: Move OpenDDS x86
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          xcopy .\lib\*.dll ..\..\Output\x86\
+          xcopy .\lib\*.pdb ..\..\Output\pdb32\
+          xcopy .\lib\*.lib ..\..\Output\lib32\
+          xcopy .\bin\*.exe ..\..\Output\bin32\
+          xcopy .\bin\*.pdb ..\..\Output\pdb32\
+          xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x86\
+          xcopy .\ACE_wrappers\lib\*.pdb ..\..\Output\pdb32\
+          xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib32\
+          xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin32\
+          xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb32\
+
+      - name: Generate OpenDDS projects
+        shell: cmd
+        run: |
+          call .\third_party\OpenDDS\setenv.cmd
+          cd src\DataDistributionManagerOpenDDS
+          perl %ACE_ROOT%\bin\generate_export_file.pl DataDistributionSchemaCommon > DataDistributionSchemaCommon_Export.h
+          perl %ACE_ROOT%\bin\mwc.pl -type vs2019 DataDistributionManagerOpenDDS.mwc
+          cd ..\..
+
+      - uses: nuget/setup-nuget@v1
+        with:
+          nuget-version: '5.x'
+      - run: nuget restore src\DataDistributionManager.sln
+
+      - name: Build DataDistributionManager x64
+        shell: cmd
+        run: |
+          call .\third_party\OpenDDS\setenv.cmd
+          set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
+          cd src
+          msbuild /m -p:Configuration=Release,Platform=x64 DataDistributionManager.sln
+
+      - name: Build DataDistributionManager x86
+        shell: cmd
+        run: |
+          call .\third_party\OpenDDS\setenv.cmd
+          set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
+          cd src
+          msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
+
+      - name: Build DataDistributionManager net5.0 and netcoreapp3.1
+        run: |
+          dotnet build --no-incremental --configuration Release --framework netcoreapp3.1 -o Outputnetcoreapp3.1 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
+          dotnet build --no-incremental --configuration Release --framework net5.0 -o Outputnet5.0 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
+
+      - name: Prepare for packaging
+        run: |
+          New-Item -Path .\OutputPackage -ItemType directory
+          New-Item -Path .\OutputPackage\lib -ItemType directory
+          New-Item -Path .\OutputPackage\lib\x86 -ItemType directory
+          New-Item -Path .\OutputPackage\lib\x64 -ItemType directory
+          New-Item -Path .\OutputPackage\runtime -ItemType directory
+          New-Item -Path .\OutputPackage\runtime\x86 -ItemType directory
+          New-Item -Path .\OutputPackage\runtime\x64 -ItemType directory
+          New-Item -Path .\OutputPackage\pdb -ItemType directory
+          New-Item -Path .\OutputPackage\pdb\x86 -ItemType directory
+          New-Item -Path .\OutputPackage\pdb\x64 -ItemType directory
+          New-Item -Path .\OutputPackage\include -ItemType directory
+          New-Item -Path .\OutputPackage\licenses -ItemType directory
+          Copy-Item .\src\DataDistributionManager\DataDistributionManager.h .\OutputPackage\include\DataDistributionManager.h
+          Copy-Item .\src\DataDistributionManager\DataDistributionManagerEnums.h .\OutputPackage\include\DataDistributionManagerEnums.h
+          Copy-Item .\src\DataDistributionManager\SmartDataDistributionManager.h .\OutputPackage\include\SmartDataDistributionManager.h
+          Copy-Item .\Output\x86\DataDistributionManager.lib .\OutputPackage\lib\x86\DataDistributionManager.lib -Force
+          Copy-Item .\Output\x64\DataDistributionManager.lib .\OutputPackage\lib\x64\DataDistributionManager.lib -Force
+          Copy-Item .\Output\*.dll .\OutputPackage\runtime\ -Force
+          Copy-Item .\Output\x86\*.dll .\OutputPackage\runtime\x86\ -Force
+          Copy-Item .\Output\bin32\dcpsinfo_dump.exe .\OutputPackage\runtime\x86\ -Force
+          Copy-Item .\Output\bin32\DCPSInfoRepo.exe .\OutputPackage\runtime\x86\ -Force
+          Copy-Item .\Output\bin32\repoctl.exe .\OutputPackage\runtime\x86\ -Force
+          Copy-Item .\Output\x64\*.dll .\OutputPackage\runtime\x64\ -Force
+          Copy-Item .\Output\bin64\dcpsinfo_dump.exe .\OutputPackage\runtime\x64\ -Force
+          Copy-Item .\Output\bin64\DCPSInfoRepo.exe .\OutputPackage\runtime\x64\ -Force
+          Copy-Item .\Output\bin64\repoctl.exe .\OutputPackage\runtime\x64\ -Force
+          Copy-Item .\Output\x86\*.pdb .\OutputPackage\pdb\x86\ -Force
+          Copy-Item .\Output\pdb32\*.pdb .\OutputPackage\pdb\x86\ -Force
+          Copy-Item .\Output\x64\*.pdb .\OutputPackage\pdb\x64\ -Force
+          Copy-Item .\Output\pdb64\*.pdb .\OutputPackage\pdb\x64\ -Force
+          Copy-Item .\LICENSE .\OutputPackage\licenses\LICENSE.datadistributionmanager -Force
+          Copy-Item .\src\packages\librdkafka.redist.1.6.0\LICENSES.txt .\OutputPackage\licenses\LICENSE.librdkafka -Force
+          Copy-Item .\third_party\OpenDDS\LICENSE .\OutputPackage\licenses\LICENSE.opendds -Force
+          Compress-Archive -Path .\OutputPackage\* -DestinationPath .\OutputPackage\DataDistributionManager.zip
+
+      - name: Prepare for Java packaging
+        run: |
+          New-Item -Path .\OutputJava -ItemType directory
+          New-Item -Path .\OutputJava\windows_x64 -ItemType directory
+          New-Item -Path .\OutputJava\windows_x86 -ItemType directory
+          Compress-Archive -Path .\OutputPackage\runtime\x64\* -DestinationPath .\OutputJava\windows_x64\nativepackage.zip
+          Compress-Archive -Path .\OutputPackage\runtime\x86\* -DestinationPath .\OutputJava\windows_x86\nativepackage.zip
+
+      - name: Build Java Binder
+        shell: cmd
+        run: |
+          cd src\DataDistributionManagerJava
+          set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
+          CreateJar.bat
+          cd ..\..
+
+      - uses: nuget/setup-nuget@v1
+        with:
+          nuget-version: '5.x'
+      - run: nuget pack packaging\nuget\datadistributionmanager.nuspec

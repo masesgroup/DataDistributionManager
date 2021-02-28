@@ -1,0 +1,5685 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/a/DataDistributionManager/DataDistributionManager/src/Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/constant-values.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/constant-values.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/deprecated-list.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/deprecated-list.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/element-list",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/element-list"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/help-doc.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/help-doc.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/index.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/index.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/BaseConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/BaseConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/ChangedStateListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/ChangedStateListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/ChangingStateListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/ChangingStateListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/ClusterHealthElement.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/ClusterHealthElement.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/ClusterStateChangeListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/ClusterStateChangeListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/CommonConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/CommonConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/CompletelyDisconnectedListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/CompletelyDisconnectedListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/ConditionOrErrorListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/ConditionOrErrorListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/ConfigurationListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/ConfigurationListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/DDM_CHANNEL_DIRECTION.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_CHANNEL_DIRECTION.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/DDM_CLUSTEREVENT.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_CLUSTEREVENT.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/DDM_GENERAL_PARAMETER.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_GENERAL_PARAMETER.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/DDM_INSTANCE_STATE.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_INSTANCE_STATE.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/DDM_LOG_LEVEL.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_LOG_LEVEL.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/DDM_UNDERLYING_ERROR_CONDITION.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_UNDERLYING_ERROR_CONDITION.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/DataAvailableListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/DataAvailableListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/FirstStateChangeListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/FirstStateChangeListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/GlobalConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/GlobalConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/HRESULT.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/HRESULT.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/IChangedStateListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/IChangedStateListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/IChangingStateListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/IChangingStateListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/IClusterStateChangeListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/IClusterStateChangeListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/ICompletelyDisconnectedListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/ICompletelyDisconnectedListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/IConditionOrErrorListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/IConditionOrErrorListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/IConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/IConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/IConfigurationListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/IConfigurationListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/IDataAvailableListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/IDataAvailableListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/IFirstStateChangeListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/IFirstStateChangeListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/ILoggingListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/ILoggingListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/IMultiplePrimaryListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/IMultiplePrimaryListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/IRequestedStateListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/IRequestedStateListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/ISmartDataDistributionMastership.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/ISmartDataDistributionMastership.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/IStateChangeListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/IStateChangeListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/IStateReadyListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/IStateReadyListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/LoggingListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/LoggingListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/MultiplePrimaryListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/MultiplePrimaryListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/RequestedStateListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/RequestedStateListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/SmartDataDistribution.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/SmartDataDistribution.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/SmartDataDistributionChannel.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/SmartDataDistributionChannel.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/StateChangeListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/StateChangeListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/StateReadyListener.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/StateReadyListener.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/UnderlyingEvent.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/UnderlyingEvent.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/DataReaderQosConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DataReaderQosConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/DataWriterQosConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DataWriterQosConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/DeadlineQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DeadlineQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyKind.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyKind.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/DomainParticipantQosConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DomainParticipantQosConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyKind.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyKind.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/DurabilityServiceQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DurabilityServiceQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/EntityFactoryQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/EntityFactoryQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/GroupDataQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/GroupDataQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyKind.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyKind.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/KafkaChannelConfiguration.KafkaConfigurationType.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/KafkaChannelConfiguration.KafkaConfigurationType.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/KafkaChannelConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/KafkaChannelConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/KafkaConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/KafkaConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/LatencyBudgetQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/LatencyBudgetQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/LifespanQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/LifespanQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyKind.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyKind.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/OpenDDSChannelConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OpenDDSChannelConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.DCPSInfoRepoConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.DCPSInfoRepoConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.OpenDDSArgsConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.OpenDDSArgsConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyKind.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyKind.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/OwnershipStrengthQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OwnershipStrengthQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/PartitionQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/PartitionQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyAccessScopeKind.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyAccessScopeKind.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.Property.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.Property.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/PublisherQosConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/PublisherQosConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/ReaderDataLifecycleQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/ReaderDataLifecycleQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyKind.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyKind.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/ResourceLimitsQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/ResourceLimitsQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/SubscriberQosConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/SubscriberQosConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/TimeBasedFilterQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/TimeBasedFilterQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/TopicDataQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/TopicDataQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/TopicQosConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/TopicQosConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/TransportPriorityQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/TransportPriorityQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/UserDataQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/UserDataQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/WriterDataLifecycleQosPolicyConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/WriterDataLifecycleQosPolicyConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/package-summary.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/package-summary.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/package-tree.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/package-tree.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/package-summary.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/package-summary.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/package-tree.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/package-tree.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/overview-summary.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/overview-summary.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/overview-tree.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/overview-tree.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/script.js",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/script.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/stylesheet.css",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/stylesheet.css"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/DataDistributionManagerEnums_8h.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/DataDistributionManagerEnums_8h.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/DataDistributionManagerEnums_8h.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/DataDistributionManagerEnums_8h.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/DataDistributionManagerEnums_8h_source.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/DataDistributionManagerEnums_8h_source.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/DataDistributionManager_8h.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/DataDistributionManager_8h.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/DataDistributionManager_8h.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/DataDistributionManager_8h.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/DataDistributionManager_8h_source.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/DataDistributionManager_8h_source.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/SmartDataDistributionManager_8h.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/SmartDataDistributionManager_8h.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/SmartDataDistributionManager_8h_source.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/SmartDataDistributionManager_8h_source.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/annotated.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/annotated.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/annotated_dup.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/annotated_dup.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/bc_s.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/bc_s.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/bdwn.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/bdwn.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classDataDistribution-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classDataDistribution-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classDataDistribution.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classDataDistribution.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classDataDistribution.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classDataDistribution.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classDataDistributionCallback-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classDataDistributionCallback-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classDataDistributionCallback.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classDataDistributionCallback.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classDataDistributionCallback.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classDataDistributionCallback.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classDataDistributionChannelCallback-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classDataDistributionChannelCallback-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classDataDistributionChannelCallback.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classDataDistributionChannelCallback.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classDataDistributionMastershipCallback-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classDataDistributionMastershipCallback-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classDataDistributionMastershipCallback.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classDataDistributionMastershipCallback.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistribution-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistribution-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistribution.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistribution.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistribution.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistribution.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistribution.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistribution.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionCallback-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionCallback-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionCallback.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionCallback.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionCallback.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionCallback.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionCallback.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionCallback.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionChannelBase-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionChannelBase-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionChannelBase.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionChannelBase.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionChannelBase.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionChannelBase.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionChannelBase.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionChannelBase.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionChannelCallback-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionChannelCallback-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionChannelCallback.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionChannelCallback.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionChannelCallback.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionChannelCallback.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionChannelCallback.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionChannelCallback.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionLog-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionLog-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionLog.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionLog.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionLog.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionLog.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionLog.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionLog.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionMastershipCallback-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionMastershipCallback-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionMastershipCallback.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionMastershipCallback.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionMastershipCallback.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionMastershipCallback.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionMastershipCallback.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionMastershipCallback.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionMastershipCommon-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionMastershipCommon-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionMastershipCommon.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionMastershipCommon.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionMastershipCommon.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionMastershipCommon.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionSubsystem-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionSubsystem-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionSubsystem.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionSubsystem.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionSubsystem.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionSubsystem.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionSubsystem.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionSubsystem.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionTransport-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionTransport-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionTransport.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionTransport.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionTransport.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionTransport.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classIDataDistributionTransport.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classIDataDistributionTransport.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classITimeMeasureWrapper-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classITimeMeasureWrapper-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classITimeMeasureWrapper.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classITimeMeasureWrapper.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classITimeMeasureWrapper.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classITimeMeasureWrapper.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classITimeMeasureWrapper.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classITimeMeasureWrapper.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classSmartDataDistribution-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classSmartDataDistribution-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classSmartDataDistribution.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classSmartDataDistribution.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classSmartDataDistribution.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classSmartDataDistribution.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classSmartDataDistribution.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classSmartDataDistribution.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classSmartDataDistributionBase-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classSmartDataDistributionBase-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classSmartDataDistributionBase.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classSmartDataDistributionBase.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classSmartDataDistributionBase.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classSmartDataDistributionBase.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classSmartDataDistributionBase.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classSmartDataDistributionBase.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classSmartDataDistributionChannel-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classSmartDataDistributionChannel-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classSmartDataDistributionChannel.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classSmartDataDistributionChannel.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classSmartDataDistributionChannel.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classSmartDataDistributionChannel.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classSmartDataDistributionChannel.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classSmartDataDistributionChannel.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classSmartTimeMeasureWrapper-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classSmartTimeMeasureWrapper-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classSmartTimeMeasureWrapper.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classSmartTimeMeasureWrapper.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classSmartTimeMeasureWrapper.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classSmartTimeMeasureWrapper.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classSmartTimeMeasureWrapper.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classSmartTimeMeasureWrapper.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classTimeMeasureWrapper-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classTimeMeasureWrapper-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classTimeMeasureWrapper.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classTimeMeasureWrapper.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/classes.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/classes.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/closed.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/closed.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/cpp_stylesheet.css",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/cpp_stylesheet.css"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/dir_f19fcc2dac03b2d80bbaffdaf55aca8c.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/dir_f19fcc2dac03b2d80bbaffdaf55aca8c.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/dir_f19fcc2dac03b2d80bbaffdaf55aca8c.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/dir_f19fcc2dac03b2d80bbaffdaf55aca8c.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/doc.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/doc.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/doxygen.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/doxygen.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/dynsections.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/dynsections.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/files.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/files.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/files_dup.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/files_dup.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/folderclosed.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/folderclosed.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/folderopen.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/folderopen.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/functions.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/functions.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/functions_func.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/functions_func.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/functions_vars.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/functions_vars.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/globals.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/globals.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/globals_defs.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/globals_defs.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/globals_enum.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/globals_enum.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/globals_type.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/globals_type.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/hierarchy.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/hierarchy.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/hierarchy.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/hierarchy.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/index.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/index.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/jquery.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/jquery.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/menu.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/menu.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/menudata.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/menudata.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/nav_f.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/nav_f.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/nav_g.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/nav_g.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/nav_h.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/nav_h.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/navtree.css",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/navtree.css"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/navtree.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/navtree.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/navtreedata.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/navtreedata.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/navtreeindex0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/navtreeindex0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/open.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/open.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/resize.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/resize.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_0.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_0.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_1.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_1.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_1.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_1.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_10.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_10.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_10.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_10.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_11.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_11.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_11.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_11.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_12.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_12.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_12.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_12.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_13.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_13.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_13.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_13.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_2.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_2.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_2.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_2.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_3.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_3.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_3.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_3.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_4.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_4.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_4.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_4.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_5.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_5.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_5.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_5.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_6.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_6.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_6.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_6.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_7.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_7.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_7.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_7.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_8.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_8.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_8.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_8.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_9.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_9.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_9.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_9.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_a.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_a.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_a.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_a.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_b.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_b.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_b.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_b.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_c.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_c.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_c.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_c.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_d.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_d.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_d.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_d.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_e.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_e.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_e.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_e.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_f.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_f.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/all_f.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/all_f.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_0.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_0.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_1.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_1.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_1.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_1.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_2.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_2.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_2.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_2.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_3.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_3.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_3.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_3.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_4.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_4.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_4.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_4.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_5.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_5.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/classes_5.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/classes_5.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/close.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/close.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/defines_0.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/defines_0.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/defines_0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/defines_0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enums_0.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enums_0.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enums_0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enums_0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_0.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_0.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_1.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_1.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_1.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_1.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_10.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_10.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_10.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_10.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_11.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_11.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_11.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_11.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_2.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_2.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_2.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_2.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_3.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_3.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_3.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_3.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_4.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_4.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_4.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_4.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_5.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_5.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_5.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_5.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_6.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_6.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_6.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_6.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_7.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_7.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_7.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_7.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_8.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_8.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_8.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_8.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_9.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_9.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_9.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_9.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_a.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_a.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_a.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_a.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_b.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_b.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_b.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_b.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_c.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_c.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_c.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_c.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_d.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_d.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_d.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_d.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_e.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_e.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_e.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_e.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_f.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_f.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/enumvalues_f.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/enumvalues_f.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/files_0.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/files_0.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/files_0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/files_0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/files_1.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/files_1.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/files_1.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/files_1.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_0.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_0.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_1.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_1.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_1.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_1.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_2.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_2.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_2.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_2.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_3.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_3.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_3.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_3.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_4.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_4.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_4.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_4.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_5.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_5.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_5.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_5.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_6.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_6.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_6.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_6.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_7.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_7.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_7.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_7.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_8.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_8.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_8.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_8.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_9.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_9.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_9.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_9.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_a.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_a.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_a.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_a.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_b.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_b.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_b.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_b.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_c.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_c.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_c.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_c.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_d.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_d.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/functions_d.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/functions_d.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/mag_sel.svg",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/mag_sel.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/nomatches.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/nomatches.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/search.css",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/search.css"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/search.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/search.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/search_l.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/search_l.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/search_m.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/search_m.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/search_r.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/search_r.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/searchdata.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/searchdata.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/typedefs_0.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/typedefs_0.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/typedefs_0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/typedefs_0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/typedefs_1.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/typedefs_1.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/typedefs_1.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/typedefs_1.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/typedefs_2.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/typedefs_2.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/typedefs_2.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/typedefs_2.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/typedefs_3.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/typedefs_3.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/typedefs_3.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/typedefs_3.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_0.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_0.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_0.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_0.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_1.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_1.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_1.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_1.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_2.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_2.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_2.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_2.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_3.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_3.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_3.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_3.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_4.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_4.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_4.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_4.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_5.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_5.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_5.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_5.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_6.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_6.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_6.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_6.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_7.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_7.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_7.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_7.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_8.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_8.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/search/variables_8.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/search/variables_8.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/splitbar.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/splitbar.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/structClusterHealthElement-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/structClusterHealthElement-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/structClusterHealthElement.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/structClusterHealthElement.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/structClusterHealthElement.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/structClusterHealthElement.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/structUnderlyingEventData-members.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/structUnderlyingEventData-members.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/structUnderlyingEventData.html",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/structUnderlyingEventData.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/structUnderlyingEventData.js",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/structUnderlyingEventData.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/sync_off.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/sync_off.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/sync_on.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/sync_on.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/tab_a.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/tab_a.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/tab_b.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/tab_b.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/tab_h.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/tab_h.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/tab_s.png",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/tab_s.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../cppdoc/html/tabs.css",
+      "output": {
+        "resource": {
+          "relative_path": "cppdoc/html/tabs.css"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.BaseConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.BaseConfiguration.html",
+          "hash": "L+Nezpysk7PijHj4gK/Zjg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.ChangedStateEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.ChangedStateEventArgs.html",
+          "hash": "05TDlYxmH0DogfpSnIp1Ig=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.ChangingStateEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.ChangingStateEventArgs.html",
+          "hash": "LCEBB4RZN1X54UObl+oCLw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.ClusterHealthElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.ClusterHealthElement.html",
+          "hash": "T8L+lsufNhyRCNbAm1kmpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.ClusterStateChangeEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.ClusterStateChangeEventArgs.html",
+          "hash": "J2Rs/P2iWi6QGsG21nNPWw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.CommonConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.CommonConfiguration.html",
+          "hash": "Xjk1zpapxZfllso9hjFdDQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.CompletelyDisconnectedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.CompletelyDisconnectedEventArgs.html",
+          "hash": "7XAa89PLBHghGRKAVtA6lw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.html",
+          "hash": "3vuLDVHKx9VwTWnfTg5h0A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.AutoOffsetResetType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.AutoOffsetResetType.html",
+          "hash": "kXrNoSGWCMmro4Re8L0/kA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.BrokerAddressFamilyType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.BrokerAddressFamilyType.html",
+          "hash": "aajUl/WZ5U1z5O6Oy+tTyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.BuiltinFeaturesType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.BuiltinFeaturesType.html",
+          "hash": "4u/bZ8Pk4Wtq765xANnL0A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.CompressionCodecType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.CompressionCodecType.html",
+          "hash": "dJDB62VeO8M+uxcox2YxHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DataReaderQosConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DataReaderQosConfiguration.html",
+          "hash": "rWy/V1dhxcEMZht8ys85NA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DataWriterQosConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DataWriterQosConfiguration.html",
+          "hash": "336+LFVDbOPdbvqAsr4sRA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DeadlineQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DeadlineQosPolicyConfiguration.html",
+          "hash": "+HHLSdMZfx4pJj+BZTBnEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DebugType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DebugType.html",
+          "hash": "5B3VuEp+fekzy7WHkyhZ7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DestinationOrderQosPolicyConfiguration.DestinationOrderQosPolicyKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DestinationOrderQosPolicyConfiguration.DestinationOrderQosPolicyKind.html",
+          "hash": "5NNSAtLpvSHmMT0RGx26Sg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DestinationOrderQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DestinationOrderQosPolicyConfiguration.html",
+          "hash": "QQX1olxw3K3XAI70/rk1Hg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DomainParticipantQosConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DomainParticipantQosConfiguration.html",
+          "hash": "+kHsdqKdBsKiet21iIYJ8Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityQosPolicyConfiguration.DurabilityQosPolicyKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityQosPolicyConfiguration.DurabilityQosPolicyKind.html",
+          "hash": "GBLunyGhEtgX3q0fSNkxbw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityQosPolicyConfiguration.html",
+          "hash": "57/sGYodspYcNh1yylZDqw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityServiceQosPolicyConfiguration.HistoryQosPolicyKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityServiceQosPolicyConfiguration.HistoryQosPolicyKind.html",
+          "hash": "lAK790WEW32qCb+6uh7dag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityServiceQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityServiceQosPolicyConfiguration.html",
+          "hash": "JFDpO8vdg1Gn0r3hkmT4GA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.EntityFactoryQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.EntityFactoryQosPolicyConfiguration.html",
+          "hash": "f8bcHgLJ8cpylEI/1gF88w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.GroupDataQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.GroupDataQosPolicyConfiguration.html",
+          "hash": "rxPws90yFfL1gKxCm3Q24g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.HistoryQosPolicyKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.HistoryQosPolicyKind.html",
+          "hash": "+v4uOZoD006z2v0jzWXgRA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.html",
+          "hash": "S5sQ8KjHkEoCwHABbLSZaA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.IsolationLevelType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.IsolationLevelType.html",
+          "hash": "ZN7nKzuidl2EQaMkBi6D4Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html",
+          "hash": "muXTTaFEoJPgAR+R1BNP8Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaConfiguration.html",
+          "hash": "exnThXV+mMYd+ROCDY6qPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaConfigurationType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaConfigurationType.html",
+          "hash": "HLN/yIHb4JcTWJiaN1ZNuQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LatencyBudgetQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LatencyBudgetQosPolicyConfiguration.html",
+          "hash": "S+cch5KlNZZjS2LJXdqzjw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LifespanQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LifespanQosPolicyConfiguration.html",
+          "hash": "l74Juwg1u3+8HcZYbnav+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration.LivelinessQosPolicyKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration.LivelinessQosPolicyKind.html",
+          "hash": "+7DYbCPdk4w1Eq1zo2/nmQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration.html",
+          "hash": "8E+An8Tqn9ulI7YP67vVmQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSChannelConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSChannelConfiguration.html",
+          "hash": "sqwpocSXHHj5U0//wDiSVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html",
+          "hash": "N2B1Ej0YxQAamj5lXy/ndQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.OpenDDSArgsConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.OpenDDSArgsConfiguration.html",
+          "hash": "cn1n48SdS0gbw+JqnNnBAw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.html",
+          "hash": "XbfYeI6utu1wz2jlkcvX5w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipQosPolicyConfiguration.OwnershipQosPolicyKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipQosPolicyConfiguration.OwnershipQosPolicyKind.html",
+          "hash": "CbLYxGz0NCOc/NpBU6KV9w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipQosPolicyConfiguration.html",
+          "hash": "Pzf7d1nr4kE5uU1nUDqhDQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipStrengthQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipStrengthQosPolicyConfiguration.html",
+          "hash": "kPNdjEQP6rG9YNoRE5i5ow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionAssignmentStrategyType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionAssignmentStrategyType.html",
+          "hash": "WSbKI0jR7CKNS0vVw38jKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionQosPolicyConfiguration.html",
+          "hash": "u0erz2wQmOTYNVqDUaYDiw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionerType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionerType.html",
+          "hash": "dN0tJXnTOKXTE1BtZD757w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PresentationQosPolicyConfiguration.PresentationQosPolicyAccessScopeKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PresentationQosPolicyConfiguration.PresentationQosPolicyAccessScopeKind.html",
+          "hash": "HWtS/bDhe+0s6rAcA6BO3A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PresentationQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PresentationQosPolicyConfiguration.html",
+          "hash": "y82iinoAx71bvHAnMxT+uA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.Property.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.Property.html",
+          "hash": "GLHfCDOnnxIM4D4HZYy1kg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.html",
+          "hash": "4/wdzzAiz1sCnKwWXjxuKw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PublisherQosConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PublisherQosConfiguration.html",
+          "hash": "Fwz+SSfW4w4FBbsbylpvIQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.QueueingStrategyType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.QueueingStrategyType.html",
+          "hash": "M6BMjTblO0JIDaF70z61Pw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ReaderDataLifecycleQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ReaderDataLifecycleQosPolicyConfiguration.html",
+          "hash": "ireiaR/F7QoUG1A4aC3+MQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ReliabilityQosPolicyConfiguration.ReliabilityQosPolicyKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ReliabilityQosPolicyConfiguration.ReliabilityQosPolicyKind.html",
+          "hash": "qv6UL4cliGnKxw7qDMum2w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ReliabilityQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ReliabilityQosPolicyConfiguration.html",
+          "hash": "7XoAS75sdHozTQtJSjfBwg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ResourceLimitsQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ResourceLimitsQosPolicyConfiguration.html",
+          "hash": "Ab16wnefxIP7bccXVOigtw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SaslMechanismType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SaslMechanismType.html",
+          "hash": "HMjStC8wyXNsbStt6Arcbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SecurityProtocolType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SecurityProtocolType.html",
+          "hash": "A0xOcpV2XiqXw43pyn96gA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SslEndpointIdentificationAlgorithmType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SslEndpointIdentificationAlgorithmType.html",
+          "hash": "+yUs2R0Mt9UueHwSQU9CoA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SubscriberQosConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SubscriberQosConfiguration.html",
+          "hash": "b7LStz0pf7u2D/xMdLIXRQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TimeBasedFilterQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TimeBasedFilterQosPolicyConfiguration.html",
+          "hash": "lrrQHqf3kNb86F7XegUIhw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TopicDataQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TopicDataQosPolicyConfiguration.html",
+          "hash": "KDJaUrqmA42tWrtfBzBj4g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TopicQosConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TopicQosConfiguration.html",
+          "hash": "0JA7L+CDeQuTEyF8I+d+5g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TransportPriorityQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TransportPriorityQosPolicyConfiguration.html",
+          "hash": "9xWGNE2eP33zp/mAQ7HO+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.UserDataQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.UserDataQosPolicyConfiguration.html",
+          "hash": "VZPIAv2EBHLyUJ/d8ua0yQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.WriterDataLifecycleQosPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.WriterDataLifecycleQosPolicyConfiguration.html",
+          "hash": "10Wi0c5t9jVMC9fcKz74Ug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.html",
+          "hash": "FHlZ626XtWycAyVmxQu9gQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.ConfigurationEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.ConfigurationEventArgs.html",
+          "hash": "YBW7DA3x97M9ymd3O8CyGg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.html",
+          "hash": "2aGM+4VIk9Ku1RSKpg0PQw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.FirstStateChangeEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.FirstStateChangeEventArgs.html",
+          "hash": "ZXuhEzWET2ev6rtDg65ilw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.GlobalConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.GlobalConfiguration.html",
+          "hash": "rU53pXJMLgaQYpllzHSWUg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.HelperClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.HelperClass.html",
+          "hash": "Uynp5AeVVeyTZt43tVN9Fg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.IConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.IConfiguration.html",
+          "hash": "EPEhZANVEH9sbVmv8jGfWA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.html",
+          "hash": "ghlCqUR8NAPj1QcfCNXD/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html",
+          "hash": "CxBiiJXpuC+L53URT3xB4g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.html",
+          "hash": "0tbQl5cOe1oRUvqelk4qPA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_CHANNEL_DIRECTION.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_CHANNEL_DIRECTION.html",
+          "hash": "eRUf1ScYjYxf2c+Su+M9cw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT.html",
+          "hash": "7sB7/dpGM+KZhrQ8CbOdmQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_GENERAL_PARAMETER.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_GENERAL_PARAMETER.html",
+          "hash": "I5/Huj+BSM7JQWI12iOqDg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE.html",
+          "hash": "nJqusMJCM7T5RKapHbhrJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_LOG_LEVEL.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_LOG_LEVEL.html",
+          "hash": "hMCcmQKzQ38v2Q4BjAK6pw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_UNDERLYING_ERROR_CONDITION.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_UNDERLYING_ERROR_CONDITION.html",
+          "hash": "rBeJwoLw62fvfoxG2V4+2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.HRESULT.HResultException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.HRESULT.HResultException.html",
+          "hash": "RDw+TVo1MkE4aYCekOS7vQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.HRESULT.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.HRESULT.html",
+          "hash": "nj7PQUoRpb/WcSho3MxkBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.html",
+          "hash": "Wcid7lqjzjrJP2vrGt8sgw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.LoggingEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.LoggingEventArgs.html",
+          "hash": "7rWABwgvM0h3EPgDv/Kuew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.MultiplePrimaryEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.MultiplePrimaryEventArgs.html",
+          "hash": "kgktJJcCBYl+BBy8PVNnPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.RequestedStateEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.RequestedStateEventArgs.html",
+          "hash": "Kjt3+ACcDte4AFjI/QROyg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html",
+          "hash": "dRKHdboyNADChtqhFH1COg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html",
+          "hash": "ONVDmuEFfHB0MaDtGXIGsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.StateChangeEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.StateChangeEventArgs.html",
+          "hash": "bd+UASdrJ1I0mdYBKhVSsQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.StateReadyEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.StateReadyEventArgs.html",
+          "hash": "eDpt3656izEi8rv5plAU3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.html",
+          "hash": "1wCsmhc0oOAawYE5EbPmxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "jPN5oYYS0swx/13qj6uQZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "pHX8qZCPl8EV3DC8ZANu4A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/examples.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/examples.html",
+          "hash": "RP/LLd6YPg7+7G2PSNUXcw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "kbvzvZ7lcKwlYaG78z7Cjw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/legacy_application_revamp.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/legacy_application_revamp.html",
+          "hash": "FRZLoAEmEJUxoenqZY9/bw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/manual_build.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/manual_build.html",
+          "hash": "q/gGze/exDR7N94YymnPaQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/sinapse.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/sinapse.html",
+          "hash": "yNtmek2aTF3Ja0vZIKxW9w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "Jd0j12QEZC4ExJiSh8SO4g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/usage.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/usage.html",
+          "hash": "583cl4FjVyOHzJUKdK+idQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "cppdoc/root.md",
+      "output": {
+        ".html": {
+          "relative_path": "cppdoc/root.html",
+          "hash": "wQC+aC+KzYls+TVjnjc8wA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/COM_Cloud.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/COM_Cloud.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/DCOM_evoluted.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/DCOM_evoluted.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/DCOMarchitect.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/DCOMarchitect.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/message_overview.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/message_overview.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/module_engine.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/module_engine.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/sinapse_ft_lb.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/sinapse_ft_lb.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/sinapse_multiple_workflow.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/sinapse_multiple_workflow.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/sinapse_overview.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/sinapse_overview.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/sinapse_sidebyside.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/sinapse_sidebyside.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/sinapse_workflow.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/sinapse_workflow.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "P1/S0n86xTJibdkVuYaTbw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "javadoc/root.md",
+      "output": {
+        ".html": {
+          "relative_path": "javadoc/root.html",
+          "hash": "lRFlTKE7QkrmUf1tWRdszQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "x1w1MK5MGrPw9jO8isDlHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 10,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 92,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

@@ -13,17 +13,22 @@ This project and everyone participating in it is governed by the [DataDistributi
 The project is organized in this folder structure:
 
 * **Configuration** (The folder containing a set of configurazione file)
-* **DataDistributionManager** (The folder containing the source and project of the common engine)
-* **DataDistributionManagerJava** (The folder containing the source and project of the Java binder)
-* **DataDistributionManagerJavaTest** (The folder containing the source and project of the Java binder test)
-* **DataDistributionManagerKafka** (The folder containing the source and project of the Apache Kafka specific implementation)
-* **DataDistributionManagerNet** (The folder containing the source and project of the .NET binder)
-* **DataDistributionManagerOpenDDS** (The folder containing the source and project of the OpenDDS specific implementation)
-* **DataDistributionMastershipManager** (The folder containing the source and project of the mastership manager extension)
-* **jni_include** (The folder containing the header of Java JNI)
-* **ManagerTest** (The folder containing the source and project of the C/C++ test)
-* **ManagerTestNet** (The folder containing the source and project of the .NET test)
-* **ProductInformation** (The folder containing utility headers for versioning)
+* **docs** (website)
+* **examples** (examples code)
+* **jni** (The folder containing the header of Java JNI)
+* **packaging** (packaging information)
+* **sc**
+	* **DataDistributionManager** (The folder containing the source and project of the common engine)
+	* **DataDistributionManagerJava** (The folder containing the source and project of the Java binder)
+	* **DataDistributionManagerKafka** (The folder containing the source and project of the Apache Kafka specific implementation)
+	* **DataDistributionManagerNet** (The folder containing the source and project of the .NET binder)
+	* **DataDistributionManagerOpenDDS** (The folder containing the source and project of the OpenDDS specific implementation)
+	* **DataDistributionMastershipManager** (The folder containing the source and project of the mastership manager extension)
+	* **ProductInformation** (The folder containing utility headers for versioning)
+* **tests**
+	* **ManagerTestJava** (The folder containing the source and project of the Java binder test)
+	* **ManagerTest** (The folder containing the source and project of the C/C++ test)
+	* **ManagerTestNet** (The folder containing the source and project of the .NET test)
 * **third_party** (The folder containing external projects used from this repository)
 
 # How Can I Contribute?

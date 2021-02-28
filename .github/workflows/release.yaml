@@ -2,7 +2,7 @@
 
 name: CI_RELEASE
 
-# Controls when the action will run. Triggers the workflow on push or pull request
+# Controls when the action will run. Triggers the workflow on release published or release edited request
 # events but only for the master branch
 on:
   release:
@@ -10,13 +10,11 @@ on:
       - published
       - edited
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  # This workflow contains a single job called "build_release"
   build_release:
     # The type of runner that the job will run on
     runs-on: windows-2019
-  
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a set of commands using the runners shell
@@ -24,6 +22,7 @@ jobs:
       - name: Support long paths
         run: git config --system core.longpaths true
       
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it                                                                                  
       - uses: actions/checkout@v2
         with:
           submodules: 'true'
@@ -46,14 +45,14 @@ jobs:
         shell: cmd
         run: |
           cd third_party\CommonTools\Output
-          VersionGenerator %GITHUB_WORKSPACE%\ProductInformation\Version.cs %GITHUB_WORKSPACE%\ProductInformation ${{ env.GITHUB_COMMIT_MESSAGE }}
+          VersionGenerator %GITHUB_WORKSPACE%\src\ProductInformation\Version.cs %GITHUB_WORKSPACE%\src\ProductInformation ${{ env.GITHUB_COMMIT_MESSAGE }}
         env:
           GITHUB_WORKSPACE: $GITHUB_WORKSPACE
 
       - name: Prepare nuget
         shell: cmd
         run: |
-          third_party\CommonTools\Output\PlaceHolderReplacer.exe .\ProductInformation\Version.cs .\packaging\nuget\datadistributionmanager.nuspec >> .\nuget_version.txt
+          third_party\CommonTools\Output\PlaceHolderReplacer.exe .\src\ProductInformation\Version.cs .\packaging\nuget\datadistributionmanager.nuspec >> .\nuget_version.txt
 
       - name: Store version
         run: |
@@ -71,15 +70,6 @@ jobs:
         run: |
           cd third_party\OpenDDS
           configure
-
-      - name: Generate OpenDDS projects
-        shell: cmd
-        run: |
-          call .\third_party\OpenDDS\setenv.cmd
-          cd DataDistributionManagerOpenDDS
-          perl %ACE_ROOT%\bin\generate_export_file.pl DataDistributionSchemaCommon > DataDistributionSchemaCommon_Export.h
-          perl %ACE_ROOT%\bin\mwc.pl -type vs2019 DataDistributionManagerOpenDDS.mwc
-          cd..
 
       - name: Build OpenDDS x64
         shell: cmd
@@ -125,16 +115,26 @@ jobs:
           xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin32\
           xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb32\
 
+      - name: Generate OpenDDS projects
+        shell: cmd
+        run: |
+          call .\third_party\OpenDDS\setenv.cmd
+          cd src\DataDistributionManagerOpenDDS
+          perl %ACE_ROOT%\bin\generate_export_file.pl DataDistributionSchemaCommon > DataDistributionSchemaCommon_Export.h
+          perl %ACE_ROOT%\bin\mwc.pl -type vs2019 DataDistributionManagerOpenDDS.mwc
+          cd ..\..
+
       - uses: nuget/setup-nuget@v1
         with:
           nuget-version: '5.x'
-      - run: nuget restore DataDistributionManager.sln
+      - run: nuget restore src\DataDistributionManager.sln
 
       - name: Build DataDistributionManager x64
         shell: cmd
         run: |
           call .\third_party\OpenDDS\setenv.cmd
           set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
+          cd src
           msbuild /m -p:Configuration=Release,Platform=x64 DataDistributionManager.sln
 
       - name: Build DataDistributionManager x86
@@ -142,20 +142,13 @@ jobs:
         run: |
           call .\third_party\OpenDDS\setenv.cmd
           set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
+          cd src
           msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
 
       - name: Build DataDistributionManager net5.0 and netcoreapp3.1
         run: |
-          dotnet build --no-incremental --configuration Release --framework netcoreapp3.1 -o Outputnetcoreapp3.1 DataDistributionManagerNet\DataDistributionManagerNet5.csproj
-          dotnet build --no-incremental --configuration Release --framework net5.0 -o Outputnet5.0 DataDistributionManagerNet\DataDistributionManagerNet5.csproj
-
-      - name: Build Java Binder
-        shell: cmd
-        run: |
-          cd DataDistributionManagerJava
-          set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
-          CreateJar.bat
-          cd..
+          dotnet build --no-incremental --configuration Release --framework netcoreapp3.1 -o Outputnetcoreapp3.1 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
+          dotnet build --no-incremental --configuration Release --framework net5.0 -o Outputnet5.0 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
 
       - name: Prepare for packaging
         run: |
@@ -171,13 +164,12 @@ jobs:
           New-Item -Path .\OutputPackage\pdb\x64 -ItemType directory
           New-Item -Path .\OutputPackage\include -ItemType directory
           New-Item -Path .\OutputPackage\licenses -ItemType directory
-          Copy-Item .\DataDistributionManager\DataDistributionManager.h .\OutputPackage\include\DataDistributionManager.h
-          Copy-Item .\DataDistributionManager\DataDistributionManagerEnums.h .\OutputPackage\include\DataDistributionManagerEnums.h
-          Copy-Item .\DataDistributionManager\SmartDataDistributionManager.h .\OutputPackage\include\SmartDataDistributionManager.h
+          Copy-Item .\src\DataDistributionManager\DataDistributionManager.h .\OutputPackage\include\DataDistributionManager.h
+          Copy-Item .\src\DataDistributionManager\DataDistributionManagerEnums.h .\OutputPackage\include\DataDistributionManagerEnums.h
+          Copy-Item .\src\DataDistributionManager\SmartDataDistributionManager.h .\OutputPackage\include\SmartDataDistributionManager.h
           Copy-Item .\Output\x86\DataDistributionManager.lib .\OutputPackage\lib\x86\DataDistributionManager.lib -Force
           Copy-Item .\Output\x64\DataDistributionManager.lib .\OutputPackage\lib\x64\DataDistributionManager.lib -Force
           Copy-Item .\Output\*.dll .\OutputPackage\runtime\ -Force
-          Copy-Item .\Output\*.jar .\OutputPackage\runtime\ -Force
           Copy-Item .\Output\x86\*.dll .\OutputPackage\runtime\x86\ -Force
           Copy-Item .\Output\bin32\dcpsinfo_dump.exe .\OutputPackage\runtime\x86\ -Force
           Copy-Item .\Output\bin32\DCPSInfoRepo.exe .\OutputPackage\runtime\x86\ -Force
@@ -186,19 +178,40 @@ jobs:
           Copy-Item .\Output\bin64\dcpsinfo_dump.exe .\OutputPackage\runtime\x64\ -Force
           Copy-Item .\Output\bin64\DCPSInfoRepo.exe .\OutputPackage\runtime\x64\ -Force
           Copy-Item .\Output\bin64\repoctl.exe .\OutputPackage\runtime\x64\ -Force
+          Copy-Item .\Output\x86\*.pdb .\OutputPackage\pdb\x86\ -Force
           Copy-Item .\Output\pdb32\*.pdb .\OutputPackage\pdb\x86\ -Force
+          Copy-Item .\Output\x64\*.pdb .\OutputPackage\pdb\x64\ -Force
           Copy-Item .\Output\pdb64\*.pdb .\OutputPackage\pdb\x64\ -Force
           Copy-Item .\LICENSE .\OutputPackage\licenses\LICENSE.datadistributionmanager -Force
-          Copy-Item .\packages\librdkafka.redist.1.5.3\LICENSES.txt .\OutputPackage\licenses\LICENSE.librdkafka -Force
+          Copy-Item .\src\packages\librdkafka.redist.1.6.0\LICENSES.txt .\OutputPackage\licenses\LICENSE.librdkafka -Force
           Copy-Item .\third_party\OpenDDS\LICENSE .\OutputPackage\licenses\LICENSE.opendds -Force
           Compress-Archive -Path .\OutputPackage\* -DestinationPath .\OutputPackage\DataDistributionManager.zip
+
+      - name: Prepare for Java packaging
+        run: |
+          New-Item -Path .\OutputJava -ItemType directory
+          New-Item -Path .\OutputJava\windows_x64 -ItemType directory
+          New-Item -Path .\OutputJava\windows_x86 -ItemType directory
+          Compress-Archive -Path .\OutputPackage\runtime\x64\* -DestinationPath .\OutputJava\windows_x64\nativepackage.zip
+          Compress-Archive -Path .\OutputPackage\runtime\x86\* -DestinationPath .\OutputJava\windows_x86\nativepackage.zip
+
+      - name: Build Java Binder
+        shell: cmd
+        run: |
+          cd src\DataDistributionManagerJava
+          set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
+          CreateJar.bat
+          cd ..\..
+
+      - name: Prepare for Docs packaging
+        run: Compress-Archive -Path .\docs\* -DestinationPath .\Documentation.zip
 
       - uses: nuget/setup-nuget@v1
         with:
           nuget-version: '5.x'
       - run: nuget pack packaging\nuget\datadistributionmanager.nuspec
 
-      - name: Upload DataDistributionManager binaries to release
+      - name: Upload DataDistributionManager NuGet to release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
@@ -213,6 +226,33 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: .\OutputPackage\DataDistributionManager.zip
           asset_name: DataDistributionManager.zip
+          tag: ${{ github.ref }}
+          overwrite: true
+
+      - name: Upload DataDistributionManager Java to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: .\Output\datadistributionmanager.jar
+          asset_name: datadistributionmanager.jar
+          tag: ${{ github.ref }}
+          overwrite: true
+
+      - name: Upload DataDistributionManager Java docs to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: .\Output\datadistributionmanager.docs.jar
+          asset_name: datadistributionmanager.docs.jar
+          tag: ${{ github.ref }}
+          overwrite: true
+          
+      - name: Upload DataDistributionManager Docs snapshot to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: .\Documentation.zip
+          asset_name: Documentation.zip
           tag: ${{ github.ref }}
           overwrite: true
 

@@ -1,0 +1,140 @@
+//
+// Copyright 2021 MASES s.r.l.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+// Refer to LICENSE for more information.
+
+
+project(*Common) : dcps, svc_utils {
+  sharedname     = DataDistributionManagerOpenDDS
+  dynamicflags   = DDM_EXPORTS;_WINSOCK_DEPRECATED_NO_WARNINGS;NOGDI;DATADISTRIBUTIONSCHEMACOMMON_BUILD_DLL
+  
+  specific {  
+	Win32::libout = ..\..\Output\x86
+	Win32::libs     += ..\..\Output\x86\DataDistributionManager
+	Win32::libpaths = ..\..\Output\lib32
+	x64::libout = ..\..\Output\x64
+	x64::libs     += ..\..\Output\x64\DataDistributionManager
+	x64::libpaths = ..\..\Output\lib64
+	}
+
+  requires += tao_orbsvcs
+  requires += no_opendds_safety_profile
+  after    += Svc_Utils
+  includes      += $(TAO_ROOT)/orbsvcs
+  includes      += ..\DataDistributionManager
+  idlflags      += -I$(TAO_ROOT)/orbsvcs \
+                   -Wb,export_macro=DataDistributionSchemaCommon_Export \
+                   -Wb,export_include=DataDistributionSchemaCommon_Export.h
+  dcps_ts_flags += -Wb,export_macro=DataDistributionSchemaCommon_Export
+
+  TypeSupport_Files {
+    DataDistributionSchema.idl
+  }
+
+  IDL_Files {
+    DataDistributionSchemaTypeSupport.idl
+    DataDistributionSchema.idl
+  }
+
+  // We only want the generated files
+  Header_Files {
+    CommonDataReaderListenerImpl.h
+	DataDistributionManagerOpenDDS.h
+  }
+
+  // We only want the generated files
+  Source_Files {
+    CommonDataReaderListenerImpl.cpp
+	DataDistributionManagerOpenDDS.cpp
+  }
+}
+
+project(*Publisher) : dcpsexe, dcps_tcp, svc_utils {
+  after    += *Common
+  exename  = publisher
+  specific {  
+	Win32::exeout   = ..\..\Output\x86
+	Win32::libs     += ..\..\Output\x86\DataDistributionManager
+	Win32::libs     += ..\..\Output\x86\DataDistributionManagerOpenDDS
+	Win32::libpaths = ..\..\Output\lib32
+	x64::exeout   = ..\..\Output\x64
+	x64::libs     += ..\..\Output\x64\DataDistributionManagerOpenDDS
+    x64::libs     += ..\..\Output\x64\DataDistributionManager
+	x64::libpaths = ..\..\Output\lib64
+	}
+  requires += tao_orbsvcs
+  requires += no_opendds_safety_profile
+
+  includes += $(TAO_ROOT)/orbsvcs
+  includes      += ..\DataDistributionManager
+  
+  IDL_Files {
+  }
+
+  TypeSupport_Files {
+  }
+
+  Header_Files {
+  }
+
+  Source_Files {
+    publisher.cpp
+  }
+
+  Documentation_Files {
+	OpenDDSManager.conf
+    dds_tcp_conf.ini
+    dds_udp_conf.ini
+  }
+}
+
+
+project(*Subscriber) : dcpsexe, dcps_tcp {
+  after    += *Common
+  exename  = subscriber
+  specific {  
+	Win32::exeout   = ..\..\Output\x86
+	Win32::libs     += ..\..\Output\x86\DataDistributionManager;..\Output\x86\DataDistributionManagerOpenDDS
+	Win32::libpaths = ..\..\Output\lib32
+	x64::exeout   = ..\..\Output\x64
+	x64::libs     += ..\..\Output\x64\DataDistributionManagerOpenDDS;..\Output\x64\DataDistributionManager
+	x64::libpaths = ..\..\Output\lib64
+	}
+  requires += tao_orbsvcs
+  requires += no_opendds_safety_profile
+
+  includes += $(TAO_ROOT)/orbsvcs
+  includes      += ..\DataDistributionManager
+
+  TypeSupport_Files {
+  }
+
+  IDL_Files {
+  }
+
+  Header_Files {
+
+  }
+
+  Source_Files {
+    subscriber.cpp
+  }
+
+  Documentation_Files {
+	OpenDDSManager.conf
+    dds_tcp_conf.ini
+    dds_udp_conf.ini
+  }
+}

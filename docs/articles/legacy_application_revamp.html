@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Legacy COM Application revamping | Data Distribution Manager website </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Legacy COM Application revamping | Data Distribution Manager website ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="legacy-com-application-revamping">Legacy COM Application revamping</h1>
+
+<p>For many years Microsoft based its products on COM (Component Object Model) and its network extension DCOM (Distributed COM). Many customer built their infrastructure and products over COM technology.
+The technology is mature, but over the years it becomes legacy; there are many disadvantages when it is needed to use COM based application over networks and cybersecurity is mandatory today.
+To protect these applications it is needed to put in place countermeasures against malicious attachers or rewrite the entire applications with cyber-security in mind.</p>
+<p>With <strong>Data Distribution Manager</strong> we overcome the previous problems, revamping legacy COM applications at transport layer.</p>
+<h2 id="comdcom-simple-overview">COM/DCOM simple overview</h2>
+<p>Just try to have a look on how COM works. The following figure shows a basic behavior of DCOM (figure come from <a href="https://www.geeksforgeeks.org/distributed-component-object-model-dcom/">https://www.geeksforgeeks.org/distributed-component-object-model-dcom/</a>):</p>
+<p><img src="../images/DCOMarchitect.png" alt="DCOM Architecture" title="DCOM Architecture"></p>
+<p>Simplifiying: DCOM extends COM over the network and allows clients to connect to the component (server) just as if it is in the same machine.
+Looking at the figure above there is a common joining point: <em>DCOM network protocol</em>.</p>
+<h2 id="comdcom-over-data-distribution-manager">COM/DCOM over <strong>Data Distribution Manager</strong></h2>
+<p>To overcome the <em>DCOM network protocol</em> we developed a library based on <strong>Data Distribution Manager</strong> which replace the transport layer and use all features available in <strong>Data Distribution Manager</strong>.</p>
+<p>The following figure shows a simple overview:</p>
+<p><img src="../images/DCOM_evoluted.png" alt="DCOM Evolution" title="DCOM Evolution"></p>
+<p><strong>Data Distribution Manager</strong> comes with two ready-made underlying protocols: OpenDDS and Apache Kafka. Both can be used as the final transport protocols.
+Depending on application and infrastructure requirements it is possible to choose one or the other.</p>
+<h3 id="data-distribution-manager-over-opendds"><strong>Data Distribution Manager</strong> over OpenDDS</h3>
+<p>To have an overview on the protocol navigate on <a href="https://opendds.org/">https://opendds.org/</a>.
+It is more or less close to DCOM. It is based over a CORBA implementation. <strong>Data Distribution Manager</strong> has a simple IDL to have a common shared layer with other transport protocols (e.g. Apache Kafka).
+With OpenDDS the component acts as server like in DCOM and clients connects to it using OpenDDS. With OpenDDS it is not needed to have an external infrastructure, but clients shall be aware where is located DCPSInfoRepo or can use static discovery.
+<strong>Data Distribution Manager</strong> is able to start DCPSInfoRepo within the COM Server, anyway clients shall know the DCPSInfoRepo endpoint.
+OpenDDS can be configured in multiple way, can use multiple wire protocols and achieve the needs to replace <strong>DCOM network protocol</strong> within some network conditions.</p>
+<h3 id="data-distribution-manager-over-apache-kafka"><strong>Data Distribution Manager</strong> over Apache Kafka</h3>
+<p>To have an overview on the protocol navigate on <a href="https://kafka.apache.org/">https://kafka.apache.org/</a>.
+It is far from DCOM. It is a stream platform with central server (clusterable), clients connects to the Apache Kafka server and it dispatch messages.
+With Apache Kafka both the component and clients connects use Apache Kafka servers to exchange messages. With Apache Kafka it is mandatory to have an external infrastruture.
+So what are the advantages to use Apache Kafka? Try to list some of them:</p>
+<ul>
+<li>The Apache Kafka servers stores the messages: a component (COM server) can recover from a fault and continue to operate from the last point it has stopped</li>
+<li>There is a unique point of dispatching: client and component (COM server) does not be aware of each other, only needs to know the address of Apache Kafka brokers.</li>
+<li>The previous point it is important if the COM application must communicate over the internet, over NAT network and firewall: the communication starts always from the Kafka client (COM Client and/or COM Server)</li>
+<li>Apache Kafka comes with all cybersecurity features: TLS, ACL, authentication and so on</li>
+</ul>
+<h2 id="com-over-the-cloud">COM over the Cloud</h2>
+<p>With <strong>Data Distribution Manager</strong> over Apache Kafka it is possible to have COM applications over the Cloud. Many cloud players today have an installation of Apache Kafka in their datacenters.
+So a legacy COM application can be revamped to be internet-aware. See figure below:</p>
+<p><img src="../images/COM_Cloud.png" alt="COM over the Cloud" title="COM over the Cloud"></p>
+<p>If the article is interesting and want to know more contact us visiting <a href="https://www.masesgroup.com/">https://www.masesgroup.com/</a>.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/Documentation/articles/legacy_application_revamp.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © 2021 MASES s.r.l..<br>Generated by <strong>DocFX</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

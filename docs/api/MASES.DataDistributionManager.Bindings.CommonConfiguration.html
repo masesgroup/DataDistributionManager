@@ -1,0 +1,843 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class CommonConfiguration
+   | Data Distribution Manager website </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class CommonConfiguration
+   | Data Distribution Manager website ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration">
+  
+  
+  <h1 id="MASES_DataDistributionManager_Bindings_CommonConfiguration" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration" class="text-break">Class CommonConfiguration
+  </h1>
+  <div class="markdown level0 summary"><p>The common configuration class</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html">BaseConfiguration</a></div>
+    <div class="level2"><a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html">GlobalConfiguration</a></div>
+    <div class="level3"><span class="xref">CommonConfiguration</span></div>
+      <div class="level4"><a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.KafkaConfiguration.html">KafkaConfiguration</a></div>
+      <div class="level4"><a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.html">OpenDDSConfiguration</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="MASES.DataDistributionManager.Bindings.IConfiguration.html">IConfiguration</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_ProtocolKey">GlobalConfiguration.ProtocolKey</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_ProtocolLibraryKey">GlobalConfiguration.ProtocolLibraryKey</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_MaxMessageSizeKey">GlobalConfiguration.MaxMessageSizeKey</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_ServerLostTimeoutKey">GlobalConfiguration.ServerLostTimeoutKey</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_GlobalLogLevelKey">GlobalConfiguration.GlobalLogLevelKey</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_Protocol">GlobalConfiguration.Protocol</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_ProtocolLibrary">GlobalConfiguration.ProtocolLibrary</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_MaxMessageSize">GlobalConfiguration.MaxMessageSize</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_ServerLostTimeout">GlobalConfiguration.ServerLostTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_GlobalLogLevel">GlobalConfiguration.GlobalLogLevel</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_CheckConfiguration">GlobalConfiguration.CheckConfiguration()</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_PropertyChanged">BaseConfiguration.PropertyChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_EmitPropertyChanged_System_String_">BaseConfiguration.EmitPropertyChanged(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_Configuration">BaseConfiguration.Configuration</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="MASES.DataDistributionManager.Bindings.html">MASES.DataDistributionManager.Bindings</a></h6>
+  <h6><strong>Assembly</strong>: DataDistributionManagerNet.dll</h6>
+  <h5 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class CommonConfiguration : GlobalConfiguration, IConfiguration, INotifyPropertyChanged</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration__ctor_MASES_DataDistributionManager_Bindings_IConfiguration_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.%23ctor(MASES.DataDistributionManager.Bindings.IConfiguration)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L76">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_CommonConfiguration__ctor_" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.#ctor*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration__ctor_MASES_DataDistributionManager_Bindings_IConfiguration_" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.#ctor(MASES.DataDistributionManager.Bindings.IConfiguration)">CommonConfiguration(IConfiguration)</h4>
+  <div class="markdown level1 summary"><p>Duplicates a configuration</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CommonConfiguration(IConfiguration originalConf)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MASES.DataDistributionManager.Bindings.IConfiguration.html">IConfiguration</a></td>
+        <td><span class="parametername">originalConf</span></td>
+        <td><p><a class="xref" href="MASES.DataDistributionManager.Bindings.IConfiguration.html">IConfiguration</a> to duplicate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration__ctor_System_String_System_String_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.%23ctor(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L68">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_CommonConfiguration__ctor_" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.#ctor*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration__ctor_System_String_System_String_" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.#ctor(System.String,System.String)">CommonConfiguration(String, String)</h4>
+  <div class="markdown level1 summary"><p>Initialize a new <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html">CommonConfiguration</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CommonConfiguration(string protocol, string protolib)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">protocol</span></td>
+        <td><p>The protocol to use</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">protolib</span></td>
+        <td><p>The protocol library to use</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration_ChannelSeekTimeoutKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.ChannelSeekTimeoutKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L33">View Source</a>
+  </span>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ChannelSeekTimeoutKey" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ChannelSeekTimeoutKey">ChannelSeekTimeoutKey</h4>
+  <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_ChannelSeekTimeout">ChannelSeekTimeout</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string ChannelSeekTimeoutKey = &quot;datadistributionmanager.timeout.channelseek&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitSyncKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.CommitSyncKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L57">View Source</a>
+  </span>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitSyncKey" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.CommitSyncKey">CommitSyncKey</h4>
+  <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitSync">CommitSync</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string CommitSyncKey = &quot;datadistributionmanager.commit.sync&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitTimeoutKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.CommitTimeoutKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L53">View Source</a>
+  </span>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitTimeoutKey" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.CommitTimeoutKey">CommitTimeoutKey</h4>
+  <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitTimeout">CommitTimeout</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string CommitTimeoutKey = &quot;datadistributionmanager.timeout.commit&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration_ConsumerTimeoutKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.ConsumerTimeoutKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L45">View Source</a>
+  </span>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ConsumerTimeoutKey" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ConsumerTimeoutKey">ConsumerTimeoutKey</h4>
+  <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_ConsumerTimeout">ConsumerTimeout</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string ConsumerTimeoutKey = &quot;datadistributionmanager.timeout.consumer&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration_CreateChannelTimeoutKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.CreateChannelTimeoutKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L29">View Source</a>
+  </span>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_CreateChannelTimeoutKey" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.CreateChannelTimeoutKey">CreateChannelTimeoutKey</h4>
+  <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_CreateChannelTimeout">CreateChannelTimeout</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string CreateChannelTimeoutKey = &quot;datadistributionmanager.timeout.createchannel&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration_EventSyncKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.EventSyncKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L61">View Source</a>
+  </span>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_EventSyncKey" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.EventSyncKey">EventSyncKey</h4>
+  <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_EventSync">EventSync</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string EventSyncKey = &quot;datadistributionmanager.event.sync&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration_KeepAliveTimeoutKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.KeepAliveTimeoutKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L41">View Source</a>
+  </span>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_KeepAliveTimeoutKey" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.KeepAliveTimeoutKey">KeepAliveTimeoutKey</h4>
+  <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_KeepAliveTimeout">KeepAliveTimeout</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string KeepAliveTimeoutKey = &quot;datadistributionmanager.timeout.keepalive&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration_ProducerTimeoutKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.ProducerTimeoutKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L49">View Source</a>
+  </span>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ProducerTimeoutKey" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ProducerTimeoutKey">ProducerTimeoutKey</h4>
+  <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_ProducerTimeout">ProducerTimeout</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string ProducerTimeoutKey = &quot;datadistributionmanager.timeout.producer&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration_ReceiveTimeoutKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.ReceiveTimeoutKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L37">View Source</a>
+  </span>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ReceiveTimeoutKey" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ReceiveTimeoutKey">ReceiveTimeoutKey</h4>
+  <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_ReceiveTimeout">ReceiveTimeout</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string ReceiveTimeoutKey = &quot;datadistributionmanager.timeout.receive&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration_ChannelSeekTimeout.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.ChannelSeekTimeout%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L103">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ChannelSeekTimeout_" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ChannelSeekTimeout*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ChannelSeekTimeout" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ChannelSeekTimeout">ChannelSeekTimeout</h4>
+  <div class="markdown level1 summary"><p>The timeout on seek channel</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint ChannelSeekTimeout { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitSync.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.CommitSync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L211">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitSync_" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.CommitSync*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitSync" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.CommitSync">CommitSync</h4>
+  <div class="markdown level1 summary"><p>True to commit message in sync</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CommitSync { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitTimeout.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.CommitTimeout%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L193">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitTimeout_" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.CommitTimeout*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitTimeout" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.CommitTimeout">CommitTimeout</h4>
+  <div class="markdown level1 summary"><p>The timeout on channel message commit</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint CommitTimeout { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration_ConsumerTimeout.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.ConsumerTimeout%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L157">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ConsumerTimeout_" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ConsumerTimeout*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ConsumerTimeout" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ConsumerTimeout">ConsumerTimeout</h4>
+  <div class="markdown level1 summary"><p>The timeout on channel message consume</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint ConsumerTimeout { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration_CreateChannelTimeout.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.CreateChannelTimeout%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L85">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_CommonConfiguration_CreateChannelTimeout_" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.CreateChannelTimeout*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_CreateChannelTimeout" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.CreateChannelTimeout">CreateChannelTimeout</h4>
+  <div class="markdown level1 summary"><p>The timeout on create channel</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint CreateChannelTimeout { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration_EventSync.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.EventSync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L229">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_CommonConfiguration_EventSync_" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.EventSync*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_EventSync" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.EventSync">EventSync</h4>
+  <div class="markdown level1 summary"><p>True to emit message receive events in sync</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EventSync { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration_KeepAliveTimeout.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.KeepAliveTimeout%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L139">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_CommonConfiguration_KeepAliveTimeout_" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.KeepAliveTimeout*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_KeepAliveTimeout" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.KeepAliveTimeout">KeepAliveTimeout</h4>
+  <div class="markdown level1 summary"><p>The timeout on channel keep alive</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint KeepAliveTimeout { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration_ProducerTimeout.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.ProducerTimeout%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L175">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ProducerTimeout_" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ProducerTimeout*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ProducerTimeout" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ProducerTimeout">ProducerTimeout</h4>
+  <div class="markdown level1 summary"><p>The timeout on channel message produce</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint ProducerTimeout { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration_ReceiveTimeout.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration.ReceiveTimeout%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L121">View Source</a>
+  </span>
+  <a id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ReceiveTimeout_" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ReceiveTimeout*"></a>
+  <h4 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ReceiveTimeout" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ReceiveTimeout">ReceiveTimeout</h4>
+  <div class="markdown level1 summary"><p>The timeout on channel receive</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint ReceiveTimeout { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.IConfiguration.html">IConfiguration</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">System.ComponentModel.INotifyPropertyChanged</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_CommonConfiguration.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.CommonConfiguration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/mariomastrodicasa/DataDistributionManager/blob/master/src/DataDistributionManagerNet/CommonConfiguration.cs/#L24" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © 2021 MASES s.r.l..<br>Generated by <strong>DocFX</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
