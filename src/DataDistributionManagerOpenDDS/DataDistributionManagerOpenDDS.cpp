@@ -1332,7 +1332,6 @@ void DataDistributionManagerOpenDDS::SetParameter(HANDLE channelHandle, const ch
 			m_DCPSInfoRepoCmdLine = paramValue;
 			return;
 		}
-
 	}
 }
 

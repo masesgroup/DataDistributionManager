@@ -26,6 +26,8 @@ public interface IConfiguration {
      * The configuration parameters to use written as key=value
      * 
      * @return an array of {@link String} with key=value pairs
+     * 
+     * @throws IllegalArgumentException if something was not right or compatible in the configuration properties
      */
     String[] getConfiguration() throws IllegalArgumentException;
 }

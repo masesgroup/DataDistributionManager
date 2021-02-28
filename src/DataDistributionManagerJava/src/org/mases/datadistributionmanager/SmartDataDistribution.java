@@ -199,9 +199,8 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * 
      * @param conf_file Configuration file to use
      * @return {@link HRESULT}
-     * @throws IllegalArgumentException
      */
-    public HRESULT Initialize(String conf_file) throws IllegalArgumentException {
+    public HRESULT Initialize(String conf_file) {
         return Initialize(conf_file, null, null);
     }
 
@@ -211,9 +210,8 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @param conf_file    Configuration file to use
      * @param topicTrailer Trailer string to append on channel names
      * @return {@link HRESULT}
-     * @throws IllegalArgumentException
      */
-    public HRESULT Initialize(String conf_file, String topicTrailer) throws IllegalArgumentException {
+    public HRESULT Initialize(String conf_file, String topicTrailer) {
         return Initialize(conf_file, null, topicTrailer);
     }
 
@@ -246,7 +244,7 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @param configuration The configuration coming from an instance of
      *                      {@link IConfiguration}
      * @return {@link HRESULT}
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException @see {@link IConfiguration} 
      */
     public HRESULT Initialize(IConfiguration configuration) throws IllegalArgumentException {
         return Initialize(configuration.getConfiguration(), null, null);
@@ -259,7 +257,7 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      *                      {@link IConfiguration}
      * @param topicTrailer  Trailer string to append on channel names
      * @return {@link HRESULT}
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException @see {@link IConfiguration} 
      */
     public HRESULT Initialize(IConfiguration configuration, String topicTrailer) throws IllegalArgumentException {
         return Initialize(configuration.getConfiguration(), null, topicTrailer);
@@ -273,7 +271,7 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @param szMyAddress   The name of the server hosting the process
      * @param topicTrailer  Trailer string to append on channel names
      * @return {@link HRESULT}
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException @see {@link IConfiguration} 
      */
     public HRESULT Initialize(IConfiguration configuration, String szMyAddress, String topicTrailer)
             throws IllegalArgumentException {
@@ -285,9 +283,8 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * 
      * @param arrayParams array of key=value parameters
      * @return {@link HRESULT}
-     * @throws IllegalArgumentException
      */
-    public HRESULT Initialize(String[] arrayParams) throws IllegalArgumentException {
+    public HRESULT Initialize(String[] arrayParams) {
         return Initialize(arrayParams, null, null);
     }
 
@@ -297,9 +294,8 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @param arrayParams  array of key=value parameters
      * @param topicTrailer Trailer string to append on channel names
      * @return {@link HRESULT}
-     * @throws IllegalArgumentException
      */
-    public HRESULT Initialize(String[] arrayParams, String topicTrailer) throws IllegalArgumentException {
+    public HRESULT Initialize(String[] arrayParams, String topicTrailer) {
         return Initialize(arrayParams, null, topicTrailer);
     }
 
@@ -472,7 +468,7 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @param clazz       The class to be instantiated
      * @param channelName The channel name
      * @return The allocated instance
-     * @throws Throwable
+     * @throws Throwable generic exception for all errors (if subsystem was unable to create a channel the exception is a generic {@link Exception})
      */
     public <T extends SmartDataDistributionChannel> T CreateSmartChannel(Class<T> clazz, String channelName)
             throws Throwable {
@@ -487,7 +483,7 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @param configuration The configuration coming from an instance of
      *                      {@link IConfiguration}
      * @return The allocated instance
-     * @throws Throwable
+     * @throws Throwable generic exception for all errors (if subsystem was unable to create a channel the exception is a generic {@link Exception})
      */
     public <T extends SmartDataDistributionChannel> T CreateSmartChannel(Class<T> clazz, String channelName,
             IConfiguration configuration) throws Throwable {
@@ -503,7 +499,7 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @param configuration The configuration coming from an instance of
      *                      {@link IConfiguration}
      * @return The allocated instance
-     * @throws Throwable
+     * @throws Throwable generic exception for all errors (if subsystem was unable to create a channel the exception is a generic {@link Exception})
      */
     public <T extends SmartDataDistributionChannel> T CreateSmartChannel(Class<T> clazz, String channelName,
             IConfiguration configuration, DDM_CHANNEL_DIRECTION direction) throws Throwable {
@@ -519,7 +515,7 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @param direction   The {@link DDM_CHANNEL_DIRECTION} of the channel
      * @param arrayParams Specific parameters which override main parameters
      * @return The allocated instance
-     * @throws Throwable
+     * @throws Throwable generic exception for all errors (if subsystem was unable to create a channel the exception is a generic {@link Exception})
      */
     @SuppressWarnings("unchecked")
     public <T extends SmartDataDistributionChannel> T CreateSmartChannel(Class<T> clazz, String channelName,
