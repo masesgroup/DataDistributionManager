@@ -203,6 +203,9 @@ jobs:
           CreateJar.bat
           cd ..\..
 
+      - name: Prepare for Docs packaging
+        run: Compress-Archive -Path .\docs\* -DestinationPath .\Documentation.zip
+
       - uses: nuget/setup-nuget@v1
         with:
           nuget-version: '5.x'
@@ -241,6 +244,15 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: .\Output\datadistributionmanager.docs.jar
           asset_name: datadistributionmanager.docs.jar
+          tag: ${{ github.ref }}
+          overwrite: true
+          
+      - name: Upload DataDistributionManager Docs snapshot to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: .\Documentation.zip
+          asset_name: Documentation.zip
           tag: ${{ github.ref }}
           overwrite: true
 
