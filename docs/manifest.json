@@ -5,28 +5,6 @@
   "files": [
     {
       "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/allclasses-index.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/allclasses-index.html"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/allpackages-index.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/allpackages-index.html"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
       "source_relative_path": "../DataDistributionManagerJava/javadoc/constant-values.html",
       "output": {
         "resource": {
@@ -71,43 +49,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/index-all.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/index-all.html"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
       "source_relative_path": "../DataDistributionManagerJava/javadoc/index.html",
       "output": {
         "resource": {
           "relative_path": "javadoc/index.html"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/member-search-index.js",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/member-search-index.js"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/member-search-index.zip",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/member-search-index.zip"
         }
       },
       "is_incremental": false,
@@ -720,6 +665,17 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/KafkaChannelConfiguration.KafkaConfigurationType.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/KafkaChannelConfiguration.KafkaConfigurationType.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/KafkaChannelConfiguration.html",
       "output": {
         "resource": {
@@ -1116,325 +1072,6 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/package-search-index.js",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/package-search-index.js"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/package-search-index.zip",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/package-search-index.zip"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/resources/glass.png",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/resources/glass.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/resources/x.png",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/resources/x.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/external/jquery/jquery.js",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/external/jquery/jquery.js"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/images/ui-bg_glass_55_fbf9ee_1x400.png",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/images/ui-bg_glass_55_fbf9ee_1x400.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/images/ui-bg_glass_65_dadada_1x400.png",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/images/ui-bg_glass_65_dadada_1x400.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/images/ui-bg_glass_75_dadada_1x400.png",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/images/ui-bg_glass_75_dadada_1x400.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/images/ui-bg_glass_75_e6e6e6_1x400.png",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/images/ui-bg_glass_75_e6e6e6_1x400.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/images/ui-bg_glass_95_fef1ec_1x400.png",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/images/ui-bg_glass_95_fef1ec_1x400.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/images/ui-bg_highlight-soft_75_cccccc_1x100.png",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/images/ui-bg_highlight-soft_75_cccccc_1x100.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/images/ui-icons_222222_256x240.png",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/images/ui-icons_222222_256x240.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/images/ui-icons_2e83ff_256x240.png",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/images/ui-icons_2e83ff_256x240.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/images/ui-icons_454545_256x240.png",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/images/ui-icons_454545_256x240.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/images/ui-icons_888888_256x240.png",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/images/ui-icons_888888_256x240.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/images/ui-icons_cd0a0a_256x240.png",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/images/ui-icons_cd0a0a_256x240.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/jquery-3.4.1.js",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/jquery-3.4.1.js"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/jquery-ui.css",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/jquery-ui.css"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/jquery-ui.js",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/jquery-ui.js"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/jquery-ui.min.css",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/jquery-ui.min.css"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/jquery-ui.min.js",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/jquery-ui.min.js"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/jquery-ui.structure.css",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/jquery-ui.structure.css"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/jquery-ui.structure.min.css",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/jquery-ui.structure.min.css"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.js",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.js"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.min.js",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.min.js"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/jszip-utils/dist/jszip-utils.js",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/jszip-utils/dist/jszip-utils.js"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/jszip-utils/dist/jszip-utils.min.js",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/jszip-utils/dist/jszip-utils.min.js"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/jszip/dist/jszip.js",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/jszip/dist/jszip.js"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/script-dir/jszip/dist/jszip.min.js",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script-dir/jszip/dist/jszip.min.js"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
       "source_relative_path": "../DataDistributionManagerJava/javadoc/script.js",
       "output": {
         "resource": {
@@ -1446,43 +1083,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/search.js",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/search.js"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
       "source_relative_path": "../DataDistributionManagerJava/javadoc/stylesheet.css",
       "output": {
         "resource": {
           "relative_path": "javadoc/stylesheet.css"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/type-search-index.js",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/type-search-index.js"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../DataDistributionManagerJava/javadoc/type-search-index.zip",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/type-search-index.zip"
         }
       },
       "is_incremental": false,
@@ -4732,6 +4336,54 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.AutoOffsetResetType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.AutoOffsetResetType.html",
+          "hash": "kXrNoSGWCMmro4Re8L0/kA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.BrokerAddressFamilyType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.BrokerAddressFamilyType.html",
+          "hash": "aajUl/WZ5U1z5O6Oy+tTyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.BuiltinFeaturesType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.BuiltinFeaturesType.html",
+          "hash": "4u/bZ8Pk4Wtq765xANnL0A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.CompressionCodecType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.CompressionCodecType.html",
+          "hash": "dJDB62VeO8M+uxcox2YxHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DataReaderQosConfiguration.yml",
       "output": {
         ".html": {
@@ -4761,6 +4413,18 @@
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DeadlineQosPolicyConfiguration.html",
           "hash": "+HHLSdMZfx4pJj+BZTBnEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DebugType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DebugType.html",
+          "hash": "5B3VuEp+fekzy7WHkyhZ7A=="
         }
       },
       "is_incremental": false,
@@ -4900,11 +4564,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.IsolationLevelType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.IsolationLevelType.html",
+          "hash": "ZN7nKzuidl2EQaMkBi6D4Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.yml",
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html",
-          "hash": "WREz02p6mjmIafeqa7CV3g=="
+          "hash": "muXTTaFEoJPgAR+R1BNP8Q=="
         }
       },
       "is_incremental": false,
@@ -4917,6 +4593,18 @@
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaConfiguration.html",
           "hash": "exnThXV+mMYd+ROCDY6qPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaConfigurationType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaConfigurationType.html",
+          "hash": "HLN/yIHb4JcTWJiaN1ZNuQ=="
         }
       },
       "is_incremental": false,
@@ -5056,11 +4744,35 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionAssignmentStrategyType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionAssignmentStrategyType.html",
+          "hash": "WSbKI0jR7CKNS0vVw38jKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionQosPolicyConfiguration.yml",
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionQosPolicyConfiguration.html",
           "hash": "u0erz2wQmOTYNVqDUaYDiw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionerType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionerType.html",
+          "hash": "dN0tJXnTOKXTE1BtZD757w=="
         }
       },
       "is_incremental": false,
@@ -5128,6 +4840,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.QueueingStrategyType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.QueueingStrategyType.html",
+          "hash": "M6BMjTblO0JIDaF70z61Pw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ReaderDataLifecycleQosPolicyConfiguration.yml",
       "output": {
         ".html": {
@@ -5169,6 +4893,42 @@
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ResourceLimitsQosPolicyConfiguration.html",
           "hash": "Ab16wnefxIP7bccXVOigtw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SaslMechanismType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SaslMechanismType.html",
+          "hash": "HMjStC8wyXNsbStt6Arcbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SecurityProtocolType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SecurityProtocolType.html",
+          "hash": "A0xOcpV2XiqXw43pyn96gA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SslEndpointIdentificationAlgorithmType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SslEndpointIdentificationAlgorithmType.html",
+          "hash": "+yUs2R0Mt9UueHwSQU9CoA=="
         }
       },
       "is_incremental": false,
@@ -5264,7 +5024,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.html",
-          "hash": "j63w94kFVzi2+YvAb1vGRA=="
+          "hash": "FHlZ626XtWycAyVmxQu9gQ=="
         }
       },
       "is_incremental": false,
@@ -5600,7 +5360,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "z4Cn+0hWR+B3ACF2HjGCEQ=="
+          "hash": "pHX8qZCPl8EV3DC8ZANu4A=="
         }
       },
       "is_incremental": false,
@@ -5886,7 +5646,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 79,
+          "total_file_count": 92,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
