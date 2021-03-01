@@ -1117,6 +1117,7 @@ HANDLE DataDistributionManagerOpenDDS::CreateChannel(const char* channelName, ID
 	if (channelName == NULL)
 	{
 		LOG_ERROR0("Channel name cannot be NULL");
+		return NULL;
 	}
 
 	if (!GetSubSystemStarted())

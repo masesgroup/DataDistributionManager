@@ -284,6 +284,7 @@ HANDLE DataDistributionManagerKafka::CreateChannel(const char* channelName, IDat
 	if (channelName == NULL)
 	{
 		LOG_ERROR0("Channel name cannot be NULL");
+		return NULL;
 	}
 
 	if (!GetSubSystemStarted())
