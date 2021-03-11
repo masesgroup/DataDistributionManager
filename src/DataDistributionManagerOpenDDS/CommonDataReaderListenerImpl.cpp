@@ -82,40 +82,40 @@ void CommonDataReaderListenerImpl::on_requested_deadline_missed(
 	const DDS::RequestedDeadlineMissedStatus & status)
 {
 	m_pChannelConfiguration->OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION::DDM_UNMAPPED_ERROR_CONDITION, 0, "on_requested_deadline_missed");
-	// m_callbacks->GetDataDistribution()->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "CommonDataReaderListenerImpl::on_requested_deadline_missed", "total_count: %d. total_count_change: %d", status.total_count, status.total_count_change);
+	m_pChannelConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "CommonDataReaderListenerImpl::on_requested_deadline_missed", "total_count: %d. total_count_change: %d", status.total_count, status.total_count_change);
 }
 
 void CommonDataReaderListenerImpl::on_requested_incompatible_qos(
 	DDS::DataReader_ptr,
 	const DDS::RequestedIncompatibleQosStatus & status)
 {
-	// m_callbacks->GetDataDistribution()->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "CommonDataReaderListenerImpl::on_requested_incompatible_qos", "total_count: %d. total_count_change: %d", status.total_count, status.total_count_change);
+	m_pChannelConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "CommonDataReaderListenerImpl::on_requested_incompatible_qos", "total_count: %d. total_count_change: %d", status.total_count, status.total_count_change);
 }
 
 void CommonDataReaderListenerImpl::on_liveliness_changed(
 	DDS::DataReader_ptr,
 	const DDS::LivelinessChangedStatus & status)
 {
-	// m_callbacks->GetDataDistribution()->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "CommonDataReaderListenerImpl::on_liveliness_changed", "alive_count: %d. alive_count_change: %d", status.alive_count, status.alive_count_change);
+	m_pChannelConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "CommonDataReaderListenerImpl::on_liveliness_changed", "alive_count: %d. alive_count_change: %d", status.alive_count, status.alive_count_change);
 }
 
 void CommonDataReaderListenerImpl::on_subscription_matched(
 	DDS::DataReader_ptr,
 	const DDS::SubscriptionMatchedStatus & status)
 {
-	// m_callbacks->GetDataDistribution()->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "CommonDataReaderListenerImpl::on_subscription_matched", "current_count: %d. current_count_change: %d", status.current_count, status.current_count_change);
+	m_pChannelConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "CommonDataReaderListenerImpl::on_subscription_matched", "current_count: %d. current_count_change: %d", status.current_count, status.current_count_change);
 }
 
 void CommonDataReaderListenerImpl::on_sample_rejected(
 	DDS::DataReader_ptr,
 	const DDS::SampleRejectedStatus& status)
 {
-	// m_callbacks->GetDataDistribution()->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "CommonDataReaderListenerImpl::on_sample_rejected", "total_count: %d. total_count_change: %d last_reason: %d", status.total_count, status.total_count_change, status.last_reason);
+	m_pChannelConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "CommonDataReaderListenerImpl::on_sample_rejected", "total_count: %d. total_count_change: %d last_reason: %d", status.total_count, status.total_count_change, status.last_reason);
 }
 
 void CommonDataReaderListenerImpl::on_sample_lost(
 	DDS::DataReader_ptr,
 	const DDS::SampleLostStatus& status)
 {
-	// m_callbacks->GetDataDistribution()->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "CommonDataReaderListenerImpl::on_sample_lost", "total_count: %d. total_count_change: %d", status.total_count, status.total_count_change);
+	m_pChannelConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "CommonDataReaderListenerImpl::on_sample_lost", "total_count: %d. total_count_change: %d", status.total_count, status.total_count_change);
 }
