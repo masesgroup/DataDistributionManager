@@ -108,7 +108,7 @@ public class DataDistributionManagerJavaTest {
 				hRes = HRESULT.S_OK;
 				if (direction == DDM_CHANNEL_DIRECTION.TRANSMITTER) {
 					hRes = mytestTopic.WriteOnChannel(str);
-					if (hRes == HRESULT.S_OK) {
+					if (hRes.getSuccess()) {
 						str = String.format("%d", counter++);
 						if ((counter % THRESHOLD) == 0) {
 							String key = String.format("SendData Reached %d", counter);
