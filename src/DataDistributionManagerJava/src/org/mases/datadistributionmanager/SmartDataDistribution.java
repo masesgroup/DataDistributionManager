@@ -91,24 +91,19 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
     private static boolean extractAndLoadLibraryFile(String libFolderForCurrentOS, String targetFolder,
             String entryLibrary) {
         final String containerFileName = "nativepackage.zip";
-
         String nativeLibraryFilePath = libFolderForCurrentOS + "/" + containerFileName;
-
-        String extractedLibFileName = containerFileName;
-        File extractedLibFile = new File(targetFolder, extractedLibFileName);
+        File extractedLibFile = new File(targetFolder, containerFileName);
 
         try {
             // Extract file into the current directory
-            InputStream reader = SmartDataDistribution.class.getResourceAsStream(nativeLibraryFilePath);
-            FileOutputStream writer = new FileOutputStream(extractedLibFile);
-            byte[] buffer = new byte[1024];
-            int bytesRead = 0;
-            while ((bytesRead = reader.read(buffer)) != -1) {
-                writer.write(buffer, 0, bytesRead);
+            try (InputStream reader = SmartDataDistribution.class.getResourceAsStream(nativeLibraryFilePath);
+                    FileOutputStream writer = new FileOutputStream(extractedLibFile)) {
+                byte[] buffer = new byte[1024];
+                int bytesRead = 0;
+                while ((bytesRead = reader.read(buffer)) != -1) {
+                    writer.write(buffer, 0, bytesRead);
+                }
             }
-
-            writer.close();
-            reader.close();
 
             unzip(extractedLibFile.toString(), targetFolder);
 
@@ -244,7 +239,7 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @param configuration The configuration coming from an instance of
      *                      {@link IConfiguration}
      * @return {@link HRESULT}
-     * @throws IllegalArgumentException @see {@link IConfiguration} 
+     * @throws IllegalArgumentException @see {@link IConfiguration}
      */
     public HRESULT Initialize(IConfiguration configuration) throws IllegalArgumentException {
         return Initialize(configuration.getConfiguration(), null, null);
@@ -257,7 +252,7 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      *                      {@link IConfiguration}
      * @param topicTrailer  Trailer string to append on channel names
      * @return {@link HRESULT}
-     * @throws IllegalArgumentException @see {@link IConfiguration} 
+     * @throws IllegalArgumentException @see {@link IConfiguration}
      */
     public HRESULT Initialize(IConfiguration configuration, String topicTrailer) throws IllegalArgumentException {
         return Initialize(configuration.getConfiguration(), null, topicTrailer);
@@ -271,7 +266,7 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @param szMyAddress   The name of the server hosting the process
      * @param topicTrailer  Trailer string to append on channel names
      * @return {@link HRESULT}
-     * @throws IllegalArgumentException @see {@link IConfiguration} 
+     * @throws IllegalArgumentException @see {@link IConfiguration}
      */
     public HRESULT Initialize(IConfiguration configuration, String szMyAddress, String topicTrailer)
             throws IllegalArgumentException {
@@ -468,7 +463,9 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @param clazz       The class to be instantiated
      * @param channelName The channel name
      * @return The allocated instance
-     * @throws Throwable generic exception for all errors (if subsystem was unable to create a channel the exception is a generic {@link Exception})
+     * @throws Throwable generic exception for all errors (if subsystem was unable
+     *                   to create a channel the exception is a generic
+     *                   {@link Exception})
      */
     public <T extends SmartDataDistributionChannel> T CreateSmartChannel(Class<T> clazz, String channelName)
             throws Throwable {
@@ -483,7 +480,9 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @param configuration The configuration coming from an instance of
      *                      {@link IConfiguration}
      * @return The allocated instance
-     * @throws Throwable generic exception for all errors (if subsystem was unable to create a channel the exception is a generic {@link Exception})
+     * @throws Throwable generic exception for all errors (if subsystem was unable
+     *                   to create a channel the exception is a generic
+     *                   {@link Exception})
      */
     public <T extends SmartDataDistributionChannel> T CreateSmartChannel(Class<T> clazz, String channelName,
             IConfiguration configuration) throws Throwable {
@@ -499,7 +498,9 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @param configuration The configuration coming from an instance of
      *                      {@link IConfiguration}
      * @return The allocated instance
-     * @throws Throwable generic exception for all errors (if subsystem was unable to create a channel the exception is a generic {@link Exception})
+     * @throws Throwable generic exception for all errors (if subsystem was unable
+     *                   to create a channel the exception is a generic
+     *                   {@link Exception})
      */
     public <T extends SmartDataDistributionChannel> T CreateSmartChannel(Class<T> clazz, String channelName,
             IConfiguration configuration, DDM_CHANNEL_DIRECTION direction) throws Throwable {
@@ -515,7 +516,9 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @param direction   The {@link DDM_CHANNEL_DIRECTION} of the channel
      * @param arrayParams Specific parameters which override main parameters
      * @return The allocated instance
-     * @throws Throwable generic exception for all errors (if subsystem was unable to create a channel the exception is a generic {@link Exception})
+     * @throws Throwable generic exception for all errors (if subsystem was unable
+     *                   to create a channel the exception is a generic
+     *                   {@link Exception})
      */
     @SuppressWarnings("unchecked")
     public <T extends SmartDataDistributionChannel> T CreateSmartChannel(Class<T> clazz, String channelName,
