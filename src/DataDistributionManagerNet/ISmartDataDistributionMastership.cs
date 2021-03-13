@@ -32,14 +32,14 @@ namespace MASES.DataDistributionManager.Bindings
         /// Starts the manager
         /// </summary>
         /// <param name="dwMilliseconds">Timeout in ms</param>
-        /// <returns><see cref="HRESULT"/></returns>
-        HRESULT Start(uint dwMilliseconds);
+        /// <returns><see cref="OPERATION_RESULT"/></returns>
+        OPERATION_RESULT Start(uint dwMilliseconds);
         /// <summary>
         /// Stops the manager
         /// </summary>
         /// <param name="dwMilliseconds">Timeout in ms</param>
-        /// <returns><see cref="HRESULT"/></returns>
-        HRESULT Stop(uint dwMilliseconds);
+        /// <returns><see cref="OPERATION_RESULT"/></returns>
+        OPERATION_RESULT Stop(uint dwMilliseconds);
         /// <summary>
         /// Change the state of this instance
         /// </summary>

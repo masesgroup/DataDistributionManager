@@ -19,15 +19,23 @@
 package org.mases.datadistributionmanager;
 
 /**
- * Java mapper of Windows HRESULT
+ * Java mapper of {@link OPERATION_RESULT}
  */
-public class HRESULT {
-    public static final HRESULT S_OK = new HRESULT(0);
-    public static final HRESULT E_FAIL = new HRESULT(0x80004005L);
+public class OPERATION_RESULT {
+    static OPERATION_RESULT fromCondition(int condition) {
+        return new OPERATION_RESULT(condition);
+    }
+
+    public static final OPERATION_RESULT S_OK = new OPERATION_RESULT(0);
+    public static final OPERATION_RESULT E_FAIL = new OPERATION_RESULT(0x80004005);
 
     final long m_value;
 
-    HRESULT(long value) {
+    OPERATION_RESULT(int value) {
+        m_value = value;
+    }
+
+    OPERATION_RESULT(long value) {
         m_value = value;
     }
 
@@ -49,11 +57,11 @@ public class HRESULT {
             return false;
         }
 
-        if (!HRESULT.class.isAssignableFrom(obj.getClass())) {
+        if (!OPERATION_RESULT.class.isAssignableFrom(obj.getClass())) {
             return false;
         }
 
-        final HRESULT other = (HRESULT) obj;
+        final OPERATION_RESULT other = (OPERATION_RESULT) obj;
         if (this.m_value == other.m_value) {
             return true;
         }

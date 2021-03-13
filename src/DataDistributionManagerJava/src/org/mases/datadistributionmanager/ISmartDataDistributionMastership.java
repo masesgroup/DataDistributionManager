@@ -28,17 +28,17 @@ public interface ISmartDataDistributionMastership {
      * Starts the manager
      * 
      * @param dwMilliseconds Timeout in ms
-     * @return {@link HRESULT}
+     * @return {@link OPERATION_RESULT}
      */
-    HRESULT Start(int dwMilliseconds);
+    OPERATION_RESULT Start(int dwMilliseconds);
 
     /**
      * Stops the manager
      * 
      * @param dwMilliseconds Timeout in ms
-     * @return {@link HRESULT}
+     * @return {@link OPERATION_RESULT}
      */
-    HRESULT Stop(int dwMilliseconds);
+    OPERATION_RESULT Stop(int dwMilliseconds);
 
     /**
      * Change the state of this instance

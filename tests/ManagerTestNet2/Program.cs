@@ -23,7 +23,7 @@ using System;
 using System.Diagnostics;
 using System.Threading;
 
-namespace ManagerTestNet
+namespace ManagerTestNet2
 {
     class Program
     {
@@ -36,7 +36,7 @@ namespace ManagerTestNet
             SmartDataDistribution dataDistribution = new SmartDataDistribution();
             dataDistribution.LoggingEvent += DataDistribution_LoggingEvent;
             OpenDDSConfiguration conf = null;
-            HRESULT hRes = HRESULT.S_OK;
+            OPERATION_RESULT hRes = OPERATION_RESULT.DDM_NO_ERROR_CONDITION;
 
             if (args.Length == 0)
             {
@@ -129,14 +129,17 @@ namespace ManagerTestNet
             Console.WriteLine("Starting operations...\n");
             while (true)
             {
-                if (direction.HasFlag(DDM_CHANNEL_DIRECTION.TRANSMITTER) ? testChannel.WriteOnChannel(str) : true)
+                if (direction.HasFlag(DDM_CHANNEL_DIRECTION.TRANSMITTER))
                 {
-                    str = string.Format("{0:10}", counter++);
-                    if ((counter % THRESHOLD) == 0)
+                    if (testChannel.WriteOnChannel(str).Succeeded)
                     {
-                        string key = string.Format("SendData Reached {0}", counter);
-                        testChannel.WriteOnChannel(key, str);
-                        Console.WriteLine(key);
+                        str = string.Format("{0:10}", counter++);
+                        if ((counter % THRESHOLD) == 0)
+                        {
+                            string key = string.Format("SendData Reached {0}", counter);
+                            testChannel.WriteOnChannel(key, str);
+                            Console.WriteLine(key);
+                        }
                     }
                 }
                 Thread.Sleep(1000);

@@ -35,7 +35,7 @@ public:
 	ClusterHealth GetClusterHealth();
 private:
 	ClusterHealth clusterState;
-	CRITICAL_SECTION m_csFlags;
+	DataDistributionLockWrapper* m_csFlags;
 };
 
 #endif // !defined(DATADISTRIBUTIONMASTERSHIPMANAGER_H__INCLUDED_)

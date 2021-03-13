@@ -20,6 +20,8 @@
 #include "SmartDataDistributionManager.h"
 #include "DataDistributionManager_c.h"
 
+#include <windows.h>
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -76,7 +78,7 @@ BOOL slaveDataCallbackFun(void*, void* pPointer, size_t len)
 	return FALSE;
 }
 
-BOOL slaveStateCallbackFun(void*, void** pPointer, size_t* len, HRESULT*)
+BOOL slaveStateCallbackFun(void*, void** pPointer, size_t* len, OPERATION_RESULT*)
 {
 	printf("Requested STATE from SLAVE\n");
 	return TRUE;
@@ -93,7 +95,7 @@ void loggingCallbackFun(const void*, const DDM_LOG_LEVEL level, const char* sour
 	printf("Timestamp: %s Source: %s Function: %s - %s\n", text, sourceName, function, stringa);
 }
 
-void dataDistributionOnUnderlyingEventCb(const void* opaque, const HANDLE channelHandle, const UnderlyingEventData* uEvent)
+void dataDistributionOnUnderlyingEventCb(const void* opaque, const CHANNEL_HANDLE channelHandle, const UnderlyingEventData* uEvent)
 {
 
 }
@@ -109,7 +111,7 @@ int interfaceCaller(BOOL sendData, const char* confFilePath)
 
 	IDataDistributionCallback* cbs = DataDistributionCallback::create(NULL, NULL, loggingCallbackFun, NULL);
 	IDataDistribution *manager = DataDistribution::create();
-	if (manager->Initialize(cbs, confFilePath, buffer, "KafkaManager") != S_OK)
+	if (OPERATION_FAILED(manager->Initialize(cbs, confFilePath, buffer, "KafkaManager")))
 	{
 		printf("Error in configuration.");
 		std::string str;
@@ -119,7 +121,7 @@ int interfaceCaller(BOOL sendData, const char* confFilePath)
 
 	IDataDistributionSubsystem* subsystem = manager->GetSubsystemManager();
 
-	if (subsystem->Start(INFINITE) != S_OK)
+	if (OPERATION_FAILED(subsystem->Start(INFINITE)))
 	{
 		std::string str;
 		std::getline(std::cin, str);
@@ -129,9 +131,9 @@ int interfaceCaller(BOOL sendData, const char* confFilePath)
 
 	auto tcbs = DataDistributionChannelCallback::create(NULL, dataDistributionOnUnderlyingEventCb);
 
-	HANDLE provaHandle = subsystem->CreateChannel("prova", tcbs);
+	CHANNEL_HANDLE testHandle = subsystem->CreateChannel("tets", tcbs);
 
-	if (subsystem->StartChannel(provaHandle, INFINITE) != S_OK)
+	if (OPERATION_FAILED(subsystem->StartChannel(testHandle, INFINITE)))
 	{
 		std::string str;
 		std::getline(std::cin, str);
@@ -143,7 +145,7 @@ int interfaceCaller(BOOL sendData, const char* confFilePath)
 	printf("Starting sending...\n");
 	while (true)
 	{
-		if ((sendData ? subsystem->WriteOnChannel(provaHandle, NULL, 0, buffer, 10) : S_OK) == S_OK)
+		if (sendData && OPERATION_SUCCEEDED(subsystem->WriteOnChannel(testHandle, NULL, 0, buffer, 10)))
 		{
 			sprintf(buffer, "%10d", counter++);
 			if ((counter % THRESHOLD) == 0) printf("SendData Reached %d\n", counter);
@@ -164,7 +166,7 @@ int cstubCaller(BOOL sendData, const char* confFilePath)
 	void* cbs_c = DataDistributionCallback_create(NULL, NULL, loggingCallbackFun, NULL);
 	void* manager_c = DataDistribution_create();
 
-	if (IDataDistribution_Initialize(manager_c, cbs_c, confFilePath, buffer, "KafkaManager") != S_OK)
+	if (OPERATION_FAILED( IDataDistribution_Initialize(manager_c, cbs_c, confFilePath, buffer, "KafkaManager")))
 	{
 		printf("Error in configuration.");
 		std::string str;
@@ -173,7 +175,7 @@ int cstubCaller(BOOL sendData, const char* confFilePath)
 	}
 	void* subsystem = IDataDistribution_GetSubsystemManager(manager_c);
 
-	if (IDataDistributionSubsystem_Start(subsystem, INFINITE) != S_OK)
+	if (OPERATION_FAILED(IDataDistributionSubsystem_Start(subsystem, INFINITE)))
 	{
 		std::string str;
 		std::getline(std::cin, str);
@@ -184,9 +186,9 @@ int cstubCaller(BOOL sendData, const char* confFilePath)
 
 	auto tcbs = DataDistributionChannelCallback_create(NULL, dataDistributionOnUnderlyingEventCb);
 
-	HANDLE provaHandle = IDataDistributionSubsystem_CreateChannel(subsystem, "prova", tcbs);
+	CHANNEL_HANDLE testHandle = IDataDistributionSubsystem_CreateChannel(subsystem, "test", tcbs);
 
-	if (IDataDistributionSubsystem_StartChannel(subsystem, provaHandle, INFINITE) != S_OK)
+	if (OPERATION_FAILED(IDataDistributionSubsystem_StartChannel(subsystem, testHandle, INFINITE)))
 	{
 		std::string str;
 		std::getline(std::cin, str);
@@ -196,7 +198,7 @@ int cstubCaller(BOOL sendData, const char* confFilePath)
 	printf("Starting sending...\n");
 	while (true)
 	{
-		if ((sendData ? IDataDistributionSubsystem_WriteOnChannel(subsystem, provaHandle, NULL, 0, buffer, 10) : S_OK) == S_OK)
+		if (sendData && OPERATION_SUCCEEDED(IDataDistributionSubsystem_WriteOnChannel(subsystem, testHandle, NULL, 0, buffer, 10)))
 		{
 			sprintf(buffer, "%10d", counter++);
 			if ((counter % THRESHOLD) == 0) printf("SendData Reached %d\n", counter);
@@ -212,7 +214,7 @@ class MySmartDataDistributionChannel : public SmartDataDistributionChannel
 		printf("Data from %s with key %s and buffer is %s", GetChannelName(), key, (char*)buffer);
 	}
 
-	void OnConditionOrError(const DDM_UNDERLYING_ERROR_CONDITION errorCode, const int nativeCode, const char* subSystemReason)
+	void OnConditionOrError(const OPERATION_RESULT errorCode, const int nativeCode, const char* subSystemReason)
 	{
 
 	}
@@ -245,7 +247,7 @@ int smartCaller(BOOL sendData, const char* confFilePath)
 	MySmartDataDistribution dataDistribution;
 	MySmartDataDistributionChannel* testChannel;
 
-	if (dataDistribution.Initialize(confFilePath, buffer, "KafkaManager") != S_OK)
+	if (OPERATION_FAILED(dataDistribution.Initialize(confFilePath, buffer, "KafkaManager")))
 	{
 		printf("Error in configuration.");
 		std::string str;
@@ -253,7 +255,7 @@ int smartCaller(BOOL sendData, const char* confFilePath)
 		return -1;
 	}
 
-	if (dataDistribution.Start(INFINITE) != S_OK)
+	if (OPERATION_FAILED(dataDistribution.Start(INFINITE)))
 	{
 		std::string str;
 		std::getline(std::cin, str);
@@ -262,9 +264,9 @@ int smartCaller(BOOL sendData, const char* confFilePath)
 
 	printf("After StartMasterConsumerAndWait...\n");
 
-	testChannel = dataDistribution.CreateSmartChannel("prova");
+	testChannel = dataDistribution.CreateSmartChannel("test");
 
-	if (testChannel->StartChannel(INFINITE) != S_OK)
+	if (OPERATION_FAILED(testChannel->StartChannel(INFINITE)))
 	{
 		std::string str;
 		std::getline(std::cin, str);
@@ -274,7 +276,7 @@ int smartCaller(BOOL sendData, const char* confFilePath)
 	printf("Starting sending...\n");
 	while (true)
 	{
-		if ((sendData ? testChannel->WriteOnChannel(NULL, 0, buffer, 10) : S_OK) == S_OK)
+		if (sendData && OPERATION_SUCCEEDED(testChannel->WriteOnChannel(NULL, 0, buffer, 10)))
 		{
 			sprintf(buffer, "%10d", counter++);
 			if ((counter % THRESHOLD) == 0) printf("SendData Reached %d\n", counter);

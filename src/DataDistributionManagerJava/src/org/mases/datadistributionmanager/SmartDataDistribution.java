@@ -193,9 +193,9 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * Initialize the instance using configuration file
      * 
      * @param conf_file Configuration file to use
-     * @return {@link HRESULT}
+     * @return {@link OPERATION_RESULT}
      */
-    public HRESULT Initialize(String conf_file) {
+    public OPERATION_RESULT Initialize(String conf_file) {
         return Initialize(conf_file, null, null);
     }
 
@@ -204,9 +204,9 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * 
      * @param conf_file    Configuration file to use
      * @param topicTrailer Trailer string to append on channel names
-     * @return {@link HRESULT}
+     * @return {@link OPERATION_RESULT}
      */
-    public HRESULT Initialize(String conf_file, String topicTrailer) {
+    public OPERATION_RESULT Initialize(String conf_file, String topicTrailer) {
         return Initialize(conf_file, null, topicTrailer);
     }
 
@@ -216,9 +216,9 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @param conf_file    Configuration file to use
      * @param szMyAddress  The name of the server hosting the process
      * @param topicTrailer Trailer string to append on channel names
-     * @return {@link HRESULT}
+     * @return {@link OPERATION_RESULT}
      */
-    public HRESULT Initialize(String conf_file, String szMyAddress, String topicTrailer) {
+    public OPERATION_RESULT Initialize(String conf_file, String szMyAddress, String topicTrailer) {
         m_DataDistributionCallbackLow = NativeCallbackManager.RegisterCallback((IDataDistributionCallbackLow) this);
 
         m_InitializeResult = NativeInterface.IDataDistribution_Initialize(IDataDistribution_ptr,
@@ -230,7 +230,7 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
         } else {
             NativeCallbackManager.UnregisterCallback((IDataDistributionCallbackLow) this);
         }
-        return new HRESULT(m_InitializeResult);
+        return new OPERATION_RESULT(m_InitializeResult);
     }
 
     /**
@@ -238,10 +238,10 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * 
      * @param configuration The configuration coming from an instance of
      *                      {@link IConfiguration}
-     * @return {@link HRESULT}
+     * @return {@link OPERATION_RESULT}
      * @throws IllegalArgumentException @see {@link IConfiguration}
      */
-    public HRESULT Initialize(IConfiguration configuration) throws IllegalArgumentException {
+    public OPERATION_RESULT Initialize(IConfiguration configuration) throws IllegalArgumentException {
         return Initialize(configuration.getConfiguration(), null, null);
     }
 
@@ -251,10 +251,10 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @param configuration The configuration coming from an instance of
      *                      {@link IConfiguration}
      * @param topicTrailer  Trailer string to append on channel names
-     * @return {@link HRESULT}
+     * @return {@link OPERATION_RESULT}
      * @throws IllegalArgumentException @see {@link IConfiguration}
      */
-    public HRESULT Initialize(IConfiguration configuration, String topicTrailer) throws IllegalArgumentException {
+    public OPERATION_RESULT Initialize(IConfiguration configuration, String topicTrailer) throws IllegalArgumentException {
         return Initialize(configuration.getConfiguration(), null, topicTrailer);
     }
 
@@ -265,10 +265,10 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      *                      {@link IConfiguration}
      * @param szMyAddress   The name of the server hosting the process
      * @param topicTrailer  Trailer string to append on channel names
-     * @return {@link HRESULT}
+     * @return {@link OPERATION_RESULT}
      * @throws IllegalArgumentException @see {@link IConfiguration}
      */
-    public HRESULT Initialize(IConfiguration configuration, String szMyAddress, String topicTrailer)
+    public OPERATION_RESULT Initialize(IConfiguration configuration, String szMyAddress, String topicTrailer)
             throws IllegalArgumentException {
         return Initialize(configuration.getConfiguration(), szMyAddress, topicTrailer);
     }
@@ -277,9 +277,9 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * Initialize the instance using a set of key=value pairs
      * 
      * @param arrayParams array of key=value parameters
-     * @return {@link HRESULT}
+     * @return {@link OPERATION_RESULT}
      */
-    public HRESULT Initialize(String[] arrayParams) {
+    public OPERATION_RESULT Initialize(String[] arrayParams) {
         return Initialize(arrayParams, null, null);
     }
 
@@ -288,9 +288,9 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * 
      * @param arrayParams  array of key=value parameters
      * @param topicTrailer Trailer string to append on channel names
-     * @return {@link HRESULT}
+     * @return {@link OPERATION_RESULT}
      */
-    public HRESULT Initialize(String[] arrayParams, String topicTrailer) {
+    public OPERATION_RESULT Initialize(String[] arrayParams, String topicTrailer) {
         return Initialize(arrayParams, null, topicTrailer);
     }
 
@@ -300,9 +300,9 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @param arrayParams  array of key=value parameters
      * @param szMyAddress  The name of the server hosting the process
      * @param topicTrailer Trailer string to append on channel names
-     * @return {@link HRESULT}
+     * @return {@link OPERATION_RESULT}
      */
-    public HRESULT Initialize(String[] arrayParams, String szMyAddress, String topicTrailer) {
+    public OPERATION_RESULT Initialize(String[] arrayParams, String szMyAddress, String topicTrailer) {
         m_DataDistributionCallbackLow = NativeCallbackManager.RegisterCallback((IDataDistributionCallbackLow) this);
 
         m_InitializeResult = NativeInterface.IDataDistribution_Initialize2(IDataDistribution_ptr,
@@ -314,7 +314,7 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
         } else {
             NativeCallbackManager.UnregisterCallback((IDataDistributionCallbackLow) this);
         }
-        return new HRESULT(m_InitializeResult);
+        return new OPERATION_RESULT(m_InitializeResult);
     }
 
     /**
@@ -322,11 +322,11 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * 
      * @param serverName The server name
      * @param parameters Paramaters to send to underlying layer
-     * @return {@link HRESULT}
+     * @return {@link OPERATION_RESULT}
      */
-    public HRESULT RequestMastershipManager(String serverName, String[] parameters) {
+    public OPERATION_RESULT RequestMastershipManager(String serverName, String[] parameters) {
         if (m_SmartDataDistributionMastership != null)
-            return HRESULT.S_OK;
+            return OPERATION_RESULT.S_OK;
 
         m_DataDistributionMastershipCallbackLow = NativeCallbackManager
                 .RegisterCallback((IDataDistributionMastershipCallbackLow) this);
@@ -334,9 +334,9 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
         long res = NativeInterface.IDataDistribution_RequestMastershipManager(IDataDistribution_ptr,
                 m_DataDistributionMastershipCallbackLow, serverName, parameters);
 
-        HRESULT hRes = new HRESULT(res);
+        OPERATION_RESULT hRes = new OPERATION_RESULT(res);
 
-        if (hRes == HRESULT.S_OK) {
+        if (hRes == OPERATION_RESULT.S_OK) {
             m_SmartDataDistributionMastership = new SmartDataDistributionMastership(IDataDistribution_ptr);
         } else {
             NativeCallbackManager.UnregisterCallback((IDataDistributionMastershipCallbackLow) this);
@@ -359,25 +359,25 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * Starts the manager
      * 
      * @param timeout Timeout in ms
-     * @return {@link HRESULT}
+     * @return {@link OPERATION_RESULT}
      */
-    public HRESULT Start(int timeout) {
+    public OPERATION_RESULT Start(int timeout) {
         long res = -1;
         if (IDataDistributionSubsystemManager_ptr != 0) {
             res = NativeInterface.IDataDistributionSubsystem_Start(IDataDistributionSubsystemManager_ptr, timeout);
         }
-        return new HRESULT(res);
+        return new OPERATION_RESULT(res);
     }
 
     /**
      * Stops the manager
      * 
      * @param timeout Timeout in ms
-     * @return {@link HRESULT}
+     * @return {@link OPERATION_RESULT}
      */
-    public HRESULT Stop(int timeout) {
+    public OPERATION_RESULT Stop(int timeout) {
         long res = NativeInterface.IDataDistributionSubsystem_Stop(IDataDistributionSubsystemManager_ptr, timeout);
-        return new HRESULT(res);
+        return new OPERATION_RESULT(res);
     }
 
     /**

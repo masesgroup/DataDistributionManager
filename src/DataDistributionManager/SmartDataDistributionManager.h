@@ -128,51 +128,51 @@ public:
 	 * 
 	 * \p channelName the channel name
 	 * \p pIDataDistributionChannelBase pointer to IDataDistributionChannelBase instance
-	 * \p channelHandle the HANDLE to the channel
+	 * \p channelHandle the CHANNEL_HANDLE to the channel
 	 * \p direction DDM_CHANNEL_DIRECTION direction
 	 * 
 	 * @remarks Used from SmartDataDistribution::CreateSmartChannel
 	 * 
 	 */
-	void SetInformation(const char *channelName, IDataDistributionChannelBase *pIDataDistributionChannelBase, HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction);
+	void SetInformation(const char *channelName, IDataDistributionChannelBase *pIDataDistributionChannelBase, CHANNEL_HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction);
 	/**
 	 * @brief Starts the channel
 	 *
 	 * \p timeout the operation timeout in milliseconds
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	HRESULT StartChannel(DWORD timeout);
+	OPERATION_RESULT StartChannel(unsigned long timeout);
 	/**
 	 * @brief Stops the channel
 	 *
 	 * \p timeout the operation timeout in milliseconds
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	HRESULT StopChannel(DWORD timeout);
+	OPERATION_RESULT StopChannel(unsigned long timeout);
 	/**
 	 * @brief Locks the channel
 	 *
 	 * \p timeout the operation timeout in milliseconds
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	HRESULT Lock(DWORD timeout);
+	OPERATION_RESULT Lock(unsigned long timeout);
 	/**
 	 * @brief Unlock the channel
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	HRESULT Unlock();
+	OPERATION_RESULT Unlock();
 	/**
 	 * @brief Seeks the channel
 	 *
 	 * \p position the new channel position
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	HRESULT SeekChannel(int64_t position);
+	OPERATION_RESULT SeekChannel(int64_t position);
 	/**
 	 * @brief Writes data on the channel
 	 *
@@ -183,9 +183,9 @@ public:
 	 * \p waitAll set to TRUE to wait a complete message dispatch, default is FALSE. @remarks it depends on underlying implementation
 	 * \p timestamp a timestamp associable to the message, default is DDM_NO_TIMESTAMP and means no timestamp written
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	HRESULT WriteOnChannel(const char *key, size_t keyLen, void *buffer, size_t bufferLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP);
+	OPERATION_RESULT WriteOnChannel(const char *key, size_t keyLen, void *buffer, size_t bufferLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP);
 	/**
 	 * @brief Reads data from the channel
 	 *
@@ -193,17 +193,17 @@ public:
 	 * \p dataLen pointer will receive length of data read
 	 * \p buffer the buffer to receive data from the channel, it cannot be NULL
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	HRESULT ReadFromChannel(int64_t offset, size_t *dataLen, void **buffer);
+	OPERATION_RESULT ReadFromChannel(int64_t offset, size_t *dataLen, void **buffer);
 	/**
 	 * @brief Change the DDM_CHANNEL_DIRECTION of the channel
 	 *
 	 * \p direction DDM_CHANNEL_DIRECTION direction
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	HRESULT ChangeChannelDirection(DDM_CHANNEL_DIRECTION direction);
+	OPERATION_RESULT ChangeChannelDirection(DDM_CHANNEL_DIRECTION direction);
 	/**
 	 * @brief Returns the channel name
 	 * 
@@ -237,7 +237,7 @@ public:
 	 * \p subSystemReason reason from transport subsystem
 	 * 
 	 */
-	virtual void OnConditionOrError(const DDM_UNDERLYING_ERROR_CONDITION errorCode, const int nativeCode, const char *subSystemReason);
+	virtual void OnConditionOrError(const OPERATION_RESULT errorCode, const int nativeCode, const char *subSystemReason);
 	/**
 	 * @brief Function to override to receive condition or error
 	 * 
@@ -246,21 +246,21 @@ public:
 	 * \p subSystemReason reason from transport subsystem
 	 * 
 	 */
-	virtual void OnConditionOrError(const DDM_UNDERLYING_ERROR_CONDITION errorCode, const int nativeCode, const std::string subSystemReason);
+	virtual void OnConditionOrError(const OPERATION_RESULT errorCode, const int nativeCode, const std::string subSystemReason);
 
 protected:
 	/**
 	 * @brief Function to override to receive UnderlyingEventData
 	 * 
-	 * \p channelHandle the HANDLE of the channel
+	 * \p channelHandle the CHANNEL_HANDLE of the channel
 	 * \p uEvent the UnderlyingEventData received from transport subsystem
 	 * 
 	 */
-	virtual void OnUnderlyingEvent(const HANDLE channelHandle, const UnderlyingEventData *uEvent);
+	virtual void OnUnderlyingEvent(const CHANNEL_HANDLE channelHandle, const UnderlyingEventData *uEvent);
 
 private:
 	const char *m_ChannelName;
-	HANDLE m_channelHandle;
+	CHANNEL_HANDLE m_channelHandle;
 	IDataDistributionChannelBase *m_pIDataDistributionChannelBase;
 	DDM_CHANNEL_DIRECTION m_Direction;
 };
@@ -288,9 +288,9 @@ public:
 	 * \p hostAddress optional host address or host name
 	 * \p channelTrailer the optional trailer to be appended to channel name when each channel is created
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	HRESULT Initialize(const char *conf_file, const char *hostAddress = 0, const char *channelTrailer = 0);
+	OPERATION_RESULT Initialize(const char *conf_file, const char *hostAddress = 0, const char *channelTrailer = 0);
 	/**
 	 * @brief Initialize IDataDistribution instance
 	 *
@@ -299,9 +299,9 @@ public:
 	 * \p hostAddress optional host address or host name
 	 * \p channelTrailer the optional trailer to be appended to channel name when each channel is created
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	HRESULT Initialize(const char *arrayParams[], int len, const char *hostAddress = 0, const char *channelTrailer = 0);
+	OPERATION_RESULT Initialize(const char *arrayParams[], int len, const char *hostAddress = 0, const char *channelTrailer = 0);
 	/**
 	 * @brief Allocate and initialize the mastership manager
 	 *
@@ -309,25 +309,25 @@ public:
 	 * \p arrayParams an array of string in the form key=value
 	 * \p len length of \p arrayParams
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	HRESULT RequestMastershipManager(const char *hostAddress = NULL, const char *arrayParams[] = NULL, int len = 0);
+	OPERATION_RESULT RequestMastershipManager(const char *hostAddress = NULL, const char *arrayParams[] = NULL, int len = 0);
 	/**
 	 * @brief Start the common manager
 	 *
 	 * \p timeout the operation timeout in milliseconds
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	BOOL Start(DWORD timeout);
+	BOOL Start(unsigned long timeout);
 	/**
 	 * @brief Stop the common manager
 	 *
 	 * \p timeout the operation timeout in milliseconds
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	BOOL Stop(DWORD timeout);
+	BOOL Stop(unsigned long timeout);
 	/**
 	 * @brief Returns the protocol in use from IDataDistribution instance
 	 * 
@@ -463,7 +463,7 @@ protected:
 protected:
 	IDataDistribution *m_pIDataDistribution;
 	IDataDistributionMastershipCommon *m_pIDataDistributionMastershipCommon;
-	HRESULT m_pInitializeHRESULT;
+	OPERATION_RESULT m_pInitializeHRESULT;
 };
 
 /**
@@ -472,7 +472,7 @@ protected:
  * @tparam T The class inherited from SmartDataDistributionChannel
  */
 template <typename T>
-class DDM_EXPORT SmartDataDistribution : public SmartDataDistributionBase
+class SmartDataDistribution : public SmartDataDistributionBase
 {
 public:
 	/**
@@ -496,12 +496,12 @@ public:
 	T *CreateSmartChannel(const char *channelName, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION::ALL, const char *arrayParams[] = NULL, int len = 0)
 	{
 		static_assert(std::is_base_of<SmartDataDistributionChannel, T>::value, "type parameter of this class must derive from SmartDataDistributionChannel");
-		if (m_pInitializeHRESULT != S_OK)
+		if (OPERATION_FAILED(m_pInitializeHRESULT))
 			return NULL;
 		T *pSmartChannelT = new T();
 		SmartDataDistributionChannel *pSmartChannel = (SmartDataDistributionChannel *)pSmartChannelT;
 		IDataDistributionChannelBase *pChannelBase = m_pIDataDistribution->GetSubsystemManager();
-		HANDLE channelHandle = pChannelBase->CreateChannel(channelName, (IDataDistributionChannelCallback *)pSmartChannel, direction, arrayParams, len);
+		CHANNEL_HANDLE channelHandle = pChannelBase->CreateChannel(channelName, (IDataDistributionChannelCallback *)pSmartChannel, direction, arrayParams, len);
 		pSmartChannel->SetInformation(channelName, pChannelBase, channelHandle, direction);
 
 		return pSmartChannelT;

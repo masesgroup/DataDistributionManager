@@ -62,8 +62,8 @@ namespace MASES.DataDistributionManager.Bindings.Interop
 
             // IDataDistributionSubsystem interface
 
-            // DLLEXPORT HRESULT DLLCALL IDataDistributionSubsystem_Initialize,
-            // DLLEXPORT HRESULT DLLCALL IDataDistributionSubsystem_Initialize2,
+            // DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_Initialize,
+            // DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_Initialize2,
             // DLLEXPORT void* DLLCALL IDataDistributionSubsystem_GetCallbacks,
             IDataDistributionSubsystem_GetServerLostTimeout,
             IDataDistributionSubsystem_GetMaxMessageSize,

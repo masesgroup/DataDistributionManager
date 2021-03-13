@@ -22,7 +22,7 @@ package org.mases.datadistributionmanager;
  * Implementation of {@link IConditionOrErrorListener}
  */
 public class ConditionOrErrorListener implements IConditionOrErrorListener {
-    public void OnConditionOrError(String channelName, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode,
+    public void OnConditionOrError(String channelName, OPERATION_RESULT errorCode, int nativeCode,
             String subSystemReason) {
 
     }

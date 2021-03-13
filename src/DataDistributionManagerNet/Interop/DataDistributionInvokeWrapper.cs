@@ -216,19 +216,19 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         public delegate void dataDistributionCompletelyDisconnectedCb(IntPtr opaque, [MarshalAs(UnmanagedType.LPStr)] string source, [MarshalAs(UnmanagedType.LPStr)] string errorStr);
 
         public delegate void dataDistributionOnDataAvailable(IntPtr opaque, IntPtr channelHandle, IntPtr buffer, IntPtr len);
-        public delegate void dataDistributionOnConditionOrError(IntPtr opaque, IntPtr channelHandle, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, [MarshalAs(UnmanagedType.LPStr)] string subSystemReason);
+        public delegate void dataDistributionOnConditionOrError(IntPtr opaque, IntPtr channelHandle, OPERATION_RESULT errorCode, int nativeCode, [MarshalAs(UnmanagedType.LPStr)] string subSystemReason);
 
         public delegate IntPtr DataDistribution_create();
         public delegate IntPtr DataDistributionCallback_create(IntPtr opaque, dataDistributionConfigurationCb configurationCb, dataDistributionLoggingCb logCb, dataDistributionCompletelyDisconnectedCb disconnectedCb);
         public delegate IntPtr DataDistributionChannelCallback_create(IntPtr opaque, dataDistributionOnDataAvailable dataAvailable, dataDistributionOnConditionOrError errCond);
 
         // IDataDistribution interface
-        public delegate HRESULT IDataDistribution_Initialize(IntPtr IDataDistribution_instance, IntPtr iddcb, IntPtr iddmcb,
+        public delegate OPERATION_RESULT IDataDistribution_Initialize(IntPtr IDataDistribution_instance, IntPtr iddcb, IntPtr iddmcb,
                                                           [MarshalAs(UnmanagedType.LPStr)] string conf_file,
                                                           [MarshalAs(UnmanagedType.LPStr)] string szMyAddress, [MarshalAs(UnmanagedType.LPStr)] string channelTrailer);
 
 
-        public delegate HRESULT IDataDistribution_Initialize2(IntPtr IDataDistribution_instance, IntPtr iddcb, IntPtr iddmcb,
+        public delegate OPERATION_RESULT IDataDistribution_Initialize2(IntPtr IDataDistribution_instance, IntPtr iddcb, IntPtr iddmcb,
                                                            [In][MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPStr)] string[] arrayParams, int len,
                                                            [MarshalAs(UnmanagedType.LPStr)] string szMyAddress, [MarshalAs(UnmanagedType.LPStr)] string channelTrailer);
 
@@ -246,7 +246,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         public delegate long IDataDistributionSubsystem_GetMaxMessageSize(IntPtr IDataDistributionSubsystem_instance);
         public delegate bool IDataDistributionSubsystem_Start(IntPtr IDataDistributionSubsystem_instance, uint dwMilliseconds);
         public delegate bool IDataDistributionSubsystem_Stop(IntPtr IDataDistributionSubsystem_instance, uint dwMilliseconds);
-        public delegate HRESULT IDataDistributionSubsystem_CreateChannel(IntPtr IDataDistributionSubsystem_instance, [MarshalAs(UnmanagedType.LPStr)] string channelName, IntPtr dataCb,
+        public delegate OPERATION_RESULT IDataDistributionSubsystem_CreateChannel(IntPtr IDataDistributionSubsystem_instance, [MarshalAs(UnmanagedType.LPStr)] string channelName, IntPtr dataCb,
                                                                        [In][MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPStr)] string[] arrayParams = null, int len = 0);
 
         public delegate bool IDataDistributionSubsystem_StartChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, uint dwMilliseconds);

@@ -45,40 +45,40 @@ class DDM_EXPORT DataDistributionManagerOpenDDS : public DataDistributionCommon,
 public:
 	DataDistributionManagerOpenDDS();
 	virtual ~DataDistributionManagerOpenDDS(void);
-	HRESULT Initialize();
-	HANDLE CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION::ALL, const char* arrayParams[] = NULL, int len = NULL);
-	HRESULT StartChannel(HANDLE channelHandle, DWORD dwMilliseconds);
-	HRESULT StopChannel(HANDLE channelHandle, DWORD dwMilliseconds);
-	void SetParameter(HANDLE channelHandle, const char* paramName, const char* paramValue);
-	const char* GetParameter(HANDLE channelHandle, const char* paramName);
-	HRESULT Lock(HANDLE channelHandle, DWORD timeout);
-	HRESULT Unlock(HANDLE channelHandle);
-	HRESULT SeekChannel(HANDLE channelHandle, size_t position);
-	HRESULT DeleteChannel(HANDLE channelHandle);
-	HRESULT WriteOnChannel(HANDLE channelHandle, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP);
-	HRESULT ReadFromChannel(HANDLE channelHandle, int64_t offset, size_t *dataLen, void **param);
-	HRESULT ChangeChannelDirection(HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction);
+	OPERATION_RESULT Initialize();
+	CHANNEL_HANDLE CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION::ALL, const char* arrayParams[] = NULL, int len = NULL);
+	OPERATION_RESULT StartChannel(CHANNEL_HANDLE channelHandle, unsigned long dwMilliseconds);
+	OPERATION_RESULT StopChannel(CHANNEL_HANDLE channelHandle, unsigned long dwMilliseconds);
+	void SetParameter(CHANNEL_HANDLE channelHandle, const char* paramName, const char* paramValue);
+	const char* GetParameter(CHANNEL_HANDLE channelHandle, const char* paramName);
+	OPERATION_RESULT Lock(CHANNEL_HANDLE channelHandle, unsigned long timeout);
+	OPERATION_RESULT Unlock(CHANNEL_HANDLE channelHandle);
+	OPERATION_RESULT SeekChannel(CHANNEL_HANDLE channelHandle, size_t position);
+	OPERATION_RESULT DeleteChannel(CHANNEL_HANDLE channelHandle);
+	OPERATION_RESULT WriteOnChannel(CHANNEL_HANDLE channelHandle, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP);
+	OPERATION_RESULT ReadFromChannel(CHANNEL_HANDLE channelHandle, int64_t offset, size_t *dataLen, void **param);
+	OPERATION_RESULT ChangeChannelDirection(CHANNEL_HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction);
 
-	HRESULT Stop(DWORD milliseconds);
+	OPERATION_RESULT Stop(unsigned long milliseconds);
 
 	int GetServerLostTimeout() { return m_ServerLostTimeout; };
-	static DDM_UNDERLYING_ERROR_CONDITION OpenDDSErrorMapper(CORBA::Long code);
+	static OPERATION_RESULT OpenDDSErrorMapper(CORBA::Long code);
 private:
 	// ACE_Log_Msg_Callback api
 	void log(ACE_Log_Record &log_record);
 	// internal api
-	HRESULT shutdown();
+	OPERATION_RESULT shutdown();
 	TimeBase::TimeT get_timestamp();
 	static DDS::Duration_t DurationFromMs(int ms);
-	HRESULT conf_init(ChannelConfigurationOpenDDS* configuration, const char* arrayParams[], int len);
-	HRESULT read_config_file(ChannelConfigurationOpenDDS* configuration, const char* arrayParams[], int len);
+	OPERATION_RESULT conf_init(ChannelConfigurationOpenDDS* configuration, const char* arrayParams[], int len);
+	OPERATION_RESULT read_config_file(ChannelConfigurationOpenDDS* configuration, const char* arrayParams[], int len);
 	void SetCmdLine(std::string cmdLine);
-	HRESULT StartConsumerAndWait(ChannelConfigurationOpenDDS* pChannelConfiguration, DWORD dwMilliseconds);
-	void StopConsumer(ChannelConfigurationOpenDDS* pChannelConfiguration);
-	static DWORD __stdcall consumerHandler(void * argh);
-	static DWORD __stdcall readDataFromInfoRepo(void * argh);
-	static DWORD __stdcall monitorInfoRepo(void * argh);
-	HRESULT InitializeInfoRepo();
+	OPERATION_RESULT StartConsumerAndWait(ChannelConfigurationOpenDDS* pChannelConfiguration, unsigned long dwMilliseconds);
+	OPERATION_RESULT StopConsumer(ChannelConfigurationOpenDDS* pChannelConfiguration);
+	static void FUNCALL consumerHandler(ThreadWrapperArg *arg);
+	static unsigned long __stdcall readDataFromInfoRepo(void * argh);
+	static unsigned long __stdcall monitorInfoRepo(void * argh);
+	OPERATION_RESULT InitializeInfoRepo();
 	void SetDomainParticipantQos(DDS::DomainParticipantQos* qos, const char* arrayParams[], int len);
 	void SetTopicQos(DDS::TopicQos* qos, const char* arrayParams[], int len);
 	void SetPublisherQos(DDS::PublisherQos* qos, const char* arrayParams[], int len);
@@ -120,7 +120,7 @@ public:
 	ChannelConfigurationOpenDDS(const char* channelName, DDM_CHANNEL_DIRECTION direction, DataDistributionManagerOpenDDS* mainManager, IDataDistributionChannelCallback* Cb)
 		: ChannelConfiguration(channelName, direction, mainManager, Cb)
 	{
-		h_evtConsumer = CreateEvent(0, true, false, NULL);
+		m_tConsumerThread = NULL;
 	}
 
 	DDS::Topic_var channel_channel;
@@ -141,10 +141,7 @@ public:
 	DDS::DataReader_var channel_base_dr;
 	DataDistributionSchema::OpenDDSMsgDataReader_var channel_dr;
 
-	HANDLE  h_evtConsumer;
-	BOOL	bConsumerRun;
-	DWORD	dwConsumerThrId;
-	HANDLE	hConsumerThread;
+	DataDistributionThreadWrapper* m_tConsumerThread;
 };
 
 #endif /* DATADISTRIBUTIONMANAGEROPENDDS_H  */

@@ -28,8 +28,6 @@
  * function, type, enum, define, etc.
  * The C++ interface is STD C++ '03 compliant and adheres to the
  * Google C++ Style Guide.
-
- * @sa For the C interface see rdkafka.h
  *
  * @tableofcontents
  */
@@ -37,22 +35,6 @@
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
-
-/**@cond NO_DOC*/
-
-#ifndef _INC_WINDOWS
-#include <windows.h>
-#endif /* _INC_WINDOWS */
-
-/**@endcond*/
-
-#ifdef DDM_EXPORTS
-#define DDM_EXPORT __declspec(dllexport)
-#else
-#define DDM_EXPORT __declspec(dllimport)
-#endif
-
-#define DDM_NO_TIMESTAMP -1
 
 /**
  * @enum DDM_GENERAL_PARAMETER
@@ -154,36 +136,5 @@ typedef enum class DDM_CLUSTEREVENT
 	LOSTSERVER = 0x4,  /**< A server was lost in the cluster */
 	REMOVESERVER = 0x8 /**< A server was removed from the cluster */
 } DDM_CLUSTEREVENT;
-/**
- * @enum DDM_UNDERLYING_ERROR_CONDITION
- *
- * @brief DDM_UNDERLYING_ERROR_CONDITION type.
- * 
- * Errors or conditions from underlying layer
- *
- * @sa dataDistributionOnClusterStateChange
- * @sa IDataDistributionMastershipCallback::OnClusterStateChange()
- */
-typedef enum class DDM_UNDERLYING_ERROR_CONDITION
-{
-	// Error section
-	DDM_NO_ERROR_CONDITION = 0, /**< No error */
-
-	DDM_UNMAPPED_ERROR_CONDITION = 0x10000000, /**< Unmapped error */
-	DDM_FATAL_ERROR,						   /**< Fatal */
-	DDM_TIMEOUT,							   /**< Timeout occurred */
-	DDM_INVALID_DATA,						   /**< Invalid data */
-	DDM_SUBSYSTEM_NOT_STARTED,				   /**< Subsystem not started */
-	DDM_WRITE_FAILED,						   /**< Failed on write */
-	DDM_COMMIT_FAILED,						   /**< Commit failed */
-
-	// Condition section
-	DATA_AVAILABLE = 0x20000000,				/**< Data are available */
-	DDM_END_OF_STREAM,							/**< Reached end of stream */
-	DDM_NO_DATA_RETURNED,						/**<  No data returned */
-	DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_BEGIN,	/**< Timeout elapsed waiting for messages from the channel */
-	DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_END,	/**< End timeout condition waiting for messages from the channel */
-	DDM_ELAPSED_MESSAGE_ACKNOWLEDGMENT_TIMEOUT, /**< Timeout on acknowledgment */
-} DDM_UNDERLYING_ERROR_CONDITION;
 
 #endif // !defined(DATADISTRIBUTIONMANAGERENUMS_H__INCLUDED_)

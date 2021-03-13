@@ -29,16 +29,19 @@ class DDM_EXPORT DataDistributionLog
 {
 public:
 	DataDistributionLog(IDataDistributionLog* pLog, const char* source, const char* function);
+	DataDistributionLog(IDataDistributionLog* pLog, IDataDistributionChannel* pChannel, const char* source, const char* function);
 	~DataDistributionLog();
 
 	void Log(const DDM_LOG_LEVEL level, const char* format, ...);
 private:
 	IDataDistributionLog* m_pLog;
+	IDataDistributionChannel* m_pChannel;
 	const char* m_source;
 	const char* m_function;
 };
 
 #define TRACESTART(A, B) DataDistributionLog dataDistributionLog(this, A, B);
+#define TRACECHANNELSTART(A, B, C) DataDistributionLog dataDistributionLog(this, A, B, C);
 
 #define LOG_FATAL0(value) dataDistributionLog.Log(DDM_LOG_LEVEL::FATAL_LEVEL, value);
 #define LOG_ERROR0(value) dataDistributionLog.Log(DDM_LOG_LEVEL::ERROR_LEVEL, value);

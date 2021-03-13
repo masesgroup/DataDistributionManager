@@ -26,11 +26,12 @@ DataDistributionMastershipCommon::DataDistributionMastershipCommon()
 	m_MyIdentifier = 0;
 	m_IamNextPrimary = FALSE;
 	m_myState = DDM_INSTANCE_STATE::UNKNOWN;
-	InitializeCriticalSection(&m_csState);
+	m_tKeepAlive = NULL;
+	m_csState = new DataDistributionLockWrapper();
 	m_startupTime.ResetTime();
 }
 
-HRESULT DataDistributionMastershipCommon::Initialize(IDataDistributionSubsystem* transportManager, IDataDistributionMastershipCallback* cbs, const char* szMyAddress, const char* arrayParams[], int length)
+OPERATION_RESULT DataDistributionMastershipCommon::Initialize(IDataDistributionSubsystem* transportManager, IDataDistributionMastershipCallback* cbs, const char* szMyAddress, const char* arrayParams[], int length)
 {
 	std::string server1Name;
 
@@ -62,62 +63,45 @@ HRESULT DataDistributionMastershipCommon::Initialize(IDataDistributionSubsystem*
 	return Initialize();
 }
 
-HRESULT DataDistributionMastershipCommon::Initialize()
+OPERATION_RESULT DataDistributionMastershipCommon::Initialize()
 {
 	TRACESTART("DataDistributionCommon", "Initialize");
 
 	m_hKeepAlive = m_pDataDistributionManagerSubsystem->CreateChannel("KeepAlive", this);
-	if (!m_hKeepAlive) return E_FAIL;
-	return S_OK;
+	if (!m_hKeepAlive) return DDM_POINTER_NOT_SET;
+	return DDM_NO_ERROR_CONDITION;
 }
 
-HRESULT DataDistributionMastershipCommon::Start(DWORD dwMilliseconds)
+OPERATION_RESULT DataDistributionMastershipCommon::Start(unsigned long dwMilliseconds)
 {
 	TRACESTART("DataDistributionCommon", "Start");
 
 	if (m_hKeepAlive && m_pDataDistributionManagerSubsystem->StartChannel(m_hKeepAlive, dwMilliseconds))
 	{
-		HRESULT result = S_OK;
-		bKeepAliveRun = TRUE;
-		hKeepAliveThread = CreateThread(0, 0, keepAliveHandler, this, 0, &dwKeepAliveThrId);
-		auto res = WaitForSingleObject(h_evtKeepAlive, dwMilliseconds);
-		switch (res)
-		{
-		case WAIT_ABANDONED:
-		case WAIT_TIMEOUT:
-		case WAIT_FAILED:
-			result = HRESULT_FROM_WIN32(res);
-			break;
-		case WAIT_OBJECT_0:
-		default:
-			break;
-		}
-		return result;
+		m_tKeepAlive = new DataDistributionThreadWrapper(keepAliveHandler, this);
+		return m_tKeepAlive->Start(dwMilliseconds);
 	}
 
-	return E_FAIL;
+	return DDM_UNMAPPED_ERROR_CONDITION;
 }
 
-HRESULT DataDistributionMastershipCommon::Stop(DWORD dwMilliseconds)
+OPERATION_RESULT DataDistributionMastershipCommon::Stop(unsigned long dwMilliseconds)
 {
 	TRACESTART("DataDistributionCommon", "Stop");
 
-	if (m_hKeepAlive && m_pDataDistributionManagerSubsystem->StopChannel(m_hKeepAlive, dwMilliseconds))
+	if (m_hKeepAlive)
 	{
-		return S_OK;
+		return m_pDataDistributionManagerSubsystem->StopChannel(m_hKeepAlive, dwMilliseconds);
 	}
 
-	return E_FAIL;
+	return DDM_UNMAPPED_ERROR_CONDITION;
 }
 
 
 BOOL DataDistributionMastershipCommon::GetIamNextPrimary()
 {
-	BOOL status;
-	EnterCriticalSection(&m_csState);
-	status = m_IamNextPrimary;
-	LeaveCriticalSection(&m_csState);
-	return status;
+	DataDistributionAutoLockWrapper lock(m_csState);
+	return m_IamNextPrimary;
 }
 
 int64_t DataDistributionMastershipCommon::GetUpTime()
@@ -138,9 +122,9 @@ int DataDistributionMastershipCommon::SendKeepAlive()
 
 	ALIVE alive(m_MyIdentifier, GetUpTime(), m_myState);
 	std::string keepAlive("KeepAlive");
-	HRESULT hRes = m_pDataDistributionManagerSubsystem->WriteOnChannel(m_hKeepAlive, keepAlive.c_str(), keepAlive.size(), &alive, sizeof(ALIVE));
+	OPERATION_RESULT hRes = m_pDataDistributionManagerSubsystem->WriteOnChannel(m_hKeepAlive, keepAlive.c_str(), keepAlive.size(), &alive, sizeof(ALIVE));
 
-	if (FAILED(hRes))
+	if (OPERATION_FAILED(hRes))
 	{
 		LOG_ERROR0("WriteOnChannel failed");
 	}
@@ -148,7 +132,7 @@ int DataDistributionMastershipCommon::SendKeepAlive()
 	return m_keepAliveInterval;
 }
 
-void DataDistributionMastershipCommon::OnUnderlyingEvent(const HANDLE channelHandle, const UnderlyingEventData* uEvent)
+void DataDistributionMastershipCommon::OnUnderlyingEvent(const CHANNEL_HANDLE channelHandle, const UnderlyingEventData* uEvent)
 {
 	TRACESTART("DataDistributionCommon", "OnUnderlyingEvent");
 
@@ -190,7 +174,7 @@ void DataDistributionMastershipCommon::OnUnderlyingEvent(const HANDLE channelHan
 	else OnCondition(uEvent->ChannelName, uEvent->Condition, uEvent->NativeCode, uEvent->SubSystemReason);
 }
 
-void DataDistributionMastershipCommon::OnCondition(const char* channelName, DDM_UNDERLYING_ERROR_CONDITION condition, int nativeCode, const char* subSystemReason)
+void DataDistributionMastershipCommon::OnCondition(const char* channelName, OPERATION_RESULT condition, int nativeCode, const char* subSystemReason)
 {
 
 }
@@ -230,7 +214,7 @@ void DataDistributionMastershipCommon::ChangeMyState(DDM_INSTANCE_STATE newState
 	TRACESTART("DataDistributionCommon", "ChangeMyState");
 	LOG_INFO("Value changing from %d to %d", m_myState, newState);
 
-	EnterCriticalSection(&m_csState);
+	m_csState->Lock();
 
 	if (m_myState == DDM_INSTANCE_STATE::UNKNOWN && newState != DDM_INSTANCE_STATE::UNKNOWN)
 	{
@@ -239,7 +223,7 @@ void DataDistributionMastershipCommon::ChangeMyState(DDM_INSTANCE_STATE newState
 
 	if (newState == m_myState)
 	{
-		LeaveCriticalSection(&m_csState);
+		m_csState->Unlock();
 		return;
 	}
 
@@ -247,7 +231,7 @@ void DataDistributionMastershipCommon::ChangeMyState(DDM_INSTANCE_STATE newState
 
 	m_myState = newState;
 
-	LeaveCriticalSection(&m_csState);
+	m_csState->Unlock();
 
 	m_pMastershipCallback->ChangedState(newState);
 }
@@ -260,12 +244,9 @@ void DataDistributionMastershipCommon::ChangeState(int64_t instanceId, DDM_INSTA
 
 DDM_INSTANCE_STATE DataDistributionMastershipCommon::GetMyState()
 {
+	DataDistributionAutoLockWrapper lock(m_csState);
 	TRACESTART("DataDistributionCommon", "GetMyState");
-	DDM_INSTANCE_STATE state = DDM_INSTANCE_STATE::UNKNOWN;
-	EnterCriticalSection(&m_csState);
-	state = m_myState;
-	LeaveCriticalSection(&m_csState);
-	return state;
+	return m_myState;
 }
 
 int64_t DataDistributionMastershipCommon::GetMessageDelay()
@@ -327,18 +308,14 @@ int64_t DataDistributionMastershipCommon::GetPrimaryServerId()
 	return m_PrimaryIdentifier;
 }
 
-DWORD __stdcall DataDistributionMastershipCommon::keepAliveHandler(void * argh)
+void FUNCALL DataDistributionMastershipCommon::keepAliveHandler(ThreadWrapperArg *arg)
 {
-	DataDistributionMastershipCommon* pDataDistributionMastershipCommon = static_cast<DataDistributionMastershipCommon*>(argh);
-
-	SetEvent(pDataDistributionMastershipCommon->h_evtKeepAlive);
-
-	while (pDataDistributionMastershipCommon->bKeepAliveRun)
+	DataDistributionMastershipCommon* pDataDistributionMastershipCommon = static_cast<DataDistributionMastershipCommon*>(arg->user_arg);
+	arg->pEvent->Set();
+	while (arg->bIsRunning)
 	{
 		int nextKeepAliveTrigger = pDataDistributionMastershipCommon->SendKeepAlive();
 		Sleep(nextKeepAliveTrigger);
 	}
-
-	return S_OK;
 }
 

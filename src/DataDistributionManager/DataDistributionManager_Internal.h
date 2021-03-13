@@ -108,8 +108,8 @@ class DataDistributionChannelCallbackImpl : public IDataDistributionChannelCallb
 {
 public:
 	DataDistributionChannelCallbackImpl(const void*, dataDistributionUnderlyingEvent); // , dataDistributionOnConditionOrError);
-	virtual void OnUnderlyingEvent(const HANDLE channelHandle, const UnderlyingEventData* uEvent);
-	//virtual void OnConditionOrError(HANDLE channelHandle, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, const char* subSystemReason);
+	virtual void OnUnderlyingEvent(const CHANNEL_HANDLE channelHandle, const UnderlyingEventData* uEvent);
+	//virtual void OnConditionOrError(CHANNEL_HANDLE channelHandle, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, const char* subSystemReason);
 private:
 	DataDistributionManagerChannelCallbacks m_DataDistributionManagerChannelCallbacks;
 };
@@ -149,15 +149,15 @@ class DataDistributionManagerImpl : public DataDistribution
 {
 public:
 	static IDataDistribution *create();
-	static HRESULT ConvertConfFile(const char* conf_file, const char*** arrayParams, int* len);
+	static OPERATION_RESULT ConvertConfFile(const char* conf_file, const char*** arrayParams, int* len);
 public:
 	DataDistributionManagerImpl();
 	~DataDistributionManagerImpl();
-	HRESULT Initialize(IDataDistributionCallback*, const char* conf_file = NULL, const char* szMyAddress = NULL, const char* channelTrailer = NULL);
-	HRESULT Initialize(IDataDistributionCallback*, const char* arrayParams[], int len, const char* szMyAddress = NULL, const char* channelTrailer = NULL);
-	HRESULT RequestMastershipManager(IDataDistributionMastershipCallback* cbs, const char* szMyAddress = NULL, const char* arrayParams[] = NULL, int len = 0);
-	BOOL Start(DWORD dwMilliseconds);
-	BOOL Stop(DWORD dwMilliseconds);
+	OPERATION_RESULT Initialize(IDataDistributionCallback*, const char* conf_file = NULL, const char* szMyAddress = NULL, const char* channelTrailer = NULL);
+	OPERATION_RESULT Initialize(IDataDistributionCallback*, const char* arrayParams[], int len, const char* szMyAddress = NULL, const char* channelTrailer = NULL);
+	OPERATION_RESULT RequestMastershipManager(IDataDistributionMastershipCallback* cbs, const char* szMyAddress = NULL, const char* arrayParams[] = NULL, int len = 0);
+	BOOL Start(unsigned long dwMilliseconds);
+	BOOL Stop(unsigned long dwMilliseconds);
 	IDataDistributionSubsystem* GetSubsystemManager();
 	IDataDistributionMastershipCommon* GetMastershipManager();
 	std::string GetProtocol();
@@ -166,9 +166,9 @@ public:
 private:
 	const char** m_arrayParams;
 	int m_arrayParamsLen;
-	HRESULT m_InitializedResult;
-	HRESULT m_InitializedMastershipResult;
-	HRESULT read_config_file(const char* arrayParams[], int len);
+	OPERATION_RESULT m_InitializedResult;
+	OPERATION_RESULT m_InitializedMastershipResult;
+	OPERATION_RESULT read_config_file(const char* arrayParams[], int len);
 	IDataDistributionSubsystem* pDataDistributionManagerSubsystem;
 	IDataDistributionMastershipCommon* pDataDistributionMastershipManagerCommon;
 	HMODULE m_hlibModule;

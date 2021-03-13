@@ -17,18 +17,28 @@
 */
 
 #include "DataDistributionManagerLog.h"
+#include "stdarg.h"
 
 DataDistributionLog::DataDistributionLog(IDataDistributionLog* pLog, const char* source, const char* function)
 {
 	 m_pLog = pLog;
 	 m_source = source;
 	 m_function = function;
+	 m_pChannel = NULL;
 	 Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "Enter");
+}
+
+DataDistributionLog::DataDistributionLog(IDataDistributionLog* pLog, IDataDistributionChannel* pChannel, const char* source, const char* function)
+	: DataDistributionLog(pLog, source, function)
+{
+	m_pChannel = pChannel;
+	Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "Channel %s - Enter.", (m_pChannel) ? m_pChannel->GetChannelName() : "No channel");
 }
 
 DataDistributionLog::~DataDistributionLog()
 {
-	Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "Exit");
+	if (m_pChannel) Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "Channel %s - Exit.", (m_pChannel) ? m_pChannel->GetChannelName() : "No channel");
+	else Log(DDM_LOG_LEVEL::DEBUG_LEVEL, "Exit");
 }
 
 void DataDistributionLog::Log(const DDM_LOG_LEVEL level, const char* format, ...)

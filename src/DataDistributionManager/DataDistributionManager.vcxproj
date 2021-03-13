@@ -239,6 +239,8 @@
     <ClInclude Include="DataDistributionManagerCommon.h" />
     <ClInclude Include="DataDistributionManagerEnums.h" />
     <ClInclude Include="DataDistributionManagerLog.h" />
+    <ClInclude Include="DataDistributionManagerSupport.h" />
+    <ClInclude Include="DataDistributionManagerTypes.h" />
     <ClInclude Include="DataDistributionManager_c.h" />
     <ClInclude Include="DataDistributionManager_Internal.h" />
     <ClInclude Include="DataDistributionMastershipManagerBase.h" />
@@ -252,6 +254,7 @@
   <ItemGroup>
     <ClCompile Include="DataDistributionManagerCommon.cpp" />
     <ClCompile Include="DataDistributionManagerLog.cpp" />
+    <ClCompile Include="DataDistributionManagerSupportWindows.cpp" />
     <ClCompile Include="DataDistributionManager_c.cpp" />
     <ClCompile Include="DataDistributionMastershipCommon.cpp" />
     <ClCompile Include="DataDistributionMastershipManagerBase.cpp" />

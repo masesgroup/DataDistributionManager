@@ -25,18 +25,20 @@ extern "C" DDM_EXPORT void* CreateObjectImplementation()
 
 DataDistributionMastershipManager::DataDistributionMastershipManager() : DataDistributionMastershipCommon()
 {
-
+	m_csFlags = new DataDistributionLockWrapper();
 }
 
 DataDistributionMastershipManager::~DataDistributionMastershipManager()
 {
+	delete m_csFlags;
 }
 
 int64_t* DataDistributionMastershipManager::GetClusterIndexes(size_t* length)
 {
+	DataDistributionAutoLockWrapper lock(m_csFlags);
+
 	ClusterHealthIterator it;
 
-	EnterCriticalSection(&m_csFlags);
 	*length = clusterState.size();
 	int64_t* arraElements = (int64_t*)malloc(sizeof(int64_t) * (*length));
 	size_t counter = 0;
@@ -45,21 +47,19 @@ int64_t* DataDistributionMastershipManager::GetClusterIndexes(size_t* length)
 		arraElements[counter] = it->first;
 		counter++;
 	}
-	LeaveCriticalSection(&m_csFlags);
 	return arraElements;
 }
 
 DDM_INSTANCE_STATE DataDistributionMastershipManager::GetStateOf(int64_t serverId)
 {
+	DataDistributionAutoLockWrapper lock(m_csFlags);
 	DDM_INSTANCE_STATE state = DDM_INSTANCE_STATE::UNKNOWN;
 	ClusterHealthIterator it;
-	EnterCriticalSection(&m_csFlags);
 	auto elem = clusterState.at(serverId);
 	if (elem != NULL)
 	{
 		state = elem->Status;
 	}
-	LeaveCriticalSection(&m_csFlags);
 
 	return state;
 }

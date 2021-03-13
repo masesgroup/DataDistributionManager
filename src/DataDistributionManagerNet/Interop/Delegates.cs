@@ -82,16 +82,16 @@ namespace MASES.DataDistributionManager.Bindings.Interop
 
     #region IDataDistribution interface
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT IDataDistribution_Initialize(IntPtr IDataDistribution_instance, IntPtr iddcb,
+    delegate OPERATION_RESULT IDataDistribution_Initialize(IntPtr IDataDistribution_instance, IntPtr iddcb,
                                                      [MarshalAs(UnmanagedType.LPStr)] string conf_file,
                                                      [MarshalAs(UnmanagedType.LPStr)] string szMyAddress, [MarshalAs(UnmanagedType.LPStr)] string channelTrailer);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT IDataDistribution_Initialize2(IntPtr IDataDistribution_instance, IntPtr iddcb,
+    delegate OPERATION_RESULT IDataDistribution_Initialize2(IntPtr IDataDistribution_instance, IntPtr iddcb,
                                                       [In][MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPStr)] string[] arrayParams, int len,
                                                       [MarshalAs(UnmanagedType.LPStr)] string szMyAddress, [MarshalAs(UnmanagedType.LPStr)] string channelTrailer);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT IDataDistribution_RequestMastershipManager(IntPtr IDataDistribution_instance, IntPtr iddmcb, [MarshalAs(UnmanagedType.LPStr)] string szMyAddress,
+    delegate OPERATION_RESULT IDataDistribution_RequestMastershipManager(IntPtr IDataDistribution_instance, IntPtr iddmcb, [MarshalAs(UnmanagedType.LPStr)] string szMyAddress,
                                                                [In][MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPStr)] string[] arrayParams, int len);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate IntPtr IDataDistribution_GetSubsystemManager(IntPtr IDataDistribution_instance);
@@ -111,16 +111,16 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate long IDataDistributionSubsystem_GetMaxMessageSize(IntPtr IDataDistributionSubsystem_instance);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT IDataDistributionSubsystem_Start(IntPtr IDataDistributionSubsystem_instance, uint dwMilliseconds);
+    delegate OPERATION_RESULT IDataDistributionSubsystem_Start(IntPtr IDataDistributionSubsystem_instance, uint dwMilliseconds);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT IDataDistributionSubsystem_Stop(IntPtr IDataDistributionSubsystem_instance, uint dwMilliseconds);
+    delegate OPERATION_RESULT IDataDistributionSubsystem_Stop(IntPtr IDataDistributionSubsystem_instance, uint dwMilliseconds);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate IntPtr IDataDistributionSubsystem_CreateChannel(IntPtr IDataDistributionSubsystem_instance, [MarshalAs(UnmanagedType.LPStr)] string channelName, IntPtr dataCb, DDM_CHANNEL_DIRECTION direction,
                                                                   [In][MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPStr)] string[] arrayParams = null, int len = 0);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT IDataDistributionSubsystem_StartChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, uint dwMilliseconds);
+    delegate OPERATION_RESULT IDataDistributionSubsystem_StartChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, uint dwMilliseconds);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT IDataDistributionSubsystem_StopChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, uint dwMilliseconds);
+    delegate OPERATION_RESULT IDataDistributionSubsystem_StopChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, uint dwMilliseconds);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate void IDataDistributionSubsystem_SetParameter(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, [MarshalAs(UnmanagedType.LPStr)] string paramName, [MarshalAs(UnmanagedType.LPStr)] string paramValue);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
@@ -132,35 +132,35 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     [return: MarshalAs(UnmanagedType.LPStr)]
     delegate string IDataDistributionSubsystem_GetParameter2(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, DDM_GENERAL_PARAMETER paramId);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT IDataDistributionSubsystem_Lock(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, uint timeout);
+    delegate OPERATION_RESULT IDataDistributionSubsystem_Lock(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, uint timeout);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT IDataDistributionSubsystem_Unlock(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle);
+    delegate OPERATION_RESULT IDataDistributionSubsystem_Unlock(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT IDataDistributionSubsystem_SeekChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, long position);
+    delegate OPERATION_RESULT IDataDistributionSubsystem_SeekChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, long position);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT IDataDistributionSubsystem_DeleteChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle);
+    delegate OPERATION_RESULT IDataDistributionSubsystem_DeleteChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT IDataDistributionSubsystem_WriteOnChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle,
+    delegate OPERATION_RESULT IDataDistributionSubsystem_WriteOnChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle,
                                                                  [MarshalAs(UnmanagedType.LPStr)] string key, IntPtr keyLen,
                                                                  IntPtr param, IntPtr dataLen,
                                                                  bool waitAll = false, Int64 timestamp = SmartDataDistributionChannel.DDM_NO_TIMESTAMP);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT IDataDistributionSubsystem_ReadFromChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle,
+    delegate OPERATION_RESULT IDataDistributionSubsystem_ReadFromChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle,
                                                                   long offset, [In, Out] IntPtr dataLen, [In, Out]IntPtr buffer);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT IDataDistributionSubsystem_ChangeChannelDirection(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, DDM_CHANNEL_DIRECTION direction);
+    delegate OPERATION_RESULT IDataDistributionSubsystem_ChangeChannelDirection(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, DDM_CHANNEL_DIRECTION direction);
 
     #endregion
 
     #region IDataDistributionMastershipCommon
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT IDataDistributionMastershipCommon_Initialize(IntPtr IDataDistribution_instance, IntPtr iddmcb,
+    delegate OPERATION_RESULT IDataDistributionMastershipCommon_Initialize(IntPtr IDataDistribution_instance, IntPtr iddmcb,
                                                                    [MarshalAs(UnmanagedType.LPStr)] string szMyAddress = null,
                                                                    [In][MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPStr)] string[] arrayParams = null, int len = 0);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT IDataDistributionMastershipCommon_Start(IntPtr IDataDistribution_instance, uint dwMilliseconds);
+    delegate OPERATION_RESULT IDataDistributionMastershipCommon_Start(IntPtr IDataDistribution_instance, uint dwMilliseconds);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate HRESULT IDataDistributionMastershipCommon_Stop(IntPtr IDataDistribution_instance, uint dwMilliseconds);
+    delegate OPERATION_RESULT IDataDistributionMastershipCommon_Stop(IntPtr IDataDistribution_instance, uint dwMilliseconds);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate bool IDataDistributionMastershipCommon_GetIamNextPrimary(IntPtr IDataDistribution_instance);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
