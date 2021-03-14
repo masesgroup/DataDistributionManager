@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['underlyingeventdata_301',['UnderlyingEventData',['../DataDistributionManager_8h.html#a4d18746ddc7cd645ab18545f7591893d',1,'DataDistributionManager.h']]]
+  ['generic_5fhandle_322',['GENERIC_HANDLE',['../DataDistributionManagerTypes_8h.html#a28342bc380741b19c08ab3e0d5c635e5',1,'DataDistributionManagerTypes.h']]]
 ];

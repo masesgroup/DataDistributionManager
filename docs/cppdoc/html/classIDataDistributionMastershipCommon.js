@@ -11,8 +11,8 @@ var classIDataDistributionMastershipCommon =
     [ "GetPrimaryServerId", "classIDataDistributionMastershipCommon.html#a4631ed8498a766291a17f379a6a3456d", null ],
     [ "GetStateOf", "classIDataDistributionMastershipCommon.html#ab16d91ca96b1a9b1bb4ae4b6c299cc90", null ],
     [ "GetUpTime", "classIDataDistributionMastershipCommon.html#ab2bed207c1bc9fd204abb610f8f65eb5", null ],
-    [ "Initialize", "classIDataDistributionMastershipCommon.html#aa93a1ceaec5d3d714c055c2ac8da88be", null ],
+    [ "Initialize", "classIDataDistributionMastershipCommon.html#ab58b89e5fd4326b199d779f1b6f0e792", null ],
     [ "RequestIAmNextPrimary", "classIDataDistributionMastershipCommon.html#a23a5cef9ba7029e5629104021a33d681", null ],
-    [ "Start", "classIDataDistributionMastershipCommon.html#abf52329c2aa8132d9e7325b3a4985429", null ],
-    [ "Stop", "classIDataDistributionMastershipCommon.html#a4c344e50b1b06411c4ac9f6072c156d1", null ]
+    [ "Start", "classIDataDistributionMastershipCommon.html#a4625afc58a0111318e8c0b67b2fcdcf9", null ],
+    [ "Stop", "classIDataDistributionMastershipCommon.html#a7a5a916810dcd69014f914f3e23755a1", null ]
 ];

@@ -105,55 +105,55 @@ Inheritance diagram for IDataDistributionChannelBase:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a907843a37e4317aaf0dd5eff3346e15f"><td class="memItemLeft" align="right" valign="top">virtual HANDLE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#a907843a37e4317aaf0dd5eff3346e15f">CreateChannel</a> (const char *channelName, <a class="el" href="classIDataDistributionChannelCallback.html">IDataDistributionChannelCallback</a> *dataCb, <a class="el" href="DataDistributionManagerEnums_8h.html#a2481cc88776b430e9f0c089fdd71fe6b">DDM_CHANNEL_DIRECTION</a> direction=<a class="el" href="DataDistributionManagerEnums_8h.html#a2481cc88776b430e9f0c089fdd71fe6ba5fb1f955b45e38e31789286a1790398d">DDM_CHANNEL_DIRECTION::ALL</a>, const char *arrayParams[]=NULL, int len=0)=0</td></tr>
-<tr class="memdesc:a907843a37e4317aaf0dd5eff3346e15f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new channel.  <a href="classIDataDistributionChannelBase.html#a907843a37e4317aaf0dd5eff3346e15f">More...</a><br /></td></tr>
-<tr class="separator:a907843a37e4317aaf0dd5eff3346e15f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a491de6a2f2dbb66d7ce5be5882dc56ed"><td class="memItemLeft" align="right" valign="top">virtual HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#a491de6a2f2dbb66d7ce5be5882dc56ed">StartChannel</a> (HANDLE channelHandle, DWORD timeout)=0</td></tr>
-<tr class="memdesc:a491de6a2f2dbb66d7ce5be5882dc56ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the channel.  <a href="classIDataDistributionChannelBase.html#a491de6a2f2dbb66d7ce5be5882dc56ed">More...</a><br /></td></tr>
-<tr class="separator:a491de6a2f2dbb66d7ce5be5882dc56ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0820ac45a2ca985f5dd4d03c8504790"><td class="memItemLeft" align="right" valign="top">virtual HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#ab0820ac45a2ca985f5dd4d03c8504790">StopChannel</a> (HANDLE channelHandle, DWORD timeout)=0</td></tr>
-<tr class="memdesc:ab0820ac45a2ca985f5dd4d03c8504790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the channel.  <a href="classIDataDistributionChannelBase.html#ab0820ac45a2ca985f5dd4d03c8504790">More...</a><br /></td></tr>
-<tr class="separator:ab0820ac45a2ca985f5dd4d03c8504790"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d0485bbeb98be2670589f4dc5925e2e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#a3d0485bbeb98be2670589f4dc5925e2e">SetParameter</a> (HANDLE channelHandle, const char *paramName, const char *paramValue)=0</td></tr>
-<tr class="memdesc:a3d0485bbeb98be2670589f4dc5925e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a parameter at run-time.  <a href="classIDataDistributionChannelBase.html#a3d0485bbeb98be2670589f4dc5925e2e">More...</a><br /></td></tr>
-<tr class="separator:a3d0485bbeb98be2670589f4dc5925e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81a016204e2c50079c530d9556739132"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#a81a016204e2c50079c530d9556739132">SetParameter</a> (HANDLE channelHandle, <a class="el" href="DataDistributionManagerEnums_8h.html#a2b3ce1452c72e4994396c1b2f69f8b00">DDM_GENERAL_PARAMETER</a> paramId, const char *paramValue)=0</td></tr>
-<tr class="memdesc:a81a016204e2c50079c530d9556739132"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a parameter at run-time.  <a href="classIDataDistributionChannelBase.html#a81a016204e2c50079c530d9556739132">More...</a><br /></td></tr>
-<tr class="separator:a81a016204e2c50079c530d9556739132"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac26f2f7bd40ebef263f04857244e64c4"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#ac26f2f7bd40ebef263f04857244e64c4">GetParameter</a> (HANDLE channelHandle, const char *paramName)=0</td></tr>
-<tr class="memdesc:ac26f2f7bd40ebef263f04857244e64c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a parameter at run-time.  <a href="classIDataDistributionChannelBase.html#ac26f2f7bd40ebef263f04857244e64c4">More...</a><br /></td></tr>
-<tr class="separator:ac26f2f7bd40ebef263f04857244e64c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9aed0292503a0d7effba6b7b5693f19d"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#a9aed0292503a0d7effba6b7b5693f19d">GetParameter</a> (HANDLE channelHandle, <a class="el" href="DataDistributionManagerEnums_8h.html#a2b3ce1452c72e4994396c1b2f69f8b00">DDM_GENERAL_PARAMETER</a> paramId)=0</td></tr>
-<tr class="memdesc:a9aed0292503a0d7effba6b7b5693f19d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a parameter at run-time.  <a href="classIDataDistributionChannelBase.html#a9aed0292503a0d7effba6b7b5693f19d">More...</a><br /></td></tr>
-<tr class="separator:a9aed0292503a0d7effba6b7b5693f19d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09a6607f164214d9c46c9425b53b1f88"><td class="memItemLeft" align="right" valign="top">virtual HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#a09a6607f164214d9c46c9425b53b1f88">Lock</a> (HANDLE channelHandle, DWORD timeout)=0</td></tr>
-<tr class="memdesc:a09a6607f164214d9c46c9425b53b1f88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locks the channel.  <a href="classIDataDistributionChannelBase.html#a09a6607f164214d9c46c9425b53b1f88">More...</a><br /></td></tr>
-<tr class="separator:a09a6607f164214d9c46c9425b53b1f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad380286a5ed04b12bf207316c3ac4fe3"><td class="memItemLeft" align="right" valign="top">virtual HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#ad380286a5ed04b12bf207316c3ac4fe3">Unlock</a> (HANDLE channelHandle)=0</td></tr>
-<tr class="memdesc:ad380286a5ed04b12bf207316c3ac4fe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlock the channel.  <a href="classIDataDistributionChannelBase.html#ad380286a5ed04b12bf207316c3ac4fe3">More...</a><br /></td></tr>
-<tr class="separator:ad380286a5ed04b12bf207316c3ac4fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af656813e29ef1d99526638be7cd1aee5"><td class="memItemLeft" align="right" valign="top">virtual HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#af656813e29ef1d99526638be7cd1aee5">SeekChannel</a> (HANDLE channelHandle, int64_t position)=0</td></tr>
-<tr class="memdesc:af656813e29ef1d99526638be7cd1aee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seeks the channel.  <a href="classIDataDistributionChannelBase.html#af656813e29ef1d99526638be7cd1aee5">More...</a><br /></td></tr>
-<tr class="separator:af656813e29ef1d99526638be7cd1aee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb2ee977e5366755701c5f1b1101ff07"><td class="memItemLeft" align="right" valign="top">virtual HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#abb2ee977e5366755701c5f1b1101ff07">DeleteChannel</a> (HANDLE channelHandle)=0</td></tr>
-<tr class="memdesc:abb2ee977e5366755701c5f1b1101ff07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the channel.  <a href="classIDataDistributionChannelBase.html#abb2ee977e5366755701c5f1b1101ff07">More...</a><br /></td></tr>
-<tr class="separator:abb2ee977e5366755701c5f1b1101ff07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab49da0d23d1d7f6aa4316f566953c40d"><td class="memItemLeft" align="right" valign="top">virtual HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#ab49da0d23d1d7f6aa4316f566953c40d">WriteOnChannel</a> (HANDLE channelHandle, const char *key, size_t keyLen, void *buffer, size_t bufferLen, const BOOL waitAll=FALSE, const int64_t timestamp=<a class="el" href="DataDistributionManagerEnums_8h.html#a04e9936beb1d53890441b25bc6b0a0ba">DDM_NO_TIMESTAMP</a>)=0</td></tr>
-<tr class="memdesc:ab49da0d23d1d7f6aa4316f566953c40d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes data on the channel.  <a href="classIDataDistributionChannelBase.html#ab49da0d23d1d7f6aa4316f566953c40d">More...</a><br /></td></tr>
-<tr class="separator:ab49da0d23d1d7f6aa4316f566953c40d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb4a64228b970ba37f09cfe2561bcab2"><td class="memItemLeft" align="right" valign="top">virtual HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#aeb4a64228b970ba37f09cfe2561bcab2">ReadFromChannel</a> (HANDLE channelHandle, int64_t offset, size_t *bufferLen, void **buffer)=0</td></tr>
-<tr class="memdesc:aeb4a64228b970ba37f09cfe2561bcab2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the channel.  <a href="classIDataDistributionChannelBase.html#aeb4a64228b970ba37f09cfe2561bcab2">More...</a><br /></td></tr>
-<tr class="separator:aeb4a64228b970ba37f09cfe2561bcab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a82427f2673a933bce7213ea1a3dea0"><td class="memItemLeft" align="right" valign="top">virtual HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#a6a82427f2673a933bce7213ea1a3dea0">ChangeChannelDirection</a> (HANDLE channelHandle, <a class="el" href="DataDistributionManagerEnums_8h.html#a2481cc88776b430e9f0c089fdd71fe6b">DDM_CHANNEL_DIRECTION</a> direction)=0</td></tr>
-<tr class="memdesc:a6a82427f2673a933bce7213ea1a3dea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the DDM_CHANNEL_DIRECTION of the channel.  <a href="classIDataDistributionChannelBase.html#a6a82427f2673a933bce7213ea1a3dea0">More...</a><br /></td></tr>
-<tr class="separator:a6a82427f2673a933bce7213ea1a3dea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa97ebe54536cab1f67c5ed8d2af535ed"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#aa97ebe54536cab1f67c5ed8d2af535ed">CreateChannel</a> (const char *channelName, <a class="el" href="classIDataDistributionChannelCallback.html">IDataDistributionChannelCallback</a> *dataCb, <a class="el" href="DataDistributionManagerEnums_8h.html#a2481cc88776b430e9f0c089fdd71fe6b">DDM_CHANNEL_DIRECTION</a> direction=<a class="el" href="DataDistributionManagerEnums_8h.html#a2481cc88776b430e9f0c089fdd71fe6ba5fb1f955b45e38e31789286a1790398d">DDM_CHANNEL_DIRECTION::ALL</a>, const char *arrayParams[]=<a class="el" href="DataDistributionManagerTypes_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, int len=0)=0</td></tr>
+<tr class="memdesc:aa97ebe54536cab1f67c5ed8d2af535ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new channel.  <a href="classIDataDistributionChannelBase.html#aa97ebe54536cab1f67c5ed8d2af535ed">More...</a><br /></td></tr>
+<tr class="separator:aa97ebe54536cab1f67c5ed8d2af535ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1363d343a60775156633f95c69126bb2"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#a1363d343a60775156633f95c69126bb2">StartChannel</a> (<a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a> channelHandle, unsigned long timeout)=0</td></tr>
+<tr class="memdesc:a1363d343a60775156633f95c69126bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the channel.  <a href="classIDataDistributionChannelBase.html#a1363d343a60775156633f95c69126bb2">More...</a><br /></td></tr>
+<tr class="separator:a1363d343a60775156633f95c69126bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa742ee4a26ac347ded5ecc74bdfa29cc"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#aa742ee4a26ac347ded5ecc74bdfa29cc">StopChannel</a> (<a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a> channelHandle, unsigned long timeout)=0</td></tr>
+<tr class="memdesc:aa742ee4a26ac347ded5ecc74bdfa29cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the channel.  <a href="classIDataDistributionChannelBase.html#aa742ee4a26ac347ded5ecc74bdfa29cc">More...</a><br /></td></tr>
+<tr class="separator:aa742ee4a26ac347ded5ecc74bdfa29cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e20ef501900dc7c3d6b41ce91e86c1e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#a4e20ef501900dc7c3d6b41ce91e86c1e">SetParameter</a> (<a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a> channelHandle, const char *paramName, const char *paramValue)=0</td></tr>
+<tr class="memdesc:a4e20ef501900dc7c3d6b41ce91e86c1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a parameter at run-time.  <a href="classIDataDistributionChannelBase.html#a4e20ef501900dc7c3d6b41ce91e86c1e">More...</a><br /></td></tr>
+<tr class="separator:a4e20ef501900dc7c3d6b41ce91e86c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66c1b8590ff8f2c4fc28925e848692a5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#a66c1b8590ff8f2c4fc28925e848692a5">SetParameter</a> (<a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a> channelHandle, <a class="el" href="DataDistributionManagerEnums_8h.html#a2b3ce1452c72e4994396c1b2f69f8b00">DDM_GENERAL_PARAMETER</a> paramId, const char *paramValue)=0</td></tr>
+<tr class="memdesc:a66c1b8590ff8f2c4fc28925e848692a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a parameter at run-time.  <a href="classIDataDistributionChannelBase.html#a66c1b8590ff8f2c4fc28925e848692a5">More...</a><br /></td></tr>
+<tr class="separator:a66c1b8590ff8f2c4fc28925e848692a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3f838af52ae71e3d03fb571e03d6df0"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#ae3f838af52ae71e3d03fb571e03d6df0">GetParameter</a> (<a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a> channelHandle, const char *paramName)=0</td></tr>
+<tr class="memdesc:ae3f838af52ae71e3d03fb571e03d6df0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a parameter at run-time.  <a href="classIDataDistributionChannelBase.html#ae3f838af52ae71e3d03fb571e03d6df0">More...</a><br /></td></tr>
+<tr class="separator:ae3f838af52ae71e3d03fb571e03d6df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb0ae298946d2acc0e5088fd92cc0a3a"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#afb0ae298946d2acc0e5088fd92cc0a3a">GetParameter</a> (<a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a> channelHandle, <a class="el" href="DataDistributionManagerEnums_8h.html#a2b3ce1452c72e4994396c1b2f69f8b00">DDM_GENERAL_PARAMETER</a> paramId)=0</td></tr>
+<tr class="memdesc:afb0ae298946d2acc0e5088fd92cc0a3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a parameter at run-time.  <a href="classIDataDistributionChannelBase.html#afb0ae298946d2acc0e5088fd92cc0a3a">More...</a><br /></td></tr>
+<tr class="separator:afb0ae298946d2acc0e5088fd92cc0a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a937b23b913a3d5cda38a4ba099548f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#a7a937b23b913a3d5cda38a4ba099548f">Lock</a> (<a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a> channelHandle, unsigned long timeout)=0</td></tr>
+<tr class="memdesc:a7a937b23b913a3d5cda38a4ba099548f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locks the channel.  <a href="classIDataDistributionChannelBase.html#a7a937b23b913a3d5cda38a4ba099548f">More...</a><br /></td></tr>
+<tr class="separator:a7a937b23b913a3d5cda38a4ba099548f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef192054f7390885a6ff6216172b67d7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#aef192054f7390885a6ff6216172b67d7">Unlock</a> (<a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a> channelHandle)=0</td></tr>
+<tr class="memdesc:aef192054f7390885a6ff6216172b67d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlock the channel.  <a href="classIDataDistributionChannelBase.html#aef192054f7390885a6ff6216172b67d7">More...</a><br /></td></tr>
+<tr class="separator:aef192054f7390885a6ff6216172b67d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b105b252a730bd8e44205787544b129"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#a3b105b252a730bd8e44205787544b129">SeekChannel</a> (<a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a> channelHandle, int64_t position)=0</td></tr>
+<tr class="memdesc:a3b105b252a730bd8e44205787544b129"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seeks the channel.  <a href="classIDataDistributionChannelBase.html#a3b105b252a730bd8e44205787544b129">More...</a><br /></td></tr>
+<tr class="separator:a3b105b252a730bd8e44205787544b129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac75ba763eaa2538218e4ebe52dcedae1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#ac75ba763eaa2538218e4ebe52dcedae1">DeleteChannel</a> (<a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a> channelHandle)=0</td></tr>
+<tr class="memdesc:ac75ba763eaa2538218e4ebe52dcedae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the channel.  <a href="classIDataDistributionChannelBase.html#ac75ba763eaa2538218e4ebe52dcedae1">More...</a><br /></td></tr>
+<tr class="separator:ac75ba763eaa2538218e4ebe52dcedae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bfa7674d2b9e65159260ef1a3a82e83"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#a3bfa7674d2b9e65159260ef1a3a82e83">WriteOnChannel</a> (<a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a> channelHandle, const char *key, size_t keyLen, void *buffer, size_t bufferLen, const <a class="el" href="DataDistributionManagerTypes_8h.html#a050c65e107f0c828f856a231f4b4e788">BOOL</a> waitAll=<a class="el" href="DataDistributionManagerTypes_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>, const int64_t timestamp=<a class="el" href="DataDistributionManagerTypes_8h.html#a04e9936beb1d53890441b25bc6b0a0ba">DDM_NO_TIMESTAMP</a>)=0</td></tr>
+<tr class="memdesc:a3bfa7674d2b9e65159260ef1a3a82e83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes data on the channel.  <a href="classIDataDistributionChannelBase.html#a3bfa7674d2b9e65159260ef1a3a82e83">More...</a><br /></td></tr>
+<tr class="separator:a3bfa7674d2b9e65159260ef1a3a82e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5af9cab76adbb03d77577267def5eba0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#a5af9cab76adbb03d77577267def5eba0">ReadFromChannel</a> (<a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a> channelHandle, int64_t offset, size_t *bufferLen, void **buffer)=0</td></tr>
+<tr class="memdesc:a5af9cab76adbb03d77577267def5eba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the channel.  <a href="classIDataDistributionChannelBase.html#a5af9cab76adbb03d77577267def5eba0">More...</a><br /></td></tr>
+<tr class="separator:a5af9cab76adbb03d77577267def5eba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a57d41c28491f7bd41e1a10fe882d30"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelBase.html#a8a57d41c28491f7bd41e1a10fe882d30">ChangeChannelDirection</a> (<a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a> channelHandle, <a class="el" href="DataDistributionManagerEnums_8h.html#a2481cc88776b430e9f0c089fdd71fe6b">DDM_CHANNEL_DIRECTION</a> direction)=0</td></tr>
+<tr class="memdesc:a8a57d41c28491f7bd41e1a10fe882d30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the DDM_CHANNEL_DIRECTION of the channel.  <a href="classIDataDistributionChannelBase.html#a8a57d41c28491f7bd41e1a10fe882d30">More...</a><br /></td></tr>
+<tr class="separator:a8a57d41c28491f7bd41e1a10fe882d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base interface to be implemented from channel manager. </p>
 <p>Base interface to be implemented from channel manager </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6a82427f2673a933bce7213ea1a3dea0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a82427f2673a933bce7213ea1a3dea0">&#9670;&nbsp;</a></span>ChangeChannelDirection()</h2>
+<a id="a8a57d41c28491f7bd41e1a10fe882d30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a57d41c28491f7bd41e1a10fe882d30">&#9670;&nbsp;</a></span>ChangeChannelDirection()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -162,9 +162,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual HRESULT IDataDistributionChannelBase::ChangeChannelDirection </td>
+          <td class="memname">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a> IDataDistributionChannelBase::ChangeChannelDirection </td>
           <td>(</td>
-          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramtype"><a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a>&#160;</td>
           <td class="paramname"><em>channelHandle</em>, </td>
         </tr>
         <tr>
@@ -187,13 +187,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Change the DDM_CHANNEL_DIRECTION of the channel. </p>
-<p><code>channelHandle</code> the HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#a907843a37e4317aaf0dd5eff3346e15f" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>direction</code> DDM_CHANNEL_DIRECTION direction</p>
-<dl class="section return"><dt>Returns</dt><dd>the HRESULT of the operation </dd></dl>
+<p><code>channelHandle</code> the CHANNEL_HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#aa97ebe54536cab1f67c5ed8d2af535ed" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>direction</code> DDM_CHANNEL_DIRECTION direction</p>
+<dl class="section return"><dt>Returns</dt><dd>the OPERATION_RESULT of the operation </dd></dl>
 
 </div>
 </div>
-<a id="a907843a37e4317aaf0dd5eff3346e15f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a907843a37e4317aaf0dd5eff3346e15f">&#9670;&nbsp;</a></span>CreateChannel()</h2>
+<a id="aa97ebe54536cab1f67c5ed8d2af535ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa97ebe54536cab1f67c5ed8d2af535ed">&#9670;&nbsp;</a></span>CreateChannel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -202,7 +202,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual HANDLE IDataDistributionChannelBase::CreateChannel </td>
+          <td class="memname">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a> IDataDistributionChannelBase::CreateChannel </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>channelName</em>, </td>
@@ -223,7 +223,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>arrayParams</em>[] = <code>NULL</code>, </td>
+          <td class="paramname"><em>arrayParams</em>[] = <code><a class="el" href="DataDistributionManagerTypes_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -245,13 +245,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a new channel. </p>
-<p><code>channelName</code> the name of the channel <code>dataCb</code> <a class="el" href="classIDataDistributionChannelCallback.html" title="The C++ callback interface to be externally implemented.">IDataDistributionChannelCallback</a> pointer to receive data, condition or errors <code>direction</code> DDM_CHANNEL_DIRECTION direction, default is <a class="el" href="DataDistributionManagerEnums_8h.html#a2481cc88776b430e9f0c089fdd71fe6ba5fb1f955b45e38e31789286a1790398d">DDM_CHANNEL_DIRECTION::ALL</a> <code>arrayParams</code> an array of string in the form key=value to override parameters passed into <a class="el" href="classIDataDistribution.html#a8ae86d9878f32ff8b302b1b1af9a229b" title="Initialize IDataDistribution instance.">IDataDistribution::Initialize</a> <code>len</code> length of arrayParams</p>
-<dl class="section return"><dt>Returns</dt><dd>the new HANDLE or NULL if there was an error </dd></dl>
+<p><code>channelName</code> the name of the channel <code>dataCb</code> <a class="el" href="classIDataDistributionChannelCallback.html" title="The C++ callback interface to be externally implemented.">IDataDistributionChannelCallback</a> pointer to receive data, condition or errors <code>direction</code> DDM_CHANNEL_DIRECTION direction, default is <a class="el" href="DataDistributionManagerEnums_8h.html#a2481cc88776b430e9f0c089fdd71fe6ba5fb1f955b45e38e31789286a1790398d">DDM_CHANNEL_DIRECTION::ALL</a> <code>arrayParams</code> an array of string in the form key=value to override parameters passed into <a class="el" href="classIDataDistribution.html#a0a9563777c4995f77f4feb512fb698c5" title="Initialize IDataDistribution instance.">IDataDistribution::Initialize</a> <code>len</code> length of arrayParams</p>
+<dl class="section return"><dt>Returns</dt><dd>the new CHANNEL_HANDLE or NULL if there was an error </dd></dl>
 
 </div>
 </div>
-<a id="abb2ee977e5366755701c5f1b1101ff07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb2ee977e5366755701c5f1b1101ff07">&#9670;&nbsp;</a></span>DeleteChannel()</h2>
+<a id="ac75ba763eaa2538218e4ebe52dcedae1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac75ba763eaa2538218e4ebe52dcedae1">&#9670;&nbsp;</a></span>DeleteChannel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -260,9 +260,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual HRESULT IDataDistributionChannelBase::DeleteChannel </td>
+          <td class="memname">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a> IDataDistributionChannelBase::DeleteChannel </td>
           <td>(</td>
-          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramtype"><a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a>&#160;</td>
           <td class="paramname"><em>channelHandle</em></td><td>)</td>
           <td></td>
         </tr>
@@ -275,13 +275,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Deletes the channel. </p>
-<p><code>channelHandle</code> the HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#a907843a37e4317aaf0dd5eff3346e15f" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a></p>
-<dl class="section return"><dt>Returns</dt><dd>the HRESULT of the operation </dd></dl>
+<p><code>channelHandle</code> the CHANNEL_HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#aa97ebe54536cab1f67c5ed8d2af535ed" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a></p>
+<dl class="section return"><dt>Returns</dt><dd>the OPERATION_RESULT of the operation </dd></dl>
 
 </div>
 </div>
-<a id="ac26f2f7bd40ebef263f04857244e64c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac26f2f7bd40ebef263f04857244e64c4">&#9670;&nbsp;</a></span>GetParameter() <span class="overload">[1/2]</span></h2>
+<a id="ae3f838af52ae71e3d03fb571e03d6df0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3f838af52ae71e3d03fb571e03d6df0">&#9670;&nbsp;</a></span>GetParameter() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -292,7 +292,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual const char* IDataDistributionChannelBase::GetParameter </td>
           <td>(</td>
-          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramtype"><a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a>&#160;</td>
           <td class="paramname"><em>channelHandle</em>, </td>
         </tr>
         <tr>
@@ -315,13 +315,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reads a parameter at run-time. </p>
-<p><code>channelHandle</code> the HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#a907843a37e4317aaf0dd5eff3346e15f" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>paramName</code> the parameter name</p>
+<p><code>channelHandle</code> the CHANNEL_HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#aa97ebe54536cab1f67c5ed8d2af535ed" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>paramName</code> the parameter name</p>
 <dl class="section return"><dt>Returns</dt><dd>parameter value </dd></dl>
 
 </div>
 </div>
-<a id="a9aed0292503a0d7effba6b7b5693f19d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9aed0292503a0d7effba6b7b5693f19d">&#9670;&nbsp;</a></span>GetParameter() <span class="overload">[2/2]</span></h2>
+<a id="afb0ae298946d2acc0e5088fd92cc0a3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb0ae298946d2acc0e5088fd92cc0a3a">&#9670;&nbsp;</a></span>GetParameter() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -332,7 +332,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual const char* IDataDistributionChannelBase::GetParameter </td>
           <td>(</td>
-          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramtype"><a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a>&#160;</td>
           <td class="paramname"><em>channelHandle</em>, </td>
         </tr>
         <tr>
@@ -355,13 +355,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reads a parameter at run-time. </p>
-<p><code>channelHandle</code> the HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#a907843a37e4317aaf0dd5eff3346e15f" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>paramId</code> the DDM_GENERAL_PARAMETER parameter id</p>
+<p><code>channelHandle</code> the CHANNEL_HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#aa97ebe54536cab1f67c5ed8d2af535ed" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>paramId</code> the DDM_GENERAL_PARAMETER parameter id</p>
 <dl class="section return"><dt>Returns</dt><dd>parameter value </dd></dl>
 
 </div>
 </div>
-<a id="a09a6607f164214d9c46c9425b53b1f88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09a6607f164214d9c46c9425b53b1f88">&#9670;&nbsp;</a></span>Lock()</h2>
+<a id="a7a937b23b913a3d5cda38a4ba099548f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a937b23b913a3d5cda38a4ba099548f">&#9670;&nbsp;</a></span>Lock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -370,15 +370,15 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual HRESULT IDataDistributionChannelBase::Lock </td>
+          <td class="memname">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a> IDataDistributionChannelBase::Lock </td>
           <td>(</td>
-          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramtype"><a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a>&#160;</td>
           <td class="paramname"><em>channelHandle</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramtype">unsigned long&#160;</td>
           <td class="paramname"><em>timeout</em>&#160;</td>
         </tr>
         <tr>
@@ -395,13 +395,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Locks the channel. </p>
-<p><code>channelHandle</code> the HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#a907843a37e4317aaf0dd5eff3346e15f" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>timeout</code> the operation timeout in milliseconds</p>
-<dl class="section return"><dt>Returns</dt><dd>the HRESULT of the operation </dd></dl>
+<p><code>channelHandle</code> the CHANNEL_HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#aa97ebe54536cab1f67c5ed8d2af535ed" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>timeout</code> the operation timeout in milliseconds</p>
+<dl class="section return"><dt>Returns</dt><dd>the OPERATION_RESULT of the operation </dd></dl>
 
 </div>
 </div>
-<a id="aeb4a64228b970ba37f09cfe2561bcab2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb4a64228b970ba37f09cfe2561bcab2">&#9670;&nbsp;</a></span>ReadFromChannel()</h2>
+<a id="a5af9cab76adbb03d77577267def5eba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5af9cab76adbb03d77577267def5eba0">&#9670;&nbsp;</a></span>ReadFromChannel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -410,9 +410,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual HRESULT IDataDistributionChannelBase::ReadFromChannel </td>
+          <td class="memname">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a> IDataDistributionChannelBase::ReadFromChannel </td>
           <td>(</td>
-          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramtype"><a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a>&#160;</td>
           <td class="paramname"><em>channelHandle</em>, </td>
         </tr>
         <tr>
@@ -447,13 +447,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reads data from the channel. </p>
-<p><code>channelHandle</code> the HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#a907843a37e4317aaf0dd5eff3346e15f" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>offset</code> offset to read info from <code>dataLen</code> pointer will receive length of data read <code>buffer</code> the buffer to receive data from the channel, it cannot be NULL</p>
-<dl class="section return"><dt>Returns</dt><dd>the HRESULT of the operation </dd></dl>
+<p><code>channelHandle</code> the CHANNEL_HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#aa97ebe54536cab1f67c5ed8d2af535ed" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>offset</code> offset to read info from <code>dataLen</code> pointer will receive length of data read <code>buffer</code> the buffer to receive data from the channel, it cannot be NULL</p>
+<dl class="section return"><dt>Returns</dt><dd>the OPERATION_RESULT of the operation </dd></dl>
 
 </div>
 </div>
-<a id="af656813e29ef1d99526638be7cd1aee5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af656813e29ef1d99526638be7cd1aee5">&#9670;&nbsp;</a></span>SeekChannel()</h2>
+<a id="a3b105b252a730bd8e44205787544b129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b105b252a730bd8e44205787544b129">&#9670;&nbsp;</a></span>SeekChannel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -462,9 +462,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual HRESULT IDataDistributionChannelBase::SeekChannel </td>
+          <td class="memname">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a> IDataDistributionChannelBase::SeekChannel </td>
           <td>(</td>
-          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramtype"><a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a>&#160;</td>
           <td class="paramname"><em>channelHandle</em>, </td>
         </tr>
         <tr>
@@ -487,13 +487,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Seeks the channel. </p>
-<p><code>channelHandle</code> the HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#a907843a37e4317aaf0dd5eff3346e15f" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>position</code> the new channel position</p>
-<dl class="section return"><dt>Returns</dt><dd>the HRESULT of the operation </dd></dl>
+<p><code>channelHandle</code> the CHANNEL_HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#aa97ebe54536cab1f67c5ed8d2af535ed" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>position</code> the new channel position</p>
+<dl class="section return"><dt>Returns</dt><dd>the OPERATION_RESULT of the operation </dd></dl>
 
 </div>
 </div>
-<a id="a3d0485bbeb98be2670589f4dc5925e2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d0485bbeb98be2670589f4dc5925e2e">&#9670;&nbsp;</a></span>SetParameter() <span class="overload">[1/2]</span></h2>
+<a id="a4e20ef501900dc7c3d6b41ce91e86c1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e20ef501900dc7c3d6b41ce91e86c1e">&#9670;&nbsp;</a></span>SetParameter() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -504,7 +504,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void IDataDistributionChannelBase::SetParameter </td>
           <td>(</td>
-          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramtype"><a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a>&#160;</td>
           <td class="paramname"><em>channelHandle</em>, </td>
         </tr>
         <tr>
@@ -533,12 +533,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets a parameter at run-time. </p>
-<p><code>channelHandle</code> the HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#a907843a37e4317aaf0dd5eff3346e15f" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>paramName</code> the parameter name <code>paramValue</code> the parameter value </p>
+<p><code>channelHandle</code> the CHANNEL_HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#aa97ebe54536cab1f67c5ed8d2af535ed" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>paramName</code> the parameter name <code>paramValue</code> the parameter value </p>
 
 </div>
 </div>
-<a id="a81a016204e2c50079c530d9556739132"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81a016204e2c50079c530d9556739132">&#9670;&nbsp;</a></span>SetParameter() <span class="overload">[2/2]</span></h2>
+<a id="a66c1b8590ff8f2c4fc28925e848692a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66c1b8590ff8f2c4fc28925e848692a5">&#9670;&nbsp;</a></span>SetParameter() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -549,7 +549,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void IDataDistributionChannelBase::SetParameter </td>
           <td>(</td>
-          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramtype"><a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a>&#160;</td>
           <td class="paramname"><em>channelHandle</em>, </td>
         </tr>
         <tr>
@@ -578,12 +578,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets a parameter at run-time. </p>
-<p><code>channelHandle</code> the HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#a907843a37e4317aaf0dd5eff3346e15f" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>paramId</code> the DDM_GENERAL_PARAMETER parameter id <code>paramValue</code> the parameter value </p>
+<p><code>channelHandle</code> the CHANNEL_HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#aa97ebe54536cab1f67c5ed8d2af535ed" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>paramId</code> the DDM_GENERAL_PARAMETER parameter id <code>paramValue</code> the parameter value </p>
 
 </div>
 </div>
-<a id="a491de6a2f2dbb66d7ce5be5882dc56ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a491de6a2f2dbb66d7ce5be5882dc56ed">&#9670;&nbsp;</a></span>StartChannel()</h2>
+<a id="a1363d343a60775156633f95c69126bb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1363d343a60775156633f95c69126bb2">&#9670;&nbsp;</a></span>StartChannel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -592,15 +592,15 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual HRESULT IDataDistributionChannelBase::StartChannel </td>
+          <td class="memname">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a> IDataDistributionChannelBase::StartChannel </td>
           <td>(</td>
-          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramtype"><a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a>&#160;</td>
           <td class="paramname"><em>channelHandle</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramtype">unsigned long&#160;</td>
           <td class="paramname"><em>timeout</em>&#160;</td>
         </tr>
         <tr>
@@ -617,13 +617,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Starts the channel. </p>
-<p><code>channelHandle</code> the HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#a907843a37e4317aaf0dd5eff3346e15f" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>timeout</code> the operation timeout in milliseconds</p>
-<dl class="section return"><dt>Returns</dt><dd>the HRESULT of the operation </dd></dl>
+<p><code>channelHandle</code> the CHANNEL_HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#aa97ebe54536cab1f67c5ed8d2af535ed" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>timeout</code> the operation timeout in milliseconds</p>
+<dl class="section return"><dt>Returns</dt><dd>the OPERATION_RESULT of the operation </dd></dl>
 
 </div>
 </div>
-<a id="ab0820ac45a2ca985f5dd4d03c8504790"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0820ac45a2ca985f5dd4d03c8504790">&#9670;&nbsp;</a></span>StopChannel()</h2>
+<a id="aa742ee4a26ac347ded5ecc74bdfa29cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa742ee4a26ac347ded5ecc74bdfa29cc">&#9670;&nbsp;</a></span>StopChannel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -632,15 +632,15 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual HRESULT IDataDistributionChannelBase::StopChannel </td>
+          <td class="memname">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a> IDataDistributionChannelBase::StopChannel </td>
           <td>(</td>
-          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramtype"><a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a>&#160;</td>
           <td class="paramname"><em>channelHandle</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramtype">unsigned long&#160;</td>
           <td class="paramname"><em>timeout</em>&#160;</td>
         </tr>
         <tr>
@@ -657,13 +657,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Stops the channel. </p>
-<p><code>channelHandle</code> the HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#a907843a37e4317aaf0dd5eff3346e15f" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>timeout</code> the operation timeout in milliseconds</p>
-<dl class="section return"><dt>Returns</dt><dd>the HRESULT of the operation </dd></dl>
+<p><code>channelHandle</code> the CHANNEL_HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#aa97ebe54536cab1f67c5ed8d2af535ed" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>timeout</code> the operation timeout in milliseconds</p>
+<dl class="section return"><dt>Returns</dt><dd>the OPERATION_RESULT of the operation </dd></dl>
 
 </div>
 </div>
-<a id="ad380286a5ed04b12bf207316c3ac4fe3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad380286a5ed04b12bf207316c3ac4fe3">&#9670;&nbsp;</a></span>Unlock()</h2>
+<a id="aef192054f7390885a6ff6216172b67d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef192054f7390885a6ff6216172b67d7">&#9670;&nbsp;</a></span>Unlock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -672,9 +672,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual HRESULT IDataDistributionChannelBase::Unlock </td>
+          <td class="memname">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a> IDataDistributionChannelBase::Unlock </td>
           <td>(</td>
-          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramtype"><a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a>&#160;</td>
           <td class="paramname"><em>channelHandle</em></td><td>)</td>
           <td></td>
         </tr>
@@ -687,13 +687,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Unlock the channel. </p>
-<p><code>channelHandle</code> the HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#a907843a37e4317aaf0dd5eff3346e15f" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a></p>
-<dl class="section return"><dt>Returns</dt><dd>the HRESULT of the operation </dd></dl>
+<p><code>channelHandle</code> the CHANNEL_HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#aa97ebe54536cab1f67c5ed8d2af535ed" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a></p>
+<dl class="section return"><dt>Returns</dt><dd>the OPERATION_RESULT of the operation </dd></dl>
 
 </div>
 </div>
-<a id="ab49da0d23d1d7f6aa4316f566953c40d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab49da0d23d1d7f6aa4316f566953c40d">&#9670;&nbsp;</a></span>WriteOnChannel()</h2>
+<a id="a3bfa7674d2b9e65159260ef1a3a82e83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bfa7674d2b9e65159260ef1a3a82e83">&#9670;&nbsp;</a></span>WriteOnChannel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -702,9 +702,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual HRESULT IDataDistributionChannelBase::WriteOnChannel </td>
+          <td class="memname">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a> IDataDistributionChannelBase::WriteOnChannel </td>
           <td>(</td>
-          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramtype"><a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a>&#160;</td>
           <td class="paramname"><em>channelHandle</em>, </td>
         </tr>
         <tr>
@@ -734,14 +734,14 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const BOOL&#160;</td>
-          <td class="paramname"><em>waitAll</em> = <code>FALSE</code>, </td>
+          <td class="paramtype">const <a class="el" href="DataDistributionManagerTypes_8h.html#a050c65e107f0c828f856a231f4b4e788">BOOL</a>&#160;</td>
+          <td class="paramname"><em>waitAll</em> = <code><a class="el" href="DataDistributionManagerTypes_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int64_t&#160;</td>
-          <td class="paramname"><em>timestamp</em> = <code><a class="el" href="DataDistributionManagerEnums_8h.html#a04e9936beb1d53890441b25bc6b0a0ba">DDM_NO_TIMESTAMP</a></code>&#160;</td>
+          <td class="paramname"><em>timestamp</em> = <code><a class="el" href="DataDistributionManagerTypes_8h.html#a04e9936beb1d53890441b25bc6b0a0ba">DDM_NO_TIMESTAMP</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -757,8 +757,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Writes data on the channel. </p>
-<p><code>channelHandle</code> the HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#a907843a37e4317aaf0dd5eff3346e15f" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>key</code> the key of the message to write, it can be NULL <code>keyLen</code> the length of the key <code>buffer</code> the buffer to write on the channel, it cannot be NULL <code>bufferLen</code> the length of the buffer to write <code>waitAll</code> set to TRUE to wait a complete message dispatch, default is FALSE. </p><dl class="section remark"><dt>Remarks</dt><dd>it depends on underlying implementation <code>timestamp</code> a timestamp associable to the message, default is DDM_NO_TIMESTAMP and means no timestamp written</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>the HRESULT of the operation </dd></dl>
+<p><code>channelHandle</code> the CHANNEL_HANDLE of the channel return from <a class="el" href="classIDataDistributionChannelBase.html#aa97ebe54536cab1f67c5ed8d2af535ed" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> <code>key</code> the key of the message to write, it can be NULL <code>keyLen</code> the length of the key <code>buffer</code> the buffer to write on the channel, it cannot be NULL <code>bufferLen</code> the length of the buffer to write <code>waitAll</code> set to TRUE to wait a complete message dispatch, default is FALSE. </p><dl class="section remark"><dt>Remarks</dt><dd>it depends on underlying implementation <code>timestamp</code> a timestamp associable to the message, default is DDM_NO_TIMESTAMP and means no timestamp written</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the OPERATION_RESULT of the operation </dd></dl>
 
 </div>
 </div>

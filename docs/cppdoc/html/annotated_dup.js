@@ -7,6 +7,7 @@ var annotated_dup =
     [ "DataDistributionMastershipCallback", "classDataDistributionMastershipCallback.html", null ],
     [ "IDataDistribution", "classIDataDistribution.html", "classIDataDistribution" ],
     [ "IDataDistributionCallback", "classIDataDistributionCallback.html", "classIDataDistributionCallback" ],
+    [ "IDataDistributionChannel", "classIDataDistributionChannel.html", "classIDataDistributionChannel" ],
     [ "IDataDistributionChannelBase", "classIDataDistributionChannelBase.html", "classIDataDistributionChannelBase" ],
     [ "IDataDistributionChannelCallback", "classIDataDistributionChannelCallback.html", "classIDataDistributionChannelCallback" ],
     [ "IDataDistributionLog", "classIDataDistributionLog.html", "classIDataDistributionLog" ],

@@ -1,17 +1,17 @@
 var classIDataDistributionChannelBase =
 [
-    [ "ChangeChannelDirection", "classIDataDistributionChannelBase.html#a6a82427f2673a933bce7213ea1a3dea0", null ],
-    [ "CreateChannel", "classIDataDistributionChannelBase.html#a907843a37e4317aaf0dd5eff3346e15f", null ],
-    [ "DeleteChannel", "classIDataDistributionChannelBase.html#abb2ee977e5366755701c5f1b1101ff07", null ],
-    [ "GetParameter", "classIDataDistributionChannelBase.html#ac26f2f7bd40ebef263f04857244e64c4", null ],
-    [ "GetParameter", "classIDataDistributionChannelBase.html#a9aed0292503a0d7effba6b7b5693f19d", null ],
-    [ "Lock", "classIDataDistributionChannelBase.html#a09a6607f164214d9c46c9425b53b1f88", null ],
-    [ "ReadFromChannel", "classIDataDistributionChannelBase.html#aeb4a64228b970ba37f09cfe2561bcab2", null ],
-    [ "SeekChannel", "classIDataDistributionChannelBase.html#af656813e29ef1d99526638be7cd1aee5", null ],
-    [ "SetParameter", "classIDataDistributionChannelBase.html#a3d0485bbeb98be2670589f4dc5925e2e", null ],
-    [ "SetParameter", "classIDataDistributionChannelBase.html#a81a016204e2c50079c530d9556739132", null ],
-    [ "StartChannel", "classIDataDistributionChannelBase.html#a491de6a2f2dbb66d7ce5be5882dc56ed", null ],
-    [ "StopChannel", "classIDataDistributionChannelBase.html#ab0820ac45a2ca985f5dd4d03c8504790", null ],
-    [ "Unlock", "classIDataDistributionChannelBase.html#ad380286a5ed04b12bf207316c3ac4fe3", null ],
-    [ "WriteOnChannel", "classIDataDistributionChannelBase.html#ab49da0d23d1d7f6aa4316f566953c40d", null ]
+    [ "ChangeChannelDirection", "classIDataDistributionChannelBase.html#a8a57d41c28491f7bd41e1a10fe882d30", null ],
+    [ "CreateChannel", "classIDataDistributionChannelBase.html#aa97ebe54536cab1f67c5ed8d2af535ed", null ],
+    [ "DeleteChannel", "classIDataDistributionChannelBase.html#ac75ba763eaa2538218e4ebe52dcedae1", null ],
+    [ "GetParameter", "classIDataDistributionChannelBase.html#ae3f838af52ae71e3d03fb571e03d6df0", null ],
+    [ "GetParameter", "classIDataDistributionChannelBase.html#afb0ae298946d2acc0e5088fd92cc0a3a", null ],
+    [ "Lock", "classIDataDistributionChannelBase.html#a7a937b23b913a3d5cda38a4ba099548f", null ],
+    [ "ReadFromChannel", "classIDataDistributionChannelBase.html#a5af9cab76adbb03d77577267def5eba0", null ],
+    [ "SeekChannel", "classIDataDistributionChannelBase.html#a3b105b252a730bd8e44205787544b129", null ],
+    [ "SetParameter", "classIDataDistributionChannelBase.html#a4e20ef501900dc7c3d6b41ce91e86c1e", null ],
+    [ "SetParameter", "classIDataDistributionChannelBase.html#a66c1b8590ff8f2c4fc28925e848692a5", null ],
+    [ "StartChannel", "classIDataDistributionChannelBase.html#a1363d343a60775156633f95c69126bb2", null ],
+    [ "StopChannel", "classIDataDistributionChannelBase.html#aa742ee4a26ac347ded5ecc74bdfa29cc", null ],
+    [ "Unlock", "classIDataDistributionChannelBase.html#aef192054f7390885a6ff6216172b67d7", null ],
+    [ "WriteOnChannel", "classIDataDistributionChannelBase.html#a3bfa7674d2b9e65159260ef1a3a82e83", null ]
 ];
