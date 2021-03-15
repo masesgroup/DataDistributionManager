@@ -38,6 +38,7 @@
 
 #include "DataDistributionManagerEnums.h"
 
+/**@cond NO_DOC*/
 #ifdef __cplusplus
 #define NULL 0
 #else
@@ -55,6 +56,19 @@
 #define DLLCALL __cdecl
 #define FUNCALL __cdecl
 
+typedef int BOOL;
+
+#ifndef FALSE
+#define FALSE               0
+#endif
+
+#ifndef TRUE
+#define TRUE                1
+#endif
+
+/**@endcond*/
+
+
 /**
 * @brief Definition to avoid timestamp on write
 *
@@ -68,25 +82,16 @@ class IDataDistributionChannel;
 *
 */
 #define CHANNEL_HANDLE IDataDistributionChannel*
+/**
+* @brief Channel handle parameter definition
+*
+*/
 #define CHANNEL_HANDLE_PARAMETER CHANNEL_HANDLE channelHandle
 /**
 * @brief Generic handle definition, used for thread, lock, mutex
 *
 */
 typedef void* GENERIC_HANDLE;
-/**
-* @brief BOOL type definition
-*
-*/
-typedef int BOOL;
-
-#ifndef FALSE
-#define FALSE               0
-#endif
-
-#ifndef TRUE
-#define TRUE                1
-#endif
 
 /**
  * @brief OPERATION_RESULT type.
