@@ -51,21 +51,23 @@ struct BaseKeepAlive
 
 struct HELLO_WELCOME : BaseKeepAlive
 {
+#define NAME_LENGTH_MAX 256
+
 	int64_t Uptime;
-	char ServerName[256];
-	char HostName[256];
+	char ServerName[NAME_LENGTH_MAX];
+	char HostName[NAME_LENGTH_MAX];
 	HELLO_WELCOME(DDM_KEEPALIVE_TYPE type, size_t serverId, const char* serverName, const char* hostname) : BaseKeepAlive(type, serverId)
 	{
 		MessageLength = sizeof(HELLO_WELCOME);
-		memset(ServerName, 0, 256);
-		memset(HostName, 0, 256);
+		memset(ServerName, 0, NAME_LENGTH_MAX);
+		memset(HostName, 0, NAME_LENGTH_MAX);
 		if (serverName)
 		{
-			strncpy(ServerName, serverName, min(256, strlen(serverName)));
+			snprintf(ServerName, NAME_LENGTH_MAX, "%s", serverName);
 		}
 		if (hostname)
 		{
-			strncpy(HostName, hostname, min(256, strlen(hostname)));
+			snprintf(HostName, NAME_LENGTH_MAX, "%s", hostname);
 		}
 	}
 };

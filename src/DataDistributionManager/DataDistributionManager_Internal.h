@@ -28,9 +28,7 @@
 #include <winsock2.h>
 #include <process.h> 
 
-#include <iostream>
 #include <fstream>
-#include <cstring>
 #if _MSC_VER > 1600
 #include <chrono>
 #else

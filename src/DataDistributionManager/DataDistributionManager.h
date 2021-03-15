@@ -37,13 +37,7 @@
  */
 
 /**@cond NO_DOC*/
-#include <stdint.h>
 #include <map>
-
-//#ifndef _INC_WINDOWS
-//#include <windows.h>
-//#endif /* _INC_WINDOWS */
-
 /**@endcond*/
 
 #include "DataDistributionManagerTypes.h"

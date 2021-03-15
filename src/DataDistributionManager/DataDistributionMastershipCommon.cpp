@@ -18,6 +18,8 @@
 
 #include "DataDistributionMastershipCommon.h"
 
+#include <winsock2.h>
+
 DataDistributionMastershipCommon::DataDistributionMastershipCommon()
 {
 	m_keepAliveInterval = 1000;
@@ -111,8 +113,7 @@ int64_t DataDistributionMastershipCommon::GetUpTime()
 
 void DataDistributionMastershipCommon::AddRandomToMyTime()
 {
-	unsigned int randomNum;
-	rand_s(&randomNum);
+	unsigned int randomNum = rand();
 	m_startupTime.AddNanoseconds(randomNum);
 }
 

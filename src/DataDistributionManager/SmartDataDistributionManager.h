@@ -34,8 +34,6 @@
 
 /**@cond NO_DOC*/
 #include "DataDistributionManager.h"
-#include <vector>
-
 /**@endcond*/
 
 /**

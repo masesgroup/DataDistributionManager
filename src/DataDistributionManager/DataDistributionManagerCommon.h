@@ -23,31 +23,12 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#define _CRT_RAND_S  
-
-#include <winsock2.h>
-#include <process.h> 
-
-#include <iostream>
-#include <fstream>
-#include <cstring>
-#if _MSC_VER > 1600
-#include <chrono>
-#else
-#define USE_CTIME
-#include <ctime>
-#endif
-#include <sstream> 
 #include <list>
 #include <map>
 
 #include "SmartDataDistributionManager.h"
 #include "DataDistributionManagerLog.h"
 #include "DataDistributionManagerSupport.h"
-
-#ifndef USE_CTIME
-using namespace std::chrono;
-#endif
 
 /**
 * @enum CHANNEL_STARTUP_TYPE

@@ -88,7 +88,7 @@ void DataDistributionCommon::Log(const DDM_LOG_LEVEL level, const char* sourceNa
 
 	char buffer[LOG_LEN];
 	memset(buffer, 0, sizeof(buffer));
-	int result = vsnprintf_s(buffer, _countof(buffer), _TRUNCATE, format, args);
+	int result = vsnprintf(buffer, _countof(buffer), format, args);
 	if (result > 0)
 	{
 		m_pDataDistributionManagerCallbacks->OnLogging(level, sourceName, function, buffer);
