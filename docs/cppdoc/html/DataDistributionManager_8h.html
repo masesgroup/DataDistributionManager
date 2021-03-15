@@ -167,9 +167,9 @@ Typedefs</h2></td></tr>
 <tr class="separator:a4d18746ddc7cd645ab18545f7591893d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b5aa412599c9db2d91a09aa54359978"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="DataDistributionManagerTypes_8h.html#a891cdc36a12080884b91ea4c29fb0a91">DDM_EXPORT</a> <a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a3b5aa412599c9db2d91a09aa54359978">pUnderlyingEventData</a></td></tr>
 <tr class="separator:a3b5aa412599c9db2d91a09aa54359978"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a9bba9f9138207ff6079c33470f49dc"><td class="memItemLeft" align="right" valign="top">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a9a9bba9f9138207ff6079c33470f49dc">dataDistributionUnderlyingEvent</a>) (const void *opaque, const <a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a> channelHandle, const <a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a> *uEvent)</td></tr>
-<tr class="memdesc:a9a9bba9f9138207ff6079c33470f49dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked to report <a class="el" href="structUnderlyingEventData.html" title="Class to reports information from transport subsystem.">UnderlyingEventData</a>.  <a href="DataDistributionManager_8h.html#a9a9bba9f9138207ff6079c33470f49dc">More...</a><br /></td></tr>
-<tr class="separator:a9a9bba9f9138207ff6079c33470f49dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd50ee6e58368d15f45ef2eea204c648"><td class="memItemLeft" align="right" valign="top">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#afd50ee6e58368d15f45ef2eea204c648">dataDistributionUnderlyingEvent</a>) (const void *opaque, const <a class="el" href="DataDistributionManagerTypes_8h.html#a485805b8e0f9cc8393cff8da5a01415a">CHANNEL_HANDLE_PARAMETER</a>, const <a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a> *uEvent)</td></tr>
+<tr class="memdesc:afd50ee6e58368d15f45ef2eea204c648"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked to report <a class="el" href="structUnderlyingEventData.html" title="Class to reports information from transport subsystem.">UnderlyingEventData</a>.  <a href="DataDistributionManager_8h.html#afd50ee6e58368d15f45ef2eea204c648">More...</a><br /></td></tr>
+<tr class="separator:afd50ee6e58368d15f45ef2eea204c648"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22f3e4b2c7ddcd59e32551441a71321b"><td class="memItemLeft" align="right" valign="top">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a22f3e4b2c7ddcd59e32551441a71321b">dataDistributionOnClusterStateChange</a>) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a9a62843916107690600391b9a9c2e5c3">DDM_CLUSTEREVENT</a> change, int64_t serverid)</td></tr>
 <tr class="memdesc:a22f3e4b2c7ddcd59e32551441a71321b"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked to report cluster state change.  <a href="DataDistributionManager_8h.html#a22f3e4b2c7ddcd59e32551441a71321b">More...</a><br /></td></tr>
 <tr class="separator:a22f3e4b2c7ddcd59e32551441a71321b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -444,14 +444,14 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a id="a9a9bba9f9138207ff6079c33470f49dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a9bba9f9138207ff6079c33470f49dc">&#9670;&nbsp;</a></span>dataDistributionUnderlyingEvent</h2>
+<a id="afd50ee6e58368d15f45ef2eea204c648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd50ee6e58368d15f45ef2eea204c648">&#9670;&nbsp;</a></span>dataDistributionUnderlyingEvent</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> * dataDistributionUnderlyingEvent) (const void *opaque, const <a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a> channelHandle, const <a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a> *uEvent)</td>
+          <td class="memname">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> * dataDistributionUnderlyingEvent) (const void *opaque, const <a class="el" href="DataDistributionManagerTypes_8h.html#a485805b8e0f9cc8393cff8da5a01415a">CHANNEL_HANDLE_PARAMETER</a>, const <a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a> *uEvent)</td>
         </tr>
       </table>
 </div><div class="memdoc">

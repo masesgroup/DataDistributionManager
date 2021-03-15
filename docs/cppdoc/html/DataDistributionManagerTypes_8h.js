@@ -1,5 +1,7 @@
 var DataDistributionManagerTypes_8h =
 [
+    [ "CHANNEL_HANDLE", "DataDistributionManagerTypes_8h.html#adee0f43aad519bdac771682743533959", null ],
+    [ "CHANNEL_HANDLE_PARAMETER", "DataDistributionManagerTypes_8h.html#a485805b8e0f9cc8393cff8da5a01415a", null ],
     [ "DDM_COMMIT_FAILED", "DataDistributionManagerTypes_8h.html#a0849cc2651b04a0c8ca3c3809d905814", null ],
     [ "DDM_DATA_AVAILABLE", "DataDistributionManagerTypes_8h.html#aeb480e61476e24dd0929392f49880a7b", null ],
     [ "DDM_ELAPSED_MESSAGE_ACKNOWLEDGMENT_TIMEOUT", "DataDistributionManagerTypes_8h.html#ab7c1833895ab409643ec1b617261e9b5", null ],
@@ -29,7 +31,6 @@ var DataDistributionManagerTypes_8h =
     [ "OPERATION_SUCCEEDED", "DataDistributionManagerTypes_8h.html#a8533ed7e57b99f49ff729c2003c2ce11", null ],
     [ "TRUE", "DataDistributionManagerTypes_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d", null ],
     [ "BOOL", "DataDistributionManagerTypes_8h.html#a050c65e107f0c828f856a231f4b4e788", null ],
-    [ "CHANNEL_HANDLE", "DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37", null ],
     [ "GENERIC_HANDLE", "DataDistributionManagerTypes_8h.html#a28342bc380741b19c08ab3e0d5c635e5", null ],
     [ "OPERATION_RESULT", "DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b", null ]
 ];

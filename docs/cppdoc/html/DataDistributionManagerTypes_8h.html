@@ -111,6 +111,11 @@ Macros</h2></td></tr>
 <tr class="memitem:a04e9936beb1d53890441b25bc6b0a0ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManagerTypes_8h.html#a04e9936beb1d53890441b25bc6b0a0ba">DDM_NO_TIMESTAMP</a>&#160;&#160;&#160;-1</td></tr>
 <tr class="memdesc:a04e9936beb1d53890441b25bc6b0a0ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition to avoid timestamp on write.  <a href="DataDistributionManagerTypes_8h.html#a04e9936beb1d53890441b25bc6b0a0ba">More...</a><br /></td></tr>
 <tr class="separator:a04e9936beb1d53890441b25bc6b0a0ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adee0f43aad519bdac771682743533959"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManagerTypes_8h.html#adee0f43aad519bdac771682743533959">CHANNEL_HANDLE</a>&#160;&#160;&#160;<a class="el" href="classIDataDistributionChannel.html">IDataDistributionChannel</a>*</td></tr>
+<tr class="memdesc:adee0f43aad519bdac771682743533959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Channel handle definition.  <a href="DataDistributionManagerTypes_8h.html#adee0f43aad519bdac771682743533959">More...</a><br /></td></tr>
+<tr class="separator:adee0f43aad519bdac771682743533959"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a485805b8e0f9cc8393cff8da5a01415a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManagerTypes_8h.html#a485805b8e0f9cc8393cff8da5a01415a">CHANNEL_HANDLE_PARAMETER</a>&#160;&#160;&#160;<a class="el" href="DataDistributionManagerTypes_8h.html#adee0f43aad519bdac771682743533959">CHANNEL_HANDLE</a> channelHandle</td></tr>
+<tr class="separator:a485805b8e0f9cc8393cff8da5a01415a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa93f0eb578d23995850d61f7d61c55c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManagerTypes_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:aa93f0eb578d23995850d61f7d61c55c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8cecfc5c5c054d2875c03e77b7be15d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManagerTypes_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>&#160;&#160;&#160;1</td></tr>
@@ -158,9 +163,6 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a3df1b836c59952e97da684115cb9ef37"><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a></td></tr>
-<tr class="memdesc:a3df1b836c59952e97da684115cb9ef37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Channel handle definition.  <a href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">More...</a><br /></td></tr>
-<tr class="separator:a3df1b836c59952e97da684115cb9ef37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28342bc380741b19c08ab3e0d5c635e5"><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManagerTypes_8h.html#a28342bc380741b19c08ab3e0d5c635e5">GENERIC_HANDLE</a></td></tr>
 <tr class="memdesc:a28342bc380741b19c08ab3e0d5c635e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic handle definition, used for thread, lock, mutex.  <a href="DataDistributionManagerTypes_8h.html#a28342bc380741b19c08ab3e0d5c635e5">More...</a><br /></td></tr>
 <tr class="separator:a28342bc380741b19c08ab3e0d5c635e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,6 +177,36 @@ Typedefs</h2></td></tr>
 <div class="textblock"><p>DataDistributionManager library. </p>
 <p><a class="el" href="DataDistributionManagerTypes_8h.html" title="DataDistributionManager library.">DataDistributionManagerTypes.h</a> contains the public types for DataDistributionManager. The API is documented in this file as comments prefixing the class, function, type, enum, define, etc. The C++ interface is STD C++ '03 compliant and adheres to the Google C++ Style Guide. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="adee0f43aad519bdac771682743533959"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adee0f43aad519bdac771682743533959">&#9670;&nbsp;</a></span>CHANNEL_HANDLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CHANNEL_HANDLE&#160;&#160;&#160;<a class="el" href="classIDataDistributionChannel.html">IDataDistributionChannel</a>*</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Channel handle definition. </p>
+
+</div>
+</div>
+<a id="a485805b8e0f9cc8393cff8da5a01415a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a485805b8e0f9cc8393cff8da5a01415a">&#9670;&nbsp;</a></span>CHANNEL_HANDLE_PARAMETER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CHANNEL_HANDLE_PARAMETER&#160;&#160;&#160;<a class="el" href="DataDistributionManagerTypes_8h.html#adee0f43aad519bdac771682743533959">CHANNEL_HANDLE</a> channelHandle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a0849cc2651b04a0c8ca3c3809d905814"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0849cc2651b04a0c8ca3c3809d905814">&#9670;&nbsp;</a></span>DDM_COMMIT_FAILED</h2>
 
@@ -612,22 +644,6 @@ Typedefs</h2></td></tr>
 </div><div class="memdoc">
 
 <p>BOOL type definition. </p>
-
-</div>
-</div>
-<a id="a3df1b836c59952e97da684115cb9ef37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3df1b836c59952e97da684115cb9ef37">&#9670;&nbsp;</a></span>CHANNEL_HANDLE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef void* <a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Channel handle definition. </p>
 
 </div>
 </div>

@@ -1,25 +1,5 @@
 var searchData=
 [
-  ['ddm_5fcommit_5ffailed_359',['DDM_COMMIT_FAILED',['../DataDistributionManagerTypes_8h.html#a0849cc2651b04a0c8ca3c3809d905814',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5fdata_5favailable_360',['DDM_DATA_AVAILABLE',['../DataDistributionManagerTypes_8h.html#aeb480e61476e24dd0929392f49880a7b',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5felapsed_5fmessage_5facknowledgment_5ftimeout_361',['DDM_ELAPSED_MESSAGE_ACKNOWLEDGMENT_TIMEOUT',['../DataDistributionManagerTypes_8h.html#ab7c1833895ab409643ec1b617261e9b5',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5felapsed_5fmessage_5freceive_5ftimeout_5fbegin_362',['DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_BEGIN',['../DataDistributionManagerTypes_8h.html#ac1461f8060ece0cb1538b812390678c3',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5felapsed_5fmessage_5freceive_5ftimeout_5fend_363',['DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_END',['../DataDistributionManagerTypes_8h.html#ab8c96f7483040de1e0de4c6e54ea75b5',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5fend_5fof_5fstream_364',['DDM_END_OF_STREAM',['../DataDistributionManagerTypes_8h.html#af35fe47cc04e38b6094ce8d642d67b4f',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5fexport_365',['DDM_EXPORT',['../DataDistributionManagerTypes_8h.html#a891cdc36a12080884b91ea4c29fb0a91',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5ffatal_5ferror_366',['DDM_FATAL_ERROR',['../DataDistributionManagerTypes_8h.html#aa976311654e9d894b6ac10e86decd6c7',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5finvalid_5fdata_367',['DDM_INVALID_DATA',['../DataDistributionManagerTypes_8h.html#a85bdc91aef4bcc1b7c4dae3c0a3e4ddf',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5fno_5fdata_5freturned_368',['DDM_NO_DATA_RETURNED',['../DataDistributionManagerTypes_8h.html#af445f5aec9568c1572f0c298f47cfa64',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5fno_5ferror_5fcondition_369',['DDM_NO_ERROR_CONDITION',['../DataDistributionManagerTypes_8h.html#af5bd54114909db3c92a8e4a881d3302c',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5fno_5ftimestamp_370',['DDM_NO_TIMESTAMP',['../DataDistributionManagerTypes_8h.html#a04e9936beb1d53890441b25bc6b0a0ba',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5fnot_5fimplemented_371',['DDM_NOT_IMPLEMENTED',['../DataDistributionManagerTypes_8h.html#af6f4f7bd949b7f8c8c0b602f28d20c70',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5fparameter_5ferror_372',['DDM_PARAMETER_ERROR',['../DataDistributionManagerTypes_8h.html#a54905079f65dc60db3e53ad0365c4d9a',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5fpointer_5fnot_5fset_373',['DDM_POINTER_NOT_SET',['../DataDistributionManagerTypes_8h.html#a32fb7a9c8eb7e22c44dba9f78c1f04f8',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5fsubsystem_5fnot_5fstarted_374',['DDM_SUBSYSTEM_NOT_STARTED',['../DataDistributionManagerTypes_8h.html#a630df990c9250bfb7d09cb8c79c73a66',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5ftimeout_375',['DDM_TIMEOUT',['../DataDistributionManagerTypes_8h.html#a3dda9db90bdf61354e605ccd724431ec',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5funmapped_5ferror_5fcondition_376',['DDM_UNMAPPED_ERROR_CONDITION',['../DataDistributionManagerTypes_8h.html#a158e5fb9b2ba665e5ad301792de65a2b',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5fwrite_5ffailed_377',['DDM_WRITE_FAILED',['../DataDistributionManagerTypes_8h.html#a4c8335c6b7e98570d0c647f92531f05e',1,'DataDistributionManagerTypes.h']]],
-  ['dllcall_378',['DLLCALL',['../DataDistributionManagerTypes_8h.html#a54b25836118bfac94a53a7b790f3ccb2',1,'DataDistributionManagerTypes.h']]],
-  ['dllexport_379',['DLLEXPORT',['../DataDistributionManagerTypes_8h.html#a808e08638be3cba36e36759e5b150de0',1,'DataDistributionManagerTypes.h']]],
-  ['dllimport_380',['DLLIMPORT',['../DataDistributionManagerTypes_8h.html#aae8fdf6bcc88c172ca8a75ad80f17a95',1,'DataDistributionManagerTypes.h']]]
+  ['channel_5fhandle_359',['CHANNEL_HANDLE',['../DataDistributionManagerTypes_8h.html#adee0f43aad519bdac771682743533959',1,'DataDistributionManagerTypes.h']]],
+  ['channel_5fhandle_5fparameter_360',['CHANNEL_HANDLE_PARAMETER',['../DataDistributionManagerTypes_8h.html#a485805b8e0f9cc8393cff8da5a01415a',1,'DataDistributionManagerTypes.h']]]
 ];

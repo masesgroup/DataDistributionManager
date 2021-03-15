@@ -50,7 +50,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "DataDistributionManagerEnums_8h.html",
-"structClusterHealthElement.html#ae776992a7e2e2c79ae8d87d3ce2e79b3"
+"structClusterHealthElement.html#aa3733ab9e950b3b34555acaeb9b957ce"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
