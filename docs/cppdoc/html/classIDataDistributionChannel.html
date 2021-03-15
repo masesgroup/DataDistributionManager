@@ -96,40 +96,17 @@ $(document).ready(function(){initNavTree('classIDataDistributionChannel.html',''
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aba56fa6cf30c78c8ed6632a3239e08a0"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannel.html#aba56fa6cf30c78c8ed6632a3239e08a0">GetChannelName</a> ()=0</td></tr>
+<tr class="memdesc:aba56fa6cf30c78c8ed6632a3239e08a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the channel name.  <a href="classIDataDistributionChannel.html#aba56fa6cf30c78c8ed6632a3239e08a0">More...</a><br /></td></tr>
 <tr class="separator:aba56fa6cf30c78c8ed6632a3239e08a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6b7e9a8a90d9889482afcc407c571c0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannel.html#ab6b7e9a8a90d9889482afcc407c571c0">GetChannelHandle</a> ()=0</td></tr>
-<tr class="separator:ab6b7e9a8a90d9889482afcc407c571c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a620c5c0b00885b01508794465270af21"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a28342bc380741b19c08ab3e0d5c635e5">GENERIC_HANDLE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannel.html#a620c5c0b00885b01508794465270af21">GetOpaqueHandle</a> ()=0</td></tr>
+<tr class="memdesc:a620c5c0b00885b01508794465270af21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an opaque version of the channel handle.  <a href="classIDataDistributionChannel.html#a620c5c0b00885b01508794465270af21">More...</a><br /></td></tr>
+<tr class="separator:a620c5c0b00885b01508794465270af21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The basic interface for all channel. </p>
 <p>CHANNEL_HANDLE can be casted to <a class="el" href="classIDataDistributionChannel.html" title="The basic interface for all channel.">IDataDistributionChannel</a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classIDataDistributionChannelBase.html#aa97ebe54536cab1f67c5ed8d2af535ed" title="Creates a new channel.">IDataDistributionChannelBase::CreateChannel</a> </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab6b7e9a8a90d9889482afcc407c571c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6b7e9a8a90d9889482afcc407c571c0">&#9670;&nbsp;</a></span>GetChannelHandle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a> IDataDistributionChannel::GetChannelHandle </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aba56fa6cf30c78c8ed6632a3239e08a0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aba56fa6cf30c78c8ed6632a3239e08a0">&#9670;&nbsp;</a></span>GetChannelName()</h2>
 
@@ -152,6 +129,39 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the channel name. </p>
+<p>Returns the channel name</p>
+<dl class="section return"><dt>Returns</dt><dd>the channel name </dd></dl>
+
+</div>
+</div>
+<a id="a620c5c0b00885b01508794465270af21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a620c5c0b00885b01508794465270af21">&#9670;&nbsp;</a></span>GetOpaqueHandle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="DataDistributionManagerTypes_8h.html#a28342bc380741b19c08ab3e0d5c635e5">GENERIC_HANDLE</a> IDataDistributionChannel::GetOpaqueHandle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an opaque version of the channel handle. </p>
+<p>Returns an opaque version of the channel handle</p>
+<dl class="section return"><dt>Returns</dt><dd>opaque version of the channel handle </dd></dl>
 
 </div>
 </div>

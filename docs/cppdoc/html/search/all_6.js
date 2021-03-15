@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['generic_5fhandle_83',['GENERIC_HANDLE',['../DataDistributionManagerTypes_8h.html#a28342bc380741b19c08ab3e0d5c635e5',1,'DataDistributionManagerTypes.h']]],
-  ['getcallbacks_84',['GetCallbacks',['../classIDataDistributionSubsystem.html#a57ef71f555e939bd0dba355b67e69b83',1,'IDataDistributionSubsystem']]],
-  ['getchannelhandle_85',['GetChannelHandle',['../classIDataDistributionChannel.html#ab6b7e9a8a90d9889482afcc407c571c0',1,'IDataDistributionChannel']]],
+  ['generic_5fhandle_84',['GENERIC_HANDLE',['../DataDistributionManagerTypes_8h.html#a28342bc380741b19c08ab3e0d5c635e5',1,'DataDistributionManagerTypes.h']]],
+  ['getcallbacks_85',['GetCallbacks',['../classIDataDistributionSubsystem.html#a57ef71f555e939bd0dba355b67e69b83',1,'IDataDistributionSubsystem']]],
   ['getchannelname_86',['GetChannelName',['../classIDataDistributionChannel.html#aba56fa6cf30c78c8ed6632a3239e08a0',1,'IDataDistributionChannel::GetChannelName()'],['../classSmartDataDistributionChannel.html#a4e9b770ebf68e631f0367467d45e0e2f',1,'SmartDataDistributionChannel::GetChannelName()']]],
   ['getclusterhealth_87',['GetClusterHealth',['../classIDataDistributionMastershipCommon.html#a4076b60990011fd42de0a31007c8b151',1,'IDataDistributionMastershipCommon']]],
   ['getclusterindexes_88',['GetClusterIndexes',['../classIDataDistributionMastershipCommon.html#a0ce4cb38aae06361045dc1309c0422b9',1,'IDataDistributionMastershipCommon']]],
@@ -14,13 +13,14 @@ var searchData=
   ['getmaxmessagesize_94',['GetMaxMessageSize',['../classIDataDistributionTransport.html#adda7bf0099ae459186baf9fa4484c04c',1,'IDataDistributionTransport']]],
   ['getmessagedelay_95',['GetMessageDelay',['../classIDataDistributionMastershipCommon.html#a1a18d24fe7b8f6882bc8ebecedfa5e2c',1,'IDataDistributionMastershipCommon']]],
   ['getmystate_96',['GetMyState',['../classIDataDistributionMastershipCommon.html#acf848e01ec68dcd6368ace4b46651c58',1,'IDataDistributionMastershipCommon']]],
-  ['getparameter_97',['GetParameter',['../classIDataDistributionChannelBase.html#ae3f838af52ae71e3d03fb571e03d6df0',1,'IDataDistributionChannelBase::GetParameter(CHANNEL_HANDLE channelHandle, const char *paramName)=0'],['../classIDataDistributionChannelBase.html#afb0ae298946d2acc0e5088fd92cc0a3a',1,'IDataDistributionChannelBase::GetParameter(CHANNEL_HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId)=0']]],
-  ['getprimaryserverid_98',['GetPrimaryServerId',['../classIDataDistributionMastershipCommon.html#a4631ed8498a766291a17f379a6a3456d',1,'IDataDistributionMastershipCommon']]],
-  ['getprotocol_99',['GetProtocol',['../classIDataDistribution.html#a02f2eb31db9444610fad96e6abfc51a1',1,'IDataDistribution::GetProtocol()'],['../classSmartDataDistributionBase.html#af80be20bf50fe717942785f1045198a6',1,'SmartDataDistributionBase::GetProtocol()']]],
-  ['getprotocollib_100',['GetProtocolLib',['../classIDataDistribution.html#a059e0086fe16ddbd9986718548564e5e',1,'IDataDistribution::GetProtocolLib()'],['../classSmartDataDistributionBase.html#a97dbf0b446c1b9adda6da0ef39687c7c',1,'SmartDataDistributionBase::GetProtocolLib()']]],
-  ['getserverlosttimeout_101',['GetServerLostTimeout',['../classIDataDistributionTransport.html#a9b0751b0005b1b09a308cb31d2d9f613',1,'IDataDistributionTransport']]],
-  ['getstateof_102',['GetStateOf',['../classIDataDistributionMastershipCommon.html#ab16d91ca96b1a9b1bb4ae4b6c299cc90',1,'IDataDistributionMastershipCommon']]],
-  ['getsubsystemmanager_103',['GetSubsystemManager',['../classIDataDistribution.html#a056e27ac9d11f8973e8329a53a9328b0',1,'IDataDistribution']]],
-  ['getuptime_104',['GetUpTime',['../classIDataDistributionMastershipCommon.html#ab2bed207c1bc9fd204abb610f8f65eb5',1,'IDataDistributionMastershipCommon']]],
-  ['going_5falone_105',['GOING_ALONE',['../DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671a8b742a7318347cad154e30df51b5961d',1,'DataDistributionManagerEnums.h']]]
+  ['getopaquehandle_97',['GetOpaqueHandle',['../classIDataDistributionChannel.html#a620c5c0b00885b01508794465270af21',1,'IDataDistributionChannel']]],
+  ['getparameter_98',['GetParameter',['../classIDataDistributionChannelBase.html#ad1416d72bdb9955f5d8760e58e3deb41',1,'IDataDistributionChannelBase::GetParameter(CHANNEL_HANDLE_PARAMETER, const char *paramName)=0'],['../classIDataDistributionChannelBase.html#a3cdc0c1879fc53fd33dd02df084963c0',1,'IDataDistributionChannelBase::GetParameter(CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId)=0']]],
+  ['getprimaryserverid_99',['GetPrimaryServerId',['../classIDataDistributionMastershipCommon.html#a4631ed8498a766291a17f379a6a3456d',1,'IDataDistributionMastershipCommon']]],
+  ['getprotocol_100',['GetProtocol',['../classIDataDistribution.html#a02f2eb31db9444610fad96e6abfc51a1',1,'IDataDistribution::GetProtocol()'],['../classSmartDataDistributionBase.html#af80be20bf50fe717942785f1045198a6',1,'SmartDataDistributionBase::GetProtocol()']]],
+  ['getprotocollib_101',['GetProtocolLib',['../classIDataDistribution.html#a059e0086fe16ddbd9986718548564e5e',1,'IDataDistribution::GetProtocolLib()'],['../classSmartDataDistributionBase.html#a97dbf0b446c1b9adda6da0ef39687c7c',1,'SmartDataDistributionBase::GetProtocolLib()']]],
+  ['getserverlosttimeout_102',['GetServerLostTimeout',['../classIDataDistributionTransport.html#a9b0751b0005b1b09a308cb31d2d9f613',1,'IDataDistributionTransport']]],
+  ['getstateof_103',['GetStateOf',['../classIDataDistributionMastershipCommon.html#ab16d91ca96b1a9b1bb4ae4b6c299cc90',1,'IDataDistributionMastershipCommon']]],
+  ['getsubsystemmanager_104',['GetSubsystemManager',['../classIDataDistribution.html#a056e27ac9d11f8973e8329a53a9328b0',1,'IDataDistribution']]],
+  ['getuptime_105',['GetUpTime',['../classIDataDistributionMastershipCommon.html#ab2bed207c1bc9fd204abb610f8f65eb5',1,'IDataDistributionMastershipCommon']]],
+  ['going_5falone_106',['GOING_ALONE',['../DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671a8b742a7318347cad154e30df51b5961d',1,'DataDistributionManagerEnums.h']]]
 ];

@@ -31,7 +31,7 @@ var DataDistributionManager_8h =
     [ "dataDistributionOnRequestedState", "DataDistributionManager_8h.html#a4db7b2281ed6353eebde22fbd40a56e4", null ],
     [ "dataDistributionOnStateChange", "DataDistributionManager_8h.html#a86fc93ad4df4e7096f1740d2343947d0", null ],
     [ "dataDistributionOnStateReady", "DataDistributionManager_8h.html#af0e6575710b717031fe0e06fbf1d299e", null ],
-    [ "dataDistributionUnderlyingEvent", "DataDistributionManager_8h.html#a9a9bba9f9138207ff6079c33470f49dc", null ],
+    [ "dataDistributionUnderlyingEvent", "DataDistributionManager_8h.html#afd50ee6e58368d15f45ef2eea204c648", null ],
     [ "pUnderlyingEventData", "DataDistributionManager_8h.html#a3b5aa412599c9db2d91a09aa54359978", null ],
     [ "UnderlyingEventData", "DataDistributionManager_8h.html#a4d18746ddc7cd645ab18545f7591893d", null ]
 ];

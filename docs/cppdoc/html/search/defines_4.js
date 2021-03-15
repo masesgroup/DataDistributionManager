@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['true_386',['TRUE',['../DataDistributionManagerTypes_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d',1,'DataDistributionManagerTypes.h']]]
+  ['operation_5ffailed_386',['OPERATION_FAILED',['../DataDistributionManagerTypes_8h.html#af24377a8bd76181a0c2269615a2e346c',1,'DataDistributionManagerTypes.h']]],
+  ['operation_5fsucceeded_387',['OPERATION_SUCCEEDED',['../DataDistributionManagerTypes_8h.html#a8533ed7e57b99f49ff729c2003c2ce11',1,'DataDistributionManagerTypes.h']]]
 ];
