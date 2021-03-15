@@ -1,21 +1,6 @@
 var searchData=
 [
-  ['datadistributionchangedstate_282',['dataDistributionChangedState',['../DataDistributionManager_8h.html#abf93f62dbfc628cd308c5e21c1ebbcbd',1,'DataDistributionManager.h']]],
-  ['datadistributionchangingstate_283',['dataDistributionChangingState',['../DataDistributionManager_8h.html#a78e240dc36509ffc5462e74c83b58888',1,'DataDistributionManager.h']]],
-  ['datadistributioncompletelydisconnectedcb_284',['dataDistributionCompletelyDisconnectedCb',['../DataDistributionManager_8h.html#a16c9a17e944316f05b6fddf8c61de982',1,'DataDistributionManager.h']]],
-  ['datadistributionconfigurationcb_285',['dataDistributionConfigurationCb',['../DataDistributionManager_8h.html#a71e71ac3591ba5b8ad7663267d198a04',1,'DataDistributionManager.h']]],
-  ['datadistributionfirststatechange_286',['dataDistributionFirstStateChange',['../DataDistributionManager_8h.html#a94abf5ea7f8a5d081fab0d0b005a96fb',1,'DataDistributionManager.h']]],
-  ['datadistributionloggingcb_287',['dataDistributionLoggingCb',['../DataDistributionManager_8h.html#a6255aaf890113af083576abeaa1d7333',1,'DataDistributionManager.h']]],
-  ['datadistributiononclusterstatechange_288',['dataDistributionOnClusterStateChange',['../DataDistributionManager_8h.html#a241947e9716bf6b5133896273dba6340',1,'DataDistributionManager.h']]],
-  ['datadistributiononmultipleprimary_289',['dataDistributionOnMultiplePrimary',['../DataDistributionManager_8h.html#a6bb363ec1dcb8c13091cd2d7ff2dbc7c',1,'DataDistributionManager.h']]],
-  ['datadistributiononrequestedstate_290',['dataDistributionOnRequestedState',['../DataDistributionManager_8h.html#a54e05edf69645f19e30a58257c43272e',1,'DataDistributionManager.h']]],
-  ['datadistributiononstatechange_291',['dataDistributionOnStateChange',['../DataDistributionManager_8h.html#a44a475965f85e19d43872219765dd011',1,'DataDistributionManager.h']]],
-  ['datadistributiononstateready_292',['dataDistributionOnStateReady',['../DataDistributionManager_8h.html#ace2227b34ffe00af6275f96bd8c0e297',1,'DataDistributionManager.h']]],
-  ['datadistributionunderlyingevent_293',['dataDistributionUnderlyingEvent',['../DataDistributionManager_8h.html#ae3f6f4fd03cfef9eb3f6dd461a07df5c',1,'DataDistributionManager.h']]],
-  ['ddm_5fchannel_5fdirection_294',['DDM_CHANNEL_DIRECTION',['../DataDistributionManagerEnums_8h.html#ab3b4d1f1cf9b18887d76ea261dc0c47c',1,'DataDistributionManagerEnums.h']]],
-  ['ddm_5fclusterevent_295',['DDM_CLUSTEREVENT',['../DataDistributionManagerEnums_8h.html#a354ad40e9e999ca7c31088e244daee91',1,'DataDistributionManagerEnums.h']]],
-  ['ddm_5fgeneral_5fparameter_296',['DDM_GENERAL_PARAMETER',['../DataDistributionManagerEnums_8h.html#a0c86f74eba4db30a27157f14f1fa8aa8',1,'DataDistributionManagerEnums.h']]],
-  ['ddm_5finstance_5fstate_297',['DDM_INSTANCE_STATE',['../DataDistributionManagerEnums_8h.html#ae7e5a7bdbdbc20ec961f53a21fe1eca7',1,'DataDistributionManagerEnums.h']]],
-  ['ddm_5flog_5flevel_298',['DDM_LOG_LEVEL',['../DataDistributionManagerEnums_8h.html#abdf142af4f780fc927bae0a54be7c571',1,'DataDistributionManagerEnums.h']]],
-  ['ddm_5funderlying_5ferror_5fcondition_299',['DDM_UNDERLYING_ERROR_CONDITION',['../DataDistributionManagerEnums_8h.html#a4a20b2266bdd6a48805da4cfdaac7eb5',1,'DataDistributionManagerEnums.h']]]
+  ['channel_5fhandle_302',['CHANNEL_HANDLE',['../DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37',1,'DataDistributionManagerTypes.h']]],
+  ['clusterhealth_303',['ClusterHealth',['../DataDistributionManager_8h.html#a71c2fc848247069989b944f4ba700987',1,'DataDistributionManager.h']]],
+  ['clusterhealthiterator_304',['ClusterHealthIterator',['../DataDistributionManager_8h.html#a6dc72cdfd4e02fbc4c83dc83f4ed3e68',1,'DataDistributionManager.h']]]
 ];

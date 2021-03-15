@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('DataDistributionManager_8h.html',''); 
 
 <p>DataDistributionManager library.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="DataDistributionManagerEnums_8h_source.html">DataDistributionManagerEnums.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="DataDistributionManagerTypes_8h_source.html">DataDistributionManagerTypes.h</a>&quot;</code><br />
 </div>
 <p><a href="DataDistributionManager_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -116,6 +116,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to reports information from transport subsystem.  <a href="structUnderlyingEventData.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannel.html">IDataDistributionChannel</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The basic interface for all channel.  <a href="classIDataDistributionChannel.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIDataDistributionChannelCallback.html">IDataDistributionChannelCallback</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The C++ callback interface to be externally implemented.  <a href="classIDataDistributionChannelCallback.html#details">More...</a><br /></td></tr>
@@ -150,47 +153,47 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a71e71ac3591ba5b8ad7663267d198a04"><td class="memItemLeft" align="right" valign="top">typedef const char *(__cdecl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a71e71ac3591ba5b8ad7663267d198a04">dataDistributionConfigurationCb</a>) (const void *opaque, const char *channelName, const char *key, const char *value)</td></tr>
-<tr class="memdesc:a71e71ac3591ba5b8ad7663267d198a04"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked for each key-value in the configuration.  <a href="DataDistributionManager_8h.html#a71e71ac3591ba5b8ad7663267d198a04">More...</a><br /></td></tr>
-<tr class="separator:a71e71ac3591ba5b8ad7663267d198a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6255aaf890113af083576abeaa1d7333"><td class="memItemLeft" align="right" valign="top">typedef void(__cdecl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a6255aaf890113af083576abeaa1d7333">dataDistributionLoggingCb</a>) (const void *opaque, const <a class="el" href="DataDistributionManagerEnums_8h.html#a4b6dc0935a7cadbc0cb564ffb12bec1e">DDM_LOG_LEVEL</a> level, const char *source, const char *function, const char *logStr)</td></tr>
-<tr class="memdesc:a6255aaf890113af083576abeaa1d7333"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked when a log is emitted from subsystem.  <a href="DataDistributionManager_8h.html#a6255aaf890113af083576abeaa1d7333">More...</a><br /></td></tr>
-<tr class="separator:a6255aaf890113af083576abeaa1d7333"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16c9a17e944316f05b6fddf8c61de982"><td class="memItemLeft" align="right" valign="top">typedef void(__cdecl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a16c9a17e944316f05b6fddf8c61de982">dataDistributionCompletelyDisconnectedCb</a>) (const void *opaque, const char *channelName, const char *reason)</td></tr>
-<tr class="memdesc:a16c9a17e944316f05b6fddf8c61de982"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked on a complete disconnection .  <a href="DataDistributionManager_8h.html#a16c9a17e944316f05b6fddf8c61de982">More...</a><br /></td></tr>
-<tr class="separator:a16c9a17e944316f05b6fddf8c61de982"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d18746ddc7cd645ab18545f7591893d"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="DataDistributionManagerEnums_8h.html#a891cdc36a12080884b91ea4c29fb0a91">DDM_EXPORT</a> <a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a4d18746ddc7cd645ab18545f7591893d">UnderlyingEventData</a></td></tr>
+<tr class="memitem:a456e6b68e86d27c33d3e66d3f8831e13"><td class="memItemLeft" align="right" valign="top">typedef const char *(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a456e6b68e86d27c33d3e66d3f8831e13">dataDistributionConfigurationCb</a>) (const void *opaque, const char *channelName, const char *key, const char *value)</td></tr>
+<tr class="memdesc:a456e6b68e86d27c33d3e66d3f8831e13"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked for each key-value in the configuration.  <a href="DataDistributionManager_8h.html#a456e6b68e86d27c33d3e66d3f8831e13">More...</a><br /></td></tr>
+<tr class="separator:a456e6b68e86d27c33d3e66d3f8831e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4ea675d2fc41d1071d5912b73914618"><td class="memItemLeft" align="right" valign="top">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#ab4ea675d2fc41d1071d5912b73914618">dataDistributionLoggingCb</a>) (const void *opaque, const <a class="el" href="DataDistributionManagerEnums_8h.html#a4b6dc0935a7cadbc0cb564ffb12bec1e">DDM_LOG_LEVEL</a> level, const char *source, const char *function, const char *logStr)</td></tr>
+<tr class="memdesc:ab4ea675d2fc41d1071d5912b73914618"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked when a log is emitted from subsystem.  <a href="DataDistributionManager_8h.html#ab4ea675d2fc41d1071d5912b73914618">More...</a><br /></td></tr>
+<tr class="separator:ab4ea675d2fc41d1071d5912b73914618"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43a62c8b625987f642a5acca30b12a63"><td class="memItemLeft" align="right" valign="top">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a43a62c8b625987f642a5acca30b12a63">dataDistributionCompletelyDisconnectedCb</a>) (const void *opaque, const char *channelName, const char *reason)</td></tr>
+<tr class="memdesc:a43a62c8b625987f642a5acca30b12a63"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked on a complete disconnection .  <a href="DataDistributionManager_8h.html#a43a62c8b625987f642a5acca30b12a63">More...</a><br /></td></tr>
+<tr class="separator:a43a62c8b625987f642a5acca30b12a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d18746ddc7cd645ab18545f7591893d"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="DataDistributionManagerTypes_8h.html#a891cdc36a12080884b91ea4c29fb0a91">DDM_EXPORT</a> <a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a4d18746ddc7cd645ab18545f7591893d">UnderlyingEventData</a></td></tr>
 <tr class="memdesc:a4d18746ddc7cd645ab18545f7591893d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to reports information from transport subsystem.  <a href="DataDistributionManager_8h.html#a4d18746ddc7cd645ab18545f7591893d">More...</a><br /></td></tr>
 <tr class="separator:a4d18746ddc7cd645ab18545f7591893d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b5aa412599c9db2d91a09aa54359978"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="DataDistributionManagerEnums_8h.html#a891cdc36a12080884b91ea4c29fb0a91">DDM_EXPORT</a> <a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a3b5aa412599c9db2d91a09aa54359978">pUnderlyingEventData</a></td></tr>
+<tr class="memitem:a3b5aa412599c9db2d91a09aa54359978"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="DataDistributionManagerTypes_8h.html#a891cdc36a12080884b91ea4c29fb0a91">DDM_EXPORT</a> <a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a3b5aa412599c9db2d91a09aa54359978">pUnderlyingEventData</a></td></tr>
 <tr class="separator:a3b5aa412599c9db2d91a09aa54359978"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3f6f4fd03cfef9eb3f6dd461a07df5c"><td class="memItemLeft" align="right" valign="top">typedef void(__cdecl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#ae3f6f4fd03cfef9eb3f6dd461a07df5c">dataDistributionUnderlyingEvent</a>) (const void *opaque, const HANDLE channelHandle, const <a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a> *uEvent)</td></tr>
-<tr class="memdesc:ae3f6f4fd03cfef9eb3f6dd461a07df5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked to report <a class="el" href="structUnderlyingEventData.html" title="Class to reports information from transport subsystem.">UnderlyingEventData</a>.  <a href="DataDistributionManager_8h.html#ae3f6f4fd03cfef9eb3f6dd461a07df5c">More...</a><br /></td></tr>
-<tr class="separator:ae3f6f4fd03cfef9eb3f6dd461a07df5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a241947e9716bf6b5133896273dba6340"><td class="memItemLeft" align="right" valign="top">typedef void(__cdecl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a241947e9716bf6b5133896273dba6340">dataDistributionOnClusterStateChange</a>) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a9a62843916107690600391b9a9c2e5c3">DDM_CLUSTEREVENT</a> change, int64_t serverid)</td></tr>
-<tr class="memdesc:a241947e9716bf6b5133896273dba6340"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked to report cluster state change.  <a href="DataDistributionManager_8h.html#a241947e9716bf6b5133896273dba6340">More...</a><br /></td></tr>
-<tr class="separator:a241947e9716bf6b5133896273dba6340"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44a475965f85e19d43872219765dd011"><td class="memItemLeft" align="right" valign="top">typedef void(__cdecl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a44a475965f85e19d43872219765dd011">dataDistributionOnStateChange</a>) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> newState, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> oldState)</td></tr>
-<tr class="memdesc:a44a475965f85e19d43872219765dd011"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked to report a state change.  <a href="DataDistributionManager_8h.html#a44a475965f85e19d43872219765dd011">More...</a><br /></td></tr>
-<tr class="separator:a44a475965f85e19d43872219765dd011"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace2227b34ffe00af6275f96bd8c0e297"><td class="memItemLeft" align="right" valign="top">typedef void(__cdecl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#ace2227b34ffe00af6275f96bd8c0e297">dataDistributionOnStateReady</a>) (void *opaque, void *pState, int64_t len)</td></tr>
-<tr class="memdesc:ace2227b34ffe00af6275f96bd8c0e297"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked when a state transfer is completed.  <a href="DataDistributionManager_8h.html#ace2227b34ffe00af6275f96bd8c0e297">More...</a><br /></td></tr>
-<tr class="separator:ace2227b34ffe00af6275f96bd8c0e297"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54e05edf69645f19e30a58257c43272e"><td class="memItemLeft" align="right" valign="top">typedef void(__cdecl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a54e05edf69645f19e30a58257c43272e">dataDistributionOnRequestedState</a>) (void *opaque, void **pState, size_t *len)</td></tr>
-<tr class="memdesc:a54e05edf69645f19e30a58257c43272e"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked when a state transfer is requested.  <a href="DataDistributionManager_8h.html#a54e05edf69645f19e30a58257c43272e">More...</a><br /></td></tr>
-<tr class="separator:a54e05edf69645f19e30a58257c43272e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bb363ec1dcb8c13091cd2d7ff2dbc7c"><td class="memItemLeft" align="right" valign="top">typedef void(__cdecl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a6bb363ec1dcb8c13091cd2d7ff2dbc7c">dataDistributionOnMultiplePrimary</a>) (void *opaque, int64_t myId, int64_t otherId)</td></tr>
-<tr class="memdesc:a6bb363ec1dcb8c13091cd2d7ff2dbc7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked when multiple primary server are detected.  <a href="DataDistributionManager_8h.html#a6bb363ec1dcb8c13091cd2d7ff2dbc7c">More...</a><br /></td></tr>
-<tr class="separator:a6bb363ec1dcb8c13091cd2d7ff2dbc7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94abf5ea7f8a5d081fab0d0b005a96fb"><td class="memItemLeft" align="right" valign="top">typedef void(__cdecl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a94abf5ea7f8a5d081fab0d0b005a96fb">dataDistributionFirstStateChange</a>) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> newState)</td></tr>
-<tr class="memdesc:a94abf5ea7f8a5d081fab0d0b005a96fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked to report a first state change.  <a href="DataDistributionManager_8h.html#a94abf5ea7f8a5d081fab0d0b005a96fb">More...</a><br /></td></tr>
-<tr class="separator:a94abf5ea7f8a5d081fab0d0b005a96fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78e240dc36509ffc5462e74c83b58888"><td class="memItemLeft" align="right" valign="top">typedef void(__cdecl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a78e240dc36509ffc5462e74c83b58888">dataDistributionChangingState</a>) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> actualState, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> futureState)</td></tr>
-<tr class="memdesc:a78e240dc36509ffc5462e74c83b58888"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked to report a starting instance state change.  <a href="DataDistributionManager_8h.html#a78e240dc36509ffc5462e74c83b58888">More...</a><br /></td></tr>
-<tr class="separator:a78e240dc36509ffc5462e74c83b58888"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf93f62dbfc628cd308c5e21c1ebbcbd"><td class="memItemLeft" align="right" valign="top">typedef void(__cdecl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#abf93f62dbfc628cd308c5e21c1ebbcbd">dataDistributionChangedState</a>) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> actualState)</td></tr>
-<tr class="memdesc:abf93f62dbfc628cd308c5e21c1ebbcbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked to report a finished instance state change.  <a href="DataDistributionManager_8h.html#abf93f62dbfc628cd308c5e21c1ebbcbd">More...</a><br /></td></tr>
-<tr class="separator:abf93f62dbfc628cd308c5e21c1ebbcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a9bba9f9138207ff6079c33470f49dc"><td class="memItemLeft" align="right" valign="top">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a9a9bba9f9138207ff6079c33470f49dc">dataDistributionUnderlyingEvent</a>) (const void *opaque, const <a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a> channelHandle, const <a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a> *uEvent)</td></tr>
+<tr class="memdesc:a9a9bba9f9138207ff6079c33470f49dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked to report <a class="el" href="structUnderlyingEventData.html" title="Class to reports information from transport subsystem.">UnderlyingEventData</a>.  <a href="DataDistributionManager_8h.html#a9a9bba9f9138207ff6079c33470f49dc">More...</a><br /></td></tr>
+<tr class="separator:a9a9bba9f9138207ff6079c33470f49dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f3e4b2c7ddcd59e32551441a71321b"><td class="memItemLeft" align="right" valign="top">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a22f3e4b2c7ddcd59e32551441a71321b">dataDistributionOnClusterStateChange</a>) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a9a62843916107690600391b9a9c2e5c3">DDM_CLUSTEREVENT</a> change, int64_t serverid)</td></tr>
+<tr class="memdesc:a22f3e4b2c7ddcd59e32551441a71321b"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked to report cluster state change.  <a href="DataDistributionManager_8h.html#a22f3e4b2c7ddcd59e32551441a71321b">More...</a><br /></td></tr>
+<tr class="separator:a22f3e4b2c7ddcd59e32551441a71321b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86fc93ad4df4e7096f1740d2343947d0"><td class="memItemLeft" align="right" valign="top">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a86fc93ad4df4e7096f1740d2343947d0">dataDistributionOnStateChange</a>) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> newState, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> oldState)</td></tr>
+<tr class="memdesc:a86fc93ad4df4e7096f1740d2343947d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked to report a state change.  <a href="DataDistributionManager_8h.html#a86fc93ad4df4e7096f1740d2343947d0">More...</a><br /></td></tr>
+<tr class="separator:a86fc93ad4df4e7096f1740d2343947d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0e6575710b717031fe0e06fbf1d299e"><td class="memItemLeft" align="right" valign="top">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#af0e6575710b717031fe0e06fbf1d299e">dataDistributionOnStateReady</a>) (void *opaque, void *pState, int64_t len)</td></tr>
+<tr class="memdesc:af0e6575710b717031fe0e06fbf1d299e"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked when a state transfer is completed.  <a href="DataDistributionManager_8h.html#af0e6575710b717031fe0e06fbf1d299e">More...</a><br /></td></tr>
+<tr class="separator:af0e6575710b717031fe0e06fbf1d299e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4db7b2281ed6353eebde22fbd40a56e4"><td class="memItemLeft" align="right" valign="top">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a4db7b2281ed6353eebde22fbd40a56e4">dataDistributionOnRequestedState</a>) (void *opaque, void **pState, size_t *len)</td></tr>
+<tr class="memdesc:a4db7b2281ed6353eebde22fbd40a56e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked when a state transfer is requested.  <a href="DataDistributionManager_8h.html#a4db7b2281ed6353eebde22fbd40a56e4">More...</a><br /></td></tr>
+<tr class="separator:a4db7b2281ed6353eebde22fbd40a56e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c5e533d1c69c398d7205f3c76db6c7c"><td class="memItemLeft" align="right" valign="top">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a6c5e533d1c69c398d7205f3c76db6c7c">dataDistributionOnMultiplePrimary</a>) (void *opaque, int64_t myId, int64_t otherId)</td></tr>
+<tr class="memdesc:a6c5e533d1c69c398d7205f3c76db6c7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked when multiple primary server are detected.  <a href="DataDistributionManager_8h.html#a6c5e533d1c69c398d7205f3c76db6c7c">More...</a><br /></td></tr>
+<tr class="separator:a6c5e533d1c69c398d7205f3c76db6c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b8c96249568140870ee39da2f3c27d6"><td class="memItemLeft" align="right" valign="top">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a7b8c96249568140870ee39da2f3c27d6">dataDistributionFirstStateChange</a>) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> newState)</td></tr>
+<tr class="memdesc:a7b8c96249568140870ee39da2f3c27d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked to report a first state change.  <a href="DataDistributionManager_8h.html#a7b8c96249568140870ee39da2f3c27d6">More...</a><br /></td></tr>
+<tr class="separator:a7b8c96249568140870ee39da2f3c27d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa05de4eda31720b0a5e401eea9400212"><td class="memItemLeft" align="right" valign="top">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#aa05de4eda31720b0a5e401eea9400212">dataDistributionChangingState</a>) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> actualState, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> futureState)</td></tr>
+<tr class="memdesc:aa05de4eda31720b0a5e401eea9400212"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked to report a starting instance state change.  <a href="DataDistributionManager_8h.html#aa05de4eda31720b0a5e401eea9400212">More...</a><br /></td></tr>
+<tr class="separator:aa05de4eda31720b0a5e401eea9400212"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9b60f66c9febabc51e7434b29da6ecc"><td class="memItemLeft" align="right" valign="top">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#ae9b60f66c9febabc51e7434b29da6ecc">dataDistributionChangedState</a>) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> actualState)</td></tr>
+<tr class="memdesc:ae9b60f66c9febabc51e7434b29da6ecc"><td class="mdescLeft">&#160;</td><td class="mdescRight">C-style callback invoked to report a finished instance state change.  <a href="DataDistributionManager_8h.html#ae9b60f66c9febabc51e7434b29da6ecc">More...</a><br /></td></tr>
+<tr class="separator:ae9b60f66c9febabc51e7434b29da6ecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71c2fc848247069989b944f4ba700987"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; int64_t, <a class="el" href="structClusterHealthElement.html">ClusterHealthElement</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManager_8h.html#a71c2fc848247069989b944f4ba700987">ClusterHealth</a></td></tr>
 <tr class="memdesc:a71c2fc848247069989b944f4ba700987"><td class="mdescLeft">&#160;</td><td class="mdescRight">Association map between server id and <a class="el" href="structClusterHealthElement.html" title="Contains information needed from the cluster management.">ClusterHealthElement</a>.  <a href="DataDistributionManager_8h.html#a71c2fc848247069989b944f4ba700987">More...</a><br /></td></tr>
 <tr class="separator:a71c2fc848247069989b944f4ba700987"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -234,14 +237,14 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a id="abf93f62dbfc628cd308c5e21c1ebbcbd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf93f62dbfc628cd308c5e21c1ebbcbd">&#9670;&nbsp;</a></span>dataDistributionChangedState</h2>
+<a id="ae9b60f66c9febabc51e7434b29da6ecc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9b60f66c9febabc51e7434b29da6ecc">&#9670;&nbsp;</a></span>dataDistributionChangedState</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(__cdecl * dataDistributionChangedState) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> actualState)</td>
+          <td class="memname">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> * dataDistributionChangedState) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> actualState)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -253,14 +256,14 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a id="a78e240dc36509ffc5462e74c83b58888"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78e240dc36509ffc5462e74c83b58888">&#9670;&nbsp;</a></span>dataDistributionChangingState</h2>
+<a id="aa05de4eda31720b0a5e401eea9400212"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa05de4eda31720b0a5e401eea9400212">&#9670;&nbsp;</a></span>dataDistributionChangingState</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(__cdecl * dataDistributionChangingState) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> actualState, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> futureState)</td>
+          <td class="memname">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> * dataDistributionChangingState) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> actualState, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> futureState)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -272,14 +275,14 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a id="a16c9a17e944316f05b6fddf8c61de982"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16c9a17e944316f05b6fddf8c61de982">&#9670;&nbsp;</a></span>dataDistributionCompletelyDisconnectedCb</h2>
+<a id="a43a62c8b625987f642a5acca30b12a63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43a62c8b625987f642a5acca30b12a63">&#9670;&nbsp;</a></span>dataDistributionCompletelyDisconnectedCb</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(__cdecl * dataDistributionCompletelyDisconnectedCb) (const void *opaque, const char *channelName, const char *reason)</td>
+          <td class="memname">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> * dataDistributionCompletelyDisconnectedCb) (const void *opaque, const char *channelName, const char *reason)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -290,14 +293,14 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a id="a71e71ac3591ba5b8ad7663267d198a04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71e71ac3591ba5b8ad7663267d198a04">&#9670;&nbsp;</a></span>dataDistributionConfigurationCb</h2>
+<a id="a456e6b68e86d27c33d3e66d3f8831e13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a456e6b68e86d27c33d3e66d3f8831e13">&#9670;&nbsp;</a></span>dataDistributionConfigurationCb</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef const char*(__cdecl * dataDistributionConfigurationCb) (const void *opaque, const char *channelName, const char *key, const char *value)</td>
+          <td class="memname">typedef const char*(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> * dataDistributionConfigurationCb) (const void *opaque, const char *channelName, const char *key, const char *value)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -308,14 +311,14 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a id="a94abf5ea7f8a5d081fab0d0b005a96fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94abf5ea7f8a5d081fab0d0b005a96fb">&#9670;&nbsp;</a></span>dataDistributionFirstStateChange</h2>
+<a id="a7b8c96249568140870ee39da2f3c27d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b8c96249568140870ee39da2f3c27d6">&#9670;&nbsp;</a></span>dataDistributionFirstStateChange</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(__cdecl * dataDistributionFirstStateChange) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> newState)</td>
+          <td class="memname">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> * dataDistributionFirstStateChange) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> newState)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -327,14 +330,14 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a id="a6255aaf890113af083576abeaa1d7333"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6255aaf890113af083576abeaa1d7333">&#9670;&nbsp;</a></span>dataDistributionLoggingCb</h2>
+<a id="ab4ea675d2fc41d1071d5912b73914618"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4ea675d2fc41d1071d5912b73914618">&#9670;&nbsp;</a></span>dataDistributionLoggingCb</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(__cdecl * dataDistributionLoggingCb) (const void *opaque, const <a class="el" href="DataDistributionManagerEnums_8h.html#a4b6dc0935a7cadbc0cb564ffb12bec1e">DDM_LOG_LEVEL</a> level, const char *source, const char *function, const char *logStr)</td>
+          <td class="memname">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> * dataDistributionLoggingCb) (const void *opaque, const <a class="el" href="DataDistributionManagerEnums_8h.html#a4b6dc0935a7cadbc0cb564ffb12bec1e">DDM_LOG_LEVEL</a> level, const char *source, const char *function, const char *logStr)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -346,14 +349,14 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a id="a241947e9716bf6b5133896273dba6340"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a241947e9716bf6b5133896273dba6340">&#9670;&nbsp;</a></span>dataDistributionOnClusterStateChange</h2>
+<a id="a22f3e4b2c7ddcd59e32551441a71321b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22f3e4b2c7ddcd59e32551441a71321b">&#9670;&nbsp;</a></span>dataDistributionOnClusterStateChange</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(__cdecl * dataDistributionOnClusterStateChange) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a9a62843916107690600391b9a9c2e5c3">DDM_CLUSTEREVENT</a> change, int64_t serverid)</td>
+          <td class="memname">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> * dataDistributionOnClusterStateChange) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a9a62843916107690600391b9a9c2e5c3">DDM_CLUSTEREVENT</a> change, int64_t serverid)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -365,14 +368,14 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a id="a6bb363ec1dcb8c13091cd2d7ff2dbc7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bb363ec1dcb8c13091cd2d7ff2dbc7c">&#9670;&nbsp;</a></span>dataDistributionOnMultiplePrimary</h2>
+<a id="a6c5e533d1c69c398d7205f3c76db6c7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c5e533d1c69c398d7205f3c76db6c7c">&#9670;&nbsp;</a></span>dataDistributionOnMultiplePrimary</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(__cdecl * dataDistributionOnMultiplePrimary) (void *opaque, int64_t myId, int64_t otherId)</td>
+          <td class="memname">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> * dataDistributionOnMultiplePrimary) (void *opaque, int64_t myId, int64_t otherId)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -384,14 +387,14 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a id="a54e05edf69645f19e30a58257c43272e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54e05edf69645f19e30a58257c43272e">&#9670;&nbsp;</a></span>dataDistributionOnRequestedState</h2>
+<a id="a4db7b2281ed6353eebde22fbd40a56e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4db7b2281ed6353eebde22fbd40a56e4">&#9670;&nbsp;</a></span>dataDistributionOnRequestedState</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(__cdecl * dataDistributionOnRequestedState) (void *opaque, void **pState, size_t *len)</td>
+          <td class="memname">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> * dataDistributionOnRequestedState) (void *opaque, void **pState, size_t *len)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -403,14 +406,14 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a id="a44a475965f85e19d43872219765dd011"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44a475965f85e19d43872219765dd011">&#9670;&nbsp;</a></span>dataDistributionOnStateChange</h2>
+<a id="a86fc93ad4df4e7096f1740d2343947d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86fc93ad4df4e7096f1740d2343947d0">&#9670;&nbsp;</a></span>dataDistributionOnStateChange</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(__cdecl * dataDistributionOnStateChange) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> newState, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> oldState)</td>
+          <td class="memname">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> * dataDistributionOnStateChange) (void *opaque, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> newState, <a class="el" href="DataDistributionManagerEnums_8h.html#a8fc6dfc6169ca3b19455c2df2eefb671">DDM_INSTANCE_STATE</a> oldState)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -422,14 +425,14 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a id="ace2227b34ffe00af6275f96bd8c0e297"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace2227b34ffe00af6275f96bd8c0e297">&#9670;&nbsp;</a></span>dataDistributionOnStateReady</h2>
+<a id="af0e6575710b717031fe0e06fbf1d299e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0e6575710b717031fe0e06fbf1d299e">&#9670;&nbsp;</a></span>dataDistributionOnStateReady</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(__cdecl * dataDistributionOnStateReady) (void *opaque, void *pState, int64_t len)</td>
+          <td class="memname">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> * dataDistributionOnStateReady) (void *opaque, void *pState, int64_t len)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -441,14 +444,14 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a id="ae3f6f4fd03cfef9eb3f6dd461a07df5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3f6f4fd03cfef9eb3f6dd461a07df5c">&#9670;&nbsp;</a></span>dataDistributionUnderlyingEvent</h2>
+<a id="a9a9bba9f9138207ff6079c33470f49dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a9bba9f9138207ff6079c33470f49dc">&#9670;&nbsp;</a></span>dataDistributionUnderlyingEvent</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(__cdecl * dataDistributionUnderlyingEvent) (const void *opaque, const HANDLE channelHandle, const <a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a> *uEvent)</td>
+          <td class="memname">typedef void(<a class="el" href="DataDistributionManagerTypes_8h.html#aeaecb40738dfffc6b60d7c5c969fb343">FUNCALL</a> * dataDistributionUnderlyingEvent) (const void *opaque, const <a class="el" href="DataDistributionManagerTypes_8h.html#a3df1b836c59952e97da684115cb9ef37">CHANNEL_HANDLE</a> channelHandle, const <a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a> *uEvent)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -466,7 +469,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="DataDistributionManagerEnums_8h.html#a891cdc36a12080884b91ea4c29fb0a91">DDM_EXPORT</a> <a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a> * <a class="el" href="DataDistributionManager_8h.html#a3b5aa412599c9db2d91a09aa54359978">pUnderlyingEventData</a></td>
+          <td class="memname">typedef struct <a class="el" href="DataDistributionManagerTypes_8h.html#a891cdc36a12080884b91ea4c29fb0a91">DDM_EXPORT</a> <a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a> * <a class="el" href="DataDistributionManager_8h.html#a3b5aa412599c9db2d91a09aa54359978">pUnderlyingEventData</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -480,7 +483,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="DataDistributionManagerEnums_8h.html#a891cdc36a12080884b91ea4c29fb0a91">DDM_EXPORT</a> <a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a> <a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a></td>
+          <td class="memname">typedef struct <a class="el" href="DataDistributionManagerTypes_8h.html#a891cdc36a12080884b91ea4c29fb0a91">DDM_EXPORT</a> <a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a> <a class="el" href="structUnderlyingEventData.html">UnderlyingEventData</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
