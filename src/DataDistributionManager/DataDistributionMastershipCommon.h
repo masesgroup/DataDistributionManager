@@ -141,7 +141,7 @@ protected:
 	void AddRandomToMyTime();
 
 	virtual int SendKeepAlive();
-	virtual void OnUnderlyingEvent(const CHANNEL_HANDLE channelHandle, const UnderlyingEventData* uEvent);
+	virtual void OnUnderlyingEvent(const CHANNEL_HANDLE_PARAMETER, const UnderlyingEventData* uEvent);
 	virtual void OnCondition(const char* channelName, OPERATION_RESULT condition, int nativeCode, const char* subSystemReason);
 	virtual void OnALIVE(ALIVE* pALIVE);
 	virtual void OnHELLO(HELLO_WELCOME* pHELLO_WELCOME);

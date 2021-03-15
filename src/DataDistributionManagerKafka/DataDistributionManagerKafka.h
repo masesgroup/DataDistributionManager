@@ -40,17 +40,17 @@ public:
 	virtual ~DataDistributionManagerKafka();
 	OPERATION_RESULT Initialize();
 	CHANNEL_HANDLE CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION::ALL, const char* arrayParams[] = NULL, int len = NULL);
-	OPERATION_RESULT StartChannel(CHANNEL_HANDLE channelHandle, unsigned long dwMilliseconds);
-	OPERATION_RESULT StopChannel(CHANNEL_HANDLE channelHandle, unsigned long dwMilliseconds);
-	void SetParameter(CHANNEL_HANDLE channelHandle, const char* paramName, const char* paramValue);
-	const char* GetParameter(CHANNEL_HANDLE channelHandle, const char* paramName);
-	OPERATION_RESULT Lock(CHANNEL_HANDLE channelHandle, unsigned long timeout);
-	OPERATION_RESULT Unlock(CHANNEL_HANDLE channelHandle);
-	OPERATION_RESULT SeekChannel(CHANNEL_HANDLE channelHandle, size_t position);
-	OPERATION_RESULT DeleteChannel(CHANNEL_HANDLE channelHandle);
-	OPERATION_RESULT WriteOnChannel(CHANNEL_HANDLE channelHandle, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP);
-	OPERATION_RESULT ReadFromChannel(CHANNEL_HANDLE channelHandle, int64_t offset, size_t *dataLen, void **param);
-	OPERATION_RESULT ChangeChannelDirection(CHANNEL_HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction);
+	OPERATION_RESULT StartChannel(CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds);
+	OPERATION_RESULT StopChannel(CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds);
+	void SetParameter(CHANNEL_HANDLE_PARAMETER, const char* paramName, const char* paramValue);
+	const char* GetParameter(CHANNEL_HANDLE_PARAMETER, const char* paramName);
+	OPERATION_RESULT Lock(CHANNEL_HANDLE_PARAMETER, unsigned long timeout);
+	OPERATION_RESULT Unlock(CHANNEL_HANDLE_PARAMETER);
+	OPERATION_RESULT SeekChannel(CHANNEL_HANDLE_PARAMETER, size_t position);
+	OPERATION_RESULT DeleteChannel(CHANNEL_HANDLE_PARAMETER);
+	OPERATION_RESULT WriteOnChannel(CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP);
+	OPERATION_RESULT ReadFromChannel(CHANNEL_HANDLE_PARAMETER, int64_t offset, size_t *dataLen, void **param);
+	OPERATION_RESULT ChangeChannelDirection(CHANNEL_HANDLE_PARAMETER, DDM_CHANNEL_DIRECTION direction);
 
 	int GetServerLostTimeout() { return m_ServerLostTimeout; };
 private:

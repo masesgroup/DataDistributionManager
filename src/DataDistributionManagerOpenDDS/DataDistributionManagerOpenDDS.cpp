@@ -383,7 +383,7 @@ OPERATION_RESULT DataDistributionManagerOpenDDS::Initialize()
 	return hr;
 }
 
-OPERATION_RESULT DataDistributionManagerOpenDDS::Lock(CHANNEL_HANDLE channelHandle, unsigned long timeout)
+OPERATION_RESULT DataDistributionManagerOpenDDS::Lock(CHANNEL_HANDLE_PARAMETER, unsigned long timeout)
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "Lock");
 
@@ -398,7 +398,7 @@ OPERATION_RESULT DataDistributionManagerOpenDDS::Lock(CHANNEL_HANDLE channelHand
 	return pChannelConfiguration->SetLockState();
 }
 
-OPERATION_RESULT DataDistributionManagerOpenDDS::Unlock(CHANNEL_HANDLE channelHandle)
+OPERATION_RESULT DataDistributionManagerOpenDDS::Unlock(CHANNEL_HANDLE_PARAMETER)
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "Unlock");
 
@@ -1233,7 +1233,7 @@ CHANNEL_HANDLE DataDistributionManagerOpenDDS::CreateChannel(const char* channel
 	return pChannelConfiguration;
 }
 
-OPERATION_RESULT DataDistributionManagerOpenDDS::StartChannel(CHANNEL_HANDLE channelHandle, unsigned long dwMilliseconds)
+OPERATION_RESULT DataDistributionManagerOpenDDS::StartChannel(CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds)
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "StartChannel");
 
@@ -1249,7 +1249,7 @@ OPERATION_RESULT DataDistributionManagerOpenDDS::StartChannel(CHANNEL_HANDLE cha
 	return StartConsumerAndWait(pChannelConfiguration, dwMilliseconds);
 }
 
-OPERATION_RESULT DataDistributionManagerOpenDDS::StopChannel(CHANNEL_HANDLE channelHandle, unsigned long dwMilliseconds)
+OPERATION_RESULT DataDistributionManagerOpenDDS::StopChannel(CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds)
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "StopChannel");
 
@@ -1263,7 +1263,7 @@ OPERATION_RESULT DataDistributionManagerOpenDDS::StopChannel(CHANNEL_HANDLE chan
 	return DDM_NO_ERROR_CONDITION;
 }
 
-void DataDistributionManagerOpenDDS::SetParameter(CHANNEL_HANDLE channelHandle, const char* paramName, const char* paramValue)
+void DataDistributionManagerOpenDDS::SetParameter(CHANNEL_HANDLE_PARAMETER, const char* paramName, const char* paramValue)
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "SetParameter");
 
@@ -1336,7 +1336,7 @@ void DataDistributionManagerOpenDDS::SetParameter(CHANNEL_HANDLE channelHandle, 
 	}
 }
 
-const char* DataDistributionManagerOpenDDS::GetParameter(CHANNEL_HANDLE channelHandle, const char* paramName)
+const char* DataDistributionManagerOpenDDS::GetParameter(CHANNEL_HANDLE_PARAMETER, const char* paramName)
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "GetParameter");
 	CAST_CHANNEL(ChannelConfigurationOpenDDS);
@@ -1386,7 +1386,7 @@ const char* DataDistributionManagerOpenDDS::GetParameter(CHANNEL_HANDLE channelH
 	return DataDistributionCommon::GetParameter(channelHandle, paramName);
 }
 
-OPERATION_RESULT DataDistributionManagerOpenDDS::SeekChannel(CHANNEL_HANDLE channelHandle, size_t position)
+OPERATION_RESULT DataDistributionManagerOpenDDS::SeekChannel(CHANNEL_HANDLE_PARAMETER, size_t position)
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "SeekChannel");
 
@@ -1402,7 +1402,7 @@ OPERATION_RESULT DataDistributionManagerOpenDDS::SeekChannel(CHANNEL_HANDLE chan
 	return DDM_NO_ERROR_CONDITION;
 }
 
-OPERATION_RESULT DataDistributionManagerOpenDDS::DeleteChannel(CHANNEL_HANDLE channelHandle)
+OPERATION_RESULT DataDistributionManagerOpenDDS::DeleteChannel(CHANNEL_HANDLE_PARAMETER)
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "DeleteChannel");
 
@@ -1418,7 +1418,7 @@ OPERATION_RESULT DataDistributionManagerOpenDDS::DeleteChannel(CHANNEL_HANDLE ch
 	return DDM_NO_ERROR_CONDITION;
 }
 
-OPERATION_RESULT DataDistributionManagerOpenDDS::WriteOnChannel(CHANNEL_HANDLE channelHandle, const char* key, size_t keyLen, void *buffer, size_t dataLen, const BOOL waitAll, const int64_t timestamp)
+OPERATION_RESULT DataDistributionManagerOpenDDS::WriteOnChannel(CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void *buffer, size_t dataLen, const BOOL waitAll, const int64_t timestamp)
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "WriteOnChannel");
 
@@ -1494,7 +1494,7 @@ OPERATION_RESULT DataDistributionManagerOpenDDS::WriteOnChannel(CHANNEL_HANDLE c
 	return DDM_NO_ERROR_CONDITION;
 }
 
-OPERATION_RESULT DataDistributionManagerOpenDDS::ReadFromChannel(CHANNEL_HANDLE channelHandle, int64_t offset, size_t *dataLen, void **param)
+OPERATION_RESULT DataDistributionManagerOpenDDS::ReadFromChannel(CHANNEL_HANDLE_PARAMETER, int64_t offset, size_t *dataLen, void **param)
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "ReadFromChannel");
 
@@ -1510,7 +1510,7 @@ OPERATION_RESULT DataDistributionManagerOpenDDS::ReadFromChannel(CHANNEL_HANDLE 
 	return DDM_NO_DATA_RETURNED;
 }
 
-OPERATION_RESULT DataDistributionManagerOpenDDS::ChangeChannelDirection(CHANNEL_HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction)
+OPERATION_RESULT DataDistributionManagerOpenDDS::ChangeChannelDirection(CHANNEL_HANDLE_PARAMETER, DDM_CHANNEL_DIRECTION direction)
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "ReadFromChannel");
 	CAST_CHANNEL(ChannelConfigurationOpenDDS);

@@ -240,7 +240,7 @@ struct DataDistributionChannelCallbackContainer
 	IDataDistributionChannelCallback* pcb;
 };
 
-void dataDistributionUnderlyingEventCbJava(const void* opaque, const CHANNEL_HANDLE channelHandle, const UnderlyingEventData* uEvent)
+void dataDistributionUnderlyingEventCbJava(const void* opaque, const CHANNEL_HANDLE_PARAMETER, const UnderlyingEventData* uEvent)
 {
 	BOOL attached;
 	JNIEnv* env = NewEnv("UnderlyingEvent", &attached);

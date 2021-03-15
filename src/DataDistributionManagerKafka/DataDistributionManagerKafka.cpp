@@ -247,7 +247,7 @@ OPERATION_RESULT DataDistributionManagerKafka::Initialize()
 	return DDM_NO_ERROR_CONDITION;
 }
 
-OPERATION_RESULT DataDistributionManagerKafka::Lock(CHANNEL_HANDLE channelHandle, unsigned long timeout)
+OPERATION_RESULT DataDistributionManagerKafka::Lock(CHANNEL_HANDLE_PARAMETER, unsigned long timeout)
 {
 	TRACESTART("DataDistributionManagerKafka", "Lock");
 	CAST_CHANNEL(ChannelConfigurationKafka);
@@ -262,7 +262,7 @@ OPERATION_RESULT DataDistributionManagerKafka::Lock(CHANNEL_HANDLE channelHandle
 	return pChannelConfiguration->SetLockState();
 }
 
-OPERATION_RESULT DataDistributionManagerKafka::Unlock(CHANNEL_HANDLE channelHandle)
+OPERATION_RESULT DataDistributionManagerKafka::Unlock(CHANNEL_HANDLE_PARAMETER)
 {
 	TRACESTART("DataDistributionManagerKafka", "Unlock");
 	CAST_CHANNEL(ChannelConfigurationKafka);
@@ -391,7 +391,7 @@ CHANNEL_HANDLE DataDistributionManagerKafka::CreateChannel(const char* channelNa
 	return pChannelConfiguration;
 }
 
-OPERATION_RESULT DataDistributionManagerKafka::StartChannel(CHANNEL_HANDLE channelHandle, unsigned long dwMilliseconds)
+OPERATION_RESULT DataDistributionManagerKafka::StartChannel(CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds)
 {
 	TRACESTART("DataDistributionManagerKafka", "StartChannel");
 
@@ -411,7 +411,7 @@ OPERATION_RESULT DataDistributionManagerKafka::StartChannel(CHANNEL_HANDLE chann
 	return status;
 }
 
-OPERATION_RESULT DataDistributionManagerKafka::StopChannel(CHANNEL_HANDLE channelHandle, unsigned long dwMilliseconds)
+OPERATION_RESULT DataDistributionManagerKafka::StopChannel(CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds)
 {
 	TRACESTART("DataDistributionManagerKafka", "StopChannel");
 	CAST_CHANNEL(ChannelConfigurationKafka);
@@ -427,7 +427,7 @@ OPERATION_RESULT DataDistributionManagerKafka::StopChannel(CHANNEL_HANDLE channe
 	return DDM_NO_ERROR_CONDITION;
 }
 
-void DataDistributionManagerKafka::SetParameter(CHANNEL_HANDLE channelHandle, const char* paramName, const char* paramValue)
+void DataDistributionManagerKafka::SetParameter(CHANNEL_HANDLE_PARAMETER, const char* paramName, const char* paramValue)
 {
 	TRACESTART("DataDistributionManagerKafka", "SetParameter");
 
@@ -525,7 +525,7 @@ static const char* ConvertIToA(size_t value)
 #endif
 }
 
-const char* DataDistributionManagerKafka::GetParameter(CHANNEL_HANDLE channelHandle, const char* paramName)
+const char* DataDistributionManagerKafka::GetParameter(CHANNEL_HANDLE_PARAMETER, const char* paramName)
 {
 	TRACESTART("DataDistributionManagerKafka", "GetParameter");
 
@@ -599,7 +599,7 @@ const char* DataDistributionManagerKafka::GetParameter(CHANNEL_HANDLE channelHan
 	return DataDistributionCommon::GetParameter(channelHandle, paramName);
 }
 
-OPERATION_RESULT DataDistributionManagerKafka::SeekChannel(CHANNEL_HANDLE channelHandle, size_t position)
+OPERATION_RESULT DataDistributionManagerKafka::SeekChannel(CHANNEL_HANDLE_PARAMETER, size_t position)
 {
 	TRACESTART("DataDistributionManagerKafka", "SeekChannel");
 
@@ -644,7 +644,7 @@ OPERATION_RESULT DataDistributionManagerKafka::SeekChannel(CHANNEL_HANDLE channe
 	return DDM_NO_ERROR_CONDITION;
 }
 
-OPERATION_RESULT DataDistributionManagerKafka::DeleteChannel(CHANNEL_HANDLE channelHandle)
+OPERATION_RESULT DataDistributionManagerKafka::DeleteChannel(CHANNEL_HANDLE_PARAMETER)
 {
 	TRACESTART("DataDistributionManagerKafka", "DeleteChannel");
 
@@ -659,7 +659,7 @@ OPERATION_RESULT DataDistributionManagerKafka::DeleteChannel(CHANNEL_HANDLE chan
 	return DDM_NO_ERROR_CONDITION;
 }
 
-OPERATION_RESULT DataDistributionManagerKafka::WriteOnChannel(CHANNEL_HANDLE channelHandle, const char* key, size_t keyLen, void *buffer, size_t dataLen, const BOOL waitAll, const int64_t timestamp)
+OPERATION_RESULT DataDistributionManagerKafka::WriteOnChannel(CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void *buffer, size_t dataLen, const BOOL waitAll, const int64_t timestamp)
 {
 	TRACESTART("DataDistributionManagerKafka", "WriteOnChannel");
 	CAST_CHANNEL(ChannelConfigurationKafka);
@@ -700,7 +700,7 @@ OPERATION_RESULT DataDistributionManagerKafka::WriteOnChannel(CHANNEL_HANDLE cha
 	return DDM_NO_ERROR_CONDITION;
 }
 
-OPERATION_RESULT DataDistributionManagerKafka::ReadFromChannel(CHANNEL_HANDLE channelHandle, int64_t offset, size_t *dataLen, void **param)
+OPERATION_RESULT DataDistributionManagerKafka::ReadFromChannel(CHANNEL_HANDLE_PARAMETER, int64_t offset, size_t *dataLen, void **param)
 {
 	TRACESTART("DataDistributionManagerKafka", "ReadFromChannel");
 
@@ -714,7 +714,7 @@ OPERATION_RESULT DataDistributionManagerKafka::ReadFromChannel(CHANNEL_HANDLE ch
 	return DDM_NO_DATA_RETURNED;
 }
 
-OPERATION_RESULT DataDistributionManagerKafka::ChangeChannelDirection(CHANNEL_HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction)
+OPERATION_RESULT DataDistributionManagerKafka::ChangeChannelDirection(CHANNEL_HANDLE_PARAMETER, DDM_CHANNEL_DIRECTION direction)
 {
 	TRACESTART("DataDistributionManagerKafka", "ChangeChannelDirection");
 

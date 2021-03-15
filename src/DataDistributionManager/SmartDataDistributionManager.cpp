@@ -64,7 +64,7 @@ SmartDataDistributionChannel::~SmartDataDistributionChannel()
 	if (m_pIDataDistributionChannelBase != NULL) m_pIDataDistributionChannelBase->DeleteChannel(m_channelHandle);
 }
 
-void SmartDataDistributionChannel::SetInformation(const char* channelName, IDataDistributionChannelBase* pIDataDistributionChannelBase, CHANNEL_HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction)
+void SmartDataDistributionChannel::SetInformation(const char* channelName, IDataDistributionChannelBase* pIDataDistributionChannelBase, CHANNEL_HANDLE_PARAMETER, DDM_CHANNEL_DIRECTION direction)
 {
 	m_ChannelName = _strdup(channelName);
 	m_Direction = direction;
@@ -143,7 +143,7 @@ void SmartDataDistributionChannel::OnConditionOrError(const OPERATION_RESULT err
 
 }
 
-void SmartDataDistributionChannel::OnUnderlyingEvent(const CHANNEL_HANDLE channelHandle, const UnderlyingEventData* uEvent)
+void SmartDataDistributionChannel::OnUnderlyingEvent(const CHANNEL_HANDLE_PARAMETER, const UnderlyingEventData* uEvent)
 {
 	if (uEvent->IsDataAvailable)
 	{

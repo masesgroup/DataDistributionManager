@@ -60,11 +60,15 @@
 *
 */
 #define DDM_NO_TIMESTAMP -1
+
+class IDataDistributionChannel;
+
 /**
 * @brief Channel handle definition
 *
 */
-typedef void* CHANNEL_HANDLE;
+#define CHANNEL_HANDLE IDataDistributionChannel*
+#define CHANNEL_HANDLE_PARAMETER CHANNEL_HANDLE channelHandle
 /**
 * @brief Generic handle definition, used for thread, lock, mutex
 *

@@ -132,7 +132,7 @@ int DataDistributionMastershipCommon::SendKeepAlive()
 	return m_keepAliveInterval;
 }
 
-void DataDistributionMastershipCommon::OnUnderlyingEvent(const CHANNEL_HANDLE channelHandle, const UnderlyingEventData* uEvent)
+void DataDistributionMastershipCommon::OnUnderlyingEvent(const CHANNEL_HANDLE_PARAMETER, const UnderlyingEventData* uEvent)
 {
 	TRACESTART("DataDistributionCommon", "OnUnderlyingEvent");
 

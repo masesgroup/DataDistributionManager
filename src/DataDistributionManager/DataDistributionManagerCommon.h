@@ -83,19 +83,19 @@ public:
 	void Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, va_list args);
 
 	virtual CHANNEL_HANDLE CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION::ALL, const char* arrayParams[] = NULL, int len = 0);
-	virtual	OPERATION_RESULT StartChannel(CHANNEL_HANDLE channelHandle, unsigned long dwMilliseconds);
-	virtual	OPERATION_RESULT StopChannel(CHANNEL_HANDLE channelHandle, unsigned long dwMilliseconds);
-	virtual void SetParameter(CHANNEL_HANDLE channelHandle, const char* paramName, const char* paramValue);
-	virtual void SetParameter(CHANNEL_HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId, const char* paramValue);
-	virtual const char* GetParameter(CHANNEL_HANDLE channelHandle, const char* paramName);
-	virtual const char* GetParameter(CHANNEL_HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId);
-	virtual OPERATION_RESULT Lock(CHANNEL_HANDLE channelHandle, unsigned long timeout);
-	virtual OPERATION_RESULT Unlock(CHANNEL_HANDLE channelHandle);
-	virtual OPERATION_RESULT SeekChannel(CHANNEL_HANDLE channelHandle, int64_t position);
-	virtual OPERATION_RESULT DeleteChannel(CHANNEL_HANDLE channelHandle);
-	virtual OPERATION_RESULT WriteOnChannel(CHANNEL_HANDLE channelHandle, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP);
-	virtual OPERATION_RESULT ReadFromChannel(CHANNEL_HANDLE channelHandle, int64_t offset, size_t *dataLen, void **param);
-	virtual OPERATION_RESULT ChangeChannelDirection(CHANNEL_HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction);
+	virtual	OPERATION_RESULT StartChannel(CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds);
+	virtual	OPERATION_RESULT StopChannel(CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds);
+	virtual void SetParameter(CHANNEL_HANDLE_PARAMETER, const char* paramName, const char* paramValue);
+	virtual void SetParameter(CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId, const char* paramValue);
+	virtual const char* GetParameter(CHANNEL_HANDLE_PARAMETER, const char* paramName);
+	virtual const char* GetParameter(CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId);
+	virtual OPERATION_RESULT Lock(CHANNEL_HANDLE_PARAMETER, unsigned long timeout);
+	virtual OPERATION_RESULT Unlock(CHANNEL_HANDLE_PARAMETER);
+	virtual OPERATION_RESULT SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position);
+	virtual OPERATION_RESULT DeleteChannel(CHANNEL_HANDLE_PARAMETER);
+	virtual OPERATION_RESULT WriteOnChannel(CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP);
+	virtual OPERATION_RESULT ReadFromChannel(CHANNEL_HANDLE_PARAMETER, int64_t offset, size_t *dataLen, void **param);
+	virtual OPERATION_RESULT ChangeChannelDirection(CHANNEL_HANDLE_PARAMETER, DDM_CHANNEL_DIRECTION direction);
 
 	virtual size_t GetMaxMessageSize();
 	virtual int GetServerLostTimeout();
@@ -133,14 +133,14 @@ class DDM_EXPORT ChannelConfiguration : public IDataDistributionChannel
 public:
 	ChannelConfiguration(const char* channelName, DDM_CHANNEL_DIRECTION direction, DataDistributionCommon* mainManager, IDataDistributionChannelCallback* Cb);
 	const char* GetChannelName();
-	CHANNEL_HANDLE GetChannelHandle();
+	virtual GENERIC_HANDLE GetOpaqueHandle();
 	DDM_CHANNEL_DIRECTION GetDirection();
 	void SetDirection(DDM_CHANNEL_DIRECTION direction);
 	DataDistributionCommon* GetManager();
 	void OnDataAvailable(const char* key, size_t keyLen, void* buffer, size_t len);
-	void OnDataAvailable(const CHANNEL_HANDLE channelHandle, const char* key, size_t keyLen, void* buffer, size_t len);
+	void OnDataAvailable(const CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void* buffer, size_t len);
 	void OnConditionOrError(OPERATION_RESULT errorCode, int nativeCode, const char* subSystemReason, ...);
-	void OnConditionOrError(const CHANNEL_HANDLE channelHandle, OPERATION_RESULT errorCode, int nativeCode, const char* subSystemReason, ...);
+	void OnConditionOrError(const CHANNEL_HANDLE_PARAMETER, OPERATION_RESULT errorCode, int nativeCode, const char* subSystemReason, ...);
 	void Log(const DDM_LOG_LEVEL level, const char* function, const char* format, ...);
 	void CompletelyDisconnected();
 	int64_t GetManagedOffset();

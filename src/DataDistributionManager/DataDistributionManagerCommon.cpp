@@ -111,21 +111,21 @@ CHANNEL_HANDLE DataDistributionCommon::CreateChannel(const char* channelName, ID
 	return NULL;
 }
 
-OPERATION_RESULT DataDistributionCommon::StartChannel(CHANNEL_HANDLE channelHandle, unsigned long dwMilliseconds)
+OPERATION_RESULT DataDistributionCommon::StartChannel(CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds)
 {
 	TRACESTART("DataDistributionCommon", "StartChannel");
 	LOG_WARNING0("Not Implemented in subclass");
 	return DDM_NOT_IMPLEMENTED;
 }
 
-OPERATION_RESULT DataDistributionCommon::StopChannel(CHANNEL_HANDLE channelHandle, unsigned long dwMilliseconds)
+OPERATION_RESULT DataDistributionCommon::StopChannel(CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds)
 {
 	TRACESTART("DataDistributionCommon", "StopChannel");
 	LOG_WARNING0("Not Implemented in subclass");
 	return DDM_NOT_IMPLEMENTED;
 }
 
-void DataDistributionCommon::SetParameter(CHANNEL_HANDLE channelHandle, const char* paramName, const char* paramValue)
+void DataDistributionCommon::SetParameter(CHANNEL_HANDLE_PARAMETER, const char* paramName, const char* paramValue)
 {
 	TRACESTART("DataDistributionCommon", "SetParameter");
 	CAST_CHANNEL(ChannelConfiguration);
@@ -220,7 +220,7 @@ void DataDistributionCommon::SetParameter(CHANNEL_HANDLE channelHandle, const ch
 	}
 }
 
-void DataDistributionCommon::SetParameter(CHANNEL_HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId, const char* paramValue)
+void DataDistributionCommon::SetParameter(CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId, const char* paramValue)
 {
 	TRACESTART("DataDistributionCommon", "SetParameter");
 	LOG_WARNING0("Not Implemented in subclass");
@@ -247,7 +247,7 @@ static const char* ConvertIToA(size_t value)
 #endif
 }
 
-const char* DataDistributionCommon::GetParameter(CHANNEL_HANDLE channelHandle, const char* paramName)
+const char* DataDistributionCommon::GetParameter(CHANNEL_HANDLE_PARAMETER, const char* paramName)
 {
 	TRACESTART("DataDistributionCommon", "GetParameter");
 	CAST_CHANNEL(ChannelConfiguration);
@@ -315,56 +315,56 @@ const char* DataDistributionCommon::GetParameter(CHANNEL_HANDLE channelHandle, c
 	return NULL;
 }
 
-const char* DataDistributionCommon::GetParameter(CHANNEL_HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId)
+const char* DataDistributionCommon::GetParameter(CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId)
 {
 	TRACESTART("DataDistributionCommon", "GetParameter");
 	LOG_WARNING0("Not Implemented in subclass");
 	return NULL;
 }
 
-OPERATION_RESULT DataDistributionCommon::Lock(CHANNEL_HANDLE channelHandle, unsigned long timeout)
+OPERATION_RESULT DataDistributionCommon::Lock(CHANNEL_HANDLE_PARAMETER, unsigned long timeout)
 {
 	TRACESTART("DataDistributionCommon", "Lock");
 	LOG_WARNING0("Not Implemented in subclass");
 	return DDM_NOT_IMPLEMENTED;
 }
 
-OPERATION_RESULT DataDistributionCommon::Unlock(CHANNEL_HANDLE channelHandle)
+OPERATION_RESULT DataDistributionCommon::Unlock(CHANNEL_HANDLE_PARAMETER)
 {
 	TRACESTART("DataDistributionCommon", "Unlock");
 	LOG_WARNING0("Not Implemented in subclass");
 	return DDM_NOT_IMPLEMENTED;
 }
 
-OPERATION_RESULT DataDistributionCommon::SeekChannel(CHANNEL_HANDLE channelHandle, int64_t position)
+OPERATION_RESULT DataDistributionCommon::SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position)
 {
 	TRACESTART("DataDistributionCommon", "SeekChannel");
 	LOG_WARNING0("Not Implemented in subclass");
 	return DDM_NOT_IMPLEMENTED;
 }
 
-OPERATION_RESULT DataDistributionCommon::DeleteChannel(CHANNEL_HANDLE channelHandle)
+OPERATION_RESULT DataDistributionCommon::DeleteChannel(CHANNEL_HANDLE_PARAMETER)
 {
 	TRACESTART("DataDistributionCommon", "DeleteChannel");
 	LOG_WARNING0("Not Implemented in subclass");
 	return DDM_NOT_IMPLEMENTED;
 }
 
-OPERATION_RESULT DataDistributionCommon::WriteOnChannel(CHANNEL_HANDLE channelHandle, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll, const int64_t timestamp)
+OPERATION_RESULT DataDistributionCommon::WriteOnChannel(CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll, const int64_t timestamp)
 {
 	TRACESTART("DataDistributionCommon", "WriteOnChannel");
 	LOG_WARNING0("Not Implemented in subclass");
 	return DDM_NOT_IMPLEMENTED;
 }
 
-OPERATION_RESULT DataDistributionCommon::ReadFromChannel(CHANNEL_HANDLE channelHandle, int64_t offset, size_t *dataLen, void **param)
+OPERATION_RESULT DataDistributionCommon::ReadFromChannel(CHANNEL_HANDLE_PARAMETER, int64_t offset, size_t *dataLen, void **param)
 {
 	TRACESTART("DataDistributionCommon", "ReadFromChannel");
 	LOG_WARNING0("Not Implemented in subclass");
 	return DDM_NOT_IMPLEMENTED;
 }
 
-OPERATION_RESULT DataDistributionCommon::ChangeChannelDirection(CHANNEL_HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction)
+OPERATION_RESULT DataDistributionCommon::ChangeChannelDirection(CHANNEL_HANDLE_PARAMETER, DDM_CHANNEL_DIRECTION direction)
 {
 	TRACESTART("DataDistributionCommon", "ChangeChannelDirection");
 	LOG_WARNING0("Not Implemented in subclass");
@@ -476,7 +476,7 @@ const char* ChannelConfiguration::GetChannelName()
 	return m_pChannelName;
 }
 
-CHANNEL_HANDLE ChannelConfiguration::GetChannelHandle()
+GENERIC_HANDLE ChannelConfiguration::GetOpaqueHandle()
 {
 	return this;
 }
@@ -503,7 +503,7 @@ void ChannelConfiguration::OnDataAvailable(const char* key, size_t keyLen, void*
 	OnDataAvailable(this, key, keyLen, buffer, len);
 }
 
-void ChannelConfiguration::OnDataAvailable(const CHANNEL_HANDLE channelHandle, const char* key, size_t keyLen, void* buffer, size_t len)
+void ChannelConfiguration::OnDataAvailable(const CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void* buffer, size_t len)
 {
 	UnderlyingEventData pData(m_pChannelName, key, keyLen, buffer, len);
 	if (dataCb != NULL)
@@ -524,7 +524,7 @@ void ChannelConfiguration::OnConditionOrError(OPERATION_RESULT errorCode, int na
 	va_end(args);
 }
 
-void ChannelConfiguration::OnConditionOrError(const CHANNEL_HANDLE channelHandle, OPERATION_RESULT errorCode, int nativeCode, const char* subSystemReason, ...)
+void ChannelConfiguration::OnConditionOrError(const CHANNEL_HANDLE_PARAMETER, OPERATION_RESULT errorCode, int nativeCode, const char* subSystemReason, ...)
 {
 	va_list args = NULL;
 	va_start(args, subSystemReason);

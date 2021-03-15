@@ -134,7 +134,7 @@ public:
 	 * @remarks Used from SmartDataDistribution::CreateSmartChannel
 	 * 
 	 */
-	void SetInformation(const char *channelName, IDataDistributionChannelBase *pIDataDistributionChannelBase, CHANNEL_HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction);
+	void SetInformation(const char *channelName, IDataDistributionChannelBase *pIDataDistributionChannelBase, CHANNEL_HANDLE_PARAMETER, DDM_CHANNEL_DIRECTION direction);
 	/**
 	 * @brief Starts the channel
 	 *
@@ -256,7 +256,7 @@ protected:
 	 * \p uEvent the UnderlyingEventData received from transport subsystem
 	 * 
 	 */
-	virtual void OnUnderlyingEvent(const CHANNEL_HANDLE channelHandle, const UnderlyingEventData *uEvent);
+	virtual void OnUnderlyingEvent(const CHANNEL_HANDLE_PARAMETER, const UnderlyingEventData *uEvent);
 
 private:
 	const char *m_ChannelName;
@@ -501,7 +501,7 @@ public:
 		T *pSmartChannelT = new T();
 		SmartDataDistributionChannel *pSmartChannel = (SmartDataDistributionChannel *)pSmartChannelT;
 		IDataDistributionChannelBase *pChannelBase = m_pIDataDistribution->GetSubsystemManager();
-		CHANNEL_HANDLE channelHandle = pChannelBase->CreateChannel(channelName, (IDataDistributionChannelCallback *)pSmartChannel, direction, arrayParams, len);
+		CHANNEL_HANDLE_PARAMETER = pChannelBase->CreateChannel(channelName, (IDataDistributionChannelCallback *)pSmartChannel, direction, arrayParams, len);
 		pSmartChannel->SetInformation(channelName, pChannelBase, channelHandle, direction);
 
 		return pSmartChannelT;

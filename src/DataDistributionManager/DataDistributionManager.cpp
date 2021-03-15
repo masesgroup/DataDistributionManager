@@ -104,7 +104,7 @@ DataDistributionChannelCallbackImpl::DataDistributionChannelCallbackImpl(const v
 	m_DataDistributionManagerChannelCallbacks.OnUnderlyingEvent = uEvent;
 }
 
-void DataDistributionChannelCallbackImpl::OnUnderlyingEvent(const CHANNEL_HANDLE channelHandle, const UnderlyingEventData* uEvent)
+void DataDistributionChannelCallbackImpl::OnUnderlyingEvent(const CHANNEL_HANDLE_PARAMETER, const UnderlyingEventData* uEvent)
 {
 	if (m_DataDistributionManagerChannelCallbacks.OnUnderlyingEvent)
 	{

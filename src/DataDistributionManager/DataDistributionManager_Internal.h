@@ -108,8 +108,8 @@ class DataDistributionChannelCallbackImpl : public IDataDistributionChannelCallb
 {
 public:
 	DataDistributionChannelCallbackImpl(const void*, dataDistributionUnderlyingEvent); // , dataDistributionOnConditionOrError);
-	virtual void OnUnderlyingEvent(const CHANNEL_HANDLE channelHandle, const UnderlyingEventData* uEvent);
-	//virtual void OnConditionOrError(CHANNEL_HANDLE channelHandle, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, const char* subSystemReason);
+	virtual void OnUnderlyingEvent(const CHANNEL_HANDLE_PARAMETER, const UnderlyingEventData* uEvent);
+	//virtual void OnConditionOrError(CHANNEL_HANDLE_PARAMETER, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, const char* subSystemReason);
 private:
 	DataDistributionManagerChannelCallbacks m_DataDistributionManagerChannelCallbacks;
 };

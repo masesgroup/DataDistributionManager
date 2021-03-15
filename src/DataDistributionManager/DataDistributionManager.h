@@ -361,7 +361,7 @@ typedef struct DDM_EXPORT UnderlyingEventData
  * DataDistributionChannelCallback::create().
  *
  */
-typedef void(FUNCALL *dataDistributionUnderlyingEvent)(const void *opaque, const CHANNEL_HANDLE channelHandle, const UnderlyingEventData *uEvent);
+typedef void(FUNCALL *dataDistributionUnderlyingEvent)(const void *opaque, const CHANNEL_HANDLE_PARAMETER, const UnderlyingEventData *uEvent);
 
 /**
 * @brief The basic interface for all channel
@@ -373,8 +373,22 @@ typedef void(FUNCALL *dataDistributionUnderlyingEvent)(const void *opaque, const
 class DDM_EXPORT IDataDistributionChannel
 {
 public:
+	/**
+	* @brief Returns the channel name
+	*
+	* Returns the channel name
+	*
+	* @returns the channel name
+	*/
 	virtual const char* GetChannelName() = 0;
-	virtual CHANNEL_HANDLE GetChannelHandle() = 0;
+	/**
+	* @brief Returns an opaque version of the channel handle
+	*
+	* Returns an opaque version of the channel handle
+	*
+	* @returns opaque version of the channel handle
+	*/
+	virtual GENERIC_HANDLE GetOpaqueHandle() = 0;
 };
 
 /**
@@ -396,7 +410,7 @@ public:
 	 * \p uEvent the UnderlyingEventData event
 	 *
 	 */
-	virtual void OnUnderlyingEvent(const CHANNEL_HANDLE channelHandle, const UnderlyingEventData *uEvent) = 0;
+	virtual void OnUnderlyingEvent(const CHANNEL_HANDLE_PARAMETER, const UnderlyingEventData *uEvent) = 0;
 };
 
 /**
@@ -666,7 +680,7 @@ public:
 	 * 
 	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual OPERATION_RESULT StartChannel(CHANNEL_HANDLE channelHandle, unsigned long timeout) = 0;
+	virtual OPERATION_RESULT StartChannel(CHANNEL_HANDLE_PARAMETER, unsigned long timeout) = 0;
 	/**
 	 * @brief Stops the channel
 	 *
@@ -675,7 +689,7 @@ public:
 	 * 
 	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual OPERATION_RESULT StopChannel(CHANNEL_HANDLE channelHandle, unsigned long timeout) = 0;
+	virtual OPERATION_RESULT StopChannel(CHANNEL_HANDLE_PARAMETER, unsigned long timeout) = 0;
 	/**
 	 * @brief Sets a parameter at run-time
 	 *
@@ -684,7 +698,7 @@ public:
 	 * \p paramValue the parameter value
 	 * 
 	 */
-	virtual void SetParameter(CHANNEL_HANDLE channelHandle, const char *paramName, const char *paramValue) = 0;
+	virtual void SetParameter(CHANNEL_HANDLE_PARAMETER, const char *paramName, const char *paramValue) = 0;
 	/**
 	 * @brief Sets a parameter at run-time
 	 *
@@ -693,7 +707,7 @@ public:
 	 * \p paramValue the parameter value
 	 * 
 	 */
-	virtual void SetParameter(CHANNEL_HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId, const char *paramValue) = 0;
+	virtual void SetParameter(CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId, const char *paramValue) = 0;
 	/**
 	 * @brief Reads a parameter at run-time
 	 *
@@ -702,7 +716,7 @@ public:
 	 * 
 	 * @return parameter value
 	 */
-	virtual const char *GetParameter(CHANNEL_HANDLE channelHandle, const char *paramName) = 0;
+	virtual const char *GetParameter(CHANNEL_HANDLE_PARAMETER, const char *paramName) = 0;
 	/**
 	 * @brief Reads a parameter at run-time
 	 *
@@ -711,7 +725,7 @@ public:
 	 * 
 	 * @return parameter value
 	 */
-	virtual const char *GetParameter(CHANNEL_HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId) = 0;
+	virtual const char *GetParameter(CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId) = 0;
 	/**
 	 * @brief Locks the channel
 	 *
@@ -720,7 +734,7 @@ public:
 	 * 
 	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual OPERATION_RESULT Lock(CHANNEL_HANDLE channelHandle, unsigned long timeout) = 0;
+	virtual OPERATION_RESULT Lock(CHANNEL_HANDLE_PARAMETER, unsigned long timeout) = 0;
 	/**
 	 * @brief Unlock the channel
 	 *
@@ -728,7 +742,7 @@ public:
 	 * 
 	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual OPERATION_RESULT Unlock(CHANNEL_HANDLE channelHandle) = 0;
+	virtual OPERATION_RESULT Unlock(CHANNEL_HANDLE_PARAMETER) = 0;
 	/**
 	 * @brief Seeks the channel
 	 *
@@ -737,7 +751,7 @@ public:
 	 * 
 	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual OPERATION_RESULT SeekChannel(CHANNEL_HANDLE channelHandle, int64_t position) = 0;
+	virtual OPERATION_RESULT SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position) = 0;
 	/**
 	 * @brief Deletes the channel
 	 *
@@ -745,7 +759,7 @@ public:
 	 * 
 	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual OPERATION_RESULT DeleteChannel(CHANNEL_HANDLE channelHandle) = 0;
+	virtual OPERATION_RESULT DeleteChannel(CHANNEL_HANDLE_PARAMETER) = 0;
 	/**
 	 * @brief Writes data on the channel
 	 *
@@ -759,7 +773,7 @@ public:
 	 * 
 	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual OPERATION_RESULT WriteOnChannel(CHANNEL_HANDLE channelHandle, const char *key, size_t keyLen, void *buffer, size_t bufferLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP) = 0;
+	virtual OPERATION_RESULT WriteOnChannel(CHANNEL_HANDLE_PARAMETER, const char *key, size_t keyLen, void *buffer, size_t bufferLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP) = 0;
 	/**
 	 * @brief Reads data from the channel
 	 *
@@ -770,7 +784,7 @@ public:
 	 * 
 	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual OPERATION_RESULT ReadFromChannel(CHANNEL_HANDLE channelHandle, int64_t offset, size_t *bufferLen, void **buffer) = 0;
+	virtual OPERATION_RESULT ReadFromChannel(CHANNEL_HANDLE_PARAMETER, int64_t offset, size_t *bufferLen, void **buffer) = 0;
 	/**
 	 * @brief Change the DDM_CHANNEL_DIRECTION of the channel
 	 *
@@ -779,7 +793,7 @@ public:
 	 * 
 	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual OPERATION_RESULT ChangeChannelDirection(CHANNEL_HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction) = 0;
+	virtual OPERATION_RESULT ChangeChannelDirection(CHANNEL_HANDLE_PARAMETER, DDM_CHANNEL_DIRECTION direction) = 0;
 };
 /**
  * @brief Interface to be implemented from transport subsystem

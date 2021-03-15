@@ -136,79 +136,79 @@ DLLEXPORT CHANNEL_HANDLE DLLCALL IDataDistributionSubsystem_CreateChannel(void* 
 	return pIDataDistributionSubsystem_instance->CreateChannel(channelName, (IDataDistributionChannelCallback*)dataCb, direction, arrayParams, len);
 }
 
-DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_StartChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE channelHandle, unsigned long dwMilliseconds)
+DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_StartChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem_instance = static_cast<IDataDistributionSubsystem*>(IDataDistributionSubsystem_instance);
 	return pIDataDistributionSubsystem_instance->StartChannel(channelHandle, dwMilliseconds);
 }
 
-DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_StopChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE channelHandle, unsigned long dwMilliseconds)
+DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_StopChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem_instance = static_cast<IDataDistributionSubsystem*>(IDataDistributionSubsystem_instance);
 	return pIDataDistributionSubsystem_instance->StopChannel(channelHandle, dwMilliseconds);
 }
 
-DLLEXPORT void DLLCALL IDataDistributionSubsystem_SetParameter(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE channelHandle, const char* paramName, const char* paramValue)
+DLLEXPORT void DLLCALL IDataDistributionSubsystem_SetParameter(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, const char* paramName, const char* paramValue)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem_instance = static_cast<IDataDistributionSubsystem*>(IDataDistributionSubsystem_instance);
 	pIDataDistributionSubsystem_instance->SetParameter(channelHandle, paramName, paramValue);
 }
 
-DLLEXPORT void DLLCALL IDataDistributionSubsystem_SetParameter2(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId, const char* paramValue)
+DLLEXPORT void DLLCALL IDataDistributionSubsystem_SetParameter2(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId, const char* paramValue)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem_instance = static_cast<IDataDistributionSubsystem*>(IDataDistributionSubsystem_instance);
 	pIDataDistributionSubsystem_instance->SetParameter(channelHandle, paramId, paramValue);
 }
 
-DLLEXPORT const char* DLLCALL IDataDistributionSubsystem_GetParameter(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE channelHandle, const char* paramName)
+DLLEXPORT const char* DLLCALL IDataDistributionSubsystem_GetParameter(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, const char* paramName)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem_instance = static_cast<IDataDistributionSubsystem*>(IDataDistributionSubsystem_instance);
 	return pIDataDistributionSubsystem_instance->GetParameter(channelHandle, paramName);
 }
 
-DLLEXPORT const char* DLLCALL IDataDistributionSubsystem_GetParameter2(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId)
+DLLEXPORT const char* DLLCALL IDataDistributionSubsystem_GetParameter2(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem_instance = static_cast<IDataDistributionSubsystem*>(IDataDistributionSubsystem_instance);
 	return pIDataDistributionSubsystem_instance->GetParameter(channelHandle, paramId);
 }
 
-DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_Lock(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE channelHandle, unsigned long timeout)
+DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_Lock(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, unsigned long timeout)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem_instance = static_cast<IDataDistributionSubsystem*>(IDataDistributionSubsystem_instance);
 	return pIDataDistributionSubsystem_instance->Lock(channelHandle, timeout);
 }
 
-DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_Unlock(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE channelHandle)
+DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_Unlock(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem_instance = static_cast<IDataDistributionSubsystem*>(IDataDistributionSubsystem_instance);
 	return pIDataDistributionSubsystem_instance->Unlock(channelHandle);
 }
 
-DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_SeekChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE channelHandle, int64_t position)
+DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_SeekChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, int64_t position)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem_instance = static_cast<IDataDistributionSubsystem*>(IDataDistributionSubsystem_instance);
 	return pIDataDistributionSubsystem_instance->SeekChannel(channelHandle, position);
 }
 
-DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_DeleteChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE channelHandle)
+DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_DeleteChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem_instance = static_cast<IDataDistributionSubsystem*>(IDataDistributionSubsystem_instance);
 	return pIDataDistributionSubsystem_instance->DeleteChannel(channelHandle);
 }
 
-DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_WriteOnChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE channelHandle, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll, const int64_t timestamp)
+DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_WriteOnChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll, const int64_t timestamp)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem_instance = static_cast<IDataDistributionSubsystem*>(IDataDistributionSubsystem_instance);
 	return pIDataDistributionSubsystem_instance->WriteOnChannel(channelHandle, key, keyLen, param, dataLen, waitAll, timestamp);
 }
 
-DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_ReadFromChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE channelHandle, int64_t offset, size_t *dataLen, void **param)
+DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_ReadFromChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, int64_t offset, size_t *dataLen, void **param)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem_instance = static_cast<IDataDistributionSubsystem*>(IDataDistributionSubsystem_instance);
 	return pIDataDistributionSubsystem_instance->ReadFromChannel(channelHandle, offset, dataLen, param);
 }
 
-DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_ChangeChannelDirection(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction)
+DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_ChangeChannelDirection(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, DDM_CHANNEL_DIRECTION direction)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem_instance = static_cast<IDataDistributionSubsystem*>(IDataDistributionSubsystem_instance);
 	return pIDataDistributionSubsystem_instance->ChangeChannelDirection(channelHandle, direction);
