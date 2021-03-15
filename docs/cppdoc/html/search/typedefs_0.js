@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['bool_302',['BOOL',['../DataDistributionManagerTypes_8h.html#a050c65e107f0c828f856a231f4b4e788',1,'DataDistributionManagerTypes.h']]]
+  ['clusterhealth_293',['ClusterHealth',['../DataDistributionManager_8h.html#a71c2fc848247069989b944f4ba700987',1,'DataDistributionManager.h']]],
+  ['clusterhealthiterator_294',['ClusterHealthIterator',['../DataDistributionManager_8h.html#a6dc72cdfd4e02fbc4c83dc83f4ed3e68',1,'DataDistributionManager.h']]]
 ];

@@ -129,7 +129,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac3f0809fb7dd207ff46ee64ed2d81968"><td class="memItemLeft" align="right" valign="top"><a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSmartDataDistributionChannel.html#ac3f0809fb7dd207ff46ee64ed2d81968">SeekChannel</a> (int64_t position)</td></tr>
 <tr class="memdesc:ac3f0809fb7dd207ff46ee64ed2d81968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seeks the channel.  <a href="classSmartDataDistributionChannel.html#ac3f0809fb7dd207ff46ee64ed2d81968">More...</a><br /></td></tr>
 <tr class="separator:ac3f0809fb7dd207ff46ee64ed2d81968"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ba671a86d8b9f623e99d90bd8d44e21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSmartDataDistributionChannel.html#a9ba671a86d8b9f623e99d90bd8d44e21">WriteOnChannel</a> (const char *key, size_t keyLen, void *buffer, size_t bufferLen, const <a class="el" href="DataDistributionManagerTypes_8h.html#a050c65e107f0c828f856a231f4b4e788">BOOL</a> waitAll=<a class="el" href="DataDistributionManagerTypes_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>, const int64_t timestamp=<a class="el" href="DataDistributionManagerTypes_8h.html#a04e9936beb1d53890441b25bc6b0a0ba">DDM_NO_TIMESTAMP</a>)</td></tr>
+<tr class="memitem:a9ba671a86d8b9f623e99d90bd8d44e21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSmartDataDistributionChannel.html#a9ba671a86d8b9f623e99d90bd8d44e21">WriteOnChannel</a> (const char *key, size_t keyLen, void *buffer, size_t bufferLen, const BOOL waitAll=FALSE, const int64_t timestamp=<a class="el" href="DataDistributionManagerTypes_8h.html#a04e9936beb1d53890441b25bc6b0a0ba">DDM_NO_TIMESTAMP</a>)</td></tr>
 <tr class="memdesc:a9ba671a86d8b9f623e99d90bd8d44e21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes data on the channel.  <a href="classSmartDataDistributionChannel.html#a9ba671a86d8b9f623e99d90bd8d44e21">More...</a><br /></td></tr>
 <tr class="separator:a9ba671a86d8b9f623e99d90bd8d44e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af50e9df075c285b8f2ba73532b1644e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b">OPERATION_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSmartDataDistributionChannel.html#af50e9df075c285b8f2ba73532b1644e4">ReadFromChannel</a> (int64_t offset, size_t *dataLen, void **buffer)</td></tr>
@@ -725,8 +725,8 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="DataDistributionManagerTypes_8h.html#a050c65e107f0c828f856a231f4b4e788">BOOL</a>&#160;</td>
-          <td class="paramname"><em>waitAll</em> = <code><a class="el" href="DataDistributionManagerTypes_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></code>, </td>
+          <td class="paramtype">const BOOL&#160;</td>
+          <td class="paramname"><em>waitAll</em> = <code>FALSE</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

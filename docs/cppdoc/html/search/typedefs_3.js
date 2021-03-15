@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['generic_5fhandle_322',['GENERIC_HANDLE',['../DataDistributionManagerTypes_8h.html#a28342bc380741b19c08ab3e0d5c635e5',1,'DataDistributionManagerTypes.h']]]
+  ['operation_5fresult_313',['OPERATION_RESULT',['../DataDistributionManagerTypes_8h.html#a1f2fba3780ff5e3481d1c56c646b922b',1,'DataDistributionManagerTypes.h']]]
 ];

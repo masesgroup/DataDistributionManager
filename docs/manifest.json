@@ -3052,72 +3052,6 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "../cppdoc/html/search/defines_3.html",
-      "output": {
-        "resource": {
-          "relative_path": "cppdoc/html/search/defines_3.html"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../cppdoc/html/search/defines_3.js",
-      "output": {
-        "resource": {
-          "relative_path": "cppdoc/html/search/defines_3.js"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../cppdoc/html/search/defines_4.html",
-      "output": {
-        "resource": {
-          "relative_path": "cppdoc/html/search/defines_4.html"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../cppdoc/html/search/defines_4.js",
-      "output": {
-        "resource": {
-          "relative_path": "cppdoc/html/search/defines_4.js"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../cppdoc/html/search/defines_5.html",
-      "output": {
-        "resource": {
-          "relative_path": "cppdoc/html/search/defines_5.html"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../cppdoc/html/search/defines_5.js",
-      "output": {
-        "resource": {
-          "relative_path": "cppdoc/html/search/defines_5.js"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
       "source_relative_path": "../cppdoc/html/search/enums_0.html",
       "output": {
         "resource": {
@@ -4101,28 +4035,6 @@
       "output": {
         "resource": {
           "relative_path": "cppdoc/html/search/typedefs_5.js"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../cppdoc/html/search/typedefs_6.html",
-      "output": {
-        "resource": {
-          "relative_path": "cppdoc/html/search/typedefs_6.html"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../cppdoc/html/search/typedefs_6.js",
-      "output": {
-        "resource": {
-          "relative_path": "cppdoc/html/search/typedefs_6.js"
         }
       },
       "is_incremental": false,
