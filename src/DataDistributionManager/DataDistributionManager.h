@@ -37,6 +37,7 @@
  */
 
 /**@cond NO_DOC*/
+#include <string>
 #include <map>
 /**@endcond*/
 
