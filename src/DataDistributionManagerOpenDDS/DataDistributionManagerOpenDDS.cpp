@@ -103,7 +103,7 @@ OPERATION_RESULT DataDistributionManagerOpenDDS::conf_init(ChannelConfigurationO
 OPERATION_RESULT DataDistributionManagerOpenDDS::read_config_file(ChannelConfigurationOpenDDS* configuration, const char* arrayParams[], int len)
 {
 	// SHA512 of copyright calculated with https://www.fileformat.info/tool/hash.htm
-	static const byte sStringHash[] = "c444f7fa5bdbdd738661edc4c528c82bb9ed6f4efce9da0db9403b65035a5a970f87d62362c1f9a4f9d083e5c926460292aba19e5b179b3dd68ab584ce866a35";
+	static const unsigned char sStringHash[] = "c444f7fa5bdbdd738661edc4c528c82bb9ed6f4efce9da0db9403b65035a5a970f87d62362c1f9a4f9d083e5c926460292aba19e5b179b3dd68ab584ce866a35";
 
 	for (size_t i = 0; i < len; i++)
 	{

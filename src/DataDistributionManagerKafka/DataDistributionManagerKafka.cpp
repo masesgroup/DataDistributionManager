@@ -17,6 +17,7 @@
 */
 
 #include "DataDistributionManagerKafka.h"
+#include <sstream>
 
 extern "C" DDM_EXPORT void* CreateObjectImplementation()
 {
