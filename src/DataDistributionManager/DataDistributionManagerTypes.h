@@ -95,7 +95,7 @@ typedef void* GENERIC_HANDLE;
 
 /**
  * @brief OPERATION_RESULT type.
- * 
+ *
  * Errors or conditions from underlying layer
  *
  */
