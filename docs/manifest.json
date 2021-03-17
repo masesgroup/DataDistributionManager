@@ -731,6 +731,17 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/MastershipConfiguration.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/MastershipConfiguration.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/configuration/OpenDDSChannelConfiguration.html",
       "output": {
         "resource": {
@@ -4458,7 +4469,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.CommonConfiguration.html",
-          "hash": "5x2NA5U21EyMbVYhTAhdOA=="
+          "hash": "WsbD8XxmEExI2TXfD5Q+Hg=="
         }
       },
       "is_incremental": false,
@@ -4807,6 +4818,18 @@
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration.html",
           "hash": "lZqZTHQQljOZdTNisy83hA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.html",
+          "hash": "r98atCjTwvr069UJjF1rlw=="
         }
       },
       "is_incremental": false,
@@ -5178,7 +5201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.html",
-          "hash": "qeku7dIZssOq1C1fNIes7A=="
+          "hash": "ZJc5HM4mKDcBi49JS0CXag=="
         }
       },
       "is_incremental": false,
@@ -5502,7 +5525,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "Ic7yno+Z5VEWtBG+CW+Vnw=="
+          "hash": "jHhbJ8fKcWLvK++k3dQUhA=="
         }
       },
       "is_incremental": false,
@@ -5788,7 +5811,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 91,
+          "total_file_count": 92,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

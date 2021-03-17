@@ -4311,6 +4311,53 @@ references:
   commentId: F:MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration.LivelinessQosPolicyKind.MANUAL_BY_TOPIC_LIVELINESS_QOS
   fullName: MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration.LivelinessQosPolicyKind.MANUAL_BY_TOPIC_LIVELINESS_QOS
   nameWithType: LivelinessQosPolicyConfiguration.LivelinessQosPolicyKind.MANUAL_BY_TOPIC_LIVELINESS_QOS
+- uid: MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration
+  name: MastershipConfiguration
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.html
+  commentId: T:MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration
+  nameWithType: MastershipConfiguration
+- uid: MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.#ctor(MASES.DataDistributionManager.Bindings.IConfiguration)
+  name: MastershipConfiguration(IConfiguration)
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_MastershipConfiguration__ctor_MASES_DataDistributionManager_Bindings_IConfiguration_
+  commentId: M:MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.#ctor(MASES.DataDistributionManager.Bindings.IConfiguration)
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.MastershipConfiguration(MASES.DataDistributionManager.Bindings.IConfiguration)
+  nameWithType: MastershipConfiguration.MastershipConfiguration(IConfiguration)
+- uid: MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.#ctor(System.String,MASES.DataDistributionManager.Bindings.IConfiguration)
+  name: MastershipConfiguration(String, IConfiguration)
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_MastershipConfiguration__ctor_System_String_MASES_DataDistributionManager_Bindings_IConfiguration_
+  commentId: M:MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.#ctor(System.String,MASES.DataDistributionManager.Bindings.IConfiguration)
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.MastershipConfiguration(System.String, MASES.DataDistributionManager.Bindings.IConfiguration)
+  nameWithType: MastershipConfiguration.MastershipConfiguration(String, IConfiguration)
+- uid: MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.#ctor*
+  name: MastershipConfiguration
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_MastershipConfiguration__ctor_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.#ctor
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.MastershipConfiguration
+  nameWithType: MastershipConfiguration.MastershipConfiguration
+- uid: MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.Item(System.String)
+  name: Item[String]
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_MastershipConfiguration_Item_System_String_
+  commentId: P:MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.Item(System.String)
+  name.vb: Item(String)
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.Item[System.String]
+  fullName.vb: MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.Item(System.String)
+  nameWithType: MastershipConfiguration.Item[String]
+  nameWithType.vb: MastershipConfiguration.Item(String)
+- uid: MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.Item*
+  name: Item
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_MastershipConfiguration_Item_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.Item
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.Item
+  nameWithType: MastershipConfiguration.Item
+- uid: MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.MastershipGlobalConfigurationBasePropertyKey
+  name: MastershipGlobalConfigurationBasePropertyKey
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_MastershipConfiguration_MastershipGlobalConfigurationBasePropertyKey
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.MastershipGlobalConfigurationBasePropertyKey
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.MastershipGlobalConfigurationBasePropertyKey
+  nameWithType: MastershipConfiguration.MastershipGlobalConfigurationBasePropertyKey
 - uid: MASES.DataDistributionManager.Bindings.Configuration.OpenDDSChannelConfiguration
   name: OpenDDSChannelConfiguration
   href: api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSChannelConfiguration.html
