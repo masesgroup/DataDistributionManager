@@ -6665,6 +6665,25 @@ references:
   commentId: F:MASES.DataDistributionManager.Bindings.GlobalConfiguration.GlobalLogLevelKey
   fullName: MASES.DataDistributionManager.Bindings.GlobalConfiguration.GlobalLogLevelKey
   nameWithType: GlobalConfiguration.GlobalLogLevelKey
+- uid: MASES.DataDistributionManager.Bindings.GlobalConfiguration.MastershipLibrary
+  name: MastershipLibrary
+  href: api/MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_MastershipLibrary
+  commentId: P:MASES.DataDistributionManager.Bindings.GlobalConfiguration.MastershipLibrary
+  fullName: MASES.DataDistributionManager.Bindings.GlobalConfiguration.MastershipLibrary
+  nameWithType: GlobalConfiguration.MastershipLibrary
+- uid: MASES.DataDistributionManager.Bindings.GlobalConfiguration.MastershipLibrary*
+  name: MastershipLibrary
+  href: api/MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_MastershipLibrary_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.GlobalConfiguration.MastershipLibrary
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.GlobalConfiguration.MastershipLibrary
+  nameWithType: GlobalConfiguration.MastershipLibrary
+- uid: MASES.DataDistributionManager.Bindings.GlobalConfiguration.MastershipLibraryKey
+  name: MastershipLibraryKey
+  href: api/MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_MastershipLibraryKey
+  commentId: F:MASES.DataDistributionManager.Bindings.GlobalConfiguration.MastershipLibraryKey
+  fullName: MASES.DataDistributionManager.Bindings.GlobalConfiguration.MastershipLibraryKey
+  nameWithType: GlobalConfiguration.MastershipLibraryKey
 - uid: MASES.DataDistributionManager.Bindings.GlobalConfiguration.MaxMessageSize
   name: MaxMessageSize
   href: api/MASES.DataDistributionManager.Bindings.GlobalConfiguration.html#MASES_DataDistributionManager_Bindings_GlobalConfiguration_MaxMessageSize
@@ -7668,15 +7687,21 @@ references:
   commentId: E:MASES.DataDistributionManager.Bindings.ISmartDataDistribution.RequestedStateEvent
   fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.RequestedStateEvent
   nameWithType: ISmartDataDistribution.RequestedStateEvent
-- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.RequestMastershipManager(System.String,System.String[])
-  name: RequestMastershipManager(String, String[])
-  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.html#MASES_DataDistributionManager_Bindings_ISmartDataDistribution_RequestMastershipManager_System_String_System_String___
-  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistribution.RequestMastershipManager(System.String,System.String[])
-  name.vb: RequestMastershipManager(String, String())
-  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.RequestMastershipManager(System.String, System.String[])
-  fullName.vb: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.RequestMastershipManager(System.String, System.String())
-  nameWithType: ISmartDataDistribution.RequestMastershipManager(String, String[])
-  nameWithType.vb: ISmartDataDistribution.RequestMastershipManager(String, String())
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.RequestMastershipManager(MASES.DataDistributionManager.Bindings.IConfiguration,System.String)
+  name: RequestMastershipManager(IConfiguration, String)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.html#MASES_DataDistributionManager_Bindings_ISmartDataDistribution_RequestMastershipManager_MASES_DataDistributionManager_Bindings_IConfiguration_System_String_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistribution.RequestMastershipManager(MASES.DataDistributionManager.Bindings.IConfiguration,System.String)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.RequestMastershipManager(MASES.DataDistributionManager.Bindings.IConfiguration, System.String)
+  nameWithType: ISmartDataDistribution.RequestMastershipManager(IConfiguration, String)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.RequestMastershipManager(System.String[],System.String)
+  name: RequestMastershipManager(String[], String)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.html#MASES_DataDistributionManager_Bindings_ISmartDataDistribution_RequestMastershipManager_System_String___System_String_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistribution.RequestMastershipManager(System.String[],System.String)
+  name.vb: RequestMastershipManager(String(), String)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.RequestMastershipManager(System.String[], System.String)
+  fullName.vb: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.RequestMastershipManager(System.String(), System.String)
+  nameWithType: ISmartDataDistribution.RequestMastershipManager(String[], String)
+  nameWithType.vb: ISmartDataDistribution.RequestMastershipManager(String(), String)
 - uid: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.RequestMastershipManager*
   name: RequestMastershipManager
   href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.html#MASES_DataDistributionManager_Bindings_ISmartDataDistribution_RequestMastershipManager_
@@ -8015,6 +8040,19 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ClusterState
   nameWithType: ISmartDataDistributionMastership.ClusterState
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.GetParameter(System.String)
+  name: GetParameter(String)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_GetParameter_System_String_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.GetParameter(System.String)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.GetParameter(System.String)
+  nameWithType: ISmartDataDistributionMastership.GetParameter(String)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.GetParameter*
+  name: GetParameter
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_GetParameter_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.GetParameter
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.GetParameter
+  nameWithType: ISmartDataDistributionMastership.GetParameter
 - uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.IamNextPrimary
   name: IamNextPrimary
   href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_IamNextPrimary
@@ -8093,6 +8131,19 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.RequestIAmNextPrimary
   nameWithType: ISmartDataDistributionMastership.RequestIAmNextPrimary
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.SetParameter(System.String,System.String)
+  name: SetParameter(String, String)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_SetParameter_System_String_System_String_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.SetParameter(System.String,System.String)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.SetParameter(System.String, System.String)
+  nameWithType: ISmartDataDistributionMastership.SetParameter(String, String)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.SetParameter*
+  name: SetParameter
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_SetParameter_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.SetParameter
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.SetParameter
+  nameWithType: ISmartDataDistributionMastership.SetParameter
 - uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.Start(System.UInt32)
   name: Start(UInt32)
   href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_Start_System_UInt32_
@@ -8468,6 +8519,23 @@ references:
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ClusterState
   nameWithType: SmartDataDistribution.ISmartDataDistributionMastership.ClusterState
   nameWithType.vb: SmartDataDistribution.MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ClusterState
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES#DataDistributionManager#Bindings#ISmartDataDistributionMastership#GetParameter(System.String)
+  name: ISmartDataDistributionMastership.GetParameter(String)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_GetParameter_System_String_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES#DataDistributionManager#Bindings#ISmartDataDistributionMastership#GetParameter(System.String)
+  name.vb: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.GetParameter(String)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.GetParameter(System.String)
+  nameWithType: SmartDataDistribution.ISmartDataDistributionMastership.GetParameter(String)
+  nameWithType.vb: SmartDataDistribution.MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.GetParameter(String)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES#DataDistributionManager#Bindings#ISmartDataDistributionMastership#GetParameter*
+  name: ISmartDataDistributionMastership.GetParameter
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_GetParameter_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES#DataDistributionManager#Bindings#ISmartDataDistributionMastership#GetParameter
+  isSpec: "True"
+  name.vb: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.GetParameter
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.GetParameter
+  nameWithType: SmartDataDistribution.ISmartDataDistributionMastership.GetParameter
+  nameWithType.vb: SmartDataDistribution.MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.GetParameter
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES#DataDistributionManager#Bindings#ISmartDataDistributionMastership#IamNextPrimary
   name: ISmartDataDistributionMastership.IamNextPrimary
   href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_IamNextPrimary
@@ -8570,6 +8638,23 @@ references:
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.RequestIAmNextPrimary
   nameWithType: SmartDataDistribution.ISmartDataDistributionMastership.RequestIAmNextPrimary
   nameWithType.vb: SmartDataDistribution.MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.RequestIAmNextPrimary
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES#DataDistributionManager#Bindings#ISmartDataDistributionMastership#SetParameter(System.String,System.String)
+  name: ISmartDataDistributionMastership.SetParameter(String, String)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_SetParameter_System_String_System_String_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES#DataDistributionManager#Bindings#ISmartDataDistributionMastership#SetParameter(System.String,System.String)
+  name.vb: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.SetParameter(String, String)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.SetParameter(System.String, System.String)
+  nameWithType: SmartDataDistribution.ISmartDataDistributionMastership.SetParameter(String, String)
+  nameWithType.vb: SmartDataDistribution.MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.SetParameter(String, String)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES#DataDistributionManager#Bindings#ISmartDataDistributionMastership#SetParameter*
+  name: ISmartDataDistributionMastership.SetParameter
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_SetParameter_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES#DataDistributionManager#Bindings#ISmartDataDistributionMastership#SetParameter
+  isSpec: "True"
+  name.vb: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.SetParameter
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.SetParameter
+  nameWithType: SmartDataDistribution.ISmartDataDistributionMastership.SetParameter
+  nameWithType.vb: SmartDataDistribution.MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.SetParameter
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES#DataDistributionManager#Bindings#ISmartDataDistributionMastership#Start(System.UInt32)
   name: ISmartDataDistributionMastership.Start(UInt32)
   href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_Start_System_UInt32_
@@ -8828,15 +8913,21 @@ references:
   commentId: E:MASES.DataDistributionManager.Bindings.SmartDataDistribution.RequestedStateEvent
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.RequestedStateEvent
   nameWithType: SmartDataDistribution.RequestedStateEvent
-- uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.RequestMastershipManager(System.String,System.String[])
-  name: RequestMastershipManager(String, String[])
-  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_RequestMastershipManager_System_String_System_String___
-  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistribution.RequestMastershipManager(System.String,System.String[])
-  name.vb: RequestMastershipManager(String, String())
-  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.RequestMastershipManager(System.String, System.String[])
-  fullName.vb: MASES.DataDistributionManager.Bindings.SmartDataDistribution.RequestMastershipManager(System.String, System.String())
-  nameWithType: SmartDataDistribution.RequestMastershipManager(String, String[])
-  nameWithType.vb: SmartDataDistribution.RequestMastershipManager(String, String())
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.RequestMastershipManager(MASES.DataDistributionManager.Bindings.IConfiguration,System.String)
+  name: RequestMastershipManager(IConfiguration, String)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_RequestMastershipManager_MASES_DataDistributionManager_Bindings_IConfiguration_System_String_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistribution.RequestMastershipManager(MASES.DataDistributionManager.Bindings.IConfiguration,System.String)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.RequestMastershipManager(MASES.DataDistributionManager.Bindings.IConfiguration, System.String)
+  nameWithType: SmartDataDistribution.RequestMastershipManager(IConfiguration, String)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.RequestMastershipManager(System.String[],System.String)
+  name: RequestMastershipManager(String[], String)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_RequestMastershipManager_System_String___System_String_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistribution.RequestMastershipManager(System.String[],System.String)
+  name.vb: RequestMastershipManager(String(), String)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.RequestMastershipManager(System.String[], System.String)
+  fullName.vb: MASES.DataDistributionManager.Bindings.SmartDataDistribution.RequestMastershipManager(System.String(), System.String)
+  nameWithType: SmartDataDistribution.RequestMastershipManager(String[], String)
+  nameWithType.vb: SmartDataDistribution.RequestMastershipManager(String(), String)
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.RequestMastershipManager*
   name: RequestMastershipManager
   href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_RequestMastershipManager_

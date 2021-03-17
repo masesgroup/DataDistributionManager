@@ -11,7 +11,7 @@
 <script type="text/javascript" src="../../../script.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -122,20 +122,25 @@ extends <a href="BaseConfiguration.html" title="class in org.mases.datadistribut
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#MaxMessageSizeKey">MaxMessageSizeKey</a></span></code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#MastershipLibraryKey">MastershipLibraryKey</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#ProtocolKey">ProtocolKey</a></span></code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#MaxMessageSizeKey">MaxMessageSizeKey</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#ProtocolLibraryKey">ProtocolLibraryKey</a></span></code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#ProtocolKey">ProtocolKey</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#ProtocolLibraryKey">ProtocolLibraryKey</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#ServerLostTimeoutKey">ServerLostTimeoutKey</a></span></code></th>
 <td class="colLast">&nbsp;</td>
@@ -171,62 +176,76 @@ extends <a href="BaseConfiguration.html" title="class in org.mases.datadistribut
 </td>
 </tr>
 <tr class="rowColor" id="i1">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMastershipLibrary()">getMastershipLibrary</a></span>()</code></th>
+<td class="colLast">
+<div class="block">The mastership library to use</div>
+</td>
+</tr>
+<tr class="altColor" id="i2">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMaxMessageSize()">getMaxMessageSize</a></span>()</code></th>
 <td class="colLast">
 <div class="block">The max message size managed</div>
 </td>
 </tr>
-<tr class="altColor" id="i2">
+<tr class="rowColor" id="i3">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProtocol()">getProtocol</a></span>()</code></th>
 <td class="colLast">
 <div class="block">The protocol to use (e.g.</div>
 </td>
 </tr>
-<tr class="rowColor" id="i3">
+<tr class="altColor" id="i4">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProtocolLibrary()">getProtocolLibrary</a></span>()</code></th>
 <td class="colLast">
 <div class="block">The protocol library to use</div>
 </td>
 </tr>
-<tr class="altColor" id="i4">
+<tr class="rowColor" id="i5">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getServerLostTimeout()">getServerLostTimeout</a></span>()</code></th>
 <td class="colLast">
 <div class="block">The timeout on server lost</div>
 </td>
 </tr>
-<tr class="rowColor" id="i5">
+<tr class="altColor" id="i6">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setGlobalLogLevel(org.mases.datadistributionmanager.DDM_LOG_LEVEL)">setGlobalLogLevel</a></span>&#8203;(<a href="DDM_LOG_LEVEL.html" title="enum in org.mases.datadistributionmanager">DDM_LOG_LEVEL</a>&nbsp;level)</code></th>
 <td class="colLast">
 <div class="block">The global log value</div>
 </td>
 </tr>
-<tr class="altColor" id="i6">
+<tr class="rowColor" id="i7">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setMastershipLibrary(java.lang.String)">setMastershipLibrary</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;protolib)</code></th>
+<td class="colLast">
+<div class="block">The mastership library to use</div>
+</td>
+</tr>
+<tr class="altColor" id="i8">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setMaxMessageSize(java.lang.Integer)">setMaxMessageSize</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&nbsp;msgSize)</code></th>
 <td class="colLast">
 <div class="block">The max message size managed</div>
 </td>
 </tr>
-<tr class="rowColor" id="i7">
+<tr class="rowColor" id="i9">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setProtocol(java.lang.String)">setProtocol</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;protocol)</code></th>
 <td class="colLast">
 <div class="block">The protocol to use (e.g.</div>
 </td>
 </tr>
-<tr class="altColor" id="i8">
+<tr class="altColor" id="i10">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setProtocolLibrary(java.lang.String)">setProtocolLibrary</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;protolib)</code></th>
 <td class="colLast">
 <div class="block">The protocol library to use</div>
 </td>
 </tr>
-<tr class="rowColor" id="i9">
+<tr class="rowColor" id="i11">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setServerLostTimeout(java.lang.Integer)">setServerLostTimeout</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang" class="externalLink">Integer</a>&nbsp;timeout)</code></th>
 <td class="colLast">
@@ -277,6 +296,16 @@ extends <a href="BaseConfiguration.html" title="class in org.mases.datadistribut
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../constant-values.html#org.mases.datadistributionmanager.GlobalConfiguration.ProtocolLibraryKey">Constant Field Values</a></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="MastershipLibraryKey">MastershipLibraryKey</a></h3>
+<div class="memberSignature"><span class="modifiers">public static final</span>&nbsp;<span class="returnType"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></span>&nbsp;<span class="memberName">MastershipLibraryKey</span></div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../constant-values.html#org.mases.datadistributionmanager.GlobalConfiguration.MastershipLibraryKey">Constant Field Values</a></dd>
 </dl>
 </section>
 </li>
@@ -361,6 +390,28 @@ extends <a href="BaseConfiguration.html" title="class in org.mases.datadistribut
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>protolib</code> - The protocol library</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="getMastershipLibrary()">getMastershipLibrary</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></span>&nbsp;<span class="memberName">getMastershipLibrary</span>()</div>
+<div class="block">The mastership library to use</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The mastership library</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="setMastershipLibrary(java.lang.String)">setMastershipLibrary</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">setMastershipLibrary</span>&#8203;(<span class="arguments"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;protolib)</span></div>
+<div class="block">The mastership library to use</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>protolib</code> - The mastership library</dd>
 </dl>
 </section>
 </li>

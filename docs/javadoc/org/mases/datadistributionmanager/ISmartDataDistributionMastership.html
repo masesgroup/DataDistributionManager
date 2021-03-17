@@ -11,7 +11,7 @@
 <script type="text/javascript" src="../../../script.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6};
+<script type="text/javascript">var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -160,34 +160,49 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="altColor" id="i8">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#GetParameter(java.lang.String)">GetParameter</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;paramName)</code></th>
+<td class="colLast">
+<div class="block">Get mastership parameter</div>
+</td>
+</tr>
+<tr class="rowColor" id="i9">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPrimaryServerId()">getPrimaryServerId</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets identifier of the primary server</div>
 </td>
 </tr>
-<tr class="rowColor" id="i9">
+<tr class="altColor" id="i10">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getUpTime()">getUpTime</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets this instance uptime</div>
 </td>
 </tr>
-<tr class="altColor" id="i10">
+<tr class="rowColor" id="i11">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#RequestIAmNextPrimary()">RequestIAmNextPrimary</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Request to be the next primary server</div>
 </td>
 </tr>
-<tr class="rowColor" id="i11">
+<tr class="altColor" id="i12">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#SetParameter(java.lang.String,java.lang.String)">SetParameter</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;paramName,
+<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;paramValue)</code></th>
+<td class="colLast">
+<div class="block">Set mastership parameter</div>
+</td>
+</tr>
+<tr class="rowColor" id="i13">
 <td class="colFirst"><code><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#Start(int)">Start</a></span>&#8203;(int&nbsp;dwMilliseconds)</code></th>
 <td class="colLast">
 <div class="block">Starts the manager</div>
 </td>
 </tr>
-<tr class="altColor" id="i12">
+<tr class="altColor" id="i14">
 <td class="colFirst"><code><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#Stop(int)">Stop</a></span>&#8203;(int&nbsp;dwMilliseconds)</code></th>
 <td class="colLast">
@@ -211,6 +226,32 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2>Method Details</h2>
 <ul class="blockList">
+<li class="blockList">
+<section class="detail">
+<h3><a id="SetParameter(java.lang.String,java.lang.String)">SetParameter</a></h3>
+<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">SetParameter</span>&#8203;(<span class="arguments"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;paramName,
+<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;paramValue)</span></div>
+<div class="block">Set mastership parameter</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>paramName</code> - Parameter to set</dd>
+<dd><code>paramValue</code> - Value to set</dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="GetParameter(java.lang.String)">GetParameter</a></h3>
+<div class="memberSignature"><span class="returnType"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></span>&nbsp;<span class="memberName">GetParameter</span>&#8203;(<span class="arguments"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;paramName)</span></div>
+<div class="block">Get mastership parameter</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>paramName</code> - Parameter to get</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Parameter value</dd>
+</dl>
+</section>
+</li>
 <li class="blockList">
 <section class="detail">
 <h3><a id="Start(int)">Start</a></h3>
