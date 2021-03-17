@@ -36,6 +36,10 @@ namespace MASES.DataDistributionManager.Bindings
         /// </summary>
         public const string ProtocolLibraryKey = "datadistributionmanager.common.protolib";
         /// <summary>
+        /// Configuration key of <see cref="MastershipLibrary"/>
+        /// </summary>
+        public const string MastershipLibraryKey = "datadistributionmanager.common.mastershiplib";
+        /// <summary>
         /// Configuration key of <see cref="MaxMessageSize"/>
         /// </summary>
         public const string MaxMessageSizeKey = "datadistributionmanager.maxmessagesize";
@@ -99,6 +103,24 @@ namespace MASES.DataDistributionManager.Bindings
             {
                 keyValuePair[ProtocolLibraryKey] = value;
                 EmitPropertyChanged("ProtocolLibrary");
+            }
+        }
+
+        /// <summary>
+        /// The mastership library to use
+        /// </summary>
+        public string MastershipLibrary
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(MastershipLibraryKey, out value);
+                return value;
+            }
+            set
+            {
+                keyValuePair[MastershipLibraryKey] = value;
+                EmitPropertyChanged("MastershipLibrary");
             }
         }
 

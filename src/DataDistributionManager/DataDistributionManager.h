@@ -897,6 +897,22 @@ public:
 	 */
 	virtual OPERATION_RESULT Initialize(IDataDistributionSubsystem *transportManager, IDataDistributionMastershipCallback *cbs, const char *hostAddress = NULL, const char *arrayParams[] = NULL, int len = 0) = 0;
 	/**
+	* @brief Sets a parameter at run-time
+	*
+	* \p paramName the parameter name
+	* \p paramValue the parameter value
+	*
+	*/
+	virtual void SetParameter(const char *paramName, const char *paramValue) = 0;
+	/**
+	* @brief Reads a parameter at run-time
+	*
+	* \p paramName the parameter name
+	*
+	* @return parameter value
+	*/
+	virtual const char *GetParameter(const char *paramName) = 0;
+	/**
 	 * @brief Start the mastership subsystem
 	 *
 	 * \p timeout the operation timeout in milliseconds

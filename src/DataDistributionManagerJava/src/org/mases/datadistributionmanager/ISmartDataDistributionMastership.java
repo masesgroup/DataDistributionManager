@@ -25,6 +25,22 @@ import java.util.HashMap;
  */
 public interface ISmartDataDistributionMastership {
     /**
+     * Set mastership parameter
+     * 
+     * @param paramName  Parameter to set
+     * @param paramValue Value to set
+     */
+    void SetParameter(String paramName, String paramValue);
+
+    /**
+     * Get mastership parameter
+     * 
+     * @param paramName Parameter to get
+     * @return Parameter value
+     */
+    String GetParameter(String paramName);
+
+    /**
      * Starts the manager
      * 
      * @param dwMilliseconds Timeout in ms

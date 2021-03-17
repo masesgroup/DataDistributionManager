@@ -29,6 +29,18 @@ namespace MASES.DataDistributionManager.Bindings
     public interface ISmartDataDistributionMastership
     {
         /// <summary>
+        /// Set mastership parameter
+        /// </summary>
+        /// <param name="paramName">Parameter to set</param>
+        /// <param name="paramValue">Value to set</param>
+        void SetParameter(string paramName, string paramValue);
+        /// <summary>
+        /// Get mastership parameter
+        /// </summary>
+        /// <param name="paramName">Parameter to get</param>
+        /// <returns>Parameter value</returns>
+        string GetParameter(string paramName);
+        /// <summary>
         /// Starts the manager
         /// </summary>
         /// <param name="dwMilliseconds">Timeout in ms</param>

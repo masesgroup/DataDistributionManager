@@ -107,6 +107,12 @@ class NativeInterface {
         static native long IDataDistributionSubsystem_ChangeDirectionOnChannel(long IDataDistributionSubsystem_instance,
                         long channelHandle, int direction);
 
+        static native void IDataDistributionMastershipCommon_SetParameter(long IDataDistribution_instance,
+                        String paramName, String paramValue);
+
+        static native String IDataDistributionMastershipCommon_GetParameter(long IDataDistribution_instance,
+                        String paramName);
+
         static native long IDataDistributionMastershipCommon_Start(long IDataDistribution_instance, int dwMilliseconds);
 
         static native long IDataDistributionMastershipCommon_Stop(long IDataDistribution_instance, int dwMilliseconds);

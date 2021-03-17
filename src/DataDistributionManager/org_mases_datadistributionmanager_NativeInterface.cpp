@@ -1062,6 +1062,63 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 
 /*
 * Class:     org_mases_datadistributionmanager_NativeInterface
+* Method:    IDataDistributionMastershipCommon_SetParameter
+* Signature: (JLjava/lang/String;Ljava/lang/String;)V
+*/
+JNIEXPORT void JNICALL Java_org_mases_datadistributionmanager_NativeInterface_IDataDistributionMastershipCommon_1SetParameter
+(JNIEnv * env, jclass caller, jlong jIDataDistribution, jstring jParamName, jstring jParamValue)
+{
+	IDataDistribution* pIDataDistribution = (IDataDistribution*)jIDataDistribution;
+	if (pIDataDistribution->GetMastershipManager() == NULL) return;
+
+	const char* paramName = NULL;
+	const char* paramValue = NULL;
+	jboolean isCopy = JNI_FALSE;
+
+	if (jParamName != NULL)
+	{
+		paramName = env->GetStringUTFChars(jParamName, &isCopy);
+	}
+
+	if (jParamValue != NULL)
+	{
+		paramValue = env->GetStringUTFChars(jParamValue, &isCopy);
+	}
+
+	pIDataDistribution->GetMastershipManager()->SetParameter(paramName, paramValue);
+
+	if (jParamName != NULL) env->ReleaseStringUTFChars(jParamName, paramName);
+	if (jParamValue != NULL) env->ReleaseStringUTFChars(jParamValue, paramValue);
+}
+
+/*
+* Class:     org_mases_datadistributionmanager_NativeInterface
+* Method:    IDataDistributionMastershipCommon_GetParameter
+* Signature: (JLjava/lang/String;)Ljava/lang/String;
+*/
+JNIEXPORT jstring JNICALL Java_org_mases_datadistributionmanager_NativeInterface_IDataDistributionMastershipCommon_1GetParameter
+(JNIEnv * env, jclass caller, jlong jIDataDistribution, jstring jParamName)
+{
+	IDataDistribution* pIDataDistribution = (IDataDistribution*)jIDataDistribution;
+	if (pIDataDistribution->GetMastershipManager() == NULL) return NULL;
+
+	const char* paramName = NULL;
+	jboolean isCopy = JNI_FALSE;
+
+	if (jParamName != NULL)
+	{
+		paramName = env->GetStringUTFChars(jParamName, &isCopy);
+	}
+
+	const char* paramValue = pIDataDistribution->GetMastershipManager()->GetParameter(paramName);
+
+	if (jParamName != NULL) env->ReleaseStringUTFChars(jParamName, paramName);
+	
+	return (paramValue != NULL) ? env->NewStringUTF(paramValue) : NULL;
+}
+
+/*
+* Class:     org_mases_datadistributionmanager_NativeInterface
 * Method:    IDataDistributionMastershipCommon_Start
 * Signature: (JI)J
 */

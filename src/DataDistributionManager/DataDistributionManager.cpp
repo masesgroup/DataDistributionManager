@@ -17,7 +17,7 @@
 */
 
 #include "DataDistributionManager_Internal.h"
-#include "DataDistributionMastershipManagerBase.h"
+#include "DataDistributionMastershipCommon.h"
 
 static const byte sString[] = "Copyright(c) 2012-2021 MASES s.r.l., All Rights Reserved";
 
@@ -448,6 +448,9 @@ OPERATION_RESULT DataDistributionManagerImpl::Initialize(IDataDistributionCallba
 
 OPERATION_RESULT DataDistributionManagerImpl::RequestMastershipManager(IDataDistributionMastershipCallback* mastershipCallback, const char* szMyAddress, const char* arrayParams[], int len)
 {
+	OPERATION_RESULT res = read_config_file((arrayParams == NULL) ? m_arrayParams : arrayParams, (arrayParams == NULL) ? m_arrayParamsLen : len);
+	if (OPERATION_FAILED(res)) return res;
+
 	if (pDataDistributionMastershipManagerCommon == NULL)
 	{
 		if (m_MastershipLib.length() != 0)
@@ -456,18 +459,17 @@ OPERATION_RESULT DataDistributionManagerImpl::RequestMastershipManager(IDataDist
 			m_MastershipLib += "d";
 #endif
 			m_hMastershipManagerModule = LoadLibraryA(m_MastershipLib.c_str());
+			if (!m_hMastershipManagerModule) return HRESULT_FROM_WIN32(GetLastError());
+		}
+		else return DDM_PARAMETER_ERROR;
+
+		auto createMastershipProc = (pvInstantiatorFun)GetProcAddress(m_hMastershipManagerModule, "CreateObjectImplementation");
+		if (!createMastershipProc)
+		{
+			return HRESULT_FROM_WIN32(GetLastError());
 		}
 
-		if (m_hMastershipManagerModule)
-		{
-			auto createMastershipProc = (pvInstantiatorFun)GetProcAddress(m_hMastershipManagerModule, "CreateObjectImplementation");
-			if (!createMastershipProc)
-			{
-				return HRESULT_FROM_WIN32(GetLastError());
-			}
-			pDataDistributionMastershipManagerCommon = static_cast<DataDistributionMastershipCommon*>(createMastershipProc());
-		}
-		else pDataDistributionMastershipManagerCommon = new DataDistributionMastershipManagerBase();
+		pDataDistributionMastershipManagerCommon = static_cast<DataDistributionMastershipCommon*>(createMastershipProc());
 
 		m_InitializedMastershipResult = pDataDistributionMastershipManagerCommon->Initialize(pDataDistributionManagerSubsystem, mastershipCallback, szMyAddress,
 			(arrayParams == NULL) ? m_arrayParams : arrayParams,

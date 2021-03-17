@@ -221,6 +221,25 @@ DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionMastershipCommon_Initialize(
 	return pIDataDistribution_instance->RequestMastershipManager((IDataDistributionMastershipCallback*)iddmcb, szMyAddress, arrayParams, len);
 }
 
+DLLEXPORT void DLLCALL IDataDistributionMastershipCommon_SetParameter(void* IDataDistribution_instance, const char *paramName, const char *paramValue)
+{
+	IDataDistribution* pIDataDistribution_instance = static_cast<IDataDistribution*>(IDataDistribution_instance);
+	if (pIDataDistribution_instance->GetMastershipManager() != NULL)
+	{
+		pIDataDistribution_instance->GetMastershipManager()->SetParameter(paramName, paramValue);
+	}
+}
+
+DLLEXPORT const char* DLLCALL IDataDistributionMastershipCommon_GetParameter(void* IDataDistribution_instance, const char *paramName)
+{
+	IDataDistribution* pIDataDistribution_instance = static_cast<IDataDistribution*>(IDataDistribution_instance);
+	if (pIDataDistribution_instance->GetMastershipManager() != NULL)
+	{
+		return pIDataDistribution_instance->GetMastershipManager()->GetParameter(paramName);
+	}
+	return NULL;
+}
+
 DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionMastershipCommon_Start(void* IDataDistribution_instance, unsigned long dwMilliseconds)
 {
 	IDataDistribution* pIDataDistribution_instance = static_cast<IDataDistribution*>(IDataDistribution_instance);

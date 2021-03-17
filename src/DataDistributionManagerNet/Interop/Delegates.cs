@@ -158,6 +158,11 @@ namespace MASES.DataDistributionManager.Bindings.Interop
                                                                    [MarshalAs(UnmanagedType.LPStr)] string szMyAddress = null,
                                                                    [In][MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPStr)] string[] arrayParams = null, int len = 0);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
+    delegate void IDataDistributionMastershipCommon_SetParameter(IntPtr IDataDistribution_instance, [MarshalAs(UnmanagedType.LPStr)] string paramName, [MarshalAs(UnmanagedType.LPStr)] string paramValue);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.LPStr)]
+    delegate string IDataDistributionMastershipCommon_GetParameter(IntPtr IDataDistribution_instance, [MarshalAs(UnmanagedType.LPStr)] string paramName);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate OPERATION_RESULT IDataDistributionMastershipCommon_Start(IntPtr IDataDistribution_instance, uint dwMilliseconds);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate OPERATION_RESULT IDataDistributionMastershipCommon_Stop(IntPtr IDataDistribution_instance, uint dwMilliseconds);

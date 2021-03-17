@@ -347,9 +347,16 @@ namespace MASES.DataDistributionManager.Bindings
         /// Request to allocate mastership manager
         /// </summary>
         /// <param name="serverName">The server name</param>
+        /// <param name="parameters">The configuration coming from an instance of <see cref="IConfiguration"/></param>
+        /// <returns><see cref="OPERATION_RESULT"/></returns>
+        OPERATION_RESULT RequestMastershipManager(IConfiguration parameters = null, string serverName = null );
+        /// <summary>
+        /// Request to allocate mastership manager
+        /// </summary>
+        /// <param name="serverName">The server name</param>
         /// <param name="parameters">Paramaters to send to underlying layer</param>
         /// <returns><see cref="OPERATION_RESULT"/></returns>
-        OPERATION_RESULT RequestMastershipManager(string serverName, string[] parameters);
+        OPERATION_RESULT RequestMastershipManager(string[] parameters, string serverName = null);
         /// <summary>
         /// Returns <see cref="ISmartDataDistributionMastership"/> reference
         /// </summary>
@@ -393,13 +400,13 @@ namespace MASES.DataDistributionManager.Bindings
         /// <summary>
         /// Get global parameter
         /// </summary>
-        /// <param name="paramName">Parameter to set</param>
+        /// <param name="paramName">Parameter to get</param>
         /// <returns>Parameter value</returns>
         string GetParameter(string paramName);
         /// <summary>
         /// Get global parameter
         /// </summary>
-        /// <param name="paramId"><see cref="DDM_GENERAL_PARAMETER"/> parameter to set</param>
+        /// <param name="paramId"><see cref="DDM_GENERAL_PARAMETER"/> parameter to get</param>
         /// <returns>Parameter value</returns>
         string GetParameter(DDM_GENERAL_PARAMETER paramId);
         /// <summary>
@@ -603,7 +610,12 @@ namespace MASES.DataDistributionManager.Bindings
             return result;
         }
         /// <inheritdoc/>
-        public OPERATION_RESULT RequestMastershipManager(string serverName, string[] parameters)
+        public OPERATION_RESULT RequestMastershipManager(IConfiguration parameters = null, string serverName = null)
+        {
+            return RequestMastershipManager(parameters != null ? parameters.Configuration : null, serverName);
+        }
+        /// <inheritdoc/>
+        public OPERATION_RESULT RequestMastershipManager(string[] parameters, string serverName = null)
         {
             m_DataDistributionMastershipCallbackLow = new DataDistributionMastershipCallbackLow(IDataDistribution_ptr, this);
 
@@ -918,6 +930,16 @@ namespace MASES.DataDistributionManager.Bindings
         #endregion
 
         #region ISmartDataDistributionMastership
+
+        void ISmartDataDistributionMastership.SetParameter(string paramName, string paramValue)
+        {
+            DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionMastershipCommon_SetParameter>().Invoke(IDataDistribution_ptr, paramName, paramValue);
+        }
+
+        string ISmartDataDistributionMastership.GetParameter(string paramName)
+        {
+            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionMastershipCommon_GetParameter>().Invoke(IDataDistribution_ptr, paramName);
+        }
 
         OPERATION_RESULT ISmartDataDistributionMastership.Start(uint dwMilliseconds)
         {

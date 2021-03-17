@@ -26,6 +26,7 @@ import java.util.HashMap;
 public abstract class GlobalConfiguration extends BaseConfiguration {
     public static final String ProtocolKey = "datadistributionmanager.common.protocol";
     public static final String ProtocolLibraryKey = "datadistributionmanager.common.protolib";
+    public static final String MastershipLibraryKey = "datadistributionmanager.common.mastershiplib";
     public static final String MaxMessageSizeKey = "datadistributionmanager.maxmessagesize";
     public static final String ServerLostTimeoutKey = "datadistributionmanager.timeout.serverlost";
     public static final String GlobalLogLevelKey = "datadistributionmanager.loglevel.global";
@@ -84,6 +85,25 @@ public abstract class GlobalConfiguration extends BaseConfiguration {
     public void setProtocolLibrary(String protolib) {
         keyValuePair.put(ProtocolLibraryKey, protolib);
     }
+
+    /**
+     * The mastership library to use
+     * 
+     * @return The mastership library
+     */
+    public String getMastershipLibrary() {
+        String value = keyValuePair.get(MastershipLibraryKey);
+        return (value == null) ? "" : value;
+    }
+
+    /**
+     * The mastership library to use
+     * 
+     * @param protolib The mastership library
+     */
+    public void setMastershipLibrary(String protolib) {
+        keyValuePair.put(MastershipLibraryKey, protolib);
+    }    
 
     /**
      * The max message size managed

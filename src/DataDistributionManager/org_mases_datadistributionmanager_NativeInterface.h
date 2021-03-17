@@ -273,6 +273,22 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 
 /*
  * Class:     org_mases_datadistributionmanager_NativeInterface
+ * Method:    IDataDistributionMastershipCommon_SetParameter
+ * Signature: (JLjava/lang/String;Ljava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_org_mases_datadistributionmanager_NativeInterface_IDataDistributionMastershipCommon_1SetParameter
+  (JNIEnv *, jclass, jlong, jstring, jstring);
+
+/*
+ * Class:     org_mases_datadistributionmanager_NativeInterface
+ * Method:    IDataDistributionMastershipCommon_GetParameter
+ * Signature: (JLjava/lang/String;)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_org_mases_datadistributionmanager_NativeInterface_IDataDistributionMastershipCommon_1GetParameter
+  (JNIEnv *, jclass, jlong, jstring);
+
+/*
+ * Class:     org_mases_datadistributionmanager_NativeInterface
  * Method:    IDataDistributionMastershipCommon_Start
  * Signature: (JI)J
  */

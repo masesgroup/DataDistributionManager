@@ -70,6 +70,8 @@ extern "C" {
 
 	// IDataDistributionMastershipCommon
 	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionMastershipCommon_Initialize(void* IDataDistribution_instance, void* iddmcb, const char* szMyAddress = NULL, const char* arrayParams[] = NULL, int len = 0);
+	DLLEXPORT void DLLCALL IDataDistributionMastershipCommon_SetParameter(void* IDataDistribution_instance, const char *paramName, const char *paramValue);
+	DLLEXPORT const char* DLLCALL IDataDistributionMastershipCommon_GetParameter(void* IDataDistribution_instance, const char *paramName);
 	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionMastershipCommon_Start(void* IDataDistribution_instance, unsigned long dwMilliseconds);
 	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionMastershipCommon_Stop(void* IDataDistribution_instance, unsigned long dwMilliseconds);
 	DLLEXPORT BOOL DLLCALL IDataDistributionMastershipCommon_GetIamNextPrimary(void* IDataDistribution_instance);

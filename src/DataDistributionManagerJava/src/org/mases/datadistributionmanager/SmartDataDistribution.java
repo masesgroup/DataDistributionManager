@@ -254,7 +254,8 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
      * @return {@link OPERATION_RESULT}
      * @throws IllegalArgumentException @see {@link IConfiguration}
      */
-    public OPERATION_RESULT Initialize(IConfiguration configuration, String topicTrailer) throws IllegalArgumentException {
+    public OPERATION_RESULT Initialize(IConfiguration configuration, String topicTrailer)
+            throws IllegalArgumentException {
         return Initialize(configuration.getConfiguration(), null, topicTrailer);
     }
 
@@ -315,6 +316,58 @@ public class SmartDataDistribution implements IDataDistributionCallbackLow, IDat
             NativeCallbackManager.UnregisterCallback((IDataDistributionCallbackLow) this);
         }
         return new OPERATION_RESULT(m_InitializeResult);
+    }
+
+    /**
+     * Request to allocate mastership manager
+     * 
+     * @return {@link OPERATION_RESULT}
+     */
+    public OPERATION_RESULT RequestMastershipManager() {
+        return RequestMastershipManager(null, (IConfiguration)null);
+    }
+
+    /**
+     * Request to allocate mastership manager
+     * 
+     * @param parameters Paramaters to send to underlying layer
+     * @return {@link OPERATION_RESULT}
+     */
+    public OPERATION_RESULT RequestMastershipManager(String[] parameters) {
+        return RequestMastershipManager(null, parameters);
+    }
+
+    /**
+     * Request to allocate mastership manager
+     * 
+     * @param parameters {@link IConfiguration} instance of parameters to send to
+     *                   underlying layer
+     * @return {@link OPERATION_RESULT}
+     */
+    public OPERATION_RESULT RequestMastershipManager(IConfiguration parameters) {
+        return RequestMastershipManager(null, parameters != null ? parameters.getConfiguration() : null);
+    }
+
+    /**
+     * Request to allocate mastership manager
+     * 
+     * @param serverName The server name
+     * @return {@link OPERATION_RESULT}
+     */
+    public OPERATION_RESULT RequestMastershipManager(String serverName) {
+        return RequestMastershipManager(serverName, (IConfiguration) null);
+    }
+
+    /**
+     * Request to allocate mastership manager
+     * 
+     * @param serverName The server name
+     * @param parameters {@link IConfiguration} instance of parameters to send to
+     *                   underlying layer
+     * @return {@link OPERATION_RESULT}
+     */
+    public OPERATION_RESULT RequestMastershipManager(String serverName, IConfiguration parameters) {
+        return RequestMastershipManager(serverName, parameters != null ? parameters.getConfiguration() : null);
     }
 
     /**

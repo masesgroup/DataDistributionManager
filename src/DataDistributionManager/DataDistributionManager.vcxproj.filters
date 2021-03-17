@@ -33,9 +33,6 @@
     <ClInclude Include="DataDistributionManagerCommon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DataDistributionMastershipManagerBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="DataDistributionManager_c.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -75,9 +72,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DataDistributionManagerCommon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DataDistributionMastershipManagerBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DataDistributionManager_c.cpp">
