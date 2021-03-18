@@ -80,7 +80,7 @@ namespace MASES.DataDistributionManager.Bindings
         }
 
         /// <summary>
-        /// The timeout on create channel
+        /// The timeout on create channel in ms
         /// </summary>
         public uint CreateChannelTimeout
         {
@@ -98,7 +98,7 @@ namespace MASES.DataDistributionManager.Bindings
         }
 
         /// <summary>
-        /// The timeout on seek channel
+        /// The timeout on seek channel in ms
         /// </summary>
         public uint ChannelSeekTimeout
         {
@@ -116,7 +116,7 @@ namespace MASES.DataDistributionManager.Bindings
         }
 
         /// <summary>
-        /// The timeout on channel receive
+        /// The timeout on channel receive in ms
         /// </summary>
         public uint ReceiveTimeout
         {
@@ -134,7 +134,7 @@ namespace MASES.DataDistributionManager.Bindings
         }
 
         /// <summary>
-        /// The timeout on channel keep alive
+        /// The timeout on channel keep alive in ms
         /// </summary>
         public uint KeepAliveTimeout
         {
@@ -152,7 +152,7 @@ namespace MASES.DataDistributionManager.Bindings
         }
 
         /// <summary>
-        /// The timeout on channel message consume
+        /// The timeout on channel message consume in ms
         /// </summary>
         public uint ConsumerTimeout
         {
@@ -170,7 +170,7 @@ namespace MASES.DataDistributionManager.Bindings
         }
 
         /// <summary>
-        /// The timeout on channel message produce
+        /// The timeout on channel message produce in ms
         /// </summary>
         public uint ProducerTimeout
         {
@@ -188,7 +188,7 @@ namespace MASES.DataDistributionManager.Bindings
         }
 
         /// <summary>
-        /// The timeout on channel message commit
+        /// The timeout on channel message commit in ms
         /// </summary>
         public uint CommitTimeout
         {

@@ -25,102 +25,17 @@
 
 #include "DataDistributionManagerCommon.h"
 
-typedef enum class DDM_KEEPALIVE_TYPE
-{
-	ALIVE = 0x1,
-	HELLO = 0x2,
-	WELCOME = 0x4,
-	GOODBYE = 0x8,
-	STATECHANGEREQUEST = 0x10,
-	STATECHANGERESPONSE = 0x20,
-} DDM_KEEPALIVE_TYPE;
-
-struct BaseKeepAlive
-{
-	int MessageLength;
-	DDM_KEEPALIVE_TYPE Type;
-	int64_t ServerId;
-
-	BaseKeepAlive(DDM_KEEPALIVE_TYPE type, int64_t serverId)
-	{
-		MessageLength = sizeof(BaseKeepAlive);
-		Type = type;
-		ServerId = serverId;
-	}
-};
-
-struct HELLO_WELCOME : BaseKeepAlive
-{
-	int64_t Uptime;
-	char ServerName[256];
-	char HostName[256];
-	HELLO_WELCOME(DDM_KEEPALIVE_TYPE type, size_t serverId, const char* serverName, const char* hostname) : BaseKeepAlive(type, serverId)
-	{
-		MessageLength = sizeof(HELLO_WELCOME);
-		memset(ServerName, 0, 256);
-		memset(HostName, 0, 256);
-		if (serverName)
-		{
-			strncpy(ServerName, serverName, min(256, strlen(serverName)));
-		}
-		if (hostname)
-		{
-			strncpy(HostName, hostname, min(256, strlen(hostname)));
-		}
-	}
-};
-
-struct GOODBYE : BaseKeepAlive
-{
-	GOODBYE(int64_t serverId) : BaseKeepAlive(DDM_KEEPALIVE_TYPE::GOODBYE, serverId) {}
-};
-
-struct ALIVE : BaseKeepAlive
-{
-	int64_t Uptime;
-	DDM_INSTANCE_STATE Status;
-	ALIVE(int64_t serverId, int64_t uptime, DDM_INSTANCE_STATE status) : BaseKeepAlive(DDM_KEEPALIVE_TYPE::ALIVE, serverId)
-	{
-		Uptime = uptime;
-		Status = status;
-	}
-};
-
-struct STATECHANGEREQUEST : BaseKeepAlive
-{
-	int64_t RequestId;
-	DDM_INSTANCE_STATE FutureStatus;
-	int64_t Uptime;
-	STATECHANGEREQUEST(int64_t serverId, int64_t requestId, DDM_INSTANCE_STATE futureStatus, int64_t uptime) :BaseKeepAlive(DDM_KEEPALIVE_TYPE::STATECHANGEREQUEST, serverId)
-	{
-		RequestId = requestId;
-		FutureStatus = futureStatus;
-		Uptime = uptime;
-	}
-};
-
-struct STATECHANGERESPONSE : BaseKeepAlive
-{
-	int64_t RequestId;
-	BOOL Accepted;
-	int Reason;
-	STATECHANGERESPONSE(int64_t serverId, int64_t requestId, BOOL accepted, int reason) :BaseKeepAlive(DDM_KEEPALIVE_TYPE::STATECHANGERESPONSE, serverId)
-	{
-		RequestId = requestId;
-		Accepted = accepted;
-		Reason = reason;
-	}
-};
-
-class DDM_EXPORT DataDistributionMastershipCommon : public IDataDistributionMastershipCommon, protected IDataDistributionChannelCallback, protected IDataDistributionLog
+class DDM_EXPORT DataDistributionMastershipCommon : public IDataDistributionMastershipCommon, protected IDataDistributionLog
 {
 public:
 	DataDistributionMastershipCommon();
 	virtual ~DataDistributionMastershipCommon() {}
-	HRESULT Initialize(IDataDistributionSubsystem* transportManager, IDataDistributionMastershipCallback* cbs, const char* szMyAddress = NULL, const char* arrayParams[] = NULL, int len = 0);
-	virtual HRESULT Initialize();
-	virtual HRESULT Start(DWORD dwMilliseconds);
-	virtual HRESULT Stop(DWORD dwMilliseconds);
+	OPERATION_RESULT Initialize(IDataDistributionSubsystem* transportManager, IDataDistributionMastershipCallback* cbs, const char* szMyAddress = NULL, const char* arrayParams[] = NULL, int len = 0);
+	virtual OPERATION_RESULT Initialize(IDataDistributionMastershipCallback* cbs, const char* szMyAddress = NULL, const char* arrayParams[] = NULL, int len = 0);
+	virtual void SetParameter(const char *paramName, const char *paramValue);
+	virtual const char *GetParameter(const char *paramName);
+	virtual OPERATION_RESULT Start(unsigned long dwMilliseconds);
+	virtual OPERATION_RESULT Stop(unsigned long dwMilliseconds);
 	virtual BOOL GetIamNextPrimary();
 	virtual BOOL RequestIAmNextPrimary();
 	virtual int64_t* GetClusterIndexes(size_t* length) = 0;
@@ -132,45 +47,13 @@ public:
 	virtual int64_t GetLocalServerId();
 	virtual int64_t GetPrimaryServerId();
 	virtual int64_t GetMessageDelay();
-	int64_t GetUpTime();
+	virtual int64_t GetUpTime();
 protected:
 	void Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, ...);
 	void Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, va_list args);
-	virtual void SetLocalServerId(int64_t);
-	virtual void SetPrimaryServerId(int64_t);
-	void AddRandomToMyTime();
 
-	virtual int SendKeepAlive();
-	virtual void OnUnderlyingEvent(const HANDLE channelHandle, const UnderlyingEventData* uEvent);
-	virtual void OnCondition(const char* channelName, DDM_UNDERLYING_ERROR_CONDITION condition, int nativeCode, const char* subSystemReason);
-	virtual void OnALIVE(ALIVE* pALIVE);
-	virtual void OnHELLO(HELLO_WELCOME* pHELLO_WELCOME);
-	virtual void OnWELCOME(HELLO_WELCOME* pHELLO_WELCOME);
-	virtual void OnGOODBYE(GOODBYE* pGOODBYE);
-	virtual void OnSTATECHANGEREQUEST(STATECHANGEREQUEST* pSTATECHANGEREQUEST);
-	virtual void OnSTATECHANGERESPONSE(STATECHANGERESPONSE* pSTATECHANGERESPONSE);
 protected:
-	const char* m_szServerName;
-	const char** m_arrayParams;
-	int m_arrayParamsLen;
-	DDM_INSTANCE_STATE m_myState;
-	BOOL m_IamNextPrimary;
 	IDataDistributionSubsystem* m_pDataDistributionManagerSubsystem;
-	IDataDistributionMastershipCallback* m_pMastershipCallback;
-	long long m_PrimaryKeepAliveDelay;
-	int64_t m_PrimaryIdentifier;
-	int64_t m_MyIdentifier;
-	HANDLE m_hKeepAlive;
-	int m_keepAliveInterval;
-private:
-	HANDLE  h_evtKeepAlive;
-	BOOL	bKeepAliveRun;
-	DWORD	dwKeepAliveThrId;
-	HANDLE	hKeepAliveThread;
-	static DWORD __stdcall keepAliveHandler(void * argh);
-	CRITICAL_SECTION m_csState;
-	SmartTimeMeasureWrapper m_startupTime;
-	BOOL m_bSystemRunning;
 };
 
 #endif // end DATADISTRIBUTIONMASTERSHIPMANAGERCOMMON_H__INCLUDED_

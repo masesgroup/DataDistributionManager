@@ -36,6 +36,10 @@ namespace MASES.DataDistributionManager.Bindings
         /// </summary>
         public const string ProtocolLibraryKey = "datadistributionmanager.common.protolib";
         /// <summary>
+        /// Configuration key of <see cref="MastershipLibrary"/>
+        /// </summary>
+        public const string MastershipLibraryKey = "datadistributionmanager.common.mastershiplib";
+        /// <summary>
         /// Configuration key of <see cref="MaxMessageSize"/>
         /// </summary>
         public const string MaxMessageSizeKey = "datadistributionmanager.maxmessagesize";
@@ -103,6 +107,24 @@ namespace MASES.DataDistributionManager.Bindings
         }
 
         /// <summary>
+        /// The mastership library to use
+        /// </summary>
+        public string MastershipLibrary
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(MastershipLibraryKey, out value);
+                return value;
+            }
+            set
+            {
+                keyValuePair[MastershipLibraryKey] = value;
+                EmitPropertyChanged("MastershipLibrary");
+            }
+        }
+
+        /// <summary>
         /// The max message size managed
         /// </summary>
         public uint MaxMessageSize
@@ -121,7 +143,7 @@ namespace MASES.DataDistributionManager.Bindings
         }
 
         /// <summary>
-        /// The timeout on server lost
+        /// The timeout on server lost in ms
         /// </summary>
         public uint ServerLostTimeout
         {

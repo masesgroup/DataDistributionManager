@@ -35,7 +35,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         public IntPtr KeyLen;
         public IntPtr Buffer;
         public IntPtr BufferLength;
-        public DDM_UNDERLYING_ERROR_CONDITION Condition;
+        public OPERATION_RESULT Condition;
         [MarshalAs(UnmanagedType.I4)]
         public int NativeCode;
         [MarshalAs(UnmanagedType.LPStr)]

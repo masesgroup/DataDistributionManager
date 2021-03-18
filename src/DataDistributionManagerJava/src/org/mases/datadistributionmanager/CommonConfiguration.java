@@ -54,7 +54,7 @@ public abstract class CommonConfiguration extends GlobalConfiguration {
     /**
      * The timeout on create channel
      * 
-     * @return The create channel timeout
+     * @return The create channel timeout in ms
      */
     public Integer getCreateChannelTimeout() {
         String value = keyValuePair.get(CreateChannelTimeoutKey);
@@ -64,7 +64,7 @@ public abstract class CommonConfiguration extends GlobalConfiguration {
     /**
      * The timeout on create channel
      * 
-     * @param timeout The create channel timeout
+     * @param timeout The create channel timeout in ms
      */
     public void setCreateChannelTimeout(Integer timeout) {
         keyValuePair.put(CreateChannelTimeoutKey, timeout.toString());
@@ -73,7 +73,7 @@ public abstract class CommonConfiguration extends GlobalConfiguration {
     /**
      * The timeout on seek channel
      * 
-     * @return The seek timeout
+     * @return The seek timeout in ms
      */
     public Integer getChannelSeekTimeout() {
         String value = keyValuePair.get(ChannelSeekTimeoutKey);
@@ -83,7 +83,7 @@ public abstract class CommonConfiguration extends GlobalConfiguration {
     /**
      * The timeout on seek channel
      * 
-     * @param timeout The seek timeout
+     * @param timeout The seek timeout in ms
      */
     public void setChannelSeekTimeout(Integer timeout) {
         keyValuePair.put(ChannelSeekTimeoutKey, timeout.toString());
@@ -92,7 +92,7 @@ public abstract class CommonConfiguration extends GlobalConfiguration {
     /**
      * The timeout on channel receive
      * 
-     * @return The receive timeout
+     * @return The receive timeout in ms
      */
     public Integer getReceiveTimeout() {
         String value = keyValuePair.get(ReceiveTimeoutKey);
@@ -111,7 +111,7 @@ public abstract class CommonConfiguration extends GlobalConfiguration {
     /**
      * The timeout on channel keep alive
      * 
-     * @return The keep-alive timeout
+     * @return The keep-alive timeout in ms
      */
     public Integer getKeepAliveTimeout() {
         String value = keyValuePair.get(KeepAliveTimeoutKey);
@@ -121,7 +121,7 @@ public abstract class CommonConfiguration extends GlobalConfiguration {
     /**
      * The timeout on channel keep alive
      * 
-     * @param timeout The keep-alive timeout
+     * @param timeout The keep-alive timeout in ms
      */
     public void setKeepAliveTimeout(Integer timeout) {
         keyValuePair.put(KeepAliveTimeoutKey, timeout.toString());
@@ -130,7 +130,7 @@ public abstract class CommonConfiguration extends GlobalConfiguration {
     /**
      * The timeout on channel message consume
      * 
-     * @return The consumer timeout
+     * @return The consumer timeout in ms
      */
     public Integer getConsumerTimeout() {
         String value = keyValuePair.get(ConsumerTimeoutKey);
@@ -140,7 +140,7 @@ public abstract class CommonConfiguration extends GlobalConfiguration {
     /**
      * The timeout on channel message consume
      * 
-     * @param timeout The consumer timeout
+     * @param timeout The consumer timeout in ms
      */
     public void setConsumerTimeout(Integer timeout) {
         keyValuePair.put(ConsumerTimeoutKey, timeout.toString());
@@ -149,7 +149,7 @@ public abstract class CommonConfiguration extends GlobalConfiguration {
     /**
      * The timeout on channel message produce
      * 
-     * @return The producer timeout
+     * @return The producer timeout in ms
      */
     public Integer getProducerTimeout() {
         String value = keyValuePair.get(ProducerTimeoutKey);
@@ -159,7 +159,7 @@ public abstract class CommonConfiguration extends GlobalConfiguration {
     /**
      * The timeout on channel message produce
      * 
-     * @param timeout The producer timeout
+     * @param timeout The producer timeout in ms
      */
     public void setProducerTimeout(Integer timeout) {
         keyValuePair.put(ProducerTimeoutKey, timeout.toString());
@@ -168,7 +168,7 @@ public abstract class CommonConfiguration extends GlobalConfiguration {
     /**
      * The timeout on channel message commit
      * 
-     * @return The commit timeout
+     * @return The commit timeout in ms
      */
     public Integer getCommitTimeout() {
         String value = keyValuePair.get(CommitTimeoutKey);
@@ -178,7 +178,7 @@ public abstract class CommonConfiguration extends GlobalConfiguration {
     /**
      * The timeout on channel message commit
      * 
-     * @param timeout The commit timeout
+     * @param timeout The commit timeout in ms
      */
     public void setCommitTimeout(Integer timeout) {
         keyValuePair.put(CommitTimeoutKey, timeout.toString());

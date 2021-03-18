@@ -100,71 +100,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         /// </summary>
         DEBUG_LEVEL = 0x10
     };
-    /// <summary>
-    /// Errors or conditions from underlying layer
-    /// </summary>
-    public enum DDM_UNDERLYING_ERROR_CONDITION : int
-    {
-        // Error section
-        /// <summary>
-        /// No error
-        /// </summary>
-        DDM_NO_ERROR_CONDITION = 0,
-        /// <summary>
-        /// Unmapped error
-        /// </summary>
-        DDM_UNMAPPED_ERROR_CONDITION = 0x10000000,
-        /// <summary>
-        /// Fatal
-        /// </summary>
-        DDM_FATAL_ERROR,
-        /// <summary>
-        /// Timeout occurred
-        /// </summary>
-        DDM_TIMEOUT,
-        /// <summary>
-        /// Invalid data
-        /// </summary>
-        DDM_INVALID_DATA,
-        /// <summary>
-        /// Subsystem not started
-        /// </summary>
-        DDM_SUBSYSTEM_NOT_STARTED,
-        /// <summary>
-        /// Failed on write
-        /// </summary>
-        DDM_WRITE_FAILED,
-        /// <summary>
-        /// Commit failed
-        /// </summary>
-        DDM_COMMIT_FAILED,
 
-        // Condition section
-        /// <summary>
-        /// Data are available
-        /// </summary>
-        DATA_AVAILABLE = 0x20000000,
-        /// <summary>
-        /// Reached end of stream
-        /// </summary>
-        DDM_END_OF_STREAM,
-        /// <summary>
-        /// No data returned
-        /// </summary>
-        DDM_NO_DATA_RETURNED,
-        /// <summary>
-        /// Timeout elapsed waiting for messages from the channel
-        /// </summary>
-        DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_BEGIN,
-        /// <summary>
-        /// End timeout condition waiting for messages from the channel
-        /// </summary>
-        DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_END,
-        /// <summary>
-        /// Timeout on acknowledgment
-        /// </summary>
-        DDM_ELAPSED_MESSAGE_ACKNOWLEDGMENT_TIMEOUT,
-    };
     /// <summary>
     /// State of the instance
     /// </summary>

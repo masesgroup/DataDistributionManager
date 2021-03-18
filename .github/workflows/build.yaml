@@ -26,7 +26,7 @@ jobs:
         id: existsOpenDDS
         continue-on-error: true
         run: |
-          python $GITHUB_WORKSPACE/third_party/CommonTools/scripts/utilsftp.py -c check -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.15.zip -l $GITHUB_WORKSPACE/OpenDDS_Build_3.15.zip
+          python $GITHUB_WORKSPACE/third_party/CommonTools/scripts/utilsftp.py -c check -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.16.zip -l $GITHUB_WORKSPACE/OpenDDS_Build_3.16.zip
 
       - name: If failed we need to rebuild artifact
         id: check_existsOpenDDS
@@ -123,21 +123,21 @@ jobs:
 
       - name: Prepare for packaging OpenDDS Binaries and PDB
         run: |
-          Compress-Archive -Path .\Output\* -DestinationPath .\OpenDDS_Build_3.15.zip
-          Compress-Archive -Path .\OutputPdb\* -DestinationPath .\OpenDDS_PDB_Build_3.15.zip
+          Compress-Archive -Path .\Output\* -DestinationPath .\OpenDDS_Build_3.16.zip
+          Compress-Archive -Path .\OutputPdb\* -DestinationPath .\OpenDDS_PDB_Build_3.16.zip
 
       - name: Prepare for packaging OpenDDS Headers
         shell: cmd
         run: |
-          7z a .\OpenDDS_Headers_3.15.zip .\third_party\OpenDDS\*.h -r
-          7z u .\OpenDDS_Headers_3.15.zip .\third_party\OpenDDS\*.inl -r
+          7z a .\OpenDDS_Headers_3.16.zip .\third_party\OpenDDS\*.h -r
+          7z u .\OpenDDS_Headers_3.16.zip .\third_party\OpenDDS\*.inl -r
 
       - name: Upload OpenDDS
         shell: cmd
         run: |
-          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_Build_3.15.zip
-          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_PDB_Build_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_PDB_Build_3.15.zip
-          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Headers_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_Headers_3.15.zip
+          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.16.zip -l %GITHUB_WORKSPACE%\OpenDDS_Build_3.16.zip
+          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_PDB_Build_3.16.zip -l %GITHUB_WORKSPACE%\OpenDDS_PDB_Build_3.16.zip
+          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Headers_3.16.zip -l %GITHUB_WORKSPACE%\OpenDDS_Headers_3.16.zip
         env:
           GITHUB_WORKSPACE: $GITHUB_WORKSPACE
 
@@ -233,24 +233,24 @@ jobs:
       - name: Download OpenDDS Binaries
         shell: cmd
         run: |
-          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c download -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_Build_3.15.zip
+          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c download -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.16.zip -l %GITHUB_WORKSPACE%\OpenDDS_Build_3.16.zip
         env:
           GITHUB_WORKSPACE: $GITHUB_WORKSPACE
           
       - name: Download OpenDDS Headers
         shell: cmd
         run: |
-          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c download -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Headers_3.15.zip -l %GITHUB_WORKSPACE%\OpenDDS_Headers_3.15.zip
+          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c download -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Headers_3.16.zip -l %GITHUB_WORKSPACE%\OpenDDS_Headers_3.16.zip
         env:
           GITHUB_WORKSPACE: $GITHUB_WORKSPACE
 
       - name: Prepare OpenDDS Binaries
         run: |
-          Expand-Archive -LiteralPath '.\OpenDDS_Build_3.15.zip' -DestinationPath .\Output -Force
+          Expand-Archive -LiteralPath '.\OpenDDS_Build_3.16.zip' -DestinationPath .\Output -Force
           
       - name: Prepare OpenDDS Headers
         run: |
-          Expand-Archive -LiteralPath '.\OpenDDS_Headers_3.15.zip' -DestinationPath .\third_party\OpenDDS -Force
+          Expand-Archive -LiteralPath '.\OpenDDS_Headers_3.16.zip' -DestinationPath .\third_party\OpenDDS -Force
 
       - name: Move OpenDDS x64
         shell: cmd
@@ -309,8 +309,9 @@ jobs:
           New-Item -Path .\OutputPackage\pdb\x64 -ItemType directory
           New-Item -Path .\OutputPackage\include -ItemType directory
           New-Item -Path .\OutputPackage\licenses -ItemType directory
-          Copy-Item .\src\DataDistributionManager\DataDistributionManager.h .\OutputPackage\include\DataDistributionManager.h
           Copy-Item .\src\DataDistributionManager\DataDistributionManagerEnums.h .\OutputPackage\include\DataDistributionManagerEnums.h
+          Copy-Item .\src\DataDistributionManager\DataDistributionManagerTypes.h .\OutputPackage\include\DataDistributionManagerTypes.h          
+          Copy-Item .\src\DataDistributionManager\DataDistributionManager.h .\OutputPackage\include\DataDistributionManager.h
           Copy-Item .\src\DataDistributionManager\SmartDataDistributionManager.h .\OutputPackage\include\SmartDataDistributionManager.h
           Copy-Item .\Output\x86\DataDistributionManager.lib .\OutputPackage\lib\x86\DataDistributionManager.lib -Force
           Copy-Item .\Output\x64\DataDistributionManager.lib .\OutputPackage\lib\x64\DataDistributionManager.lib -Force

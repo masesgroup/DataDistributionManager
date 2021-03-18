@@ -17,7 +17,7 @@
 */
 
 #include "DataDistributionManager_Internal.h"
-#include "DataDistributionMastershipManagerBase.h"
+#include "DataDistributionMastershipCommon.h"
 
 static const byte sString[] = "Copyright(c) 2012-2021 MASES s.r.l., All Rights Reserved";
 
@@ -104,7 +104,7 @@ DataDistributionChannelCallbackImpl::DataDistributionChannelCallbackImpl(const v
 	m_DataDistributionManagerChannelCallbacks.OnUnderlyingEvent = uEvent;
 }
 
-void DataDistributionChannelCallbackImpl::OnUnderlyingEvent(const HANDLE channelHandle, const UnderlyingEventData* uEvent)
+void DataDistributionChannelCallbackImpl::OnUnderlyingEvent(const CHANNEL_HANDLE_PARAMETER, const UnderlyingEventData* uEvent)
 {
 	if (m_DataDistributionManagerChannelCallbacks.OnUnderlyingEvent)
 	{
@@ -262,7 +262,7 @@ DataDistributionManagerImpl::~DataDistributionManagerImpl()
 
 }
 
-HRESULT DataDistributionManagerImpl::ConvertConfFile(const char* conf_file, const char*** arrayParams, int* len)
+OPERATION_RESULT DataDistributionManagerImpl::ConvertConfFile(const char* conf_file, const char*** arrayParams, int* len)
 {
 	// SHA512 of copyright calculated with https://www.fileformat.info/tool/hash.htm
 	static const byte sStringHash[] = "c444f7fa5bdbdd738661edc4c528c82bb9ed6f4efce9da0db9403b65035a5a970f87d62362c1f9a4f9d083e5c926460292aba19e5b179b3dd68ab584ce866a35";
@@ -325,10 +325,10 @@ HRESULT DataDistributionManagerImpl::ConvertConfFile(const char* conf_file, cons
 	}
 	*arrayParams = array;
 	*len = index;
-	return NO_ERROR;
+	return DDM_NO_ERROR_CONDITION;
 }
 
-HRESULT DataDistributionManagerImpl::read_config_file(const char* arrayParams[], int len)
+OPERATION_RESULT DataDistributionManagerImpl::read_config_file(const char* arrayParams[], int len)
 {
 	// SHA512 of copyright calculated with https://www.fileformat.info/tool/hash.htm
 	static const byte sStringHash[] = "c444f7fa5bdbdd738661edc4c528c82bb9ed6f4efce9da0db9403b65035a5a970f87d62362c1f9a4f9d083e5c926460292aba19e5b179b3dd68ab584ce866a35";
@@ -348,7 +348,7 @@ HRESULT DataDistributionManagerImpl::read_config_file(const char* arrayParams[],
 		size_t f = line.find(MALFORMED_STRING);
 		if (f != std::string::npos)
 		{
-			return E_INVALIDARG;
+			return DDM_PARAMETER_ERROR;
 		}
 
 		f = line.find("=");
@@ -374,24 +374,24 @@ HRESULT DataDistributionManagerImpl::read_config_file(const char* arrayParams[],
 		}
 	}
 
-	return S_OK;
+	return DDM_NO_ERROR_CONDITION;
 }
 
-HRESULT DataDistributionManagerImpl::Initialize(IDataDistributionCallback* callbacks, const char* conf_file, const char* szMyAddress, const char* channelTrailer)
+OPERATION_RESULT DataDistributionManagerImpl::Initialize(IDataDistributionCallback* callbacks, const char* conf_file, const char* szMyAddress, const char* channelTrailer)
 {
 	int len = 0;
 	const char** arrayParams = NULL;
 
 	if (conf_file == NULL) conf_file = "datadistributionmanager.conf";
-	HRESULT res = ConvertConfFile(conf_file, &arrayParams, &len);
-	if (FAILED(res)) return res;
+	OPERATION_RESULT res = ConvertConfFile(conf_file, &arrayParams, &len);
+	if (OPERATION_FAILED(res)) return res;
 	return Initialize(callbacks, arrayParams, len, szMyAddress, channelTrailer);
 }
 
-HRESULT DataDistributionManagerImpl::Initialize(IDataDistributionCallback* callbacks, const char* arrayParams[], int length, const char* szMyAddress, const char* channelTrailer)
+OPERATION_RESULT DataDistributionManagerImpl::Initialize(IDataDistributionCallback* callbacks, const char* arrayParams[], int length, const char* szMyAddress, const char* channelTrailer)
 {
-	HRESULT res = read_config_file(arrayParams, length);
-	if (FAILED(res)) return res;
+	OPERATION_RESULT res = read_config_file(arrayParams, length);
+	if (OPERATION_FAILED(res)) return res;
 
 	m_arrayParamsLen = (arrayParams != NULL) ? length : 0;
 	if (arrayParams != NULL)
@@ -405,7 +405,7 @@ HRESULT DataDistributionManagerImpl::Initialize(IDataDistributionCallback* callb
 
 	if (m_ProtocolLib.length() == 0)
 	{
-		if (m_Protocol.length() == 0) return E_INVALID_PROTOCOL_FORMAT;
+		if (m_Protocol.length() == 0) return DDM_PARAMETER_ERROR;
 		m_ProtocolLib = "DataDistributionManager";
 		m_ProtocolLib += m_Protocol;
 #if _DEBUG
@@ -423,7 +423,7 @@ HRESULT DataDistributionManagerImpl::Initialize(IDataDistributionCallback* callb
 #endif
 	TCHAR pathToDll[MAX_PATH];
 	HMODULE ddm_Module = GetModuleHandle(moduleName.c_str());
-	DWORD moduleNameLen = GetModuleFileName(ddm_Module, pathToDll, MAX_PATH);
+	unsigned long moduleNameLen = GetModuleFileName(ddm_Module, pathToDll, MAX_PATH);
 	std::string newFullPath(pathToDll);
 	std::string path = newFullPath.substr(0, newFullPath.size() - moduleName.size());
 	std::string newPath = std::string(oldPath) + std::string(";") + path;
@@ -441,13 +441,16 @@ HRESULT DataDistributionManagerImpl::Initialize(IDataDistributionCallback* callb
 
 	m_InitializedResult = pDataDistributionManagerSubsystem->Initialize(callbacks, m_arrayParams, m_arrayParamsLen, szMyAddress, channelTrailer);
 
-	if (FAILED(m_InitializedResult)) return m_InitializedResult;
+	if (OPERATION_FAILED(m_InitializedResult)) return m_InitializedResult;
 
 	return m_InitializedResult;
 }
 
-HRESULT DataDistributionManagerImpl::RequestMastershipManager(IDataDistributionMastershipCallback* mastershipCallback, const char* szMyAddress, const char* arrayParams[], int len)
+OPERATION_RESULT DataDistributionManagerImpl::RequestMastershipManager(IDataDistributionMastershipCallback* mastershipCallback, const char* szMyAddress, const char* arrayParams[], int len)
 {
+	OPERATION_RESULT res = read_config_file((arrayParams == NULL) ? m_arrayParams : arrayParams, (arrayParams == NULL) ? m_arrayParamsLen : len);
+	if (OPERATION_FAILED(res)) return res;
+
 	if (pDataDistributionMastershipManagerCommon == NULL)
 	{
 		if (m_MastershipLib.length() != 0)
@@ -456,31 +459,30 @@ HRESULT DataDistributionManagerImpl::RequestMastershipManager(IDataDistributionM
 			m_MastershipLib += "d";
 #endif
 			m_hMastershipManagerModule = LoadLibraryA(m_MastershipLib.c_str());
+			if (!m_hMastershipManagerModule) return HRESULT_FROM_WIN32(GetLastError());
+		}
+		else return DDM_PARAMETER_ERROR;
+
+		auto createMastershipProc = (pvInstantiatorFun)GetProcAddress(m_hMastershipManagerModule, "CreateObjectImplementation");
+		if (!createMastershipProc)
+		{
+			return HRESULT_FROM_WIN32(GetLastError());
 		}
 
-		if (m_hMastershipManagerModule)
-		{
-			auto createMastershipProc = (pvInstantiatorFun)GetProcAddress(m_hMastershipManagerModule, "CreateObjectImplementation");
-			if (!createMastershipProc)
-			{
-				return HRESULT_FROM_WIN32(GetLastError());
-			}
-			pDataDistributionMastershipManagerCommon = static_cast<DataDistributionMastershipCommon*>(createMastershipProc());
-		}
-		else pDataDistributionMastershipManagerCommon = new DataDistributionMastershipManagerBase();
+		pDataDistributionMastershipManagerCommon = static_cast<DataDistributionMastershipCommon*>(createMastershipProc());
 
 		m_InitializedMastershipResult = pDataDistributionMastershipManagerCommon->Initialize(pDataDistributionManagerSubsystem, mastershipCallback, szMyAddress,
 			(arrayParams == NULL) ? m_arrayParams : arrayParams,
 			(arrayParams == NULL) ? m_arrayParamsLen : len);
 
-		if (FAILED(m_InitializedMastershipResult)) return m_InitializedMastershipResult;
+		if (OPERATION_FAILED(m_InitializedMastershipResult)) return m_InitializedMastershipResult;
 	}
-	return S_OK;
+	return DDM_NO_ERROR_CONDITION;
 }
 
-BOOL DataDistributionManagerImpl::Start(DWORD dwMilliseconds)
+BOOL DataDistributionManagerImpl::Start(unsigned long dwMilliseconds)
 {
-	if (SUCCEEDED(m_InitializedResult))
+	if (OPERATION_SUCCEEDED(m_InitializedResult))
 	{
 		BOOL res = pDataDistributionManagerSubsystem->Start(dwMilliseconds);
 		if (res)
@@ -492,9 +494,9 @@ BOOL DataDistributionManagerImpl::Start(DWORD dwMilliseconds)
 	return FALSE;
 }
 
-BOOL DataDistributionManagerImpl::Stop(DWORD dwMilliseconds)
+BOOL DataDistributionManagerImpl::Stop(unsigned long dwMilliseconds)
 {
-	if (SUCCEEDED(m_InitializedResult))
+	if (OPERATION_SUCCEEDED(m_InitializedResult))
 	{
 		BOOL res = pDataDistributionMastershipManagerCommon->Stop(dwMilliseconds);
 		if (res)

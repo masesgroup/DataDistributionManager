@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['deletechannel_203',['DeleteChannel',['../classIDataDistributionChannelBase.html#abb2ee977e5366755701c5f1b1101ff07',1,'IDataDistributionChannelBase']]]
+  ['deletechannel_215',['DeleteChannel',['../classIDataDistributionChannelBase.html#a32d9b95131ac72a4023d1dd60df18241',1,'IDataDistributionChannelBase']]]
 ];

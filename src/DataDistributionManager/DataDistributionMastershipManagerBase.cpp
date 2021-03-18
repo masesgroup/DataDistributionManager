@@ -20,12 +20,12 @@
 
 DataDistributionMastershipManagerBase::DataDistributionMastershipManagerBase()
 {
-	InitializeCriticalSection(&m_csFlags);
+	m_csFlags = new DataDistributionLockWrapper;
 }
 
 DataDistributionMastershipManagerBase::~DataDistributionMastershipManagerBase()
 {
-
+	delete m_csFlags;
 }
 
 void DataDistributionMastershipManagerBase::OnALIVE(ALIVE* pALIVE)
@@ -59,7 +59,7 @@ void DataDistributionMastershipManagerBase::OnALIVE(ALIVE* pALIVE)
 	long long myTime = GetUpTime();
 
 	ClusterHealthIterator it;
-	EnterCriticalSection(&m_csFlags);
+	DataDistributionAutoLockWrapper lock(m_csFlags);
 	m_IamNextPrimary = TRUE;
 	std::list<int64_t> listToRemove;
 	for (it = clusterState.begin(); it != clusterState.end(); ++it)
@@ -89,7 +89,6 @@ void DataDistributionMastershipManagerBase::OnALIVE(ALIVE* pALIVE)
 		Log(DDM_LOG_LEVEL::INFO_LEVEL, "DataDistributionMastershipManagerBase", "OnALIVE", "Adding random time to my time");
 		AddRandomToMyTime();
 	}
-	LeaveCriticalSection(&m_csFlags);
 }
 
 void DataDistributionMastershipManagerBase::OnHELLO_WELCOME(HELLO_WELCOME* pHELLO_WELCOME)
@@ -138,9 +137,10 @@ void DataDistributionMastershipManagerBase::OnSTATECHANGERESPONSE(STATECHANGERES
 
 int64_t* DataDistributionMastershipManagerBase::GetClusterIndexes(size_t* length)
 {
+	DataDistributionAutoLockWrapper lock(m_csFlags);
+
 	ClusterHealthIterator it;
 
-	EnterCriticalSection(&m_csFlags);
 	*length = clusterState.size();
 	int64_t* arraElements = (int64_t*)malloc(sizeof(int64_t) * (*length));
 	size_t counter = 0;
@@ -149,21 +149,20 @@ int64_t* DataDistributionMastershipManagerBase::GetClusterIndexes(size_t* length
 		arraElements[counter] = it->first;
 		counter++;
 	}
-	LeaveCriticalSection(&m_csFlags);
 	return arraElements;
 }
 
 DDM_INSTANCE_STATE DataDistributionMastershipManagerBase::GetStateOf(int64_t serverId)
 {
+	DataDistributionAutoLockWrapper lock(m_csFlags);
+
 	DDM_INSTANCE_STATE state = DDM_INSTANCE_STATE::UNKNOWN;
 	ClusterHealthIterator it;
-	EnterCriticalSection(&m_csFlags);
 	auto elem = clusterState.at(serverId);
 	if (elem != NULL)
 	{
 		state = elem->Status;
 	}
-	LeaveCriticalSection(&m_csFlags);
 
 	return state;
 }

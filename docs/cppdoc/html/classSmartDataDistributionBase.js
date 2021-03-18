@@ -8,8 +8,8 @@ var classSmartDataDistributionBase =
     [ "GetMastershipLib", "classSmartDataDistributionBase.html#a7774bcff8cea5742ab4ff538c20e799e", null ],
     [ "GetProtocol", "classSmartDataDistributionBase.html#af80be20bf50fe717942785f1045198a6", null ],
     [ "GetProtocolLib", "classSmartDataDistributionBase.html#a97dbf0b446c1b9adda6da0ef39687c7c", null ],
-    [ "Initialize", "classSmartDataDistributionBase.html#a2781b236afb09c1b41b4e247f4a7e7aa", null ],
-    [ "Initialize", "classSmartDataDistributionBase.html#ad405656cab4a6228948be00ff8163b3d", null ],
+    [ "Initialize", "classSmartDataDistributionBase.html#ae047f624bb8d291f50de488213b7dcb6", null ],
+    [ "Initialize", "classSmartDataDistributionBase.html#abf38c74a0befd49bb229ab18163cb85f", null ],
     [ "OnClusterStateChange", "classSmartDataDistributionBase.html#a2aba7f9751df6a2155fcbada08f8859b", null ],
     [ "OnCompletelyDisconnected", "classSmartDataDistributionBase.html#a660c667e6cf8adec20fe6f7bb1763c9a", null ],
     [ "OnConfiguration", "classSmartDataDistributionBase.html#aacd121e21e5325177af193e8a450f630", null ],
@@ -18,10 +18,10 @@ var classSmartDataDistributionBase =
     [ "OnRequestedState", "classSmartDataDistributionBase.html#a9135ad6c30526460c2204369da2c79c3", null ],
     [ "OnStateChange", "classSmartDataDistributionBase.html#a5acac83b9464ca6fab421701ff049b0b", null ],
     [ "OnStateReady", "classSmartDataDistributionBase.html#a08c6627a801697aeede9f1b00db54718", null ],
-    [ "RequestMastershipManager", "classSmartDataDistributionBase.html#a24d0c20e6bdcb5af1704a422e5b73cc3", null ],
-    [ "Start", "classSmartDataDistributionBase.html#a90053c30f68ce045328dd06b0f5fe84d", null ],
-    [ "Stop", "classSmartDataDistributionBase.html#ad4f161ffc083de5413d40c7c39cc414f", null ],
+    [ "RequestMastershipManager", "classSmartDataDistributionBase.html#a39cef042afbf0252c206d31c13b1cd26", null ],
+    [ "Start", "classSmartDataDistributionBase.html#a7c8116adb3ad86642b76bdb4344f860e", null ],
+    [ "Stop", "classSmartDataDistributionBase.html#a5896e1d4e27de4ff31d30904ecb4267e", null ],
     [ "m_pIDataDistribution", "classSmartDataDistributionBase.html#a0f912a527a85dcce36d5d5af2e05cd9f", null ],
     [ "m_pIDataDistributionMastershipCommon", "classSmartDataDistributionBase.html#a121def33ddf942f558af4ca5264176c8", null ],
-    [ "m_pInitializeHRESULT", "classSmartDataDistributionBase.html#a1c56f5f2ec102f7fcdafca338be56872", null ]
+    [ "m_pInitializeHRESULT", "classSmartDataDistributionBase.html#aa0bb34134bccfdd77bdc854b6aeec010", null ]
 ];

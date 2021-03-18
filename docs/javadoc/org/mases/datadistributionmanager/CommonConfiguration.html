@@ -91,7 +91,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="configuration/KafkaConfiguration.html" title="class in org.mases.datadistributionmanager.configuration">KafkaConfiguration</a></code>, <code><a href="configuration/OpenDDSConfiguration.html" title="class in org.mases.datadistributionmanager.configuration">OpenDDSConfiguration</a></code></dd>
+<dd><code><a href="configuration/KafkaConfiguration.html" title="class in org.mases.datadistributionmanager.configuration">KafkaConfiguration</a></code>, <code><a href="configuration/MastershipConfiguration.html" title="class in org.mases.datadistributionmanager.configuration">MastershipConfiguration</a></code>, <code><a href="configuration/OpenDDSConfiguration.html" title="class in org.mases.datadistributionmanager.configuration">OpenDDSConfiguration</a></code></dd>
 </dl>
 <hr>
 <pre>public abstract class <span class="typeNameLabel">CommonConfiguration</span>
@@ -169,7 +169,7 @@ extends <a href="GlobalConfiguration.html" title="class in org.mases.datadistrib
 <h3>Fields inherited from class&nbsp;org.mases.datadistributionmanager.<a href="GlobalConfiguration.html" title="class in org.mases.datadistributionmanager">GlobalConfiguration</a></h3>
 <a id="fields.inherited.from.class.org.mases.datadistributionmanager.GlobalConfiguration">
 <!--   -->
-</a><code><a href="GlobalConfiguration.html#GlobalLogLevelKey">GlobalLogLevelKey</a>, <a href="GlobalConfiguration.html#MaxMessageSizeKey">MaxMessageSizeKey</a>, <a href="GlobalConfiguration.html#ProtocolKey">ProtocolKey</a>, <a href="GlobalConfiguration.html#ProtocolLibraryKey">ProtocolLibraryKey</a>, <a href="GlobalConfiguration.html#ServerLostTimeoutKey">ServerLostTimeoutKey</a></code></div>
+</a><code><a href="GlobalConfiguration.html#GlobalLogLevelKey">GlobalLogLevelKey</a>, <a href="GlobalConfiguration.html#MastershipLibraryKey">MastershipLibraryKey</a>, <a href="GlobalConfiguration.html#MaxMessageSizeKey">MaxMessageSizeKey</a>, <a href="GlobalConfiguration.html#ProtocolKey">ProtocolKey</a>, <a href="GlobalConfiguration.html#ProtocolLibraryKey">ProtocolLibraryKey</a>, <a href="GlobalConfiguration.html#ServerLostTimeoutKey">ServerLostTimeoutKey</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -358,7 +358,7 @@ extends <a href="GlobalConfiguration.html" title="class in org.mases.datadistrib
 <h3>Methods inherited from class&nbsp;org.mases.datadistributionmanager.<a href="GlobalConfiguration.html" title="class in org.mases.datadistributionmanager">GlobalConfiguration</a></h3>
 <a id="methods.inherited.from.class.org.mases.datadistributionmanager.GlobalConfiguration">
 <!--   -->
-</a><code><a href="GlobalConfiguration.html#getGlobalLogLevel()">getGlobalLogLevel</a>, <a href="GlobalConfiguration.html#getMaxMessageSize()">getMaxMessageSize</a>, <a href="GlobalConfiguration.html#getProtocol()">getProtocol</a>, <a href="GlobalConfiguration.html#getProtocolLibrary()">getProtocolLibrary</a>, <a href="GlobalConfiguration.html#getServerLostTimeout()">getServerLostTimeout</a>, <a href="GlobalConfiguration.html#setGlobalLogLevel(org.mases.datadistributionmanager.DDM_LOG_LEVEL)">setGlobalLogLevel</a>, <a href="GlobalConfiguration.html#setMaxMessageSize(java.lang.Integer)">setMaxMessageSize</a>, <a href="GlobalConfiguration.html#setProtocol(java.lang.String)">setProtocol</a>, <a href="GlobalConfiguration.html#setProtocolLibrary(java.lang.String)">setProtocolLibrary</a>, <a href="GlobalConfiguration.html#setServerLostTimeout(java.lang.Integer)">setServerLostTimeout</a></code></div>
+</a><code><a href="GlobalConfiguration.html#getGlobalLogLevel()">getGlobalLogLevel</a>, <a href="GlobalConfiguration.html#getMastershipLibrary()">getMastershipLibrary</a>, <a href="GlobalConfiguration.html#getMaxMessageSize()">getMaxMessageSize</a>, <a href="GlobalConfiguration.html#getProtocol()">getProtocol</a>, <a href="GlobalConfiguration.html#getProtocolLibrary()">getProtocolLibrary</a>, <a href="GlobalConfiguration.html#getServerLostTimeout()">getServerLostTimeout</a>, <a href="GlobalConfiguration.html#setGlobalLogLevel(org.mases.datadistributionmanager.DDM_LOG_LEVEL)">setGlobalLogLevel</a>, <a href="GlobalConfiguration.html#setMastershipLibrary(java.lang.String)">setMastershipLibrary</a>, <a href="GlobalConfiguration.html#setMaxMessageSize(java.lang.Integer)">setMaxMessageSize</a>, <a href="GlobalConfiguration.html#setProtocol(java.lang.String)">setProtocol</a>, <a href="GlobalConfiguration.html#setProtocolLibrary(java.lang.String)">setProtocolLibrary</a>, <a href="GlobalConfiguration.html#setServerLostTimeout(java.lang.Integer)">setServerLostTimeout</a></code></div>
 <div class="inheritedList">
 <h3>Methods inherited from class&nbsp;org.mases.datadistributionmanager.<a href="BaseConfiguration.html" title="class in org.mases.datadistributionmanager">BaseConfiguration</a></h3>
 <a id="methods.inherited.from.class.org.mases.datadistributionmanager.BaseConfiguration">
@@ -523,7 +523,7 @@ extends <a href="GlobalConfiguration.html" title="class in org.mases.datadistrib
 <div class="block">The timeout on create channel</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The create channel timeout</dd>
+<dd>The create channel timeout in ms</dd>
 </dl>
 </section>
 </li>
@@ -534,7 +534,7 @@ extends <a href="GlobalConfiguration.html" title="class in org.mases.datadistrib
 <div class="block">The timeout on create channel</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>timeout</code> - The create channel timeout</dd>
+<dd><code>timeout</code> - The create channel timeout in ms</dd>
 </dl>
 </section>
 </li>
@@ -545,7 +545,7 @@ extends <a href="GlobalConfiguration.html" title="class in org.mases.datadistrib
 <div class="block">The timeout on seek channel</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The seek timeout</dd>
+<dd>The seek timeout in ms</dd>
 </dl>
 </section>
 </li>
@@ -556,7 +556,7 @@ extends <a href="GlobalConfiguration.html" title="class in org.mases.datadistrib
 <div class="block">The timeout on seek channel</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>timeout</code> - The seek timeout</dd>
+<dd><code>timeout</code> - The seek timeout in ms</dd>
 </dl>
 </section>
 </li>
@@ -567,7 +567,7 @@ extends <a href="GlobalConfiguration.html" title="class in org.mases.datadistrib
 <div class="block">The timeout on channel receive</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The receive timeout</dd>
+<dd>The receive timeout in ms</dd>
 </dl>
 </section>
 </li>
@@ -589,7 +589,7 @@ extends <a href="GlobalConfiguration.html" title="class in org.mases.datadistrib
 <div class="block">The timeout on channel keep alive</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The keep-alive timeout</dd>
+<dd>The keep-alive timeout in ms</dd>
 </dl>
 </section>
 </li>
@@ -600,7 +600,7 @@ extends <a href="GlobalConfiguration.html" title="class in org.mases.datadistrib
 <div class="block">The timeout on channel keep alive</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>timeout</code> - The keep-alive timeout</dd>
+<dd><code>timeout</code> - The keep-alive timeout in ms</dd>
 </dl>
 </section>
 </li>
@@ -611,7 +611,7 @@ extends <a href="GlobalConfiguration.html" title="class in org.mases.datadistrib
 <div class="block">The timeout on channel message consume</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The consumer timeout</dd>
+<dd>The consumer timeout in ms</dd>
 </dl>
 </section>
 </li>
@@ -622,7 +622,7 @@ extends <a href="GlobalConfiguration.html" title="class in org.mases.datadistrib
 <div class="block">The timeout on channel message consume</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>timeout</code> - The consumer timeout</dd>
+<dd><code>timeout</code> - The consumer timeout in ms</dd>
 </dl>
 </section>
 </li>
@@ -633,7 +633,7 @@ extends <a href="GlobalConfiguration.html" title="class in org.mases.datadistrib
 <div class="block">The timeout on channel message produce</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The producer timeout</dd>
+<dd>The producer timeout in ms</dd>
 </dl>
 </section>
 </li>
@@ -644,7 +644,7 @@ extends <a href="GlobalConfiguration.html" title="class in org.mases.datadistrib
 <div class="block">The timeout on channel message produce</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>timeout</code> - The producer timeout</dd>
+<dd><code>timeout</code> - The producer timeout in ms</dd>
 </dl>
 </section>
 </li>
@@ -655,7 +655,7 @@ extends <a href="GlobalConfiguration.html" title="class in org.mases.datadistrib
 <div class="block">The timeout on channel message commit</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The commit timeout</dd>
+<dd>The commit timeout in ms</dd>
 </dl>
 </section>
 </li>
@@ -666,7 +666,7 @@ extends <a href="GlobalConfiguration.html" title="class in org.mases.datadistrib
 <div class="block">The timeout on channel message commit</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>timeout</code> - The commit timeout</dd>
+<dd><code>timeout</code> - The commit timeout in ms</dd>
 </dl>
 </section>
 </li>

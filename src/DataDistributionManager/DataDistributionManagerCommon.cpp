@@ -36,25 +36,25 @@ DataDistributionCommon::~DataDistributionCommon()
 
 }
 
-HRESULT DataDistributionCommon::ConvertConfFile(const char* conf_file, const char*** arrayParams, int* len)
+OPERATION_RESULT DataDistributionCommon::ConvertConfFile(const char* conf_file, const char*** arrayParams, int* len)
 {
 	return DataDistributionManagerImpl::ConvertConfFile(conf_file, arrayParams, len);
 }
 
-HRESULT DataDistributionCommon::Initialize(IDataDistributionCallback* callbacks, const char* conf_file, const char* szMyAddress, const char* channelTrailer)
+OPERATION_RESULT DataDistributionCommon::Initialize(IDataDistributionCallback* callbacks, const char* conf_file, const char* szMyAddress, const char* channelTrailer)
 {
 	int len = 0;
 	const char** arrayParams = NULL;
 
 	if (!conf_file) conf_file = "datadistributionmanager.conf";
 	m_confFile = _strdup(conf_file);
-	HRESULT res = ConvertConfFile(m_confFile, &arrayParams, &len);
-	if (res != NO_ERROR) return res;
+	OPERATION_RESULT res = ConvertConfFile(m_confFile, &arrayParams, &len);
+	if (OPERATION_FAILED(res)) return res;
 
 	return Initialize(callbacks, arrayParams, len, szMyAddress, channelTrailer);
 }
 
-HRESULT DataDistributionCommon::Initialize(IDataDistributionCallback* callbacks, const char* arrayParams[], int len, const char* szMyAddress, const char* channelTrailer)
+OPERATION_RESULT DataDistributionCommon::Initialize(IDataDistributionCallback* callbacks, const char* arrayParams[], int len, const char* szMyAddress, const char* channelTrailer)
 {
 	m_pDataDistributionManagerCallbacks = callbacks;
 	m_ChannelTrailer = _strdup(channelTrailer);
@@ -64,9 +64,9 @@ HRESULT DataDistributionCommon::Initialize(IDataDistributionCallback* callbacks,
 	return Initialize();
 }
 
-HRESULT DataDistributionCommon::Initialize()
+OPERATION_RESULT DataDistributionCommon::Initialize()
 {
-	return S_OK;
+	return DDM_NO_ERROR_CONDITION;
 }
 
 void DataDistributionCommon::Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, ...)
@@ -88,7 +88,7 @@ void DataDistributionCommon::Log(const DDM_LOG_LEVEL level, const char* sourceNa
 
 	char buffer[LOG_LEN];
 	memset(buffer, 0, sizeof(buffer));
-	int result = vsnprintf_s(buffer, _countof(buffer), _TRUNCATE, format, args);
+	int result = vsnprintf(buffer, _countof(buffer), format, args);
 	if (result > 0)
 	{
 		m_pDataDistributionManagerCallbacks->OnLogging(level, sourceName, function, buffer);
@@ -104,28 +104,28 @@ size_t DataDistributionCommon::GetMaxMessageSize()
 	return m_MaxMessageSize;
 }
 
-HANDLE DataDistributionCommon::CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction, const char* arrayParams[], int len)
+CHANNEL_HANDLE DataDistributionCommon::CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction, const char* arrayParams[], int len)
 {
 	TRACESTART("DataDistributionCommon", "CreateChannel");
 	LOG_WARNING0("Not Implemented in subclass");
 	return NULL;
 }
 
-HRESULT DataDistributionCommon::StartChannel(HANDLE channelHandle, DWORD dwMilliseconds)
+OPERATION_RESULT DataDistributionCommon::StartChannel(CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds)
 {
 	TRACESTART("DataDistributionCommon", "StartChannel");
 	LOG_WARNING0("Not Implemented in subclass");
-	return TRUE;
+	return DDM_NOT_IMPLEMENTED;
 }
 
-HRESULT DataDistributionCommon::StopChannel(HANDLE channelHandle, DWORD dwMilliseconds)
+OPERATION_RESULT DataDistributionCommon::StopChannel(CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds)
 {
 	TRACESTART("DataDistributionCommon", "StopChannel");
 	LOG_WARNING0("Not Implemented in subclass");
-	return S_OK;
+	return DDM_NOT_IMPLEMENTED;
 }
 
-void DataDistributionCommon::SetParameter(HANDLE channelHandle, const char* paramName, const char* paramValue)
+void DataDistributionCommon::SetParameter(CHANNEL_HANDLE_PARAMETER, const char* paramName, const char* paramValue)
 {
 	TRACESTART("DataDistributionCommon", "SetParameter");
 	CAST_CHANNEL(ChannelConfiguration);
@@ -220,7 +220,7 @@ void DataDistributionCommon::SetParameter(HANDLE channelHandle, const char* para
 	}
 }
 
-void DataDistributionCommon::SetParameter(HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId, const char* paramValue)
+void DataDistributionCommon::SetParameter(CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId, const char* paramValue)
 {
 	TRACESTART("DataDistributionCommon", "SetParameter");
 	LOG_WARNING0("Not Implemented in subclass");
@@ -247,7 +247,7 @@ static const char* ConvertIToA(size_t value)
 #endif
 }
 
-const char* DataDistributionCommon::GetParameter(HANDLE channelHandle, const char* paramName)
+const char* DataDistributionCommon::GetParameter(CHANNEL_HANDLE_PARAMETER, const char* paramName)
 {
 	TRACESTART("DataDistributionCommon", "GetParameter");
 	CAST_CHANNEL(ChannelConfiguration);
@@ -315,74 +315,74 @@ const char* DataDistributionCommon::GetParameter(HANDLE channelHandle, const cha
 	return NULL;
 }
 
-const char* DataDistributionCommon::GetParameter(HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId)
+const char* DataDistributionCommon::GetParameter(CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId)
 {
 	TRACESTART("DataDistributionCommon", "GetParameter");
 	LOG_WARNING0("Not Implemented in subclass");
 	return NULL;
 }
 
-HRESULT DataDistributionCommon::Lock(HANDLE channelHandle, DWORD timeout)
+OPERATION_RESULT DataDistributionCommon::Lock(CHANNEL_HANDLE_PARAMETER, unsigned long timeout)
 {
 	TRACESTART("DataDistributionCommon", "Lock");
 	LOG_WARNING0("Not Implemented in subclass");
-	return E_FAIL;
+	return DDM_NOT_IMPLEMENTED;
 }
 
-HRESULT DataDistributionCommon::Unlock(HANDLE channelHandle)
+OPERATION_RESULT DataDistributionCommon::Unlock(CHANNEL_HANDLE_PARAMETER)
 {
 	TRACESTART("DataDistributionCommon", "Unlock");
 	LOG_WARNING0("Not Implemented in subclass");
-	return E_FAIL;
+	return DDM_NOT_IMPLEMENTED;
 }
 
-HRESULT DataDistributionCommon::SeekChannel(HANDLE channelHandle, int64_t position)
+OPERATION_RESULT DataDistributionCommon::SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position)
 {
 	TRACESTART("DataDistributionCommon", "SeekChannel");
 	LOG_WARNING0("Not Implemented in subclass");
-	return E_FAIL;
+	return DDM_NOT_IMPLEMENTED;
 }
 
-HRESULT DataDistributionCommon::DeleteChannel(HANDLE channelHandle)
+OPERATION_RESULT DataDistributionCommon::DeleteChannel(CHANNEL_HANDLE_PARAMETER)
 {
 	TRACESTART("DataDistributionCommon", "DeleteChannel");
 	LOG_WARNING0("Not Implemented in subclass");
-	return E_FAIL;
+	return DDM_NOT_IMPLEMENTED;
 }
 
-HRESULT DataDistributionCommon::WriteOnChannel(HANDLE channelHandle, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll, const int64_t timestamp)
+OPERATION_RESULT DataDistributionCommon::WriteOnChannel(CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll, const int64_t timestamp)
 {
 	TRACESTART("DataDistributionCommon", "WriteOnChannel");
 	LOG_WARNING0("Not Implemented in subclass");
-	return E_FAIL;
+	return DDM_NOT_IMPLEMENTED;
 }
 
-HRESULT DataDistributionCommon::ReadFromChannel(HANDLE channelHandle, int64_t offset, size_t *dataLen, void **param)
+OPERATION_RESULT DataDistributionCommon::ReadFromChannel(CHANNEL_HANDLE_PARAMETER, int64_t offset, size_t *dataLen, void **param)
 {
 	TRACESTART("DataDistributionCommon", "ReadFromChannel");
 	LOG_WARNING0("Not Implemented in subclass");
-	return S_FALSE;
+	return DDM_NOT_IMPLEMENTED;
 }
 
-HRESULT DataDistributionCommon::ChangeChannelDirection(HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction)
+OPERATION_RESULT DataDistributionCommon::ChangeChannelDirection(CHANNEL_HANDLE_PARAMETER, DDM_CHANNEL_DIRECTION direction)
 {
 	TRACESTART("DataDistributionCommon", "ChangeChannelDirection");
 	LOG_WARNING0("Not Implemented in subclass");
-	return S_FALSE;
+	return DDM_NOT_IMPLEMENTED;
 }
 
-HRESULT DataDistributionCommon::Start(DWORD dwMilliseconds)
+OPERATION_RESULT DataDistributionCommon::Start(unsigned long dwMilliseconds)
 {
 	TRACESTART("DataDistributionCommon", "Start");
-	HRESULT status = S_OK;
+	OPERATION_RESULT status = DDM_NO_ERROR_CONDITION;
 	SetSubSystemStarted(TRUE);
 	return status;
 }
 
-HRESULT DataDistributionCommon::Stop(DWORD dwMilliseconds)
+OPERATION_RESULT DataDistributionCommon::Stop(unsigned long dwMilliseconds)
 {
 	TRACESTART("DataDistributionCommon", "Start");
-	HRESULT status = S_OK;
+	OPERATION_RESULT status = DDM_NO_ERROR_CONDITION;
 	SetSubSystemStarted(FALSE);
 	return status;
 }
@@ -462,13 +462,13 @@ ChannelConfiguration::ChannelConfiguration(const char* channelName, DDM_CHANNEL_
 	m_lastRoutedOffset = -1;
 	m_lastManagedOffset = -1;
 
-	h_evtStartupStatus = CreateEvent(0, true, false, NULL);
-	h_evtLockState = CreateEvent(0, true, false, NULL);
+	m_pEvtStartupStatus = new DataDistributionEventWrapper();
+	m_pEvtLockState = new DataDistributionEventWrapper();
 	bLockState = FALSE;
 
-	InitializeCriticalSection(&m_csFlags);
-	InitializeCriticalSection(&m_csState);
-	InitializeCriticalSection(&m_csOffsets);
+	m_csFlags = new DataDistributionLockWrapper();
+	m_csState = new DataDistributionLockWrapper();
+	m_csOffsets = new DataDistributionLockWrapper();
 }
 
 const char* ChannelConfiguration::GetChannelName()
@@ -476,21 +476,21 @@ const char* ChannelConfiguration::GetChannelName()
 	return m_pChannelName;
 }
 
+GENERIC_HANDLE ChannelConfiguration::GetOpaqueHandle()
+{
+	return this;
+}
+
 DDM_CHANNEL_DIRECTION ChannelConfiguration::GetDirection()
 {
-	DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION::ALL;
-	EnterCriticalSection(&m_csFlags);
-	direction = m_Direction;
-	LeaveCriticalSection(&m_csFlags);
-
-	return direction;
+	DataDistributionAutoLockWrapper lock(m_csFlags);
+	return m_Direction;
 }
 
 void ChannelConfiguration::SetDirection(DDM_CHANNEL_DIRECTION direction)
 {
-	EnterCriticalSection(&m_csFlags);
+	DataDistributionAutoLockWrapper lock(m_csFlags);
 	m_Direction = direction;
-	LeaveCriticalSection(&m_csFlags);
 }
 
 DataDistributionCommon* ChannelConfiguration::GetManager()
@@ -503,7 +503,7 @@ void ChannelConfiguration::OnDataAvailable(const char* key, size_t keyLen, void*
 	OnDataAvailable(this, key, keyLen, buffer, len);
 }
 
-void ChannelConfiguration::OnDataAvailable(const HANDLE channelHandle, const char* key, size_t keyLen, void* buffer, size_t len)
+void ChannelConfiguration::OnDataAvailable(const CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void* buffer, size_t len)
 {
 	UnderlyingEventData pData(m_pChannelName, key, keyLen, buffer, len);
 	if (dataCb != NULL)
@@ -512,7 +512,7 @@ void ChannelConfiguration::OnDataAvailable(const HANDLE channelHandle, const cha
 	}
 }
 
-void ChannelConfiguration::OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, const char* subSystemReason, ...)
+void ChannelConfiguration::OnConditionOrError(OPERATION_RESULT errorCode, int nativeCode, const char* subSystemReason, ...)
 {
 	va_list args = NULL;
 	va_start(args, subSystemReason);
@@ -524,7 +524,7 @@ void ChannelConfiguration::OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION err
 	va_end(args);
 }
 
-void ChannelConfiguration::OnConditionOrError(const HANDLE channelHandle, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, const char* subSystemReason, ...)
+void ChannelConfiguration::OnConditionOrError(const CHANNEL_HANDLE_PARAMETER, OPERATION_RESULT errorCode, int nativeCode, const char* subSystemReason, ...)
 {
 	va_list args = NULL;
 	va_start(args, subSystemReason);
@@ -551,98 +551,77 @@ void ChannelConfiguration::CompletelyDisconnected()
 
 int64_t ChannelConfiguration::GetManagedOffset()
 {
-	int64_t val;
-	EnterCriticalSection(&m_csOffsets);
-	val = m_lastManagedOffset;
-	LeaveCriticalSection(&m_csOffsets);
-	return val;
+	DataDistributionAutoLockWrapper lock(m_csOffsets);
+	return m_lastManagedOffset;
 }
 
 void ChannelConfiguration::SetManagedOffset(int64_t val)
 {
-	EnterCriticalSection(&m_csOffsets);
+	DataDistributionAutoLockWrapper lock(m_csOffsets);
 	m_lastManagedOffset = val;
-	LeaveCriticalSection(&m_csOffsets);
 }
 
-DWORD ChannelConfiguration::WaitStartupStatus(DWORD dwMilliseconds)
+OPERATION_RESULT ChannelConfiguration::WaitStartupStatus(unsigned long dwMilliseconds)
 {
-	return WaitForSingleObject(h_evtStartupStatus, dwMilliseconds);
+	return m_pEvtStartupStatus->Wait(dwMilliseconds);
 }
 
 void ChannelConfiguration::SetStartupStatus(CHANNEL_STARTUP_TYPE status)
 {
-	EnterCriticalSection(&m_csState);
+	DataDistributionAutoLockWrapper lock(m_csState);
 	Log(DDM_LOG_LEVEL::INFO_LEVEL, "SetStartupStatus", "Setting StartupStatus %d", status);
 	if (!m_StartupStatusSet)
 	{
 		m_StartupStatus = status;
-		EnterCriticalSection(&m_csFlags);
+		DataDistributionAutoLockWrapper lock2(m_csFlags);
 		m_StartupStatusSet = TRUE;
-		LeaveCriticalSection(&m_csFlags);
-		SetEvent(h_evtStartupStatus);
+		m_pEvtStartupStatus->Set();
 	}
-	LeaveCriticalSection(&m_csState);
 }
 
 CHANNEL_STARTUP_TYPE ChannelConfiguration::GetStartupStatus()
 {
-	CHANNEL_STARTUP_TYPE status = CHANNEL_STARTUP_TYPE::UNDEFINED;
-	EnterCriticalSection(&m_csState);
-	status = m_StartupStatus;
-	LeaveCriticalSection(&m_csState);
-	return status;
+	DataDistributionAutoLockWrapper lock(m_csState);
+	return m_StartupStatus;
 }
 
 BOOL ChannelConfiguration::IsStartupStatusSet()
 {
-	BOOL status = FALSE;
-	EnterCriticalSection(&m_csFlags);
-	status = m_StartupStatusSet;
-	LeaveCriticalSection(&m_csFlags);
-	return status;
+	DataDistributionAutoLockWrapper lock(m_csFlags);
+	return m_StartupStatusSet;
 }
 
 BOOL ChannelConfiguration::GetLockState()
 {
-	BOOL status;
-	EnterCriticalSection(&m_csFlags);
-	status = bLockState;
-	LeaveCriticalSection(&m_csFlags);
-	return status;
+	DataDistributionAutoLockWrapper lock(m_csFlags);
+	return bLockState;
 }
 
-HRESULT ChannelConfiguration::SetLockState()
+OPERATION_RESULT ChannelConfiguration::SetLockState()
 {
-	EnterCriticalSection(&m_csFlags);
+	DataDistributionAutoLockWrapper lock(m_csFlags);
 	bLockState = TRUE;
-	ResetEvent(h_evtLockState);
-	LeaveCriticalSection(&m_csFlags);
-
-	return S_OK;
+	m_pEvtLockState->Reset();
+	return DDM_NO_ERROR_CONDITION;
 }
 
-HRESULT ChannelConfiguration::ResetLockState()
+OPERATION_RESULT ChannelConfiguration::ResetLockState()
 {
-	EnterCriticalSection(&m_csFlags);
+	DataDistributionAutoLockWrapper lock(m_csFlags);
 	bLockState = FALSE;
-	SetEvent(h_evtLockState);
-	LeaveCriticalSection(&m_csFlags);
-
-	return S_OK;
+	m_pEvtLockState->Set();
+	return DDM_NO_ERROR_CONDITION;
 }
 
-void ChannelConfiguration::WaitingFinishLockState(DWORD dwMilliseconds)
+void ChannelConfiguration::WaitingFinishLockState(unsigned long dwMilliseconds)
 {
-	EnterCriticalSection(&m_csFlags);
+	DataDistributionAutoLockWrapper lock(m_csFlags);
 	if (bLockState)
 	{
 		Log(DDM_LOG_LEVEL::INFO_LEVEL, "WaitingFinishLockState", "Enter");
-		LeaveCriticalSection(&m_csFlags);
-		WaitForSingleObject(h_evtLockState, dwMilliseconds);
+		m_pEvtLockState->Wait(dwMilliseconds);
 		return;
 	}
-	LeaveCriticalSection(&m_csFlags);
 }
 
 BOOL ChannelConfiguration::GetCommitSync() { return m_CommitSync; }

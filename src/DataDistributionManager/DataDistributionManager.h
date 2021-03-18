@@ -37,16 +37,11 @@
  */
 
 /**@cond NO_DOC*/
-#include <stdint.h>
+#include <string>
 #include <map>
-
-#ifndef _INC_WINDOWS
-#include <windows.h>
-#endif /* _INC_WINDOWS */
-
 /**@endcond*/
 
-#include "DataDistributionManagerEnums.h"
+#include "DataDistributionManagerTypes.h"
 
 /**
  * @brief C-style callback invoked for each key-value in the configuration.
@@ -60,7 +55,7 @@
  * DataDistributionCallback::create().
  *
  */
-typedef const char *(__cdecl *dataDistributionConfigurationCb)(const void *opaque, const char *channelName, const char *key, const char *value);
+typedef const char *(FUNCALL *dataDistributionConfigurationCb)(const void *opaque, const char *channelName, const char *key, const char *value);
 /**
  * @brief C-style callback invoked when a log is emitted from subsystem.
  *
@@ -75,7 +70,7 @@ typedef const char *(__cdecl *dataDistributionConfigurationCb)(const void *opaqu
  * The callback's \p opaque argument is the opaque set with DataDistributionCallback::create().
  *
  */
-typedef void(__cdecl *dataDistributionLoggingCb)(const void *opaque, const DDM_LOG_LEVEL level, const char *source, const char *function, const char *logStr);
+typedef void(FUNCALL *dataDistributionLoggingCb)(const void *opaque, const DDM_LOG_LEVEL level, const char *source, const char *function, const char *logStr);
 /**
  * @brief C-style callback invoked on a complete disconnection .
  *
@@ -87,7 +82,7 @@ typedef void(__cdecl *dataDistributionLoggingCb)(const void *opaque, const DDM_L
  * DataDistributionCallback::create().
  *
  */
-typedef void(__cdecl *dataDistributionCompletelyDisconnectedCb)(const void *opaque, const char *channelName, const char *reason);
+typedef void(FUNCALL *dataDistributionCompletelyDisconnectedCb)(const void *opaque, const char *channelName, const char *reason);
 
 /**
  * @brief Contains information needed from the cluster management
@@ -283,7 +278,7 @@ typedef struct DDM_EXPORT UnderlyingEventData
 	size_t KeyLen;							  /*!< The length of Key associated to UnderlyingEventData. @remarks Valid only if IsDataAvailable is TRUE */
 	const void *Buffer;						  /*!< The buffer of the message associated to UnderlyingEventData. @remarks Valid only if IsDataAvailable is TRUE */
 	size_t BufferLength;					  /*!< The length of the Buffer associated to UnderlyingEventData. @remarks Valid only if IsDataAvailable is TRUE */
-	DDM_UNDERLYING_ERROR_CONDITION Condition; /*!< DDM_UNDERLYING_ERROR_CONDITION associated to UnderlyingEventData. @remarks Valid only if IsDataAvailable is FALSE */
+	OPERATION_RESULT Condition;				  /*!< OPERATION_RESULT associated to UnderlyingEventData. @remarks Valid only if IsDataAvailable is FALSE */
 	int NativeCode;							  /*!< Native code from subsystem associated to Condition of UnderlyingEventData. @remarks Valid only if IsDataAvailable is TRUE */
 	const char *SubSystemReason;			  /*!< String reason from subsystem associated to NativeCode of UnderlyingEventData. @remarks Valid only if IsDataAvailable is TRUE */
 
@@ -299,7 +294,7 @@ typedef struct DDM_EXPORT UnderlyingEventData
 	UnderlyingEventData(const char *channelName)
 	{
 		ChannelName = channelName;
-		Condition = DDM_UNDERLYING_ERROR_CONDITION::DDM_NO_ERROR_CONDITION;
+		Condition = DDM_NO_ERROR_CONDITION;
 		IsDataAvailable = FALSE;
 		Key = NULL;
 		KeyLen = 0;
@@ -335,14 +330,14 @@ typedef struct DDM_EXPORT UnderlyingEventData
 	 * Initialize a new UnderlyingEventData
 	 *
 	 * \p channelName The channel name reporting UnderlyingEventData
-	 * \p condition the DDM_UNDERLYING_ERROR_CONDITION reported
+	 * \p condition the OPERATION_RESULT reported
 	 * \p nativeCode Native code from subsystem associated to \p condition 
 	 * \p subSystemReason string reason from subsystem associated to \p nativeCode
 	 * 
 	 * @remarks it used internally
 	 *
 	 */
-	UnderlyingEventData(const char *channelName, DDM_UNDERLYING_ERROR_CONDITION condition, int nativeCode, const char *subSystemReason) : UnderlyingEventData(channelName)
+	UnderlyingEventData(const char *channelName, OPERATION_RESULT condition, int nativeCode, const char *subSystemReason) : UnderlyingEventData(channelName)
 	{
 		Condition = condition;
 		NativeCode = nativeCode;
@@ -361,7 +356,35 @@ typedef struct DDM_EXPORT UnderlyingEventData
  * DataDistributionChannelCallback::create().
  *
  */
-typedef void(__cdecl *dataDistributionUnderlyingEvent)(const void *opaque, const HANDLE channelHandle, const UnderlyingEventData *uEvent);
+typedef void(FUNCALL *dataDistributionUnderlyingEvent)(const void *opaque, const CHANNEL_HANDLE_PARAMETER, const UnderlyingEventData *uEvent);
+
+/**
+* @brief The basic interface for all channel
+* 
+* CHANNEL_HANDLE can be casted to IDataDistributionChannel
+*
+* @sa IDataDistributionChannelBase::CreateChannel
+*/
+class DDM_EXPORT IDataDistributionChannel
+{
+public:
+	/**
+	* @brief Returns the channel name
+	*
+	* Returns the channel name
+	*
+	* @returns the channel name
+	*/
+	virtual const char* GetChannelName() = 0;
+	/**
+	* @brief Returns an opaque version of the channel handle
+	*
+	* Returns an opaque version of the channel handle
+	*
+	* @returns opaque version of the channel handle
+	*/
+	virtual GENERIC_HANDLE GetOpaqueHandle() = 0;
+};
 
 /**
  * @brief The C++ callback interface to be externally implemented
@@ -382,7 +405,7 @@ public:
 	 * \p uEvent the UnderlyingEventData event
 	 *
 	 */
-	virtual void OnUnderlyingEvent(const HANDLE channelHandle, const UnderlyingEventData *uEvent) = 0;
+	virtual void OnUnderlyingEvent(const CHANNEL_HANDLE_PARAMETER, const UnderlyingEventData *uEvent) = 0;
 };
 
 /**
@@ -416,7 +439,7 @@ public:
  * DataDistributionMastershipCallback::create().
  *
  */
-typedef void(__cdecl *dataDistributionOnClusterStateChange)(void *opaque, DDM_CLUSTEREVENT change, int64_t serverid);
+typedef void(FUNCALL *dataDistributionOnClusterStateChange)(void *opaque, DDM_CLUSTEREVENT change, int64_t serverid);
 /**
  * @brief C-style callback invoked to report a state change.
  *
@@ -429,7 +452,7 @@ typedef void(__cdecl *dataDistributionOnClusterStateChange)(void *opaque, DDM_CL
  * DataDistributionMastershipCallback::create().
  *
  */
-typedef void(__cdecl *dataDistributionOnStateChange)(void *opaque, DDM_INSTANCE_STATE newState, DDM_INSTANCE_STATE oldState);
+typedef void(FUNCALL *dataDistributionOnStateChange)(void *opaque, DDM_INSTANCE_STATE newState, DDM_INSTANCE_STATE oldState);
 /**
  * @brief C-style callback invoked when a state transfer is completed
  *
@@ -442,7 +465,7 @@ typedef void(__cdecl *dataDistributionOnStateChange)(void *opaque, DDM_INSTANCE_
  * DataDistributionMastershipCallback::create().
  *
  */
-typedef void(__cdecl *dataDistributionOnStateReady)(void *opaque, void *pState, int64_t len);
+typedef void(FUNCALL *dataDistributionOnStateReady)(void *opaque, void *pState, int64_t len);
 /**
  * @brief C-style callback invoked when a state transfer is requested
  *
@@ -455,7 +478,7 @@ typedef void(__cdecl *dataDistributionOnStateReady)(void *opaque, void *pState, 
  * DataDistributionMastershipCallback::create().
  *
  */
-typedef void(__cdecl *dataDistributionOnRequestedState)(void *opaque, void **pState, size_t *len);
+typedef void(FUNCALL *dataDistributionOnRequestedState)(void *opaque, void **pState, size_t *len);
 /**
  * @brief C-style callback invoked when multiple primary server are detected
  *
@@ -468,7 +491,7 @@ typedef void(__cdecl *dataDistributionOnRequestedState)(void *opaque, void **pSt
  * DataDistributionMastershipCallback::create().
  *
  */
-typedef void(__cdecl *dataDistributionOnMultiplePrimary)(void *opaque, int64_t myId, int64_t otherId);
+typedef void(FUNCALL *dataDistributionOnMultiplePrimary)(void *opaque, int64_t myId, int64_t otherId);
 /**
  * @brief C-style callback invoked to report a first state change
  *
@@ -480,7 +503,7 @@ typedef void(__cdecl *dataDistributionOnMultiplePrimary)(void *opaque, int64_t m
  * DataDistributionMastershipCallback::create().
  *
  */
-typedef void(__cdecl *dataDistributionFirstStateChange)(void *opaque, DDM_INSTANCE_STATE newState);
+typedef void(FUNCALL *dataDistributionFirstStateChange)(void *opaque, DDM_INSTANCE_STATE newState);
 /**
  * @brief C-style callback invoked to report a starting instance state change
  *
@@ -493,7 +516,7 @@ typedef void(__cdecl *dataDistributionFirstStateChange)(void *opaque, DDM_INSTAN
  * DataDistributionMastershipCallback::create().
  *
  */
-typedef void(__cdecl *dataDistributionChangingState)(void *opaque, DDM_INSTANCE_STATE actualState, DDM_INSTANCE_STATE futureState);
+typedef void(FUNCALL *dataDistributionChangingState)(void *opaque, DDM_INSTANCE_STATE actualState, DDM_INSTANCE_STATE futureState);
 /**
  * @brief C-style callback invoked to report a finished instance state change
  *
@@ -505,7 +528,7 @@ typedef void(__cdecl *dataDistributionChangingState)(void *opaque, DDM_INSTANCE_
  * DataDistributionMastershipCallback::create().
  *
  */
-typedef void(__cdecl *dataDistributionChangedState)(void *opaque, DDM_INSTANCE_STATE actualState);
+typedef void(FUNCALL *dataDistributionChangedState)(void *opaque, DDM_INSTANCE_STATE actualState);
 
 /**
  * @brief The C++ callback interface to be externally implemented
@@ -641,101 +664,101 @@ public:
 	 * \p arrayParams an array of string in the form key=value to override parameters passed into IDataDistribution::Initialize
 	 * \p len length of arrayParams
 	 * 
-	 * @returns the new HANDLE or NULL if there was an error
+	 * @returns the new CHANNEL_HANDLE or NULL if there was an error
 	 */
-	virtual HANDLE CreateChannel(const char *channelName, IDataDistributionChannelCallback *dataCb, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION::ALL, const char *arrayParams[] = NULL, int len = 0) = 0;
+	virtual CHANNEL_HANDLE CreateChannel(const char *channelName, IDataDistributionChannelCallback *dataCb, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION::ALL, const char *arrayParams[] = NULL, int len = 0) = 0;
 	/**
 	 * @brief Starts the channel
 	 *
-	 * \p channelHandle the HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
+	 * \p channelHandle the CHANNEL_HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
 	 * \p timeout the operation timeout in milliseconds
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual HRESULT StartChannel(HANDLE channelHandle, DWORD timeout) = 0;
+	virtual OPERATION_RESULT StartChannel(CHANNEL_HANDLE_PARAMETER, unsigned long timeout) = 0;
 	/**
 	 * @brief Stops the channel
 	 *
-	 * \p channelHandle the HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
+	 * \p channelHandle the CHANNEL_HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
 	 * \p timeout the operation timeout in milliseconds
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual HRESULT StopChannel(HANDLE channelHandle, DWORD timeout) = 0;
+	virtual OPERATION_RESULT StopChannel(CHANNEL_HANDLE_PARAMETER, unsigned long timeout) = 0;
 	/**
 	 * @brief Sets a parameter at run-time
 	 *
-	 * \p channelHandle the HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
+	 * \p channelHandle the CHANNEL_HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
 	 * \p paramName the parameter name
 	 * \p paramValue the parameter value
 	 * 
 	 */
-	virtual void SetParameter(HANDLE channelHandle, const char *paramName, const char *paramValue) = 0;
+	virtual void SetParameter(CHANNEL_HANDLE_PARAMETER, const char *paramName, const char *paramValue) = 0;
 	/**
 	 * @brief Sets a parameter at run-time
 	 *
-	 * \p channelHandle the HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
+	 * \p channelHandle the CHANNEL_HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
 	 * \p paramId the DDM_GENERAL_PARAMETER parameter id
 	 * \p paramValue the parameter value
 	 * 
 	 */
-	virtual void SetParameter(HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId, const char *paramValue) = 0;
+	virtual void SetParameter(CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId, const char *paramValue) = 0;
 	/**
 	 * @brief Reads a parameter at run-time
 	 *
-	 * \p channelHandle the HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
+	 * \p channelHandle the CHANNEL_HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
 	 * \p paramName the parameter name
 	 * 
 	 * @return parameter value
 	 */
-	virtual const char *GetParameter(HANDLE channelHandle, const char *paramName) = 0;
+	virtual const char *GetParameter(CHANNEL_HANDLE_PARAMETER, const char *paramName) = 0;
 	/**
 	 * @brief Reads a parameter at run-time
 	 *
-	 * \p channelHandle the HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
+	 * \p channelHandle the CHANNEL_HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
 	 * \p paramId the DDM_GENERAL_PARAMETER parameter id
 	 * 
 	 * @return parameter value
 	 */
-	virtual const char *GetParameter(HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId) = 0;
+	virtual const char *GetParameter(CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId) = 0;
 	/**
 	 * @brief Locks the channel
 	 *
-	 * \p channelHandle the HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
+	 * \p channelHandle the CHANNEL_HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
 	 * \p timeout the operation timeout in milliseconds
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual HRESULT Lock(HANDLE channelHandle, DWORD timeout) = 0;
+	virtual OPERATION_RESULT Lock(CHANNEL_HANDLE_PARAMETER, unsigned long timeout) = 0;
 	/**
 	 * @brief Unlock the channel
 	 *
-	 * \p channelHandle the HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
+	 * \p channelHandle the CHANNEL_HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual HRESULT Unlock(HANDLE channelHandle) = 0;
+	virtual OPERATION_RESULT Unlock(CHANNEL_HANDLE_PARAMETER) = 0;
 	/**
 	 * @brief Seeks the channel
 	 *
-	 * \p channelHandle the HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
+	 * \p channelHandle the CHANNEL_HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
 	 * \p position the new channel position
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual HRESULT SeekChannel(HANDLE channelHandle, int64_t position) = 0;
+	virtual OPERATION_RESULT SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position) = 0;
 	/**
 	 * @brief Deletes the channel
 	 *
-	 * \p channelHandle the HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
+	 * \p channelHandle the CHANNEL_HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual HRESULT DeleteChannel(HANDLE channelHandle) = 0;
+	virtual OPERATION_RESULT DeleteChannel(CHANNEL_HANDLE_PARAMETER) = 0;
 	/**
 	 * @brief Writes data on the channel
 	 *
-	 * \p channelHandle the HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
+	 * \p channelHandle the CHANNEL_HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
 	 * \p key the key of the message to write, it can be NULL
 	 * \p keyLen the length of the key
 	 * \p buffer the buffer to write on the channel, it cannot be NULL
@@ -743,29 +766,29 @@ public:
 	 * \p waitAll set to TRUE to wait a complete message dispatch, default is FALSE. @remarks it depends on underlying implementation
 	 * \p timestamp a timestamp associable to the message, default is DDM_NO_TIMESTAMP and means no timestamp written
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual HRESULT WriteOnChannel(HANDLE channelHandle, const char *key, size_t keyLen, void *buffer, size_t bufferLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP) = 0;
+	virtual OPERATION_RESULT WriteOnChannel(CHANNEL_HANDLE_PARAMETER, const char *key, size_t keyLen, void *buffer, size_t bufferLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP) = 0;
 	/**
 	 * @brief Reads data from the channel
 	 *
-	 * \p channelHandle the HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
+	 * \p channelHandle the CHANNEL_HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
 	 * \p offset offset to read info from
 	 * \p dataLen pointer will receive length of data read
 	 * \p buffer the buffer to receive data from the channel, it cannot be NULL
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual HRESULT ReadFromChannel(HANDLE channelHandle, int64_t offset, size_t *bufferLen, void **buffer) = 0;
+	virtual OPERATION_RESULT ReadFromChannel(CHANNEL_HANDLE_PARAMETER, int64_t offset, size_t *bufferLen, void **buffer) = 0;
 	/**
 	 * @brief Change the DDM_CHANNEL_DIRECTION of the channel
 	 *
-	 * \p channelHandle the HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
+	 * \p channelHandle the CHANNEL_HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
 	 * \p direction DDM_CHANNEL_DIRECTION direction
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual HRESULT ChangeChannelDirection(HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction) = 0;
+	virtual OPERATION_RESULT ChangeChannelDirection(CHANNEL_HANDLE_PARAMETER, DDM_CHANNEL_DIRECTION direction) = 0;
 };
 /**
  * @brief Interface to be implemented from transport subsystem
@@ -778,7 +801,7 @@ public:
 	/**
 	 * @brief Returns the server lost timeout
 	 * 
-	 * @returns The server lost timeout
+	 * @returns The server lost timeout in milliseconds
 	 */
 	virtual int GetServerLostTimeout() = 0;
 	/**
@@ -792,17 +815,17 @@ public:
 	 *
 	 * \p timeout the operation timeout in milliseconds
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual HRESULT Start(DWORD timeout) = 0;
+	virtual OPERATION_RESULT Start(unsigned long timeout) = 0;
 	/**
 	 * @brief Start the transport subsystem
 	 *
 	 * \p timeout the operation timeout in milliseconds
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual HRESULT Stop(DWORD timeout) = 0;
+	virtual OPERATION_RESULT Stop(unsigned long timeout) = 0;
 };
 /**
  * @brief Interface to be implemented from subsystem
@@ -820,9 +843,9 @@ public:
 	 * \p hostAddress optional host address or host name
 	 * \p channelTrailer the optional trailer to be appended to channel name when each channel is created
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual HRESULT Initialize(IDataDistributionCallback *cb, const char *conf_file, const char *hostAddress = NULL, const char *channelTrailer = NULL) = 0;
+	virtual OPERATION_RESULT Initialize(IDataDistributionCallback *cb, const char *conf_file, const char *hostAddress = NULL, const char *channelTrailer = NULL) = 0;
 	/**
 	 * @brief Initialize the subsystem
 	 *
@@ -832,9 +855,9 @@ public:
 	 * \p hostAddress optional host address or host name
 	 * \p channelTrailer the optional trailer to be appended to channel name when each channel is created
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual HRESULT Initialize(IDataDistributionCallback *cb, const char *arrayParams[], int len, const char *hostAddress = NULL, const char *channelTrailer = NULL) = 0;
+	virtual OPERATION_RESULT Initialize(IDataDistributionCallback *cb, const char *arrayParams[], int len, const char *hostAddress = NULL, const char *channelTrailer = NULL) = 0;
 	/**
 	 * @brief Returns IDataDistributionCallback passed during IDataDistributionSubsystem::Initialize
 	 *
@@ -870,25 +893,41 @@ public:
 	 * \p arrayParams an array of string in the form key=value
 	 * \p len length of \p arrayParams
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual HRESULT Initialize(IDataDistributionSubsystem *transportManager, IDataDistributionMastershipCallback *cbs, const char *hostAddress = NULL, const char *arrayParams[] = NULL, int len = 0) = 0;
+	virtual OPERATION_RESULT Initialize(IDataDistributionSubsystem *transportManager, IDataDistributionMastershipCallback *cbs, const char *hostAddress = NULL, const char *arrayParams[] = NULL, int len = 0) = 0;
+	/**
+	* @brief Sets a parameter at run-time
+	*
+	* \p paramName the parameter name
+	* \p paramValue the parameter value
+	*
+	*/
+	virtual void SetParameter(const char *paramName, const char *paramValue) = 0;
+	/**
+	* @brief Reads a parameter at run-time
+	*
+	* \p paramName the parameter name
+	*
+	* @return parameter value
+	*/
+	virtual const char *GetParameter(const char *paramName) = 0;
 	/**
 	 * @brief Start the mastership subsystem
 	 *
 	 * \p timeout the operation timeout in milliseconds
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual HRESULT Start(DWORD timeout) = 0;
+	virtual OPERATION_RESULT Start(unsigned long timeout) = 0;
 	/**
 	 * @brief Stop the mastership subsystem
 	 *
 	 * \p timeout the operation timeout in milliseconds
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual HRESULT Stop(DWORD timeout) = 0;
+	virtual OPERATION_RESULT Stop(unsigned long timeout) = 0;
 	/**
 	 * @brief Verify if this server will be elected as next primary
 	 * 
@@ -985,9 +1024,9 @@ public:
 	 * \p hostAddress optional host address or host name
 	 * \p channelTrailer the optional trailer to be appended to channel name when each channel is created
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual HRESULT Initialize(IDataDistributionCallback *iddcb, const char *conf_file = NULL, const char *hostAddress = NULL, const char *channelTrailer = NULL) = 0;
+	virtual OPERATION_RESULT Initialize(IDataDistributionCallback *iddcb, const char *conf_file = NULL, const char *hostAddress = NULL, const char *channelTrailer = NULL) = 0;
 	/**
 	 * @brief Initialize IDataDistribution instance
 	 *
@@ -997,9 +1036,9 @@ public:
 	 * \p hostAddress optional host address or host name
 	 * \p channelTrailer the optional trailer to be appended to channel name when each channel is created
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual HRESULT Initialize(IDataDistributionCallback *iddcb, const char *arrayParams[], int len, const char *hostAddress = NULL, const char *channelTrailer = NULL) = 0;
+	virtual OPERATION_RESULT Initialize(IDataDistributionCallback *iddcb, const char *arrayParams[], int len, const char *hostAddress = NULL, const char *channelTrailer = NULL) = 0;
 	/**
 	 * @brief Allocate and initialize the mastership manager
 	 *
@@ -1008,25 +1047,25 @@ public:
 	 * \p arrayParams an array of string in the form key=value
 	 * \p len length of \p arrayParams
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual HRESULT RequestMastershipManager(IDataDistributionMastershipCallback *cbs, const char *szMyAddress = NULL, const char *arrayParams[] = NULL, int len = 0) = 0;
+	virtual OPERATION_RESULT RequestMastershipManager(IDataDistributionMastershipCallback *cbs, const char *szMyAddress = NULL, const char *arrayParams[] = NULL, int len = 0) = 0;
 	/**
 	 * @brief Start the common manager
 	 *
 	 * \p timeout the operation timeout in milliseconds
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual BOOL Start(DWORD timeout) = 0;
+	virtual BOOL Start(unsigned long timeout) = 0;
 	/**
 	 * @brief Stop the common manager
 	 *
 	 * \p timeout the operation timeout in milliseconds
 	 * 
-	 * @returns the HRESULT of the operation
+	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual BOOL Stop(DWORD timeout) = 0;
+	virtual BOOL Stop(unsigned long timeout) = 0;
 	/**
 	 * @brief Returns the allocated communication subsystem
 	 * 

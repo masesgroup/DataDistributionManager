@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ddm_5fexport_350',['DDM_EXPORT',['../DataDistributionManagerEnums_8h.html#a891cdc36a12080884b91ea4c29fb0a91',1,'DataDistributionManagerEnums.h']]],
-  ['ddm_5fno_5ftimestamp_351',['DDM_NO_TIMESTAMP',['../DataDistributionManagerEnums_8h.html#a04e9936beb1d53890441b25bc6b0a0ba',1,'DataDistributionManagerEnums.h']]]
+  ['channel_5fhandle_349',['CHANNEL_HANDLE',['../DataDistributionManagerTypes_8h.html#adee0f43aad519bdac771682743533959',1,'DataDistributionManagerTypes.h']]],
+  ['channel_5fhandle_5fparameter_350',['CHANNEL_HANDLE_PARAMETER',['../DataDistributionManagerTypes_8h.html#a485805b8e0f9cc8393cff8da5a01415a',1,'DataDistributionManagerTypes.h']]]
 ];

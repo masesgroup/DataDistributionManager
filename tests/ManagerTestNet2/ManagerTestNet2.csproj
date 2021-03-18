@@ -7,8 +7,8 @@
     <ProjectGuid>{D1F74C38-9D58-4E2C-BC90-350F6688154C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ManagerTestNet</RootNamespace>
-    <AssemblyName>ManagerTestNet</AssemblyName>
+    <RootNamespace>ManagerTestNet2</RootNamespace>
+    <AssemblyName>ManagerTestNet2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

@@ -23,6 +23,7 @@
     <Compile Include="BaseConfiguration.cs" />
     <Compile Include="Configuration\KafkaChannelConfiguration.cs" />
     <Compile Include="Configuration\KafkaConfiguration.cs" />
+    <Compile Include="Configuration\MastershipConfiguration.cs" />
     <Compile Include="Configuration\OpenDDSChannelConfiguration.cs" />
     <Compile Include="Configuration\OpenDDSConfiguration.cs" />
     <Compile Include="GlobalConfiguration.cs" />

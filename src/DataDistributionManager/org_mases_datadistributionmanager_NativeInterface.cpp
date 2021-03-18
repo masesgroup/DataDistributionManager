@@ -240,7 +240,7 @@ struct DataDistributionChannelCallbackContainer
 	IDataDistributionChannelCallback* pcb;
 };
 
-void dataDistributionUnderlyingEventCbJava(const void* opaque, const HANDLE channelHandle, const UnderlyingEventData* uEvent)
+void dataDistributionUnderlyingEventCbJava(const void* opaque, const CHANNEL_HANDLE_PARAMETER, const UnderlyingEventData* uEvent)
 {
 	BOOL attached;
 	JNIEnv* env = NewEnv("UnderlyingEvent", &attached);
@@ -527,7 +527,7 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 		env->ReleaseStringUTFChars(jChannelTrailer, pjStr);
 	}
 
-	HRESULT result = pIDataDistribution->Initialize(pDataDistributionCallbackContainer->pcb,
+	OPERATION_RESULT result = pIDataDistribution->Initialize(pDataDistributionCallbackContainer->pcb,
 		(conf_file != NULL) ? _strdup(conf_file) : NULL,
 		(szMyAddress != NULL) ? _strdup(szMyAddress) : NULL,
 		(channelTrailer != NULL) ? _strdup(channelTrailer) : NULL);
@@ -591,7 +591,7 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 		env->ReleaseStringUTFChars(jChannelTrailer, pjStr);
 	}
 
-	HRESULT result = pIDataDistribution->Initialize(pDataDistributionCallbackContainer->pcb, array, size,
+	OPERATION_RESULT result = pIDataDistribution->Initialize(pDataDistributionCallbackContainer->pcb, array, size,
 		(szMyAddress != NULL) ? _strdup(szMyAddress) : NULL,
 		(channelTrailer != NULL) ? _strdup(channelTrailer) : NULL);
 
@@ -821,7 +821,7 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 (JNIEnv * env, jclass caller, jlong jIDataDistributionSubSystem, jlong jChannelHandle, jlong jtimeout)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem = (IDataDistributionSubsystem*)jIDataDistributionSubSystem;
-	return (jlong)pIDataDistributionSubsystem->StartChannel((HANDLE)jChannelHandle, jtimeout);
+	return (jlong)pIDataDistributionSubsystem->StartChannel((CHANNEL_HANDLE)jChannelHandle, jtimeout);
 }
 
 /*
@@ -833,7 +833,7 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 (JNIEnv * env, jclass caller, jlong jIDataDistributionSubSystem, jlong jChannelHandle, jlong jtimeout)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem = (IDataDistributionSubsystem*)jIDataDistributionSubSystem;
-	return (jlong)pIDataDistributionSubsystem->StopChannel((HANDLE)jChannelHandle, jtimeout);
+	return (jlong)pIDataDistributionSubsystem->StopChannel((CHANNEL_HANDLE)jChannelHandle, jtimeout);
 }
 
 /*
@@ -866,7 +866,7 @@ JNIEXPORT void JNICALL Java_org_mases_datadistributionmanager_NativeInterface_ID
 		env->ReleaseStringUTFChars(jparamValue, pjStr);
 	}
 
-	pIDataDistributionSubsystem->SetParameter((HANDLE)jChannelHandle, paramName, paramValue);
+	pIDataDistributionSubsystem->SetParameter((CHANNEL_HANDLE)jChannelHandle, paramName, paramValue);
 
 	if (paramName != NULL) free((void*)paramName);
 	if (paramValue != NULL) free((void*)paramValue);
@@ -893,7 +893,7 @@ JNIEXPORT void JNICALL Java_org_mases_datadistributionmanager_NativeInterface_ID
 		env->ReleaseStringUTFChars(jparamValue, pjStr);
 	}
 
-	pIDataDistributionSubsystem->SetParameter((HANDLE)jChannelHandle, (DDM_GENERAL_PARAMETER)jparamId, paramValue);
+	pIDataDistributionSubsystem->SetParameter((CHANNEL_HANDLE)jChannelHandle, (DDM_GENERAL_PARAMETER)jparamId, paramValue);
 
 	if (paramValue != NULL) free((void*)paramValue);
 }
@@ -920,7 +920,7 @@ JNIEXPORT jstring JNICALL Java_org_mases_datadistributionmanager_NativeInterface
 		env->ReleaseStringUTFChars(jparamName, pjStr);
 	}
 
-	const char* paramValue = pIDataDistributionSubsystem->GetParameter((HANDLE)jChannelHandle, paramName);
+	const char* paramValue = pIDataDistributionSubsystem->GetParameter((CHANNEL_HANDLE)jChannelHandle, paramName);
 
 	if (paramName != NULL) free((void*)paramName);
 
@@ -936,7 +936,7 @@ JNIEXPORT jstring JNICALL Java_org_mases_datadistributionmanager_NativeInterface
 (JNIEnv * env, jclass caller, jlong jIDataDistributionSubSystem, jlong jChannelHandle, jint jparamId)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem = (IDataDistributionSubsystem*)jIDataDistributionSubSystem;
-	const char* paramValue = pIDataDistributionSubsystem->GetParameter((HANDLE)jChannelHandle, (DDM_GENERAL_PARAMETER)jparamId);
+	const char* paramValue = pIDataDistributionSubsystem->GetParameter((CHANNEL_HANDLE)jChannelHandle, (DDM_GENERAL_PARAMETER)jparamId);
 	return env->NewStringUTF(paramValue);
 }
 
@@ -949,7 +949,7 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 (JNIEnv * env, jclass caller, jlong jIDataDistributionSubSystem, jlong jChannelHandle, jlong jtimeout)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem = (IDataDistributionSubsystem*)jIDataDistributionSubSystem;
-	return (jlong)pIDataDistributionSubsystem->Lock((HANDLE)jChannelHandle, jtimeout);
+	return (jlong)pIDataDistributionSubsystem->Lock((CHANNEL_HANDLE)jChannelHandle, jtimeout);
 }
 
 /*
@@ -961,7 +961,7 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 (JNIEnv * env, jclass caller, jlong jIDataDistributionSubSystem, jlong jChannelHandle)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem = (IDataDistributionSubsystem*)jIDataDistributionSubSystem;
-	return (jlong)pIDataDistributionSubsystem->Unlock((HANDLE)jChannelHandle);
+	return (jlong)pIDataDistributionSubsystem->Unlock((CHANNEL_HANDLE)jChannelHandle);
 }
 
 /*
@@ -973,7 +973,7 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 (JNIEnv * env, jclass caller, jlong jIDataDistributionSubSystem, jlong jChannelHandle, jlong jposition)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem = (IDataDistributionSubsystem*)jIDataDistributionSubSystem;
-	return (jlong)pIDataDistributionSubsystem->SeekChannel((HANDLE)jChannelHandle, jposition);
+	return (jlong)pIDataDistributionSubsystem->SeekChannel((CHANNEL_HANDLE)jChannelHandle, jposition);
 }
 
 /*
@@ -985,7 +985,7 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 (JNIEnv * env, jclass caller, jlong jIDataDistributionSubSystem, jlong jChannelHandle)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem = (IDataDistributionSubsystem*)jIDataDistributionSubSystem;
-	return (jlong)pIDataDistributionSubsystem->DeleteChannel((HANDLE)jChannelHandle);
+	return (jlong)pIDataDistributionSubsystem->DeleteChannel((CHANNEL_HANDLE)jChannelHandle);
 }
 
 /*
@@ -1017,7 +1017,7 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 		buffer = (jbyte *)env->GetByteArrayElements(jbuffer, NULL);
 	}
 
-	jlong result = (jlong)pIDataDistributionSubsystem->WriteOnChannel((HANDLE)jChannelHandle, key, keylen, buffer, bufferLen, jwriteAll, jtimeout);
+	jlong result = (jlong)pIDataDistributionSubsystem->WriteOnChannel((CHANNEL_HANDLE)jChannelHandle, key, keylen, buffer, bufferLen, jwriteAll, jtimeout);
 
 	if (jkey != NULL) env->ReleaseStringUTFChars(jkey, key);
 	if (jbuffer != NULL) env->ReleaseByteArrayElements(jbuffer, buffer, 0);
@@ -1039,7 +1039,7 @@ JNIEXPORT jbyteArray JNICALL Java_org_mases_datadistributionmanager_NativeInterf
 
 	jbyteArray jArray = NULL;
 
-	if (pIDataDistributionSubsystem->ReadFromChannel((HANDLE)jChannelHandle, jposition, &dataLen, &receivingBuffer) == TRUE)
+	if (pIDataDistributionSubsystem->ReadFromChannel((CHANNEL_HANDLE)jChannelHandle, jposition, &dataLen, &receivingBuffer) == TRUE)
 	{
 		jArray = env->NewByteArray(dataLen);
 		env->SetByteArrayRegion(jArray, 0, dataLen, (const jbyte*)receivingBuffer);
@@ -1057,7 +1057,64 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 (JNIEnv * env, jclass caller, jlong jIDataDistributionSubSystem, jlong jChannelHandle, jint direction)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem = (IDataDistributionSubsystem*)jIDataDistributionSubSystem;
-	return (jlong)pIDataDistributionSubsystem->ChangeChannelDirection((HANDLE)jChannelHandle, (DDM_CHANNEL_DIRECTION)direction);
+	return (jlong)pIDataDistributionSubsystem->ChangeChannelDirection((CHANNEL_HANDLE)jChannelHandle, (DDM_CHANNEL_DIRECTION)direction);
+}
+
+/*
+* Class:     org_mases_datadistributionmanager_NativeInterface
+* Method:    IDataDistributionMastershipCommon_SetParameter
+* Signature: (JLjava/lang/String;Ljava/lang/String;)V
+*/
+JNIEXPORT void JNICALL Java_org_mases_datadistributionmanager_NativeInterface_IDataDistributionMastershipCommon_1SetParameter
+(JNIEnv * env, jclass caller, jlong jIDataDistribution, jstring jParamName, jstring jParamValue)
+{
+	IDataDistribution* pIDataDistribution = (IDataDistribution*)jIDataDistribution;
+	if (pIDataDistribution->GetMastershipManager() == NULL) return;
+
+	const char* paramName = NULL;
+	const char* paramValue = NULL;
+	jboolean isCopy = JNI_FALSE;
+
+	if (jParamName != NULL)
+	{
+		paramName = env->GetStringUTFChars(jParamName, &isCopy);
+	}
+
+	if (jParamValue != NULL)
+	{
+		paramValue = env->GetStringUTFChars(jParamValue, &isCopy);
+	}
+
+	pIDataDistribution->GetMastershipManager()->SetParameter(paramName, paramValue);
+
+	if (jParamName != NULL) env->ReleaseStringUTFChars(jParamName, paramName);
+	if (jParamValue != NULL) env->ReleaseStringUTFChars(jParamValue, paramValue);
+}
+
+/*
+* Class:     org_mases_datadistributionmanager_NativeInterface
+* Method:    IDataDistributionMastershipCommon_GetParameter
+* Signature: (JLjava/lang/String;)Ljava/lang/String;
+*/
+JNIEXPORT jstring JNICALL Java_org_mases_datadistributionmanager_NativeInterface_IDataDistributionMastershipCommon_1GetParameter
+(JNIEnv * env, jclass caller, jlong jIDataDistribution, jstring jParamName)
+{
+	IDataDistribution* pIDataDistribution = (IDataDistribution*)jIDataDistribution;
+	if (pIDataDistribution->GetMastershipManager() == NULL) return NULL;
+
+	const char* paramName = NULL;
+	jboolean isCopy = JNI_FALSE;
+
+	if (jParamName != NULL)
+	{
+		paramName = env->GetStringUTFChars(jParamName, &isCopy);
+	}
+
+	const char* paramValue = pIDataDistribution->GetMastershipManager()->GetParameter(paramName);
+
+	if (jParamName != NULL) env->ReleaseStringUTFChars(jParamName, paramName);
+	
+	return (paramValue != NULL) ? env->NewStringUTF(paramValue) : NULL;
 }
 
 /*
@@ -1069,7 +1126,7 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 (JNIEnv * env, jclass caller, jlong jIDataDistribution, jint dwMilliseconds)
 {
 	IDataDistribution* pIDataDistribution = (IDataDistribution*)jIDataDistribution;
-	if (pIDataDistribution->GetMastershipManager() == NULL) return (jlong)E_FAIL;
+	if (pIDataDistribution->GetMastershipManager() == NULL) return (jlong)DDM_UNMAPPED_ERROR_CONDITION;
 	return (jlong)pIDataDistribution->GetMastershipManager()->Start(dwMilliseconds);
 }
 
@@ -1082,7 +1139,7 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 (JNIEnv * env, jclass caller, jlong jIDataDistribution, jint dwMilliseconds)
 {
 	IDataDistribution* pIDataDistribution = (IDataDistribution*)jIDataDistribution;
-	if (pIDataDistribution->GetMastershipManager() == NULL) return (jlong)E_FAIL;
+	if (pIDataDistribution->GetMastershipManager() == NULL) return (jlong)DDM_UNMAPPED_ERROR_CONDITION;
 	return (jlong)pIDataDistribution->GetMastershipManager()->Stop(dwMilliseconds);
 }
 

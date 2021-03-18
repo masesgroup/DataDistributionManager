@@ -26,6 +26,7 @@ import java.util.HashMap;
 public abstract class GlobalConfiguration extends BaseConfiguration {
     public static final String ProtocolKey = "datadistributionmanager.common.protocol";
     public static final String ProtocolLibraryKey = "datadistributionmanager.common.protolib";
+    public static final String MastershipLibraryKey = "datadistributionmanager.common.mastershiplib";
     public static final String MaxMessageSizeKey = "datadistributionmanager.maxmessagesize";
     public static final String ServerLostTimeoutKey = "datadistributionmanager.timeout.serverlost";
     public static final String GlobalLogLevelKey = "datadistributionmanager.loglevel.global";
@@ -86,6 +87,25 @@ public abstract class GlobalConfiguration extends BaseConfiguration {
     }
 
     /**
+     * The mastership library to use
+     * 
+     * @return The mastership library
+     */
+    public String getMastershipLibrary() {
+        String value = keyValuePair.get(MastershipLibraryKey);
+        return (value == null) ? "" : value;
+    }
+
+    /**
+     * The mastership library to use
+     * 
+     * @param protolib The mastership library
+     */
+    public void setMastershipLibrary(String protolib) {
+        keyValuePair.put(MastershipLibraryKey, protolib);
+    }    
+
+    /**
      * The max message size managed
      * 
      * @return The max message size
@@ -107,7 +127,7 @@ public abstract class GlobalConfiguration extends BaseConfiguration {
     /**
      * The timeout on server lost
      * 
-     * @return The server lost timeout
+     * @return The server lost timeout in ms
      */
     public Integer getServerLostTimeout() {
         String value = keyValuePair.get(ServerLostTimeoutKey);
@@ -117,7 +137,7 @@ public abstract class GlobalConfiguration extends BaseConfiguration {
     /**
      * The timeout on server lost
      * 
-     * @param timeout The server lost timeout
+     * @param timeout The server lost timeout in ms
      */
     public void setServerLostTimeout(Integer timeout) {
         keyValuePair.put(ServerLostTimeoutKey, timeout.toString());

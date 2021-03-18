@@ -12,6 +12,7 @@ var hierarchy =
         [ "SmartDataDistribution< T >", "classSmartDataDistribution.html", null ]
       ] ]
     ] ],
+    [ "IDataDistributionChannel", "classIDataDistributionChannel.html", null ],
     [ "IDataDistributionChannelBase", "classIDataDistributionChannelBase.html", [
       [ "IDataDistributionTransport", "classIDataDistributionTransport.html", [
         [ "IDataDistributionSubsystem", "classIDataDistributionSubsystem.html", null ]

@@ -33,9 +33,6 @@
     <ClInclude Include="DataDistributionManagerCommon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DataDistributionMastershipManagerBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="DataDistributionManager_c.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -57,6 +54,12 @@
     <ClInclude Include="DataDistributionManagerLog.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DataDistributionManagerTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataDistributionManagerSupport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -69,9 +72,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DataDistributionManagerCommon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DataDistributionMastershipManagerBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DataDistributionManager_c.cpp">
@@ -87,6 +87,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DataDistributionManagerLog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataDistributionManagerSupportWindows.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

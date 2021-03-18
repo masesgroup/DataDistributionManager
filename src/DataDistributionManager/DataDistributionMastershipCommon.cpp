@@ -18,264 +18,113 @@
 
 #include "DataDistributionMastershipCommon.h"
 
+#include <winsock2.h>
+
 DataDistributionMastershipCommon::DataDistributionMastershipCommon()
 {
-	m_keepAliveInterval = 1000;
-	m_hKeepAlive = NULL;
-	m_bSystemRunning = FALSE;
-	m_MyIdentifier = 0;
-	m_IamNextPrimary = FALSE;
-	m_myState = DDM_INSTANCE_STATE::UNKNOWN;
-	InitializeCriticalSection(&m_csState);
-	m_startupTime.ResetTime();
+	m_pDataDistributionManagerSubsystem = NULL;
 }
 
-HRESULT DataDistributionMastershipCommon::Initialize(IDataDistributionSubsystem* transportManager, IDataDistributionMastershipCallback* cbs, const char* szMyAddress, const char* arrayParams[], int length)
+OPERATION_RESULT DataDistributionMastershipCommon::Initialize(IDataDistributionSubsystem* transportManager, IDataDistributionMastershipCallback* cbs, const char* szMyAddress, const char* arrayParams[], int length)
 {
-	std::string server1Name;
-
-	if (!szMyAddress)
-	{
-		char szHost[255];
-		szHost[0] = '0';
-		gethostname(szHost, sizeof(szHost));
-		m_szServerName = _strdup(szHost);
-	}
-	else m_szServerName = _strdup(szMyAddress);
-
-	m_arrayParamsLen = (arrayParams != NULL) ? length : 0;
-	if (arrayParams != NULL)
-	{
-		m_arrayParams = (const char**)malloc(m_arrayParamsLen * sizeof(const char*));
-		for (int i = 0; i < m_arrayParamsLen; i++)
-		{
-			m_arrayParams[i] = _strdup(arrayParams[i]);
-		}
-	}
-
 	m_pDataDistributionManagerSubsystem = transportManager;
-	m_pMastershipCallback = cbs;
-
-	std::hash<std::string> hash_fn;
-	SetLocalServerId(hash_fn(server1Name));
-
-	return Initialize();
+	return Initialize(cbs, szMyAddress, arrayParams, length);
 }
 
-HRESULT DataDistributionMastershipCommon::Initialize()
+OPERATION_RESULT DataDistributionMastershipCommon::Initialize(IDataDistributionMastershipCallback* cbs, const char* szMyAddress, const char* arrayParams[], int length)
 {
-	TRACESTART("DataDistributionCommon", "Initialize");
-
-	m_hKeepAlive = m_pDataDistributionManagerSubsystem->CreateChannel("KeepAlive", this);
-	if (!m_hKeepAlive) return E_FAIL;
-	return S_OK;
+	TRACESTART("DataDistributionMastershipCommon", "Initialize");
+	LOG_WARNING0("Not Implemented in subclass");
+	return DDM_NOT_IMPLEMENTED;
 }
 
-HRESULT DataDistributionMastershipCommon::Start(DWORD dwMilliseconds)
+void DataDistributionMastershipCommon::SetParameter(const char *paramName, const char *paramValue)
 {
-	TRACESTART("DataDistributionCommon", "Start");
-
-	if (m_hKeepAlive && m_pDataDistributionManagerSubsystem->StartChannel(m_hKeepAlive, dwMilliseconds))
-	{
-		HRESULT result = S_OK;
-		bKeepAliveRun = TRUE;
-		hKeepAliveThread = CreateThread(0, 0, keepAliveHandler, this, 0, &dwKeepAliveThrId);
-		auto res = WaitForSingleObject(h_evtKeepAlive, dwMilliseconds);
-		switch (res)
-		{
-		case WAIT_ABANDONED:
-		case WAIT_TIMEOUT:
-		case WAIT_FAILED:
-			result = HRESULT_FROM_WIN32(res);
-			break;
-		case WAIT_OBJECT_0:
-		default:
-			break;
-		}
-		return result;
-	}
-
-	return E_FAIL;
+	TRACESTART("DataDistributionMastershipCommon", "SetParameter");
+	LOG_WARNING0("Not Implemented in subclass");
 }
 
-HRESULT DataDistributionMastershipCommon::Stop(DWORD dwMilliseconds)
+const char *DataDistributionMastershipCommon::GetParameter(const char *paramName)
 {
-	TRACESTART("DataDistributionCommon", "Stop");
+	TRACESTART("DataDistributionMastershipCommon", "GetParameter");
+	LOG_WARNING0("Not Implemented in subclass");
+	return NULL;
+}
 
-	if (m_hKeepAlive && m_pDataDistributionManagerSubsystem->StopChannel(m_hKeepAlive, dwMilliseconds))
-	{
-		return S_OK;
-	}
+OPERATION_RESULT DataDistributionMastershipCommon::Start(unsigned long dwMilliseconds)
+{
+	TRACESTART("DataDistributionMastershipCommon", "Start");
+	LOG_WARNING0("Not Implemented in subclass");
+	return DDM_NOT_IMPLEMENTED;
+}
 
-	return E_FAIL;
+OPERATION_RESULT DataDistributionMastershipCommon::Stop(unsigned long dwMilliseconds)
+{
+	TRACESTART("DataDistributionMastershipCommon", "Stop");
+	LOG_WARNING0("Not Implemented in subclass");
+	return DDM_NOT_IMPLEMENTED;
 }
 
 
 BOOL DataDistributionMastershipCommon::GetIamNextPrimary()
 {
-	BOOL status;
-	EnterCriticalSection(&m_csState);
-	status = m_IamNextPrimary;
-	LeaveCriticalSection(&m_csState);
-	return status;
+	TRACESTART("DataDistributionMastershipCommon", "GetIamNextPrimary");
+	LOG_WARNING0("Not Implemented in subclass");
+	return DDM_NOT_IMPLEMENTED;
 }
 
 int64_t DataDistributionMastershipCommon::GetUpTime()
 {
-	return m_startupTime.ElapsedMicroseconds();
-}
-
-void DataDistributionMastershipCommon::AddRandomToMyTime()
-{
-	unsigned int randomNum;
-	rand_s(&randomNum);
-	m_startupTime.AddNanoseconds(randomNum);
-}
-
-int DataDistributionMastershipCommon::SendKeepAlive()
-{
-	TRACESTART("DataDistributionCommon", "SendKeepAlive");
-
-	ALIVE alive(m_MyIdentifier, GetUpTime(), m_myState);
-	std::string keepAlive("KeepAlive");
-	HRESULT hRes = m_pDataDistributionManagerSubsystem->WriteOnChannel(m_hKeepAlive, keepAlive.c_str(), keepAlive.size(), &alive, sizeof(ALIVE));
-
-	if (FAILED(hRes))
-	{
-		LOG_ERROR0("WriteOnChannel failed");
-	}
-
-	return m_keepAliveInterval;
-}
-
-void DataDistributionMastershipCommon::OnUnderlyingEvent(const HANDLE channelHandle, const UnderlyingEventData* uEvent)
-{
-	TRACESTART("DataDistributionCommon", "OnUnderlyingEvent");
-
-	if (uEvent->IsDataAvailable)
-	{
-		std::string key(uEvent->Key, uEvent->KeyLen);
-		if (key != "KeepAlive")
-		{
-			LOG_ERROR("Received an event with key %s", key.c_str());
-			return;
-		}
-
-		BaseKeepAlive* pBaseKeepAlive = (BaseKeepAlive*)uEvent->Buffer;
-
-		switch (pBaseKeepAlive->Type)
-		{
-		case DDM_KEEPALIVE_TYPE::ALIVE:
-			OnALIVE((ALIVE*)pBaseKeepAlive);
-			break;
-		case DDM_KEEPALIVE_TYPE::HELLO:
-			OnHELLO((HELLO_WELCOME*)pBaseKeepAlive);
-			break;
-		case DDM_KEEPALIVE_TYPE::WELCOME:
-			OnWELCOME((HELLO_WELCOME*)pBaseKeepAlive);
-			break;
-		case DDM_KEEPALIVE_TYPE::GOODBYE:
-			OnGOODBYE((GOODBYE*)pBaseKeepAlive);
-			break;
-		case DDM_KEEPALIVE_TYPE::STATECHANGEREQUEST:
-			OnSTATECHANGEREQUEST((STATECHANGEREQUEST*)pBaseKeepAlive);
-			break;
-		case DDM_KEEPALIVE_TYPE::STATECHANGERESPONSE:
-			OnSTATECHANGERESPONSE((STATECHANGERESPONSE*)pBaseKeepAlive);
-			break;
-		default:
-			break;
-		}
-	}
-	else OnCondition(uEvent->ChannelName, uEvent->Condition, uEvent->NativeCode, uEvent->SubSystemReason);
-}
-
-void DataDistributionMastershipCommon::OnCondition(const char* channelName, DDM_UNDERLYING_ERROR_CONDITION condition, int nativeCode, const char* subSystemReason)
-{
-
-}
-
-void DataDistributionMastershipCommon::OnALIVE(ALIVE* pALIVE)
-{
-
-}
-
-void DataDistributionMastershipCommon::OnHELLO(HELLO_WELCOME* pHELLO_WELCOME)
-{
-
-}
-
-void DataDistributionMastershipCommon::OnWELCOME(HELLO_WELCOME* pHELLO_WELCOME)
-{
-
-}
-
-void DataDistributionMastershipCommon::OnGOODBYE(GOODBYE* pGOODBYE)
-{
-
-}
-
-void DataDistributionMastershipCommon::OnSTATECHANGEREQUEST(STATECHANGEREQUEST* pSTATECHANGEREQUEST)
-{
-
-}
-
-void DataDistributionMastershipCommon::OnSTATECHANGERESPONSE(STATECHANGERESPONSE* pSTATECHANGERESPONSE)
-{
-
+	TRACESTART("DataDistributionMastershipCommon", "GetUpTime");
+	LOG_WARNING0("Not Implemented in subclass");
+	return 0;
 }
 
 void DataDistributionMastershipCommon::ChangeMyState(DDM_INSTANCE_STATE newState)
 {
-	TRACESTART("DataDistributionCommon", "ChangeMyState");
-	LOG_INFO("Value changing from %d to %d", m_myState, newState);
-
-	EnterCriticalSection(&m_csState);
-
-	if (m_myState == DDM_INSTANCE_STATE::UNKNOWN && newState != DDM_INSTANCE_STATE::UNKNOWN)
-	{
-		m_pMastershipCallback->FirstStateChange(newState);
-	}
-
-	if (newState == m_myState)
-	{
-		LeaveCriticalSection(&m_csState);
-		return;
-	}
-
-	m_pMastershipCallback->ChangingState(m_myState, newState);
-
-	m_myState = newState;
-
-	LeaveCriticalSection(&m_csState);
-
-	m_pMastershipCallback->ChangedState(newState);
+	TRACESTART("DataDistributionMastershipCommon", "ChangeMyState");
+	LOG_WARNING0("Not Implemented in subclass");
 }
 
 void DataDistributionMastershipCommon::ChangeState(int64_t instanceId, DDM_INSTANCE_STATE newState)
 {
-	TRACESTART("DataDistributionCommon", "ChangeState");
-	LOG_INFO("Value changing on %d to %d", instanceId, newState);
+	TRACESTART("DataDistributionMastershipCommon", "ChangeState");
+	LOG_WARNING0("Not Implemented in subclass");
 }
 
 DDM_INSTANCE_STATE DataDistributionMastershipCommon::GetMyState()
 {
-	TRACESTART("DataDistributionCommon", "GetMyState");
-	DDM_INSTANCE_STATE state = DDM_INSTANCE_STATE::UNKNOWN;
-	EnterCriticalSection(&m_csState);
-	state = m_myState;
-	LeaveCriticalSection(&m_csState);
-	return state;
+	TRACESTART("DataDistributionMastershipCommon", "GetMyState");
+	LOG_WARNING0("Not Implemented in subclass");
+	return DDM_INSTANCE_STATE::UNKNOWN;
 }
 
 int64_t DataDistributionMastershipCommon::GetMessageDelay()
 {
-	return m_PrimaryKeepAliveDelay;
+	TRACESTART("DataDistributionMastershipCommon", "GetMessageDelay");
+	LOG_WARNING0("Not Implemented in subclass");
+	return 0;
 }
 
 BOOL DataDistributionMastershipCommon::RequestIAmNextPrimary()
 {
-	return m_IamNextPrimary;
+	TRACESTART("DataDistributionMastershipCommon", "RequestIAmNextPrimary");
+	LOG_WARNING0("Not Implemented in subclass");
+	return FALSE;
+}
+
+int64_t DataDistributionMastershipCommon::GetLocalServerId()
+{
+	TRACESTART("DataDistributionMastershipCommon", "GetLocalServerId");
+	LOG_WARNING0("Not Implemented in subclass");
+	return 0;
+}
+
+int64_t DataDistributionMastershipCommon::GetPrimaryServerId()
+{
+	TRACESTART("DataDistributionMastershipCommon", "GetPrimaryServerId");
+	LOG_WARNING0("Not Implemented in subclass");
+	return 0;
 }
 
 void DataDistributionMastershipCommon::Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, ...)
@@ -293,52 +142,3 @@ void DataDistributionMastershipCommon::Log(const DDM_LOG_LEVEL level, const char
 	if (NULL == m_pDataDistributionManagerSubsystem) return;
 	m_pDataDistributionManagerSubsystem->Log(level, sourceName, function, format, args);
 }
-
-void DataDistributionMastershipCommon::SetLocalServerId(int64_t identifier)
-{
-	TRACESTART("DataDistributionCommon", "SetLocalServerId");
-	if (m_bSystemRunning)
-	{
-		LOG_INFO0("Cannot change identifier during run.");
-		return;
-	}
-
-#ifdef _WIN64
-	LOG_INFO("New identifier is %lld", identifier);
-#else
-	LOG_INFO("New identifier is %d", identifier);
-#endif
-
-	m_MyIdentifier = identifier;
-}
-
-int64_t DataDistributionMastershipCommon::GetLocalServerId()
-{
-	return m_MyIdentifier;
-}
-
-void DataDistributionMastershipCommon::SetPrimaryServerId(int64_t primaryId)
-{
-	m_PrimaryIdentifier = primaryId;
-}
-
-int64_t DataDistributionMastershipCommon::GetPrimaryServerId()
-{
-	return m_PrimaryIdentifier;
-}
-
-DWORD __stdcall DataDistributionMastershipCommon::keepAliveHandler(void * argh)
-{
-	DataDistributionMastershipCommon* pDataDistributionMastershipCommon = static_cast<DataDistributionMastershipCommon*>(argh);
-
-	SetEvent(pDataDistributionMastershipCommon->h_evtKeepAlive);
-
-	while (pDataDistributionMastershipCommon->bKeepAliveRun)
-	{
-		int nextKeepAliveTrigger = pDataDistributionMastershipCommon->SendKeepAlive();
-		Sleep(nextKeepAliveTrigger);
-	}
-
-	return S_OK;
-}
-

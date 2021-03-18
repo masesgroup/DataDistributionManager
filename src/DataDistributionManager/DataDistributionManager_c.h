@@ -19,10 +19,6 @@
 #ifndef _Included_DataDistributionManager_c
 #define _Included_DataDistributionManager_c
 
-#define DLLEXPORT DDM_EXPORT
-#define DLLIMPORT __declspec(dllimport)
-#define DLLCALL __cdecl
-
 #include "DataDistributionManager.h"
 
 #ifdef __cplusplus
@@ -39,9 +35,9 @@ extern "C" {
 	DLLEXPORT void DLLCALL DataDistributionMastershipCallback_delete(void* ddmcb);
 
 	// IDataDistribution interface
-	DLLEXPORT HRESULT DLLCALL IDataDistribution_Initialize(void* IDataDistribution_instance, void* iddcb, const char* conf_file, const char* szMyAddress, const char* channelTrailer);
-	DLLEXPORT HRESULT DLLCALL  IDataDistribution_Initialize2(void* IDataDistribution_instance, void* iddcb, const char* arrayParams[], int len, const char* szMyAddress, const char* channelTrailer);
-	DLLEXPORT HRESULT DLLCALL IDataDistribution_RequestMastershipManager(void* IDataDistribution_instance, void* cbs, const char* szMyAddress = NULL, const char* arrayParams[] = NULL, int len = 0);
+	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistribution_Initialize(void* IDataDistribution_instance, void* iddcb, const char* conf_file, const char* szMyAddress, const char* channelTrailer);
+	DLLEXPORT OPERATION_RESULT DLLCALL  IDataDistribution_Initialize2(void* IDataDistribution_instance, void* iddcb, const char* arrayParams[], int len, const char* szMyAddress, const char* channelTrailer);
+	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistribution_RequestMastershipManager(void* IDataDistribution_instance, void* cbs, const char* szMyAddress = NULL, const char* arrayParams[] = NULL, int len = 0);
 	DLLEXPORT void* DLLCALL IDataDistribution_GetSubsystemManager(void* IDataDistribution_instance);
 	DLLEXPORT void* DLLCALL IDataDistribution_GetMastershipManager(void* IDataDistribution_instance);
 	DLLEXPORT const char* DLLCALL IDataDistribution_GetProtocol(void* IDataDistribution_instance);
@@ -50,32 +46,34 @@ extern "C" {
 
 	// IDataDistributionSubsystem interface
 
-	// DLLEXPORT HRESULT DLLCALL IDataDistributionSubsystem_Initialize(void* IDataDistributionSubsystem_instance, void*, const char* szMyAddress, const char* conf_file, const char* channelTrailer);
-	// DLLEXPORT HRESULT DLLCALL IDataDistributionSubsystem_Initialize2(void* IDataDistributionSubsystem_instance, void*, const char* szMyAddress, const char* arrayParams[], int len, const char* channelTrailer);
+	// DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_Initialize(void* IDataDistributionSubsystem_instance, void*, const char* szMyAddress, const char* conf_file, const char* channelTrailer);
+	// DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_Initialize2(void* IDataDistributionSubsystem_instance, void*, const char* szMyAddress, const char* arrayParams[], int len, const char* channelTrailer);
 	// DLLEXPORT void* DLLCALL IDataDistributionSubsystem_GetCallbacks(void* IDataDistributionSubsystem_instance);
 	DLLEXPORT int DLLCALL IDataDistributionSubsystem_GetServerLostTimeout(void* IDataDistributionSubsystem_instance);
 	DLLEXPORT size_t DLLCALL IDataDistributionSubsystem_GetMaxMessageSize(void* IDataDistributionSubsystem_instance);
-	DLLEXPORT HRESULT DLLCALL IDataDistributionSubsystem_Start(void* IDataDistributionSubsystem_instance, DWORD dwMilliseconds);
-	DLLEXPORT HRESULT DLLCALL IDataDistributionSubsystem_Stop(void* IDataDistributionSubsystem_instance, DWORD dwMilliseconds);
-	DLLEXPORT HANDLE DLLCALL IDataDistributionSubsystem_CreateChannel(void* IDataDistributionSubsystem_instance, const char* channelName, void* dataCb, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION::ALL, const char* arrayParams[] = NULL, int len = 0);
-	DLLEXPORT HRESULT DLLCALL IDataDistributionSubsystem_StartChannel(void* IDataDistributionSubsystem_instance, HANDLE channelHandle, DWORD dwMilliseconds);
-	DLLEXPORT HRESULT DLLCALL IDataDistributionSubsystem_StopChannel(void* IDataDistributionSubsystem_instance, HANDLE channelHandle, DWORD dwMilliseconds);
-	DLLEXPORT void DLLCALL IDataDistributionSubsystem_SetParameter(void* IDataDistributionSubsystem_instance, HANDLE channelHandle, const char* paramName, const char* paramValue);
-	DLLEXPORT void DLLCALL IDataDistributionSubsystem_SetParameter2(void* IDataDistributionSubsystem_instance, HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId, const char* paramValue);
-	DLLEXPORT const char* DLLCALL IDataDistributionSubsystem_GetParameter(void* IDataDistributionSubsystem_instance, HANDLE channelHandle, const char* paramName);
-	DLLEXPORT const char* DLLCALL IDataDistributionSubsystem_GetParameter2(void* IDataDistributionSubsystem_instance, HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId);
-	DLLEXPORT HRESULT DLLCALL IDataDistributionSubsystem_Lock(void* IDataDistributionSubsystem_instance, HANDLE channelHandle, DWORD timeout);
-	DLLEXPORT HRESULT DLLCALL IDataDistributionSubsystem_Unlock(void* IDataDistributionSubsystem_instance, HANDLE channelHandle);
-	DLLEXPORT HRESULT DLLCALL IDataDistributionSubsystem_SeekChannel(void* IDataDistributionSubsystem_instance, HANDLE channelHandle, int64_t position);
-	DLLEXPORT HRESULT DLLCALL IDataDistributionSubsystem_DeleteChannel(void* IDataDistributionSubsystem_instance, HANDLE channelHandle);
-	DLLEXPORT HRESULT DLLCALL IDataDistributionSubsystem_WriteOnChannel(void* IDataDistributionSubsystem_instance, HANDLE channelHandle, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll = FALSE, const int64_t timestamp = -1);
-	DLLEXPORT HRESULT DLLCALL IDataDistributionSubsystem_ReadFromChannel(void* IDataDistributionSubsystem_instance, HANDLE channelHandle, int64_t offset, size_t* dataLen, void** param);
-	DLLEXPORT HRESULT DLLCALL IDataDistributionSubsystem_ChangeChannelDirection(void* IDataDistributionSubsystem_instance, HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction);
+	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_Start(void* IDataDistributionSubsystem_instance, unsigned long dwMilliseconds);
+	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_Stop(void* IDataDistributionSubsystem_instance, unsigned long dwMilliseconds);
+	DLLEXPORT CHANNEL_HANDLE DLLCALL IDataDistributionSubsystem_CreateChannel(void* IDataDistributionSubsystem_instance, const char* channelName, void* dataCb, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION::ALL, const char* arrayParams[] = NULL, int len = 0);
+	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_StartChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds);
+	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_StopChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds);
+	DLLEXPORT void DLLCALL IDataDistributionSubsystem_SetParameter(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, const char* paramName, const char* paramValue);
+	DLLEXPORT void DLLCALL IDataDistributionSubsystem_SetParameter2(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId, const char* paramValue);
+	DLLEXPORT const char* DLLCALL IDataDistributionSubsystem_GetParameter(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, const char* paramName);
+	DLLEXPORT const char* DLLCALL IDataDistributionSubsystem_GetParameter2(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId);
+	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_Lock(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, unsigned long timeout);
+	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_Unlock(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER);
+	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_SeekChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, int64_t position);
+	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_DeleteChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER);
+	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_WriteOnChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll = FALSE, const int64_t timestamp = -1);
+	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_ReadFromChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, int64_t offset, size_t* dataLen, void** param);
+	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_ChangeChannelDirection(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, DDM_CHANNEL_DIRECTION direction);
 
 	// IDataDistributionMastershipCommon
-	DLLEXPORT HRESULT DLLCALL IDataDistributionMastershipCommon_Initialize(void* IDataDistribution_instance, void* iddmcb, const char* szMyAddress = NULL, const char* arrayParams[] = NULL, int len = 0);
-	DLLEXPORT HRESULT DLLCALL IDataDistributionMastershipCommon_Start(void* IDataDistribution_instance, DWORD dwMilliseconds);
-	DLLEXPORT HRESULT DLLCALL IDataDistributionMastershipCommon_Stop(void* IDataDistribution_instance, DWORD dwMilliseconds);
+	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionMastershipCommon_Initialize(void* IDataDistribution_instance, void* iddmcb, const char* szMyAddress = NULL, const char* arrayParams[] = NULL, int len = 0);
+	DLLEXPORT void DLLCALL IDataDistributionMastershipCommon_SetParameter(void* IDataDistribution_instance, const char *paramName, const char *paramValue);
+	DLLEXPORT const char* DLLCALL IDataDistributionMastershipCommon_GetParameter(void* IDataDistribution_instance, const char *paramName);
+	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionMastershipCommon_Start(void* IDataDistribution_instance, unsigned long dwMilliseconds);
+	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionMastershipCommon_Stop(void* IDataDistribution_instance, unsigned long dwMilliseconds);
 	DLLEXPORT BOOL DLLCALL IDataDistributionMastershipCommon_GetIamNextPrimary(void* IDataDistribution_instance);
 	DLLEXPORT BOOL DLLCALL IDataDistributionMastershipCommon_RequestIAmNextPrimary(void* IDataDistribution_instance);
 	DLLEXPORT int64_t* DLLCALL IDataDistributionMastershipCommon_GetClusterIndexes(void* IDataDistribution_instance, size_t* length);

@@ -22,7 +22,7 @@ package org.mases.datadistributionmanager;
  * UnderlyingEvent struct representing the information from low system.
  */
 public class UnderlyingEvent {
-    UnderlyingEvent(String channelName, DDM_UNDERLYING_ERROR_CONDITION condition, boolean isDataAvailable, String key,
+    UnderlyingEvent(String channelName, OPERATION_RESULT condition, boolean isDataAvailable, String key,
             byte[] buffer, int nativeCode, String subSystemReason) {
         this.ChannelName = channelName;
         this.Condition = condition;
@@ -34,7 +34,7 @@ public class UnderlyingEvent {
     }
 
     final String ChannelName;
-    final DDM_UNDERLYING_ERROR_CONDITION Condition;
+    final OPERATION_RESULT Condition;
     final boolean IsDataAvailable;
     final String Key;
     final byte[] Buffer;

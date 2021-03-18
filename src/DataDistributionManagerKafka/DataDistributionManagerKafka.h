@@ -38,34 +38,34 @@ class DataDistributionManagerKafka : public DataDistributionCommon
 public:
 	DataDistributionManagerKafka();
 	virtual ~DataDistributionManagerKafka();
-	HRESULT Initialize();
-	HANDLE CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION::ALL, const char* arrayParams[] = NULL, int len = NULL);
-	HRESULT StartChannel(HANDLE channelHandle, DWORD dwMilliseconds);
-	HRESULT StopChannel(HANDLE channelHandle, DWORD dwMilliseconds);
-	void SetParameter(HANDLE channelHandle, const char* paramName, const char* paramValue);
-	const char* GetParameter(HANDLE channelHandle, const char* paramName);
-	HRESULT Lock(HANDLE channelHandle, DWORD timeout);
-	HRESULT Unlock(HANDLE channelHandle);
-	HRESULT SeekChannel(HANDLE channelHandle, size_t position);
-	HRESULT DeleteChannel(HANDLE channelHandle);
-	HRESULT WriteOnChannel(HANDLE channelHandle, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP);
-	HRESULT ReadFromChannel(HANDLE channelHandle, int64_t offset, size_t *dataLen, void **param);
-	HRESULT ChangeChannelDirection(HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction);
+	OPERATION_RESULT Initialize();
+	CHANNEL_HANDLE CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION::ALL, const char* arrayParams[] = NULL, int len = NULL);
+	OPERATION_RESULT StartChannel(CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds);
+	OPERATION_RESULT StopChannel(CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds);
+	void SetParameter(CHANNEL_HANDLE_PARAMETER, const char* paramName, const char* paramValue);
+	const char* GetParameter(CHANNEL_HANDLE_PARAMETER, const char* paramName);
+	OPERATION_RESULT Lock(CHANNEL_HANDLE_PARAMETER, unsigned long timeout);
+	OPERATION_RESULT Unlock(CHANNEL_HANDLE_PARAMETER);
+	OPERATION_RESULT SeekChannel(CHANNEL_HANDLE_PARAMETER, size_t position);
+	OPERATION_RESULT DeleteChannel(CHANNEL_HANDLE_PARAMETER);
+	OPERATION_RESULT WriteOnChannel(CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP);
+	OPERATION_RESULT ReadFromChannel(CHANNEL_HANDLE_PARAMETER, int64_t offset, size_t *dataLen, void **param);
+	OPERATION_RESULT ChangeChannelDirection(CHANNEL_HANDLE_PARAMETER, DDM_CHANNEL_DIRECTION direction);
 
 	int GetServerLostTimeout() { return m_ServerLostTimeout; };
 private:
 	int  m_ServerLostTimeout;
-	static DDM_UNDERLYING_ERROR_CONDITION KafkaErrorMapper(RdKafka::ErrorCode code);
+	static OPERATION_RESULT KafkaErrorMapper(RdKafka::ErrorCode code);
 	int read_config_file(ChannelConfigurationKafka* configuration, const char* arrayParams[], int len);
-	HRESULT StartConsumerAndWait(ChannelConfigurationKafka* conf, DWORD dwMilliseconds);
+	OPERATION_RESULT StartConsumerAndWait(ChannelConfigurationKafka* conf, unsigned long dwMilliseconds);
 	void StopConsumer(ChannelConfigurationKafka* conf);
-	HRESULT StartPoll(ChannelConfigurationKafka* conf, DWORD dwMilliseconds);
+	OPERATION_RESULT StartPoll(ChannelConfigurationKafka* conf, unsigned long dwMilliseconds);
 	void StopPoll(ChannelConfigurationKafka* conf);
 	int conf_init(ChannelConfigurationKafka* configuration, const char* arrayParams[], int len);
 	int admin_create_topic(rd_kafka_t *use_rk, const char *channelname, int partition_cnt, int replication_factor, int timeout_ms);
 
-	static DWORD __stdcall consumerHandler(void * argh);
-	static DWORD __stdcall pollHandler(void * argh);
+	static void FUNCALL consumerHandler(ThreadWrapperArg *arg);
+	static void FUNCALL pollHandler(ThreadWrapperArg *arg);
 
 	std::vector<ChannelConfigurationKafka*> topicVector;
 };
@@ -94,8 +94,8 @@ public:
 		m_lastRoutedOffset = RD_KAFKA_OFFSET_END;
 		m_lastManagedOffset = RD_KAFKA_OFFSET_END;
 
-		h_evtPoll = CreateEvent(0, true, false, NULL);
-		h_evtConsumer = CreateEvent(0, true, false, NULL);
+		m_tConsumerThread = NULL;
+		m_tPollThread = NULL;
 	}
 
 	int m_ProducerMsgFlags;
@@ -118,15 +118,8 @@ public:
 	RdKafka::TopicPartition *pTopicPartition;
 	std::vector<RdKafka::TopicPartition*> *pTopicPartitionVector;
 
-	HANDLE  h_evtConsumer;
-	BOOL	bConsumerRun;
-	DWORD	dwConsumerThrId;
-	HANDLE	hConsumerThread;
-
-	HANDLE  h_evtPoll;
-	BOOL	bPollRun;
-	DWORD	dwPollThrId;
-	HANDLE	hPollThread;
+	DataDistributionThreadWrapper* m_tConsumerThread;
+	DataDistributionThreadWrapper* m_tPollThread;
 };
 
 class KafkaMessageManagerEventCb : public RdKafka::EventCb

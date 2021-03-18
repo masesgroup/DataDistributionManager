@@ -64,7 +64,7 @@ SmartDataDistributionChannel::~SmartDataDistributionChannel()
 	if (m_pIDataDistributionChannelBase != NULL) m_pIDataDistributionChannelBase->DeleteChannel(m_channelHandle);
 }
 
-void SmartDataDistributionChannel::SetInformation(const char* channelName, IDataDistributionChannelBase* pIDataDistributionChannelBase, HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction)
+void SmartDataDistributionChannel::SetInformation(const char* channelName, IDataDistributionChannelBase* pIDataDistributionChannelBase, CHANNEL_HANDLE_PARAMETER, DDM_CHANNEL_DIRECTION direction)
 {
 	m_ChannelName = _strdup(channelName);
 	m_Direction = direction;
@@ -77,42 +77,42 @@ DDM_CHANNEL_DIRECTION SmartDataDistributionChannel::GetDirection()
 	return m_Direction;
 }
 
-HRESULT SmartDataDistributionChannel::StartChannel(DWORD dwMilliseconds)
+OPERATION_RESULT SmartDataDistributionChannel::StartChannel(unsigned long dwMilliseconds)
 {
 	return m_pIDataDistributionChannelBase->StartChannel(m_channelHandle, dwMilliseconds);
 }
 
-HRESULT SmartDataDistributionChannel::StopChannel(DWORD dwMilliseconds)
+OPERATION_RESULT SmartDataDistributionChannel::StopChannel(unsigned long dwMilliseconds)
 {
 	return m_pIDataDistributionChannelBase->StopChannel(m_channelHandle, dwMilliseconds);
 }
 
-HRESULT SmartDataDistributionChannel::Lock(DWORD timeout)
+OPERATION_RESULT SmartDataDistributionChannel::Lock(unsigned long timeout)
 {
 	return m_pIDataDistributionChannelBase->Lock(m_channelHandle, timeout);
 }
 
-HRESULT SmartDataDistributionChannel::Unlock()
+OPERATION_RESULT SmartDataDistributionChannel::Unlock()
 {
 	return m_pIDataDistributionChannelBase->Unlock(m_channelHandle);
 }
 
-HRESULT SmartDataDistributionChannel::SeekChannel(int64_t position)
+OPERATION_RESULT SmartDataDistributionChannel::SeekChannel(int64_t position)
 {
 	return m_pIDataDistributionChannelBase->SeekChannel(m_channelHandle, position);
 }
 
-HRESULT SmartDataDistributionChannel::WriteOnChannel(const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll, const int64_t timestamp)
+OPERATION_RESULT SmartDataDistributionChannel::WriteOnChannel(const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll, const int64_t timestamp)
 {
 	return m_pIDataDistributionChannelBase->WriteOnChannel(m_channelHandle, key, keyLen, param, dataLen, waitAll, timestamp);
 }
 
-HRESULT SmartDataDistributionChannel::ReadFromChannel(int64_t offset, size_t *dataLen, void **param)
+OPERATION_RESULT SmartDataDistributionChannel::ReadFromChannel(int64_t offset, size_t *dataLen, void **param)
 {
 	return m_pIDataDistributionChannelBase->ReadFromChannel(m_channelHandle, offset, dataLen, param);
 }
 
-HRESULT SmartDataDistributionChannel::ChangeChannelDirection(DDM_CHANNEL_DIRECTION direction)
+OPERATION_RESULT SmartDataDistributionChannel::ChangeChannelDirection(DDM_CHANNEL_DIRECTION direction)
 {
 	return m_pIDataDistributionChannelBase->ChangeChannelDirection(m_channelHandle, direction);
 }
@@ -133,17 +133,17 @@ void SmartDataDistributionChannel::OnDataAvailable(const std::string key, const 
 
 }
 
-void SmartDataDistributionChannel::OnConditionOrError(const DDM_UNDERLYING_ERROR_CONDITION errorCode, const int nativeCode, const char* subSystemReason)
+void SmartDataDistributionChannel::OnConditionOrError(const OPERATION_RESULT errorCode, const int nativeCode, const char* subSystemReason)
 {
 	OnConditionOrError(errorCode, nativeCode, std::string(subSystemReason));
 }
 
-void SmartDataDistributionChannel::OnConditionOrError(const DDM_UNDERLYING_ERROR_CONDITION errorCode, const int nativeCode, const std::string subSystemReason)
+void SmartDataDistributionChannel::OnConditionOrError(const OPERATION_RESULT errorCode, const int nativeCode, const std::string subSystemReason)
 {
 
 }
 
-void SmartDataDistributionChannel::OnUnderlyingEvent(const HANDLE channelHandle, const UnderlyingEventData* uEvent)
+void SmartDataDistributionChannel::OnUnderlyingEvent(const CHANNEL_HANDLE_PARAMETER, const UnderlyingEventData* uEvent)
 {
 	if (uEvent->IsDataAvailable)
 	{
@@ -158,7 +158,7 @@ void SmartDataDistributionChannel::OnUnderlyingEvent(const HANDLE channelHandle,
 SmartDataDistributionBase::SmartDataDistributionBase()
 {
 	m_pIDataDistribution = DataDistribution::create();
-	m_pInitializeHRESULT = E_NOT_SET;
+	m_pInitializeHRESULT = DDM_POINTER_NOT_SET;
 }
 
 SmartDataDistributionBase::~SmartDataDistributionBase()
@@ -167,35 +167,35 @@ SmartDataDistributionBase::~SmartDataDistributionBase()
 	delete m_pIDataDistribution;
 }
 
-HRESULT SmartDataDistributionBase::Initialize(const char* conf_file, const char* szMyAddress, const char* channelTrailer)
+OPERATION_RESULT SmartDataDistributionBase::Initialize(const char* conf_file, const char* szMyAddress, const char* channelTrailer)
 {
 	m_pInitializeHRESULT = m_pIDataDistribution->Initialize(this, conf_file, szMyAddress, channelTrailer);
 	return m_pInitializeHRESULT;
 }
 
-HRESULT SmartDataDistributionBase::Initialize(const char* arrayParams[], int len, const char* szMyAddress, const char* channelTrailer)
+OPERATION_RESULT SmartDataDistributionBase::Initialize(const char* arrayParams[], int len, const char* szMyAddress, const char* channelTrailer)
 {
 	m_pInitializeHRESULT = m_pIDataDistribution->Initialize(this, arrayParams, len, szMyAddress, channelTrailer);
 	return m_pInitializeHRESULT;
 }
 
-HRESULT SmartDataDistributionBase::RequestMastershipManager(const char* szMyAddress, const char* arrayParams[], int len)
+OPERATION_RESULT SmartDataDistributionBase::RequestMastershipManager(const char* szMyAddress, const char* arrayParams[], int len)
 {
 	return m_pIDataDistribution->RequestMastershipManager(this, szMyAddress, arrayParams, len);
 }
 
-BOOL SmartDataDistributionBase::Start(DWORD dwMilliseconds)
+BOOL SmartDataDistributionBase::Start(unsigned long dwMilliseconds)
 {
-	if (m_pInitializeHRESULT != S_OK)
+	if (OPERATION_FAILED(m_pInitializeHRESULT))
 	{
 		return FALSE;
 	}
 	return m_pIDataDistribution->GetSubsystemManager()->Start(dwMilliseconds);
 }
 
-BOOL SmartDataDistributionBase::Stop(DWORD dwMilliseconds)
+BOOL SmartDataDistributionBase::Stop(unsigned long dwMilliseconds)
 {
-	if (m_pInitializeHRESULT != S_OK)
+	if (OPERATION_FAILED(m_pInitializeHRESULT))
 	{
 		return FALSE;
 	}

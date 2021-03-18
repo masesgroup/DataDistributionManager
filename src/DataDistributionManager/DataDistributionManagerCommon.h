@@ -23,30 +23,12 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#define _CRT_RAND_S  
-
-#include <winsock2.h>
-#include <process.h> 
-
-#include <iostream>
-#include <fstream>
-#include <cstring>
-#if _MSC_VER > 1600
-#include <chrono>
-#else
-#define USE_CTIME
-#include <ctime>
-#endif
-#include <sstream> 
 #include <list>
 #include <map>
 
 #include "SmartDataDistributionManager.h"
 #include "DataDistributionManagerLog.h"
-
-#ifndef USE_CTIME
-using namespace std::chrono;
-#endif
+#include "DataDistributionManagerSupport.h"
 
 /**
 * @enum CHANNEL_STARTUP_TYPE
@@ -70,36 +52,36 @@ typedef enum class CHANNEL_STARTUP_TYPE
 class DDM_EXPORT DataDistributionCommon : public IDataDistributionSubsystem
 {
 public:
-	static HRESULT ConvertConfFile(const char* conf_file, const char*** arrayParams, int* len);
+	static OPERATION_RESULT ConvertConfFile(const char* conf_file, const char*** arrayParams, int* len);
 
 public:
 	DataDistributionCommon();
 	~DataDistributionCommon();
-	HRESULT Initialize(IDataDistributionCallback*, const char* conf_file, const char* szMyAddress = NULL, const char* channelTrailer = NULL);
-	HRESULT Initialize(IDataDistributionCallback*, const char* arrayParams[], int len, const char* szMyAddress = NULL, const char* channelTrailer = NULL);
-	virtual HRESULT Initialize();
+	OPERATION_RESULT Initialize(IDataDistributionCallback*, const char* conf_file, const char* szMyAddress = NULL, const char* channelTrailer = NULL);
+	OPERATION_RESULT Initialize(IDataDistributionCallback*, const char* arrayParams[], int len, const char* szMyAddress = NULL, const char* channelTrailer = NULL);
+	virtual OPERATION_RESULT Initialize();
 	void Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, ...);
 	void Log(const DDM_LOG_LEVEL level, const char* sourceName, const char* function, const char* format, va_list args);
 
-	virtual HANDLE CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION::ALL, const char* arrayParams[] = NULL, int len = 0);
-	virtual	HRESULT StartChannel(HANDLE channelHandle, DWORD dwMilliseconds);
-	virtual	HRESULT StopChannel(HANDLE channelHandle, DWORD dwMilliseconds);
-	virtual void SetParameter(HANDLE channelHandle, const char* paramName, const char* paramValue);
-	virtual void SetParameter(HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId, const char* paramValue);
-	virtual const char* GetParameter(HANDLE channelHandle, const char* paramName);
-	virtual const char* GetParameter(HANDLE channelHandle, DDM_GENERAL_PARAMETER paramId);
-	virtual HRESULT Lock(HANDLE channelHandle, DWORD timeout);
-	virtual HRESULT Unlock(HANDLE channelHandle);
-	virtual HRESULT SeekChannel(HANDLE channelHandle, int64_t position);
-	virtual HRESULT DeleteChannel(HANDLE channelHandle);
-	virtual HRESULT WriteOnChannel(HANDLE channelHandle, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP);
-	virtual HRESULT ReadFromChannel(HANDLE channelHandle, int64_t offset, size_t *dataLen, void **param);
-	virtual HRESULT ChangeChannelDirection(HANDLE channelHandle, DDM_CHANNEL_DIRECTION direction);
+	virtual CHANNEL_HANDLE CreateChannel(const char* channelName, IDataDistributionChannelCallback* dataCb, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION::ALL, const char* arrayParams[] = NULL, int len = 0);
+	virtual	OPERATION_RESULT StartChannel(CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds);
+	virtual	OPERATION_RESULT StopChannel(CHANNEL_HANDLE_PARAMETER, unsigned long dwMilliseconds);
+	virtual void SetParameter(CHANNEL_HANDLE_PARAMETER, const char* paramName, const char* paramValue);
+	virtual void SetParameter(CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId, const char* paramValue);
+	virtual const char* GetParameter(CHANNEL_HANDLE_PARAMETER, const char* paramName);
+	virtual const char* GetParameter(CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId);
+	virtual OPERATION_RESULT Lock(CHANNEL_HANDLE_PARAMETER, unsigned long timeout);
+	virtual OPERATION_RESULT Unlock(CHANNEL_HANDLE_PARAMETER);
+	virtual OPERATION_RESULT SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position);
+	virtual OPERATION_RESULT DeleteChannel(CHANNEL_HANDLE_PARAMETER);
+	virtual OPERATION_RESULT WriteOnChannel(CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP);
+	virtual OPERATION_RESULT ReadFromChannel(CHANNEL_HANDLE_PARAMETER, int64_t offset, size_t *dataLen, void **param);
+	virtual OPERATION_RESULT ChangeChannelDirection(CHANNEL_HANDLE_PARAMETER, DDM_CHANNEL_DIRECTION direction);
 
 	virtual size_t GetMaxMessageSize();
 	virtual int GetServerLostTimeout();
-	virtual	HRESULT Start(DWORD dwMilliseconds);
-	virtual	HRESULT Stop(DWORD dwMilliseconds);
+	virtual	OPERATION_RESULT Start(unsigned long dwMilliseconds);
+	virtual	OPERATION_RESULT Stop(unsigned long dwMilliseconds);
 	IDataDistributionCallback* GetCallbacks();
 	BOOL GetSubSystemStarted();
 protected:
@@ -127,30 +109,31 @@ private:
 	BOOL m_SubSystemStarted;
 };
 
-class DDM_EXPORT ChannelConfiguration
+class DDM_EXPORT ChannelConfiguration : public IDataDistributionChannel
 {
 public:
 	ChannelConfiguration(const char* channelName, DDM_CHANNEL_DIRECTION direction, DataDistributionCommon* mainManager, IDataDistributionChannelCallback* Cb);
 	const char* GetChannelName();
+	virtual GENERIC_HANDLE GetOpaqueHandle();
 	DDM_CHANNEL_DIRECTION GetDirection();
 	void SetDirection(DDM_CHANNEL_DIRECTION direction);
 	DataDistributionCommon* GetManager();
 	void OnDataAvailable(const char* key, size_t keyLen, void* buffer, size_t len);
-	void OnDataAvailable(const HANDLE channelHandle, const char* key, size_t keyLen, void* buffer, size_t len);
-	void OnConditionOrError(DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, const char* subSystemReason, ...);
-	void OnConditionOrError(const HANDLE channelHandle, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode, const char* subSystemReason, ...);
+	void OnDataAvailable(const CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void* buffer, size_t len);
+	void OnConditionOrError(OPERATION_RESULT errorCode, int nativeCode, const char* subSystemReason, ...);
+	void OnConditionOrError(const CHANNEL_HANDLE_PARAMETER, OPERATION_RESULT errorCode, int nativeCode, const char* subSystemReason, ...);
 	void Log(const DDM_LOG_LEVEL level, const char* function, const char* format, ...);
 	void CompletelyDisconnected();
 	int64_t GetManagedOffset();
 	void SetManagedOffset(int64_t val);
-	DWORD WaitStartupStatus(DWORD dwMilliseconds);
+	OPERATION_RESULT WaitStartupStatus(unsigned long dwMilliseconds);
 	void SetStartupStatus(CHANNEL_STARTUP_TYPE status);
 	CHANNEL_STARTUP_TYPE GetStartupStatus();
 	BOOL IsStartupStatusSet();
 	BOOL GetLockState();
-	HRESULT SetLockState();
-	HRESULT ResetLockState();
-	void WaitingFinishLockState(DWORD dwMilliseconds);
+	OPERATION_RESULT SetLockState();
+	OPERATION_RESULT ResetLockState();
+	void WaitingFinishLockState(unsigned long dwMilliseconds);
 
 	BOOL GetCommitSync();
 	void SetCommitSync(BOOL);
@@ -171,9 +154,9 @@ public:
 	int  GetCommitTimeout();
 	void SetCommitTimeout(int);
 protected:
-	CRITICAL_SECTION m_csFlags;
-	CRITICAL_SECTION m_csState;
-	CRITICAL_SECTION m_csOffsets;
+	DataDistributionLockWrapper* m_csFlags;
+	DataDistributionLockWrapper* m_csState;
+	DataDistributionLockWrapper* m_csOffsets;
 	int64_t m_lastRoutedOffset;
 	int64_t m_lastManagedOffset;
 
@@ -190,8 +173,8 @@ private:
 
 	BOOL bLockState;
 
-	HANDLE h_evtStartupStatus;
-	HANDLE h_evtLockState;
+	DataDistributionEventWrapper* m_pEvtStartupStatus;
+	DataDistributionEventWrapper* m_pEvtLockState;
 
 	BOOL m_StartupStatusSet;
 

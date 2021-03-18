@@ -5,14 +5,14 @@
 		<version>__VERSION_PLACEHOLDER__</version>
 		<title>Data Distribution Manager - Reliable communication library</title>
 		<summary>This package contains all libraries and resources to use Data Distribution Manager.</summary>
-		<description>The package contains all libraries and resources to create a reliable subsystem able to distribute data across multiple datacenters using multiple languages (C/C++, .NET, JVM enabled languages) over multiple technologies (e.g. Apache Kafka, OpenDDS, etc)</description>
+		<description>The package contains all libraries and resources to create a reliable subsystem to distribute data across multiple datacenters using multiple languages (C/C++, .NET, JVM enabled languages) over multiple technologies (e.g. Apache Kafka, OpenDDS, etc)</description>
 		<authors>MASES s.r.l.</authors>
 		<owners>MASES s.r.l.</owners>
 		<licenseUrl>https://github.com/masesgroup/DataDistributionManager/blob/master/LICENSE</licenseUrl>
 		<projectUrl>https://github.com/masesgroup/DataDistributionManager/</projectUrl>
 		<iconUrl>https://raw.githubusercontent.com/masesgroup/masesgroup.github.io/master/assets/images/mases_logo_short.png</iconUrl>
 		<releaseNotes>https://github.com/masesgroup/DataDistributionManager/releases</releaseNotes>
-		<tags></tags>
+		<tags>availability reliability durability business-solutions opendds apachekafka businesscontinuity dotnet java jvm scala kotlin p2p</tags>
 		<requireLicenseAcceptance>true</requireLicenseAcceptance>
 		<copyright>Copyright ©  MASES s.r.l. 2021</copyright>
 	</metadata>
