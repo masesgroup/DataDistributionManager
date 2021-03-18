@@ -350,12 +350,16 @@ CHANNEL_HANDLE DataDistributionManagerKafka::CreateChannel(const char* channelNa
 		return NULL;
 	}
 
-	if (pChannelConfiguration->m_CreateTopic && admin_create_topic(pChannelConfiguration->pProducer->c_ptr(), pChannelConfiguration->GetChannelName(), 1, pChannelConfiguration->m_TopicReplicationFactor, pChannelConfiguration->GetCreateChannelTimeout()) != DDM_NO_ERROR_CONDITION)
+	if (pChannelConfiguration->m_CreateTopic)
 	{
-		delete pChannelConfiguration->pConsumer;
-		delete pChannelConfiguration->pProducer;
-		LOG_ERROR("Channel %s - admin_create_topic failed", pChannelConfiguration->GetChannelName());
-		return NULL;
+		auto ptr = pChannelConfiguration->pProducer ? pChannelConfiguration->pProducer->c_ptr() : pChannelConfiguration->pConsumer->c_ptr();
+		if (admin_create_topic(ptr, pChannelConfiguration->GetChannelName(), 1, pChannelConfiguration->m_TopicReplicationFactor, pChannelConfiguration->GetCreateChannelTimeout()) != DDM_NO_ERROR_CONDITION)
+		{
+			delete pChannelConfiguration->pConsumer;
+			delete pChannelConfiguration->pProducer;
+			LOG_ERROR("Channel %s - admin_create_topic failed", pChannelConfiguration->GetChannelName());
+			return NULL;
+		}
 	}
 
 	pChannelConfiguration->pTopicPartition = RdKafka::TopicPartition::create(sTopicName, 0);
