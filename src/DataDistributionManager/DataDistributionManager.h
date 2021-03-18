@@ -801,7 +801,7 @@ public:
 	/**
 	 * @brief Returns the server lost timeout
 	 * 
-	 * @returns The server lost timeout
+	 * @returns The server lost timeout in milliseconds
 	 */
 	virtual int GetServerLostTimeout() = 0;
 	/**

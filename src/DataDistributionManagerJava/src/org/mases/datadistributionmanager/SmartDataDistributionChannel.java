@@ -42,7 +42,7 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
     /**
      * Starts the channel
      * 
-     * @param timeout Timeout
+     * @param timeout Timeout in ms
      * @return {@link OPERATION_RESULT}
      */
     public OPERATION_RESULT StartChannel(int timeout) {
@@ -54,7 +54,7 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
     /**
      * Stops the channel
      * 
-     * @param timeout Timeout
+     * @param timeout Timeout in ms
      * @return {@link OPERATION_RESULT}
      */
     public OPERATION_RESULT StopChannel(int timeout) {
@@ -110,7 +110,7 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
     /**
      * Locks the channel
      * 
-     * @param timeout Timeout
+     * @param timeout Timeout in ms
      * @return {@link OPERATION_RESULT}
      */
     public OPERATION_RESULT Lock(int timeout) {

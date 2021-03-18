@@ -127,7 +127,7 @@ public abstract class GlobalConfiguration extends BaseConfiguration {
     /**
      * The timeout on server lost
      * 
-     * @return The server lost timeout
+     * @return The server lost timeout in ms
      */
     public Integer getServerLostTimeout() {
         String value = keyValuePair.get(ServerLostTimeoutKey);
@@ -137,7 +137,7 @@ public abstract class GlobalConfiguration extends BaseConfiguration {
     /**
      * The timeout on server lost
      * 
-     * @param timeout The server lost timeout
+     * @param timeout The server lost timeout in ms
      */
     public void setServerLostTimeout(Integer timeout) {
         keyValuePair.put(ServerLostTimeoutKey, timeout.toString());

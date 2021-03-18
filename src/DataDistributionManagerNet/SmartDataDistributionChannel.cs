@@ -136,7 +136,7 @@ namespace MASES.DataDistributionManager.Bindings
         /// <summary>
         /// Lock the channel
         /// </summary>
-        /// <param name="timeout">Timeout to acuire lock</param>
+        /// <param name="timeout">Timeout to acuire lock in ms</param>
         /// <returns><see cref="OPERATION_RESULT"/></returns>
         OPERATION_RESULT Lock(uint timeout);
         /// <summary>

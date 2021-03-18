@@ -143,7 +143,7 @@ namespace MASES.DataDistributionManager.Bindings
         }
 
         /// <summary>
-        /// The timeout on server lost
+        /// The timeout on server lost in ms
         /// </summary>
         public uint ServerLostTimeout
         {
