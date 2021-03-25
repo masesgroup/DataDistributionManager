@@ -26,6 +26,8 @@
 CommonDataReaderListenerImpl::CommonDataReaderListenerImpl(ChannelConfiguration* pChannelConfiguration)
 {
 	m_pChannelConfiguration = pChannelConfiguration;
+	m_timeoutEmitted = FALSE;
+	m_timeStart.ResetTime();
 }
 
 CommonDataReaderListenerImpl::~CommonDataReaderListenerImpl()
@@ -53,14 +55,24 @@ void CommonDataReaderListenerImpl::on_data_available(DDS::DataReader_ptr reader)
 
 			if (status == DDS::RETCODE_OK && si.valid_data)
 			{
+				if (m_timeoutEmitted)
+				{
+					m_pChannelConfiguration->OnConditionOrError(DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_END, 0, "End timeout receiving packets.");
+				}
+				m_timeoutEmitted = FALSE;
+				m_timeStart.ResetTime();
 				++count;
 				const char* key = quote.key;
 				size_t keyLen = (key != NULL) ? strlen(key) : 0;
 				m_pChannelConfiguration->OnDataAvailable(quote.key, keyLen, quote.buffer.get_buffer(), quote.msgSize);
 			}
-			else if (status == DDS::RETCODE_NO_DATA)
+			else if (status == DDS::RETCODE_NO_DATA && m_timeStart.ElapsedMilliseconds() > m_pChannelConfiguration->GetMessageReceiveTimeout())
 			{
-				m_pChannelConfiguration->OnConditionOrError(DDM_NO_DATA_RETURNED, status, "status is OK");
+				if (!m_timeoutEmitted)
+				{
+					m_timeoutEmitted = TRUE;
+					m_pChannelConfiguration->OnConditionOrError(DDM_ELAPSED_MESSAGE_RECEIVE_TIMEOUT_BEGIN, 0, "Elapsed timeout receiving packets.");
+				}		
 				break;
 			}
 			else
