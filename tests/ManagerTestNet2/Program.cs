@@ -35,11 +35,21 @@ namespace ManagerTestNet2
 
             SmartDataDistribution dataDistribution = new SmartDataDistribution();
             dataDistribution.LoggingEvent += DataDistribution_LoggingEvent;
+#if USE_KAFKA
+            KafkaConfiguration conf = null;
+#else
             OpenDDSConfiguration conf = null;
+#endif
             OPERATION_RESULT hRes = OPERATION_RESULT.DDM_NO_ERROR_CONDITION;
 
             if (args.Length == 0)
             {
+#if USE_KAFKA
+                conf = new KafkaConfiguration()
+                {
+
+                };
+#else
                 conf = new OpenDDSConfiguration()
                 {
                     OpenDDSArgs = new OpenDDSConfiguration.OpenDDSArgsConfiguration()
@@ -72,6 +82,7 @@ namespace ManagerTestNet2
                         }
                     }
                 };
+#endif
                 hRes = dataDistribution.Initialize(conf);
             }
             else
@@ -91,7 +102,14 @@ namespace ManagerTestNet2
                 Console.ReadKey();
                 return;
             }
-
+#if USE_KAFKA
+            KafkaChannelConfiguration channelConf = new KafkaChannelConfiguration(conf)
+            {
+                BootstrapBrokers = "206.189.214.143:9093",
+                ClientId = "myTest",
+                GroupId = "myTest",
+            };
+#else
             OpenDDSChannelConfiguration channelConf = new OpenDDSChannelConfiguration(conf)
             {
                 TopicQos = new TopicQosConfiguration()
@@ -113,8 +131,8 @@ namespace ManagerTestNet2
                     }
                 }
             };
-
-            SmartDataDistributionChannel testChannel = dataDistribution.CreateSmartChannel<SmartDataDistributionChannel>("test", channelConf);
+#endif
+            SmartDataDistributionChannel testChannel = dataDistribution.CreateSmartChannel<SmartDataDistributionChannel>("test2", channelConf);
             testChannel.DataAvailable += TestChannel_DataAvailable;
             testChannel.ConditionOrError += TestChannel_ConditionOrError;
 

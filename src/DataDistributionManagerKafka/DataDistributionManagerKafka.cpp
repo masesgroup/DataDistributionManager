@@ -449,70 +449,78 @@ void DataDistributionManagerKafka::SetParameter(CHANNEL_HANDLE_PARAMETER, const 
 
 	DataDistributionCommon::SetParameter(channelHandle, paramName, paramValue);
 
-	if (!strcmp(paramName, "datadistributionmanager.kafka.producer.msgflags"))
+	if (channelHandle == NULL)
 	{
-		pChannelConfiguration->m_ProducerMsgFlags = atoi(paramValue);
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.kafka.topic_replicationfactor"))
-	{
-		pChannelConfiguration->m_TopicReplicationFactor = atoi(paramValue);
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.kafka.topic_create"))
-	{
-		if (!strcmp(paramValue, "true") ||
-			!strcmp(paramValue, "1"))
-			pChannelConfiguration->m_CreateTopic = TRUE;
-		else
-			pChannelConfiguration->m_CreateTopic = FALSE;
-		return;
-	}
-	else if (!strcmp(paramName, "datadistributionmanager.kafka.topic_dumpmetadata"))
-	{
-		if (!strcmp(paramValue, "true") ||
-			!strcmp(paramValue, "1"))
-			pChannelConfiguration->m_DumpMetadata = TRUE;
-		else
-			pChannelConfiguration->m_DumpMetadata = FALSE;
-		return;
-	}
+		// Global configuration
 
-	std::string n(paramName);
-	std::string v(paramValue);
-
-	RdKafka::Conf::ConfResult r = RdKafka::Conf::CONF_UNKNOWN;
-	std::string sTopicName = pChannelConfiguration->GetChannelName();
-	std::string strToCheck = "datadistributionmanager.kafka.topicconf.";
-	if (n.substr(0, strToCheck.length()) == strToCheck)
-	{
-		r = pChannelConfiguration->pTopic_conf->set(n.substr(strToCheck.length()), v, errstr);
 	}
-	if (r == RdKafka::Conf::CONF_UNKNOWN)
+	else
 	{
-		strToCheck = "datadistributionmanager.kafka.globalconf.";
+		if (!strcmp(paramName, "datadistributionmanager.kafka.producer.msgflags"))
+		{
+			pChannelConfiguration->m_ProducerMsgFlags = atoi(paramValue);
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.kafka.topic_replicationfactor"))
+		{
+			pChannelConfiguration->m_TopicReplicationFactor = atoi(paramValue);
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.kafka.topic_create"))
+		{
+			if (!strcmp(paramValue, "true") ||
+				!strcmp(paramValue, "1"))
+				pChannelConfiguration->m_CreateTopic = TRUE;
+			else
+				pChannelConfiguration->m_CreateTopic = FALSE;
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.kafka.topic_dumpmetadata"))
+		{
+			if (!strcmp(paramValue, "true") ||
+				!strcmp(paramValue, "1"))
+				pChannelConfiguration->m_DumpMetadata = TRUE;
+			else
+				pChannelConfiguration->m_DumpMetadata = FALSE;
+			return;
+		}
+
+		std::string n(paramName);
+		std::string v(paramValue);
+
+		RdKafka::Conf::ConfResult r = RdKafka::Conf::CONF_UNKNOWN;
+		std::string sTopicName = pChannelConfiguration->GetChannelName();
+		std::string strToCheck = "datadistributionmanager.kafka.topicconf.";
 		if (n.substr(0, strToCheck.length()) == strToCheck)
 		{
-			r = pChannelConfiguration->pConnection_conf->set(n.substr(strToCheck.length()), v, errstr);
+			r = pChannelConfiguration->pTopic_conf->set(n.substr(strToCheck.length()), v, errstr);
 		}
-	}
+		if (r == RdKafka::Conf::CONF_UNKNOWN)
+		{
+			strToCheck = "datadistributionmanager.kafka.globalconf.";
+			if (n.substr(0, strToCheck.length()) == strToCheck)
+			{
+				r = pChannelConfiguration->pConnection_conf->set(n.substr(strToCheck.length()), v, errstr);
+			}
+		}
 
-	strToCheck = "datadistributionmanager.kafka." + sTopicName + ".topicconf.";
-	if (n.substr(0, strToCheck.length()) == strToCheck)
-	{
-		r = pChannelConfiguration->pTopic_conf->set(n.substr(strToCheck.length()), v, errstr);
-	}
-	if (r == RdKafka::Conf::CONF_UNKNOWN)
-	{
-		strToCheck = "datadistributionmanager.kafka." + sTopicName + ".globalconf.";
+		strToCheck = "datadistributionmanager.kafka." + sTopicName + ".topicconf.";
 		if (n.substr(0, strToCheck.length()) == strToCheck)
 		{
-			r = pChannelConfiguration->pConnection_conf->set(n.substr(strToCheck.length()), v, errstr);
+			r = pChannelConfiguration->pTopic_conf->set(n.substr(strToCheck.length()), v, errstr);
 		}
-	}
+		if (r == RdKafka::Conf::CONF_UNKNOWN)
+		{
+			strToCheck = "datadistributionmanager.kafka." + sTopicName + ".globalconf.";
+			if (n.substr(0, strToCheck.length()) == strToCheck)
+			{
+				r = pChannelConfiguration->pConnection_conf->set(n.substr(strToCheck.length()), v, errstr);
+			}
+		}
 
-	if (r != RdKafka::Conf::CONF_OK) {
-		LOG_ERROR("Channel %s - Error set configuration: %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", errstr.c_str());
+		if (r != RdKafka::Conf::CONF_OK) {
+			LOG_ERROR("Channel %s - Error set configuration: %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", errstr.c_str());
+		}
 	}
 }
 
@@ -1132,7 +1140,7 @@ void FUNCALL DataDistributionManagerKafka::consumerHandler(ThreadWrapperArg * ar
 			timeoutEmitted = FALSE;
 			timeStart.ResetTime();
 
-			pChannelConfiguration->OnDataAvailable(p_Msg->key()->c_str(), p_Msg->key_len(), p_Msg->payload(), p_Msg->len());
+			pChannelConfiguration->OnDataAvailable((p_Msg->key() != NULL) ? p_Msg->key()->c_str() : NULL, p_Msg->key_len(), p_Msg->payload(), p_Msg->len());
 
 			if (deleteMsgOnExit)
 			{
