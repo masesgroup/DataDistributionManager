@@ -348,10 +348,10 @@ jobs:
           java-version: 11
 
       - name: Build with Maven
-        run: mvn -B package --file ./packaging/maven/pom.xml
+        run: mvn -B package --file $GITHUB_WORKSPACE/packaging/maven/pom.xml
 
       - name: Publish to GitHub Packages Apache Maven
-        run: mvn deploy
+        run: mvn -B deploy --file $GITHUB_WORKSPACE/packaging/maven/pom.xml
         env:
           GITHUB_TOKEN: ${{ github.token }} # GITHUB_TOKEN is the default env for the password
           
@@ -366,7 +366,7 @@ jobs:
           gpg-passphrase: ${{ secrets.MAVEN_GPG_PASSPHRASE }} # env variable for GPG private key passphrase
 
       - name: Publish to Apache Maven Central
-        run: mvn deploy
+        run: mvn -B deploy --file $GITHUB_WORKSPACE/packaging/maven/pom.xml
         env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
           MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
@@ -410,6 +410,11 @@ jobs:
         with:
           name: DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
           path: .\DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: MavenDeploy
+          path: .\packaging\maven\target\*.jar
 
       - uses: actions/upload-artifact@v2
         with:
