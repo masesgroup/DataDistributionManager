@@ -1167,6 +1167,13 @@ void FUNCALL DataDistributionManagerKafka::consumerHandler(ThreadWrapperArg * ar
 		}
 		if (deleteMsgOnExit) delete p_Msg;
 	} while ((p_Msg = pChannelConfiguration->pConsumer->consume(pChannelConfiguration->GetConsumerTimeout())) != NULL && arg->bIsRunning);
+
+	code = pChannelConfiguration->pConsumer->unsubscribe();
+	if (code != RdKafka::ERR_NO_ERROR)
+	{
+		pChannelConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "consumerHandler", "pChannelConfiguration->pConsumer->unsubscribe error: %s", RdKafka::err2str(code).c_str());
+		pChannelConfiguration->OnConditionOrError(DDM_UNMAPPED_ERROR_CONDITION, code, RdKafka::err2str(code).c_str());
+	}
 }
 
 void FUNCALL DataDistributionManagerKafka::pollHandler(ThreadWrapperArg * arg)
@@ -1181,5 +1188,3 @@ void FUNCALL DataDistributionManagerKafka::pollHandler(ThreadWrapperArg * arg)
 		if (eventServed != 0) pChannelConfiguration->Log(DDM_LOG_LEVEL::DEBUG_LEVEL, pChannelConfiguration->GetChannelName(), "primaryPollHandler", "served %d events", eventServed);
 	}
 }
-
-
