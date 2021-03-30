@@ -191,6 +191,14 @@ jobs:
         with:
           submodules: 'true'
 
+      - name: Cache local Maven repository
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
       - name: Install gpg secret key
         run: |
           cat <(echo -e "${{ secrets.MAVEN_GPG_PRIVATE_KEY }}") | gpg --batch --import
@@ -362,6 +370,7 @@ jobs:
         run: mvn -B package --file ./packaging/maven/pom.xml
 
       - name: Publish to GitHub Packages Apache Maven
+        shell: bash
         run: mvn --file ./packaging/maven/pom.xml --no-transfer-progress --batch-mode -Dgpg.passphrase=${{ secrets.MAVEN_GPG_PASSPHRASE }} deploy
         env:
           GITHUB_TOKEN: ${{ github.token }} # GITHUB_TOKEN is the default env for the password
@@ -377,6 +386,7 @@ jobs:
           gpg-passphrase: ${{ secrets.MAVEN_GPG_PASSPHRASE }} # env variable for GPG private key passphrase
 
       - name: Publish to Apache Maven Central
+        shell: bash
         run: mvn --file ./packaging/maven/pom.xml --no-transfer-progress --batch-mode -Dgpg.passphrase=${{ secrets.MAVEN_GPG_PASSPHRASE }} deploy
         env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
