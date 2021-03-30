@@ -158,6 +158,11 @@ jobs:
         run: |
           mapfile -d ',' -t added_modified_files < <(printf '%s,' '${{ steps.get_changed_files.outputs.added_modified }}')
           for added_modified_file in "${added_modified_files[@]}"; do
+              if [[ $added_modified_file == ".github/workflows/build.yaml"* ]]; then
+                echo "$added_modified_file is myself."
+                echo "::set-output name=run_job::true"
+                break
+              fi
               if [[ $added_modified_file == "src/"* ]]; then
                 echo "$added_modified_file file is under the directory 'src/'."
                 echo "::set-output name=run_build_ddm_windows::true"
@@ -208,7 +213,7 @@ jobs:
         env:
           GITHUB_WORKSPACE: $GITHUB_WORKSPACE
 
-      - name: Prepare nuget
+      - name: Prepare packaging versioning
         shell: cmd
         run: |
           third_party\CommonTools\Output\PlaceHolderReplacer.exe .\src\ProductInformation\Version.cs .\packaging\nuget\datadistributionmanager.nuspec >> .\nuget_version.txt
