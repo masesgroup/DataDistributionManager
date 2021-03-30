@@ -193,7 +193,7 @@ jobs:
 
       - name: Install gpg secret key
         run: |
-          cat (echo -e "${{ secrets.MAVEN_GPG_PRIVATE_KEY }}") | gpg --batch --import
+          cat <(echo -e "${{ secrets.MAVEN_GPG_PRIVATE_KEY }}") | gpg --batch --import
           gpg --list-secret-keys --keyid-format LONG
         shell: bash
 
