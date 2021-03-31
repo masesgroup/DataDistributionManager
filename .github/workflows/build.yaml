@@ -370,25 +370,18 @@ jobs:
           server-password: ${{ secrets.MAVEN_CENTRAL_TOKEN }} # env variable for token in deploy
           gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }} # Value of the GPG private key to import
           gpg-passphrase: ${{ secrets.MAVEN_GPG_PASSPHRASE }} # env variable for GPG private key passphrase
-        env:
-          server-username: ${{ secrets.MAVEN_USERNAME }} # env variable for username in deploy
-          server-password: ${{ secrets.MAVEN_CENTRAL_TOKEN }} # env variable for token in deploy
-          gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }} # Value of the GPG private key to import
-          gpg-passphrase: ${{ secrets.MAVEN_GPG_PASSPHRASE }} # env variable for GPG private key passphrase
 
       - name: Verify settings.xml
         run: cat ~/.m2/settings.xml
-        
-      - name: Verify env variables
-        run: env
 
       - name: Publish to Apache Maven Central
         shell: bash
         run: mvn --file ./packaging/maven/pom.xml --no-transfer-progress --batch-mode -Dgpg.passphrase=${{ secrets.MAVEN_GPG_PASSPHRASE }} deploy
         env:
-          MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
-          MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
-          MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+          server-username: ${{ secrets.MAVEN_USERNAME }} # env variable for username in deploy
+          server-password: ${{ secrets.MAVEN_CENTRAL_TOKEN }} # env variable for token in deploy
+          gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }} # Value of the GPG private key to import
+          gpg-passphrase: ${{ secrets.MAVEN_GPG_PASSPHRASE }} # env variable for GPG private key passphrase
        
       - name: Build Java Binder
         shell: cmd
