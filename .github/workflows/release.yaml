@@ -53,6 +53,7 @@ jobs:
         shell: cmd
         run: |
           third_party\CommonTools\Output\PlaceHolderReplacer.exe .\src\ProductInformation\Version.cs .\packaging\nuget\datadistributionmanager.nuspec >> .\nuget_version.txt
+          third_party\CommonTools\Output\PlaceHolderReplacer.exe .\src\ProductInformation\Version.cs .\packaging\maven\pom.xml
 
       - name: Store version
         run: |
