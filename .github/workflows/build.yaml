@@ -373,6 +373,9 @@ jobs:
 
       - name: Verify settings.xml
         run: cat ~/.m2/settings.xml
+        
+      - name: Verify env variables
+        run: env
 
       - name: Publish to Apache Maven Central
         shell: bash
