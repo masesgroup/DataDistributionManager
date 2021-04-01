@@ -684,17 +684,21 @@ OPERATION_RESULT DataDistributionManagerKafka::WriteOnChannel(CHANNEL_HANDLE_PAR
 		return DDM_SUBSYSTEM_NOT_STARTED;
 	}
 
+	int msgFlags = pChannelConfiguration->m_ProducerMsgFlags;
+	if (waitAll)
+	{
+		msgFlags |= RdKafka::Producer::RK_MSG_BLOCK;
+	}
+
 	RdKafka::ErrorCode code;
 	if (timestamp != DDM_NO_TIMESTAMP)
 	{
 		std::string sTopicName = pChannelConfiguration->GetChannelName();
-		code = pChannelConfiguration->pProducer->produce(sTopicName, 0, pChannelConfiguration->m_ProducerMsgFlags,
-			buffer, dataLen, key, keyLen, timestamp, (void*)this);
+		code = pChannelConfiguration->pProducer->produce(sTopicName, 0, msgFlags, buffer, dataLen, key, keyLen, timestamp, (void*)this);
 	}
 	else
 	{
-		code = pChannelConfiguration->pProducer->produce(pChannelConfiguration->pTopic, 0, pChannelConfiguration->m_ProducerMsgFlags,
-			buffer, dataLen, key, keyLen, (void*)this);
+		code = pChannelConfiguration->pProducer->produce(pChannelConfiguration->pTopic, 0, msgFlags, buffer, dataLen, key, keyLen, (void*)this);
 	}
 
 	if (code != RdKafka::ErrorCode::ERR_NO_ERROR)
@@ -702,7 +706,7 @@ OPERATION_RESULT DataDistributionManagerKafka::WriteOnChannel(CHANNEL_HANDLE_PAR
 		LOG_ERROR("Channel %s - Write failed with reason %s.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", RdKafka::err2str(code).c_str());
 		OPERATION_RESULT thisCode = KafkaErrorMapper(code);
 
-		if ((pChannelConfiguration->m_ProducerMsgFlags & RdKafka::Producer::RK_MSG_FREE) == RdKafka::Producer::RK_MSG_FREE)
+		if ((msgFlags & RdKafka::Producer::RK_MSG_FREE) == RdKafka::Producer::RK_MSG_FREE)
 		{
 			free(buffer);
 		}

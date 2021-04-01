@@ -86,7 +86,7 @@ public:
 		pTopic = NULL;
 		pTopicPartition = NULL;
 		pTopicPartitionVector = NULL;
-		m_ProducerMsgFlags = 0;
+		m_ProducerMsgFlags = RdKafka::Producer::RK_MSG_COPY;
 		m_TopicReplicationFactor = 1;
 		m_CreateTopic = FALSE;
 		m_DumpMetadata = FALSE;
