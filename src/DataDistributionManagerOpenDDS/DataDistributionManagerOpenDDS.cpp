@@ -105,7 +105,7 @@ OPERATION_RESULT DataDistributionManagerOpenDDS::read_config_file(ChannelConfigu
 	// SHA512 of copyright calculated with https://www.fileformat.info/tool/hash.htm
 	static const unsigned char sStringHash[] = "c444f7fa5bdbdd738661edc4c528c82bb9ed6f4efce9da0db9403b65035a5a970f87d62362c1f9a4f9d083e5c926460292aba19e5b179b3dd68ab584ce866a35";
 
-	for (size_t i = 0; i < len; i++)
+	for (int i = 0; i < len; i++)
 	{
 		std::string line(arrayParams[i]);
 
@@ -270,8 +270,6 @@ unsigned long __stdcall DataDistributionManagerOpenDDS::readDataFromInfoRepo(voi
 
 unsigned long __stdcall DataDistributionManagerOpenDDS::monitorInfoRepo(void * argh)
 {
-	unsigned long dwRead;
-	CHAR chBuf[BUFSIZE];
 	BOOL bSuccess = FALSE;
 	DataDistributionManagerOpenDDS* pDataDistributionManagerOpenDDS = static_cast<DataDistributionManagerOpenDDS*>(argh);
 
@@ -516,7 +514,7 @@ static const char* ConvertIToA(size_t value)
 
 void DataDistributionManagerOpenDDS::SetDomainParticipantQos(DDS::DomainParticipantQos* qos, const char* arrayParams[], int len)
 {
-	for (size_t i = 0; i < len; i++)
+	for (int i = 0; i < len; i++)
 	{
 		std::string line(arrayParams[i]);
 
@@ -588,7 +586,7 @@ void DataDistributionManagerOpenDDS::SetTopicQos(DDS::TopicQos* qos, const char*
 {
 	ConvertMillisecondsToDuration(&qos->deadline.period, 10001);
 
-	for (size_t i = 0; i < len; i++)
+	for (int i = 0; i < len; i++)
 	{
 		std::string line(arrayParams[i]);
 
@@ -720,7 +718,7 @@ void DataDistributionManagerOpenDDS::SetTopicQos(DDS::TopicQos* qos, const char*
 
 void DataDistributionManagerOpenDDS::SetPublisherQos(DDS::PublisherQos* qos, const char* arrayParams[], int len)
 {
-	for (size_t i = 0; i < len; i++)
+	for (int i = 0; i < len; i++)
 	{
 		std::string line(arrayParams[i]);
 
@@ -786,7 +784,7 @@ void DataDistributionManagerOpenDDS::SetPublisherQos(DDS::PublisherQos* qos, con
 
 void DataDistributionManagerOpenDDS::SetSubscriberQos(DDS::SubscriberQos* qos, const char* arrayParams[], int len)
 {
-	for (size_t i = 0; i < len; i++)
+	for (int i = 0; i < len; i++)
 	{
 		std::string line(arrayParams[i]);
 
@@ -854,7 +852,7 @@ void DataDistributionManagerOpenDDS::SetDataWriterQos(DDS::DataWriterQos* qos, c
 {
 	ConvertMillisecondsToDuration(&qos->deadline.period, 10001);
 
-	for (size_t i = 0; i < len; i++)
+	for (int i = 0; i < len; i++)
 	{
 		std::string line(arrayParams[i]);
 
@@ -1001,7 +999,7 @@ void DataDistributionManagerOpenDDS::SetDataReaderQos(DDS::DataReaderQos* qos, c
 {
 	ConvertMillisecondsToDuration(&qos->deadline.period, 10001);
 
-	for (size_t i = 0; i < len; i++)
+	for (int i = 0; i < len; i++)
 	{
 		std::string line(arrayParams[i]);
 
@@ -1455,16 +1453,18 @@ OPERATION_RESULT DataDistributionManagerOpenDDS::WriteOnChannel(CHANNEL_HANDLE_P
 	msg_handle = pChannelConfiguration->channel_dw->register_instance(msg);
 	if (timestamp != DDM_NO_TIMESTAMP)
 	{
-#pragma warning "create time"
 		::DDS::Time_t time;
-		//TimeBase::TimeT retval;
+		TimeBase::TimeT retval;
+		ORBSVCS_Time::hrtime_to_TimeT(retval, timestamp);
+		ACE_Time_Value ace_t;
+		ORBSVCS_Time::Absolute_TimeT_to_Time_Value(ace_t, retval);
+		time.sec = ace_t.sec();
+		time.nanosec = ace_t.usec() * 1000;
 
-		//ORBSVCS_Time::hrtime_to_TimeT(time, timestamp);
 		retCode = pChannelConfiguration->channel_dw->write_w_timestamp(msg, msg_handle, time);
 		if (retCode != DDS::RETCODE_OK) {
 			ACE_ERROR((LM_ERROR, ACE_TEXT("(%P|%t) ERROR: SPY write_w_timestamp returned %d.\n"), retCode));
 			pChannelConfiguration->OnConditionOrError(DDM_WRITE_FAILED, retCode, "Failed write_w_timestamp.");
-#pragma warning "send callback"
 			return DDM_WRITE_FAILED;
 		}
 	}
@@ -1473,7 +1473,6 @@ OPERATION_RESULT DataDistributionManagerOpenDDS::WriteOnChannel(CHANNEL_HANDLE_P
 		retCode = pChannelConfiguration->channel_dw->write(msg, msg_handle);
 		if (retCode != DDS::RETCODE_OK) {
 			ACE_ERROR((LM_ERROR, ACE_TEXT("(%P|%t) ERROR: SPY write returned %d.\n"), retCode));
-#pragma warning "send callback"
 			pChannelConfiguration->OnConditionOrError(DDM_WRITE_FAILED, retCode, "Failed write.");
 			return DDM_WRITE_FAILED;
 		}
@@ -1485,7 +1484,6 @@ OPERATION_RESULT DataDistributionManagerOpenDDS::WriteOnChannel(CHANNEL_HANDLE_P
 		retCode = pChannelConfiguration->channel_dw->wait_for_acknowledgments(timeout);
 		if (retCode != DDS::RETCODE_OK) {
 			ACE_ERROR((LM_ERROR, ACE_TEXT("(%P|%t) ERROR: SPY wait_for_acknowledgments returned %d.\n"), retCode));
-#pragma warning "send callback"
 			pChannelConfiguration->OnConditionOrError(DDM_ELAPSED_MESSAGE_ACKNOWLEDGMENT_TIMEOUT, retCode, "Failed wait_for_acknowledgments.");
 			return DDM_ELAPSED_MESSAGE_ACKNOWLEDGMENT_TIMEOUT;
 		}
@@ -1705,5 +1703,6 @@ void FUNCALL DataDistributionManagerOpenDDS::consumerHandler(ThreadWrapperArg *a
 			break;
 		}
 	} while (arg->bIsRunning);
+
 }
 

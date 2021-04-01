@@ -189,9 +189,9 @@ void DataDistributionCommon::SetParameter(CHANNEL_HANDLE_PARAMETER, const char* 
 		{
 			if (!strcmp(paramValue, "true") ||
 				!strcmp(paramValue, "1"))
-				pChannelConfiguration->SetCommitSync(TRUE);
+				pChannelConfiguration->SetEventSync(TRUE);
 			else
-				pChannelConfiguration->SetCommitSync(FALSE);
+				pChannelConfiguration->SetEventSync(FALSE);
 			return;
 		}
 	}

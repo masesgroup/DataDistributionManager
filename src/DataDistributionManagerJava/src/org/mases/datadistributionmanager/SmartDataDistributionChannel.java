@@ -338,6 +338,7 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
                 try {
                     iDataAvailable.OnDataAvailable(uEvent.ChannelName, uEvent.Key, uEvent.Buffer);
                 } catch (Throwable throwable) {
+                    OnConditionOrError(uEvent.ChannelName, OPERATION_RESULT.E_FAIL, 0, throwable.getMessage());
                 }
             }
         } else {
@@ -347,6 +348,7 @@ public class SmartDataDistributionChannel implements IDataDistributionChannelCal
                     iConditionOrError.OnConditionOrError(uEvent.ChannelName, uEvent.Condition, uEvent.NativeCode,
                             uEvent.SubSystemReason);
                 } catch (Throwable throwable) {
+                    OnConditionOrError(uEvent.ChannelName, OPERATION_RESULT.E_FAIL, 0, throwable.getMessage());
                 }
             }
         }

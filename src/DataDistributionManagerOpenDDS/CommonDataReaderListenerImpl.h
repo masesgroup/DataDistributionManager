@@ -66,6 +66,8 @@ public:
 
 private:
 	ChannelConfiguration* m_pChannelConfiguration;
+	BOOL m_timeoutEmitted;
+	SmartTimeMeasureWrapper m_timeStart;
 };
 
 #endif /* COMMON_DATAREADER_LISTENER_IMPL  */

@@ -385,17 +385,30 @@ namespace MASES.DataDistributionManager.Bindings
         {
             if (uEvent.IsDataAvailable)
             {
-                byte[] data = new byte[uEvent.BufferLength.ToInt64()];
-                Marshal.Copy(uEvent.Buffer, data, 0, data.Length);
-
-                byte[] keyData = new byte[uEvent.KeyLen.ToInt64()];
-                Marshal.Copy(uEvent.Key, keyData, 0, keyData.Length);
-                string key = string.Empty;
-                try
+                byte[] data = null;
+                if (uEvent.Buffer != IntPtr.Zero)
                 {
-                    key = System.Text.Encoding.ASCII.GetString(keyData);
+                    data = new byte[uEvent.BufferLength.ToInt64()];
+                    Marshal.Copy(uEvent.Buffer, data, 0, data.Length);
                 }
-                catch (Exception ex) { key = ex.Message; }
+
+                string key = null;
+                byte[] keyData = null;
+                if (uEvent.Key != IntPtr.Zero)
+                {
+                    keyData = new byte[uEvent.KeyLen.ToInt64()];
+                    Marshal.Copy(uEvent.Key, keyData, 0, keyData.Length);
+                    try
+                    {
+                        key = Encoding.ASCII.GetString(keyData);
+                    }
+                    catch (Exception ex)
+                    {
+                        OnConditionOrError(uEvent.ChannelName, OPERATION_RESULT.DDM_INVALID_DATA, 0, ex.Message);
+                        key = null;
+                    }
+                }
+
                 OnDataAvailable(uEvent.ChannelName, key, data);
                 DataAvailable?.Invoke(this, new DataAvailableEventArgs(uEvent.ChannelName, key, data));
             }
