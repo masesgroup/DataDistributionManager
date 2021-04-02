@@ -1,5 +1,7 @@
 # Data Distribution Manager
 
+[![CI_BUILD](https://github.com/masesgroup/DataDistributionManager/actions/workflows/build.yaml/badge.svg)](https://github.com/masesgroup/DataDistributionManager/actions/workflows/build.yaml) [![CI_RELEASE](https://github.com/masesgroup/DataDistributionManager/actions/workflows/release.yaml/badge.svg)](https://github.com/masesgroup/DataDistributionManager/actions/workflows/release.yaml) [![Maven Central](https://img.shields.io/maven-central/v/com.masesgroup/datadistributionmanager.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.masesgroup%22%20AND%20a:%22datadistributionmanager%22)
+
 A reliable subsystem able to distribute data across multiple datacenters using multiple technologies.
 It is the core of [Sinapse](https://www.sinapsesystem.com) High Avalailablity, now we made it available for everyone.
 
