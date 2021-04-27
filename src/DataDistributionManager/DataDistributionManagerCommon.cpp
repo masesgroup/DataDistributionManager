@@ -194,6 +194,11 @@ void DataDistributionCommon::SetParameter(CHANNEL_HANDLE_PARAMETER, const char* 
 				pChannelConfiguration->SetEventSync(FALSE);
 			return;
 		}
+		else if (!strcmp(paramName, "datadistributionmanager.initial_offset"))
+		{
+			pChannelConfiguration->SetActualOffset(atoi(paramValue));
+			return;
+		}
 	}
 	else
 	{
@@ -460,7 +465,7 @@ ChannelConfiguration::ChannelConfiguration(const char* channelName, DDM_CHANNEL_
 	m_CommitTimeout = 10000;
 
 	m_lastRoutedOffset = -1;
-	m_lastManagedOffset = -1;
+	m_actualOffset = -1;
 
 	m_pEvtStartupStatus = new DataDistributionEventWrapper();
 	m_pEvtLockState = new DataDistributionEventWrapper();
@@ -549,16 +554,16 @@ void ChannelConfiguration::CompletelyDisconnected()
 
 }
 
-int64_t ChannelConfiguration::GetManagedOffset()
+int64_t ChannelConfiguration::GetActualOffset()
 {
 	DataDistributionAutoLockWrapper lock(m_csOffsets);
-	return m_lastManagedOffset;
+	return m_actualOffset;
 }
 
-void ChannelConfiguration::SetManagedOffset(int64_t val)
+void ChannelConfiguration::SetActualOffset(int64_t val)
 {
 	DataDistributionAutoLockWrapper lock(m_csOffsets);
-	m_lastManagedOffset = val;
+	m_actualOffset = val;
 }
 
 OPERATION_RESULT ChannelConfiguration::WaitStartupStatus(unsigned long dwMilliseconds)

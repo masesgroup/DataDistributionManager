@@ -31,6 +31,7 @@ public abstract class CommonConfiguration extends GlobalConfiguration {
     public static final String CommitTimeoutKey = "datadistributionmanager.timeout.commit";
     public static final String CommitSyncKey = "datadistributionmanager.commit.sync";
     public static final String EventSyncKey = "datadistributionmanager.event.sync";
+    public static final String InitialOffsetKey = "datadistributionmanager.initial_offset";
 
     /**
      * Initialize a new instance of {@link CommonConfiguration}
@@ -220,5 +221,24 @@ public abstract class CommonConfiguration extends GlobalConfiguration {
      */
     public void setEventSync(Boolean value) {
         keyValuePair.put(EventSyncKey, value.toString());
+    }
+
+    /**
+     * The initial offset of the channel
+     * 
+     * @return The initial offset of the channel
+     */
+    public Long getInitialOffset() {
+        String value = keyValuePair.get(InitialOffsetKey);
+        return (value == null) ? 0 : Long.parseLong(value);
+    }
+
+    /**
+     * The initial offset of the channel
+     * 
+     * @param offset The initial offset of the channel
+     */
+    public void setInitialOffset(Long offset) {
+        keyValuePair.put(InitialOffsetKey, offset.toString());
     }
 }

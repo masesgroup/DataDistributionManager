@@ -628,7 +628,7 @@ OPERATION_RESULT DataDistributionManagerKafka::SeekChannel(CHANNEL_HANDLE_PARAME
 	std::vector<RdKafka::TopicPartition*> partVector;
 	std::string sTopicName = pChannelConfiguration->GetChannelName();
 	partVector.push_back(RdKafka::TopicPartition::create(sTopicName, 0, position));
-	code = pChannelConfiguration->pConsumer->offsetsForTimes(partVector, pChannelConfiguration->GetCreateChannelTimeout());
+	code = pChannelConfiguration->pConsumer->offsetsForTimes(partVector, pChannelConfiguration->GetChannelSeekTimeout());
 	for (unsigned int i = 0; i < partVector.size(); i++)
 	{
 #ifdef _WIN64
@@ -651,7 +651,7 @@ OPERATION_RESULT DataDistributionManagerKafka::SeekChannel(CHANNEL_HANDLE_PARAME
 #else
 		LOG_ERROR("Channel %s - pChannelConfiguration->pConsumer->offsetsForTimes set offset to: %ld", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", partVector[0]->offset());
 #endif
-		pChannelConfiguration->SetManagedOffset(partVector[0]->offset());
+		pChannelConfiguration->SetActualOffset(partVector[0]->offset());
 	}
 
 	return DDM_NO_ERROR_CONDITION;
@@ -1161,7 +1161,7 @@ void FUNCALL DataDistributionManagerKafka::consumerHandler(ThreadWrapperArg * ar
 					pChannelConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "consumerHandler", "%s error: %s", pChannelConfiguration->GetCommitSync() ? "commitSync" : "commitAsync", RdKafka::err2str(code).c_str());
 					pChannelConfiguration->OnConditionOrError(DDM_COMMIT_FAILED, code, "Failed to commit message: %s", RdKafka::err2str(code).c_str());
 				}
-				pChannelConfiguration->SetManagedOffset(p_Msg->offset());
+				pChannelConfiguration->SetActualOffset(p_Msg->offset());
 			}
 		}
 		break;
