@@ -92,7 +92,7 @@ public:
 		m_DumpMetadata = FALSE;
 
 		m_lastRoutedOffset = RD_KAFKA_OFFSET_END;
-		m_lastManagedOffset = RD_KAFKA_OFFSET_END;
+		m_actualOffset = RD_KAFKA_OFFSET_END;
 
 		m_tConsumerThread = NULL;
 		m_tPollThread = NULL;
