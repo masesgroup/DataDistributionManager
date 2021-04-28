@@ -338,6 +338,25 @@ references:
   commentId: F:MASES.DataDistributionManager.Bindings.CommonConfiguration.EventSyncKey
   fullName: MASES.DataDistributionManager.Bindings.CommonConfiguration.EventSyncKey
   nameWithType: CommonConfiguration.EventSyncKey
+- uid: MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffset
+  name: InitialOffset
+  href: api/MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_InitialOffset
+  commentId: P:MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffset
+  fullName: MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffset
+  nameWithType: CommonConfiguration.InitialOffset
+- uid: MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffset*
+  name: InitialOffset
+  href: api/MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_InitialOffset_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffset
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffset
+  nameWithType: CommonConfiguration.InitialOffset
+- uid: MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffsetKey
+  name: InitialOffsetKey
+  href: api/MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_InitialOffsetKey
+  commentId: F:MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffsetKey
+  fullName: MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffsetKey
+  nameWithType: CommonConfiguration.InitialOffsetKey
 - uid: MASES.DataDistributionManager.Bindings.CommonConfiguration.KeepAliveTimeout
   name: KeepAliveTimeout
   href: api/MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_KeepAliveTimeout
@@ -1842,6 +1861,30 @@ references:
   commentId: F:MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.KindPropertyKey
   fullName: MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.KindPropertyKey
   nameWithType: HistoryQosPolicyConfiguration.KindPropertyKey
+- uid: MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes
+  name: InitialOffsetTypes
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.html
+  commentId: T:MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes
+  nameWithType: InitialOffsetTypes
+- uid: MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.Beginning
+  name: Beginning
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.html#MASES_DataDistributionManager_Bindings_Configuration_InitialOffsetTypes_Beginning
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.Beginning
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.Beginning
+  nameWithType: InitialOffsetTypes.Beginning
+- uid: MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.End
+  name: End
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.html#MASES_DataDistributionManager_Bindings_Configuration_InitialOffsetTypes_End
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.End
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.End
+  nameWithType: InitialOffsetTypes.End
+- uid: MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.Stored
+  name: Stored
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.html#MASES_DataDistributionManager_Bindings_Configuration_InitialOffsetTypes_Stored
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.Stored
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.Stored
+  nameWithType: InitialOffsetTypes.Stored
 - uid: MASES.DataDistributionManager.Bindings.Configuration.IsolationLevelType
   name: IsolationLevelType
   href: api/MASES.DataDistributionManager.Bindings.Configuration.IsolationLevelType.html
