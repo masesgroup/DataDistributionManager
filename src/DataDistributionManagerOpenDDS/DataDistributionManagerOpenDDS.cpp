@@ -1683,7 +1683,7 @@ void FUNCALL DataDistributionManagerOpenDDS::consumerHandler(ThreadWrapperArg *a
 				pChannelConfiguration->OnConditionOrError(DDM_UNMAPPED_ERROR_CONDITION, retCodeInner, "See native code error.");
 			}
 
-			pChannelConfiguration->SetManagedOffset(info[0].absolute_generation_rank); // this value shall be revised
+			pChannelConfiguration->SetActualOffset(info[0].absolute_generation_rank); // this value shall be revised
 		}
 		break;
 		case DDS::RETCODE_TIMEOUT:

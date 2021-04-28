@@ -658,42 +658,59 @@ public class KafkaChannelConfiguration extends KafkaConfiguration {
 
     // end Global conf
 
-    // Topic conf
-    /// <summary>
-    /// Configuration key of <see cref="RequestRequiredAcks"/>
-    /// </summary>
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_RequestRequiredAcksKey"
+     * target= "_top">RequestRequiredAcksKey</a>
+     */
     public static final String RequestRequiredAcksKey = "datadistributionmanager.kafka.topicconf.request.required.acks";
-    /// <summary>
-    /// Configuration key of <see cref="RequestTimeout"/>
-    /// </summary>
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_RequestTimeoutKey"
+     * target= "_top">RequestTimeoutKey</a>
+     */
     public static final String RequestTimeoutKey = "datadistributionmanager.kafka.topicconf.request.timeout.ms";
-    /// <summary>
-    /// Configuration key of <see cref="MessageTimeout"/>
-    /// </summary>
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_MessageTimeoutKey"
+     * target= "_top">MessageTimeoutKey</a>
+     */
     public static final String MessageTimeoutKey = "datadistributionmanager.kafka.topicconf.message.timeout.ms";
-    /// <summary>
-    /// Configuration key of <see cref="QueueingStrategy"/>
-    /// </summary>
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_QueueingStrategyKey"
+     * target= "_top">QueueingStrategyKey</a>
+     */
     public static final String QueueingStrategyKey = "datadistributionmanager.kafka.topicconf.queuing.strategy";
-    /// <summary>
-    /// Configuration key of <see cref="Partitioner"/>
-    /// </summary>
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_PartitionerKey"
+     * target= "_top">PartitionerKey</a>
+     */
     public static final String PartitionerKey = "datadistributionmanager.kafka.topicconf.partitioner";
-    /// <summary>
-    /// Configuration key of <see cref="TopicCompressionCodec"/>
-    /// </summary>
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TopicCompressionCodecKey"
+     * target= "_top">TopicCompressionCodecKey</a>
+     */
     public static final String TopicCompressionCodecKey = "datadistributionmanager.kafka.topicconf.compression.codec";
-    /// <summary>
-    /// Configuration key of <see cref="CompressionLevel"/>
-    /// </summary>
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_CompressionLevelKey"
+     * target= "_top">CompressionLevelKey</a>
+     */
     public static final String CompressionLevelKey = "datadistributionmanager.kafka.topicconf.compression.level";
-    /// <summary>
-    /// Configuration key of <see cref="AutoOffsetReset"/>
-    /// </summary>
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_AutoOffsetResetKey"
+     * target= "_top">AutoOffsetResetKey</a>
+     */
     public static final String AutoOffsetResetKey = "datadistributionmanager.kafka.topicconf.auto.offset.reset";
-    /// <summary>
-    /// Configuration key of <see cref="ConsumeCallbackMaxMessages"/>
-    /// </summary>
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ConsumeCallbackMaxMessagesKey"
+     * target= "_top">ConsumeCallbackMaxMessagesKey</a>
+     */
     public static final String ConsumeCallbackMaxMessagesKey = "datadistributionmanager.kafka.topicconf.consume.callback.max.messages";
 
     // end Topic conf
@@ -710,6 +727,26 @@ public class KafkaChannelConfiguration extends KafkaConfiguration {
          * Topic configuration paramters
          */
         TOPIC_CONF
+    }
+
+    /**
+     * Specific values to use within
+     * {@link org.mases.datadistributionmanager.CommonConfiguration#setInitialOffset(Long)}
+     * when channel is based on Kafka
+     */
+    public static class InitialOffsetTypes {
+        /**
+         * Start consuming from beginning of kafka partition queue: oldest message
+         */
+        public static long Beginning = -2;
+        /**
+         * Start consuming from end of kafka partition queue: next message
+         */
+        public static long End = -1;
+        /**
+         * Start consuming from offset retrieved from offset store
+         */
+        public static long Stored = -1000;
     }
 
     /**
@@ -860,14 +897,14 @@ public class KafkaChannelConfiguration extends KafkaConfiguration {
     public String getProperty(KafkaConfigurationType type, String property) {
         String propKey = null;
         switch (type) {
-            case GLOBAL_CONF:
-                propKey = KafkaGlobalConfigurationBasePropertyKey;
-                break;
-            case TOPIC_CONF:
-                propKey = KafkaTopicConfigurationBasePropertyKey;
-                break;
-            default:
-                throw new IllegalArgumentException(String.format("Type %s is invalid", type.toString()));
+        case GLOBAL_CONF:
+            propKey = KafkaGlobalConfigurationBasePropertyKey;
+            break;
+        case TOPIC_CONF:
+            propKey = KafkaTopicConfigurationBasePropertyKey;
+            break;
+        default:
+            throw new IllegalArgumentException(String.format("Type %s is invalid", type.toString()));
         }
 
         String value = "";
@@ -892,14 +929,14 @@ public class KafkaChannelConfiguration extends KafkaConfiguration {
     public void setProperty(KafkaConfigurationType type, String property, String value) {
         String propKey = null;
         switch (type) {
-            case GLOBAL_CONF:
-                propKey = KafkaGlobalConfigurationBasePropertyKey;
-                break;
-            case TOPIC_CONF:
-                propKey = KafkaTopicConfigurationBasePropertyKey;
-                break;
-            default:
-                throw new IllegalArgumentException(String.format("Type %s is invalid", type.toString()));
+        case GLOBAL_CONF:
+            propKey = KafkaGlobalConfigurationBasePropertyKey;
+            break;
+        case TOPIC_CONF:
+            propKey = KafkaTopicConfigurationBasePropertyKey;
+            break;
+        default:
+            throw new IllegalArgumentException(String.format("Type %s is invalid", type.toString()));
         }
 
         if (property.startsWith(propKey)) {

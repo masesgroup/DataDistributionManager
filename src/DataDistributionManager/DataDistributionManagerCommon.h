@@ -124,8 +124,8 @@ public:
 	void OnConditionOrError(const CHANNEL_HANDLE_PARAMETER, OPERATION_RESULT errorCode, int nativeCode, const char* subSystemReason, ...);
 	void Log(const DDM_LOG_LEVEL level, const char* function, const char* format, ...);
 	void CompletelyDisconnected();
-	int64_t GetManagedOffset();
-	void SetManagedOffset(int64_t val);
+	int64_t GetActualOffset();
+	void SetActualOffset(int64_t val);
 	OPERATION_RESULT WaitStartupStatus(unsigned long dwMilliseconds);
 	void SetStartupStatus(CHANNEL_STARTUP_TYPE status);
 	CHANNEL_STARTUP_TYPE GetStartupStatus();
@@ -158,7 +158,7 @@ protected:
 	DataDistributionLockWrapper* m_csState;
 	DataDistributionLockWrapper* m_csOffsets;
 	int64_t m_lastRoutedOffset;
-	int64_t m_lastManagedOffset;
+	int64_t m_actualOffset;
 
 private:
 	BOOL m_CommitSync;

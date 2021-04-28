@@ -59,6 +59,10 @@ namespace MASES.DataDistributionManager.Bindings
         /// Configuration key of <see cref="EventSync"/>
         /// </summary>
         public const string EventSyncKey = "datadistributionmanager.event.sync";
+        /// <summary>
+        /// Configuration key of <see cref="InitialOffset"/>
+        /// </summary>
+        public const string InitialOffsetKey = "datadistributionmanager.initial_offset";
 
         /// <summary>
         /// Initialize a new <see cref="CommonConfiguration"/>
@@ -238,6 +242,25 @@ namespace MASES.DataDistributionManager.Bindings
             {
                 keyValuePair[EventSyncKey] = value.ToString().ToLowerInvariant();
                 EmitPropertyChanged("EventSync");
+            }
+        }
+
+
+        /// <summary>
+        /// The initial offset of the channel
+        /// </summary>
+        public long InitialOffset
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(InitialOffsetKey, out value);
+                return long.Parse(value);
+            }
+            set
+            {
+                keyValuePair[InitialOffsetKey] = value.ToString();
+                EmitPropertyChanged("InitialOffset");
             }
         }
     }

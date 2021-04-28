@@ -437,6 +437,27 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
     }
     #endregion
 
+    #region InitialOffsetTypes
+    /// <summary>
+    /// Specific values to use on <see cref="CommonConfiguration.InitialOffset"/> when channel is based on Kafka
+    /// </summary>
+    public static class InitialOffsetTypes
+    {
+        /// <summary>
+        /// Start consuming from beginning of kafka partition queue: oldest message
+        /// </summary>
+        public static long Beginning = -2;
+        /// <summary>
+        /// Start consuming from end of kafka partition queue: next message
+        /// </summary>
+        public static long End = -1;
+        /// <summary>
+        /// Start consuming from offset retrieved from offset store
+        /// </summary>
+        public static long Stored = -1000;
+    }
+    #endregion
+
     #region KafkaChannelConfiguration
     /// <summary>
     /// The configuration class for Kafka channel
@@ -3018,12 +3039,12 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             get
             {
                 string value = string.Empty;
-                keyValuePair.TryGetValue(TopicCompressionCodecKey, out value);
+                keyValuePair.TryGetValue(AutoOffsetResetKey, out value);
                 return (AutoOffsetResetType)Enum.Parse(typeof(AutoOffsetResetType), value);
             }
             set
             {
-                keyValuePair[TopicCompressionCodecKey] = Enum.Format(typeof(AutoOffsetResetType), value, "g");
+                keyValuePair[AutoOffsetResetKey] = Enum.Format(typeof(AutoOffsetResetType), value, "g");
                 EmitPropertyChanged("AutoOffsetReset");
             }
         }

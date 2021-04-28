@@ -92,7 +92,7 @@ public:
 		m_DumpMetadata = FALSE;
 
 		m_lastRoutedOffset = RD_KAFKA_OFFSET_END;
-		m_lastManagedOffset = RD_KAFKA_OFFSET_END;
+		m_actualOffset = RD_KAFKA_OFFSET_END;
 
 		m_tConsumerThread = NULL;
 		m_tPollThread = NULL;
@@ -197,7 +197,7 @@ public:
 			for (size_t i = 0; i < partition_cnt; i++)
 			{
 				RdKafka::TopicPartition* pTopicPart = partitions.at(i);
-				int64_t nextOffset = pChannelConfiguration->GetManagedOffset();
+				int64_t nextOffset = pChannelConfiguration->GetActualOffset();
 				if (nextOffset >= 0)
 				{
 					pChannelConfiguration->Log(DDM_LOG_LEVEL::INFO_LEVEL, "KafkaMessageManagerRebalanceCb", "move forward partition offset: %" PRId64 "", pTopicPart->offset());
