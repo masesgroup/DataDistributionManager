@@ -148,7 +148,7 @@ jobs:
         shell: cmd
         run: |
           call .\third_party\OpenDDS\setenv.cmd
-          set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
+          set JDK_ROOT_FOLDER=%JAVA_HOME_13_X64%
           cd src
           msbuild /m -p:Configuration=Release,Platform=x64 DataDistributionManager.sln
 
@@ -156,7 +156,7 @@ jobs:
         shell: cmd
         run: |
           call .\third_party\OpenDDS\setenv.cmd
-          set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
+          set JDK_ROOT_FOLDER=%JAVA_HOME_13_X64%
           cd src
           msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
 
@@ -233,7 +233,7 @@ jobs:
         shell: cmd
         run: |
           cd src\DataDistributionManagerJava
-          set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
+          set JDK_ROOT_FOLDER=%JAVA_HOME_13_X64%
           CreateJar.bat
           cd ..\..
 
@@ -293,4 +293,6 @@ jobs:
       - uses: nuget/setup-nuget@v1
         with:
           nuget-version: '5.x'
-      - run: nuget push *.nupkg -ApiKey ${{ secrets.DATADISTRIBUTIONMANAGER_NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json -SkipDuplicate
+
+      - name: Publish to NuGet
+        run: nuget push *.nupkg -ApiKey ${{ secrets.DATADISTRIBUTIONMANAGER_NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json -SkipDuplicate
