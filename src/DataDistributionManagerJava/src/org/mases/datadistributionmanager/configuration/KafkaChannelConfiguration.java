@@ -730,8 +730,9 @@ public class KafkaChannelConfiguration extends KafkaConfiguration {
     }
 
     /**
-     * Specific values to use on {@link CommonConfiguration.setInitialOffset} when
-     * channel is based on Kafka
+     * Specific values to use within
+     * {@link org.mases.datadistributionmanager.CommonConfiguration#setInitialOffset(Long)}
+     * when channel is based on Kafka
      */
     public static class InitialOffsetTypes {
         /**
