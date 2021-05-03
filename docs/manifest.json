@@ -5556,6 +5556,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/ddmchat.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/ddmchat.html",
+          "hash": "Ekxcb3nyXfmHLc+FMKE+2Y+7nfrz2Zxa7tjNhggg3w0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/examples.md",
       "output": {
         ".html": {
@@ -5620,7 +5632,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "CmfQz31oR2hPEImj5RLp2d7oR4MysbKk80jSD7Lixzs="
+          "hash": "zMuzd6onr2Vws+9aA0J56GZXLCDSMhObnjFUU/SHERc="
         }
       },
       "is_incremental": false,
@@ -5632,7 +5644,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/usage.html",
-          "hash": "A2NLtPIqlDDyr2FTHDhm2gtrVlzMinHCvuK2YX8Eeww="
+          "hash": "n5DuXchZIwJd7JCqYZQk1jCAsu1bdcbEoALifOaFOEc="
         }
       },
       "is_incremental": false,
@@ -5807,7 +5819,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "0fIlyMiEAg4mOkDHYIuC+HCRHXmgdFgQ45BzVYod2VU="
+          "hash": "Y2pSLzwsNcEJSOZTDbDt2Htwi6zqQq0Lnhr5AE/jDM0="
         }
       },
       "is_incremental": false,
@@ -5828,7 +5840,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 10,
+          "total_file_count": 11,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
