@@ -11,3 +11,5 @@
       href: sinapse.md
     - name: Legacy COM application
       href: legacy_application_revamp.md
+    - name: DDM Chat
+      href: ddmchat.md
