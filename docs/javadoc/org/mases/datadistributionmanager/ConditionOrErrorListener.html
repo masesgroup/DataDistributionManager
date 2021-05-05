@@ -138,7 +138,7 @@ implements <a href="IConditionOrErrorListener.html" title="interface in org.mase
 <tbody>
 <tr class="altColor" id="i0">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#OnConditionOrError(java.lang.String,org.mases.datadistributionmanager.OPERATION_RESULT,int,java.lang.String)">OnConditionOrError</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;channelName,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#OnConditionOrError(org.mases.datadistributionmanager.ISmartDataDistributionChannelInfo,org.mases.datadistributionmanager.OPERATION_RESULT,int,java.lang.String)">OnConditionOrError</a></span>&#8203;(<a href="ISmartDataDistributionChannelInfo.html" title="interface in org.mases.datadistributionmanager">ISmartDataDistributionChannelInfo</a>&nbsp;channelInfo,
 <a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a>&nbsp;errorCode,
 int&nbsp;nativeCode,
 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;subSystemReason)</code></th>
@@ -186,18 +186,18 @@ int&nbsp;nativeCode,
 <ul class="blockList">
 <li class="blockList">
 <section class="detail">
-<h3><a id="OnConditionOrError(java.lang.String,org.mases.datadistributionmanager.OPERATION_RESULT,int,java.lang.String)">OnConditionOrError</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">OnConditionOrError</span>&#8203;(<span class="arguments"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;channelName,
+<h3><a id="OnConditionOrError(org.mases.datadistributionmanager.ISmartDataDistributionChannelInfo,org.mases.datadistributionmanager.OPERATION_RESULT,int,java.lang.String)">OnConditionOrError</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">OnConditionOrError</span>&#8203;(<span class="arguments"><a href="ISmartDataDistributionChannelInfo.html" title="interface in org.mases.datadistributionmanager">ISmartDataDistributionChannelInfo</a>&nbsp;channelInfo,
 <a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a>&nbsp;errorCode,
 int&nbsp;nativeCode,
 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;subSystemReason)</span></div>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="IConditionOrErrorListener.html#OnConditionOrError(java.lang.String,org.mases.datadistributionmanager.OPERATION_RESULT,int,java.lang.String)">IConditionOrErrorListener</a></code></span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="IConditionOrErrorListener.html#OnConditionOrError(org.mases.datadistributionmanager.ISmartDataDistributionChannelInfo,org.mases.datadistributionmanager.OPERATION_RESULT,int,java.lang.String)">IConditionOrErrorListener</a></code></span></div>
 <div class="block">Called when an event condition is raised from subsystem</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="IConditionOrErrorListener.html#OnConditionOrError(java.lang.String,org.mases.datadistributionmanager.OPERATION_RESULT,int,java.lang.String)">OnConditionOrError</a></code>&nbsp;in interface&nbsp;<code><a href="IConditionOrErrorListener.html" title="interface in org.mases.datadistributionmanager">IConditionOrErrorListener</a></code></dd>
+<dd><code><a href="IConditionOrErrorListener.html#OnConditionOrError(org.mases.datadistributionmanager.ISmartDataDistributionChannelInfo,org.mases.datadistributionmanager.OPERATION_RESULT,int,java.lang.String)">OnConditionOrError</a></code>&nbsp;in interface&nbsp;<code><a href="IConditionOrErrorListener.html" title="interface in org.mases.datadistributionmanager">IConditionOrErrorListener</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>channelName</code> - The channel name</dd>
+<dd><code>channelInfo</code> - Reference to <a href="ISmartDataDistributionChannelInfo.html" title="interface in org.mases.datadistributionmanager"><code>ISmartDataDistributionChannelInfo</code></a></dd>
 <dd><code>errorCode</code> - The error code reported</dd>
 <dd><code>nativeCode</code> - The native code associated to the error if available</dd>
 <dd><code>subSystemReason</code> - A String with a reason from subsystem</dd>
