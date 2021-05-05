@@ -23,10 +23,12 @@ package org.mases.datadistributionmanager;
  */
 public class UnderlyingEvent {
     UnderlyingEvent(String channelName, OPERATION_RESULT condition, boolean isDataAvailable, String key,
-            byte[] buffer, int nativeCode, String subSystemReason) {
+            byte[] buffer, int nativeCode, String subSystemReason, long timestamp, long offset) {
         this.ChannelName = channelName;
         this.Condition = condition;
         this.IsDataAvailable = isDataAvailable;
+        this.Timestamp = timestamp;
+        this.Offset = offset;
         this.Key = key;
         this.Buffer = buffer;
         this.NativeCode = nativeCode;
@@ -36,6 +38,8 @@ public class UnderlyingEvent {
     final String ChannelName;
     final OPERATION_RESULT Condition;
     final boolean IsDataAvailable;
+    final Long Offset;
+    final Long Timestamp;
     final String Key;
     final byte[] Buffer;
     final int NativeCode;

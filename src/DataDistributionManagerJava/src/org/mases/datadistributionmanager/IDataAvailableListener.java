@@ -17,6 +17,7 @@
 */
 
 package org.mases.datadistributionmanager;
+
 /**
  * Listener for data available
  */
@@ -24,9 +25,9 @@ public interface IDataAvailableListener {
     /**
      * Called when a data is available
      * 
-     * @param channelName The channel with data
+     * @param channelInfo Reference to {@link ISmartDataDistributionChannelInfo}
      * @param key         Message key
      * @param buffer      Message buffer
      */
-    void OnDataAvailable(String channelName, String key, byte[] buffer);
+    void OnDataAvailable(ISmartDataDistributionChannelInfo channelInfo, String key, byte[] buffer);
 }

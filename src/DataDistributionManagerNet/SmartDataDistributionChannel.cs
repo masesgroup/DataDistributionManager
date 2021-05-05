@@ -29,9 +29,9 @@ namespace MASES.DataDistributionManager.Bindings
     /// </summary>
     public class DataAvailableEventArgs : EventArgs
     {
-        internal DataAvailableEventArgs(string channelName, string key, byte[] buffer)
+        internal DataAvailableEventArgs(ISmartDataDistributionChannelInfo channelInfo, string key, byte[] buffer)
         {
-            ChannelName = channelName;
+            ChannelInfo = channelInfo;
             Key = key;
             Buffer = buffer;
             try
@@ -41,9 +41,9 @@ namespace MASES.DataDistributionManager.Bindings
             catch { }
         }
         /// <summary>
-        /// The channel name emitting data
+        /// The <see cref="ISmartDataDistributionChannelInfo"/> reference emitting data
         /// </summary>
-        public string ChannelName { get; private set; }
+        public ISmartDataDistributionChannelInfo ChannelInfo { get; private set; }
         /// <summary>
         /// The key associated to the message
         /// </summary>
@@ -65,17 +65,17 @@ namespace MASES.DataDistributionManager.Bindings
     /// </summary>
     public class ConditionOrErrorEventArgs : EventArgs
     {
-        internal ConditionOrErrorEventArgs(string channelName, OPERATION_RESULT errorCode, int nativeCode, string subSystemReason)
+        internal ConditionOrErrorEventArgs(ISmartDataDistributionChannelInfo channelInfo, OPERATION_RESULT errorCode, int nativeCode, string subSystemReason)
         {
-            ChannelName = channelName;
+            ChannelInfo = channelInfo;
             ErrorCode = errorCode;
             NativeCode = nativeCode;
             SubSystemReason = subSystemReason;
         }
         /// <summary>
-        /// The channel name emitting data
+        /// The <see cref="ISmartDataDistributionChannelInfo"/> reference emitting data
         /// </summary>
-        public string ChannelName { get; private set; }
+        public ISmartDataDistributionChannelInfo ChannelInfo { get; private set; }
         /// <summary>
         /// The <see cref="OPERATION_RESULT"/>
         /// </summary>
@@ -91,11 +91,34 @@ namespace MASES.DataDistributionManager.Bindings
     }
     #endregion
 
+    #region ISmartDataDistributionChannelInfo
+
+    /// <summary>
+    /// Interface containing information related to a channel
+    /// </summary>
+    public interface ISmartDataDistributionChannelInfo
+    {
+        /// <summary>
+        /// The name of the channel
+        /// </summary>
+        string ChannelName { get; }
+        /// <summary>
+        /// The last available message timestamp associated to the data: Milliseconds since epoch (UTC).
+        /// </summary>
+        Int64 Timestamp { get; }
+        /// <summary>
+        /// The last available message offset associated to the data
+        /// </summary>
+        Int64 Offset { get; }
+    }
+
+    #endregion
+
     #region ISmartDataDistributionChannel
     /// <summary>
     /// Interface to interact with channel
     /// </summary>
-    public interface ISmartDataDistributionChannel
+    public interface ISmartDataDistributionChannel : ISmartDataDistributionChannelInfo
     {
         /// <summary>
         /// Starts the channel
@@ -201,18 +224,16 @@ namespace MASES.DataDistributionManager.Bindings
         /// <summary>
         /// Called when a data is available
         /// </summary>
-        /// <param name="channelName">The channel with data</param>
         /// <param name="key">Message key</param>
         /// <param name="buffer">Message buffer</param>
-        void OnDataAvailable(string channelName, string key, byte[] buffer);
+        void OnDataAvailable(string key, byte[] buffer);
         /// <summary>
         /// Called when an event condition is raised from subsystem
         /// </summary>
-        /// <param name="channelName">The channel name</param>
         /// <param name="errorCode">The error code reported</param>
         /// <param name="nativeCode">The native code associated to the error if available</param>
         /// <param name="subSystemReason">A string with a reason from subsystem</param>
-        void OnConditionOrError(string channelName, OPERATION_RESULT errorCode, int nativeCode, string subSystemReason);
+        void OnConditionOrError(OPERATION_RESULT errorCode, int nativeCode, string subSystemReason);
         /// <summary>
         /// Event to receive messages when data are available
         /// </summary>
@@ -367,15 +388,23 @@ namespace MASES.DataDistributionManager.Bindings
             return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_ChangeChannelDirection>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, direction);
         }
         /// <inheritdoc/>
-        public virtual void OnDataAvailable(string channelName, string key, byte[] buffer)
+        public virtual void OnDataAvailable(string key, byte[] buffer)
         {
 
         }
         /// <inheritdoc/>
-        public virtual void OnConditionOrError(string channelName, OPERATION_RESULT errorCode, int nativeCode, string subSystemReason)
+        public virtual void OnConditionOrError(OPERATION_RESULT errorCode, int nativeCode, string subSystemReason)
         {
 
         }
+
+        /// <inheritdoc/>
+        public string ChannelName { get { return channelName; } }
+        /// <inheritdoc/>
+        public Int64 Timestamp { get; private set; }
+        /// <inheritdoc/>
+        public Int64 Offset { get; private set; }
+
         /// <inheritdoc/>
         public event EventHandler<DataAvailableEventArgs> DataAvailable;
         /// <inheritdoc/>
@@ -385,6 +414,9 @@ namespace MASES.DataDistributionManager.Bindings
         {
             if (uEvent.IsDataAvailable)
             {
+                Timestamp = uEvent.Timestamp;
+                Offset = uEvent.Offset;
+
                 byte[] data = null;
                 if (uEvent.Buffer != IntPtr.Zero)
                 {
@@ -404,23 +436,24 @@ namespace MASES.DataDistributionManager.Bindings
                     }
                     catch (Exception ex)
                     {
-                        OnConditionOrError(uEvent.ChannelName, OPERATION_RESULT.DDM_INVALID_DATA, 0, ex.Message);
+                        OnConditionOrError(OPERATION_RESULT.DDM_INVALID_DATA, 0, ex.Message);
                         key = null;
                     }
                 }
 
-                OnDataAvailable(uEvent.ChannelName, key, data);
-                DataAvailable?.Invoke(this, new DataAvailableEventArgs(uEvent.ChannelName, key, data));
+                OnDataAvailable(key, data);
+                DataAvailable?.Invoke(this, new DataAvailableEventArgs(this, key, data));
             }
             else
             {
-                OnConditionOrError(uEvent.ChannelName, uEvent.Condition, uEvent.NativeCode, uEvent.SubSystemReason);
-                ConditionOrError?.Invoke(this, new ConditionOrErrorEventArgs(uEvent.ChannelName, uEvent.Condition, uEvent.NativeCode, uEvent.SubSystemReason));
+                OnConditionOrError(uEvent.Condition, uEvent.NativeCode, uEvent.SubSystemReason);
+                ConditionOrError?.Invoke(this, new ConditionOrErrorEventArgs(this, uEvent.Condition, uEvent.NativeCode, uEvent.SubSystemReason));
             }
         }
 
         internal DDM_CHANNEL_DIRECTION m_direction = DDM_CHANNEL_DIRECTION.ALL;
         internal IntPtr channelHandle;
+        internal string channelName;
         internal IntPtr IDataDistributionSubsystemManager_ptr;
         internal DataDistributionChannelCallbackLow m_DataDistributionChannelCallbackLow;
     }

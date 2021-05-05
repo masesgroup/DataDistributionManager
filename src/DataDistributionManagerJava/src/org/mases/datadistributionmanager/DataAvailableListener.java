@@ -22,7 +22,7 @@ package org.mases.datadistributionmanager;
  * Implementation of {@link IDataAvailableListener}
  */
 public class DataAvailableListener implements IDataAvailableListener {
-    public void OnDataAvailable(String channelName, String key, byte[] buffer) {
+    public void OnDataAvailable(ISmartDataDistributionChannelInfo channelInfo, String key, byte[] buffer) {
 
     }
 }

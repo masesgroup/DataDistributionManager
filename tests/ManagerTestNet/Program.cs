@@ -44,15 +44,15 @@ namespace ManagerTestNet
 
     class MySmartDataDistributionChannel : SmartDataDistributionChannel
     {
-        public override void OnDataAvailable(string channelName, string key, byte[] buffer)
+        public override void OnDataAvailable(string key, byte[] buffer)
         {
             var str = Encoding.UTF8.GetString(buffer);
-            Console.WriteLine("Received data from {0} with key {1} and buffer {2}", channelName, key, str);
+            Console.WriteLine("Received data from {0} with key {1} and buffer {2}", ChannelName, key, str);
         }
 
-        public override void OnConditionOrError(string channelName, OPERATION_RESULT errorCode, int nativeCode, string subSystemReason)
+        public override void OnConditionOrError(OPERATION_RESULT errorCode, int nativeCode, string subSystemReason)
         {
-            base.OnConditionOrError(channelName, errorCode, nativeCode, subSystemReason);
+            base.OnConditionOrError(errorCode, nativeCode, subSystemReason);
         }
     };
 

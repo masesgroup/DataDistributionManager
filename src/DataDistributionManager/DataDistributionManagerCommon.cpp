@@ -503,14 +503,14 @@ DataDistributionCommon* ChannelConfiguration::GetManager()
 	return m_pMainManager;
 }
 
-void ChannelConfiguration::OnDataAvailable(const char* key, size_t keyLen, void* buffer, size_t len)
+void ChannelConfiguration::OnDataAvailable(const char* key, size_t keyLen, void* buffer, size_t len, int64_t timestamp, int64_t offset)
 {
-	OnDataAvailable(this, key, keyLen, buffer, len);
+	OnDataAvailable(this, key, keyLen, buffer, len, timestamp, offset);
 }
 
-void ChannelConfiguration::OnDataAvailable(const CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void* buffer, size_t len)
+void ChannelConfiguration::OnDataAvailable(const CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void* buffer, size_t len, int64_t timestamp, int64_t offset)
 {
-	UnderlyingEventData pData(m_pChannelName, key, keyLen, buffer, len);
+	UnderlyingEventData pData(m_pChannelName, key, keyLen, buffer, len, timestamp, offset);
 	if (dataCb != NULL)
 	{
 		dataCb->OnUnderlyingEvent(this, &pData);

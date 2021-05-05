@@ -17,6 +17,7 @@
 */
 
 package org.mases.datadistributionmanager;
+
 /**
  * Listener for condition or error
  */
@@ -24,11 +25,11 @@ public interface IConditionOrErrorListener {
     /**
      * Called when an event condition is raised from subsystem
      * 
-     * @param channelName     The channel name
+     * @param channelInfo     Reference to {@link ISmartDataDistributionChannelInfo}
      * @param errorCode       The error code reported
      * @param nativeCode      The native code associated to the error if available
      * @param subSystemReason A String with a reason from subsystem
      */
-    void OnConditionOrError(String channelName, OPERATION_RESULT errorCode, int nativeCode,
+    void OnConditionOrError(ISmartDataDistributionChannelInfo channelInfo, OPERATION_RESULT errorCode, int nativeCode,
             String subSystemReason);
 }

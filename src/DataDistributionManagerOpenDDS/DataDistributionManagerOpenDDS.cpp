@@ -1672,7 +1672,11 @@ void FUNCALL DataDistributionManagerOpenDDS::consumerHandler(ThreadWrapperArg *a
 			{
 				const char* key = data[0].key;
 				size_t keyLen = (key != NULL) ? strlen(key) : 0;
-				pChannelConfiguration->OnDataAvailable(key, keyLen, data[0].buffer.get_buffer(), data[0].msgSize);
+
+				ACE_Time_Value ace_t(info[0].source_timestamp.sec, info[0].source_timestamp.nanosec * 1000);
+				TimeBase::TimeT timestamp = ORBSVCS_Time::to_TimeT(ace_t);
+
+				pChannelConfiguration->OnDataAvailable(key, keyLen, data[0].buffer.get_buffer(), data[0].msgSize, timestamp, info[0].absolute_generation_rank);
 			}
 			else if (retCodeInner == DDS::RETCODE_NO_DATA)
 			{

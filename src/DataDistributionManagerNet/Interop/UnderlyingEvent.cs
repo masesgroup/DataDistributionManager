@@ -31,6 +31,8 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         public string ChannelName;
         [MarshalAs(UnmanagedType.U1)]
         public bool IsDataAvailable;
+        public Int64 Offset;
+        public Int64 Timestamp;
         public IntPtr Key;
         public IntPtr KeyLen;
         public IntPtr Buffer;

@@ -1144,7 +1144,20 @@ void FUNCALL DataDistributionManagerKafka::consumerHandler(ThreadWrapperArg * ar
 			timeoutEmitted = FALSE;
 			timeStart.ResetTime();
 
-			pChannelConfiguration->OnDataAvailable((p_Msg->key() != NULL) ? p_Msg->key()->c_str() : NULL, p_Msg->key_len(), p_Msg->payload(), p_Msg->len());
+			int64_t timestamp = -1;
+			RdKafka::MessageTimestamp msgTimestamp = p_Msg->timestamp();
+			switch (msgTimestamp.type)
+			{
+			case RdKafka::MessageTimestamp::MSG_TIMESTAMP_CREATE_TIME:
+			case RdKafka::MessageTimestamp::MSG_TIMESTAMP_LOG_APPEND_TIME:
+				timestamp = msgTimestamp.timestamp;
+				break;
+			case RdKafka::MessageTimestamp::MSG_TIMESTAMP_NOT_AVAILABLE:
+			default:
+				break;
+			}
+
+			pChannelConfiguration->OnDataAvailable((p_Msg->key() != NULL) ? p_Msg->key()->c_str() : NULL, p_Msg->key_len(), p_Msg->payload(), p_Msg->len(), timestamp, p_Msg->offset());
 
 			if (deleteMsgOnExit)
 			{

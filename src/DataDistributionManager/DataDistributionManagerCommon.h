@@ -118,8 +118,8 @@ public:
 	DDM_CHANNEL_DIRECTION GetDirection();
 	void SetDirection(DDM_CHANNEL_DIRECTION direction);
 	DataDistributionCommon* GetManager();
-	void OnDataAvailable(const char* key, size_t keyLen, void* buffer, size_t len);
-	void OnDataAvailable(const CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void* buffer, size_t len);
+	void OnDataAvailable(const char* key, size_t keyLen, void* buffer, size_t len, int64_t timestamp = -1, int64_t offset = -1);
+	void OnDataAvailable(const CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void* buffer, size_t len, int64_t timestamp = -1, int64_t offset = -1);
 	void OnConditionOrError(OPERATION_RESULT errorCode, int nativeCode, const char* subSystemReason, ...);
 	void OnConditionOrError(const CHANNEL_HANDLE_PARAMETER, OPERATION_RESULT errorCode, int nativeCode, const char* subSystemReason, ...);
 	void Log(const DDM_LOG_LEVEL level, const char* function, const char* format, ...);

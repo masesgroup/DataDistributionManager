@@ -255,9 +255,9 @@ void dataDistributionUnderlyingEventCbJava(const void* opaque, const CHANNEL_HAN
 		env->SetByteArrayRegion(jbuffer, 0, (jsize)uEvent->BufferLength, (const jbyte*)uEvent->Buffer);
 	}
 
-	jmethodID callbackMethodId = env->GetMethodID(p->thisClass, "OnUnderlyingEvent", "(JJLjava/lang/String;IZLjava/lang/String;[BILjava/lang/String;)V");
+	jmethodID callbackMethodId = env->GetMethodID(p->thisClass, "OnUnderlyingEvent", "(JJLjava/lang/String;IZLjava/lang/String;[BILjava/lang/String;JJ)V");
 
-	env->CallVoidMethod(p->jthis, callbackMethodId, (jlong)p, (jlong)channelHandle, jChannelName, (jint)uEvent->Condition, (jboolean)uEvent->IsDataAvailable, jKey, jbuffer, (jint)uEvent->NativeCode, jSubSystemReason);
+	env->CallVoidMethod(p->jthis, callbackMethodId, (jlong)p, (jlong)channelHandle, jChannelName, (jint)uEvent->Condition, (jboolean)uEvent->IsDataAvailable, jKey, jbuffer, (jint)uEvent->NativeCode, jSubSystemReason, (jlong)uEvent->Timestamp, (jlong)uEvent->Offset);
 
 	CheckAndRaise(env);
 

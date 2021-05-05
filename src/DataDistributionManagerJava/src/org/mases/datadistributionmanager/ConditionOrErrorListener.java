@@ -22,8 +22,8 @@ package org.mases.datadistributionmanager;
  * Implementation of {@link IConditionOrErrorListener}
  */
 public class ConditionOrErrorListener implements IConditionOrErrorListener {
-    public void OnConditionOrError(String channelName, OPERATION_RESULT errorCode, int nativeCode,
-            String subSystemReason) {
+    public void OnConditionOrError(ISmartDataDistributionChannelInfo channelInfo, OPERATION_RESULT errorCode,
+            int nativeCode, String subSystemReason) {
 
     }
 }
