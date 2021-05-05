@@ -751,10 +751,12 @@ public:
 	 *
 	 * \p channelHandle the CHANNEL_HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
 	 * \p position the new channel position
+	 * \p context the DDM_SEEKCONTEXT to use
+	 * \p kind the DDM_SEEKKIND to use
 	 * 
 	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual OPERATION_RESULT SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position) = 0;
+	virtual OPERATION_RESULT SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position, DDM_SEEKCONTEXT context = DDM_SEEKCONTEXT::OFFSET, DDM_SEEKKIND kind = DDM_SEEKKIND::ABSOLUTE) = 0;
 	/**
 	 * @brief Deletes the channel
 	 *

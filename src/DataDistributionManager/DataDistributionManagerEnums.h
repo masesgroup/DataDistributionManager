@@ -136,5 +136,33 @@ typedef enum class DDM_CLUSTEREVENT
 	LOSTSERVER = 0x4,  /**< A server was lost in the cluster */
 	REMOVESERVER = 0x8 /**< A server was removed from the cluster */
 } DDM_CLUSTEREVENT;
+/**
+* @enum DDM_SEEKCONTEXT
+*
+* @brief DDM_SEEKCONTEXT type.
+*
+* Seek context
+*
+* @sa IDataDistributionChannelBase::SeekChannel()
+*/
+typedef enum class DDM_SEEKCONTEXT
+{
+	OFFSET = 0x1,	   /**< Seek on offset */
+	TIMESTAMP = 0x2,   /**< Seek on timestamp */
+} DDM_SEEKCONTEXT;
+/**
+* @enum DDM_SEEKKIND
+*
+* @brief DDM_SEEKKIND type.
+*
+* Seek kind
+*
+* @sa IDataDistributionChannelBase::SeekChannel()
+*/
+typedef enum class DDM_SEEKKIND
+{
+	ABSOLUTE = 0x1,	   /**< Absolute seek */
+	RELATIVE = 0x2,   /**< Relative seek */
+} DDM_SEEKKIND;
 
 #endif // !defined(DATADISTRIBUTIONMANAGERENUMS_H__INCLUDED_)

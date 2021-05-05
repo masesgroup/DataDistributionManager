@@ -107,6 +107,10 @@ namespace MASES.DataDistributionManager.Bindings
         /// </summary>
         Int64 Timestamp { get; }
         /// <summary>
+        /// The last available message <see cref="DateTime"/> associated to the data (UTC).
+        /// </summary>
+        DateTime DateTime { get; }
+        /// <summary>
         /// The last available message offset associated to the data
         /// </summary>
         Int64 Offset { get; }
@@ -168,11 +172,32 @@ namespace MASES.DataDistributionManager.Bindings
         /// <returns><see cref="OPERATION_RESULT"/></returns>
         OPERATION_RESULT Unlock();
         /// <summary>
-        /// Seek the channel
+        /// Seek the channel using absolute or relative offset
         /// </summary>
-        /// <param name="position">Seek poisition</param>
+        /// <param name="position">Seek offset poisition</param>
+        /// <param name="kind"><see cref="DDM_SEEKKIND"/> to use. Default is <see cref="DDM_SEEKKIND.ABSOLUTE"/></param>
         /// <returns><see cref="OPERATION_RESULT"/></returns>
-        OPERATION_RESULT SeekChannel(Int64 position);
+        OPERATION_RESULT SeekChannel(Int64 position, DDM_SEEKKIND kind = DDM_SEEKKIND.ABSOLUTE);
+        /// <summary>
+        /// Seek the channel to an absolute timestamp
+        /// </summary>
+        /// <param name="position">Seek timestamp to an absolute poisition</param>
+        /// <returns><see cref="OPERATION_RESULT"/></returns>
+        OPERATION_RESULT SeekChannel(DateTime position);
+        /// <summary>
+        /// Seek the channel by a relative time expressed as <see cref="TimeSpan"/> starting from latest known timestamp
+        /// </summary>
+        /// <param name="position">Seek timestamp relative poisition</param>
+        /// <returns><see cref="OPERATION_RESULT"/></returns>
+        OPERATION_RESULT SeekChannel(TimeSpan position);
+        /// <summary>
+        /// Seek the channel using absolute or relative offset
+        /// </summary>
+        /// <param name="position">Seek offset poisition</param>
+        /// <param name="context"><see cref="DDM_SEEKCONTEXT"/> to use. Default is <see cref="DDM_SEEKCONTEXT.OFFSET"/></param>
+        /// <param name="kind"><see cref="DDM_SEEKKIND"/> to use. Default is <see cref="DDM_SEEKKIND.ABSOLUTE"/></param>
+        /// <returns><see cref="OPERATION_RESULT"/></returns>
+        OPERATION_RESULT SeekChannel(Int64 position, DDM_SEEKCONTEXT context = DDM_SEEKCONTEXT.OFFSET, DDM_SEEKKIND kind = DDM_SEEKKIND.ABSOLUTE);
         /// <summary>
         /// Writes in the channel
         /// </summary>
@@ -311,9 +336,25 @@ namespace MASES.DataDistributionManager.Bindings
             return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_Unlock>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle);
         }
         /// <inheritdoc/>
-        public OPERATION_RESULT SeekChannel(Int64 position)
+        public OPERATION_RESULT SeekChannel(Int64 position, DDM_SEEKKIND kind = DDM_SEEKKIND.ABSOLUTE)
         {
-            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_SeekChannel>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, position);
+            return SeekChannel(position, DDM_SEEKCONTEXT.OFFSET, kind);
+        }
+        /// <inheritdoc/>
+        public OPERATION_RESULT SeekChannel(DateTime position)
+        {
+            long unixTime = ((DateTimeOffset)position).ToUnixTimeMilliseconds();
+            return SeekChannel(unixTime, DDM_SEEKCONTEXT.TIMESTAMP, DDM_SEEKKIND.ABSOLUTE);
+        }
+        /// <inheritdoc/>
+        public OPERATION_RESULT SeekChannel(TimeSpan position)
+        {
+            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_SeekChannel>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, (Int64)position.TotalMilliseconds, DDM_SEEKCONTEXT.TIMESTAMP, DDM_SEEKKIND.RELATIVE);
+        }
+        /// <inheritdoc/>
+        public OPERATION_RESULT SeekChannel(Int64 position, DDM_SEEKCONTEXT context = DDM_SEEKCONTEXT.OFFSET, DDM_SEEKKIND kind = DDM_SEEKKIND.ABSOLUTE)
+        {
+            return DataDistributionManagerInvokeWrapper.DataDistributionEnv.GetDelegate<IDataDistributionSubsystem_SeekChannel>().Invoke(IDataDistributionSubsystemManager_ptr, channelHandle, position, context, kind);
         }
         /// <inheritdoc/>
         public OPERATION_RESULT WriteOnChannel(string value, bool waitAll = false, Int64 timestamp = DDM_NO_TIMESTAMP)
@@ -402,6 +443,8 @@ namespace MASES.DataDistributionManager.Bindings
         public string ChannelName { get { return channelName; } }
         /// <inheritdoc/>
         public Int64 Timestamp { get; private set; }
+        /// <inheritdoc/>
+        public DateTime DateTime { get { return DateTimeOffset.FromUnixTimeMilliseconds(Timestamp).DateTime; } }
         /// <inheritdoc/>
         public Int64 Offset { get; private set; }
 

@@ -1384,7 +1384,7 @@ const char* DataDistributionManagerOpenDDS::GetParameter(CHANNEL_HANDLE_PARAMETE
 	return DataDistributionCommon::GetParameter(channelHandle, paramName);
 }
 
-OPERATION_RESULT DataDistributionManagerOpenDDS::SeekChannel(CHANNEL_HANDLE_PARAMETER, size_t position)
+OPERATION_RESULT DataDistributionManagerOpenDDS::SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position, DDM_SEEKCONTEXT context, DDM_SEEKKIND kind)
 {
 	TRACESTART("DataDistributionManagerOpenDDS", "SeekChannel");
 

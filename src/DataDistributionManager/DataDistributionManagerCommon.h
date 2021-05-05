@@ -72,7 +72,7 @@ public:
 	virtual const char* GetParameter(CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId);
 	virtual OPERATION_RESULT Lock(CHANNEL_HANDLE_PARAMETER, unsigned long timeout);
 	virtual OPERATION_RESULT Unlock(CHANNEL_HANDLE_PARAMETER);
-	virtual OPERATION_RESULT SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position);
+	virtual OPERATION_RESULT SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position, DDM_SEEKCONTEXT context = DDM_SEEKCONTEXT::OFFSET, DDM_SEEKKIND kind = DDM_SEEKKIND::ABSOLUTE);
 	virtual OPERATION_RESULT DeleteChannel(CHANNEL_HANDLE_PARAMETER);
 	virtual OPERATION_RESULT WriteOnChannel(CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP);
 	virtual OPERATION_RESULT ReadFromChannel(CHANNEL_HANDLE_PARAMETER, int64_t offset, size_t *dataLen, void **param);

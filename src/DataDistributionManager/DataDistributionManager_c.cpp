@@ -184,10 +184,10 @@ DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_Unlock(void* IData
 	return pIDataDistributionSubsystem_instance->Unlock(channelHandle);
 }
 
-DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_SeekChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, int64_t position)
+DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_SeekChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, int64_t position, DDM_SEEKCONTEXT context, DDM_SEEKKIND kind)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem_instance = static_cast<IDataDistributionSubsystem*>(IDataDistributionSubsystem_instance);
-	return pIDataDistributionSubsystem_instance->SeekChannel(channelHandle, position);
+	return pIDataDistributionSubsystem_instance->SeekChannel(channelHandle, position, context, kind);
 }
 
 DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_DeleteChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER)

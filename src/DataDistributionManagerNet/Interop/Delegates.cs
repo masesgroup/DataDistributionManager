@@ -136,7 +136,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate OPERATION_RESULT IDataDistributionSubsystem_Unlock(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-    delegate OPERATION_RESULT IDataDistributionSubsystem_SeekChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, long position);
+    delegate OPERATION_RESULT IDataDistributionSubsystem_SeekChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, long position, DDM_SEEKCONTEXT context, DDM_SEEKKIND kind);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
     delegate OPERATION_RESULT IDataDistributionSubsystem_DeleteChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]

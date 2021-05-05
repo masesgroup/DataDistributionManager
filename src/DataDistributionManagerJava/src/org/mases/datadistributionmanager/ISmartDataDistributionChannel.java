@@ -18,6 +18,9 @@
 
 package org.mases.datadistributionmanager;
 
+import java.time.Duration;
+import java.util.Date;
+
 public interface ISmartDataDistributionChannel extends ISmartDataDistributionChannelInfo {
     /**
      * Starts the channel
@@ -83,12 +86,48 @@ public interface ISmartDataDistributionChannel extends ISmartDataDistributionCha
     OPERATION_RESULT Unlock();
 
     /**
-     * Seeks the channel
+     * Seek the channel using absolute offset
      * 
-     * @param position position
+     * @param position Seek offset poisition
      * @return {@link OPERATION_RESULT}
      */
     OPERATION_RESULT SeekChannel(long position);
+
+    /**
+     * Seek the channel using absolute or relative offset
+     * 
+     * @param position Seek offset poisition
+     * @param kind     {@link DDM_SEEKKIND} to use
+     * @return {@link OPERATION_RESULT}
+     */
+    OPERATION_RESULT SeekChannel(long position, DDM_SEEKKIND kind);
+
+    /**
+     * Seek the channel to an absolute timestamp
+     * 
+     * @param position Seek timestamp to an absolute poisition
+     * @return {@link OPERATION_RESULT}
+     */
+    OPERATION_RESULT SeekChannel(Date position);
+
+    /**
+     * Seek the channel by a relative time expressed as {@link Duration} starting
+     * from latest known timestamp
+     * 
+     * @param position Seek timestamp relative poisition
+     * @return {@link OPERATION_RESULT}
+     */
+    OPERATION_RESULT SeekChannel(Duration position);
+
+    /**
+     * Seek the channel using absolute or relative offset
+     * 
+     * @param position Seek offset poisition
+     * @param context  {@link DDM_SEEKCONTEXT} to use
+     * @param kind     {@link DDM_SEEKKIND} to use
+     * @return {@link OPERATION_RESULT}
+     */
+    OPERATION_RESULT SeekChannel(long position, DDM_SEEKCONTEXT context, DDM_SEEKKIND kind);
 
     /**
      * Writes on the channel

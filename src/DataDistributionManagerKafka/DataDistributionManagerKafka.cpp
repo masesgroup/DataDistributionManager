@@ -612,7 +612,7 @@ const char* DataDistributionManagerKafka::GetParameter(CHANNEL_HANDLE_PARAMETER,
 	return DataDistributionCommon::GetParameter(channelHandle, paramName);
 }
 
-OPERATION_RESULT DataDistributionManagerKafka::SeekChannel(CHANNEL_HANDLE_PARAMETER, size_t position)
+OPERATION_RESULT DataDistributionManagerKafka::SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position, DDM_SEEKCONTEXT context, DDM_SEEKKIND kind)
 {
 	TRACESTART("DataDistributionManagerKafka", "SeekChannel");
 

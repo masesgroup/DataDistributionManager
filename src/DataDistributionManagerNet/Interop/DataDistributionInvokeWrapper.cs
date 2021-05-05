@@ -253,7 +253,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         public delegate bool IDataDistributionSubsystem_StopChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, uint dwMilliseconds);
         public delegate void IDataDistributionSubsystem_Lock(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, uint timeout);
         public delegate void IDataDistributionSubsystem_Unlock(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle);
-        public delegate void IDataDistributionSubsystem_SeekChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, long position);
+        public delegate void IDataDistributionSubsystem_SeekChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle, long position, DDM_SEEKCONTEXT context, DDM_SEEKKIND kind);
         public delegate void IDataDistributionSubsystem_DeleteChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle);
         public delegate bool IDataDistributionSubsystem_WriteOnChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle,
                                                                       [MarshalAs(UnmanagedType.LPStr)] string key, IntPtr keyLen,

@@ -93,7 +93,7 @@ class NativeInterface {
                         long channelHandle);
 
         static native long IDataDistributionSubsystem_SeekChannel(long IDataDistributionSubsystem_instance,
-                        long channelHandle, long position);
+                        long channelHandle, long position, int context, int kind);
 
         static native long IDataDistributionSubsystem_DeleteChannel(long IDataDistributionSubsystem_instance,
                         long channelHandle);

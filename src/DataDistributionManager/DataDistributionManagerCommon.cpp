@@ -341,7 +341,7 @@ OPERATION_RESULT DataDistributionCommon::Unlock(CHANNEL_HANDLE_PARAMETER)
 	return DDM_NOT_IMPLEMENTED;
 }
 
-OPERATION_RESULT DataDistributionCommon::SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position)
+OPERATION_RESULT DataDistributionCommon::SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position, DDM_SEEKCONTEXT context, DDM_SEEKKIND kind)
 {
 	TRACESTART("DataDistributionCommon", "SeekChannel");
 	LOG_WARNING0("Not Implemented in subclass");

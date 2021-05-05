@@ -19,6 +19,8 @@
 package org.mases.datadistributionmanager;
 
 import java.nio.charset.Charset;
+import java.time.Duration;
+import java.util.Date;
 
 /**
  * Main class managing channel
@@ -85,8 +87,24 @@ public class SmartDataDistributionChannel
     }
 
     public OPERATION_RESULT SeekChannel(long position) {
+        return SeekChannel(position, DDM_SEEKCONTEXT.OFFSET, DDM_SEEKKIND.ABSOLUTE);
+    }
+
+    public OPERATION_RESULT SeekChannel(long position, DDM_SEEKKIND kind) {
+        return SeekChannel(position, DDM_SEEKCONTEXT.OFFSET, kind);
+    }
+
+    public OPERATION_RESULT SeekChannel(Date position) {
+        return SeekChannel(position.getTime(), DDM_SEEKCONTEXT.TIMESTAMP, DDM_SEEKKIND.ABSOLUTE);
+    }
+
+    public OPERATION_RESULT SeekChannel(Duration position) {
+        return SeekChannel(position.toMillis(), DDM_SEEKCONTEXT.TIMESTAMP, DDM_SEEKKIND.RELATIVE);
+    }
+
+    public OPERATION_RESULT SeekChannel(long position, DDM_SEEKCONTEXT context, DDM_SEEKKIND kind) {
         long res = NativeInterface.IDataDistributionSubsystem_SeekChannel(IDataDistributionSubsystemManager_ptr,
-                m_channelHandle, position);
+                m_channelHandle, position, context.atomicNumber, kind.atomicNumber);
         return new OPERATION_RESULT(res);
     }
 
