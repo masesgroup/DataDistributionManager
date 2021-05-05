@@ -141,6 +141,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4e9b770ebf68e631f0367467d45e0e2f"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSmartDataDistributionChannel.html#a4e9b770ebf68e631f0367467d45e0e2f">GetChannelName</a> ()</td></tr>
 <tr class="memdesc:a4e9b770ebf68e631f0367467d45e0e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the channel name.  <a href="classSmartDataDistributionChannel.html#a4e9b770ebf68e631f0367467d45e0e2f">More...</a><br /></td></tr>
 <tr class="separator:a4e9b770ebf68e631f0367467d45e0e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a140fb62b2a9a2cdcf4ead7b68769ef1f"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSmartDataDistributionChannel.html#a140fb62b2a9a2cdcf4ead7b68769ef1f">GetTimestamp</a> ()</td></tr>
+<tr class="memdesc:a140fb62b2a9a2cdcf4ead7b68769ef1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the timestamp.  <a href="classSmartDataDistributionChannel.html#a140fb62b2a9a2cdcf4ead7b68769ef1f">More...</a><br /></td></tr>
+<tr class="separator:a140fb62b2a9a2cdcf4ead7b68769ef1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c3a94100b121f7e7777078c63342746"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSmartDataDistributionChannel.html#a7c3a94100b121f7e7777078c63342746">GetOffset</a> ()</td></tr>
+<tr class="memdesc:a7c3a94100b121f7e7777078c63342746"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the actual channel offset.  <a href="classSmartDataDistributionChannel.html#a7c3a94100b121f7e7777078c63342746">More...</a><br /></td></tr>
+<tr class="separator:a7c3a94100b121f7e7777078c63342746"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5335c44ce61bb186e8500347033e4916"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSmartDataDistributionChannel.html#a5335c44ce61bb186e8500347033e4916">OnDataAvailable</a> (const char *key, size_t keyLen, const void *buffer, const size_t len)</td></tr>
 <tr class="memdesc:a5335c44ce61bb186e8500347033e4916"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to override to receive data available.  <a href="classSmartDataDistributionChannel.html#a5335c44ce61bb186e8500347033e4916">More...</a><br /></td></tr>
 <tr class="separator:a5335c44ce61bb186e8500347033e4916"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -272,6 +278,46 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the DDM_CHANNEL_DIRECTION channel direction. </p>
+
+</div>
+</div>
+<a id="a7c3a94100b121f7e7777078c63342746"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c3a94100b121f7e7777078c63342746">&#9670;&nbsp;</a></span>GetOffset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t SmartDataDistributionChannel::GetOffset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the actual channel offset. </p>
+<dl class="section return"><dt>Returns</dt><dd>the offset of data </dd></dl>
+
+</div>
+</div>
+<a id="a140fb62b2a9a2cdcf4ead7b68769ef1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a140fb62b2a9a2cdcf4ead7b68769ef1f">&#9670;&nbsp;</a></span>GetTimestamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t SmartDataDistributionChannel::GetTimestamp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the timestamp. </p>
+<dl class="section return"><dt>Returns</dt><dd>Milliseconds since epoch (UTC) </dd></dl>
 
 </div>
 </div>
@@ -434,7 +480,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Function to override to receive data available. </p>
-<p><code>key</code> the key of the message, NULL if the key was omitted in transmission <code>keyLen</code> the length of key <code>buffer</code> the data buffer received <code>len</code> the length of the buffer </p>
+<p><code>key</code> the key of the message, NULL if the key was omitted in transmission <code>keyLen</code> the length of key <code>buffer</code> the data buffer received <code>len</code> the length of the buffer <code>timestamp</code> The timestamp associated to the data: Milliseconds since epoch (UTC). <code>offset</code> The offset associated to the data </p>
 
 </div>
 </div>
@@ -479,7 +525,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Function to override to receive data available. </p>
-<p><code>key</code> the key of the message, NULL if the key was omitted in transmission <code>buffer</code> the data buffer received <code>len</code> the length of the buffer </p>
+<p><code>key</code> the key of the message, NULL if the key was omitted in transmission <code>buffer</code> the data buffer received <code>len</code> the length of the buffer <code>timestamp</code> The timestamp associated to the data: Milliseconds since epoch (UTC). <code>offset</code> The offset associated to the data </p>
 
 </div>
 </div>

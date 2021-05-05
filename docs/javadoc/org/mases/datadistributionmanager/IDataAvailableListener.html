@@ -108,7 +108,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tbody>
 <tr class="altColor" id="i0">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#OnDataAvailable(java.lang.String,java.lang.String,byte%5B%5D)">OnDataAvailable</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;channelName,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#OnDataAvailable(org.mases.datadistributionmanager.ISmartDataDistributionChannelInfo,java.lang.String,byte%5B%5D)">OnDataAvailable</a></span>&#8203;(<a href="ISmartDataDistributionChannelInfo.html" title="interface in org.mases.datadistributionmanager">ISmartDataDistributionChannelInfo</a>&nbsp;channelInfo,
 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;key,
 byte[]&nbsp;buffer)</code></th>
 <td class="colLast">
@@ -134,14 +134,14 @@ byte[]&nbsp;buffer)</code></th>
 <ul class="blockList">
 <li class="blockList">
 <section class="detail">
-<h3><a id="OnDataAvailable(java.lang.String,java.lang.String,byte[])">OnDataAvailable</a></h3>
-<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">OnDataAvailable</span>&#8203;(<span class="arguments"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;channelName,
+<h3><a id="OnDataAvailable(org.mases.datadistributionmanager.ISmartDataDistributionChannelInfo,java.lang.String,byte[])">OnDataAvailable</a></h3>
+<div class="memberSignature"><span class="returnType">void</span>&nbsp;<span class="memberName">OnDataAvailable</span>&#8203;(<span class="arguments"><a href="ISmartDataDistributionChannelInfo.html" title="interface in org.mases.datadistributionmanager">ISmartDataDistributionChannelInfo</a>&nbsp;channelInfo,
 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;key,
 byte[]&nbsp;buffer)</span></div>
 <div class="block">Called when a data is available</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>channelName</code> - The channel with data</dd>
+<dd><code>channelInfo</code> - Reference to <a href="ISmartDataDistributionChannelInfo.html" title="interface in org.mases.datadistributionmanager"><code>ISmartDataDistributionChannelInfo</code></a></dd>
 <dd><code>key</code> - Message key</dd>
 <dd><code>buffer</code> - Message buffer</dd>
 </dl>

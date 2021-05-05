@@ -338,6 +338,25 @@ references:
   commentId: F:MASES.DataDistributionManager.Bindings.CommonConfiguration.EventSyncKey
   fullName: MASES.DataDistributionManager.Bindings.CommonConfiguration.EventSyncKey
   nameWithType: CommonConfiguration.EventSyncKey
+- uid: MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffset
+  name: InitialOffset
+  href: api/MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_InitialOffset
+  commentId: P:MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffset
+  fullName: MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffset
+  nameWithType: CommonConfiguration.InitialOffset
+- uid: MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffset*
+  name: InitialOffset
+  href: api/MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_InitialOffset_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffset
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffset
+  nameWithType: CommonConfiguration.InitialOffset
+- uid: MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffsetKey
+  name: InitialOffsetKey
+  href: api/MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_InitialOffsetKey
+  commentId: F:MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffsetKey
+  fullName: MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffsetKey
+  nameWithType: CommonConfiguration.InitialOffsetKey
 - uid: MASES.DataDistributionManager.Bindings.CommonConfiguration.KeepAliveTimeout
   name: KeepAliveTimeout
   href: api/MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_KeepAliveTimeout
@@ -433,19 +452,19 @@ references:
   commentId: T:MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs
   fullName: MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs
   nameWithType: ConditionOrErrorEventArgs
-- uid: MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.ChannelName
-  name: ChannelName
-  href: api/MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.html#MASES_DataDistributionManager_Bindings_ConditionOrErrorEventArgs_ChannelName
-  commentId: P:MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.ChannelName
-  fullName: MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.ChannelName
-  nameWithType: ConditionOrErrorEventArgs.ChannelName
-- uid: MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.ChannelName*
-  name: ChannelName
-  href: api/MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.html#MASES_DataDistributionManager_Bindings_ConditionOrErrorEventArgs_ChannelName_
-  commentId: Overload:MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.ChannelName
+- uid: MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.ChannelInfo
+  name: ChannelInfo
+  href: api/MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.html#MASES_DataDistributionManager_Bindings_ConditionOrErrorEventArgs_ChannelInfo
+  commentId: P:MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.ChannelInfo
+  fullName: MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.ChannelInfo
+  nameWithType: ConditionOrErrorEventArgs.ChannelInfo
+- uid: MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.ChannelInfo*
+  name: ChannelInfo
+  href: api/MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.html#MASES_DataDistributionManager_Bindings_ConditionOrErrorEventArgs_ChannelInfo_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.ChannelInfo
   isSpec: "True"
-  fullName: MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.ChannelName
-  nameWithType: ConditionOrErrorEventArgs.ChannelName
+  fullName: MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.ChannelInfo
+  nameWithType: ConditionOrErrorEventArgs.ChannelInfo
 - uid: MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.ErrorCode
   name: ErrorCode
   href: api/MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.html#MASES_DataDistributionManager_Bindings_ConditionOrErrorEventArgs_ErrorCode
@@ -1842,6 +1861,30 @@ references:
   commentId: F:MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.KindPropertyKey
   fullName: MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.KindPropertyKey
   nameWithType: HistoryQosPolicyConfiguration.KindPropertyKey
+- uid: MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes
+  name: InitialOffsetTypes
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.html
+  commentId: T:MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes
+  nameWithType: InitialOffsetTypes
+- uid: MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.Beginning
+  name: Beginning
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.html#MASES_DataDistributionManager_Bindings_Configuration_InitialOffsetTypes_Beginning
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.Beginning
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.Beginning
+  nameWithType: InitialOffsetTypes.Beginning
+- uid: MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.End
+  name: End
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.html#MASES_DataDistributionManager_Bindings_Configuration_InitialOffsetTypes_End
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.End
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.End
+  nameWithType: InitialOffsetTypes.End
+- uid: MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.Stored
+  name: Stored
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.html#MASES_DataDistributionManager_Bindings_Configuration_InitialOffsetTypes_Stored
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.Stored
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.Stored
+  nameWithType: InitialOffsetTypes.Stored
 - uid: MASES.DataDistributionManager.Bindings.Configuration.IsolationLevelType
   name: IsolationLevelType
   href: api/MASES.DataDistributionManager.Bindings.Configuration.IsolationLevelType.html
@@ -6616,19 +6659,19 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.Buffer
   nameWithType: DataAvailableEventArgs.Buffer
-- uid: MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.ChannelName
-  name: ChannelName
-  href: api/MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.html#MASES_DataDistributionManager_Bindings_DataAvailableEventArgs_ChannelName
-  commentId: P:MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.ChannelName
-  fullName: MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.ChannelName
-  nameWithType: DataAvailableEventArgs.ChannelName
-- uid: MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.ChannelName*
-  name: ChannelName
-  href: api/MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.html#MASES_DataDistributionManager_Bindings_DataAvailableEventArgs_ChannelName_
-  commentId: Overload:MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.ChannelName
+- uid: MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.ChannelInfo
+  name: ChannelInfo
+  href: api/MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.html#MASES_DataDistributionManager_Bindings_DataAvailableEventArgs_ChannelInfo
+  commentId: P:MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.ChannelInfo
+  fullName: MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.ChannelInfo
+  nameWithType: DataAvailableEventArgs.ChannelInfo
+- uid: MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.ChannelInfo*
+  name: ChannelInfo
+  href: api/MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.html#MASES_DataDistributionManager_Bindings_DataAvailableEventArgs_ChannelInfo_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.ChannelInfo
   isSpec: "True"
-  fullName: MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.ChannelName
-  nameWithType: DataAvailableEventArgs.ChannelName
+  fullName: MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.ChannelInfo
+  nameWithType: DataAvailableEventArgs.ChannelInfo
 - uid: MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.DecodedString
   name: DecodedString
   href: api/MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.html#MASES_DataDistributionManager_Bindings_DataAvailableEventArgs_DecodedString
@@ -7876,12 +7919,12 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.Lock
   nameWithType: ISmartDataDistributionChannel.Lock
-- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnConditionOrError(System.String,MASES.DataDistributionManager.Bindings.Interop.OPERATION_RESULT,System.Int32,System.String)
-  name: OnConditionOrError(String, OPERATION_RESULT, Int32, String)
-  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_OnConditionOrError_System_String_MASES_DataDistributionManager_Bindings_Interop_OPERATION_RESULT_System_Int32_System_String_
-  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnConditionOrError(System.String,MASES.DataDistributionManager.Bindings.Interop.OPERATION_RESULT,System.Int32,System.String)
-  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnConditionOrError(System.String, MASES.DataDistributionManager.Bindings.Interop.OPERATION_RESULT, System.Int32, System.String)
-  nameWithType: ISmartDataDistributionChannel.OnConditionOrError(String, OPERATION_RESULT, Int32, String)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnConditionOrError(MASES.DataDistributionManager.Bindings.Interop.OPERATION_RESULT,System.Int32,System.String)
+  name: OnConditionOrError(OPERATION_RESULT, Int32, String)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_OnConditionOrError_MASES_DataDistributionManager_Bindings_Interop_OPERATION_RESULT_System_Int32_System_String_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnConditionOrError(MASES.DataDistributionManager.Bindings.Interop.OPERATION_RESULT,System.Int32,System.String)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnConditionOrError(MASES.DataDistributionManager.Bindings.Interop.OPERATION_RESULT, System.Int32, System.String)
+  nameWithType: ISmartDataDistributionChannel.OnConditionOrError(OPERATION_RESULT, Int32, String)
 - uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnConditionOrError*
   name: OnConditionOrError
   href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_OnConditionOrError_
@@ -7889,15 +7932,15 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnConditionOrError
   nameWithType: ISmartDataDistributionChannel.OnConditionOrError
-- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnDataAvailable(System.String,System.String,System.Byte[])
-  name: OnDataAvailable(String, String, Byte[])
-  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_OnDataAvailable_System_String_System_String_System_Byte___
-  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnDataAvailable(System.String,System.String,System.Byte[])
-  name.vb: OnDataAvailable(String, String, Byte())
-  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnDataAvailable(System.String, System.String, System.Byte[])
-  fullName.vb: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnDataAvailable(System.String, System.String, System.Byte())
-  nameWithType: ISmartDataDistributionChannel.OnDataAvailable(String, String, Byte[])
-  nameWithType.vb: ISmartDataDistributionChannel.OnDataAvailable(String, String, Byte())
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnDataAvailable(System.String,System.Byte[])
+  name: OnDataAvailable(String, Byte[])
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_OnDataAvailable_System_String_System_Byte___
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnDataAvailable(System.String,System.Byte[])
+  name.vb: OnDataAvailable(String, Byte())
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnDataAvailable(System.String, System.Byte[])
+  fullName.vb: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnDataAvailable(System.String, System.Byte())
+  nameWithType: ISmartDataDistributionChannel.OnDataAvailable(String, Byte[])
+  nameWithType.vb: ISmartDataDistributionChannel.OnDataAvailable(String, Byte())
 - uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnDataAvailable*
   name: OnDataAvailable
   href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_OnDataAvailable_
@@ -8029,6 +8072,51 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel
   nameWithType: ISmartDataDistributionChannel.WriteOnChannel
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo
+  name: ISmartDataDistributionChannelInfo
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.html
+  commentId: T:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo
+  nameWithType: ISmartDataDistributionChannelInfo
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.ChannelName
+  name: ChannelName
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannelInfo_ChannelName
+  commentId: P:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.ChannelName
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.ChannelName
+  nameWithType: ISmartDataDistributionChannelInfo.ChannelName
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.ChannelName*
+  name: ChannelName
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannelInfo_ChannelName_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.ChannelName
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.ChannelName
+  nameWithType: ISmartDataDistributionChannelInfo.ChannelName
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.Offset
+  name: Offset
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannelInfo_Offset
+  commentId: P:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.Offset
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.Offset
+  nameWithType: ISmartDataDistributionChannelInfo.Offset
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.Offset*
+  name: Offset
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannelInfo_Offset_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.Offset
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.Offset
+  nameWithType: ISmartDataDistributionChannelInfo.Offset
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.Timestamp
+  name: Timestamp
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannelInfo_Timestamp
+  commentId: P:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.Timestamp
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.Timestamp
+  nameWithType: ISmartDataDistributionChannelInfo.Timestamp
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.Timestamp*
+  name: Timestamp
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannelInfo_Timestamp_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.Timestamp
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.Timestamp
+  nameWithType: ISmartDataDistributionChannelInfo.Timestamp
 - uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership
   name: ISmartDataDistributionMastership
   href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.html
@@ -9071,6 +9159,19 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ChangeChannelDirection
   nameWithType: SmartDataDistributionChannel.ChangeChannelDirection
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ChannelName
+  name: ChannelName
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_ChannelName
+  commentId: P:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ChannelName
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ChannelName
+  nameWithType: SmartDataDistributionChannel.ChannelName
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ChannelName*
+  name: ChannelName
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_ChannelName_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ChannelName
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ChannelName
+  nameWithType: SmartDataDistributionChannel.ChannelName
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ConditionOrError
   name: ConditionOrError
   href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_ConditionOrError
@@ -9134,12 +9235,25 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.Lock
   nameWithType: SmartDataDistributionChannel.Lock
-- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.OnConditionOrError(System.String,MASES.DataDistributionManager.Bindings.Interop.OPERATION_RESULT,System.Int32,System.String)
-  name: OnConditionOrError(String, OPERATION_RESULT, Int32, String)
-  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_OnConditionOrError_System_String_MASES_DataDistributionManager_Bindings_Interop_OPERATION_RESULT_System_Int32_System_String_
-  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.OnConditionOrError(System.String,MASES.DataDistributionManager.Bindings.Interop.OPERATION_RESULT,System.Int32,System.String)
-  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.OnConditionOrError(System.String, MASES.DataDistributionManager.Bindings.Interop.OPERATION_RESULT, System.Int32, System.String)
-  nameWithType: SmartDataDistributionChannel.OnConditionOrError(String, OPERATION_RESULT, Int32, String)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.Offset
+  name: Offset
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_Offset
+  commentId: P:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.Offset
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.Offset
+  nameWithType: SmartDataDistributionChannel.Offset
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.Offset*
+  name: Offset
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_Offset_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.Offset
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.Offset
+  nameWithType: SmartDataDistributionChannel.Offset
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.OnConditionOrError(MASES.DataDistributionManager.Bindings.Interop.OPERATION_RESULT,System.Int32,System.String)
+  name: OnConditionOrError(OPERATION_RESULT, Int32, String)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_OnConditionOrError_MASES_DataDistributionManager_Bindings_Interop_OPERATION_RESULT_System_Int32_System_String_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.OnConditionOrError(MASES.DataDistributionManager.Bindings.Interop.OPERATION_RESULT,System.Int32,System.String)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.OnConditionOrError(MASES.DataDistributionManager.Bindings.Interop.OPERATION_RESULT, System.Int32, System.String)
+  nameWithType: SmartDataDistributionChannel.OnConditionOrError(OPERATION_RESULT, Int32, String)
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.OnConditionOrError*
   name: OnConditionOrError
   href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_OnConditionOrError_
@@ -9147,15 +9261,15 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.OnConditionOrError
   nameWithType: SmartDataDistributionChannel.OnConditionOrError
-- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.OnDataAvailable(System.String,System.String,System.Byte[])
-  name: OnDataAvailable(String, String, Byte[])
-  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_OnDataAvailable_System_String_System_String_System_Byte___
-  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.OnDataAvailable(System.String,System.String,System.Byte[])
-  name.vb: OnDataAvailable(String, String, Byte())
-  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.OnDataAvailable(System.String, System.String, System.Byte[])
-  fullName.vb: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.OnDataAvailable(System.String, System.String, System.Byte())
-  nameWithType: SmartDataDistributionChannel.OnDataAvailable(String, String, Byte[])
-  nameWithType.vb: SmartDataDistributionChannel.OnDataAvailable(String, String, Byte())
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.OnDataAvailable(System.String,System.Byte[])
+  name: OnDataAvailable(String, Byte[])
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_OnDataAvailable_System_String_System_Byte___
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.OnDataAvailable(System.String,System.Byte[])
+  name.vb: OnDataAvailable(String, Byte())
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.OnDataAvailable(System.String, System.Byte[])
+  fullName.vb: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.OnDataAvailable(System.String, System.Byte())
+  nameWithType: SmartDataDistributionChannel.OnDataAvailable(String, Byte[])
+  nameWithType.vb: SmartDataDistributionChannel.OnDataAvailable(String, Byte())
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.OnDataAvailable*
   name: OnDataAvailable
   href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_OnDataAvailable_
@@ -9237,6 +9351,19 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.StopChannel
   nameWithType: SmartDataDistributionChannel.StopChannel
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.Timestamp
+  name: Timestamp
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_Timestamp
+  commentId: P:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.Timestamp
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.Timestamp
+  nameWithType: SmartDataDistributionChannel.Timestamp
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.Timestamp*
+  name: Timestamp
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_Timestamp_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.Timestamp
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.Timestamp
+  nameWithType: SmartDataDistributionChannel.Timestamp
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.Unlock
   name: Unlock()
   href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_Unlock
