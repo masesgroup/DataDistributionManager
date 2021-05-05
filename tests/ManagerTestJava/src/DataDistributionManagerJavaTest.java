@@ -27,7 +27,7 @@ public class DataDistributionManagerJavaTest {
 
 		DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.RECEIVER;
 		MySmartDataDistribution dataDistribution = new MySmartDataDistribution();
-		HRESULT hRes = HRESULT.S_OK;
+		OPERATION_RESULT hRes = OPERATION_RESULT.S_OK;
 		OpenDDSConfiguration conf = new OpenDDSConfiguration();
 		if (args.length == 0) {
 			OpenDDSArgsConfiguration argsConf = conf.new OpenDDSArgsConfiguration();
@@ -105,7 +105,7 @@ public class DataDistributionManagerJavaTest {
 			int counter = 100;
 			String str = "test";
 			while (true) {
-				hRes = HRESULT.S_OK;
+				hRes = OPERATION_RESULT.S_OK;
 				if (direction == DDM_CHANNEL_DIRECTION.TRANSMITTER) {
 					hRes = mytestTopic.WriteOnChannel(str);
 					if (hRes.getSuccess()) {
