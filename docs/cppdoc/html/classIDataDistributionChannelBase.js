@@ -7,7 +7,7 @@ var classIDataDistributionChannelBase =
     [ "GetParameter", "classIDataDistributionChannelBase.html#a3cdc0c1879fc53fd33dd02df084963c0", null ],
     [ "Lock", "classIDataDistributionChannelBase.html#a2236892756ff92c048d12f0eaf126566", null ],
     [ "ReadFromChannel", "classIDataDistributionChannelBase.html#a738be519558d703e920b2650299fa56f", null ],
-    [ "SeekChannel", "classIDataDistributionChannelBase.html#ac0b1042252fdb2ba80f29f051dec12a7", null ],
+    [ "SeekChannel", "classIDataDistributionChannelBase.html#a5e0679665ec4ed1160a531ccd6459656", null ],
     [ "SetParameter", "classIDataDistributionChannelBase.html#af342850516a84c88da2c40431949e9ec", null ],
     [ "SetParameter", "classIDataDistributionChannelBase.html#af28e9eeaae5fe144370252efc6be1617", null ],
     [ "StartChannel", "classIDataDistributionChannelBase.html#ae64dbcb0637fcf8317f4480dd10d32dd", null ],

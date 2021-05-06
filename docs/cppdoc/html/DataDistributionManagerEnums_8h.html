@@ -105,6 +105,10 @@ Typedefs</h2></td></tr>
 <tr class="separator:ae7e5a7bdbdbc20ec961f53a21fe1eca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a354ad40e9e999ca7c31088e244daee91"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="DataDistributionManagerEnums_8h.html#a9a62843916107690600391b9a9c2e5c3">DDM_CLUSTEREVENT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManagerEnums_8h.html#a354ad40e9e999ca7c31088e244daee91">DDM_CLUSTEREVENT</a></td></tr>
 <tr class="separator:a354ad40e9e999ca7c31088e244daee91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad49c7b62e411ec4ffb9281d96963bf6d"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="DataDistributionManagerEnums_8h.html#ae0487af0f0fd841adb81a697c5955b41">DDM_SEEKCONTEXT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManagerEnums_8h.html#ad49c7b62e411ec4ffb9281d96963bf6d">DDM_SEEKCONTEXT</a></td></tr>
+<tr class="separator:ad49c7b62e411ec4ffb9281d96963bf6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ef6c8cc1c42750c92074b49252be116"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="DataDistributionManagerEnums_8h.html#a42dab3f188a5dc64b536c3053220301f">DDM_SEEKKIND</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManagerEnums_8h.html#a9ef6c8cc1c42750c92074b49252be116">DDM_SEEKKIND</a></td></tr>
+<tr class="separator:a9ef6c8cc1c42750c92074b49252be116"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -160,6 +164,16 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a9a62843916107690600391b9a9c2e5c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">DDM_CLUSTEREVENT type.  <a href="DataDistributionManagerEnums_8h.html#a9a62843916107690600391b9a9c2e5c3">More...</a><br /></td></tr>
 <tr class="separator:a9a62843916107690600391b9a9c2e5c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0487af0f0fd841adb81a697c5955b41"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManagerEnums_8h.html#ae0487af0f0fd841adb81a697c5955b41">DDM_SEEKCONTEXT</a> { <a class="el" href="DataDistributionManagerEnums_8h.html#ae0487af0f0fd841adb81a697c5955b41a1b8a8605d2ff5670a215e55c6645e0d9">OFFSET</a> = 0x1
+, <a class="el" href="DataDistributionManagerEnums_8h.html#ae0487af0f0fd841adb81a697c5955b41a87fb568bfdc633ffd5dee0f22cb4606c">TIMESTAMP</a> = 0x2
+ }</td></tr>
+<tr class="memdesc:ae0487af0f0fd841adb81a697c5955b41"><td class="mdescLeft">&#160;</td><td class="mdescRight">DDM_SEEKCONTEXT type.  <a href="DataDistributionManagerEnums_8h.html#ae0487af0f0fd841adb81a697c5955b41">More...</a><br /></td></tr>
+<tr class="separator:ae0487af0f0fd841adb81a697c5955b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42dab3f188a5dc64b536c3053220301f"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DataDistributionManagerEnums_8h.html#a42dab3f188a5dc64b536c3053220301f">DDM_SEEKKIND</a> { <a class="el" href="DataDistributionManagerEnums_8h.html#a42dab3f188a5dc64b536c3053220301fa3a0bc063b6db8cae0361657958be836f">ABSOLUTE</a> = 0x1
+, <a class="el" href="DataDistributionManagerEnums_8h.html#a42dab3f188a5dc64b536c3053220301fac3cb497d8ec3c88b9024774b775358e2">RELATIVE</a> = 0x2
+ }</td></tr>
+<tr class="memdesc:a42dab3f188a5dc64b536c3053220301f"><td class="mdescLeft">&#160;</td><td class="mdescRight">DDM_SEEKKIND type.  <a href="DataDistributionManagerEnums_8h.html#a42dab3f188a5dc64b536c3053220301f">More...</a><br /></td></tr>
+<tr class="separator:a42dab3f188a5dc64b536c3053220301f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>DataDistributionManager library. </p>
@@ -229,6 +243,34 @@ Enumerations</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">typedef enum <a class="el" href="DataDistributionManagerEnums_8h.html#a4b6dc0935a7cadbc0cb564ffb12bec1e">DDM_LOG_LEVEL</a> <a class="el" href="DataDistributionManagerEnums_8h.html#a4b6dc0935a7cadbc0cb564ffb12bec1e">DDM_LOG_LEVEL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad49c7b62e411ec4ffb9281d96963bf6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad49c7b62e411ec4ffb9281d96963bf6d">&#9670;&nbsp;</a></span>DDM_SEEKCONTEXT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="DataDistributionManagerEnums_8h.html#ae0487af0f0fd841adb81a697c5955b41">DDM_SEEKCONTEXT</a> <a class="el" href="DataDistributionManagerEnums_8h.html#ae0487af0f0fd841adb81a697c5955b41">DDM_SEEKCONTEXT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9ef6c8cc1c42750c92074b49252be116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ef6c8cc1c42750c92074b49252be116">&#9670;&nbsp;</a></span>DDM_SEEKKIND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="DataDistributionManagerEnums_8h.html#a42dab3f188a5dc64b536c3053220301f">DDM_SEEKKIND</a> <a class="el" href="DataDistributionManagerEnums_8h.html#a42dab3f188a5dc64b536c3053220301f">DDM_SEEKKIND</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -451,6 +493,70 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a4b6dc0935a7cadbc0cb564ffb12bec1eaec1715cd6b1c4768160c0f14f2d5c856"></a>INFO_LEVEL&#160;</td><td class="fielddoc"><p>Info </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a4b6dc0935a7cadbc0cb564ffb12bec1eae3561dbf665655fe4853f5ef3fdb6450"></a>DEBUG_LEVEL&#160;</td><td class="fielddoc"><p>Debug </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ae0487af0f0fd841adb81a697c5955b41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0487af0f0fd841adb81a697c5955b41">&#9670;&nbsp;</a></span>DDM_SEEKCONTEXT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="DataDistributionManagerEnums_8h.html#ae0487af0f0fd841adb81a697c5955b41">DDM_SEEKCONTEXT</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>DDM_SEEKCONTEXT type. </p>
+<p>Seek context</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classIDataDistributionChannelBase.html#a5e0679665ec4ed1160a531ccd6459656" title="Seeks the channel.">IDataDistributionChannelBase::SeekChannel()</a> </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae0487af0f0fd841adb81a697c5955b41a1b8a8605d2ff5670a215e55c6645e0d9"></a>OFFSET&#160;</td><td class="fielddoc"><p>Seek on offset </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae0487af0f0fd841adb81a697c5955b41a87fb568bfdc633ffd5dee0f22cb4606c"></a>TIMESTAMP&#160;</td><td class="fielddoc"><p>Seek on timestamp </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a42dab3f188a5dc64b536c3053220301f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42dab3f188a5dc64b536c3053220301f">&#9670;&nbsp;</a></span>DDM_SEEKKIND</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="DataDistributionManagerEnums_8h.html#a42dab3f188a5dc64b536c3053220301f">DDM_SEEKKIND</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>DDM_SEEKKIND type. </p>
+<p>Seek kind</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classIDataDistributionChannelBase.html#a5e0679665ec4ed1160a531ccd6459656" title="Seeks the channel.">IDataDistributionChannelBase::SeekChannel()</a> </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a42dab3f188a5dc64b536c3053220301fa3a0bc063b6db8cae0361657958be836f"></a>ABSOLUTE&#160;</td><td class="fielddoc"><p>Absolute seek </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a42dab3f188a5dc64b536c3053220301fac3cb497d8ec3c88b9024774b775358e2"></a>RELATIVE&#160;</td><td class="fielddoc"><p>Relative seek </p>
 </td></tr>
 </table>
 

@@ -1,5 +1,13 @@
 var NAVTREEINDEX1 =
 {
+"pages.html":[],
+"structClusterHealthElement.html":[0,0,0],
+"structClusterHealthElement.html#a9e5328dad0c7a4347135e54c2237ab54":[0,0,0,2],
+"structClusterHealthElement.html#aa3733ab9e950b3b34555acaeb9b957ce":[0,0,0,1],
+"structClusterHealthElement.html#ae776992a7e2e2c79ae8d87d3ce2e79b3":[0,0,0,3],
+"structClusterHealthElement.html#af32653422bf871996c5bea87d351c18d":[0,0,0,0],
+"structUnderlyingEventData.html":[0,0,21],
+"structUnderlyingEventData.html#a079ded7363bf0b295d85791b32eeff33":[0,0,21,5],
 "structUnderlyingEventData.html#a12b66c4401381decefab833a156f8f23":[0,0,21,8],
 "structUnderlyingEventData.html#a23d061a553a03b77bd88f3fe1bbf0704":[0,0,21,1],
 "structUnderlyingEventData.html#a25b41bef048b3b9de860b56fe9b07972":[0,0,21,11],
