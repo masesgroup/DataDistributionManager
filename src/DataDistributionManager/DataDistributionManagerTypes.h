@@ -130,5 +130,6 @@ typedef long OPERATION_RESULT;
 #define DDM_POINTER_NOT_SET DDM_UNMAPPED_ERROR_CONDITION + 7				/**< Pointer not set within subsystem */
 #define DDM_NOT_IMPLEMENTED DDM_UNMAPPED_ERROR_CONDITION + 8				/**< Function not implemented */
 #define DDM_PARAMETER_ERROR DDM_UNMAPPED_ERROR_CONDITION + 9				/**< Errors in parameters */
+#define DDM_SEEK_FAILED DDM_UNMAPPED_ERROR_CONDITION + 10					/**< Errors during seek operation */
 
 #endif // !defined(DATADISTRIBUTIONMANAGERTYPES_H__INCLUDED_)

@@ -126,6 +126,8 @@ public:
 	void CompletelyDisconnected();
 	int64_t GetActualOffset();
 	void SetActualOffset(int64_t val);
+	int64_t GetActualTimestamp();
+	void SetActualTimestamp(int64_t val);
 	OPERATION_RESULT WaitStartupStatus(unsigned long dwMilliseconds);
 	void SetStartupStatus(CHANNEL_STARTUP_TYPE status);
 	CHANNEL_STARTUP_TYPE GetStartupStatus();
@@ -159,6 +161,7 @@ protected:
 	DataDistributionLockWrapper* m_csOffsets;
 	int64_t m_lastRoutedOffset;
 	int64_t m_actualOffset;
+	int64_t m_actualTimestamp;
 
 private:
 	BOOL m_CommitSync;

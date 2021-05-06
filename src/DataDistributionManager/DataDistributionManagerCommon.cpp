@@ -466,6 +466,7 @@ ChannelConfiguration::ChannelConfiguration(const char* channelName, DDM_CHANNEL_
 
 	m_lastRoutedOffset = -1;
 	m_actualOffset = -1;
+	m_actualTimestamp = -1;
 
 	m_pEvtStartupStatus = new DataDistributionEventWrapper();
 	m_pEvtLockState = new DataDistributionEventWrapper();
@@ -564,6 +565,18 @@ void ChannelConfiguration::SetActualOffset(int64_t val)
 {
 	DataDistributionAutoLockWrapper lock(m_csOffsets);
 	m_actualOffset = val;
+}
+
+int64_t ChannelConfiguration::GetActualTimestamp()
+{
+	DataDistributionAutoLockWrapper lock(m_csOffsets);
+	return m_actualTimestamp;
+}
+
+void ChannelConfiguration::SetActualTimestamp(int64_t val)
+{
+	DataDistributionAutoLockWrapper lock(m_csOffsets);
+	m_actualTimestamp = val;
 }
 
 OPERATION_RESULT ChannelConfiguration::WaitStartupStatus(unsigned long dwMilliseconds)

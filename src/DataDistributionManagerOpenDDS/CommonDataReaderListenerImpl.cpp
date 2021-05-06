@@ -69,6 +69,7 @@ void CommonDataReaderListenerImpl::on_data_available(DDS::DataReader_ptr reader)
 				TimeBase::TimeT timestamp = ORBSVCS_Time::to_TimeT(ace_t);
 
 				m_pChannelConfiguration->OnDataAvailable(quote.key, keyLen, quote.buffer.get_buffer(), quote.msgSize, timestamp, si.absolute_generation_rank);
+				m_pChannelConfiguration->SetActualTimestamp(timestamp);
 				m_pChannelConfiguration->SetActualOffset(si.absolute_generation_rank); // this value shall be revised
 			}
 			else if (status == DDS::RETCODE_NO_DATA && m_timeStart.ElapsedMilliseconds() > m_pChannelConfiguration->GetMessageReceiveTimeout())

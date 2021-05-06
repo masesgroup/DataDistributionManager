@@ -624,37 +624,87 @@ OPERATION_RESULT DataDistributionManagerKafka::SeekChannel(CHANNEL_HANDLE_PARAME
 		pChannelConfiguration->OnConditionOrError(DDM_SUBSYSTEM_NOT_STARTED, 0, "SubSystem not started.");
 		return DDM_SUBSYSTEM_NOT_STARTED;
 	}
-
 	std::vector<RdKafka::TopicPartition*> partVector;
 	std::string sTopicName = pChannelConfiguration->GetChannelName();
-	partVector.push_back(RdKafka::TopicPartition::create(sTopicName, 0, position));
-	code = pChannelConfiguration->pConsumer->offsetsForTimes(partVector, pChannelConfiguration->GetChannelSeekTimeout());
+	switch (context)
+	{
+	case DDM_SEEKCONTEXT::OFFSET:
+		int64_t offset;
+		switch (kind)
+		{
+		case DDM_SEEKKIND::ABSOLUTE:
+			if (position < 0)
+			{
+				pChannelConfiguration->OnConditionOrError(DDM_PARAMETER_ERROR, 0, "Offset shall be a positive value.");
+				return DDM_PARAMETER_ERROR;
+			}
+			offset = position;
+			break;
+		case DDM_SEEKKIND::RELATIVE:
+			offset = pChannelConfiguration->GetActualOffset() + position;
+			break;
+		default:
+			break;
+		}
+		partVector.push_back(RdKafka::TopicPartition::create(sTopicName, 0, offset));
+		break;
+	case DDM_SEEKCONTEXT::TIMESTAMP:
+		int64_t timestamp;
+		switch (kind)
+		{
+		case DDM_SEEKKIND::ABSOLUTE:
+			if (position < 0)
+			{
+				pChannelConfiguration->OnConditionOrError(DDM_PARAMETER_ERROR, 0, "Timestamp shall be a positive value.");
+				return DDM_PARAMETER_ERROR;
+			}
+			timestamp = position;
+			break;
+		case DDM_SEEKKIND::RELATIVE:
+			timestamp = pChannelConfiguration->GetActualTimestamp() + position;
+			break;
+		default:
+			break;
+		}
+		partVector.push_back(RdKafka::TopicPartition::create(sTopicName, 0, timestamp));
+		code = pChannelConfiguration->pConsumer->offsetsForTimes(partVector, pChannelConfiguration->GetChannelSeekTimeout());
+		if (code != RdKafka::ERR_NO_ERROR)
+		{
+			LOG_ERROR("Channel %s - offsetsForTimes error: %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", RdKafka::err2str(code).c_str());
+			for (unsigned int i = 0; i < partVector.size(); i++)
+			{
+#ifdef _WIN64
+				LOG_ERROR("Channel %s - offsetsForTimes [channel: %s offset:" PRId64 "]: error: %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", partVector[i]->topic().c_str(), partVector[i]->offset(), RdKafka::err2str(partVector[i]->err()).c_str());
+#else
+				LOG_ERROR("Channel %s - offsetsForTimes [channel: %s offset: %ld ]: error: %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", partVector[i]->topic().c_str(), partVector[i]->offset(), RdKafka::err2str(partVector[i]->err()).c_str());
+#endif
+			}
+
+			return KafkaErrorMapper(code);
+		}
+		break;
+	default:
+		break;
+	}
+
+	OPERATION_RESULT result = DDM_NO_ERROR_CONDITION;
+
 	for (unsigned int i = 0; i < partVector.size(); i++)
 	{
+		code = pChannelConfiguration->pConsumer->seek(*partVector[i], pChannelConfiguration->GetChannelSeekTimeout());
+		if (code != RdKafka::ERR_NO_ERROR)
+		{
 #ifdef _WIN64
-		LOG_ERROR("Channel %s - offsetsForTimes [channel: %s offset:" PRId64 "]: error: %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", partVector[i]->topic().c_str(), partVector[i]->offset(), RdKafka::err2str(partVector[i]->err()).c_str());
+			LOG_ERROR("Channel %s - seek set offset to: " PRId64 "", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", partVector[0]->offset());
 #else
-		LOG_ERROR("Channel %s - offsetsForTimes [channel: %s offset: %ld ]: error: %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", partVector[i]->topic().c_str(), partVector[i]->offset(), RdKafka::err2str(partVector[i]->err()).c_str());
+			LOG_ERROR("Channel %s - seek set offset to: %ld", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", partVector[0]->offset());
 #endif
-	}
-	if (code != RdKafka::ERR_NO_ERROR)
-	{
-		LOG_ERROR("Channel %s - offsetsForTimes error: %s", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", RdKafka::err2str(code).c_str());
-		if (pChannelConfiguration->m_tConsumerThread) pChannelConfiguration->m_tConsumerThread->Stop(INFINITE);
-
-		return KafkaErrorMapper(code);
-	}
-	else
-	{
-#ifdef _WIN64
-		LOG_ERROR("Channel %s - offsetsForTimes set offset to: " PRId64 "", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", partVector[0]->offset());
-#else
-		LOG_ERROR("Channel %s - pChannelConfiguration->pConsumer->offsetsForTimes set offset to: %ld", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", partVector[0]->offset());
-#endif
-		pChannelConfiguration->SetActualOffset(partVector[0]->offset());
+			result = DDM_SEEK_FAILED;
+		}
+		else pChannelConfiguration->SetActualOffset(partVector[i]->offset());
 	}
 
-	return DDM_NO_ERROR_CONDITION;
+	return result;
 }
 
 OPERATION_RESULT DataDistributionManagerKafka::DeleteChannel(CHANNEL_HANDLE_PARAMETER)
@@ -1174,6 +1224,7 @@ void FUNCALL DataDistributionManagerKafka::consumerHandler(ThreadWrapperArg * ar
 					pChannelConfiguration->Log(DDM_LOG_LEVEL::ERROR_LEVEL, "consumerHandler", "%s error: %s", pChannelConfiguration->GetCommitSync() ? "commitSync" : "commitAsync", RdKafka::err2str(code).c_str());
 					pChannelConfiguration->OnConditionOrError(DDM_COMMIT_FAILED, code, "Failed to commit message: %s", RdKafka::err2str(code).c_str());
 				}
+				pChannelConfiguration->SetActualTimestamp(timestamp);
 				pChannelConfiguration->SetActualOffset(p_Msg->offset());
 			}
 		}

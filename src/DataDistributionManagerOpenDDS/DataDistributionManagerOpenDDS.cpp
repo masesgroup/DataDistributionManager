@@ -1397,7 +1397,7 @@ OPERATION_RESULT DataDistributionManagerOpenDDS::SeekChannel(CHANNEL_HANDLE_PARA
 		return DDM_SUBSYSTEM_NOT_STARTED;
 	}
 
-	return DDM_NO_ERROR_CONDITION;
+	return DDM_NOT_IMPLEMENTED;
 }
 
 OPERATION_RESULT DataDistributionManagerOpenDDS::DeleteChannel(CHANNEL_HANDLE_PARAMETER)
@@ -1677,6 +1677,8 @@ void FUNCALL DataDistributionManagerOpenDDS::consumerHandler(ThreadWrapperArg *a
 				TimeBase::TimeT timestamp = ORBSVCS_Time::to_TimeT(ace_t);
 
 				pChannelConfiguration->OnDataAvailable(key, keyLen, data[0].buffer.get_buffer(), data[0].msgSize, timestamp, info[0].absolute_generation_rank);
+				pChannelConfiguration->SetActualTimestamp(timestamp);
+				pChannelConfiguration->SetActualOffset(info[0].absolute_generation_rank); // this value shall be revised
 			}
 			else if (retCodeInner == DDS::RETCODE_NO_DATA)
 			{
@@ -1686,8 +1688,6 @@ void FUNCALL DataDistributionManagerOpenDDS::consumerHandler(ThreadWrapperArg *a
 			{
 				pChannelConfiguration->OnConditionOrError(DDM_UNMAPPED_ERROR_CONDITION, retCodeInner, "See native code error.");
 			}
-
-			pChannelConfiguration->SetActualOffset(info[0].absolute_generation_rank); // this value shall be revised
 		}
 		break;
 		case DDS::RETCODE_TIMEOUT:
