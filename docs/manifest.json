@@ -214,6 +214,28 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/DDM_SEEKCONTEXT.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_SEEKCONTEXT.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/DDM_SEEKKIND.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_SEEKKIND.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "../DataDistributionManagerJava/javadoc/org/mases/datadistributionmanager/DataAvailableListener.html",
       "output": {
         "resource": {
@@ -5397,7 +5419,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html",
-          "hash": "qZJMKOHrVE9rk+pbe3V8gIkLsJTbok2Ykmgb6YY3Bzo="
+          "hash": "Ak50FplGnYAk4ablFZkdGFo+xFojTfwpSrVDjByysd4="
         }
       },
       "is_incremental": false,
@@ -5409,7 +5431,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.html",
-          "hash": "OoAOx7zNN7qA+NhTCFioHm1X6iDglU+Qo0RGTM6zVdE="
+          "hash": "Pb2gVyE8NPipJ57gcxbcbuc9nnRzypvFxr1GRsdtXG8="
         }
       },
       "is_incremental": false,
@@ -5445,7 +5467,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT.html",
-          "hash": "mHrS7CObgc+9lbVsVc1mtClvPaadLO4vk9V6pJsjVcc="
+          "hash": "FONLFUHHpaD6IgSWQJwomfKC14r5idPQDEIU7buyMxY="
         }
       },
       "is_incremental": false,
@@ -5489,6 +5511,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT.html",
+          "hash": "uiiFLFEiWaqZorJvGgYH+pYg2M1lw5fP1PWILa6APiI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND.html",
+          "hash": "Gc2K3TkBCxPwVIXNz3WSEiWtUafl2juu6zNH0GZHimY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.OPERATION_RESULT.yml",
       "output": {
         ".html": {
@@ -5517,7 +5563,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.html",
-          "hash": "nBGMq6/0FiwolXQniLxDvFlLF1z6JVZrZ3bPUIlL8Mw="
+          "hash": "LoHQIp9QXmuQyAe+kkrbS1ORAG0fAKhe4gcTPRjXquQ="
         }
       },
       "is_incremental": false,
@@ -5577,7 +5623,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html",
-          "hash": "xewXTAYVg2RuRIvETRhJeD9mO8zK7pxRusqw/W91M9s="
+          "hash": "QNgNzlrj8SzGCUuI9C7grn6zjdNA3L67oNfiDUA8Pcs="
         }
       },
       "is_incremental": false,
@@ -5637,7 +5683,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "lkQ5LkzoAUlh9EQJV3lMR7tWqls74JVwvB+p62hgGTA="
+          "hash": "jseLihLOOAAI41qJbsL7nnJa0dpDIxyUx5rjx4atNGw="
         }
       },
       "is_incremental": false,
@@ -5935,7 +5981,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 94,
+          "total_file_count": 96,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

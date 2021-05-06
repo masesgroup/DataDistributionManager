@@ -11,7 +11,7 @@
 <script type="text/javascript" src="../../../script.js"></script>
 </head>
 <body class="class-declaration">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -295,10 +295,42 @@ long&nbsp;length)</code></th>
 <td class="colFirst"><code><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#SeekChannel(long)">SeekChannel</a></span>&#8203;(long&nbsp;position)</code></th>
 <td class="colLast">
-<div class="block">Seeks the channel</div>
+<div class="block">Seek the channel using absolute offset</div>
 </td>
 </tr>
 <tr class="rowColor" id="i17">
+<td class="colFirst"><code><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#SeekChannel(long,org.mases.datadistributionmanager.DDM_SEEKCONTEXT,org.mases.datadistributionmanager.DDM_SEEKKIND)">SeekChannel</a></span>&#8203;(long&nbsp;position,
+<a href="DDM_SEEKCONTEXT.html" title="enum in org.mases.datadistributionmanager">DDM_SEEKCONTEXT</a>&nbsp;context,
+<a href="DDM_SEEKKIND.html" title="enum in org.mases.datadistributionmanager">DDM_SEEKKIND</a>&nbsp;kind)</code></th>
+<td class="colLast">
+<div class="block">Seek the channel using absolute or relative offset</div>
+</td>
+</tr>
+<tr class="altColor" id="i18">
+<td class="colFirst"><code><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#SeekChannel(long,org.mases.datadistributionmanager.DDM_SEEKKIND)">SeekChannel</a></span>&#8203;(long&nbsp;position,
+<a href="DDM_SEEKKIND.html" title="enum in org.mases.datadistributionmanager">DDM_SEEKKIND</a>&nbsp;kind)</code></th>
+<td class="colLast">
+<div class="block">Seek the channel using absolute or relative offset</div>
+</td>
+</tr>
+<tr class="rowColor" id="i19">
+<td class="colFirst"><code><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#SeekChannel(java.time.Duration)">SeekChannel</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time" class="externalLink">Duration</a>&nbsp;position)</code></th>
+<td class="colLast">
+<div class="block">Seek the channel by a relative time expressed as <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time" class="externalLink"><code>Duration</code></a> starting
+ from latest known timestamp</div>
+</td>
+</tr>
+<tr class="altColor" id="i20">
+<td class="colFirst"><code><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#SeekChannel(java.util.Date)">SeekChannel</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;position)</code></th>
+<td class="colLast">
+<div class="block">Seek the channel to an absolute timestamp</div>
+</td>
+</tr>
+<tr class="rowColor" id="i21">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#SetParameter(java.lang.String,java.lang.String)">SetParameter</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;paramName,
 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;paramValue)</code></th>
@@ -306,7 +338,7 @@ long&nbsp;length)</code></th>
 <div class="block">Set parameter on channel</div>
 </td>
 </tr>
-<tr class="altColor" id="i18">
+<tr class="altColor" id="i22">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#SetParameter(org.mases.datadistributionmanager.DDM_GENERAL_PARAMETER,java.lang.String)">SetParameter</a></span>&#8203;(<a href="DDM_GENERAL_PARAMETER.html" title="enum in org.mases.datadistributionmanager">DDM_GENERAL_PARAMETER</a>&nbsp;paramId,
 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;paramValue)</code></th>
@@ -314,42 +346,42 @@ long&nbsp;length)</code></th>
 <div class="block">Set parameter on channel</div>
 </td>
 </tr>
-<tr class="rowColor" id="i19">
+<tr class="rowColor" id="i23">
 <td class="colFirst"><code><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#StartChannel(int)">StartChannel</a></span>&#8203;(int&nbsp;timeout)</code></th>
 <td class="colLast">
 <div class="block">Starts the channel</div>
 </td>
 </tr>
-<tr class="altColor" id="i20">
+<tr class="altColor" id="i24">
 <td class="colFirst"><code><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#StopChannel(int)">StopChannel</a></span>&#8203;(int&nbsp;timeout)</code></th>
 <td class="colLast">
 <div class="block">Stops the channel</div>
 </td>
 </tr>
-<tr class="rowColor" id="i21">
+<tr class="rowColor" id="i25">
 <td class="colFirst"><code><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#Unlock()">Unlock</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Unlocks the channel</div>
 </td>
 </tr>
-<tr class="altColor" id="i22">
+<tr class="altColor" id="i26">
 <td class="colFirst"><code><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#WriteOnChannel(byte%5B%5D)">WriteOnChannel</a></span>&#8203;(byte[]&nbsp;buffer)</code></th>
 <td class="colLast">
 <div class="block">Writes on the channel</div>
 </td>
 </tr>
-<tr class="rowColor" id="i23">
+<tr class="rowColor" id="i27">
 <td class="colFirst"><code><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#WriteOnChannel(java.lang.String)">WriteOnChannel</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Writes on the channel</div>
 </td>
 </tr>
-<tr class="altColor" id="i24">
+<tr class="altColor" id="i28">
 <td class="colFirst"><code><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#WriteOnChannel(java.lang.String,byte%5B%5D)">WriteOnChannel</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;key,
 byte[]&nbsp;buffer)</code></th>
@@ -357,7 +389,7 @@ byte[]&nbsp;buffer)</code></th>
 <div class="block">Writes on the channel</div>
 </td>
 </tr>
-<tr class="rowColor" id="i25">
+<tr class="rowColor" id="i29">
 <td class="colFirst"><code><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#WriteOnChannel(java.lang.String,byte%5B%5D,boolean)">WriteOnChannel</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;key,
 byte[]&nbsp;buffer,
@@ -366,7 +398,7 @@ boolean&nbsp;waitAll)</code></th>
 <div class="block">Writes on the channel</div>
 </td>
 </tr>
-<tr class="altColor" id="i26">
+<tr class="altColor" id="i30">
 <td class="colFirst"><code><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#WriteOnChannel(java.lang.String,byte%5B%5D,boolean,long)">WriteOnChannel</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;key,
 byte[]&nbsp;buffer,
@@ -376,7 +408,7 @@ long&nbsp;timestamp)</code></th>
 <div class="block">Writes on the channel</div>
 </td>
 </tr>
-<tr class="rowColor" id="i27">
+<tr class="rowColor" id="i31">
 <td class="colFirst"><code><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#WriteOnChannel(java.lang.String,java.lang.String)">WriteOnChannel</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;key,
 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value)</code></th>
@@ -384,7 +416,7 @@ long&nbsp;timestamp)</code></th>
 <div class="block">Writes on the channel</div>
 </td>
 </tr>
-<tr class="altColor" id="i28">
+<tr class="altColor" id="i32">
 <td class="colFirst"><code><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#WriteOnChannel(java.lang.String,java.lang.String,boolean)">WriteOnChannel</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;key,
 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value,
@@ -393,7 +425,7 @@ boolean&nbsp;waitAll)</code></th>
 <div class="block">Writes on the channel</div>
 </td>
 </tr>
-<tr class="rowColor" id="i29">
+<tr class="rowColor" id="i33">
 <td class="colFirst"><code><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#WriteOnChannel(java.lang.String,java.lang.String,boolean,long)">WriteOnChannel</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;key,
 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;value,
@@ -594,12 +626,83 @@ long&nbsp;timestamp)</code></th>
 <h3><a id="SeekChannel(long)">SeekChannel</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></span>&nbsp;<span class="memberName">SeekChannel</span>&#8203;(<span class="arguments">long&nbsp;position)</span></div>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="ISmartDataDistributionChannel.html#SeekChannel(long)">ISmartDataDistributionChannel</a></code></span></div>
-<div class="block">Seeks the channel</div>
+<div class="block">Seek the channel using absolute offset</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="ISmartDataDistributionChannel.html#SeekChannel(long)">SeekChannel</a></code>&nbsp;in interface&nbsp;<code><a href="ISmartDataDistributionChannel.html" title="interface in org.mases.datadistributionmanager">ISmartDataDistributionChannel</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>position</code> - position</dd>
+<dd><code>position</code> - Seek offset poisition</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager"><code>OPERATION_RESULT</code></a></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="SeekChannel(long,org.mases.datadistributionmanager.DDM_SEEKKIND)">SeekChannel</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></span>&nbsp;<span class="memberName">SeekChannel</span>&#8203;(<span class="arguments">long&nbsp;position,
+<a href="DDM_SEEKKIND.html" title="enum in org.mases.datadistributionmanager">DDM_SEEKKIND</a>&nbsp;kind)</span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="ISmartDataDistributionChannel.html#SeekChannel(long,org.mases.datadistributionmanager.DDM_SEEKKIND)">ISmartDataDistributionChannel</a></code></span></div>
+<div class="block">Seek the channel using absolute or relative offset</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="ISmartDataDistributionChannel.html#SeekChannel(long,org.mases.datadistributionmanager.DDM_SEEKKIND)">SeekChannel</a></code>&nbsp;in interface&nbsp;<code><a href="ISmartDataDistributionChannel.html" title="interface in org.mases.datadistributionmanager">ISmartDataDistributionChannel</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>position</code> - Seek offset poisition</dd>
+<dd><code>kind</code> - <a href="DDM_SEEKKIND.html" title="enum in org.mases.datadistributionmanager"><code>DDM_SEEKKIND</code></a> to use</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager"><code>OPERATION_RESULT</code></a></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="SeekChannel(java.util.Date)">SeekChannel</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></span>&nbsp;<span class="memberName">SeekChannel</span>&#8203;(<span class="arguments"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util" class="externalLink">Date</a>&nbsp;position)</span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="ISmartDataDistributionChannel.html#SeekChannel(java.util.Date)">ISmartDataDistributionChannel</a></code></span></div>
+<div class="block">Seek the channel to an absolute timestamp</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="ISmartDataDistributionChannel.html#SeekChannel(java.util.Date)">SeekChannel</a></code>&nbsp;in interface&nbsp;<code><a href="ISmartDataDistributionChannel.html" title="interface in org.mases.datadistributionmanager">ISmartDataDistributionChannel</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>position</code> - Seek timestamp to an absolute poisition</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager"><code>OPERATION_RESULT</code></a></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="SeekChannel(java.time.Duration)">SeekChannel</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></span>&nbsp;<span class="memberName">SeekChannel</span>&#8203;(<span class="arguments"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time" class="externalLink">Duration</a>&nbsp;position)</span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="ISmartDataDistributionChannel.html#SeekChannel(java.time.Duration)">ISmartDataDistributionChannel</a></code></span></div>
+<div class="block">Seek the channel by a relative time expressed as <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html?is-external=true" title="class or interface in java.time" class="externalLink"><code>Duration</code></a> starting
+ from latest known timestamp</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="ISmartDataDistributionChannel.html#SeekChannel(java.time.Duration)">SeekChannel</a></code>&nbsp;in interface&nbsp;<code><a href="ISmartDataDistributionChannel.html" title="interface in org.mases.datadistributionmanager">ISmartDataDistributionChannel</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>position</code> - Seek timestamp relative poisition</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager"><code>OPERATION_RESULT</code></a></dd>
+</dl>
+</section>
+</li>
+<li class="blockList">
+<section class="detail">
+<h3><a id="SeekChannel(long,org.mases.datadistributionmanager.DDM_SEEKCONTEXT,org.mases.datadistributionmanager.DDM_SEEKKIND)">SeekChannel</a></h3>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType"><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager">OPERATION_RESULT</a></span>&nbsp;<span class="memberName">SeekChannel</span>&#8203;(<span class="arguments">long&nbsp;position,
+<a href="DDM_SEEKCONTEXT.html" title="enum in org.mases.datadistributionmanager">DDM_SEEKCONTEXT</a>&nbsp;context,
+<a href="DDM_SEEKKIND.html" title="enum in org.mases.datadistributionmanager">DDM_SEEKKIND</a>&nbsp;kind)</span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="ISmartDataDistributionChannel.html#SeekChannel(long,org.mases.datadistributionmanager.DDM_SEEKCONTEXT,org.mases.datadistributionmanager.DDM_SEEKKIND)">ISmartDataDistributionChannel</a></code></span></div>
+<div class="block">Seek the channel using absolute or relative offset</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="ISmartDataDistributionChannel.html#SeekChannel(long,org.mases.datadistributionmanager.DDM_SEEKCONTEXT,org.mases.datadistributionmanager.DDM_SEEKKIND)">SeekChannel</a></code>&nbsp;in interface&nbsp;<code><a href="ISmartDataDistributionChannel.html" title="interface in org.mases.datadistributionmanager">ISmartDataDistributionChannel</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>position</code> - Seek offset poisition</dd>
+<dd><code>context</code> - <a href="DDM_SEEKCONTEXT.html" title="enum in org.mases.datadistributionmanager"><code>DDM_SEEKCONTEXT</code></a> to use</dd>
+<dd><code>kind</code> - <a href="DDM_SEEKKIND.html" title="enum in org.mases.datadistributionmanager"><code>DDM_SEEKKIND</code></a> to use</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><a href="OPERATION_RESULT.html" title="class in org.mases.datadistributionmanager"><code>OPERATION_RESULT</code></a></dd>
 </dl>

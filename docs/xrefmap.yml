@@ -7132,6 +7132,42 @@ references:
   commentId: F:MASES.DataDistributionManager.Bindings.Interop.DDM_LOG_LEVEL.WARNING_LEVEL
   fullName: MASES.DataDistributionManager.Bindings.Interop.DDM_LOG_LEVEL.WARNING_LEVEL
   nameWithType: DDM_LOG_LEVEL.WARNING_LEVEL
+- uid: MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT
+  name: DDM_SEEKCONTEXT
+  href: api/MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT.html
+  commentId: T:MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT
+  fullName: MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT
+  nameWithType: DDM_SEEKCONTEXT
+- uid: MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT.OFFSET
+  name: OFFSET
+  href: api/MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT.html#MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKCONTEXT_OFFSET
+  commentId: F:MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT.OFFSET
+  fullName: MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT.OFFSET
+  nameWithType: DDM_SEEKCONTEXT.OFFSET
+- uid: MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT.TIMESTAMP
+  name: TIMESTAMP
+  href: api/MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT.html#MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKCONTEXT_TIMESTAMP
+  commentId: F:MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT.TIMESTAMP
+  fullName: MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT.TIMESTAMP
+  nameWithType: DDM_SEEKCONTEXT.TIMESTAMP
+- uid: MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND
+  name: DDM_SEEKKIND
+  href: api/MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND.html
+  commentId: T:MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND
+  fullName: MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND
+  nameWithType: DDM_SEEKKIND
+- uid: MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND.ABSOLUTE
+  name: ABSOLUTE
+  href: api/MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND.html#MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_ABSOLUTE
+  commentId: F:MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND.ABSOLUTE
+  fullName: MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND.ABSOLUTE
+  nameWithType: DDM_SEEKKIND.ABSOLUTE
+- uid: MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND.RELATIVE
+  name: RELATIVE
+  href: api/MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND.html#MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_RELATIVE
+  commentId: F:MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND.RELATIVE
+  fullName: MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND.RELATIVE
+  nameWithType: DDM_SEEKKIND.RELATIVE
 - uid: MASES.DataDistributionManager.Bindings.Interop.OPERATION_RESULT
   name: OPERATION_RESULT
   href: api/MASES.DataDistributionManager.Bindings.Interop.OPERATION_RESULT.html
@@ -7964,12 +8000,30 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.ReadFromChannel
   nameWithType: ISmartDataDistributionChannel.ReadFromChannel
-- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.Int64)
-  name: SeekChannel(Int64)
-  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SeekChannel_System_Int64_
-  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.Int64)
-  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.Int64)
-  nameWithType: ISmartDataDistributionChannel.SeekChannel(Int64)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.DateTime)
+  name: SeekChannel(DateTime)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SeekChannel_System_DateTime_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.DateTime)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.DateTime)
+  nameWithType: ISmartDataDistributionChannel.SeekChannel(DateTime)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  name: SeekChannel(Int64, DDM_SEEKCONTEXT, DDM_SEEKKIND)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SeekChannel_System_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKCONTEXT_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.Int64, MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT, MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  nameWithType: ISmartDataDistributionChannel.SeekChannel(Int64, DDM_SEEKCONTEXT, DDM_SEEKKIND)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  name: SeekChannel(Int64, DDM_SEEKKIND)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SeekChannel_System_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.Int64, MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  nameWithType: ISmartDataDistributionChannel.SeekChannel(Int64, DDM_SEEKKIND)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.TimeSpan)
+  name: SeekChannel(TimeSpan)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SeekChannel_System_TimeSpan_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.TimeSpan)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.TimeSpan)
+  nameWithType: ISmartDataDistributionChannel.SeekChannel(TimeSpan)
 - uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel*
   name: SeekChannel
   href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SeekChannel_
@@ -8091,6 +8145,19 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.ChannelName
   nameWithType: ISmartDataDistributionChannelInfo.ChannelName
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.DateTime
+  name: DateTime
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannelInfo_DateTime
+  commentId: P:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.DateTime
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.DateTime
+  nameWithType: ISmartDataDistributionChannelInfo.DateTime
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.DateTime*
+  name: DateTime
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannelInfo_DateTime_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.DateTime
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.DateTime
+  nameWithType: ISmartDataDistributionChannelInfo.DateTime
 - uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.Offset
   name: Offset
   href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannelInfo_Offset
@@ -9184,6 +9251,19 @@ references:
   commentId: E:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.DataAvailable
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.DataAvailable
   nameWithType: SmartDataDistributionChannel.DataAvailable
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.DateTime
+  name: DateTime
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_DateTime
+  commentId: P:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.DateTime
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.DateTime
+  nameWithType: SmartDataDistributionChannel.DateTime
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.DateTime*
+  name: DateTime
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_DateTime_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.DateTime
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.DateTime
+  nameWithType: SmartDataDistributionChannel.DateTime
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.DDM_NO_TIMESTAMP
   name: DDM_NO_TIMESTAMP
   href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_DDM_NO_TIMESTAMP
@@ -9293,12 +9373,30 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ReadFromChannel
   nameWithType: SmartDataDistributionChannel.ReadFromChannel
-- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.Int64)
-  name: SeekChannel(Int64)
-  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_System_Int64_
-  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.Int64)
-  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.Int64)
-  nameWithType: SmartDataDistributionChannel.SeekChannel(Int64)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.DateTime)
+  name: SeekChannel(DateTime)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_System_DateTime_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.DateTime)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.DateTime)
+  nameWithType: SmartDataDistributionChannel.SeekChannel(DateTime)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  name: SeekChannel(Int64, DDM_SEEKCONTEXT, DDM_SEEKKIND)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_System_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKCONTEXT_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.Int64, MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT, MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  nameWithType: SmartDataDistributionChannel.SeekChannel(Int64, DDM_SEEKCONTEXT, DDM_SEEKKIND)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  name: SeekChannel(Int64, DDM_SEEKKIND)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_System_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.Int64, MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  nameWithType: SmartDataDistributionChannel.SeekChannel(Int64, DDM_SEEKKIND)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.TimeSpan)
+  name: SeekChannel(TimeSpan)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_System_TimeSpan_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.TimeSpan)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.TimeSpan)
+  nameWithType: SmartDataDistributionChannel.SeekChannel(TimeSpan)
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel*
   name: SeekChannel
   href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_
