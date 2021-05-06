@@ -38,12 +38,13 @@ var searchData=
   ['ddm_5fnot_5fimplemented_61',['DDM_NOT_IMPLEMENTED',['../DataDistributionManagerTypes_8h.html#af6f4f7bd949b7f8c8c0b602f28d20c70',1,'DataDistributionManagerTypes.h']]],
   ['ddm_5fparameter_5ferror_62',['DDM_PARAMETER_ERROR',['../DataDistributionManagerTypes_8h.html#a54905079f65dc60db3e53ad0365c4d9a',1,'DataDistributionManagerTypes.h']]],
   ['ddm_5fpointer_5fnot_5fset_63',['DDM_POINTER_NOT_SET',['../DataDistributionManagerTypes_8h.html#a32fb7a9c8eb7e22c44dba9f78c1f04f8',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5fseekcontext_64',['DDM_SEEKCONTEXT',['../DataDistributionManagerEnums_8h.html#ae0487af0f0fd841adb81a697c5955b41',1,'DDM_SEEKCONTEXT():&#160;DataDistributionManagerEnums.h'],['../DataDistributionManagerEnums_8h.html#ad49c7b62e411ec4ffb9281d96963bf6d',1,'DDM_SEEKCONTEXT():&#160;DataDistributionManagerEnums.h']]],
-  ['ddm_5fseekkind_65',['DDM_SEEKKIND',['../DataDistributionManagerEnums_8h.html#a42dab3f188a5dc64b536c3053220301f',1,'DDM_SEEKKIND():&#160;DataDistributionManagerEnums.h'],['../DataDistributionManagerEnums_8h.html#a9ef6c8cc1c42750c92074b49252be116',1,'DDM_SEEKKIND():&#160;DataDistributionManagerEnums.h']]],
-  ['ddm_5fsubsystem_5fnot_5fstarted_66',['DDM_SUBSYSTEM_NOT_STARTED',['../DataDistributionManagerTypes_8h.html#a630df990c9250bfb7d09cb8c79c73a66',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5ftimeout_67',['DDM_TIMEOUT',['../DataDistributionManagerTypes_8h.html#a3dda9db90bdf61354e605ccd724431ec',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5funmapped_5ferror_5fcondition_68',['DDM_UNMAPPED_ERROR_CONDITION',['../DataDistributionManagerTypes_8h.html#a158e5fb9b2ba665e5ad301792de65a2b',1,'DataDistributionManagerTypes.h']]],
-  ['ddm_5fwrite_5ffailed_69',['DDM_WRITE_FAILED',['../DataDistributionManagerTypes_8h.html#a4c8335c6b7e98570d0c647f92531f05e',1,'DataDistributionManagerTypes.h']]],
-  ['debug_5flevel_70',['DEBUG_LEVEL',['../DataDistributionManagerEnums_8h.html#a4b6dc0935a7cadbc0cb564ffb12bec1eae3561dbf665655fe4853f5ef3fdb6450',1,'DataDistributionManagerEnums.h']]],
-  ['deletechannel_71',['DeleteChannel',['../classIDataDistributionChannelBase.html#a32d9b95131ac72a4023d1dd60df18241',1,'IDataDistributionChannelBase']]]
+  ['ddm_5fseek_5ffailed_64',['DDM_SEEK_FAILED',['../DataDistributionManagerTypes_8h.html#a160265435e6013a1a4346806b85af8eb',1,'DataDistributionManagerTypes.h']]],
+  ['ddm_5fseekcontext_65',['DDM_SEEKCONTEXT',['../DataDistributionManagerEnums_8h.html#ae0487af0f0fd841adb81a697c5955b41',1,'DDM_SEEKCONTEXT():&#160;DataDistributionManagerEnums.h'],['../DataDistributionManagerEnums_8h.html#ad49c7b62e411ec4ffb9281d96963bf6d',1,'DDM_SEEKCONTEXT():&#160;DataDistributionManagerEnums.h']]],
+  ['ddm_5fseekkind_66',['DDM_SEEKKIND',['../DataDistributionManagerEnums_8h.html#a42dab3f188a5dc64b536c3053220301f',1,'DDM_SEEKKIND():&#160;DataDistributionManagerEnums.h'],['../DataDistributionManagerEnums_8h.html#a9ef6c8cc1c42750c92074b49252be116',1,'DDM_SEEKKIND():&#160;DataDistributionManagerEnums.h']]],
+  ['ddm_5fsubsystem_5fnot_5fstarted_67',['DDM_SUBSYSTEM_NOT_STARTED',['../DataDistributionManagerTypes_8h.html#a630df990c9250bfb7d09cb8c79c73a66',1,'DataDistributionManagerTypes.h']]],
+  ['ddm_5ftimeout_68',['DDM_TIMEOUT',['../DataDistributionManagerTypes_8h.html#a3dda9db90bdf61354e605ccd724431ec',1,'DataDistributionManagerTypes.h']]],
+  ['ddm_5funmapped_5ferror_5fcondition_69',['DDM_UNMAPPED_ERROR_CONDITION',['../DataDistributionManagerTypes_8h.html#a158e5fb9b2ba665e5ad301792de65a2b',1,'DataDistributionManagerTypes.h']]],
+  ['ddm_5fwrite_5ffailed_70',['DDM_WRITE_FAILED',['../DataDistributionManagerTypes_8h.html#a4c8335c6b7e98570d0c647f92531f05e',1,'DataDistributionManagerTypes.h']]],
+  ['debug_5flevel_71',['DEBUG_LEVEL',['../DataDistributionManagerEnums_8h.html#a4b6dc0935a7cadbc0cb564ffb12bec1eae3561dbf665655fe4853f5ef3fdb6450',1,'DataDistributionManagerEnums.h']]],
+  ['deletechannel_72',['DeleteChannel',['../classIDataDistributionChannelBase.html#a32d9b95131ac72a4023d1dd60df18241',1,'IDataDistributionChannelBase']]]
 ];

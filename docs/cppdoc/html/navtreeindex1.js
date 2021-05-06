@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"index.html":[],
 "pages.html":[],
 "structClusterHealthElement.html":[0,0,0],
 "structClusterHealthElement.html#a9e5328dad0c7a4347135e54c2237ab54":[0,0,0,2],
