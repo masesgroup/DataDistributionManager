@@ -16,6 +16,7 @@ var DataDistributionManagerTypes_8h =
     [ "DDM_NOT_IMPLEMENTED", "DataDistributionManagerTypes_8h.html#af6f4f7bd949b7f8c8c0b602f28d20c70", null ],
     [ "DDM_PARAMETER_ERROR", "DataDistributionManagerTypes_8h.html#a54905079f65dc60db3e53ad0365c4d9a", null ],
     [ "DDM_POINTER_NOT_SET", "DataDistributionManagerTypes_8h.html#a32fb7a9c8eb7e22c44dba9f78c1f04f8", null ],
+    [ "DDM_SEEK_FAILED", "DataDistributionManagerTypes_8h.html#a160265435e6013a1a4346806b85af8eb", null ],
     [ "DDM_SUBSYSTEM_NOT_STARTED", "DataDistributionManagerTypes_8h.html#a630df990c9250bfb7d09cb8c79c73a66", null ],
     [ "DDM_TIMEOUT", "DataDistributionManagerTypes_8h.html#a3dda9db90bdf61354e605ccd724431ec", null ],
     [ "DDM_UNMAPPED_ERROR_CONDITION", "DataDistributionManagerTypes_8h.html#a158e5fb9b2ba665e5ad301792de65a2b", null ],

@@ -64,7 +64,13 @@ void CommonDataReaderListenerImpl::on_data_available(DDS::DataReader_ptr reader)
 				++count;
 				const char* key = quote.key;
 				size_t keyLen = (key != NULL) ? strlen(key) : 0;
-				m_pChannelConfiguration->OnDataAvailable(quote.key, keyLen, quote.buffer.get_buffer(), quote.msgSize);
+
+				ACE_Time_Value ace_t(si.source_timestamp.sec, si.source_timestamp.nanosec * 1000);
+				TimeBase::TimeT timestamp = ORBSVCS_Time::to_TimeT(ace_t);
+
+				m_pChannelConfiguration->OnDataAvailable(quote.key, keyLen, quote.buffer.get_buffer(), quote.msgSize, timestamp, si.absolute_generation_rank);
+				m_pChannelConfiguration->SetActualTimestamp(timestamp);
+				m_pChannelConfiguration->SetActualOffset(si.absolute_generation_rank); // this value shall be revised
 			}
 			else if (status == DDS::RETCODE_NO_DATA && m_timeStart.ElapsedMilliseconds() > m_pChannelConfiguration->GetMessageReceiveTimeout())
 			{

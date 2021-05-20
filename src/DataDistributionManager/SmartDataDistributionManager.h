@@ -209,12 +209,26 @@ public:
 	 */
 	const char *GetChannelName();
 	/**
+	* @brief Returns the timestamp
+	*
+	* @returns Milliseconds since epoch (UTC)
+	*/
+	int64_t GetTimestamp();
+	/**
+	* @brief Returns the actual channel offset
+	*
+	* @returns the offset of data
+	*/
+	int64_t GetOffset();
+	/**
 	 * @brief Function to override to receive data available
 	 * 
 	 * \p key the key of the message, NULL if the key was omitted in transmission
 	 * \p keyLen the length of key
 	 * \p buffer the data buffer received
 	 * \p len the length of the buffer
+	 * \p timestamp The timestamp associated to the data: Milliseconds since epoch (UTC).
+	 * \p offset The offset associated to the data
 	 * 
 	 */
 	virtual void OnDataAvailable(const char *key, size_t keyLen, const void *buffer, const size_t len);
@@ -224,6 +238,8 @@ public:
 	 * \p key the key of the message, NULL if the key was omitted in transmission
 	 * \p buffer the data buffer received
 	 * \p len the length of the buffer
+	 * \p timestamp The timestamp associated to the data: Milliseconds since epoch (UTC).
+	 * \p offset The offset associated to the data
 	 * 
 	 */
 	virtual void OnDataAvailable(const std::string key, const void *buffer, const size_t len);
@@ -258,6 +274,8 @@ protected:
 
 private:
 	const char *m_ChannelName;
+	int64_t m_timestamp;
+	int64_t m_offset;
 	CHANNEL_HANDLE m_channelHandle;
 	IDataDistributionChannelBase *m_pIDataDistributionChannelBase;
 	DDM_CHANNEL_DIRECTION m_Direction;

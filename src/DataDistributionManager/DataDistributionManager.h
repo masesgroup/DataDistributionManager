@@ -272,15 +272,17 @@ public:
  */
 typedef struct DDM_EXPORT UnderlyingEventData
 {
-	const char *ChannelName;				  /*!< Channel name associated to UnderlyingEventData */
-	BOOL IsDataAvailable;					  /*!< TRUE if data are available, otherwise FALSE */
-	const char *Key;						  /*!< The key of the message associated to UnderlyingEventData. @remarks Valid only if IsDataAvailable is TRUE */
-	size_t KeyLen;							  /*!< The length of Key associated to UnderlyingEventData. @remarks Valid only if IsDataAvailable is TRUE */
-	const void *Buffer;						  /*!< The buffer of the message associated to UnderlyingEventData. @remarks Valid only if IsDataAvailable is TRUE */
-	size_t BufferLength;					  /*!< The length of the Buffer associated to UnderlyingEventData. @remarks Valid only if IsDataAvailable is TRUE */
-	OPERATION_RESULT Condition;				  /*!< OPERATION_RESULT associated to UnderlyingEventData. @remarks Valid only if IsDataAvailable is FALSE */
-	int NativeCode;							  /*!< Native code from subsystem associated to Condition of UnderlyingEventData. @remarks Valid only if IsDataAvailable is TRUE */
-	const char *SubSystemReason;			  /*!< String reason from subsystem associated to NativeCode of UnderlyingEventData. @remarks Valid only if IsDataAvailable is TRUE */
+	const char *ChannelName;			/*!< Channel name associated to UnderlyingEventData */
+	BOOL IsDataAvailable;				/*!< TRUE if data are available, otherwise FALSE */
+	int64_t Offset;						/*!< The offset associated to the data */
+	int64_t Timestamp;					/*!< The timestamp associated to the data: Milliseconds since epoch (UTC). */
+	const char *Key;					/*!< The key of the message associated to UnderlyingEventData. @remarks Valid only if IsDataAvailable is TRUE */
+	size_t KeyLen;						/*!< The length of Key associated to UnderlyingEventData. @remarks Valid only if IsDataAvailable is TRUE */
+	const void *Buffer;					/*!< The buffer of the message associated to UnderlyingEventData. @remarks Valid only if IsDataAvailable is TRUE */
+	size_t BufferLength;				/*!< The length of the Buffer associated to UnderlyingEventData. @remarks Valid only if IsDataAvailable is TRUE */
+	OPERATION_RESULT Condition;			/*!< OPERATION_RESULT associated to UnderlyingEventData. @remarks Valid only if IsDataAvailable is FALSE */
+	int NativeCode;						/*!< Native code from subsystem associated to Condition of UnderlyingEventData. @remarks Valid only if IsDataAvailable is TRUE */
+	const char *SubSystemReason;		/*!< String reason from subsystem associated to NativeCode of UnderlyingEventData. @remarks Valid only if IsDataAvailable is TRUE */
 
 	/**
 	 * @brief Initialize a new UnderlyingEventData
@@ -296,6 +298,8 @@ typedef struct DDM_EXPORT UnderlyingEventData
 		ChannelName = channelName;
 		Condition = DDM_NO_ERROR_CONDITION;
 		IsDataAvailable = FALSE;
+		Offset = -1;
+		Timestamp = -1;
 		Key = NULL;
 		KeyLen = 0;
 		Buffer = NULL;
@@ -313,11 +317,15 @@ typedef struct DDM_EXPORT UnderlyingEventData
 	 * \p keyLen of the \p key associated to the message received
 	 * \p buffer the buffer associated to the message received
 	 * \p bufferLength of the \p buffer associated to the message received
+	 * \p timestamp The timestamp associated to the data: Milliseconds since epoch (UTC).
+	 * \p offset The offset associated to the data
 	 * 
 	 * @remarks it used internally
 	 */
-	UnderlyingEventData(const char *channelName, const char *key, size_t keyLen, const void *buffer, size_t bufferLength) : UnderlyingEventData(channelName)
+	UnderlyingEventData(const char *channelName, const char *key, size_t keyLen, const void *buffer, size_t bufferLength, int64_t timestamp = -1, int64_t offset = -1) : UnderlyingEventData(channelName)
 	{
+		Offset = offset;
+		Timestamp = timestamp;
 		Key = key;
 		KeyLen = keyLen;
 		Buffer = buffer;
@@ -743,10 +751,12 @@ public:
 	 *
 	 * \p channelHandle the CHANNEL_HANDLE of the channel return from IDataDistributionChannelBase::CreateChannel
 	 * \p position the new channel position
+	 * \p context the DDM_SEEKCONTEXT to use
+	 * \p kind the DDM_SEEKKIND to use
 	 * 
 	 * @returns the OPERATION_RESULT of the operation
 	 */
-	virtual OPERATION_RESULT SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position) = 0;
+	virtual OPERATION_RESULT SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position, DDM_SEEKCONTEXT context = DDM_SEEKCONTEXT::OFFSET, DDM_SEEKKIND kind = DDM_SEEKKIND::ABSOLUTE) = 0;
 	/**
 	 * @brief Deletes the channel
 	 *

@@ -72,7 +72,7 @@ public:
 	virtual const char* GetParameter(CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId);
 	virtual OPERATION_RESULT Lock(CHANNEL_HANDLE_PARAMETER, unsigned long timeout);
 	virtual OPERATION_RESULT Unlock(CHANNEL_HANDLE_PARAMETER);
-	virtual OPERATION_RESULT SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position);
+	virtual OPERATION_RESULT SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position, DDM_SEEKCONTEXT context = DDM_SEEKCONTEXT::OFFSET, DDM_SEEKKIND kind = DDM_SEEKKIND::ABSOLUTE);
 	virtual OPERATION_RESULT DeleteChannel(CHANNEL_HANDLE_PARAMETER);
 	virtual OPERATION_RESULT WriteOnChannel(CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll = FALSE, const int64_t timestamp = DDM_NO_TIMESTAMP);
 	virtual OPERATION_RESULT ReadFromChannel(CHANNEL_HANDLE_PARAMETER, int64_t offset, size_t *dataLen, void **param);
@@ -118,14 +118,16 @@ public:
 	DDM_CHANNEL_DIRECTION GetDirection();
 	void SetDirection(DDM_CHANNEL_DIRECTION direction);
 	DataDistributionCommon* GetManager();
-	void OnDataAvailable(const char* key, size_t keyLen, void* buffer, size_t len);
-	void OnDataAvailable(const CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void* buffer, size_t len);
+	void OnDataAvailable(const char* key, size_t keyLen, void* buffer, size_t len, int64_t timestamp = -1, int64_t offset = -1);
+	void OnDataAvailable(const CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void* buffer, size_t len, int64_t timestamp = -1, int64_t offset = -1);
 	void OnConditionOrError(OPERATION_RESULT errorCode, int nativeCode, const char* subSystemReason, ...);
 	void OnConditionOrError(const CHANNEL_HANDLE_PARAMETER, OPERATION_RESULT errorCode, int nativeCode, const char* subSystemReason, ...);
 	void Log(const DDM_LOG_LEVEL level, const char* function, const char* format, ...);
 	void CompletelyDisconnected();
 	int64_t GetActualOffset();
 	void SetActualOffset(int64_t val);
+	int64_t GetActualTimestamp();
+	void SetActualTimestamp(int64_t val);
 	OPERATION_RESULT WaitStartupStatus(unsigned long dwMilliseconds);
 	void SetStartupStatus(CHANNEL_STARTUP_TYPE status);
 	CHANNEL_STARTUP_TYPE GetStartupStatus();
@@ -159,6 +161,7 @@ protected:
 	DataDistributionLockWrapper* m_csOffsets;
 	int64_t m_lastRoutedOffset;
 	int64_t m_actualOffset;
+	int64_t m_actualTimestamp;
 
 private:
 	BOOL m_CommitSync;

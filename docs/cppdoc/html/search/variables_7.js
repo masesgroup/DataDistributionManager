@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['serverid_289',['ServerId',['../structClusterHealthElement.html#aa3733ab9e950b3b34555acaeb9b957ce',1,'ClusterHealthElement']]],
-  ['status_290',['Status',['../structClusterHealthElement.html#a9e5328dad0c7a4347135e54c2237ab54',1,'ClusterHealthElement']]],
-  ['subsystemreason_291',['SubSystemReason',['../structUnderlyingEventData.html#a363669e6a6738e2ad6edd9158ae07d8a',1,'UnderlyingEventData']]]
+  ['offset_302',['Offset',['../structUnderlyingEventData.html#a25b41bef048b3b9de860b56fe9b07972',1,'UnderlyingEventData']]]
 ];

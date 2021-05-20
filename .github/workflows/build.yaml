@@ -200,12 +200,15 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Install gpg secret key
+        id: installGPGKeyForMaven
+        continue-on-error: true
         run: |
           cat <(echo -e "${{ secrets.MAVEN_GPG_PRIVATE_KEY }}") | gpg --batch --import
           gpg --list-secret-keys --keyid-format LONG
         shell: bash
 
       - name: set up msvc env
+        if: ${{ github.repository_owner != 'masesgroup' || (github.repository_owner == 'masesgroup' && steps.installGPGKeyForMaven.outcome == 'success') }}
         uses: ilammy/msvc-dev-cmd@v1.5.0
       
       - name: Build Common Tools
@@ -349,7 +352,7 @@ jobs:
           Copy-Item .\Output\x64\*.pdb .\OutputPackage\pdb\x64\ -Force
           Copy-Item .\Output\pdb64\*.pdb .\OutputPackage\pdb\x64\ -Force
           Copy-Item .\LICENSE .\OutputPackage\licenses\LICENSE.datadistributionmanager -Force
-          Copy-Item .\src\packages\librdkafka.redist.1.6.0\LICENSES.txt .\OutputPackage\licenses\LICENSE.librdkafka -Force
+          Copy-Item .\src\packages\librdkafka.redist.1.6.1\LICENSES.txt .\OutputPackage\licenses\LICENSE.librdkafka -Force
           Copy-Item .\third_party\OpenDDS\LICENSE .\OutputPackage\licenses\LICENSE.opendds -Force
           Compress-Archive -Path .\OutputPackage\* -DestinationPath .\OutputPackage\DataDistributionManager.zip
 
@@ -372,6 +375,8 @@ jobs:
           gpg-passphrase: MAVEN_GPG_PASSPHRASE # env variable for GPG private key passphrase
 
       - name: Publish to Apache Maven Central
+        id: publishOnMaven
+        continue-on-error: true
         shell: bash
         run: mvn --file ./packaging/maven/pom.xml --no-transfer-progress --batch-mode -Dgpg.passphrase=${{ secrets.MAVEN_GPG_PASSPHRASE }} deploy
         env:
@@ -380,6 +385,7 @@ jobs:
           MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
        
       - name: Build Java Binder
+        if: ${{ github.repository_owner != 'masesgroup' || (github.repository_owner == 'masesgroup' && steps.publishOnMaven.outcome == 'success') }}
         shell: cmd
         run: |
           cd src\DataDistributionManagerJava

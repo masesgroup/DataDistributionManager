@@ -166,12 +166,12 @@ namespace ManagerTestNet2
 
         private static void TestChannel_ConditionOrError(object sender, ConditionOrErrorEventArgs e)
         {
-            Console.WriteLine("Received event from {0} with ErrorCode {1} NativeCode {2} SubSystemReason {3}", e.ChannelName, e.ErrorCode, e.NativeCode, e.SubSystemReason);
+            Console.WriteLine("Received event from {0} with ErrorCode {1} NativeCode {2} SubSystemReason {3}", e.ChannelInfo.ChannelName, e.ErrorCode, e.NativeCode, e.SubSystemReason);
         }
 
         private static void TestChannel_DataAvailable(object sender, DataAvailableEventArgs e)
         {
-            Console.WriteLine("Received data from {0} with key {1} and buffer {2}", e.ChannelName, e.Key, e.DecodedString);
+            Console.WriteLine("Received data from {0} with key {1} and buffer {2} at offset {3}", e.ChannelInfo.ChannelName, e.Key, e.DecodedString, e.ChannelInfo.Offset);
         }
 
         private static void DataDistribution_LoggingEvent(object sender, LoggingEventArgs e)
