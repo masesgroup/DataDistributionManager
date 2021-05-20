@@ -62,7 +62,7 @@ extern "C" {
 	DLLEXPORT const char* DLLCALL IDataDistributionSubsystem_GetParameter2(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, DDM_GENERAL_PARAMETER paramId);
 	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_Lock(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, unsigned long timeout);
 	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_Unlock(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER);
-	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_SeekChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, int64_t position);
+	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_SeekChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, int64_t position, DDM_SEEKCONTEXT context, DDM_SEEKKIND kind);
 	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_DeleteChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER);
 	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_WriteOnChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void *param, size_t dataLen, const BOOL waitAll = FALSE, const int64_t timestamp = -1);
 	DLLEXPORT OPERATION_RESULT DLLCALL IDataDistributionSubsystem_ReadFromChannel(void* IDataDistributionSubsystem_instance, CHANNEL_HANDLE_PARAMETER, int64_t offset, size_t* dataLen, void** param);

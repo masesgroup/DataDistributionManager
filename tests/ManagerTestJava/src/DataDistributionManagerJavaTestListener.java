@@ -32,7 +32,7 @@ public class DataDistributionManagerJavaTestListener {
 				System.out.println(logStr);
 			}
 		});
-		HRESULT hRes = HRESULT.S_OK;
+		OPERATION_RESULT hRes = OPERATION_RESULT.S_OK;
 		OpenDDSConfiguration conf = new OpenDDSConfiguration();
 		if (args.length == 0) {
 			OpenDDSArgsConfiguration argsConf = conf.new OpenDDSArgsConfiguration();
@@ -96,17 +96,17 @@ public class DataDistributionManagerJavaTestListener {
 		}
 
 		mytestTopic.addListener(new DataAvailableListener() {
-			public void OnDataAvailable(String channelName, String key, byte[] buffer) {
+			public void OnDataAvailable(ISmartDataDistributionChannelInfo info, String key, byte[] buffer) {
 				String s = new String(buffer);
-				System.out.println(String.format("Channel %s with key %s is saying %s", channelName, key, s));
+				System.out.println(String.format("Channel %s with key %s is saying %s", info.getChannelName(), key, s));
 			}
 		});
 
 		mytestTopic.addListener(new ConditionOrErrorListener() {
-			public void OnConditionOrError(String channelName, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode,
+			public void OnConditionOrError(ISmartDataDistributionChannelInfo info, OPERATION_RESULT errorCode, int nativeCode,
 					String subSystemReason) {
-				System.out.println(String.format("Channel %s with errorCode %s nativeCode %d subSystemReason %s",
-						channelName, (errorCode != null) ? errorCode.name() : "", nativeCode, subSystemReason));
+				System.out.println(String.format("Channel %s with errorCode %d nativeCode %d subSystemReason %s",
+						info.getChannelName(), (errorCode != null) ? errorCode.getValue() : "", nativeCode, subSystemReason));
 			}
 		});
 
@@ -119,11 +119,11 @@ public class DataDistributionManagerJavaTestListener {
 			int counter = 100;
 			String str = "test";
 			while (true) {
-				hRes = HRESULT.S_OK;
+				hRes = OPERATION_RESULT.S_OK;
 				if (direction == DDM_CHANNEL_DIRECTION.TRANSMITTER) {
 					hRes = mytestTopic.WriteOnChannel(str);
 				}
-				if (hRes == HRESULT.S_OK) {
+				if (hRes == OPERATION_RESULT.S_OK) {
 					str = String.format("%d", counter++);
 					if ((counter % THRESHOLD) == 0) {
 						String key = String.format("SendData Reached %d", counter);

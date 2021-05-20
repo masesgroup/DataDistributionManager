@@ -5,6 +5,8 @@ var DataDistributionManagerEnums_8h =
     [ "DDM_GENERAL_PARAMETER", "DataDistributionManagerEnums_8h.html#a0c86f74eba4db30a27157f14f1fa8aa8", null ],
     [ "DDM_INSTANCE_STATE", "DataDistributionManagerEnums_8h.html#ae7e5a7bdbdbc20ec961f53a21fe1eca7", null ],
     [ "DDM_LOG_LEVEL", "DataDistributionManagerEnums_8h.html#abdf142af4f780fc927bae0a54be7c571", null ],
+    [ "DDM_SEEKCONTEXT", "DataDistributionManagerEnums_8h.html#ad49c7b62e411ec4ffb9281d96963bf6d", null ],
+    [ "DDM_SEEKKIND", "DataDistributionManagerEnums_8h.html#a9ef6c8cc1c42750c92074b49252be116", null ],
     [ "DDM_CHANNEL_DIRECTION", "DataDistributionManagerEnums_8h.html#a2481cc88776b430e9f0c089fdd71fe6b", [
       [ "TRANSMITTER", "DataDistributionManagerEnums_8h.html#a2481cc88776b430e9f0c089fdd71fe6baca98e7167673b196ba12355b84c679c1", null ],
       [ "RECEIVER", "DataDistributionManagerEnums_8h.html#a2481cc88776b430e9f0c089fdd71fe6bac2e1283bad3ce85398a1c20af44a289d", null ],
@@ -42,5 +44,13 @@ var DataDistributionManagerEnums_8h =
       [ "WARNING_LEVEL", "DataDistributionManagerEnums_8h.html#a4b6dc0935a7cadbc0cb564ffb12bec1ea4056812462ccb3cf3b3bb4571239d565", null ],
       [ "INFO_LEVEL", "DataDistributionManagerEnums_8h.html#a4b6dc0935a7cadbc0cb564ffb12bec1eaec1715cd6b1c4768160c0f14f2d5c856", null ],
       [ "DEBUG_LEVEL", "DataDistributionManagerEnums_8h.html#a4b6dc0935a7cadbc0cb564ffb12bec1eae3561dbf665655fe4853f5ef3fdb6450", null ]
+    ] ],
+    [ "DDM_SEEKCONTEXT", "DataDistributionManagerEnums_8h.html#ae0487af0f0fd841adb81a697c5955b41", [
+      [ "OFFSET", "DataDistributionManagerEnums_8h.html#ae0487af0f0fd841adb81a697c5955b41a1b8a8605d2ff5670a215e55c6645e0d9", null ],
+      [ "TIMESTAMP", "DataDistributionManagerEnums_8h.html#ae0487af0f0fd841adb81a697c5955b41a87fb568bfdc633ffd5dee0f22cb4606c", null ]
+    ] ],
+    [ "DDM_SEEKKIND", "DataDistributionManagerEnums_8h.html#a42dab3f188a5dc64b536c3053220301f", [
+      [ "ABSOLUTE", "DataDistributionManagerEnums_8h.html#a42dab3f188a5dc64b536c3053220301fa3a0bc063b6db8cae0361657958be836f", null ],
+      [ "RELATIVE", "DataDistributionManagerEnums_8h.html#a42dab3f188a5dc64b536c3053220301fac3cb497d8ec3c88b9024774b775358e2", null ]
     ] ]
 ];

@@ -234,10 +234,10 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 /*
  * Class:     org_mases_datadistributionmanager_NativeInterface
  * Method:    IDataDistributionSubsystem_SeekChannel
- * Signature: (JJJ)J
+ * Signature: (JJJII)J
  */
 JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_IDataDistributionSubsystem_1SeekChannel
-  (JNIEnv *, jclass, jlong, jlong, jlong);
+  (JNIEnv *, jclass, jlong, jlong, jlong, jint, jint);
 
 /*
  * Class:     org_mases_datadistributionmanager_NativeInterface

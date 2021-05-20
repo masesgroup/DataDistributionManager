@@ -122,6 +122,16 @@ const char* SmartDataDistributionChannel::GetChannelName()
 	return m_ChannelName;
 }
 
+int64_t SmartDataDistributionChannel::GetTimestamp()
+{
+	return m_timestamp;
+}
+
+int64_t SmartDataDistributionChannel::GetOffset()
+{
+	return m_offset;
+}
+
 void SmartDataDistributionChannel::OnDataAvailable(const char* key, size_t keyLen, const void* buffer, const size_t len)
 {
 	char* p = (char*)buffer;
@@ -147,6 +157,8 @@ void SmartDataDistributionChannel::OnUnderlyingEvent(const CHANNEL_HANDLE_PARAME
 {
 	if (uEvent->IsDataAvailable)
 	{
+		m_timestamp = uEvent->Timestamp;
+		m_offset = uEvent->Offset;
 		OnDataAvailable(uEvent->Key, uEvent->KeyLen, uEvent->Buffer, uEvent->BufferLength);
 	}
 	else

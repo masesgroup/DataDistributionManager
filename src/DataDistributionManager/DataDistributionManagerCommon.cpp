@@ -341,7 +341,7 @@ OPERATION_RESULT DataDistributionCommon::Unlock(CHANNEL_HANDLE_PARAMETER)
 	return DDM_NOT_IMPLEMENTED;
 }
 
-OPERATION_RESULT DataDistributionCommon::SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position)
+OPERATION_RESULT DataDistributionCommon::SeekChannel(CHANNEL_HANDLE_PARAMETER, int64_t position, DDM_SEEKCONTEXT context, DDM_SEEKKIND kind)
 {
 	TRACESTART("DataDistributionCommon", "SeekChannel");
 	LOG_WARNING0("Not Implemented in subclass");
@@ -466,6 +466,7 @@ ChannelConfiguration::ChannelConfiguration(const char* channelName, DDM_CHANNEL_
 
 	m_lastRoutedOffset = -1;
 	m_actualOffset = -1;
+	m_actualTimestamp = -1;
 
 	m_pEvtStartupStatus = new DataDistributionEventWrapper();
 	m_pEvtLockState = new DataDistributionEventWrapper();
@@ -503,14 +504,14 @@ DataDistributionCommon* ChannelConfiguration::GetManager()
 	return m_pMainManager;
 }
 
-void ChannelConfiguration::OnDataAvailable(const char* key, size_t keyLen, void* buffer, size_t len)
+void ChannelConfiguration::OnDataAvailable(const char* key, size_t keyLen, void* buffer, size_t len, int64_t timestamp, int64_t offset)
 {
-	OnDataAvailable(this, key, keyLen, buffer, len);
+	OnDataAvailable(this, key, keyLen, buffer, len, timestamp, offset);
 }
 
-void ChannelConfiguration::OnDataAvailable(const CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void* buffer, size_t len)
+void ChannelConfiguration::OnDataAvailable(const CHANNEL_HANDLE_PARAMETER, const char* key, size_t keyLen, void* buffer, size_t len, int64_t timestamp, int64_t offset)
 {
-	UnderlyingEventData pData(m_pChannelName, key, keyLen, buffer, len);
+	UnderlyingEventData pData(m_pChannelName, key, keyLen, buffer, len, timestamp, offset);
 	if (dataCb != NULL)
 	{
 		dataCb->OnUnderlyingEvent(this, &pData);
@@ -564,6 +565,18 @@ void ChannelConfiguration::SetActualOffset(int64_t val)
 {
 	DataDistributionAutoLockWrapper lock(m_csOffsets);
 	m_actualOffset = val;
+}
+
+int64_t ChannelConfiguration::GetActualTimestamp()
+{
+	DataDistributionAutoLockWrapper lock(m_csOffsets);
+	return m_actualTimestamp;
+}
+
+void ChannelConfiguration::SetActualTimestamp(int64_t val)
+{
+	DataDistributionAutoLockWrapper lock(m_csOffsets);
+	m_actualTimestamp = val;
 }
 
 OPERATION_RESULT ChannelConfiguration::WaitStartupStatus(unsigned long dwMilliseconds)

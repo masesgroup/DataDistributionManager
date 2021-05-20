@@ -19,14 +19,14 @@
 import org.mases.datadistributionmanager.*;
 
 public class MySmartDataDistributionTopic extends SmartDataDistributionChannel {
-    public void OnDataAvailable(String channelName, String key, byte[] buffer) {
+    public void OnDataAvailable(String key, byte[] buffer) {
         String s = new String(buffer);
-        System.out.println(String.format("Channel %s with key %s is saying %s", channelName, key, s));
+        System.out.println(String.format("Channel %s with key %s is saying %s", getChannelName(), key, s));
     }
 
-    public void OnConditionOrError(String channelName, DDM_UNDERLYING_ERROR_CONDITION errorCode, int nativeCode,
+    public void OnConditionOrError(OPERATION_RESULT errorCode, int nativeCode,
             String subSystemReason) {
-        System.out.println(String.format("Channel %s with errorCode %s nativeCode %d subSystemReason %s", channelName,
-                (errorCode != null) ? errorCode.name() : "", nativeCode, subSystemReason));
+        System.out.println(String.format("Channel %s with errorCode %d nativeCode %d subSystemReason %s", getChannelName(),
+                (errorCode != null) ? errorCode.getValue() : "", nativeCode, subSystemReason));
     }
 }

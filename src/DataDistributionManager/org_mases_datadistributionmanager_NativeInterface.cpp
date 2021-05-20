@@ -255,9 +255,9 @@ void dataDistributionUnderlyingEventCbJava(const void* opaque, const CHANNEL_HAN
 		env->SetByteArrayRegion(jbuffer, 0, (jsize)uEvent->BufferLength, (const jbyte*)uEvent->Buffer);
 	}
 
-	jmethodID callbackMethodId = env->GetMethodID(p->thisClass, "OnUnderlyingEvent", "(JJLjava/lang/String;IZLjava/lang/String;[BILjava/lang/String;)V");
+	jmethodID callbackMethodId = env->GetMethodID(p->thisClass, "OnUnderlyingEvent", "(JJLjava/lang/String;IZLjava/lang/String;[BILjava/lang/String;JJ)V");
 
-	env->CallVoidMethod(p->jthis, callbackMethodId, (jlong)p, (jlong)channelHandle, jChannelName, (jint)uEvent->Condition, (jboolean)uEvent->IsDataAvailable, jKey, jbuffer, (jint)uEvent->NativeCode, jSubSystemReason);
+	env->CallVoidMethod(p->jthis, callbackMethodId, (jlong)p, (jlong)channelHandle, jChannelName, (jint)uEvent->Condition, (jboolean)uEvent->IsDataAvailable, jKey, jbuffer, (jint)uEvent->NativeCode, jSubSystemReason, (jlong)uEvent->Timestamp, (jlong)uEvent->Offset);
 
 	CheckAndRaise(env);
 
@@ -967,13 +967,13 @@ JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_I
 /*
 * Class:     org_mases_datadistributionmanager_NativeInterface
 * Method:    IDataDistributionSubsystem_SeekChannel
-* Signature: (JJJ)J
+* Signature: (JJJII)J
 */
 JNIEXPORT jlong JNICALL Java_org_mases_datadistributionmanager_NativeInterface_IDataDistributionSubsystem_1SeekChannel
-(JNIEnv * env, jclass caller, jlong jIDataDistributionSubSystem, jlong jChannelHandle, jlong jposition)
+(JNIEnv * env, jclass caller, jlong jIDataDistributionSubSystem, jlong jChannelHandle, jlong jposition, jint jcontext, jint jkind)
 {
 	IDataDistributionSubsystem* pIDataDistributionSubsystem = (IDataDistributionSubsystem*)jIDataDistributionSubSystem;
-	return (jlong)pIDataDistributionSubsystem->SeekChannel((CHANNEL_HANDLE)jChannelHandle, jposition);
+	return (jlong)pIDataDistributionSubsystem->SeekChannel((CHANNEL_HANDLE)jChannelHandle, jposition, (DDM_SEEKCONTEXT)jcontext, (DDM_SEEKKIND)jkind);
 }
 
 /*

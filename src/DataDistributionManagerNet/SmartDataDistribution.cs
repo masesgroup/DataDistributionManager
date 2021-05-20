@@ -710,6 +710,7 @@ namespace MASES.DataDistributionManager.Bindings
             smartChannelReference.m_direction = direction;
             smartChannelReference.IDataDistributionSubsystemManager_ptr = IDataDistributionSubsystemManager_ptr;
             smartChannelReference.channelHandle = handle;
+            smartChannelReference.channelName = channelName;
 
             return smartChannelReference;
         }

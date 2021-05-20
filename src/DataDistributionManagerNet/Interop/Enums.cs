@@ -139,6 +139,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         /// </summary>
         COMMAND
     };
+
     /// <summary>
     /// Cluster events
     /// </summary>
@@ -160,5 +161,35 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         /// A server was removed from the cluster
         /// </summary>
         REMOVESERVER = 0x8
+    };
+
+    /// <summary>
+    /// Seek context
+    /// </summary>
+    public enum DDM_SEEKCONTEXT : int
+    {
+        /// <summary>
+        /// Seek on offset
+        /// </summary>
+        OFFSET = 0x1,
+        /// <summary>
+        /// Seek on timestamp
+        /// </summary>
+        TIMESTAMP = 0x2,
+    };
+
+    /// <summary>
+    /// Seek kind
+    /// </summary>
+    public enum DDM_SEEKKIND : int
+    {
+        /// <summary>
+        /// Absolute seek
+        /// </summary>
+        ABSOLUTE = 0x1,
+        /// <summary>
+        /// Relative seek
+        /// </summary>
+        RELATIVE = 0x2,
     };
 }
