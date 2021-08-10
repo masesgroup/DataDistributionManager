@@ -421,8 +421,8 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-          name: DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
-          path: .\DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
+          name: MASES.DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
+          path: .\MASES.DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
 
       - uses: actions/upload-artifact@v2
         with:

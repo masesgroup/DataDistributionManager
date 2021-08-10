@@ -249,8 +249,8 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: .\DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
-          asset_name: DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
+          file: .\MASES.DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
+          asset_name: MASES.DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
           tag: ${{ github.ref }}
           overwrite: true
 
