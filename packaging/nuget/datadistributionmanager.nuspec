@@ -17,8 +17,8 @@
 		<copyright>Copyright ©  MASES s.r.l. 2021</copyright>
 	</metadata>
 	<files>
-		<file src=".\native\datadistributionmanager.targets" target="build\native" />
-		<file src=".\dotnet\datadistributionmanager.targets" target="build" />
+		<file src=".\native\mases.datadistributionmanager.targets" target="build\native" />
+		<file src=".\dotnet\mases.datadistributionmanager.targets" target="build" />
 
 		<file src="..\..\Output\DataDistributionManagerNet.dll" target="lib\net461" />
 		<file src="..\..\Outputnet5.0\DataDistributionManagerNet.dll" target="lib\net5.0" />
