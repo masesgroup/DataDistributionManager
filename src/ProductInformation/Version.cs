@@ -19,9 +19,9 @@
 static class MASESVersionInfo
 {
     public const string ProductDescription = "MASES Group - Data Distribution Manager: Common Interface to manage a distributed bus of applications";
-    public const string ProductCopyright = "Copyright © MASES s.r.l. 2021";
+    public const string ProductCopyright = "Copyright © MASES s.r.l. 2022";
     public const string Company = "MASES s.r.l.";
     public const string Trademark = "MASES s.r.l.";
     public const string ProductCurrentMajorVersion = "1.0.0.0";
-    public const string ProductCurrentVersion = "1.2.1.0";
+    public const string ProductCurrentVersion = "1.2.2.0";
 }

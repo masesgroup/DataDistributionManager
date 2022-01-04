@@ -177,7 +177,7 @@ jobs:
     needs: check_changes
     if: "always() && needs.check_changes.outputs.run_build_ddm_windows == 'true'"
     # The type of runner that the job will run on
-    runs-on: windows-2019
+    runs-on: windows-2022
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:   
@@ -301,7 +301,7 @@ jobs:
         shell: cmd
         run: |
           call .\third_party\OpenDDS\setenv.cmd
-          set JDK_ROOT_FOLDER=%JAVA_HOME_13_X64%
+          set JDK_ROOT_FOLDER=%JAVA_HOME_11_X64%
           cd src
           msbuild /m -p:Configuration=Release,Platform=x64 DataDistributionManager.sln
 
@@ -309,14 +309,15 @@ jobs:
         shell: cmd
         run: |
           call .\third_party\OpenDDS\setenv.cmd
-          set JDK_ROOT_FOLDER=%JAVA_HOME_13_X64%
+          set JDK_ROOT_FOLDER=%JAVA_HOME_11_X64%
           cd src
           msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
 
-      - name: Build DataDistributionManager net5.0 and netcoreapp3.1
+      - name: Build DataDistributionManager net6.0, net5.0 and netcoreapp3.1
         run: |
           dotnet build --no-incremental --configuration Release --framework netcoreapp3.1 -o Outputnetcoreapp3.1 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
           dotnet build --no-incremental --configuration Release --framework net5.0 -o Outputnet5.0 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
+          dotnet build --no-incremental --configuration Release --framework net6.0 -o Outputnet6.0 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
 
       - name: Prepare for packaging
         run: |
@@ -389,7 +390,7 @@ jobs:
         shell: cmd
         run: |
           cd src\DataDistributionManagerJava
-          set JDK_ROOT_FOLDER=%JAVA_HOME_13_X64%
+          set JDK_ROOT_FOLDER=%JAVA_HOME_11_X64%
           CreateJar.bat
           cd ..\..
           

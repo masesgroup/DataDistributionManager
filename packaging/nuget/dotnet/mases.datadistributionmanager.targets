@@ -10,4 +10,9 @@
         <Copy SourceFiles="@(nativex64)" DestinationFolder="$(TargetDir)/x64" />
         <Copy SourceFiles="@(licenses)" DestinationFolder="$(TargetDir)" />
     </Target>
+    <Target Name="CopyFilesNativePublish" BeforeTargets="Publish"> 
+        <Copy SourceFiles="@(nativex86)" DestinationFolder="$(PublishDir)/x86" />
+        <Copy SourceFiles="@(nativex64)" DestinationFolder="$(PublishDir)/x64" />
+        <Copy SourceFiles="@(licenses)" DestinationFolder="$(PublishDir)" />
+    </Target>
 </Project>
