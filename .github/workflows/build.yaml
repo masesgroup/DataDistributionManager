@@ -6,7 +6,6 @@ name: CI_BUILD
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
 
 # This workflow contains two jobs called "check_opendds", "build_opendds_windows", "check_changes", "build_ddm_windows"
 jobs:
@@ -447,6 +446,7 @@ jobs:
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v5
+        if: ${{ github.repository_owner == 'masesgroup'}} #do not push any changes outside main repo
         with:
           author_name: github-actions
           author_email: 41898282+github-actions[bot]@users.noreply.github.com
