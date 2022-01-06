@@ -1,5 +1,5 @@
 var classIDataDistributionChannel =
 [
-    [ "GetChannelName", "classIDataDistributionChannel.html#aba56fa6cf30c78c8ed6632a3239e08a0", null ],
+    [ "GetChannelName", "classIDataDistributionChannel.html#a5eab49ffe5b370a5d85902010a1b399c", null ],
     [ "GetOpaqueHandle", "classIDataDistributionChannel.html#a620c5c0b00885b01508794465270af21", null ]
 ];

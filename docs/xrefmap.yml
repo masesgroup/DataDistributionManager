@@ -4123,6 +4123,44 @@ references:
   commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionalIdKey
   fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionalIdKey
   nameWithType: KafkaChannelConfiguration.TransactionalIdKey
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionsEnabled
+  name: TransactionsEnabled
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TransactionsEnabled
+  commentId: P:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionsEnabled
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionsEnabled
+  nameWithType: KafkaChannelConfiguration.TransactionsEnabled
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionsEnabled*
+  name: TransactionsEnabled
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TransactionsEnabled_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionsEnabled
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionsEnabled
+  nameWithType: KafkaChannelConfiguration.TransactionsEnabled
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionsEnabledKey
+  name: TransactionsEnabledKey
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TransactionsEnabledKey
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionsEnabledKey
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionsEnabledKey
+  nameWithType: KafkaChannelConfiguration.TransactionsEnabledKey
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionsTimeout
+  name: TransactionsTimeout
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TransactionsTimeout
+  commentId: P:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionsTimeout
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionsTimeout
+  nameWithType: KafkaChannelConfiguration.TransactionsTimeout
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionsTimeout*
+  name: TransactionsTimeout
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TransactionsTimeout_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionsTimeout
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionsTimeout
+  nameWithType: KafkaChannelConfiguration.TransactionsTimeout
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionsTimeoutKey
+  name: TransactionsTimeoutKey
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TransactionsTimeoutKey
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionsTimeoutKey
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionsTimeoutKey
+  nameWithType: KafkaChannelConfiguration.TransactionsTimeoutKey
 - uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.TransactionTimeout
   name: TransactionTimeout
   href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TransactionTimeout

@@ -7,6 +7,6 @@ var dir_f19fcc2dac03b2d80bbaffdaf55aca8c =
       [ "SmartTimeMeasureWrapper", "classSmartTimeMeasureWrapper.html", "classSmartTimeMeasureWrapper" ],
       [ "SmartDataDistributionChannel", "classSmartDataDistributionChannel.html", "classSmartDataDistributionChannel" ],
       [ "SmartDataDistributionBase", "classSmartDataDistributionBase.html", "classSmartDataDistributionBase" ],
-      [ "SmartDataDistribution", "classSmartDataDistribution.html", "classSmartDataDistribution" ]
+      [ "SmartDataDistribution< T >", "classSmartDataDistribution.html", "classSmartDataDistribution" ]
     ] ]
 ];

@@ -3,7 +3,7 @@ var classSmartDataDistributionChannel =
     [ "SmartDataDistributionChannel", "classSmartDataDistributionChannel.html#aa8dc78954ca97d64089a0876858431e3", null ],
     [ "~SmartDataDistributionChannel", "classSmartDataDistributionChannel.html#a86337065a3136cfd8813b91e7a7becdc", null ],
     [ "ChangeChannelDirection", "classSmartDataDistributionChannel.html#aa51c7b2d5c4667b6c351435f231bf1a1", null ],
-    [ "GetChannelName", "classSmartDataDistributionChannel.html#a4e9b770ebf68e631f0367467d45e0e2f", null ],
+    [ "GetChannelName", "classSmartDataDistributionChannel.html#a53b206320f94cf1a1de1e59e60513a76", null ],
     [ "GetDirection", "classSmartDataDistributionChannel.html#ae615120885dff214fb89aab8f48a89cd", null ],
     [ "GetOffset", "classSmartDataDistributionChannel.html#a7c3a94100b121f7e7777078c63342746", null ],
     [ "GetTimestamp", "classSmartDataDistributionChannel.html#a140fb62b2a9a2cdcf4ead7b68769ef1f", null ],

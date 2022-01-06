@@ -12,7 +12,7 @@ var classSmartDataDistributionBase =
     [ "Initialize", "classSmartDataDistributionBase.html#abf38c74a0befd49bb229ab18163cb85f", null ],
     [ "OnClusterStateChange", "classSmartDataDistributionBase.html#a2aba7f9751df6a2155fcbada08f8859b", null ],
     [ "OnCompletelyDisconnected", "classSmartDataDistributionBase.html#a660c667e6cf8adec20fe6f7bb1763c9a", null ],
-    [ "OnConfiguration", "classSmartDataDistributionBase.html#aacd121e21e5325177af193e8a450f630", null ],
+    [ "OnConfiguration", "classSmartDataDistributionBase.html#a2ffda743980cd1978969c9a9fa9d4054", null ],
     [ "OnLogging", "classSmartDataDistributionBase.html#a3d46fa25440fd81fb226dde3de877ace", null ],
     [ "OnMultiplePrimary", "classSmartDataDistributionBase.html#a06008b51520c1bd50300a54f94998f2c", null ],
     [ "OnRequestedState", "classSmartDataDistributionBase.html#a9135ad6c30526460c2204369da2c79c3", null ],
