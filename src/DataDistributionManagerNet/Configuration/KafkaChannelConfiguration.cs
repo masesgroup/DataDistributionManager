@@ -486,6 +486,14 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         /// Configuration key of <see cref="DumpMetadata"/>
         /// </summary>
         public const string DumpMetadataKey = "datadistributionmanager.kafka.topic_dumpmetadata";
+        /// <summary>
+        /// Configuration key of <see cref="TransactionsEnabled"/>
+        /// </summary>
+        public const string TransactionsEnabledKey = "datadistributionmanager.kafka.transactions.enable";
+        /// <summary>
+        /// Configuration key of <see cref="TransactionsTimeout"/>
+        /// </summary>
+        public const string TransactionsTimeoutKey = "datadistributionmanager.kafka.transactions.timeout";
         #endregion
 
         #region Global conf
@@ -1004,6 +1012,42 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             {
                 keyValuePair[DumpMetadataKey] = value.ToString().ToLowerInvariant();
                 EmitPropertyChanged("DumpMetadata");
+            }
+        }
+
+        /// <summary>
+        /// True to enable transactions
+        /// </summary>
+        public bool TransactionsEnabled
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(TransactionsEnabledKey, out value);
+                return bool.Parse(value);
+            }
+            set
+            {
+                keyValuePair[TransactionsEnabledKey] = value.ToString().ToLowerInvariant();
+                EmitPropertyChanged("TransactionsEnabled");
+            }
+        }
+
+        /// <summary>
+        /// The timeout to be used in transaction operations when <see cref="TransactionsEnabled"/> is true
+        /// </summary>
+        public uint TransactionsTimeout
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(TransactionsTimeoutKey, out value);
+                return uint.Parse(value);
+            }
+            set
+            {
+                keyValuePair[TransactionsTimeoutKey] = value.ToString();
+                EmitPropertyChanged("TransactionsTimeout");
             }
         }
 

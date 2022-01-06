@@ -90,6 +90,8 @@ public:
 		m_TopicReplicationFactor = 1;
 		m_CreateTopic = FALSE;
 		m_DumpMetadata = FALSE;
+		m_bTransactionsEnabled = FALSE;
+		m_TransactionsTimeout = 10000;
 
 		m_lastRoutedOffset = RD_KAFKA_OFFSET_END;
 		m_actualOffset = RD_KAFKA_OFFSET_END;
@@ -102,6 +104,8 @@ public:
 	int  m_TopicReplicationFactor;
 	BOOL m_CreateTopic;
 	BOOL m_DumpMetadata;
+	BOOL m_bTransactionsEnabled;
+	int m_TransactionsTimeout;
 
 	std::string clientId;
 	std::string groupId;
