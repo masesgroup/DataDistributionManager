@@ -381,7 +381,7 @@ protected:
 	 * \p level is the DDM_LOG_LEVEL of the log reported
 	 * \p source is the module source name of the log
 	 * \p function is the function, within the module, reporting the log
-	 * @return \p logStr is the reported log string
+	 * \p logStr is the reported log string
 	 *
 	 * @sa IDataDistributionLog::Log
 	 *
