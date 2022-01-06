@@ -15,8 +15,11 @@
 		<tags>availability reliability durability business-solutions opendds apachekafka businesscontinuity dotnet java jvm scala kotlin p2p</tags>
 		<requireLicenseAcceptance>true</requireLicenseAcceptance>
 		<copyright>Copyright ©  MASES s.r.l. 2022</copyright>
+		<readme>README.md</readme>
 	</metadata>
 	<files>
+		<file src="..\..\README.md" target="" />
+	
 		<file src=".\native\mases.datadistributionmanager.targets" target="build\native" />
 		<file src=".\dotnet\mases.datadistributionmanager.targets" target="build" />
 
