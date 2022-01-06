@@ -1,5 +1,5 @@
 /*
-*  Copyright 2021 MASES s.r.l.
+*  Copyright 2022 MASES s.r.l.
 *
 *  Licensed under the Apache License, Version 2.0 (the "License");
 *  you may not use this file except in compliance with the License.
@@ -42,6 +42,18 @@ public class KafkaChannelConfiguration extends KafkaConfiguration {
      * target= "_top">DumpMetadataKey</a>
      */
     public static final String DumpMetadataKey = "datadistributionmanager.kafka.topic_dumpmetadata";
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TransactionsEnabledKey"
+     * target= "_top">TransactionsEnabledKey</a>
+     */
+    public static final String TransactionsEnabledKey = "datadistributionmanager.kafka.transactions.enable";
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TransactionsTimeoutKey"
+     * target= "_top">TransactionsTimeoutKey</a>
+     */
+    public static final String TransactionsTimeoutKey = "datadistributionmanager.kafka.transactions.timeout";
 
     /**
      * See .NET <a href=
@@ -887,6 +899,46 @@ public class KafkaChannelConfiguration extends KafkaConfiguration {
     }
 
     /**
+     * True to enable transactions
+     * 
+     * @return True to enable transactions
+     */
+    public boolean getTransactionsEnabled() {
+        String value = keyValuePair.get(TransactionsEnabledKey);
+        return (value == null) ? false : Boolean.parseBoolean(value);
+    }
+
+    /**
+     * True to enable transactions
+     * 
+     * @param value True to enable transactions
+     */
+    public void setTransactionsEnabled(Boolean value) {
+        keyValuePair.put(TransactionsEnabledKey, value.toString());
+    }
+
+    /**
+     * The timeout to be used in transaction operations when TransactionsEnabled is
+     * true
+     * 
+     * @return The timeout in ms
+     */
+    public Integer getTransactionsTimeout() {
+        String value = keyValuePair.get(TransactionsTimeoutKey);
+        return (value == null) ? 0 : Integer.parseInt(value);
+    }
+
+    /**
+     * The timeout to be used in transaction operations when TransactionsEnabled is
+     * true
+     * 
+     * @param value The timeout in ms
+     */
+    public void setTransactionsTimeout(Integer value) {
+        keyValuePair.put(TransactionsTimeoutKey, value.toString());
+    }
+
+    /**
      * Generic getter for all configuration properties related to librdkafka (see
      * https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md)
      * 
@@ -897,14 +949,14 @@ public class KafkaChannelConfiguration extends KafkaConfiguration {
     public String getProperty(KafkaConfigurationType type, String property) {
         String propKey = null;
         switch (type) {
-        case GLOBAL_CONF:
-            propKey = KafkaGlobalConfigurationBasePropertyKey;
-            break;
-        case TOPIC_CONF:
-            propKey = KafkaTopicConfigurationBasePropertyKey;
-            break;
-        default:
-            throw new IllegalArgumentException(String.format("Type %s is invalid", type.toString()));
+            case GLOBAL_CONF:
+                propKey = KafkaGlobalConfigurationBasePropertyKey;
+                break;
+            case TOPIC_CONF:
+                propKey = KafkaTopicConfigurationBasePropertyKey;
+                break;
+            default:
+                throw new IllegalArgumentException(String.format("Type %s is invalid", type.toString()));
         }
 
         String value = "";
@@ -929,14 +981,14 @@ public class KafkaChannelConfiguration extends KafkaConfiguration {
     public void setProperty(KafkaConfigurationType type, String property, String value) {
         String propKey = null;
         switch (type) {
-        case GLOBAL_CONF:
-            propKey = KafkaGlobalConfigurationBasePropertyKey;
-            break;
-        case TOPIC_CONF:
-            propKey = KafkaTopicConfigurationBasePropertyKey;
-            break;
-        default:
-            throw new IllegalArgumentException(String.format("Type %s is invalid", type.toString()));
+            case GLOBAL_CONF:
+                propKey = KafkaGlobalConfigurationBasePropertyKey;
+                break;
+            case TOPIC_CONF:
+                propKey = KafkaTopicConfigurationBasePropertyKey;
+                break;
+            default:
+                throw new IllegalArgumentException(String.format("Type %s is invalid", type.toString()));
         }
 
         if (property.startsWith(propKey)) {

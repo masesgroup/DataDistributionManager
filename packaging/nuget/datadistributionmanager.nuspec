@@ -14,13 +14,17 @@
 		<releaseNotes>https://github.com/masesgroup/DataDistributionManager/releases</releaseNotes>
 		<tags>availability reliability durability business-solutions opendds apachekafka businesscontinuity dotnet java jvm scala kotlin p2p</tags>
 		<requireLicenseAcceptance>true</requireLicenseAcceptance>
-		<copyright>Copyright ©  MASES s.r.l. 2021</copyright>
+		<copyright>Copyright ©  MASES s.r.l. 2022</copyright>
+		<readme>README.md</readme>
 	</metadata>
 	<files>
+		<file src="..\..\README.md" target="" />
+	
 		<file src=".\native\mases.datadistributionmanager.targets" target="build\native" />
 		<file src=".\dotnet\mases.datadistributionmanager.targets" target="build" />
 
 		<file src="..\..\Output\DataDistributionManagerNet.dll" target="lib\net461" />
+		<file src="..\..\Outputnet6.0\DataDistributionManagerNet.dll" target="lib\net6.0" />
 		<file src="..\..\Outputnet5.0\DataDistributionManagerNet.dll" target="lib\net5.0" />
 		<file src="..\..\Outputnetcoreapp3.1\DataDistributionManagerNet.dll" target="lib\netcoreapp3.1" />
 

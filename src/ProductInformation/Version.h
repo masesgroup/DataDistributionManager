@@ -1,5 +1,5 @@
 /*
-*  Copyright 2021 MASES s.r.l.
+*  Copyright 2022 MASES s.r.l.
 *
 *  Licensed under the Apache License, Version 2.0 (the "License");
 *  you may not use this file except in compliance with the License.
@@ -17,10 +17,10 @@
 */
 
 #define PRODUCTDESCRIPTION "MASES Group - Data Distribution Manager: Common Interface to manage a distributed bus of applications"
-#define PRODUCTCOPYRIGHT "Copyright © MASES s.r.l. 2021"
+#define PRODUCTCOPYRIGHT "Copyright © MASES s.r.l. 2022"
 #define COMPANY "MASES s.r.l."
 #define TRADEMARK "MASES s.r.l."
 #define PRODUCTCURRENTMAJORVERSION "1.0.0.0"
 #define PRODUCTCURRENTMAJORVERSIONCPP 1,0,0,0
-#define PRODUCTCURRENTVERSION "1.2.1.0"
-#define PRODUCTCURRENTVERSIONCPP 1,2,1,0
+#define PRODUCTCURRENTVERSION "1.2.2.0"
+#define PRODUCTCURRENTVERSIONCPP 1,2,2,0

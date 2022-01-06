@@ -6,7 +6,6 @@ name: CI_BUILD
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
 
 # This workflow contains two jobs called "check_opendds", "build_opendds_windows", "check_changes", "build_ddm_windows"
 jobs:
@@ -313,10 +312,25 @@ jobs:
           cd src
           msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
 
-      - name: Build DataDistributionManager net5.0 and netcoreapp3.1
+      # Install .NET SDKs
+      - name: Setup .NET Core 3.1
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.x
+      - name: Setup .NET 5.0
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+      - name: Setup .NET 6.0
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Build DataDistributionManager net6.0, net5.0 and netcoreapp3.1
         run: |
           dotnet build --no-incremental --configuration Release --framework netcoreapp3.1 -o Outputnetcoreapp3.1 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
           dotnet build --no-incremental --configuration Release --framework net5.0 -o Outputnet5.0 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
+          dotnet build --no-incremental --configuration Release --framework net6.0 -o Outputnet6.0 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
 
       - name: Prepare for packaging
         run: |
@@ -397,10 +411,10 @@ jobs:
         run: Remove-Item .\docs\* -Recurse -Force -Exclude _config.yml
 
       - name: Download Doxygen tool
-        run: C:\msys64\usr\bin\wget.exe https://doxygen.nl/files/doxygen-1.9.1.windows.x64.bin.zip
+        run: C:\msys64\usr\bin\wget.exe https://www.doxygen.nl/files/doxygen-1.9.3.windows.x64.bin.zip
 
       - name: Expand Doxygen package
-        run: Expand-Archive -LiteralPath '.\doxygen-1.9.1.windows.x64.bin.zip' -DestinationPath .\src\Documentation -Force
+        run: Expand-Archive -LiteralPath '.\doxygen-1.9.3.windows.x64.bin.zip' -DestinationPath .\src\Documentation -Force
 
       - name: Create C/C++ documentation
         shell: cmd
@@ -446,9 +460,10 @@ jobs:
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v5
+        if: ${{ github.repository_owner == 'masesgroup'}} #do not push any changes outside main repo
         with:
           author_name: github-actions
           author_email: 41898282+github-actions[bot]@users.noreply.github.com
           add: '.\docs\*.*'
           message: Update documentation after commit ${{ env.GITHUB_COMMIT_MESSAGE }}
-          
+         

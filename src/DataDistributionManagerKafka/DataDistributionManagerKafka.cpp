@@ -1,5 +1,5 @@
 /*
-*  Copyright 2021 MASES s.r.l.
+*  Copyright 2022 MASES s.r.l.
 *
 *  Licensed under the Apache License, Version 2.0 (the "License");
 *  you may not use this file except in compliance with the License.
@@ -342,6 +342,18 @@ CHANNEL_HANDLE DataDistributionManagerKafka::CreateChannel(const char* channelNa
 		return NULL;
 	}
 
+	if (pChannelConfiguration->m_bTransactionsEnabled)
+	{
+		RdKafka::Error* pError = pChannelConfiguration->pProducer->init_transactions(pChannelConfiguration->m_TransactionsTimeout);
+		if (pError != NULL)
+		{
+			LOG_ERROR("Channel %s - pProducer init_transactions error: %s", pChannelConfiguration->GetChannelName(), pError->str());
+			delete pError;
+			delete pChannelConfiguration->pProducer;
+			return NULL;
+		}
+	}
+
 	pChannelConfiguration->pConsumer = RdKafka::KafkaConsumer::create(pChannelConfiguration->pConnection_conf, errstr);
 	if (!pChannelConfiguration->pConsumer)
 	{
@@ -484,6 +496,20 @@ void DataDistributionManagerKafka::SetParameter(CHANNEL_HANDLE_PARAMETER, const 
 				pChannelConfiguration->m_DumpMetadata = FALSE;
 			return;
 		}
+		else if (!strcmp(paramName, "datadistributionmanager.kafka.transactions.enable"))
+		{
+			if (!strcmp(paramValue, "true") ||
+				!strcmp(paramValue, "1"))
+				pChannelConfiguration->m_bTransactionsEnabled = TRUE;
+			else
+				pChannelConfiguration->m_bTransactionsEnabled = FALSE;
+			return;
+		}
+		else if (!strcmp(paramName, "datadistributionmanager.kafka.transactions.timeout"))
+		{
+			pChannelConfiguration->m_TransactionsTimeout = atoi(paramValue);
+			return;
+		}
 
 		std::string n(paramName);
 		std::string v(paramValue);
@@ -569,6 +595,15 @@ const char* DataDistributionManagerKafka::GetParameter(CHANNEL_HANDLE_PARAMETER,
 	{
 		if (pChannelConfiguration->m_DumpMetadata) return "true";
 		else return "false";
+	}
+	else if (!strcmp(paramName, "datadistributionmanager.kafka.transactions.enable"))
+	{
+		if (pChannelConfiguration->m_bTransactionsEnabled) return "true";
+		else return "false";
+	}
+	else if (!strcmp(paramName, "datadistributionmanager.kafka.transactions.timeout"))
+	{
+		return ConvertIToA(pChannelConfiguration->m_TransactionsTimeout);
 	}
 
 	std::string n(paramName);
@@ -740,6 +775,18 @@ OPERATION_RESULT DataDistributionManagerKafka::WriteOnChannel(CHANNEL_HANDLE_PAR
 		msgFlags |= RdKafka::Producer::RK_MSG_BLOCK;
 	}
 
+	if (pChannelConfiguration->m_bTransactionsEnabled)
+	{
+		RdKafka::Error* pError = pChannelConfiguration->pProducer->begin_transaction();
+		if (pError != NULL)
+		{
+			LOG_ERROR("Channel %s - begin_transaction failed with reason %s.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", pError->str().c_str());
+			pChannelConfiguration->OnConditionOrError(DDM_WRITE_FAILED, pError->code(), pError->str().c_str());
+			delete pError;
+			return DDM_WRITE_FAILED;
+		}
+	}
+
 	RdKafka::ErrorCode code;
 	if (timestamp != DDM_NO_TIMESTAMP)
 	{
@@ -749,6 +796,17 @@ OPERATION_RESULT DataDistributionManagerKafka::WriteOnChannel(CHANNEL_HANDLE_PAR
 	else
 	{
 		code = pChannelConfiguration->pProducer->produce(pChannelConfiguration->pTopic, 0, msgFlags, buffer, dataLen, key, keyLen, (void*)this);
+	}
+
+	if (pChannelConfiguration->m_bTransactionsEnabled)
+	{
+		RdKafka::Error* pError = (code != RdKafka::ErrorCode::ERR_NO_ERROR) ? pChannelConfiguration->pProducer->abort_transaction(pChannelConfiguration->m_TransactionsTimeout) : pChannelConfiguration->pProducer->commit_transaction(pChannelConfiguration->m_TransactionsTimeout);
+		if (pError != NULL)
+		{
+			LOG_ERROR("Channel %s - %s failed with reason %s.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", (code != RdKafka::ErrorCode::ERR_NO_ERROR) ? "abort_transaction" : "commit_transaction", pError->str().c_str());
+			pChannelConfiguration->OnConditionOrError(DDM_WRITE_FAILED, pError->code(), pError->str().c_str());
+			delete pError;
+		}
 	}
 
 	if (code != RdKafka::ErrorCode::ERR_NO_ERROR)
@@ -764,6 +822,7 @@ OPERATION_RESULT DataDistributionManagerKafka::WriteOnChannel(CHANNEL_HANDLE_PAR
 		pChannelConfiguration->OnConditionOrError(DDM_WRITE_FAILED, code, RdKafka::err2str(code).c_str());
 		return DDM_WRITE_FAILED;
 	}
+
 	return DDM_NO_ERROR_CONDITION;
 }
 
