@@ -148,7 +148,7 @@ jobs:
         shell: cmd
         run: |
           call .\third_party\OpenDDS\setenv.cmd
-          set JDK_ROOT_FOLDER=%JAVA_HOME_11_X64%
+          set JDK_ROOT_FOLDER=%JAVA_HOME_13_X64%
           cd src
           msbuild /m -p:Configuration=Release,Platform=x64 DataDistributionManager.sln
 
@@ -156,9 +156,23 @@ jobs:
         shell: cmd
         run: |
           call .\third_party\OpenDDS\setenv.cmd
-          set JDK_ROOT_FOLDER=%JAVA_HOME_11_X64%
+          set JDK_ROOT_FOLDER=%JAVA_HOME_13_X64%
           cd src
           msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
+
+      # Install .NET SDKs
+      - name: Setup .NET Core 3.1
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.x
+      - name: Setup .NET 5.0
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+      - name: Setup .NET 6.0
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
 
       - name: Build DataDistributionManager net6.0, net5.0 and netcoreapp3.1
         run: |
@@ -234,7 +248,7 @@ jobs:
         shell: cmd
         run: |
           cd src\DataDistributionManagerJava
-          set JDK_ROOT_FOLDER=%JAVA_HOME_11_X64%
+          set JDK_ROOT_FOLDER=%JAVA_HOME_13_X64%
           CreateJar.bat
           cd ..\..
 
