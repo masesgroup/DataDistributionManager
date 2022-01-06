@@ -780,8 +780,8 @@ OPERATION_RESULT DataDistributionManagerKafka::WriteOnChannel(CHANNEL_HANDLE_PAR
 		RdKafka::Error* pError = pChannelConfiguration->pProducer->begin_transaction();
 		if (pError != NULL && pError->is_fatal())
 		{
-			LOG_ERROR("Channel %s - begin_transaction failed with reason %s.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", pError->str());
-			pChannelConfiguration->OnConditionOrError(DDM_WRITE_FAILED, pError->code(), pError->str());
+			LOG_ERROR("Channel %s - begin_transaction failed with reason %s.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", pError->str().c_str());
+			pChannelConfiguration->OnConditionOrError(DDM_WRITE_FAILED, pError->code(), pError->str().c_str());
 			delete pError;
 			return DDM_WRITE_FAILED;
 		}
@@ -803,8 +803,8 @@ OPERATION_RESULT DataDistributionManagerKafka::WriteOnChannel(CHANNEL_HANDLE_PAR
 		RdKafka::Error* pError = (code != RdKafka::ErrorCode::ERR_NO_ERROR) ? pChannelConfiguration->pProducer->abort_transaction(pChannelConfiguration->m_TransactionsTimeout) : pChannelConfiguration->pProducer->commit_transaction(pChannelConfiguration->m_TransactionsTimeout);
 		if (pError != NULL && pError->is_fatal())
 		{
-			LOG_ERROR("Channel %s - %s failed with reason %s.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", (code != RdKafka::ErrorCode::ERR_NO_ERROR) ? "abort_transaction" : "commit_transaction", pError->str());
-			pChannelConfiguration->OnConditionOrError(DDM_WRITE_FAILED, pError->code(), pError->str());
+			LOG_ERROR("Channel %s - %s failed with reason %s.", (pChannelConfiguration) ? pChannelConfiguration->GetChannelName() : "No channel", (code != RdKafka::ErrorCode::ERR_NO_ERROR) ? "abort_transaction" : "commit_transaction", pError->str().c_str());
+			pChannelConfiguration->OnConditionOrError(DDM_WRITE_FAILED, pError->code(), pError->str().c_str());
 			delete pError;
 		}
 	}
