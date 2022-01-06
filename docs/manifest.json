@@ -5691,6 +5691,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/actual_state.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/actual_state.html",
+          "hash": "4CDMAukAZAEIkdDF47IWgkdt/yWG81qlJY8+7WPMJp0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/ddmchat.md",
       "output": {
         ".html": {
@@ -5767,7 +5779,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "zMuzd6onr2Vws+9aA0J56GZXLCDSMhObnjFUU/SHERc="
+          "hash": "C40Mu/GiI3P+mDbvvGuDcH7L1lueHaNfHxY/lfbj1TY="
         }
       },
       "is_incremental": false,
@@ -5975,7 +5987,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 11,
+          "total_file_count": 12,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
