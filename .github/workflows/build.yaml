@@ -176,7 +176,7 @@ jobs:
     needs: check_changes
     if: "always() && needs.check_changes.outputs.run_build_ddm_windows == 'true'"
     # The type of runner that the job will run on
-    runs-on: windows-2022
+    runs-on: windows-2019
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:   
@@ -311,6 +311,20 @@ jobs:
           set JDK_ROOT_FOLDER=%JAVA_HOME_11_X64%
           cd src
           msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
+
+      # Install .NET SDKs
+      - name: Setup .NET Core 3.1
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.x
+      - name: Setup .NET 5.0
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+      - name: Setup .NET 6.0
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
 
       - name: Build DataDistributionManager net6.0, net5.0 and netcoreapp3.1
         run: |
