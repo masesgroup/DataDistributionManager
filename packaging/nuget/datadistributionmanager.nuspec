@@ -19,7 +19,7 @@
 	</metadata>
 	<files>
 		<file src="..\..\README.md" target="" />
-		<file src="..\..\LICENSE" target="" />
+		<file src="..\..\LICENSE" target="LICENSE" />
 		<file src=".\native\mases.datadistributionmanager.targets" target="build\native" />
 		<file src=".\dotnet\mases.datadistributionmanager.targets" target="build" />
 
