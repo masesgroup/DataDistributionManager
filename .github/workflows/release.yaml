@@ -310,4 +310,4 @@ jobs:
           nuget-version: '5.x'
 
       - name: Publish to NuGet
-        run: nuget push *.nupkg -ApiKey ${{ secrets.DATADISTRIBUTIONMANAGER_NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json -SkipDuplicate
+        run: nuget push *.nupkg -ApiKey ${{ secrets.MASES_NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json -SkipDuplicate
