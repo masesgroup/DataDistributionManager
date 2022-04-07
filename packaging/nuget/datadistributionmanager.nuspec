@@ -8,7 +8,7 @@
 		<description>The package contains all libraries and resources to create a reliable subsystem to distribute data across multiple datacenters using multiple languages (C/C++, .NET, JVM enabled languages) over multiple technologies (e.g. Apache Kafka, OpenDDS, etc)</description>
 		<authors>MASES s.r.l.</authors>
 		<owners>MASES s.r.l.</owners>
-		<licenseUrl>https://github.com/masesgroup/DataDistributionManager/blob/master/LICENSE</licenseUrl>
+		<license type="file">LICENSE</license>
 		<projectUrl>https://github.com/masesgroup/DataDistributionManager/</projectUrl>
 		<iconUrl>https://raw.githubusercontent.com/masesgroup/masesgroup.github.io/master/assets/images/mases_logo_short.png</iconUrl>
 		<releaseNotes>https://github.com/masesgroup/DataDistributionManager/releases</releaseNotes>
@@ -19,11 +19,11 @@
 	</metadata>
 	<files>
 		<file src="..\..\README.md" target="" />
-	
+		<file src="..\..\LICENSE" target="LICENSE" />
 		<file src=".\native\mases.datadistributionmanager.targets" target="build\native" />
 		<file src=".\dotnet\mases.datadistributionmanager.targets" target="build" />
 
-		<file src="..\..\Output\DataDistributionManagerNet.dll" target="lib\net461" />
+		<file src="..\..\Output\DataDistributionManagerNet.dll" target="lib\net462" />
 		<file src="..\..\Outputnet6.0\DataDistributionManagerNet.dll" target="lib\net6.0" />
 		<file src="..\..\Outputnet5.0\DataDistributionManagerNet.dll" target="lib\net5.0" />
 		<file src="..\..\Outputnetcoreapp3.1\DataDistributionManagerNet.dll" target="lib\netcoreapp3.1" />
