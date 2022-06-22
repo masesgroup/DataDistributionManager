@@ -458,6 +458,23 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
     }
     #endregion
 
+    #region SaslOauthbearerMethodType
+    /// <summary>
+    /// SaslOauthbearerMethod
+    /// </summary>
+    public enum SaslOauthbearerMethodType
+    {
+        /// <summary>
+        /// DEFAULT
+        /// </summary>
+        DEFAULT,
+        /// <summary>
+        /// OIDC
+        /// </summary>
+        OIDC,
+    }
+    #endregion
+
     #region KafkaChannelConfiguration
     /// <summary>
     /// The configuration class for Kafka channel
@@ -590,9 +607,17 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         /// </summary>
         public const string BrokerAddressTtlKey = "datadistributionmanager.kafka.globalconf.broker.address.ttl";
         /// <summary>
-        /// Configuration key of <see cref="BrokerAddressTtl"/>
+        /// Configuration key of <see cref="BrokerAddressFamily"/>
         /// </summary>
         public const string BrokerAddressFamilyKey = "datadistributionmanager.kafka.globalconf.broker.address.family";
+        /// <summary>
+        /// Configuration key of <see cref="SocketConnectionSetupTimeout"/>
+        /// </summary>
+        public const string SocketConnectionSetupTimeoutKey = "datadistributionmanager.kafka.globalconf.socket.connection.setup.timeout.ms";
+        /// <summary>
+        /// Configuration key of <see cref="ConnectionsMaxIdle"/>
+        /// </summary>
+        public const string ConnectionsMaxIdleKey = "datadistributionmanager.kafka.globalconf.connections.max.idle.ms";
         /// <summary>
         /// Configuration key of <see cref="ReconnectBackoff"/>
         /// </summary>
@@ -694,6 +719,10 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         /// </summary>
         public const string SslCALocationKey = "datadistributionmanager.kafka.globalconf.ssl.ca.location";
         /// <summary>
+        /// Configuration key of <see cref="SslCAPem"/>
+        /// </summary>
+        public const string SslCAPemKey = "datadistributionmanager.kafka.globalconf.ssl.ca.pem";
+        /// <summary>
         /// Configuration key of <see cref="SslCA"/>
         /// </summary>
         public const string SslCAKey = "datadistributionmanager.kafka.globalconf.ssl_ca";
@@ -713,6 +742,14 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         /// Configuration key of <see cref="SslKeystorePassword"/>
         /// </summary>
         public const string SslKeystorePasswordKey = "datadistributionmanager.kafka.globalconf.ssl.keystore.password";
+        /// <summary>
+        /// Configuration key of <see cref="SslEngineLocation"/>
+        /// </summary>
+        public const string SslEngineLocationKey = "datadistributionmanager.kafka.globalconf.ssl.engine.location";
+        /// <summary>
+        /// Configuration key of <see cref="SslEngineId"/>
+        /// </summary>
+        public const string SslEngineIdKey = "datadistributionmanager.kafka.globalconf.ssl.engine.id";
         /// <summary>
         /// Configuration key of <see cref="EnableSslCertificateVerification"/>
         /// </summary>
@@ -758,6 +795,34 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         /// </summary>
         public const string SaslOauthbearerConfigKey = "datadistributionmanager.kafka.globalconf.sasl.oauthbearer.config";
         /// <summary>
+        /// Configuration key of <see cref="EnableSaslOauthbearerUnsecureJwt"/>
+        /// </summary>
+        public const string EnableSaslOauthbearerUnsecureJwtKey = "datadistributionmanager.kafka.globalconf.enable.sasl.oauthbearer.unsecure.jwt";
+        /// <summary>
+        /// Configuration key of <see cref="SaslOauthbearerMethod"/>
+        /// </summary>
+        public const string SaslOauthbearerMethodKey = "datadistributionmanager.kafka.globalconf.sasl.oauthbearer.method";
+        /// <summary>
+        /// Configuration key of <see cref="SaslOauthbearerClientId"/>
+        /// </summary>
+        public const string SaslOauthbearerClientIdKey = "datadistributionmanager.kafka.globalconf.sasl.oauthbearer.client.id";
+        /// <summary>
+        /// Configuration key of <see cref="SaslOauthbearerClientSecret"/>
+        /// </summary>
+        public const string SaslOauthbearerClientSecretKey = "datadistributionmanager.kafka.globalconf.sasl.oauthbearer.client.secret";
+        /// <summary>
+        /// Configuration key of <see cref="SaslOauthbearerScope"/>
+        /// </summary>
+        public const string SaslOauthbearerScopeKey = "datadistributionmanager.kafka.globalconf.sasl.oauthbearer.scope";
+        /// <summary>
+        /// Configuration key of <see cref="SaslOauthbearerExtensions"/>
+        /// </summary>
+        public const string SaslOauthbearerExtensionsKey = "datadistributionmanager.kafka.globalconf.sasl.oauthbearer.extensions";
+        /// <summary>
+        /// Configuration key of <see cref="SaslOauthbearerTokenEndpointUrl"/>
+        /// </summary>
+        public const string SaslOauthbearerTokenEndpointUrlKey = "datadistributionmanager.kafka.globalconf.sasl.oauthbearer.token.endpoint.url";
+        /// <summary>
         /// Configuration key of <see cref="PluginLibraryPaths"/>
         /// </summary>
         public const string PluginLibraryPathsKey = "datadistributionmanager.kafka.globalconf.plugin.library.paths";
@@ -777,6 +842,10 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         /// Configuration key of <see cref="HeartbeatInterval"/>
         /// </summary>
         public const string HeartbeatIntervalKey = "datadistributionmanager.kafka.globalconf.heartbeat.interval.ms";
+        /// <summary>
+        /// Configuration key of <see cref="GroupProtocolType"/>
+        /// </summary>
+        public const string GroupProtocolTypeKey = "datadistributionmanager.kafka.globalconf.group.protocol.type";
         /// <summary>
         /// Configuration key of <see cref="CoordinatorQueryInterval"/>
         /// </summary>
@@ -1485,6 +1554,44 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
+        /// Maximum time allowed for broker connection setup (TCP connection setup as well SSL and SASL handshake). If the connection to the broker is not fully functional after this the connection will be closed and retried.
+        /// </summary>
+        /// <value>1000 .. 2147483647</value>
+        public int SocketConnectionSetupTimeout
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(SocketConnectionSetupTimeoutKey, out value);
+                return int.Parse(value);
+            }
+            set
+            {
+                keyValuePair[SocketConnectionSetupTimeoutKey] = value.ToString();
+                EmitPropertyChanged("SocketConnectionSetupTimeout");
+            }
+        }
+
+        /// <summary>
+        /// Close broker connections after the specified time of inactivity. Disable with 0. If this property is left at its default value some heuristics are performed to determine a suitable default value, this is currently limited to identifying brokers on Azure (see librdkafka issue #3109 for more info).
+        /// </summary>
+        /// <value>0 .. 2147483647</value>
+        public int ConnectionsMaxIdle
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(ConnectionsMaxIdleKey, out value);
+                return int.Parse(value);
+            }
+            set
+            {
+                keyValuePair[ConnectionsMaxIdleKey] = value.ToString();
+                EmitPropertyChanged("ConnectionsMaxIdle");
+            }
+        }
+
+        /// <summary>
         /// Allowed broker IP address families: any, v4, v6
         /// </summary>
         public BrokerAddressFamilyType BrokerAddressFamily
@@ -1751,12 +1858,12 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             get
             {
                 string value = string.Empty;
-                keyValuePair.TryGetValue(BrokerAddressFamilyKey, out value);
+                keyValuePair.TryGetValue(SecurityProtocolKey, out value);
                 return (SecurityProtocolType)Enum.Parse(typeof(SecurityProtocolType), value);
             }
             set
             {
-                keyValuePair[BrokerAddressFamilyKey] = Enum.Format(typeof(SecurityProtocolType), value, "g");
+                keyValuePair[SecurityProtocolKey] = Enum.Format(typeof(SecurityProtocolType), value, "g");
                 EmitPropertyChanged("SecurityProtocol");
             }
         }
@@ -1960,6 +2067,24 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
+        /// CA certificate string (PEM format) for verifying the broker's key.
+        /// </summary>
+        public string SslCAPem
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(SslCAPemKey, out value);
+                return value;
+            }
+            set
+            {
+                keyValuePair[SslCAPemKey] = value;
+                EmitPropertyChanged("SslCAPem");
+            }
+        }
+
+        /// <summary>
         /// CA certificate as set by rd_kafka_conf_set_ssl_cert()
         /// </summary>
         public string SslCA
@@ -2046,6 +2171,42 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             {
                 keyValuePair[SslKeystorePasswordKey] = value;
                 EmitPropertyChanged("SslKeystorePassword");
+            }
+        }
+
+        /// <summary>
+        /// Path to OpenSSL engine library. OpenSSL >= 1.1.0 required.
+        /// </summary>
+        public string SslEngineLocation
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(SslEngineLocationKey, out value);
+                return value;
+            }
+            set
+            {
+                keyValuePair[SslEngineLocationKey] = value;
+                EmitPropertyChanged("SslEngineLocation");
+            }
+        }
+
+        /// <summary>
+        /// OpenSSL engine id is the name used for loading engine.
+        /// </summary>
+        public string SslEngineId
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(SslEngineIdKey, out value);
+                return value;
+            }
+            set
+            {
+                keyValuePair[SslEngineIdKey] = value;
+                EmitPropertyChanged("SslEngineId");
             }
         }
 
@@ -2250,6 +2411,133 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
         }
 
         /// <summary>
+        /// Enable the builtin unsecure JWT OAUTHBEARER token handler if no oauthbearer_refresh_cb has been set. This builtin handler should only be used for development or testing, and not in production.
+        /// </summary>
+        public bool EnableSaslOauthbearerUnsecureJwt
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(EnableSaslOauthbearerUnsecureJwtKey, out value);
+                return bool.Parse(value);
+            }
+            set
+            {
+                keyValuePair[EnableSaslOauthbearerUnsecureJwtKey] = value.ToString().ToLowerInvariant();
+                EmitPropertyChanged("EnableSaslOauthbearerUnsecureJwt");
+            }
+        }
+
+        /// <summary>
+        /// Set to <see cref="SaslOauthbearerMethodType.DEFAULT"/> or <see cref="SaslOauthbearerMethodType.OIDC"/> to control which login method to be used. If set to <see cref="SaslOauthbearerMethodType.OIDC"/>, the following properties must also be be specified: `sasl.oauthbearer.client.id`, `sasl.oauthbearer.client.secret`, and `sasl.oauthbearer.token.endpoint.url`.
+        /// </summary>
+        public SaslOauthbearerMethodType SaslOauthbearerMethod
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(SaslOauthbearerMethodKey, out value);
+                value = value.ToUpperInvariant();
+                return (SaslOauthbearerMethodType)Enum.Parse(typeof(SaslOauthbearerMethodType), value);
+            }
+            set
+            {
+                keyValuePair[SaslOauthbearerMethodKey] = Enum.Format(typeof(SaslOauthbearerMethodType), value, "g").ToLowerInvariant();
+                EmitPropertyChanged("SaslOauthbearerMethod");
+            }
+        }
+
+        /// <summary>
+        /// Public identifier for the application. Must be unique across all clients that the authorization server handles. Only used when <see cref="SaslOauthbearerMethod"/> is set to <see cref="SaslOauthbearerMethodType.OIDC"/>.
+        /// </summary>
+        public string SaslOauthbearerClientId
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(SaslOauthbearerClientIdKey, out value);
+                return value;
+            }
+            set
+            {
+                keyValuePair[SaslOauthbearerClientIdKey] = value;
+                EmitPropertyChanged("SaslOauthbearerClientId");
+            }
+        }
+
+        /// <summary>
+        /// Client secret only known to the application and the authorization server. This should be a sufficiently random string that is not guessable. Only used when <see cref="SaslOauthbearerMethod"/> is set to <see cref="SaslOauthbearerMethodType.OIDC"/>.
+        /// </summary>
+        public string SaslOauthbearerClientSecret
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(SaslOauthbearerClientSecretKey, out value);
+                return value;
+            }
+            set
+            {
+                keyValuePair[SaslOauthbearerClientSecretKey] = value;
+                EmitPropertyChanged("SaslOauthbearerClientSecret");
+            }
+        }
+
+        /// <summary>
+        /// Client use this to specify the scope of the access request to the broker. Only used when <see cref="SaslOauthbearerMethod"/> is set to <see cref="SaslOauthbearerMethodType.OIDC"/>.
+        /// </summary>
+        public string SaslOauthbearerScope
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(SaslOauthbearerScopeKey, out value);
+                return value;
+            }
+            set
+            {
+                keyValuePair[SaslOauthbearerScopeKey] = value;
+                EmitPropertyChanged("SaslOauthbearerScope");
+            }
+        }
+
+        /// <summary>
+        /// Allow additional information to be provided to the broker. Comma-separated list of key=value pairs. E.g., "supportFeatureX=true,organizationId=sales-emea". Only used when <see cref="SaslOauthbearerMethod"/> is set to <see cref="SaslOauthbearerMethodType.OIDC"/>.
+        /// </summary>
+        public string SaslOauthbearerExtensions
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(SaslOauthbearerExtensionsKey, out value);
+                return value;
+            }
+            set
+            {
+                keyValuePair[SaslOauthbearerExtensionsKey] = value;
+                EmitPropertyChanged("SaslOauthbearerExtensions");
+            }
+        }
+
+        /// <summary>
+        /// OAuth/OIDC issuer token endpoint HTTP(S) URI used to retrieve token. Only used when <see cref="SaslOauthbearerMethod"/> is set to <see cref="SaslOauthbearerMethodType.OIDC"/>.
+        /// </summary>
+        public string SaslOauthbearerTokenEndpointUrl
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(SaslOauthbearerTokenEndpointUrlKey, out value);
+                return value;
+            }
+            set
+            {
+                keyValuePair[SaslOauthbearerTokenEndpointUrlKey] = value;
+                EmitPropertyChanged("SaslOauthbearerTokenEndpointUrl");
+            }
+        }
+
+        /// <summary>
         /// List of plugin libraries to load (; separated). The library search path is platform dependent (see dlopen(3) for Unix and LoadLibrary() for Windows). If no filename extension is specified the platform-specific extension (such as .dll or .so) will be appended automatically.
         /// </summary>
         public string PluginLibraryPaths
@@ -2339,6 +2627,24 @@ namespace MASES.DataDistributionManager.Bindings.Configuration
             {
                 keyValuePair[HeartbeatIntervalKey] = value.ToString();
                 EmitPropertyChanged("HeartbeatInterval");
+            }
+        }
+
+        /// <summary>
+        /// Group protocol type. NOTE: Currently, the only supported group protocol type is 'consumer'.
+        /// </summary>
+        public string GroupProtocolType
+        {
+            get
+            {
+                string value = string.Empty;
+                keyValuePair.TryGetValue(GroupProtocolTypeKey, out value);
+                return value;
+            }
+            set
+            {
+                keyValuePair[GroupProtocolTypeKey] = value;
+                EmitPropertyChanged("GroupProtocolType");
             }
         }
 
