@@ -329,7 +329,6 @@ jobs:
       - name: Build DataDistributionManager net6.0, net5.0 and netcoreapp3.1
         run: |
           dotnet build --no-incremental --configuration Release --framework netcoreapp3.1 -o Outputnetcoreapp3.1 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
-          dotnet build --no-incremental --configuration Release --framework net5.0 -o Outputnet5.0 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
           dotnet build --no-incremental --configuration Release --framework net6.0 -o Outputnet6.0 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
 
       - name: Prepare for packaging
@@ -366,7 +365,7 @@ jobs:
           Copy-Item .\Output\x64\*.pdb .\OutputPackage\pdb\x64\ -Force
           Copy-Item .\Output\pdb64\*.pdb .\OutputPackage\pdb\x64\ -Force
           Copy-Item .\LICENSE .\OutputPackage\licenses\LICENSE.datadistributionmanager -Force
-          Copy-Item .\src\packages\librdkafka.redist.1.8.2\LICENSES.txt .\OutputPackage\licenses\LICENSE.librdkafka -Force
+          Copy-Item .\src\packages\librdkafka.redist.1.9.0.1\LICENSES.txt .\OutputPackage\licenses\LICENSE.librdkafka -Force
           Copy-Item .\third_party\OpenDDS\LICENSE .\OutputPackage\licenses\LICENSE.opendds -Force
           Compress-Archive -Path .\OutputPackage\* -DestinationPath .\OutputPackage\DataDistributionManager.zip
 

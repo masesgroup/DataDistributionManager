@@ -1,5 +1,5 @@
 /*
-*  Copyright 2022 MASES s.r.l.
+*  Copyright 2021 MASES s.r.l.
 *
 *  Licensed under the Apache License, Version 2.0 (the "License");
 *  you may not use this file except in compliance with the License.
@@ -42,18 +42,6 @@ public class KafkaChannelConfiguration extends KafkaConfiguration {
      * target= "_top">DumpMetadataKey</a>
      */
     public static final String DumpMetadataKey = "datadistributionmanager.kafka.topic_dumpmetadata";
-    /**
-     * See .NET <a href=
-     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TransactionsEnabledKey"
-     * target= "_top">TransactionsEnabledKey</a>
-     */
-    public static final String TransactionsEnabledKey = "datadistributionmanager.kafka.transactions.enable";
-    /**
-     * See .NET <a href=
-     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_TransactionsTimeoutKey"
-     * target= "_top">TransactionsTimeoutKey</a>
-     */
-    public static final String TransactionsTimeoutKey = "datadistributionmanager.kafka.transactions.timeout";
 
     /**
      * See .NET <a href=
@@ -199,6 +187,18 @@ public class KafkaChannelConfiguration extends KafkaConfiguration {
      * target= "_top">BrokerAddressFamilyKey</a>
      */
     public static final String BrokerAddressFamilyKey = "datadistributionmanager.kafka.globalconf.broker.address.family";
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SocketConnectionSetupTimeoutKey"
+     * target= "_top">SocketConnectionSetupTimeoutKey</a>
+     */
+    public static final String SocketConnectionSetupTimeoutKey = "datadistributionmanager.kafka.globalconf.socket.connection.setup.timeout.ms";
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ConnectionsMaxIdleKey"
+     * target= "_top">ConnectionsMaxIdleKey</a>
+     */
+    public static final String ConnectionsMaxIdleKey = "datadistributionmanager.kafka.globalconf.connections.max.idle.ms";
     /**
      * See .NET <a href=
      * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ReconnectBackoffKey"
@@ -351,6 +351,12 @@ public class KafkaChannelConfiguration extends KafkaConfiguration {
     public static final String SslCALocationKey = "datadistributionmanager.kafka.globalconf.ssl.ca.location";
     /**
      * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SslCAPemKey"
+     * target= "_top">SslCAPemKey</a>
+     */
+    public static final String SslCAPemKey = "datadistributionmanager.kafka.globalconf.ssl.ca.pem";
+    /**
+     * See .NET <a href=
      * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SslCAKey"
      * target= "_top">SslCAKey</a>
      */
@@ -379,6 +385,18 @@ public class KafkaChannelConfiguration extends KafkaConfiguration {
      * target= "_top">SslKeystorePasswordKey</a>
      */
     public static final String SslKeystorePasswordKey = "datadistributionmanager.kafka.globalconf.ssl.keystore.password";
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SslEngineLocationKey"
+     * target= "_top">SslEngineLocationKey</a>
+     */
+    public static final String SslEngineLocationKey = "datadistributionmanager.kafka.globalconf.ssl.engine.location";
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SslEngineIdKey"
+     * target= "_top">SslEngineIdKey</a>
+     */
+    public static final String SslEngineIdKey = "datadistributionmanager.kafka.globalconf.ssl.engine.id";
     /**
      * See .NET <a href=
      * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_EnableSslCertificateVerificationKey"
@@ -447,6 +465,48 @@ public class KafkaChannelConfiguration extends KafkaConfiguration {
     public static final String SaslOauthbearerConfigKey = "datadistributionmanager.kafka.globalconf.sasl.oauthbearer.config";
     /**
      * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_EnableSaslOauthbearerUnsecureJwtKey"
+     * target= "_top">EnableSaslOauthbearerUnsecureJwtKey</a>
+     */
+    public static final String EnableSaslOauthbearerUnsecureJwtKey = "datadistributionmanager.kafka.globalconf.enable.sasl.oauthbearer.unsecure.jwt";
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerMethodKey"
+     * target= "_top">SaslOauthbearerMethodKey</a>
+     */
+    public static final String SaslOauthbearerMethodKey = "datadistributionmanager.kafka.globalconf.sasl.oauthbearer.method";
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerClientIdKey"
+     * target= "_top">SaslOauthbearerClientIdKey</a>
+     */
+    public static final String SaslOauthbearerClientIdKey = "datadistributionmanager.kafka.globalconf.sasl.oauthbearer.client.id";
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerClientSecretKey"
+     * target= "_top">SaslOauthbearerClientSecretKey</a>
+     */
+    public static final String SaslOauthbearerClientSecretKey = "datadistributionmanager.kafka.globalconf.sasl.oauthbearer.client.secret";
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerScopeKey"
+     * target= "_top">SaslOauthbearerScopeKey</a>
+     */
+    public static final String SaslOauthbearerScopeKey = "datadistributionmanager.kafka.globalconf.sasl.oauthbearer.scope";
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerExtensionsKey"
+     * target= "_top">SaslOauthbearerExtensionsKey</a>
+     */
+    public static final String SaslOauthbearerExtensionsKey = "datadistributionmanager.kafka.globalconf.sasl.oauthbearer.extensions";
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerTokenEndpointUrlKey"
+     * target= "_top">SaslOauthbearerTokenEndpointUrlKey</a>
+     */
+    public static final String SaslOauthbearerTokenEndpointUrlKey = "datadistributionmanager.kafka.globalconf.sasl.oauthbearer.token.endpoint.url";
+    /**
+     * See .NET <a href=
      * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_PluginLibraryPathsKey"
      * target= "_top">PluginLibraryPathsKey</a>
      */
@@ -475,6 +535,12 @@ public class KafkaChannelConfiguration extends KafkaConfiguration {
      * target= "_top">HeartbeatIntervalKey</a>
      */
     public static final String HeartbeatIntervalKey = "datadistributionmanager.kafka.globalconf.heartbeat.interval.ms";
+    /**
+     * See .NET <a href=
+     * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_GroupProtocolTypeKey"
+     * target= "_top">GroupProtocolTypeKey</a>
+     */
+    public static final String GroupProtocolTypeKey = "datadistributionmanager.kafka.globalconf.group.protocol.type";
     /**
      * See .NET <a href=
      * "../../../../../api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_CoordinatorQueryIntervalKey"
@@ -899,46 +965,6 @@ public class KafkaChannelConfiguration extends KafkaConfiguration {
     }
 
     /**
-     * True to enable transactions
-     * 
-     * @return True to enable transactions
-     */
-    public boolean getTransactionsEnabled() {
-        String value = keyValuePair.get(TransactionsEnabledKey);
-        return (value == null) ? false : Boolean.parseBoolean(value);
-    }
-
-    /**
-     * True to enable transactions
-     * 
-     * @param value True to enable transactions
-     */
-    public void setTransactionsEnabled(Boolean value) {
-        keyValuePair.put(TransactionsEnabledKey, value.toString());
-    }
-
-    /**
-     * The timeout to be used in transaction operations when TransactionsEnabled is
-     * true
-     * 
-     * @return The timeout in ms
-     */
-    public Integer getTransactionsTimeout() {
-        String value = keyValuePair.get(TransactionsTimeoutKey);
-        return (value == null) ? 0 : Integer.parseInt(value);
-    }
-
-    /**
-     * The timeout to be used in transaction operations when TransactionsEnabled is
-     * true
-     * 
-     * @param value The timeout in ms
-     */
-    public void setTransactionsTimeout(Integer value) {
-        keyValuePair.put(TransactionsTimeoutKey, value.toString());
-    }
-
-    /**
      * Generic getter for all configuration properties related to librdkafka (see
      * https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md)
      * 
@@ -949,14 +975,14 @@ public class KafkaChannelConfiguration extends KafkaConfiguration {
     public String getProperty(KafkaConfigurationType type, String property) {
         String propKey = null;
         switch (type) {
-            case GLOBAL_CONF:
-                propKey = KafkaGlobalConfigurationBasePropertyKey;
-                break;
-            case TOPIC_CONF:
-                propKey = KafkaTopicConfigurationBasePropertyKey;
-                break;
-            default:
-                throw new IllegalArgumentException(String.format("Type %s is invalid", type.toString()));
+        case GLOBAL_CONF:
+            propKey = KafkaGlobalConfigurationBasePropertyKey;
+            break;
+        case TOPIC_CONF:
+            propKey = KafkaTopicConfigurationBasePropertyKey;
+            break;
+        default:
+            throw new IllegalArgumentException(String.format("Type %s is invalid", type.toString()));
         }
 
         String value = "";
@@ -981,14 +1007,14 @@ public class KafkaChannelConfiguration extends KafkaConfiguration {
     public void setProperty(KafkaConfigurationType type, String property, String value) {
         String propKey = null;
         switch (type) {
-            case GLOBAL_CONF:
-                propKey = KafkaGlobalConfigurationBasePropertyKey;
-                break;
-            case TOPIC_CONF:
-                propKey = KafkaTopicConfigurationBasePropertyKey;
-                break;
-            default:
-                throw new IllegalArgumentException(String.format("Type %s is invalid", type.toString()));
+        case GLOBAL_CONF:
+            propKey = KafkaGlobalConfigurationBasePropertyKey;
+            break;
+        case TOPIC_CONF:
+            propKey = KafkaTopicConfigurationBasePropertyKey;
+            break;
+        default:
+            throw new IllegalArgumentException(String.format("Type %s is invalid", type.toString()));
         }
 
         if (property.startsWith(propKey)) {
