@@ -2290,6 +2290,25 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.Configuration
   nameWithType: KafkaChannelConfiguration.Configuration
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ConnectionsMaxIdle
+  name: ConnectionsMaxIdle
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ConnectionsMaxIdle
+  commentId: P:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ConnectionsMaxIdle
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ConnectionsMaxIdle
+  nameWithType: KafkaChannelConfiguration.ConnectionsMaxIdle
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ConnectionsMaxIdle*
+  name: ConnectionsMaxIdle
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ConnectionsMaxIdle_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ConnectionsMaxIdle
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ConnectionsMaxIdle
+  nameWithType: KafkaChannelConfiguration.ConnectionsMaxIdle
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ConnectionsMaxIdleKey
+  name: ConnectionsMaxIdleKey
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ConnectionsMaxIdleKey
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ConnectionsMaxIdleKey
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ConnectionsMaxIdleKey
+  nameWithType: KafkaChannelConfiguration.ConnectionsMaxIdleKey
 - uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.ConsumeCallbackMaxMessages
   name: ConsumeCallbackMaxMessages
   href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_ConsumeCallbackMaxMessages
@@ -2499,6 +2518,25 @@ references:
   commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.EnableRandomSeedKey
   fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.EnableRandomSeedKey
   nameWithType: KafkaChannelConfiguration.EnableRandomSeedKey
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.EnableSaslOauthbearerUnsecureJwt
+  name: EnableSaslOauthbearerUnsecureJwt
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_EnableSaslOauthbearerUnsecureJwt
+  commentId: P:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.EnableSaslOauthbearerUnsecureJwt
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.EnableSaslOauthbearerUnsecureJwt
+  nameWithType: KafkaChannelConfiguration.EnableSaslOauthbearerUnsecureJwt
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.EnableSaslOauthbearerUnsecureJwt*
+  name: EnableSaslOauthbearerUnsecureJwt
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_EnableSaslOauthbearerUnsecureJwt_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.EnableSaslOauthbearerUnsecureJwt
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.EnableSaslOauthbearerUnsecureJwt
+  nameWithType: KafkaChannelConfiguration.EnableSaslOauthbearerUnsecureJwt
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.EnableSaslOauthbearerUnsecureJwtKey
+  name: EnableSaslOauthbearerUnsecureJwtKey
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_EnableSaslOauthbearerUnsecureJwtKey
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.EnableSaslOauthbearerUnsecureJwtKey
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.EnableSaslOauthbearerUnsecureJwtKey
+  nameWithType: KafkaChannelConfiguration.EnableSaslOauthbearerUnsecureJwtKey
 - uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.EnableSslCertificateVerification
   name: EnableSslCertificateVerification
   href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_EnableSslCertificateVerification
@@ -2651,6 +2689,25 @@ references:
   commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.GroupInstanceIdKey
   fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.GroupInstanceIdKey
   nameWithType: KafkaChannelConfiguration.GroupInstanceIdKey
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.GroupProtocolType
+  name: GroupProtocolType
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_GroupProtocolType
+  commentId: P:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.GroupProtocolType
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.GroupProtocolType
+  nameWithType: KafkaChannelConfiguration.GroupProtocolType
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.GroupProtocolType*
+  name: GroupProtocolType
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_GroupProtocolType_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.GroupProtocolType
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.GroupProtocolType
+  nameWithType: KafkaChannelConfiguration.GroupProtocolType
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.GroupProtocolTypeKey
+  name: GroupProtocolTypeKey
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_GroupProtocolTypeKey
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.GroupProtocolTypeKey
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.GroupProtocolTypeKey
+  nameWithType: KafkaChannelConfiguration.GroupProtocolTypeKey
 - uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.HeartbeatInterval
   name: HeartbeatInterval
   href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_HeartbeatInterval
@@ -3401,6 +3458,44 @@ references:
   commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslMechanismKey
   fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslMechanismKey
   nameWithType: KafkaChannelConfiguration.SaslMechanismKey
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerClientId
+  name: SaslOauthbearerClientId
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerClientId
+  commentId: P:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerClientId
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerClientId
+  nameWithType: KafkaChannelConfiguration.SaslOauthbearerClientId
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerClientId*
+  name: SaslOauthbearerClientId
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerClientId_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerClientId
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerClientId
+  nameWithType: KafkaChannelConfiguration.SaslOauthbearerClientId
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerClientIdKey
+  name: SaslOauthbearerClientIdKey
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerClientIdKey
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerClientIdKey
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerClientIdKey
+  nameWithType: KafkaChannelConfiguration.SaslOauthbearerClientIdKey
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerClientSecret
+  name: SaslOauthbearerClientSecret
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerClientSecret
+  commentId: P:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerClientSecret
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerClientSecret
+  nameWithType: KafkaChannelConfiguration.SaslOauthbearerClientSecret
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerClientSecret*
+  name: SaslOauthbearerClientSecret
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerClientSecret_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerClientSecret
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerClientSecret
+  nameWithType: KafkaChannelConfiguration.SaslOauthbearerClientSecret
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerClientSecretKey
+  name: SaslOauthbearerClientSecretKey
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerClientSecretKey
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerClientSecretKey
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerClientSecretKey
+  nameWithType: KafkaChannelConfiguration.SaslOauthbearerClientSecretKey
 - uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerConfig
   name: SaslOauthbearerConfig
   href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerConfig
@@ -3420,6 +3515,82 @@ references:
   commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerConfigKey
   fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerConfigKey
   nameWithType: KafkaChannelConfiguration.SaslOauthbearerConfigKey
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerExtensions
+  name: SaslOauthbearerExtensions
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerExtensions
+  commentId: P:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerExtensions
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerExtensions
+  nameWithType: KafkaChannelConfiguration.SaslOauthbearerExtensions
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerExtensions*
+  name: SaslOauthbearerExtensions
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerExtensions_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerExtensions
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerExtensions
+  nameWithType: KafkaChannelConfiguration.SaslOauthbearerExtensions
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerExtensionsKey
+  name: SaslOauthbearerExtensionsKey
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerExtensionsKey
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerExtensionsKey
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerExtensionsKey
+  nameWithType: KafkaChannelConfiguration.SaslOauthbearerExtensionsKey
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerMethod
+  name: SaslOauthbearerMethod
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerMethod
+  commentId: P:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerMethod
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerMethod
+  nameWithType: KafkaChannelConfiguration.SaslOauthbearerMethod
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerMethod*
+  name: SaslOauthbearerMethod
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerMethod_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerMethod
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerMethod
+  nameWithType: KafkaChannelConfiguration.SaslOauthbearerMethod
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerMethodKey
+  name: SaslOauthbearerMethodKey
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerMethodKey
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerMethodKey
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerMethodKey
+  nameWithType: KafkaChannelConfiguration.SaslOauthbearerMethodKey
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerScope
+  name: SaslOauthbearerScope
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerScope
+  commentId: P:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerScope
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerScope
+  nameWithType: KafkaChannelConfiguration.SaslOauthbearerScope
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerScope*
+  name: SaslOauthbearerScope
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerScope_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerScope
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerScope
+  nameWithType: KafkaChannelConfiguration.SaslOauthbearerScope
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerScopeKey
+  name: SaslOauthbearerScopeKey
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerScopeKey
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerScopeKey
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerScopeKey
+  nameWithType: KafkaChannelConfiguration.SaslOauthbearerScopeKey
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerTokenEndpointUrl
+  name: SaslOauthbearerTokenEndpointUrl
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerTokenEndpointUrl
+  commentId: P:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerTokenEndpointUrl
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerTokenEndpointUrl
+  nameWithType: KafkaChannelConfiguration.SaslOauthbearerTokenEndpointUrl
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerTokenEndpointUrl*
+  name: SaslOauthbearerTokenEndpointUrl
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerTokenEndpointUrl_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerTokenEndpointUrl
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerTokenEndpointUrl
+  nameWithType: KafkaChannelConfiguration.SaslOauthbearerTokenEndpointUrl
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerTokenEndpointUrlKey
+  name: SaslOauthbearerTokenEndpointUrlKey
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslOauthbearerTokenEndpointUrlKey
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerTokenEndpointUrlKey
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslOauthbearerTokenEndpointUrlKey
+  nameWithType: KafkaChannelConfiguration.SaslOauthbearerTokenEndpointUrlKey
 - uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SaslPassword
   name: SaslPassword
   href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SaslPassword
@@ -3496,6 +3667,25 @@ references:
   commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SessionTimeoutKey
   fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SessionTimeoutKey
   nameWithType: KafkaChannelConfiguration.SessionTimeoutKey
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SocketConnectionSetupTimeout
+  name: SocketConnectionSetupTimeout
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SocketConnectionSetupTimeout
+  commentId: P:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SocketConnectionSetupTimeout
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SocketConnectionSetupTimeout
+  nameWithType: KafkaChannelConfiguration.SocketConnectionSetupTimeout
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SocketConnectionSetupTimeout*
+  name: SocketConnectionSetupTimeout
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SocketConnectionSetupTimeout_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SocketConnectionSetupTimeout
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SocketConnectionSetupTimeout
+  nameWithType: KafkaChannelConfiguration.SocketConnectionSetupTimeout
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SocketConnectionSetupTimeoutKey
+  name: SocketConnectionSetupTimeoutKey
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SocketConnectionSetupTimeoutKey
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SocketConnectionSetupTimeoutKey
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SocketConnectionSetupTimeoutKey
+  nameWithType: KafkaChannelConfiguration.SocketConnectionSetupTimeoutKey
 - uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SocketKeepaliveEnable
   name: SocketKeepaliveEnable
   href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SocketKeepaliveEnable
@@ -3667,6 +3857,25 @@ references:
   commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslCALocationKey
   fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslCALocationKey
   nameWithType: KafkaChannelConfiguration.SslCALocationKey
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslCAPem
+  name: SslCAPem
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SslCAPem
+  commentId: P:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslCAPem
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslCAPem
+  nameWithType: KafkaChannelConfiguration.SslCAPem
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslCAPem*
+  name: SslCAPem
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SslCAPem_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslCAPem
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslCAPem
+  nameWithType: KafkaChannelConfiguration.SslCAPem
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslCAPemKey
+  name: SslCAPemKey
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SslCAPemKey
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslCAPemKey
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslCAPemKey
+  nameWithType: KafkaChannelConfiguration.SslCAPemKey
 - uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslCertificate
   name: SslCertificate
   href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SslCertificate
@@ -3800,6 +4009,44 @@ references:
   commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEndpointIdentificationAlgorithmKey
   fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEndpointIdentificationAlgorithmKey
   nameWithType: KafkaChannelConfiguration.SslEndpointIdentificationAlgorithmKey
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEngineId
+  name: SslEngineId
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SslEngineId
+  commentId: P:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEngineId
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEngineId
+  nameWithType: KafkaChannelConfiguration.SslEngineId
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEngineId*
+  name: SslEngineId
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SslEngineId_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEngineId
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEngineId
+  nameWithType: KafkaChannelConfiguration.SslEngineId
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEngineIdKey
+  name: SslEngineIdKey
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SslEngineIdKey
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEngineIdKey
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEngineIdKey
+  nameWithType: KafkaChannelConfiguration.SslEngineIdKey
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEngineLocation
+  name: SslEngineLocation
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SslEngineLocation
+  commentId: P:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEngineLocation
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEngineLocation
+  nameWithType: KafkaChannelConfiguration.SslEngineLocation
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEngineLocation*
+  name: SslEngineLocation
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SslEngineLocation_
+  commentId: Overload:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEngineLocation
+  isSpec: "True"
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEngineLocation
+  nameWithType: KafkaChannelConfiguration.SslEngineLocation
+- uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEngineLocationKey
+  name: SslEngineLocationKey
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SslEngineLocationKey
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEngineLocationKey
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslEngineLocationKey
+  nameWithType: KafkaChannelConfiguration.SslEngineLocationKey
 - uid: MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.SslKey
   name: SslKey
   href: api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_SslKey
@@ -6066,6 +6313,24 @@ references:
   commentId: F:MASES.DataDistributionManager.Bindings.Configuration.SaslMechanismType.SCRAM_SHA_512
   fullName: MASES.DataDistributionManager.Bindings.Configuration.SaslMechanismType.SCRAM_SHA_512
   nameWithType: SaslMechanismType.SCRAM_SHA_512
+- uid: MASES.DataDistributionManager.Bindings.Configuration.SaslOauthbearerMethodType
+  name: SaslOauthbearerMethodType
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.SaslOauthbearerMethodType.html
+  commentId: T:MASES.DataDistributionManager.Bindings.Configuration.SaslOauthbearerMethodType
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.SaslOauthbearerMethodType
+  nameWithType: SaslOauthbearerMethodType
+- uid: MASES.DataDistributionManager.Bindings.Configuration.SaslOauthbearerMethodType.DEFAULT
+  name: DEFAULT
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.SaslOauthbearerMethodType.html#MASES_DataDistributionManager_Bindings_Configuration_SaslOauthbearerMethodType_DEFAULT
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.SaslOauthbearerMethodType.DEFAULT
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.SaslOauthbearerMethodType.DEFAULT
+  nameWithType: SaslOauthbearerMethodType.DEFAULT
+- uid: MASES.DataDistributionManager.Bindings.Configuration.SaslOauthbearerMethodType.OIDC
+  name: OIDC
+  href: api/MASES.DataDistributionManager.Bindings.Configuration.SaslOauthbearerMethodType.html#MASES_DataDistributionManager_Bindings_Configuration_SaslOauthbearerMethodType_OIDC
+  commentId: F:MASES.DataDistributionManager.Bindings.Configuration.SaslOauthbearerMethodType.OIDC
+  fullName: MASES.DataDistributionManager.Bindings.Configuration.SaslOauthbearerMethodType.OIDC
+  nameWithType: SaslOauthbearerMethodType.OIDC
 - uid: MASES.DataDistributionManager.Bindings.Configuration.SecurityProtocolType
   name: SecurityProtocolType
   href: api/MASES.DataDistributionManager.Bindings.Configuration.SecurityProtocolType.html
@@ -7702,11 +7967,11 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnChangingState
   nameWithType: ISmartDataDistribution.OnChangingState
-- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnClusterStateChange(MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT,System.Int64)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnClusterStateChange(MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT,Int64)
   name: OnClusterStateChange(DDM_CLUSTEREVENT, Int64)
-  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.html#MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnClusterStateChange_MASES_DataDistributionManager_Bindings_Interop_DDM_CLUSTEREVENT_System_Int64_
-  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnClusterStateChange(MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT,System.Int64)
-  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnClusterStateChange(MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT, System.Int64)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.html#MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnClusterStateChange_MASES_DataDistributionManager_Bindings_Interop_DDM_CLUSTEREVENT_Int64_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnClusterStateChange(MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT,Int64)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnClusterStateChange(MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT, Int64)
   nameWithType: ISmartDataDistribution.OnClusterStateChange(DDM_CLUSTEREVENT, Int64)
 - uid: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnClusterStateChange*
   name: OnClusterStateChange
@@ -7767,11 +8032,11 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnLogging
   nameWithType: ISmartDataDistribution.OnLogging
-- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnMultiplePrimary(System.Int64,System.Int64)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnMultiplePrimary(Int64,Int64)
   name: OnMultiplePrimary(Int64, Int64)
-  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.html#MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnMultiplePrimary_System_Int64_System_Int64_
-  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnMultiplePrimary(System.Int64,System.Int64)
-  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnMultiplePrimary(System.Int64, System.Int64)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.html#MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnMultiplePrimary_Int64_Int64_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnMultiplePrimary(Int64,Int64)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnMultiplePrimary(Int64, Int64)
   nameWithType: ISmartDataDistribution.OnMultiplePrimary(Int64, Int64)
 - uid: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnMultiplePrimary*
   name: OnMultiplePrimary
@@ -7780,11 +8045,11 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnMultiplePrimary
   nameWithType: ISmartDataDistribution.OnMultiplePrimary
-- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnRequestedState(System.IntPtr,System.IntPtr)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnRequestedState(IntPtr,IntPtr)
   name: OnRequestedState(IntPtr, IntPtr)
-  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.html#MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnRequestedState_System_IntPtr_System_IntPtr_
-  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnRequestedState(System.IntPtr,System.IntPtr)
-  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnRequestedState(System.IntPtr, System.IntPtr)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.html#MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnRequestedState_IntPtr_IntPtr_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnRequestedState(IntPtr,IntPtr)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnRequestedState(IntPtr, IntPtr)
   nameWithType: ISmartDataDistribution.OnRequestedState(IntPtr, IntPtr)
 - uid: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnRequestedState*
   name: OnRequestedState
@@ -7806,11 +8071,11 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnStateChange
   nameWithType: ISmartDataDistribution.OnStateChange
-- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnStateReady(System.IntPtr,System.Int64)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnStateReady(IntPtr,Int64)
   name: OnStateReady(IntPtr, Int64)
-  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.html#MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnStateReady_System_IntPtr_System_Int64_
-  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnStateReady(System.IntPtr,System.Int64)
-  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnStateReady(System.IntPtr, System.Int64)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.html#MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnStateReady_IntPtr_Int64_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnStateReady(IntPtr,Int64)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnStateReady(IntPtr, Int64)
   nameWithType: ISmartDataDistribution.OnStateReady(IntPtr, Int64)
 - uid: MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnStateReady*
   name: OnStateReady
@@ -8022,13 +8287,13 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnDataAvailable
   nameWithType: ISmartDataDistributionChannel.OnDataAvailable
-- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.ReadFromChannel(System.Int64,System.Int64,System.Byte[]@)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.ReadFromChannel(Int64,System.Int64,System.Byte[]@)
   name: ReadFromChannel(Int64, Int64, out Byte[])
-  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_ReadFromChannel_System_Int64_System_Int64_System_Byte____
-  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.ReadFromChannel(System.Int64,System.Int64,System.Byte[]@)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_ReadFromChannel_Int64_System_Int64_System_Byte____
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.ReadFromChannel(Int64,System.Int64,System.Byte[]@)
   name.vb: ReadFromChannel(Int64, Int64, ByRef Byte())
-  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.ReadFromChannel(System.Int64, System.Int64, out System.Byte[])
-  fullName.vb: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.ReadFromChannel(System.Int64, System.Int64, ByRef System.Byte())
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.ReadFromChannel(Int64, System.Int64, out System.Byte[])
+  fullName.vb: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.ReadFromChannel(Int64, System.Int64, ByRef System.Byte())
   nameWithType: ISmartDataDistributionChannel.ReadFromChannel(Int64, Int64, out Byte[])
   nameWithType.vb: ISmartDataDistributionChannel.ReadFromChannel(Int64, Int64, ByRef Byte())
 - uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.ReadFromChannel*
@@ -8038,29 +8303,29 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.ReadFromChannel
   nameWithType: ISmartDataDistributionChannel.ReadFromChannel
-- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.DateTime)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(DateTime)
   name: SeekChannel(DateTime)
-  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SeekChannel_System_DateTime_
-  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.DateTime)
-  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.DateTime)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SeekChannel_DateTime_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(DateTime)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(DateTime)
   nameWithType: ISmartDataDistributionChannel.SeekChannel(DateTime)
-- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
   name: SeekChannel(Int64, DDM_SEEKCONTEXT, DDM_SEEKKIND)
-  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SeekChannel_System_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKCONTEXT_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_
-  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
-  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.Int64, MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT, MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SeekChannel_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKCONTEXT_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(Int64, MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT, MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
   nameWithType: ISmartDataDistributionChannel.SeekChannel(Int64, DDM_SEEKCONTEXT, DDM_SEEKKIND)
-- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
   name: SeekChannel(Int64, DDM_SEEKKIND)
-  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SeekChannel_System_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_
-  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
-  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.Int64, MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SeekChannel_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(Int64, MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
   nameWithType: ISmartDataDistributionChannel.SeekChannel(Int64, DDM_SEEKKIND)
-- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.TimeSpan)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(TimeSpan)
   name: SeekChannel(TimeSpan)
-  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SeekChannel_System_TimeSpan_
-  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.TimeSpan)
-  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.TimeSpan)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SeekChannel_TimeSpan_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(TimeSpan)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(TimeSpan)
   nameWithType: ISmartDataDistributionChannel.SeekChannel(TimeSpan)
 - uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel*
   name: SeekChannel
@@ -8127,35 +8392,35 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.Unlock
   nameWithType: ISmartDataDistributionChannel.Unlock
-- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.Byte[],System.Boolean,System.Int64)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.Byte[],System.Boolean,Int64)
   name: WriteOnChannel(Byte[], Boolean, Int64)
-  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_WriteOnChannel_System_Byte___System_Boolean_System_Int64_
-  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.Byte[],System.Boolean,System.Int64)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_WriteOnChannel_System_Byte___System_Boolean_Int64_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.Byte[],System.Boolean,Int64)
   name.vb: WriteOnChannel(Byte(), Boolean, Int64)
-  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.Byte[], System.Boolean, System.Int64)
-  fullName.vb: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.Byte(), System.Boolean, System.Int64)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.Byte[], System.Boolean, Int64)
+  fullName.vb: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.Byte(), System.Boolean, Int64)
   nameWithType: ISmartDataDistributionChannel.WriteOnChannel(Byte[], Boolean, Int64)
   nameWithType.vb: ISmartDataDistributionChannel.WriteOnChannel(Byte(), Boolean, Int64)
-- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String,System.Boolean,System.Int64)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String,System.Boolean,Int64)
   name: WriteOnChannel(String, Boolean, Int64)
-  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_WriteOnChannel_System_String_System_Boolean_System_Int64_
-  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String,System.Boolean,System.Int64)
-  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String, System.Boolean, System.Int64)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_WriteOnChannel_System_String_System_Boolean_Int64_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String,System.Boolean,Int64)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String, System.Boolean, Int64)
   nameWithType: ISmartDataDistributionChannel.WriteOnChannel(String, Boolean, Int64)
-- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String,System.Byte[],System.Boolean,System.Int64)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String,System.Byte[],System.Boolean,Int64)
   name: WriteOnChannel(String, Byte[], Boolean, Int64)
-  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_WriteOnChannel_System_String_System_Byte___System_Boolean_System_Int64_
-  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String,System.Byte[],System.Boolean,System.Int64)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_WriteOnChannel_System_String_System_Byte___System_Boolean_Int64_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String,System.Byte[],System.Boolean,Int64)
   name.vb: WriteOnChannel(String, Byte(), Boolean, Int64)
-  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String, System.Byte[], System.Boolean, System.Int64)
-  fullName.vb: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String, System.Byte(), System.Boolean, System.Int64)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String, System.Byte[], System.Boolean, Int64)
+  fullName.vb: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String, System.Byte(), System.Boolean, Int64)
   nameWithType: ISmartDataDistributionChannel.WriteOnChannel(String, Byte[], Boolean, Int64)
   nameWithType.vb: ISmartDataDistributionChannel.WriteOnChannel(String, Byte(), Boolean, Int64)
-- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String,System.String,System.Boolean,System.Int64)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String,System.String,System.Boolean,Int64)
   name: WriteOnChannel(String, String, Boolean, Int64)
-  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_WriteOnChannel_System_String_System_String_System_Boolean_System_Int64_
-  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String,System.String,System.Boolean,System.Int64)
-  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String, System.String, System.Boolean, System.Int64)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_WriteOnChannel_System_String_System_String_System_Boolean_Int64_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String,System.String,System.Boolean,Int64)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String, System.String, System.Boolean, Int64)
   nameWithType: ISmartDataDistributionChannel.WriteOnChannel(String, String, Boolean, Int64)
 - uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel*
   name: WriteOnChannel
@@ -8241,11 +8506,11 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ChangeMyState
   nameWithType: ISmartDataDistributionMastership.ChangeMyState
-- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ChangeState(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE)
+- uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ChangeState(Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE)
   name: ChangeState(Int64, DDM_INSTANCE_STATE)
-  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_ChangeState_System_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_INSTANCE_STATE_
-  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ChangeState(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE)
-  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ChangeState(System.Int64, MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE)
+  href: api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.html#MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_ChangeState_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_INSTANCE_STATE_
+  commentId: M:MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ChangeState(Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE)
+  fullName: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ChangeState(Int64, MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE)
   nameWithType: ISmartDataDistributionMastership.ChangeState(Int64, DDM_INSTANCE_STATE)
 - uid: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ChangeState*
   name: ChangeState
@@ -8708,12 +8973,12 @@ references:
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ChangeMyState
   nameWithType: SmartDataDistribution.ISmartDataDistributionMastership.ChangeMyState
   nameWithType.vb: SmartDataDistribution.MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ChangeMyState
-- uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES#DataDistributionManager#Bindings#ISmartDataDistributionMastership#ChangeState(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES#DataDistributionManager#Bindings#ISmartDataDistributionMastership#ChangeState(Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE)
   name: ISmartDataDistributionMastership.ChangeState(Int64, DDM_INSTANCE_STATE)
-  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_ChangeState_System_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_INSTANCE_STATE_
-  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES#DataDistributionManager#Bindings#ISmartDataDistributionMastership#ChangeState(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_ChangeState_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_INSTANCE_STATE_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES#DataDistributionManager#Bindings#ISmartDataDistributionMastership#ChangeState(Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE)
   name.vb: MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ChangeState(Int64, DDM_INSTANCE_STATE)
-  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ChangeState(System.Int64, MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ChangeState(Int64, MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE)
   nameWithType: SmartDataDistribution.ISmartDataDistributionMastership.ChangeState(Int64, DDM_INSTANCE_STATE)
   nameWithType.vb: SmartDataDistribution.MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ChangeState(Int64, DDM_INSTANCE_STATE)
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.MASES#DataDistributionManager#Bindings#ISmartDataDistributionMastership#ChangeState*
@@ -9004,11 +9269,11 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnChangingState
   nameWithType: SmartDataDistribution.OnChangingState
-- uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnClusterStateChange(MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT,System.Int64)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnClusterStateChange(MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT,Int64)
   name: OnClusterStateChange(DDM_CLUSTEREVENT, Int64)
-  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_OnClusterStateChange_MASES_DataDistributionManager_Bindings_Interop_DDM_CLUSTEREVENT_System_Int64_
-  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnClusterStateChange(MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT,System.Int64)
-  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnClusterStateChange(MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT, System.Int64)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_OnClusterStateChange_MASES_DataDistributionManager_Bindings_Interop_DDM_CLUSTEREVENT_Int64_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnClusterStateChange(MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT,Int64)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnClusterStateChange(MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT, Int64)
   nameWithType: SmartDataDistribution.OnClusterStateChange(DDM_CLUSTEREVENT, Int64)
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnClusterStateChange*
   name: OnClusterStateChange
@@ -9069,11 +9334,11 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnLogging
   nameWithType: SmartDataDistribution.OnLogging
-- uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnMultiplePrimary(System.Int64,System.Int64)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnMultiplePrimary(Int64,Int64)
   name: OnMultiplePrimary(Int64, Int64)
-  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_OnMultiplePrimary_System_Int64_System_Int64_
-  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnMultiplePrimary(System.Int64,System.Int64)
-  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnMultiplePrimary(System.Int64, System.Int64)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_OnMultiplePrimary_Int64_Int64_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnMultiplePrimary(Int64,Int64)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnMultiplePrimary(Int64, Int64)
   nameWithType: SmartDataDistribution.OnMultiplePrimary(Int64, Int64)
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnMultiplePrimary*
   name: OnMultiplePrimary
@@ -9082,11 +9347,11 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnMultiplePrimary
   nameWithType: SmartDataDistribution.OnMultiplePrimary
-- uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnRequestedState(System.IntPtr,System.IntPtr)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnRequestedState(IntPtr,IntPtr)
   name: OnRequestedState(IntPtr, IntPtr)
-  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_OnRequestedState_System_IntPtr_System_IntPtr_
-  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnRequestedState(System.IntPtr,System.IntPtr)
-  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnRequestedState(System.IntPtr, System.IntPtr)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_OnRequestedState_IntPtr_IntPtr_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnRequestedState(IntPtr,IntPtr)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnRequestedState(IntPtr, IntPtr)
   nameWithType: SmartDataDistribution.OnRequestedState(IntPtr, IntPtr)
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnRequestedState*
   name: OnRequestedState
@@ -9108,11 +9373,11 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnStateChange
   nameWithType: SmartDataDistribution.OnStateChange
-- uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnStateReady(System.IntPtr,System.Int64)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnStateReady(IntPtr,Int64)
   name: OnStateReady(IntPtr, Int64)
-  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_OnStateReady_System_IntPtr_System_Int64_
-  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnStateReady(System.IntPtr,System.Int64)
-  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnStateReady(System.IntPtr, System.Int64)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html#MASES_DataDistributionManager_Bindings_SmartDataDistribution_OnStateReady_IntPtr_Int64_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnStateReady(IntPtr,Int64)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnStateReady(IntPtr, Int64)
   nameWithType: SmartDataDistribution.OnStateReady(IntPtr, Int64)
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistribution.OnStateReady*
   name: OnStateReady
@@ -9395,13 +9660,13 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.OnDataAvailable
   nameWithType: SmartDataDistributionChannel.OnDataAvailable
-- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ReadFromChannel(System.Int64,System.Int64,System.Byte[]@)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ReadFromChannel(Int64,System.Int64,System.Byte[]@)
   name: ReadFromChannel(Int64, Int64, out Byte[])
-  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_ReadFromChannel_System_Int64_System_Int64_System_Byte____
-  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ReadFromChannel(System.Int64,System.Int64,System.Byte[]@)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_ReadFromChannel_Int64_System_Int64_System_Byte____
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ReadFromChannel(Int64,System.Int64,System.Byte[]@)
   name.vb: ReadFromChannel(Int64, Int64, ByRef Byte())
-  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ReadFromChannel(System.Int64, System.Int64, out System.Byte[])
-  fullName.vb: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ReadFromChannel(System.Int64, System.Int64, ByRef System.Byte())
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ReadFromChannel(Int64, System.Int64, out System.Byte[])
+  fullName.vb: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ReadFromChannel(Int64, System.Int64, ByRef System.Byte())
   nameWithType: SmartDataDistributionChannel.ReadFromChannel(Int64, Int64, out Byte[])
   nameWithType.vb: SmartDataDistributionChannel.ReadFromChannel(Int64, Int64, ByRef Byte())
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ReadFromChannel*
@@ -9411,29 +9676,29 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ReadFromChannel
   nameWithType: SmartDataDistributionChannel.ReadFromChannel
-- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.DateTime)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(DateTime)
   name: SeekChannel(DateTime)
-  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_System_DateTime_
-  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.DateTime)
-  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.DateTime)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_DateTime_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(DateTime)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(DateTime)
   nameWithType: SmartDataDistributionChannel.SeekChannel(DateTime)
-- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
   name: SeekChannel(Int64, DDM_SEEKCONTEXT, DDM_SEEKKIND)
-  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_System_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKCONTEXT_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_
-  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
-  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.Int64, MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT, MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKCONTEXT_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(Int64, MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT, MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
   nameWithType: SmartDataDistributionChannel.SeekChannel(Int64, DDM_SEEKCONTEXT, DDM_SEEKKIND)
-- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
   name: SeekChannel(Int64, DDM_SEEKKIND)
-  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_System_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_
-  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
-  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.Int64, MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(Int64, MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)
   nameWithType: SmartDataDistributionChannel.SeekChannel(Int64, DDM_SEEKKIND)
-- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.TimeSpan)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(TimeSpan)
   name: SeekChannel(TimeSpan)
-  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_System_TimeSpan_
-  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.TimeSpan)
-  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.TimeSpan)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_TimeSpan_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(TimeSpan)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(TimeSpan)
   nameWithType: SmartDataDistributionChannel.SeekChannel(TimeSpan)
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel*
   name: SeekChannel
@@ -9513,35 +9778,35 @@ references:
   isSpec: "True"
   fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.Unlock
   nameWithType: SmartDataDistributionChannel.Unlock
-- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.Byte[],System.Boolean,System.Int64)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.Byte[],System.Boolean,Int64)
   name: WriteOnChannel(Byte[], Boolean, Int64)
-  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_Byte___System_Boolean_System_Int64_
-  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.Byte[],System.Boolean,System.Int64)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_Byte___System_Boolean_Int64_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.Byte[],System.Boolean,Int64)
   name.vb: WriteOnChannel(Byte(), Boolean, Int64)
-  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.Byte[], System.Boolean, System.Int64)
-  fullName.vb: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.Byte(), System.Boolean, System.Int64)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.Byte[], System.Boolean, Int64)
+  fullName.vb: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.Byte(), System.Boolean, Int64)
   nameWithType: SmartDataDistributionChannel.WriteOnChannel(Byte[], Boolean, Int64)
   nameWithType.vb: SmartDataDistributionChannel.WriteOnChannel(Byte(), Boolean, Int64)
-- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.Boolean,System.Int64)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.Boolean,Int64)
   name: WriteOnChannel(String, Boolean, Int64)
-  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_Boolean_System_Int64_
-  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.Boolean,System.Int64)
-  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String, System.Boolean, System.Int64)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_Boolean_Int64_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.Boolean,Int64)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String, System.Boolean, Int64)
   nameWithType: SmartDataDistributionChannel.WriteOnChannel(String, Boolean, Int64)
-- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.Byte[],System.Boolean,System.Int64)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.Byte[],System.Boolean,Int64)
   name: WriteOnChannel(String, Byte[], Boolean, Int64)
-  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_Byte___System_Boolean_System_Int64_
-  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.Byte[],System.Boolean,System.Int64)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_Byte___System_Boolean_Int64_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.Byte[],System.Boolean,Int64)
   name.vb: WriteOnChannel(String, Byte(), Boolean, Int64)
-  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String, System.Byte[], System.Boolean, System.Int64)
-  fullName.vb: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String, System.Byte(), System.Boolean, System.Int64)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String, System.Byte[], System.Boolean, Int64)
+  fullName.vb: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String, System.Byte(), System.Boolean, Int64)
   nameWithType: SmartDataDistributionChannel.WriteOnChannel(String, Byte[], Boolean, Int64)
   nameWithType.vb: SmartDataDistributionChannel.WriteOnChannel(String, Byte(), Boolean, Int64)
-- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.String,System.Boolean,System.Int64)
+- uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.String,System.Boolean,Int64)
   name: WriteOnChannel(String, String, Boolean, Int64)
-  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_String_System_Boolean_System_Int64_
-  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.String,System.Boolean,System.Int64)
-  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String, System.String, System.Boolean, System.Int64)
+  href: api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html#MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_String_System_Boolean_Int64_
+  commentId: M:MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.String,System.Boolean,Int64)
+  fullName: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String, System.String, System.Boolean, Int64)
   nameWithType: SmartDataDistributionChannel.WriteOnChannel(String, String, Boolean, Int64)
 - uid: MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel*
   name: WriteOnChannel

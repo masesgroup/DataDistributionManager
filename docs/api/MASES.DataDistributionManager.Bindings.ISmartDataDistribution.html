@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface ISmartDataDistribution
    | Data Distribution Manager website ">
-    <meta name="generator" content="docfx 2.59.1.0">
+    <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -224,7 +224,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T CreateSmartChannel&lt;T&gt;(string channelName, IConfiguration configuration = null, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.ALL)
+    <pre><code class="lang-csharp hljs">T CreateSmartChannel&lt;T&gt;(string channelName, IConfiguration configuration = null, DDM_CHANNEL_DIRECTION direction = default(DDM_CHANNEL_DIRECTION))
     where T : SmartDataDistributionChannel</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -284,7 +284,7 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a> which inherits <a class="xref" href="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html">SmartDataDistributionChannel</a></p>
+        <td><p>A <see cref="!:Type"></see> which inherits <a class="xref" href="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html">SmartDataDistributionChannel</a></p>
 </td>
       </tr>
     </tbody>
@@ -303,7 +303,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T CreateSmartChannel&lt;T&gt;(string channelName, string[] arrayParams, DDM_CHANNEL_DIRECTION direction = DDM_CHANNEL_DIRECTION.ALL)
+    <pre><code class="lang-csharp hljs">T CreateSmartChannel&lt;T&gt;(string channelName, string[] arrayParams, DDM_CHANNEL_DIRECTION direction = default(DDM_CHANNEL_DIRECTION))
     where T : SmartDataDistributionChannel</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -363,7 +363,7 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a> which inherits <a class="xref" href="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html">SmartDataDistributionChannel</a></p>
+        <td><p>A <see cref="!:Type"></see> which inherits <a class="xref" href="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html">SmartDataDistributionChannel</a></p>
 </td>
       </tr>
     </tbody>
@@ -730,19 +730,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnClusterStateChange_MASES_DataDistributionManager_Bindings_Interop_DDM_CLUSTEREVENT_System_Int64_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnClusterStateChange(MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnClusterStateChange_MASES_DataDistributionManager_Bindings_Interop_DDM_CLUSTEREVENT_Int64_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnClusterStateChange(MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT%2CInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/SmartDataDistribution.cs/#L482">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnClusterStateChange_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnClusterStateChange*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnClusterStateChange_MASES_DataDistributionManager_Bindings_Interop_DDM_CLUSTEREVENT_System_Int64_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnClusterStateChange(MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT,System.Int64)">OnClusterStateChange(DDM_CLUSTEREVENT, Int64)</h4>
+  <h4 id="MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnClusterStateChange_MASES_DataDistributionManager_Bindings_Interop_DDM_CLUSTEREVENT_Int64_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnClusterStateChange(MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT,Int64)">OnClusterStateChange(DDM_CLUSTEREVENT, Int64)</h4>
   <div class="markdown level1 summary"><p>The cluster has changed its state</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void OnClusterStateChange(DDM_CLUSTEREVENT change, long serverid)</code></pre>
+    <pre><code class="lang-csharp hljs">void OnClusterStateChange(DDM_CLUSTEREVENT change, Int64 serverid)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -761,7 +761,7 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td><span class="xref">Int64</span></td>
         <td><span class="parametername">serverid</span></td>
         <td><p>Server has emitted event</p>
 </td>
@@ -958,19 +958,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnMultiplePrimary_System_Int64_System_Int64_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnMultiplePrimary(System.Int64%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnMultiplePrimary_Int64_Int64_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnMultiplePrimary(Int64%2CInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/SmartDataDistribution.cs/#L506">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnMultiplePrimary_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnMultiplePrimary*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnMultiplePrimary_System_Int64_System_Int64_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnMultiplePrimary(System.Int64,System.Int64)">OnMultiplePrimary(Int64, Int64)</h4>
+  <h4 id="MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnMultiplePrimary_Int64_Int64_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnMultiplePrimary(Int64,Int64)">OnMultiplePrimary(Int64, Int64)</h4>
   <div class="markdown level1 summary"><p>There are multiple primary server in the cluster</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void OnMultiplePrimary(long myId, long otherId)</code></pre>
+    <pre><code class="lang-csharp hljs">void OnMultiplePrimary(Int64 myId, Int64 otherId)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -983,13 +983,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td><span class="xref">Int64</span></td>
         <td><span class="parametername">myId</span></td>
         <td><p>My identifier</p>
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td><span class="xref">Int64</span></td>
         <td><span class="parametername">otherId</span></td>
         <td><p>Other identifier which is primary</p>
 </td>
@@ -998,13 +998,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnRequestedState_System_IntPtr_System_IntPtr_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnRequestedState(System.IntPtr%2CSystem.IntPtr)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnRequestedState_IntPtr_IntPtr_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnRequestedState(IntPtr%2CIntPtr)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/SmartDataDistribution.cs/#L500">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnRequestedState_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnRequestedState*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnRequestedState_System_IntPtr_System_IntPtr_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnRequestedState(System.IntPtr,System.IntPtr)">OnRequestedState(IntPtr, IntPtr)</h4>
+  <h4 id="MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnRequestedState_IntPtr_IntPtr_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnRequestedState(IntPtr,IntPtr)">OnRequestedState(IntPtr, IntPtr)</h4>
   <div class="markdown level1 summary"><p>Called when a state transfer was requested</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1023,13 +1023,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
+        <td><span class="xref">IntPtr</span></td>
         <td><span class="parametername">buffer</span></td>
         <td><p>Pointer to the buffer</p>
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
+        <td><span class="xref">IntPtr</span></td>
         <td><span class="parametername">len</span></td>
         <td><p>Length of the buffer</p>
 </td>
@@ -1078,19 +1078,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnStateReady_System_IntPtr_System_Int64_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnStateReady(System.IntPtr%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnStateReady_IntPtr_Int64_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnStateReady(IntPtr%2CInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/SmartDataDistribution.cs/#L494">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnStateReady_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnStateReady*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnStateReady_System_IntPtr_System_Int64_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnStateReady(System.IntPtr,System.Int64)">OnStateReady(IntPtr, Int64)</h4>
+  <h4 id="MASES_DataDistributionManager_Bindings_ISmartDataDistribution_OnStateReady_IntPtr_Int64_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistribution.OnStateReady(IntPtr,Int64)">OnStateReady(IntPtr, Int64)</h4>
   <div class="markdown level1 summary"><p>The state is ready to be used</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void OnStateReady(IntPtr buffer, long len)</code></pre>
+    <pre><code class="lang-csharp hljs">void OnStateReady(IntPtr buffer, Int64 len)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1103,13 +1103,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
+        <td><span class="xref">IntPtr</span></td>
         <td><span class="parametername">buffer</span></td>
         <td><p>The buffer receiver</p>
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td><span class="xref">Int64</span></td>
         <td><span class="parametername">len</span></td>
         <td><p>Length of the received buffer</p>
 </td>
@@ -1435,7 +1435,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.ChangedStateEventArgs.html">ChangedStateEventArgs</a>&gt;</td>
+        <td><span class="xref">EventHandler</span>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.ChangedStateEventArgs.html">ChangedStateEventArgs</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1465,7 +1465,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.ChangingStateEventArgs.html">ChangingStateEventArgs</a>&gt;</td>
+        <td><span class="xref">EventHandler</span>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.ChangingStateEventArgs.html">ChangingStateEventArgs</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1495,7 +1495,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.ClusterStateChangeEventArgs.html">ClusterStateChangeEventArgs</a>&gt;</td>
+        <td><span class="xref">EventHandler</span>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.ClusterStateChangeEventArgs.html">ClusterStateChangeEventArgs</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1525,7 +1525,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.CompletelyDisconnectedEventArgs.html">CompletelyDisconnectedEventArgs</a>&gt;</td>
+        <td><span class="xref">EventHandler</span>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.CompletelyDisconnectedEventArgs.html">CompletelyDisconnectedEventArgs</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1555,7 +1555,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.ConfigurationEventArgs.html">ConfigurationEventArgs</a>&gt;</td>
+        <td><span class="xref">EventHandler</span>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.ConfigurationEventArgs.html">ConfigurationEventArgs</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1585,7 +1585,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.FirstStateChangeEventArgs.html">FirstStateChangeEventArgs</a>&gt;</td>
+        <td><span class="xref">EventHandler</span>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.FirstStateChangeEventArgs.html">FirstStateChangeEventArgs</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1615,7 +1615,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.LoggingEventArgs.html">LoggingEventArgs</a>&gt;</td>
+        <td><span class="xref">EventHandler</span>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.LoggingEventArgs.html">LoggingEventArgs</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1645,7 +1645,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.MultiplePrimaryEventArgs.html">MultiplePrimaryEventArgs</a>&gt;</td>
+        <td><span class="xref">EventHandler</span>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.MultiplePrimaryEventArgs.html">MultiplePrimaryEventArgs</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1675,7 +1675,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.RequestedStateEventArgs.html">RequestedStateEventArgs</a>&gt;</td>
+        <td><span class="xref">EventHandler</span>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.RequestedStateEventArgs.html">RequestedStateEventArgs</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1705,7 +1705,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.StateChangeEventArgs.html">StateChangeEventArgs</a>&gt;</td>
+        <td><span class="xref">EventHandler</span>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.StateChangeEventArgs.html">StateChangeEventArgs</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1735,7 +1735,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.StateReadyEventArgs.html">StateReadyEventArgs</a>&gt;</td>
+        <td><span class="xref">EventHandler</span>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.StateReadyEventArgs.html">StateReadyEventArgs</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
