@@ -302,7 +302,7 @@ jobs:
         shell: cmd
         run: |
           call .\third_party\OpenDDS\setenv.cmd
-          set JDK_ROOT_FOLDER=%JAVA_HOME_13_X64%
+          set JDK_ROOT_FOLDER=%JAVA_HOME_11_X64%
           cd src
           msbuild /m -p:Configuration=Release,Platform=x64 DataDistributionManager.sln
 
@@ -310,7 +310,7 @@ jobs:
         shell: cmd
         run: |
           call .\third_party\OpenDDS\setenv.cmd
-          set JDK_ROOT_FOLDER=%JAVA_HOME_13_X64%
+          set JDK_ROOT_FOLDER=%JAVA_HOME_11_X64%
           cd src
           msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
 
@@ -404,7 +404,7 @@ jobs:
         shell: cmd
         run: |
           cd src\DataDistributionManagerJava
-          set JDK_ROOT_FOLDER=%JAVA_HOME_13_X64%
+          set JDK_ROOT_FOLDER=%JAVA_HOME_11_X64%
           CreateJar.bat
           cd ..\..
           
