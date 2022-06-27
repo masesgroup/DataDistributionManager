@@ -6,10 +6,10 @@ mkdir Output
 rmdir /Q /S javadoc
 mkdir javadoc
 
-"%JDK_ROOT_FOLDER%\bin\javac.exe" -Xlint:deprecation --source 8 --target 8 -d ./Output ./src/org/mases/datadistributionmanager/*.java ./src/org/mases/datadistributionmanager/configuration/*.java
+"%JDK_ROOT_FOLDER%\bin\javac.exe" -Xlint:deprecation -source 8 -target 8 -d ./Output ./src/org/mases/datadistributionmanager/*.java ./src/org/mases/datadistributionmanager/configuration/*.java
 IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 @echo javac END
-"%JDK_ROOT_FOLDER%\bin\javadoc.exe" --source 8 -notimestamp -noindex -quiet -author -public -d ./javadoc -link https://docs.oracle.com/javase/8/docs/api/ ./src/org/mases/datadistributionmanager/*.java ./src/org/mases/datadistributionmanager/configuration/*.java
+"%JDK_ROOT_FOLDER%\bin\javadoc.exe" -source 8 -notimestamp -noindex -quiet -author -public -d ./javadoc -link https://docs.oracle.com/javase/8/docs/api/ ./src/org/mases/datadistributionmanager/*.java ./src/org/mases/datadistributionmanager/configuration/*.java
 IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 @echo javadoc END
 
