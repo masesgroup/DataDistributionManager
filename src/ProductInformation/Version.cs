@@ -23,5 +23,5 @@ static class MASESVersionInfo
     public const string Company = "MASES s.r.l.";
     public const string Trademark = "MASES s.r.l.";
     public const string ProductCurrentMajorVersion = "1.0.0.0";
-    public const string ProductCurrentVersion = "1.3.1.0";
+    public const string ProductCurrentVersion = "1.3.2.0";
 }
