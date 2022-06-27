@@ -38,7 +38,7 @@ jobs:
     needs: check_opendds
     if: needs.check_opendds.outputs.build_opendds == 'true'
     # The type of runner that the job will run on
-    runs-on: windows-2019
+    runs-on: windows-2022
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -178,7 +178,7 @@ jobs:
     needs: check_changes
     if: "always() && needs.check_changes.outputs.run_build_ddm_windows == 'true'"
     # The type of runner that the job will run on
-    runs-on: windows-2019
+    runs-on: windows-2022
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:   
@@ -290,7 +290,7 @@ jobs:
           call .\third_party\OpenDDS\setenv.cmd
           cd src\DataDistributionManagerOpenDDS
           perl %ACE_ROOT%\bin\generate_export_file.pl DataDistributionSchemaCommon > DataDistributionSchemaCommon_Export.h
-          perl %ACE_ROOT%\bin\mwc.pl -type vs2019 DataDistributionManagerOpenDDS.mwc
+          perl %ACE_ROOT%\bin\mwc.pl -type vs2022 DataDistributionManagerOpenDDS.mwc
           cd ..\..
 
       - uses: nuget/setup-nuget@v1
