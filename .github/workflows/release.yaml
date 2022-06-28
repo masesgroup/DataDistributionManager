@@ -14,7 +14,7 @@ jobs:
   # This workflow contains a single job called "build_release"
   build_release:
     # The type of runner that the job will run on
-    runs-on: windows-2019
+    runs-on: windows-2022
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a set of commands using the runners shell
@@ -42,7 +42,7 @@ jobs:
         shell: bash
 
       - name: set up msvc env
-        uses: ilammy/msvc-dev-cmd@v1.5.0
+        uses: ilammy/msvc-dev-cmd@v1.10.0
       
       - name: Build Common Tools
         shell: cmd
@@ -136,7 +136,7 @@ jobs:
           call .\third_party\OpenDDS\setenv.cmd
           cd src\DataDistributionManagerOpenDDS
           perl %ACE_ROOT%\bin\generate_export_file.pl DataDistributionSchemaCommon > DataDistributionSchemaCommon_Export.h
-          perl %ACE_ROOT%\bin\mwc.pl -type vs2019 DataDistributionManagerOpenDDS.mwc
+          perl %ACE_ROOT%\bin\mwc.pl -type vs2022 DataDistributionManagerOpenDDS.mwc
           cd ..\..
 
       - uses: nuget/setup-nuget@v1
@@ -148,7 +148,7 @@ jobs:
         shell: cmd
         run: |
           call .\third_party\OpenDDS\setenv.cmd
-          set JDK_ROOT_FOLDER=%JAVA_HOME_13_X64%
+          set JDK_ROOT_FOLDER=%JAVA_HOME_11_X64%
           cd src
           msbuild /m -p:Configuration=Release,Platform=x64 DataDistributionManager.sln
 
@@ -156,7 +156,7 @@ jobs:
         shell: cmd
         run: |
           call .\third_party\OpenDDS\setenv.cmd
-          set JDK_ROOT_FOLDER=%JAVA_HOME_13_X64%
+          set JDK_ROOT_FOLDER=%JAVA_HOME_11_X64%
           cd src
           msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
 
@@ -165,10 +165,6 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 3.1.x
-      - name: Setup .NET 5.0
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 5.0.x
       - name: Setup .NET 6.0
         uses: actions/setup-dotnet@v1
         with:
@@ -247,7 +243,7 @@ jobs:
         shell: cmd
         run: |
           cd src\DataDistributionManagerJava
-          set JDK_ROOT_FOLDER=%JAVA_HOME_13_X64%
+          set JDK_ROOT_FOLDER=%JAVA_HOME_11_X64%
           CreateJar.bat
           cd ..\..
 
