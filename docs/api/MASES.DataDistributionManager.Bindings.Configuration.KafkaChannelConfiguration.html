@@ -88,7 +88,7 @@
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="MASES.DataDistributionManager.Bindings.IConfiguration.html">IConfiguration</a></div>
-    <div><span class="xref">INotifyPropertyChanged</span></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -194,12 +194,33 @@
     <div>
       <a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_EmitPropertyChanged_System_String_">BaseConfiguration.EmitPropertyChanged(String)</a>
     </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.html">MASES.DataDistributionManager.Bindings.Configuration</a></h6>
   <h6><strong>Assembly</strong>: DataDistributionManagerNet.dll</h6>
   <h5 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class KafkaChannelConfiguration : KafkaConfiguration, IConfiguration</code></pre>
+    <pre><code class="lang-csharp hljs">public class KafkaChannelConfiguration : KafkaConfiguration, IConfiguration, INotifyPropertyChanged</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -252,7 +273,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string AllowAutoCreateTopicsKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string AllowAutoCreateTopicsKey = &quot;datadistributionmanager.kafka.globalconf.allow.auto.create.topics&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -282,7 +303,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string ApiVersionFallbackKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string ApiVersionFallbackKey = &quot;datadistributionmanager.kafka.globalconf.api.version.fallback.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -312,7 +333,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string ApiVersionRequestKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string ApiVersionRequestKey = &quot;datadistributionmanager.kafka.globalconf.api.version.request&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -342,7 +363,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string ApiVersionRequestTimeoutKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string ApiVersionRequestTimeoutKey = &quot;datadistributionmanager.kafka.globalconf.api.version.request.timeout.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -372,7 +393,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string AutoCommitIntervalKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string AutoCommitIntervalKey = &quot;datadistributionmanager.kafka.globalconf.auto.commit.interval.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -402,7 +423,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string AutoOffsetResetKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string AutoOffsetResetKey = &quot;datadistributionmanager.kafka.topicconf.auto.offset.reset&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -432,7 +453,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string BatchNumMessagesKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string BatchNumMessagesKey = &quot;datadistributionmanager.kafka.globalconf.batch.num.messages&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -462,7 +483,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string BatchSizeKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string BatchSizeKey = &quot;datadistributionmanager.kafka.globalconf.batch.size&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -492,7 +513,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string BootstrapBrokersKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string BootstrapBrokersKey = &quot;datadistributionmanager.kafka.globalconf.metadata.broker.list&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -522,7 +543,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string BrokerAddressFamilyKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string BrokerAddressFamilyKey = &quot;datadistributionmanager.kafka.globalconf.broker.address.family&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -552,7 +573,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string BrokerAddressTtlKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string BrokerAddressTtlKey = &quot;datadistributionmanager.kafka.globalconf.broker.address.ttl&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -582,7 +603,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string BrokerVersionFallbackKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string BrokerVersionFallbackKey = &quot;datadistributionmanager.kafka.globalconf.broker.version.fallback&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -612,7 +633,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string BuiltinFeaturesKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string BuiltinFeaturesKey = &quot;datadistributionmanager.kafka.globalconf.builtin.features&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -642,7 +663,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string CheckCrcsKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string CheckCrcsKey = &quot;datadistributionmanager.kafka.globalconf.check.crcs&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -672,7 +693,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string ClientIdKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string ClientIdKey = &quot;datadistributionmanager.kafka.globalconf.client.id&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -702,7 +723,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string ClientRackKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string ClientRackKey = &quot;datadistributionmanager.kafka.globalconf.client.rack&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -732,7 +753,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string CompressionCodecKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string CompressionCodecKey = &quot;datadistributionmanager.kafka.globalconf.compression.codec&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -762,7 +783,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string CompressionLevelKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string CompressionLevelKey = &quot;datadistributionmanager.kafka.topicconf.compression.level&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -792,7 +813,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string ConnectionsMaxIdleKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string ConnectionsMaxIdleKey = &quot;datadistributionmanager.kafka.globalconf.connections.max.idle.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -822,7 +843,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string ConsumeCallbackMaxMessagesKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string ConsumeCallbackMaxMessagesKey = &quot;datadistributionmanager.kafka.topicconf.consume.callback.max.messages&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -852,7 +873,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string CoordinatorQueryIntervalKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string CoordinatorQueryIntervalKey = &quot;datadistributionmanager.kafka.globalconf.coordinator.query.interval.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -882,7 +903,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string DebugKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string DebugKey = &quot;datadistributionmanager.kafka.globalconf.debug&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -912,7 +933,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string DeliveryReportOnlyErrorKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string DeliveryReportOnlyErrorKey = &quot;datadistributionmanager.kafka.globalconf.delivery.report.only.error&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -942,7 +963,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string DumpMetadataKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string DumpMetadataKey = &quot;datadistributionmanager.kafka.topic_dumpmetadata&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -972,7 +993,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string EnableAutoCommitKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string EnableAutoCommitKey = &quot;datadistributionmanager.kafka.globalconf.enable.auto.commit&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1002,7 +1023,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string EnableAutoOffsetStoreKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string EnableAutoOffsetStoreKey = &quot;datadistributionmanager.kafka.globalconf.enable.auto.offset.store&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1032,7 +1053,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string EnableGaplessGuaranteeKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string EnableGaplessGuaranteeKey = &quot;datadistributionmanager.kafka.globalconf.enable.gapless.guarantee&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1062,7 +1083,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string EnableIdempotenceKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string EnableIdempotenceKey = &quot;datadistributionmanager.kafka.globalconf.enable.idempotence&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1092,7 +1113,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string EnablePartitionEofKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string EnablePartitionEofKey = &quot;datadistributionmanager.kafka.globalconf.enable.partition.eof&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1122,7 +1143,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string EnableRandomSeedKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string EnableRandomSeedKey = &quot;datadistributionmanager.kafka.globalconf.enable.random.seed&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1152,7 +1173,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string EnableSaslOauthbearerUnsecureJwtKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string EnableSaslOauthbearerUnsecureJwtKey = &quot;datadistributionmanager.kafka.globalconf.enable.sasl.oauthbearer.unsecure.jwt&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1182,7 +1203,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string EnableSslCertificateVerificationKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string EnableSslCertificateVerificationKey = &quot;datadistributionmanager.kafka.globalconf.enable.ssl.certificate.verification&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1212,7 +1233,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string FetchErrorBackoffKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string FetchErrorBackoffKey = &quot;datadistributionmanager.kafka.globalconf.fetch.error.backoff.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1242,7 +1263,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string FetchMaxBytesKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string FetchMaxBytesKey = &quot;datadistributionmanager.kafka.globalconf.fetch.max.bytes&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1272,7 +1293,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string FetchMessageMaxBytesKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string FetchMessageMaxBytesKey = &quot;datadistributionmanager.kafka.globalconf.fetch.message.max.bytes&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1302,7 +1323,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string FetchMinBytesKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string FetchMinBytesKey = &quot;datadistributionmanager.kafka.globalconf.fetch.min.bytes&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1332,7 +1353,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string FetchWaitMaxKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string FetchWaitMaxKey = &quot;datadistributionmanager.kafka.globalconf.fetch.wait.max.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1362,7 +1383,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string GroupIdKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string GroupIdKey = &quot;datadistributionmanager.kafka.globalconf.group.id&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1392,7 +1413,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string GroupInstanceIdKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string GroupInstanceIdKey = &quot;datadistributionmanager.kafka.globalconf.group.instance.id&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1422,7 +1443,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string GroupProtocolTypeKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string GroupProtocolTypeKey = &quot;datadistributionmanager.kafka.globalconf.group.protocol.type&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1452,7 +1473,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string HeartbeatIntervalKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string HeartbeatIntervalKey = &quot;datadistributionmanager.kafka.globalconf.heartbeat.interval.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1482,7 +1503,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string IntervalTerminationSignalKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string IntervalTerminationSignalKey = &quot;datadistributionmanager.kafka.globalconf.internal.termination.signal&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1512,7 +1533,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string IsolationLevelKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string IsolationLevelKey = &quot;datadistributionmanager.kafka.globalconf.isolation.level&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1542,7 +1563,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string KafkaGlobalConfigurationBasePropertyKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string KafkaGlobalConfigurationBasePropertyKey = &quot;datadistributionmanager.kafka.globalconf.&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1572,7 +1593,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string KafkaTopicConfigurationBasePropertyKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string KafkaTopicConfigurationBasePropertyKey = &quot;datadistributionmanager.kafka.topicconf.&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1602,7 +1623,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string LogConnectionCloseKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string LogConnectionCloseKey = &quot;datadistributionmanager.kafka.globalconf.log.connection.close&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1632,7 +1653,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string LogLevelKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string LogLevelKey = &quot;datadistributionmanager.kafka.globalconf.log_level&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1662,7 +1683,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string LogQueueKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string LogQueueKey = &quot;datadistributionmanager.kafka.globalconf.log.queue&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1692,7 +1713,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string LogThreadNameKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string LogThreadNameKey = &quot;datadistributionmanager.kafka.globalconf.log.thread.name&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1722,7 +1743,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string MaxInFlightRequestsPerConnectionKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string MaxInFlightRequestsPerConnectionKey = &quot;datadistributionmanager.kafka.globalconf.max.in.flight.requests.per.connection&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1752,7 +1773,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string MaxPollIntervalKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string MaxPollIntervalKey = &quot;datadistributionmanager.kafka.globalconf.max.poll.interval.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1782,7 +1803,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string MessageCopyMaxBytesKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string MessageCopyMaxBytesKey = &quot;datadistributionmanager.kafka.globalconf.message.copy.max.bytes&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1812,7 +1833,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string MessageMaxBytesKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string MessageMaxBytesKey = &quot;datadistributionmanager.kafka.globalconf.message.max.bytes&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1842,7 +1863,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string MessageSendMaxRetriesKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string MessageSendMaxRetriesKey = &quot;datadistributionmanager.kafka.globalconf.message.send.max.retries&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1872,7 +1893,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string MessageTimeoutKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string MessageTimeoutKey = &quot;datadistributionmanager.kafka.topicconf.message.timeout.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1902,7 +1923,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string MetadataMaxAgeKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string MetadataMaxAgeKey = &quot;datadistributionmanager.kafka.globalconf.metadata.max.age.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1932,7 +1953,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string MetadataRequestTimeoutKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string MetadataRequestTimeoutKey = &quot;datadistributionmanager.kafka.globalconf.metadata.request.timeout.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1962,7 +1983,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string PartitionAssignmentStrategyKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string PartitionAssignmentStrategyKey = &quot;datadistributionmanager.kafka.globalconf.partition.assignment.strategy&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1992,7 +2013,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string PartitionerKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string PartitionerKey = &quot;datadistributionmanager.kafka.topicconf.partitioner&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2022,7 +2043,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string PluginLibraryPathsKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string PluginLibraryPathsKey = &quot;datadistributionmanager.kafka.globalconf.plugin.library.paths&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2052,7 +2073,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string QueueBufferingBackpressureThresholdKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string QueueBufferingBackpressureThresholdKey = &quot;datadistributionmanager.kafka.globalconf.queue.buffering.backpressure.threshold&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2082,7 +2103,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string QueueBufferingMaxKbKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string QueueBufferingMaxKbKey = &quot;datadistributionmanager.kafka.globalconf.queue.buffering.max.kbytes&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2112,7 +2133,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string QueueBufferingMaxMessagesKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string QueueBufferingMaxMessagesKey = &quot;datadistributionmanager.kafka.globalconf.queue.buffering.max.messages&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2142,7 +2163,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string QueueBufferingMaxMsKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string QueueBufferingMaxMsKey = &quot;datadistributionmanager.kafka.globalconf.queue.buffering.max.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2172,7 +2193,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string QueuedMaxMessagesKbKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string QueuedMaxMessagesKbKey = &quot;datadistributionmanager.kafka.globalconf.queued.max.messages.kbytes&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2202,7 +2223,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string QueuedMinMessagesKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string QueuedMinMessagesKey = &quot;datadistributionmanager.kafka.globalconf.queued.min.messages&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2232,7 +2253,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string QueueingStrategyKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string QueueingStrategyKey = &quot;datadistributionmanager.kafka.topicconf.queuing.strategy&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2262,7 +2283,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string ReceiveMessageMaxBytesKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string ReceiveMessageMaxBytesKey = &quot;datadistributionmanager.kafka.globalconf.receive.message.max.bytes&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2292,7 +2313,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string ReconnectBackoffKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string ReconnectBackoffKey = &quot;datadistributionmanager.kafka.globalconf.reconnect.backoff.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2322,7 +2343,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string ReconnectBackoffMaxKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string ReconnectBackoffMaxKey = &quot;datadistributionmanager.kafka.globalconf.reconnect.backoff.max.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2352,7 +2373,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string ReplicationFactorKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string ReplicationFactorKey = &quot;datadistributionmanager.kafka.topic_replicationfactor&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2382,7 +2403,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RequestRequiredAcksKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RequestRequiredAcksKey = &quot;datadistributionmanager.kafka.topicconf.request.required.acks&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2412,7 +2433,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RequestTimeoutKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RequestTimeoutKey = &quot;datadistributionmanager.kafka.topicconf.request.timeout.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2442,7 +2463,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RetryBackoffKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RetryBackoffKey = &quot;datadistributionmanager.kafka.globalconf.retry.backoff.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2472,7 +2493,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SaslKerberosKeytabKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SaslKerberosKeytabKey = &quot;datadistributionmanager.kafka.globalconf.sasl.kerberos.keytab&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2502,7 +2523,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SaslKerberosKinitCmdKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SaslKerberosKinitCmdKey = &quot;datadistributionmanager.kafka.globalconf.sasl.kerberos.kinit.cmd&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2532,7 +2553,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SaslKerberosMinTimeBeforeReloginKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SaslKerberosMinTimeBeforeReloginKey = &quot;datadistributionmanager.kafka.globalconf.sasl.kerberos.min.time.before.relogin&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2562,7 +2583,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SaslKerberosPrincipalKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SaslKerberosPrincipalKey = &quot;datadistributionmanager.kafka.globalconf.sasl.kerberos.principal&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2592,7 +2613,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SaslKerberosServiceNameKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SaslKerberosServiceNameKey = &quot;datadistributionmanager.kafka.globalconf.sasl.kerberos.service.name&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2622,7 +2643,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SaslMechanismKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SaslMechanismKey = &quot;datadistributionmanager.kafka.globalconf.sasl.mechanisms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2652,7 +2673,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SaslOauthbearerClientIdKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SaslOauthbearerClientIdKey = &quot;datadistributionmanager.kafka.globalconf.sasl.oauthbearer.client.id&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2682,7 +2703,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SaslOauthbearerClientSecretKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SaslOauthbearerClientSecretKey = &quot;datadistributionmanager.kafka.globalconf.sasl.oauthbearer.client.secret&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2712,7 +2733,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SaslOauthbearerConfigKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SaslOauthbearerConfigKey = &quot;datadistributionmanager.kafka.globalconf.sasl.oauthbearer.config&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2742,7 +2763,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SaslOauthbearerExtensionsKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SaslOauthbearerExtensionsKey = &quot;datadistributionmanager.kafka.globalconf.sasl.oauthbearer.extensions&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2772,7 +2793,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SaslOauthbearerMethodKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SaslOauthbearerMethodKey = &quot;datadistributionmanager.kafka.globalconf.sasl.oauthbearer.method&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2802,7 +2823,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SaslOauthbearerScopeKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SaslOauthbearerScopeKey = &quot;datadistributionmanager.kafka.globalconf.sasl.oauthbearer.scope&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2832,7 +2853,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SaslOauthbearerTokenEndpointUrlKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SaslOauthbearerTokenEndpointUrlKey = &quot;datadistributionmanager.kafka.globalconf.sasl.oauthbearer.token.endpoint.url&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2862,7 +2883,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SaslPasswordKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SaslPasswordKey = &quot;datadistributionmanager.kafka.globalconf.sasl.password&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2892,7 +2913,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SaslUsernameKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SaslUsernameKey = &quot;datadistributionmanager.kafka.globalconf.sasl.username&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2922,7 +2943,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SecurityProtocolKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SecurityProtocolKey = &quot;datadistributionmanager.kafka.globalconf.security.protocol&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2952,7 +2973,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SessionTimeoutKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SessionTimeoutKey = &quot;datadistributionmanager.kafka.globalconf.session.timeout.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2982,7 +3003,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SocketConnectionSetupTimeoutKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SocketConnectionSetupTimeoutKey = &quot;datadistributionmanager.kafka.globalconf.socket.connection.setup.timeout.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3012,7 +3033,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SocketKeepaliveEnableKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SocketKeepaliveEnableKey = &quot;datadistributionmanager.kafka.globalconf.socket.keepalive.enable&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3042,7 +3063,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SocketMaxFailsKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SocketMaxFailsKey = &quot;datadistributionmanager.kafka.globalconf.socket.max.fails&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3072,7 +3093,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SocketNagleDisableKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SocketNagleDisableKey = &quot;datadistributionmanager.kafka.globalconf.socket.nagle.disable&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3102,7 +3123,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SocketReceiveBufferBytesKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SocketReceiveBufferBytesKey = &quot;datadistributionmanager.kafka.globalconf.socket.receive.buffer.bytes&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3132,7 +3153,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SocketSendBufferBytesKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SocketSendBufferBytesKey = &quot;datadistributionmanager.kafka.globalconf.socket.send.buffer.bytes&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3162,7 +3183,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SocketTimeoutKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SocketTimeoutKey = &quot;datadistributionmanager.kafka.globalconf.socket.timeout.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3192,7 +3213,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslCACertificateStoresKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslCACertificateStoresKey = &quot;datadistributionmanager.kafka.globalconf.ssl.ca.certificate.stores&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3222,7 +3243,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslCAKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslCAKey = &quot;datadistributionmanager.kafka.globalconf.ssl_ca&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3252,7 +3273,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslCALocationKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslCALocationKey = &quot;datadistributionmanager.kafka.globalconf.ssl.ca.location&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3282,7 +3303,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslCAPemKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslCAPemKey = &quot;datadistributionmanager.kafka.globalconf.ssl.ca.pem&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3312,7 +3333,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslCertificateKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslCertificateKey = &quot;datadistributionmanager.kafka.globalconf.ssl_certificate&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3342,7 +3363,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslCertificateLocationKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslCertificateLocationKey = &quot;datadistributionmanager.kafka.globalconf.ssl.certificate.location&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3372,7 +3393,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslCertificatePemKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslCertificatePemKey = &quot;datadistributionmanager.kafka.globalconf.ssl.certificate.pem&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3402,7 +3423,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslCipherSuitesKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslCipherSuitesKey = &quot;datadistributionmanager.kafka.globalconf.ssl.cipher.suites&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3432,7 +3453,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslCrlLocationKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslCrlLocationKey = &quot;datadistributionmanager.kafka.globalconf.ssl.crl.location&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3462,7 +3483,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslCurvesListKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslCurvesListKey = &quot;datadistributionmanager.kafka.globalconf.ssl.curves.list&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3492,7 +3513,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslEndpointIdentificationAlgorithmKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslEndpointIdentificationAlgorithmKey = &quot;datadistributionmanager.kafka.globalconf.ssl.endpoint.identification.algorithm&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3522,7 +3543,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslEngineIdKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslEngineIdKey = &quot;datadistributionmanager.kafka.globalconf.ssl.engine.id&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3552,7 +3573,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslEngineLocationKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslEngineLocationKey = &quot;datadistributionmanager.kafka.globalconf.ssl.engine.location&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3582,7 +3603,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslKeyKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslKeyKey = &quot;datadistributionmanager.kafka.globalconf.ssl_key&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3612,7 +3633,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslKeyLocationKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslKeyLocationKey = &quot;datadistributionmanager.kafka.globalconf.ssl.key.location&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3642,7 +3663,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslKeyPasswordKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslKeyPasswordKey = &quot;datadistributionmanager.kafka.globalconf.ssl.key.password&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3672,7 +3693,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslKeyPemKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslKeyPemKey = &quot;datadistributionmanager.kafka.globalconf.ssl.key.pem&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3702,7 +3723,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslKeystoreLocationKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslKeystoreLocationKey = &quot;datadistributionmanager.kafka.globalconf.ssl.keystore.location&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3732,7 +3753,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslKeystorePasswordKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslKeystorePasswordKey = &quot;datadistributionmanager.kafka.globalconf.ssl.keystore.password&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3762,7 +3783,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string SslSisalgsListKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string SslSisalgsListKey = &quot;datadistributionmanager.kafka.globalconf.ssl.sigalgs.list&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3792,7 +3813,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string StatisticsIntervalKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string StatisticsIntervalKey = &quot;datadistributionmanager.kafka.globalconf.statistics.interval.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3822,7 +3843,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string StickyPartitioningLingerKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string StickyPartitioningLingerKey = &quot;datadistributionmanager.kafka.globalconf.sticky.partitioning.linger.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3852,7 +3873,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string TopicBlackListKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string TopicBlackListKey = &quot;datadistributionmanager.kafka.globalconf.topic.blacklist&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3882,7 +3903,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string TopicCompressionCodecKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string TopicCompressionCodecKey = &quot;datadistributionmanager.kafka.topicconf.compression.codec&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3912,7 +3933,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string TopicCreateKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string TopicCreateKey = &quot;datadistributionmanager.kafka.topic_create&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3942,7 +3963,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string TopicMetadataPropagationMaxKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string TopicMetadataPropagationMaxKey = &quot;datadistributionmanager.kafka.globalconf.topic.metadata.propagation.max.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3972,7 +3993,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string TopicMetadataRefreshFastIntervalKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string TopicMetadataRefreshFastIntervalKey = &quot;datadistributionmanager.kafka.globalconf.topic.metadata.refresh.fast.interval.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -4002,7 +4023,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string TopicMetadataRefreshIntervalKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string TopicMetadataRefreshIntervalKey = &quot;datadistributionmanager.kafka.globalconf.topic.metadata.refresh.interval.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -4032,7 +4053,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string TopicMetadataRefreshSparseKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string TopicMetadataRefreshSparseKey = &quot;datadistributionmanager.kafka.globalconf.topic.metadata.refresh.sparse&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -4062,7 +4083,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string TransactionalIdKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string TransactionalIdKey = &quot;datadistributionmanager.kafka.globalconf.transactional.id&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -4092,7 +4113,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string TransactionsEnabledKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string TransactionsEnabledKey = &quot;datadistributionmanager.kafka.transactions.enable&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -4122,7 +4143,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string TransactionsTimeoutKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string TransactionsTimeoutKey = &quot;datadistributionmanager.kafka.transactions.timeout&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -4152,7 +4173,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string TransactionTimeoutKey = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string TransactionTimeoutKey = &quot;datadistributionmanager.kafka.globalconf.transaction.timeout.ms&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5065,7 +5086,7 @@
   </span>
   <a id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_EnableIdempotence_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.EnableIdempotence*"></a>
   <h4 id="MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_EnableIdempotence" data-uid="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.EnableIdempotence">EnableIdempotence</h4>
-  <div class="markdown level1 summary"><p>When set to <code>true</code>, the producer will ensure that messages are successfully produced exactly once and in the original produce order. The following configuration properties are adjusted automatically (if not modified by the user) when idempotence is enabled: <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_MaxInFlightRequestsPerConnection">MaxInFlightRequestsPerConnection</a> to 5 (must be less than or equal to 5), <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_MessageSendMaxRetries">MessageSendMaxRetries</a> to <see cref="!:Int32.MaxValue"></see> (must be greater than 0), <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_RequestRequiredAcks">RequestRequiredAcks</a> to all, <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_QueueingStrategy">QueueingStrategy</a> <code>queuing.strategy=fifo</code>. Producer instantation will fail if user-supplied configuration is incompatible.</p>
+  <div class="markdown level1 summary"><p>When set to <code>true</code>, the producer will ensure that messages are successfully produced exactly once and in the original produce order. The following configuration properties are adjusted automatically (if not modified by the user) when idempotence is enabled: <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_MaxInFlightRequestsPerConnection">MaxInFlightRequestsPerConnection</a> to 5 (must be less than or equal to 5), <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_MessageSendMaxRetries">MessageSendMaxRetries</a> to <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32.maxvalue">MaxValue</a> (must be greater than 0), <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_RequestRequiredAcks">RequestRequiredAcks</a> to all, <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_KafkaChannelConfiguration_QueueingStrategy">QueueingStrategy</a> <code>queuing.strategy=fifo</code>. Producer instantation will fail if user-supplied configuration is incompatible.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -7346,7 +7367,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -7999,7 +8020,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -8346,7 +8367,7 @@
       <a class="xref" href="MASES.DataDistributionManager.Bindings.IConfiguration.html">IConfiguration</a>
   </div>
   <div>
-      <span class="xref">INotifyPropertyChanged</span>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">System.ComponentModel.INotifyPropertyChanged</a>
   </div>
 </article>
           </div>

@@ -86,11 +86,35 @@
     <div><a class="xref" href="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html">ISmartDataDistributionChannel</a></div>
     <div><a class="xref" href="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.html">ISmartDataDistributionChannelInfo</a></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="MASES.DataDistributionManager.Bindings.html">MASES.DataDistributionManager.Bindings</a></h6>
   <h6><strong>Assembly</strong>: DataDistributionManagerNet.dll</h6>
   <h5 id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SmartDataDistributionChannel : object, ISmartDataDistributionChannel, ISmartDataDistributionChannelInfo</code></pre>
+    <pre><code class="lang-csharp hljs">public class SmartDataDistributionChannel : ISmartDataDistributionChannel, ISmartDataDistributionChannelInfo</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -125,7 +149,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const Int64 DDM_NO_TIMESTAMP = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const long DDM_NO_TIMESTAMP = -1L</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -137,7 +161,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int64</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -201,7 +225,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -220,7 +244,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Int64 Offset { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public long Offset { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -232,7 +256,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int64</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -251,7 +275,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Int64 Timestamp { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public long Timestamp { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -263,7 +287,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int64</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -574,19 +598,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_ReadFromChannel_Int64_System_Int64_System_Byte____.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ReadFromChannel(Int64%2CSystem.Int64%2CSystem.Byte%5B%5D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_ReadFromChannel_System_Int64_System_Int64_System_Byte____.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ReadFromChannel(System.Int64%2CSystem.Int64%2CSystem.Byte%5B%5D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L404">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_ReadFromChannel_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ReadFromChannel*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_ReadFromChannel_Int64_System_Int64_System_Byte____" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ReadFromChannel(Int64,System.Int64,System.Byte[]@)">ReadFromChannel(Int64, Int64, out Byte[])</h4>
+  <h4 id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_ReadFromChannel_System_Int64_System_Int64_System_Byte____" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.ReadFromChannel(System.Int64,System.Int64,System.Byte[]@)">ReadFromChannel(Int64, Int64, out Byte[])</h4>
   <div class="markdown level1 summary"><p>Reads data from channel</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public OPERATION_RESULT ReadFromChannel(Int64 offset, long length, out byte[] buffer)</code></pre>
+    <pre><code class="lang-csharp hljs">public OPERATION_RESULT ReadFromChannel(long offset, long length, out byte[] buffer)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -599,7 +623,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int64</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
         <td><span class="parametername">offset</span></td>
         <td><p>Position where read begins</p>
 </td>
@@ -636,13 +660,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_DateTime_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_System_DateTime_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L344">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_DateTime_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(DateTime)">SeekChannel(DateTime)</h4>
+  <h4 id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_System_DateTime_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.DateTime)">SeekChannel(DateTime)</h4>
   <div class="markdown level1 summary"><p>Seek the channel to an absolute timestamp</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -661,7 +685,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
         <td><span class="parametername">position</span></td>
         <td><p>Seek timestamp to an absolute poisition</p>
 </td>
@@ -686,19 +710,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKCONTEXT_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(Int64%2CMASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT%2CMASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_System_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKCONTEXT_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.Int64%2CMASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT%2CMASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L355">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKCONTEXT_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)">SeekChannel(Int64, DDM_SEEKCONTEXT, DDM_SEEKKIND)</h4>
+  <h4 id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_System_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKCONTEXT_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)">SeekChannel(Int64, DDM_SEEKCONTEXT, DDM_SEEKKIND)</h4>
   <div class="markdown level1 summary"><p>Seek the channel using absolute or relative offset</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public OPERATION_RESULT SeekChannel(Int64 position, DDM_SEEKCONTEXT context = default(DDM_SEEKCONTEXT), DDM_SEEKKIND kind = default(DDM_SEEKKIND))</code></pre>
+    <pre><code class="lang-csharp hljs">public OPERATION_RESULT SeekChannel(long position, DDM_SEEKCONTEXT context = DDM_SEEKCONTEXT.OFFSET, DDM_SEEKKIND kind = DDM_SEEKKIND.ABSOLUTE)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -711,7 +735,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int64</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
         <td><span class="parametername">position</span></td>
         <td><p>Seek offset poisition</p>
 </td>
@@ -748,19 +772,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(Int64%2CMASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_System_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.Int64%2CMASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L339">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)">SeekChannel(Int64, DDM_SEEKKIND)</h4>
+  <h4 id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_System_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)">SeekChannel(Int64, DDM_SEEKKIND)</h4>
   <div class="markdown level1 summary"><p>Seek the channel using absolute or relative offset</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public OPERATION_RESULT SeekChannel(Int64 position, DDM_SEEKKIND kind = default(DDM_SEEKKIND))</code></pre>
+    <pre><code class="lang-csharp hljs">public OPERATION_RESULT SeekChannel(long position, DDM_SEEKKIND kind = DDM_SEEKKIND.ABSOLUTE)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -773,7 +797,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int64</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
         <td><span class="parametername">position</span></td>
         <td><p>Seek offset poisition</p>
 </td>
@@ -804,14 +828,14 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_TimeSpan_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(TimeSpan)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_System_TimeSpan_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.TimeSpan)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L350">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_TimeSpan_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(TimeSpan)">SeekChannel(TimeSpan)</h4>
-  <div class="markdown level1 summary"><p>Seek the channel by a relative time expressed as <see cref="!:TimeSpan"></see> starting from latest known timestamp</p>
+  <h4 id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_SeekChannel_System_TimeSpan_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.SeekChannel(System.TimeSpan)">SeekChannel(TimeSpan)</h4>
+  <div class="markdown level1 summary"><p>Seek the channel by a relative time expressed as <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.timespan">TimeSpan</a> starting from latest known timestamp</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -829,7 +853,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">TimeSpan</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
         <td><span class="parametername">position</span></td>
         <td><p>Seek timestamp relative poisition</p>
 </td>
@@ -1066,19 +1090,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_Byte___System_Boolean_Int64_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.Byte%5B%5D%2CSystem.Boolean%2CInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_Byte___System_Boolean_System_Int64_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.Byte%5B%5D%2CSystem.Boolean%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L372">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_Byte___System_Boolean_Int64_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.Byte[],System.Boolean,Int64)">WriteOnChannel(Byte[], Boolean, Int64)</h4>
+  <h4 id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_Byte___System_Boolean_System_Int64_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.Byte[],System.Boolean,System.Int64)">WriteOnChannel(Byte[], Boolean, Int64)</h4>
   <div class="markdown level1 summary"><p>Writes in the channel</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public OPERATION_RESULT WriteOnChannel(byte[] buffer, bool waitAll = false, Int64 timestamp = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public OPERATION_RESULT WriteOnChannel(byte[] buffer, bool waitAll = false, long timestamp = -1L)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1103,7 +1127,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Int64</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
         <td><span class="parametername">timestamp</span></td>
         <td><p>timestamp to associated to the message</p>
 </td>
@@ -1127,19 +1151,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_Boolean_Int64_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String%2CSystem.Boolean%2CInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_Boolean_System_Int64_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String%2CSystem.Boolean%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L360">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_Boolean_Int64_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.Boolean,Int64)">WriteOnChannel(String, Boolean, Int64)</h4>
+  <h4 id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_Boolean_System_Int64_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.Boolean,System.Int64)">WriteOnChannel(String, Boolean, Int64)</h4>
   <div class="markdown level1 summary"><p>Writes in the channel</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public OPERATION_RESULT WriteOnChannel(string value, bool waitAll = false, Int64 timestamp = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public OPERATION_RESULT WriteOnChannel(string value, bool waitAll = false, long timestamp = -1L)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1154,7 +1178,7 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">value</span></td>
-        <td><p>The <see cref="!:System.String"></see> to write in the channel</p>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a> to write in the channel</p>
 </td>
       </tr>
       <tr>
@@ -1164,7 +1188,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Int64</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
         <td><span class="parametername">timestamp</span></td>
         <td><p>timestamp to associated to the message</p>
 </td>
@@ -1188,19 +1212,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_Byte___System_Boolean_Int64_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String%2CSystem.Byte%5B%5D%2CSystem.Boolean%2CInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_Byte___System_Boolean_System_Int64_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String%2CSystem.Byte%5B%5D%2CSystem.Boolean%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L388">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_Byte___System_Boolean_Int64_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.Byte[],System.Boolean,Int64)">WriteOnChannel(String, Byte[], Boolean, Int64)</h4>
+  <h4 id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_Byte___System_Boolean_System_Int64_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.Byte[],System.Boolean,System.Int64)">WriteOnChannel(String, Byte[], Boolean, Int64)</h4>
   <div class="markdown level1 summary"><p>Writes in the channel</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public OPERATION_RESULT WriteOnChannel(string key, byte[] buffer, bool waitAll = false, Int64 timestamp = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public OPERATION_RESULT WriteOnChannel(string key, byte[] buffer, bool waitAll = false, long timestamp = -1L)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1231,7 +1255,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Int64</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
         <td><span class="parametername">timestamp</span></td>
         <td><p>timestamp to associated to the message</p>
 </td>
@@ -1255,19 +1279,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_String_System_Boolean_Int64_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String%2CSystem.String%2CSystem.Boolean%2CInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_String_System_Boolean_System_Int64_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String%2CSystem.String%2CSystem.Boolean%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L366">View Source</a>
   </span>
   <a id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_String_System_Boolean_Int64_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.String,System.Boolean,Int64)">WriteOnChannel(String, String, Boolean, Int64)</h4>
+  <h4 id="MASES_DataDistributionManager_Bindings_SmartDataDistributionChannel_WriteOnChannel_System_String_System_String_System_Boolean_System_Int64_" data-uid="MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.WriteOnChannel(System.String,System.String,System.Boolean,System.Int64)">WriteOnChannel(String, String, Boolean, Int64)</h4>
   <div class="markdown level1 summary"><p>Writes in the channel</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public OPERATION_RESULT WriteOnChannel(string key, string value, bool waitAll = false, Int64 timestamp = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public OPERATION_RESULT WriteOnChannel(string key, string value, bool waitAll = false, long timestamp = -1L)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1288,7 +1312,7 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">value</span></td>
-        <td><p>The <see cref="!:System.String"></see> to write in the channel</p>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a> to write in the channel</p>
 </td>
       </tr>
       <tr>
@@ -1298,7 +1322,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Int64</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
         <td><span class="parametername">timestamp</span></td>
         <td><p>timestamp to associated to the message</p>
 </td>
@@ -1347,7 +1371,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">EventHandler</span>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.html">ConditionOrErrorEventArgs</a>&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.html">ConditionOrErrorEventArgs</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1377,7 +1401,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">EventHandler</span>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.html">DataAvailableEventArgs</a>&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.html">DataAvailableEventArgs</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>

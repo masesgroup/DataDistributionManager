@@ -5,6 +5,17 @@
   "files": [
     {
       "type": "Resource",
+      "source_relative_path": "../DataDistributionManagerJava/javadoc/allclasses.html",
+      "output": {
+        "resource": {
+          "relative_path": "javadoc/allclasses.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "../DataDistributionManagerJava/javadoc/constant-values.html",
       "output": {
         "resource": {
@@ -4519,7 +4530,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.BaseConfiguration.html",
-          "hash": "Rvg0B0QIsseyjgShUUWnp8meZDeYXxInjmsmjxvN634="
+          "hash": "40WiIqfCxkki3COjbaPWy7hyvpiFSkMlOtZS+cZgC98="
         }
       },
       "is_incremental": false,
@@ -4531,7 +4542,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ChangedStateEventArgs.html",
-          "hash": "lLRRR0BgQBzAOPbIi4P+yJjLoYrjEvsk+um5t8SRGVA="
+          "hash": "OzYh1LNymG+elfqLkzQ8i3G6UgqIGGcXbRFVwor9vNQ="
         }
       },
       "is_incremental": false,
@@ -4543,7 +4554,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ChangingStateEventArgs.html",
-          "hash": "uadOA5gFZwk+tKYCuWWRB96AfRcwMEPeZzDUvFoia40="
+          "hash": "wmh1q5wWzsC6tBHA1FzYuMf6xNjCED702hfw9I+Do40="
         }
       },
       "is_incremental": false,
@@ -4555,7 +4566,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ClusterHealthElement.html",
-          "hash": "LOTPsdnIxeSLCzZ21/IqDR16Wl6nWHCb7oaK1o8LoU4="
+          "hash": "XKNOT9X26P4oVUjtIU3d3pef/vyFjTCVIGFrifRSUjk="
         }
       },
       "is_incremental": false,
@@ -4567,7 +4578,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ClusterStateChangeEventArgs.html",
-          "hash": "KL0aO8pyGC7AwCyH8TQyiBGr/v0GCbQ+GlEuQ40OXiE="
+          "hash": "o5BJQ/JqRJPDhoOqeJlAiYDyq2ZIKR7jHhmz8coFr40="
         }
       },
       "is_incremental": false,
@@ -4579,7 +4590,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.CommonConfiguration.html",
-          "hash": "IwkFBcPONUu5L88jEXiCM2xT97eq3SflOphHilsILug="
+          "hash": "CoKgrDy9GXxFZGkijoYHucG7gYaf1J+i3s02/SbvhIM="
         }
       },
       "is_incremental": false,
@@ -4591,7 +4602,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.CompletelyDisconnectedEventArgs.html",
-          "hash": "4NflQdYP/UkddlQzpIljZ4JjJRnwTxu5n0kMy6SeqHg="
+          "hash": "o6FmE8/tyIGiF1qA99FF/Xyw5o4Mdrqyj+wmeAslv+g="
         }
       },
       "is_incremental": false,
@@ -4603,7 +4614,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.html",
-          "hash": "gorHB8zB9p946epSMjVZsP/8jlc5c/pTkut+dxcIa68="
+          "hash": "G9sL2Zc7Hlo8TnkefQzwXvrudhAhbgcrDS62e1prxsg="
         }
       },
       "is_incremental": false,
@@ -4615,7 +4626,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.AutoOffsetResetType.html",
-          "hash": "d2LjCt80IQxRIZIAxsTmxTYceR4bp2l3iSecBmEMwuE="
+          "hash": "26Xvp9vbxQ+HIkBwvYl3NtIVnQFuGKrKKvZqvjqqTq0="
         }
       },
       "is_incremental": false,
@@ -4627,7 +4638,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.BrokerAddressFamilyType.html",
-          "hash": "RAFPMxl2FzJFpKaOd71er5FHrmhMFGbTK2YAn0HKqg4="
+          "hash": "VFhUEJ0xCwPjS43Xn8qXJ58gYtJZqF7E9i58xasR4Eg="
         }
       },
       "is_incremental": false,
@@ -4639,7 +4650,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.BuiltinFeaturesType.html",
-          "hash": "J+3Ilgrgs8W5BCyLtQyj2oKUzXOSV6SEYXFQ786zrZ0="
+          "hash": "zNftU2Abd6C3hA6TnJdVpAVuKRYfA44mHS9UP9YnMDg="
         }
       },
       "is_incremental": false,
@@ -4651,7 +4662,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.CompressionCodecType.html",
-          "hash": "Q21uoroWBc84DpV2hb0mF6BmAVOOJ5HQSyhQ9+cal90="
+          "hash": "aXc/UpFHhjsURq1iQ5I/ZQkbxpkA5bPIbnGMksXl71w="
         }
       },
       "is_incremental": false,
@@ -4663,7 +4674,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DataReaderQosConfiguration.html",
-          "hash": "T1wdEI2DyW2O0HoMc/6sLAvnedz/MVZ/YHNYoVXyIVE="
+          "hash": "3v270p/Xvam/omSVzi6YkyNv5hCWt3joT5qla4JwV0Y="
         }
       },
       "is_incremental": false,
@@ -4675,7 +4686,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DataWriterQosConfiguration.html",
-          "hash": "+myqOwhbHcpsX/5YUeOVDWMWK9BAi0nk9Ei4wGHbMi0="
+          "hash": "XSlIC8JI2OKyJK2wq8684Y/d+C2/cv3k1o6sJxiUbiI="
         }
       },
       "is_incremental": false,
@@ -4687,7 +4698,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DeadlineQosPolicyConfiguration.html",
-          "hash": "sTIMplQNNqDDucfhJmvjbDs9XSLpacArIY6E/ZamM2c="
+          "hash": "vXuJvRqh1zmNj597cmWFLhiw5eTVOdbkUgGuustJsrc="
         }
       },
       "is_incremental": false,
@@ -4699,7 +4710,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DebugType.html",
-          "hash": "B3oE5DgmxSQUqsdWdule1Om0aKwGk3IJ3KPBW2nqnkc="
+          "hash": "8IRi9+UncSR3Z5mnK+4ERjy2/M4hoG1kXhVifyW1aHs="
         }
       },
       "is_incremental": false,
@@ -4711,7 +4722,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DestinationOrderQosPolicyConfiguration.DestinationOrderQosPolicyKind.html",
-          "hash": "XpNQSZClYUbsaP/npXju+/4MafKUlOy9f+k0TQJ4eSI="
+          "hash": "p24nuwBAw5FYiBVWXzXNDO6de5C+LMfrxCQinPNV1R4="
         }
       },
       "is_incremental": false,
@@ -4723,7 +4734,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DestinationOrderQosPolicyConfiguration.html",
-          "hash": "7nFsogoc0XvfgMqqJ5y/K6opj+rYMuC7xARXEWWIK8Q="
+          "hash": "/83ApY9r/5nnW8W1Chbm+jRV+I3QfR6AOqxygTwiN/o="
         }
       },
       "is_incremental": false,
@@ -4735,7 +4746,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DomainParticipantQosConfiguration.html",
-          "hash": "pobXVpD5akSx8/Xtj9LQEhMh4+ThnzXomlSA1vqAAtw="
+          "hash": "1eYU6DrPHWhdc+4NhJ7uyCZurK6gMiqbhDcwnJbEOvM="
         }
       },
       "is_incremental": false,
@@ -4747,7 +4758,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityQosPolicyConfiguration.DurabilityQosPolicyKind.html",
-          "hash": "uu/chbPZoxCv5EzSiJVackOQkhiDcQFcgFXAJsd0D8c="
+          "hash": "lhxj8HQDiyt94/5q11loQhpu5XoyREBkLHxvqx+hctk="
         }
       },
       "is_incremental": false,
@@ -4759,7 +4770,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityQosPolicyConfiguration.html",
-          "hash": "hmxzZEnF2R04RhXXZnxVndNbaBImFmE5fA7V6E8ut2Y="
+          "hash": "DhxwGNsVdw/oC9+ioD874ftdD2yb+XdXr9RxGBHrj1I="
         }
       },
       "is_incremental": false,
@@ -4771,7 +4782,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityServiceQosPolicyConfiguration.HistoryQosPolicyKind.html",
-          "hash": "dmaweEAqTHLHrjklIBwtdfoIBccTqgg+le32PLS9IIA="
+          "hash": "vMQMkgbjFaOux/x1dRzCqp0i6ZiCBTnXrgQYfaTbxQw="
         }
       },
       "is_incremental": false,
@@ -4783,7 +4794,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityServiceQosPolicyConfiguration.html",
-          "hash": "gOJjTOshRpZBad+haX0id6hf+mCnMNjUESbr5anTHP8="
+          "hash": "mWipIYTVWiuJszzN9op1iB64VLirZY7ikAzxi9XS+yo="
         }
       },
       "is_incremental": false,
@@ -4795,7 +4806,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.EntityFactoryQosPolicyConfiguration.html",
-          "hash": "tWrZDcvXAEmhk5Rs6+V0khN/p0clgLVEVLxl9L4O7ZU="
+          "hash": "/AbF5PiKg6xpWHFfMp1x+eXswgAczQzMhtYzNUAaagM="
         }
       },
       "is_incremental": false,
@@ -4807,7 +4818,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.GroupDataQosPolicyConfiguration.html",
-          "hash": "UNk/r5IseOOz3s5QsnHubnabII3LQvLi3s/P4Uc4aUU="
+          "hash": "1aX4EXQjsFXT8QyVBHNHkiZw2GLPqpaDl26nKLcGcnw="
         }
       },
       "is_incremental": false,
@@ -4819,7 +4830,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.HistoryQosPolicyKind.html",
-          "hash": "U5ctFrEuP5Gj3w7heSeef84MUt0iUEOmK2k7CAQBfB4="
+          "hash": "Rkojj2j3oBjdL++AhVXBtu7OPdjW8R7psKsFNVtkV9U="
         }
       },
       "is_incremental": false,
@@ -4831,7 +4842,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.html",
-          "hash": "9+DmNS14Hr32RhcZFNSGebhKynXxOhTEnQzR+5fpCVA="
+          "hash": "hoL7X5BhkS0Y00+/scb729iuR3+LFwDKA7dh+SK8Uu0="
         }
       },
       "is_incremental": false,
@@ -4843,7 +4854,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.html",
-          "hash": "xh1ghhbgbmOZQQk2++eHzqe3cJQLBcUoIhtUHud6qdE="
+          "hash": "M8vHqsO57MFJUJIUJl2FtGyKM+zZqiopJGDKnfQ/ecA="
         }
       },
       "is_incremental": false,
@@ -4855,7 +4866,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.IsolationLevelType.html",
-          "hash": "pBvXy+IRxujDX6SXGeS/HeWR7lR9W4dhbzDCEtopBXo="
+          "hash": "51leH8jDFDA/HVBznzCQT64DFV52/1kRzOEeXGZyJCI="
         }
       },
       "is_incremental": false,
@@ -4867,7 +4878,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html",
-          "hash": "VooZXLQFY30FjgizIiTGUNyQLv7d/jWTodXoMn5Gba8="
+          "hash": "NnyL4ZdCJq6ES/AArFrrBRyiInYcdtVZe2pTyHVPq8Q="
         }
       },
       "is_incremental": false,
@@ -4879,7 +4890,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaConfiguration.html",
-          "hash": "Mozt03yCDzbefbWv3k/eu0inQj/dCNBDxOatdZi0S4w="
+          "hash": "4eBg8sn260rWrmtsFJS9ADKv2Gk91NGYBSbs+rhZAFk="
         }
       },
       "is_incremental": false,
@@ -4891,7 +4902,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaConfigurationType.html",
-          "hash": "f8BG/l5OBsdUN1UBOrzoZUEZpFJefYeeoj5QMbiT7PE="
+          "hash": "gWHFRD0gwtn9J2yNpQ8YFQZy0F9emejVt7DZ0K3u/MA="
         }
       },
       "is_incremental": false,
@@ -4903,7 +4914,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LatencyBudgetQosPolicyConfiguration.html",
-          "hash": "Jgq6kqaF0uh8br4y4WBEjvPX/gJcVkwjjy5/DMWwlw4="
+          "hash": "gJOV4DHomPxpwz1ynsg+dcDANuRn/yhv06Vlvwb6Spg="
         }
       },
       "is_incremental": false,
@@ -4915,7 +4926,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LifespanQosPolicyConfiguration.html",
-          "hash": "DsiN6HAzJFDLKWnYKjPg334gDedjEER1Di/2clQ2p+A="
+          "hash": "Wt6MY+IdP2yMyo4+kv40fcdA55vPqiaFsAmlxJM/sPQ="
         }
       },
       "is_incremental": false,
@@ -4927,7 +4938,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration.LivelinessQosPolicyKind.html",
-          "hash": "H8W0B6jT0yXW7JANudX+fc8MGZAFS7+ghu4f2YnE+gg="
+          "hash": "gvR1v8+UC4H8vqqVjjJ8kwodFahwuWiYtK2XOE5ThwM="
         }
       },
       "is_incremental": false,
@@ -4939,7 +4950,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration.html",
-          "hash": "uPhJmEmqquMqGTeWPLV9rwFSZMH1146xrbTgY0IkuKY="
+          "hash": "DjODc94owcb24qbeLI3m484JuR8cGw7QoOHas/hiOUQ="
         }
       },
       "is_incremental": false,
@@ -4951,7 +4962,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.html",
-          "hash": "OBoGi30OWCsWyW/WIJ8w0KQFcDvqfapJzpG06RQJCZY="
+          "hash": "11guG4ztCXlaYmfh6W9rvAZ97Bg8sKua0I3gzagIZRM="
         }
       },
       "is_incremental": false,
@@ -4963,7 +4974,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSChannelConfiguration.html",
-          "hash": "KnUESiXetCpjjnvZw+FmKYo38k6swJeqgDwZX95Cjfo="
+          "hash": "MFHaP+KjDlYttGHpRM1xBFAdogh3tGZmU2yUvZhhXn4="
         }
       },
       "is_incremental": false,
@@ -4975,7 +4986,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html",
-          "hash": "ili4wwZwCW+rLPVC7IwRo5UHeHdC7EdR+JUT2IcP0UI="
+          "hash": "WqZ03sWk3YOyN/15CnOlSu5jl/ipOR0wqCLlHCmj5FQ="
         }
       },
       "is_incremental": false,
@@ -4987,7 +4998,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.OpenDDSArgsConfiguration.html",
-          "hash": "BnnLGxAo2MpnG4VZhmTwQ878JgAmcxksxqvde8XVAI4="
+          "hash": "QTh5F4+af5gPXouPkFkutLo4mvY9LGUwnW4AMSQeUuY="
         }
       },
       "is_incremental": false,
@@ -4999,7 +5010,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.html",
-          "hash": "8r4JuQ68pgLN1EW6t0s1u9Zko4ABF/lllnxB0Gb1VeA="
+          "hash": "ApQalp7C9ehUct+xFqUYqyEgDkd8ualuhD6Ixt/lqZc="
         }
       },
       "is_incremental": false,
@@ -5011,7 +5022,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipQosPolicyConfiguration.OwnershipQosPolicyKind.html",
-          "hash": "1c3IktLIfQNN/eq3ltHgAbK0PJD4rAEB5dzUwOyNKGw="
+          "hash": "3U7vjCNgX6dlpjjq3UZ9TqQeDPNjsdJg0pq5JHrIE68="
         }
       },
       "is_incremental": false,
@@ -5023,7 +5034,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipQosPolicyConfiguration.html",
-          "hash": "gadRnm8ftemjScuv0E1ViJDK4f6HcUL+It4duLeJJzU="
+          "hash": "xa4yPgbPAS01My+ttnROnZDY3keaW6yCLNyvoW+CF4E="
         }
       },
       "is_incremental": false,
@@ -5035,7 +5046,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipStrengthQosPolicyConfiguration.html",
-          "hash": "+lXUF/ybkdwzoMq8fIPyJ/Kh5R0IloYJJUqZArL/weE="
+          "hash": "s7GuBVAD/NhvDj0yEl11Ge/kAtLoTxh/gkcB7FdHme8="
         }
       },
       "is_incremental": false,
@@ -5047,7 +5058,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionAssignmentStrategyType.html",
-          "hash": "MS8CRvBUlljsc0HoJLlPeuOpnjkj5jOvqZcInmE8U3M="
+          "hash": "strQgBrVF5RcO41S1/6Z8d0mytiBL4FzbUJSurVdZaM="
         }
       },
       "is_incremental": false,
@@ -5059,7 +5070,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionQosPolicyConfiguration.html",
-          "hash": "WbtccAJJkuaE5qu58QeJFo8sqQSYZ7yd4PJxyAzvMPQ="
+          "hash": "DCr5NHeRbNCofc8xTjGg2reggIrV4vpbJdrrkKvbgXE="
         }
       },
       "is_incremental": false,
@@ -5071,7 +5082,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionerType.html",
-          "hash": "fqi6secb1Jyv34fMhFad7wI/6W0PCBNdrkFlnLsF31o="
+          "hash": "3x7RrqV/YIj2sD28acDvNwAZ+PjIGGVC1wNpHbiuYGg="
         }
       },
       "is_incremental": false,
@@ -5083,7 +5094,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PresentationQosPolicyConfiguration.PresentationQosPolicyAccessScopeKind.html",
-          "hash": "IVI2pDF9t5qlERO5vgkBN9QTmjue38LUaHg/lNhgHBQ="
+          "hash": "BFldNUgwbZcAYIAjN0dXVCL/gRrxzI3yS7FsO2K5pr8="
         }
       },
       "is_incremental": false,
@@ -5095,7 +5106,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PresentationQosPolicyConfiguration.html",
-          "hash": "AJPgGK7rMjThyStGi7XdReeprTL+AUpPJkdnCkN4sTI="
+          "hash": "QmHaAxpaAjCxhJ4W9x0/8kGJ6+iCqgXMw+gaR7DfTfE="
         }
       },
       "is_incremental": false,
@@ -5107,7 +5118,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.Property.html",
-          "hash": "oHTpbeJm4G2FHL5Ig09tMsS+8s2l3opg1cqzm6Z1BtM="
+          "hash": "TCBn/0is3jRMT/bMz2VDTrkmOLtCuwGklRpQzM33io0="
         }
       },
       "is_incremental": false,
@@ -5119,7 +5130,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.html",
-          "hash": "p1NRFzB1+asynq+ARRLUiOhrAfpevCzFFjglkW/I/gs="
+          "hash": "g6pkuCB5YAeq6ykdmBcYGTLkiLsoorxqTt90mwrIV8g="
         }
       },
       "is_incremental": false,
@@ -5131,7 +5142,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PublisherQosConfiguration.html",
-          "hash": "IXgM6PHlszEBLSvQT7p1yzneMiIUKgL0p+8Z14p0zXk="
+          "hash": "Fs9Y1P5Czik06gAU1tHx0ma21f3C54bjsdi1RCqk95w="
         }
       },
       "is_incremental": false,
@@ -5143,7 +5154,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.QueueingStrategyType.html",
-          "hash": "8pwVKdnVyp+HNklTCK9HMjEKEbfeP+8CvEqT1d0qwxs="
+          "hash": "RtJlB8FU1GQplaJBoOkI6QMNrOnIASEi0ld+LuEF+P4="
         }
       },
       "is_incremental": false,
@@ -5155,7 +5166,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ReaderDataLifecycleQosPolicyConfiguration.html",
-          "hash": "3CK7Bw8RLMnCPjKNTaL7ruW0IL/0IwK4eKPyR3T7lJU="
+          "hash": "U/cK2/i/xcSxNpuxCqmW8PakaJX9Jz6QR34/IZmZPec="
         }
       },
       "is_incremental": false,
@@ -5167,7 +5178,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ReliabilityQosPolicyConfiguration.ReliabilityQosPolicyKind.html",
-          "hash": "D+B0x9ZOXQBg4Sgski2z2aNMLFidS7WcFI21kaOzGJE="
+          "hash": "XKW7En2G5rt1+33TwzMkUjSxqwqRgg21/RWIB1MlJjk="
         }
       },
       "is_incremental": false,
@@ -5179,7 +5190,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ReliabilityQosPolicyConfiguration.html",
-          "hash": "0ACY+HkK9ez86d5GJazqGrMYL6d7TE+EFoavTrqRRnM="
+          "hash": "y/5A2qLBQ3/4MoyVEWxWECAU9TxnBvLY/Eym21KrjH4="
         }
       },
       "is_incremental": false,
@@ -5191,7 +5202,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ResourceLimitsQosPolicyConfiguration.html",
-          "hash": "j32trA6ZBNpzq6H6TsaHsGDMM8kPUYjQJJ53tKYPYBg="
+          "hash": "kdWm0Z0Qyj9ZIlHIGzzmlgPdgXCOgmOVUDHcvdA0BnM="
         }
       },
       "is_incremental": false,
@@ -5203,7 +5214,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SaslMechanismType.html",
-          "hash": "SDeFHFleOS4/jLWdrPLgqmbYFpS7/Iu63CG6w0ymklo="
+          "hash": "ilcGEI1pKEDsbE4vKkJW5qJ90e/iIZBJ7DBVyOj1JY4="
         }
       },
       "is_incremental": false,
@@ -5215,7 +5226,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SaslOauthbearerMethodType.html",
-          "hash": "8m1PI1M/HJ8PA/5TofmLzn6Y/QPn8LUiTp0IQ8eeKmI="
+          "hash": "pAI0nepzKGmYhYGceAk9rY0JlHq5tQ9V+NfyjfUVoAM="
         }
       },
       "is_incremental": false,
@@ -5227,7 +5238,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SecurityProtocolType.html",
-          "hash": "ObuCIwAiuKBAy8UlRu3Ps4YUwE7v5EOwQ69mtoGITcU="
+          "hash": "nKqZdF/5zWPFy0LpcufPp80zgHNbiZY1EZD3gwhwNfk="
         }
       },
       "is_incremental": false,
@@ -5239,7 +5250,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SslEndpointIdentificationAlgorithmType.html",
-          "hash": "g4ch1YjN2Gv8IIL/kxyv1o+HZOmYVeDAy9EAhYTF+fk="
+          "hash": "GLbaKkmA7B24h3rZNVOdfZvfKDMuDJFOhiz2RVCpMQA="
         }
       },
       "is_incremental": false,
@@ -5251,7 +5262,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SubscriberQosConfiguration.html",
-          "hash": "uUAvSyeieGoVZeme3ISp9SSmp7kmQS/FVUf6H4YF6Tk="
+          "hash": "YNY2dUC7VCfG21dLZoHE+tcoPdoknvQ6IzY2eFT36AM="
         }
       },
       "is_incremental": false,
@@ -5263,7 +5274,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TimeBasedFilterQosPolicyConfiguration.html",
-          "hash": "N22CyQ9UEaGmfgS6EkgW8w5dc61L69PWs1ma0WydR40="
+          "hash": "6ttSYxzy3IXtktQIvEHjFYsJ7xftOH+eOylyJTWtQ8A="
         }
       },
       "is_incremental": false,
@@ -5275,7 +5286,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TopicDataQosPolicyConfiguration.html",
-          "hash": "bM1edJWByMHLznrU2d0MPHdrV9BzQ1oG1UsubmeAjq4="
+          "hash": "OtXIxbkFSGuBXPBP2jKNyrXNIYDQBxXrjHLGi7b+28g="
         }
       },
       "is_incremental": false,
@@ -5287,7 +5298,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TopicQosConfiguration.html",
-          "hash": "S2CazWRGDcq4hFBFBgwMe+tbvDjJ5UYFGro4IayAmgQ="
+          "hash": "il/7q2fyx1bskc3zC0HMzeGXtdY6YmGx6BoG1C67goI="
         }
       },
       "is_incremental": false,
@@ -5299,7 +5310,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TransportPriorityQosPolicyConfiguration.html",
-          "hash": "tSLurSetZTFh8HpmMX3FhVIsNhMBSBmZ+9i2P7gEfMk="
+          "hash": "ZfZGOlVlvca15vOMaOEu/Y+ShYAC0aNNTiED9VLBFxY="
         }
       },
       "is_incremental": false,
@@ -5311,7 +5322,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.UserDataQosPolicyConfiguration.html",
-          "hash": "F7mGXQFm4zuSgsX3WoSEkCcQsv0NZ3NVJyJmXFThqro="
+          "hash": "9V+s/hWkOCvRcq4N79Tcow2B7/H5065NYAF2N+1kHQs="
         }
       },
       "is_incremental": false,
@@ -5323,7 +5334,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.WriterDataLifecycleQosPolicyConfiguration.html",
-          "hash": "bMDRs7cjOLin+RXRX2U53V85RZehRDPslNQUpa3WbsY="
+          "hash": "uJWE9x1F3LLy+7BzIw7/fjjMJGFj6/wckA1isn8NpMA="
         }
       },
       "is_incremental": false,
@@ -5347,7 +5358,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ConfigurationEventArgs.html",
-          "hash": "cDvB9Oy58WGUUJLzOOmNW9E+3tAh20+UJTz+dvveQjA="
+          "hash": "rnkfTtVKZAFmlM5LTHbD4SgBvFfMILghbcqxlckZ4NA="
         }
       },
       "is_incremental": false,
@@ -5359,7 +5370,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.html",
-          "hash": "lUgk//zJuG4LXVmVjKM4bcK0SqvRpKLYUCraF/+EbaI="
+          "hash": "jN7Att3ytOwqA+ypMX8RANd2Zht13+ZluWivUUoTNys="
         }
       },
       "is_incremental": false,
@@ -5371,7 +5382,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.FirstStateChangeEventArgs.html",
-          "hash": "fknbSuEzRuc/9ktfE/XpdRL3XHqYTFnomy8nZ/j/RpE="
+          "hash": "6Oe5pKN95Z2hR2u/JuXNgoFfi9qWvPrTIv++pi9fp5g="
         }
       },
       "is_incremental": false,
@@ -5383,7 +5394,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.GlobalConfiguration.html",
-          "hash": "WeAJZtMVgYfaqmct5T10jrjxr/XK4rs6hZQUA1k6GZw="
+          "hash": "C5USEYqGm2EiBZ+0fFz5AGTsB6GWMt9G+hu2jW69s6E="
         }
       },
       "is_incremental": false,
@@ -5395,7 +5406,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.HelperClass.html",
-          "hash": "uNuShzQUISrLoW9POt+U/Qlhe3+/tQJ9W+b65k+Gsow="
+          "hash": "w9Xg3xmaIXFVCXXTZ2uBSw8/XCpWwb6dLgzMtyecdno="
         }
       },
       "is_incremental": false,
@@ -5419,7 +5430,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.html",
-          "hash": "0UPmXJCfI7YpecyCfu9tkp8NH0gSiRC2ON08oRg0KAo="
+          "hash": "aMUwLqseJtbXMT5q2WSuSEkjX0kHf7ObQnZMHrQVFGw="
         }
       },
       "is_incremental": false,
@@ -5431,7 +5442,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html",
-          "hash": "xWZ0KktsBzn5xUDRHVcz1Z2aa7xAiyCk6Wo3Oejtvx0="
+          "hash": "E5iJGRdK0y69/1ABnoaVnIqLq3X8GHNQoUCVeQmPR68="
         }
       },
       "is_incremental": false,
@@ -5443,7 +5454,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.html",
-          "hash": "KzYoTqn1kxxeOdxIJPk1TX+k217ghteMRJ6BbIMHeJc="
+          "hash": "lainLngDa6Tio0EIlVr8rft5xc+Hh86xZkHw2rFnYUA="
         }
       },
       "is_incremental": false,
@@ -5455,7 +5466,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.html",
-          "hash": "AIgqHt2ytP3RRf6tnX2ZN4YcrrSnUnu65tYQyZ+odAU="
+          "hash": "cINzMroUAXGxGDVlTQVbC+zSnHszK4rflawFWm0w4Qg="
         }
       },
       "is_incremental": false,
@@ -5467,7 +5478,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_CHANNEL_DIRECTION.html",
-          "hash": "Y2i8Pf36V5vd/hj6V/OwFs97mx3hjL0wSn5CAE1OGqw="
+          "hash": "paolb1EgXZUKmy9L0+ViRitwEqGxniRmm4RtRdPJ8LY="
         }
       },
       "is_incremental": false,
@@ -5479,7 +5490,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT.html",
-          "hash": "MZ4gEWlbBU1dlWF5kd9glBGSxegTUpGFZ/N+11uXoB4="
+          "hash": "PT99wumGj/5SoFJqc6FBmhzF4DpYGNt+J/MEKM1l/Ck="
         }
       },
       "is_incremental": false,
@@ -5491,7 +5502,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_GENERAL_PARAMETER.html",
-          "hash": "SIANP72qvdNmelj+offtdqnhCpG5sGI8CITOU202Y7I="
+          "hash": "v26rdjx8XYyoSLmGqkDRruzBv5yu/LrZ/2Y8FtEW7CM="
         }
       },
       "is_incremental": false,
@@ -5503,7 +5514,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE.html",
-          "hash": "8taV3n5JWRbA8Owgz777KYetNI3bvXWcbfYTw+OMLz8="
+          "hash": "VX7LGWFqv3AjqMNWzxp9dPT/gJb0FcyFWkR7LWt/99Y="
         }
       },
       "is_incremental": false,
@@ -5515,7 +5526,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_LOG_LEVEL.html",
-          "hash": "J2IrerY6izfBmIC7l3HDAfsqdjvId2jC/21zMVaeJDA="
+          "hash": "+kxNuXauh6ZYYBOtpWOCSN8jUL42OWdy9T/3ce4OXrA="
         }
       },
       "is_incremental": false,
@@ -5527,7 +5538,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT.html",
-          "hash": "JgHD8xsjTRCF74QwcdY3V40uMGPPHTZIMi3kaNDXCpQ="
+          "hash": "xv/2ijEsPKeKRfczWGE/hOHw0+fhpwmc7NS5RckMYEg="
         }
       },
       "is_incremental": false,
@@ -5539,7 +5550,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND.html",
-          "hash": "0e3VnnSoWqqnTN8UxB1y4Au6ZTK7YE0uVfsuIrKnyKU="
+          "hash": "tJfbrxqEsje6shbhfHozFnjG1df+7C3/2ZD0XoBVomU="
         }
       },
       "is_incremental": false,
@@ -5551,7 +5562,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.OPERATION_RESULT.html",
-          "hash": "MAcO85g3H4FbVHH58/sLz7T9pPqFV/znF4Egbn6U9pc="
+          "hash": "5WugR61dBKKJwyzFd2FGXsOBpw7sjdyEudKHTaiN1qo="
         }
       },
       "is_incremental": false,
@@ -5563,7 +5574,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.OperationResultException.html",
-          "hash": "oRZHxKIiiJAM0g9qY9gmQOhbFqx2LaPuFyXfXfuI0N0="
+          "hash": "mTaWSPXdODmGijxjqMW5Ht7Mk1zgJMe/kwLHge7H6IQ="
         }
       },
       "is_incremental": false,
@@ -5587,7 +5598,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.LoggingEventArgs.html",
-          "hash": "4x+s6YQTlx37LwFv08SyFFb7niJD9E94U+A/vSID21w="
+          "hash": "bHQ2qyuFdjVjzMLEesGyr25zZUeN7q5aa3QtUAZHk2s="
         }
       },
       "is_incremental": false,
@@ -5599,7 +5610,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.MultiplePrimaryEventArgs.html",
-          "hash": "OL4bRjowhmhA3BxG8wNPov8NWQnQlJmfkjLQq4EGs8A="
+          "hash": "WJHUlVYUFHJKEqOpv3c9R+8/DPlUYY5wYoP+ztTVmTA="
         }
       },
       "is_incremental": false,
@@ -5611,7 +5622,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.RequestedStateEventArgs.html",
-          "hash": "J3QfpfyT1jwJpdamDzHuyqKQkc2mW/wHAf6BmzpoWGU="
+          "hash": "qkra0YZ/SA4LD5vpfFeQIiTCRDjosxLwdK7Kau/XoOE="
         }
       },
       "is_incremental": false,
@@ -5623,7 +5634,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html",
-          "hash": "9Fi7dsuUvQiXtRc1BjQG6FUGkxEaErfSYuey2y+r52Y="
+          "hash": "zVlbht2gZS/VdzBmH3uO1OCmsvMv9Dg73rVbr+sfGaY="
         }
       },
       "is_incremental": false,
@@ -5635,7 +5646,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html",
-          "hash": "ztUs7sSEpw/9q5s9RJvC121unPTS8zqzJLJiLs6FFOc="
+          "hash": "iPnXXIBNDaKfXAtnZXn8ZHKpxdwLZ47+TIlTqaGBKZs="
         }
       },
       "is_incremental": false,
@@ -5647,7 +5658,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.StateChangeEventArgs.html",
-          "hash": "/bqGaG55Z6603cvwPRw3MK/u8TCf5QiRYL0WoHY70So="
+          "hash": "S9sPN8WukIGfPnQLwYHR994uM9o3GTxpI2gMnHHiH1Y="
         }
       },
       "is_incremental": false,
@@ -5659,7 +5670,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MASES.DataDistributionManager.Bindings.StateReadyEventArgs.html",
-          "hash": "4VDYq0mzxtE8og+iUgjYLggBG9Doz8qtuE5I88fbY6A="
+          "hash": "HUzxmD50b9sbC7RT3Xcapr/MvkU/Z7Qzg7cVzsb4HQw="
         }
       },
       "is_incremental": false,
