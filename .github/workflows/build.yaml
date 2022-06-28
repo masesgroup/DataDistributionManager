@@ -53,7 +53,7 @@ jobs:
           submodules: 'true'
           
       - name: set up msvc env
-        uses: ilammy/msvc-dev-cmd@v1.5.0
+        uses: ilammy/msvc-dev-cmd@v1.10.0
 
       - name: Configure OpenDDS
         shell: cmd
@@ -210,7 +210,7 @@ jobs:
 
       - name: set up msvc env
         if: ${{ github.repository_owner != 'masesgroup' || (github.repository_owner == 'masesgroup' && steps.installGPGKeyForMaven.outcome == 'success') }}
-        uses: ilammy/msvc-dev-cmd@v1.5.0
+        uses: ilammy/msvc-dev-cmd@v1.10.0
       
       - name: Build Common Tools
         shell: cmd
