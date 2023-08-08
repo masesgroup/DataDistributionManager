@@ -23,12 +23,12 @@ jobs:
         run: git config --system core.longpaths true
       
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it                                                                                  
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           submodules: 'true'
 
       - name: Cache local Maven repository
-        uses: actions/cache@v2
+        uses: actions/cache@v3.3.1
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
@@ -42,7 +42,7 @@ jobs:
         shell: bash
 
       - name: set up msvc env
-        uses: ilammy/msvc-dev-cmd@v1.10.0
+        uses: ilammy/msvc-dev-cmd@v1.12.1
       
       - name: Build Common Tools
         shell: cmd
@@ -139,7 +139,7 @@ jobs:
           perl %ACE_ROOT%\bin\mwc.pl -type vs2022 DataDistributionManagerOpenDDS.mwc
           cd ..\..
 
-      - uses: nuget/setup-nuget@v1
+      - uses: nuget/setup-nuget@v1.2.0
         with:
           nuget-version: '5.x'
       - run: nuget restore src\DataDistributionManager.sln
@@ -160,20 +160,10 @@ jobs:
           cd src
           msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
 
-      # Install .NET SDKs
-      - name: Setup .NET Core 3.1
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 3.1.x
-      - name: Setup .NET 6.0
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 6.0.x
-
-      - name: Build DataDistributionManager net6.0 and netcoreapp3.1
+      - name: Build DataDistributionManager net6.0 and net7.0
         run: |
-          dotnet build --no-incremental --configuration Release --framework netcoreapp3.1 -o Outputnetcoreapp3.1 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
           dotnet build --no-incremental --configuration Release --framework net6.0 -o Outputnet6.0 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
+          dotnet build --no-incremental --configuration Release --framework net7.0 -o Outputnet7.0 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
 
       - name: Prepare for packaging
         run: |
@@ -222,9 +212,11 @@ jobs:
           Compress-Archive -Path .\OutputPackage\runtime\x86\* -DestinationPath .\OutputJava\windows_x86\nativepackage.zip
 
       - name: Set up Apache Maven Central
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v3
         with: # running setup-java again overwrites the settings.xml
           java-version: 11
+          distribution: temurin
+          cache: 'maven'
           server-id: ossrh # Value of the distributionManagement/repository/id field of the pom.xml
           server-username: MAVEN_USERNAME # env variable for username in deploy
           server-password: MAVEN_CENTRAL_TOKEN # env variable for token in deploy
@@ -250,13 +242,13 @@ jobs:
       - name: Prepare for Docs packaging
         run: Compress-Archive -Path .\docs\* -DestinationPath .\Documentation.zip
 
-      - uses: nuget/setup-nuget@v1
+      - uses: nuget/setup-nuget@v1.2.0
         with:
           nuget-version: '5.x'
       - run: nuget pack packaging\nuget\datadistributionmanager.nuspec
 
       - name: Upload DataDistributionManager NuGet to release
-        uses: svenstaro/upload-release-action@v2
+        uses: svenstaro/upload-release-action@v2.7.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: .\MASES.DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
@@ -265,7 +257,7 @@ jobs:
           overwrite: true
 
       - name: Upload DataDistributionManager binaries to release
-        uses: svenstaro/upload-release-action@v2
+        uses: svenstaro/upload-release-action@v2.7.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: .\OutputPackage\DataDistributionManager.zip
@@ -274,7 +266,7 @@ jobs:
           overwrite: true
 
       - name: Upload DataDistributionManager Java to release
-        uses: svenstaro/upload-release-action@v2
+        uses: svenstaro/upload-release-action@v2.7.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: .\Output\datadistributionmanager.jar
@@ -283,7 +275,7 @@ jobs:
           overwrite: true
 
       - name: Upload DataDistributionManager Java docs to release
-        uses: svenstaro/upload-release-action@v2
+        uses: svenstaro/upload-release-action@v2.7.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: .\Output\datadistributionmanager.docs.jar
@@ -292,7 +284,7 @@ jobs:
           overwrite: true
           
       - name: Upload DataDistributionManager Docs snapshot to release
-        uses: svenstaro/upload-release-action@v2
+        uses: svenstaro/upload-release-action@v2.7.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: .\Documentation.zip
@@ -300,7 +292,7 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
 
-      - uses: nuget/setup-nuget@v1
+      - uses: nuget/setup-nuget@v1.2.0
         with:
           nuget-version: '5.x'
 
