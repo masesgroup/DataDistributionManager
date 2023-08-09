@@ -143,10 +143,11 @@ jobs:
           cd src
           msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
 
-      - name: Build DataDistributionManager net6.0 and net7.0
+      - name: Build DataDistributionManager net462, net6.0 and net7.0
         run: |
-          dotnet build --no-incremental --configuration Release --framework net6.0 -o Outputnet6.0 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
-          dotnet build --no-incremental --configuration Release --framework net7.0 -o Outputnet7.0 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
+          dotnet build --no-incremental --configuration Release --framework net462 -o Output src\DataDistributionManagerNet\DataDistributionManagerNet.csproj
+          dotnet build --no-incremental --configuration Release --framework net6.0 -o Outputnet6.0 src\DataDistributionManagerNet\DataDistributionManagerNet.csproj
+          dotnet build --no-incremental --configuration Release --framework net7.0 -o Outputnet7.0 src\DataDistributionManagerNet\DataDistributionManagerNet.csproj
 
       - name: Prepare for packaging
         run: |
