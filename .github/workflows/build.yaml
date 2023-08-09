@@ -161,12 +161,12 @@ jobs:
           for added_modified_file in "${added_modified_files[@]}"; do
               if [[ $added_modified_file == ".github/workflows/build.yaml"* ]]; then
                 echo "$added_modified_file is myself."
-                echo "::set-output name=run_build_ddm_windows::true"
+                echo "run_build_ddm_windows=true" >> $GITHUB_OUTPUT
                 break
               fi
               if [[ $added_modified_file == "src/"* ]]; then
                 echo "$added_modified_file file is under the directory 'src/'."
-                echo "::set-output name=run_build_ddm_windows::true"
+                echo "run_build_ddm_windows=true" >> $GITHUB_OUTPUT
                 break
               fi
           done
