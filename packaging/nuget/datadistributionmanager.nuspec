@@ -23,7 +23,7 @@
 		<file src=".\native\mases.datadistributionmanager.targets" target="build\native" />
 		<file src=".\dotnet\mases.datadistributionmanager.targets" target="build" />
 
-		<file src="..\..\Output\DataDistributionManagerNet.dll" target="lib\net462" />
+		<file src="..\..\Outputnet462\DataDistributionManagerNet.dll" target="lib\net462" />
 		<file src="..\..\Outputnet6.0\DataDistributionManagerNet.dll" target="lib\net6.0" />
 		<file src="..\..\Outputnet7.0\DataDistributionManagerNet.dll" target="lib\net7.0" />
 
