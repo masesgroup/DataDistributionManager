@@ -1,4 +1,4 @@
 Company: MASES s.r.l.
-Copyright: (c) 2022 MASES s.r.l.
+Copyright: (c) 2023 MASES s.r.l.
 Name: Data Distribution Manager
 Sealed: true
