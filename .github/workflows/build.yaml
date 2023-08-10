@@ -143,19 +143,19 @@ jobs:
       - name: Save OpenDDS Binaries in cache
         uses: actions/cache/save@v3
         with:
-          path: %GITHUB_WORKSPACE%\OpenDDS_Build_3.25.zip
+          path: ~\OpenDDS_Build_3.25.zip
           key: OpenDDS_Build_3.25
           
       - name: Save OpenDDS PDB in cache
         uses: actions/cache/save@v3
         with:
-          path: %GITHUB_WORKSPACE%\OpenDDS_PDB_Build_3.25.zip
+          path: ~\OpenDDS_PDB_Build_3.25.zip
           key: OpenDDS_PDB_Build_3.25
           
       - name: Save OpenDDS Headers in cache
         uses: actions/cache/save@v3
         with:
-          path: %GITHUB_WORKSPACE%\OpenDDS_Headers_3.25.zip
+          path: ~\OpenDDS_Headers_3.25.zip
           key: OpenDDS_Headers_3.25
 
     #  - name: Upload OpenDDS
@@ -282,13 +282,13 @@ jobs:
       - name: Restore OpenDDS Binaries from cache
         uses: actions/cache/restore@v3
         with:
-          path: %GITHUB_WORKSPACE%\OpenDDS_Build_3.25.zip
+          path: ~\OpenDDS_Build_3.25.zip
           key: OpenDDS_Build_3.25
 
       - name: Restore OpenDDS Headers from cache
         uses: actions/cache/restore@v3
         with:
-          path: %GITHUB_WORKSPACE%\OpenDDS_Headers_3.25.zip
+          path: ~\OpenDDS_Headers_3.25.zip
           key: OpenDDS_Headers_3.25
 
     #  - name: Download OpenDDS Binaries
