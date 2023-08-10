@@ -21,12 +21,12 @@ jobs:
         run: git config --system core.longpaths true
       
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it                                                                                  
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           submodules: 'true'
           
       - name: set up msvc env
-        uses: ilammy/msvc-dev-cmd@v1.10.0
+        uses: ilammy/msvc-dev-cmd@v1.12.1
       
       - name: Build Common Tools
         shell: cmd
@@ -122,7 +122,7 @@ jobs:
           perl %ACE_ROOT%\bin\mwc.pl -type vs2022 DataDistributionManagerOpenDDS.mwc
           cd ..\..
 
-      - uses: nuget/setup-nuget@v1
+      - uses: nuget/setup-nuget@v1.2.0
         with:
           nuget-version: '5.x'
       - run: nuget restore src\DataDistributionManager.sln
@@ -143,20 +143,11 @@ jobs:
           cd src
           msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
 
-      # Install .NET SDKs
-      - name: Setup .NET Core 3.1
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 3.1.x
-      - name: Setup .NET 6.0
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 6.0.x
-
-      - name: Build DataDistributionManager net6.0, net5.0 and netcoreapp3.1
+      - name: Build DataDistributionManager net462, net6.0 and net7.0
         run: |
-          dotnet build --no-incremental --configuration Release --framework netcoreapp3.1 -o Outputnetcoreapp3.1 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
-          dotnet build --no-incremental --configuration Release --framework net6.0 -o Outputnet6.0 src\DataDistributionManagerNet\DataDistributionManagerNet5.csproj
+          dotnet build --no-incremental --configuration Release --framework net462 -o Output src\DataDistributionManagerNet\DataDistributionManagerNet.csproj
+          dotnet build --no-incremental --configuration Release --framework net6.0 -o Outputnet6.0 src\DataDistributionManagerNet\DataDistributionManagerNet.csproj
+          dotnet build --no-incremental --configuration Release --framework net7.0 -o Outputnet7.0 src\DataDistributionManagerNet\DataDistributionManagerNet.csproj
 
       - name: Prepare for packaging
         run: |
@@ -192,7 +183,7 @@ jobs:
           Copy-Item .\Output\x64\*.pdb .\OutputPackage\pdb\x64\ -Force
           Copy-Item .\Output\pdb64\*.pdb .\OutputPackage\pdb\x64\ -Force
           Copy-Item .\LICENSE .\OutputPackage\licenses\LICENSE.datadistributionmanager -Force
-          Copy-Item .\src\packages\librdkafka.redist.1.9.0.1\LICENSES.txt .\OutputPackage\licenses\LICENSE.librdkafka -Force
+          Copy-Item .\src\packages\librdkafka.redist.2.2.0\LICENSES.txt .\OutputPackage\licenses\LICENSE.librdkafka -Force
           Copy-Item .\third_party\OpenDDS\LICENSE .\OutputPackage\licenses\LICENSE.opendds -Force
           Compress-Archive -Path .\OutputPackage\* -DestinationPath .\OutputPackage\DataDistributionManager.zip
 
@@ -212,7 +203,7 @@ jobs:
           CreateJar.bat
           cd ..\..
 
-      - uses: nuget/setup-nuget@v1
+      - uses: nuget/setup-nuget@v1.2.0
         with:
           nuget-version: '5.x'
       - run: nuget pack packaging\nuget\datadistributionmanager.nuspec
