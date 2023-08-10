@@ -114,7 +114,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <!-- ========== METHOD SUMMARY =========== -->
-<section role="region">
+<section>
 <ul class="blockList">
 <li class="blockList"><a id="method.summary">
 <!--   -->
@@ -143,14 +143,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" class="externalLink">HashMap</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang" class="externalLink">Long</a>,&#8203;<a href="ClusterHealthElement.html" title="class in org.mases.datadistributionmanager">ClusterHealthElement</a>&gt;</code></td>
+<td class="colFirst"><code>java.util.HashMap&lt;java.lang.Long,&#8203;<a href="ClusterHealthElement.html" title="class in org.mases.datadistributionmanager">ClusterHealthElement</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getClusterHealth()">getClusterHealth</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Health of the cluster</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" class="externalLink">HashMap</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang" class="externalLink">Long</a>,&#8203;<a href="DDM_INSTANCE_STATE.html" title="enum in org.mases.datadistributionmanager">DDM_INSTANCE_STATE</a>&gt;</code></td>
+<td class="colFirst"><code>java.util.HashMap&lt;java.lang.Long,&#8203;<a href="DDM_INSTANCE_STATE.html" title="enum in org.mases.datadistributionmanager">DDM_INSTANCE_STATE</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getClusterState()">getClusterState</a></span>()</code></th>
 <td class="colLast">
 <div class="block">State of the cluster</div>
@@ -185,8 +185,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#GetParameter(java.lang.String)">GetParameter</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;paramName)</code></th>
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#GetParameter(java.lang.String)">GetParameter</a></span>&#8203;(java.lang.String&nbsp;paramName)</code></th>
 <td class="colLast">
 <div class="block">Get mastership parameter</div>
 </td>
@@ -214,8 +214,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#SetParameter(java.lang.String,java.lang.String)">SetParameter</a></span>&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;paramName,
-            <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;paramValue)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#SetParameter(java.lang.String,java.lang.String)">SetParameter</a></span>&#8203;(java.lang.String&nbsp;paramName,
+            java.lang.String&nbsp;paramValue)</code></th>
 <td class="colLast">
 <div class="block">Set mastership parameter</div>
 </td>
@@ -245,7 +245,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <!-- ============ METHOD DETAIL ========== -->
-<section role="region">
+<section>
 <ul class="blockList">
 <li class="blockList"><a id="method.detail">
 <!--   -->
@@ -257,8 +257,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>SetParameter</h4>
-<pre class="methodSignature">void&nbsp;SetParameter&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;paramName,
-                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;paramValue)</pre>
+<pre class="methodSignature">void&nbsp;SetParameter&#8203;(java.lang.String&nbsp;paramName,
+                  java.lang.String&nbsp;paramValue)</pre>
 <div class="block">Set mastership parameter</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -273,7 +273,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>GetParameter</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;GetParameter&#8203;(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;paramName)</pre>
+<pre class="methodSignature">java.lang.String&nbsp;GetParameter&#8203;(java.lang.String&nbsp;paramName)</pre>
 <div class="block">Get mastership parameter</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -379,11 +379,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getClusterState</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" class="externalLink">HashMap</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang" class="externalLink">Long</a>,&#8203;<a href="DDM_INSTANCE_STATE.html" title="enum in org.mases.datadistributionmanager">DDM_INSTANCE_STATE</a>&gt;&nbsp;getClusterState()</pre>
+<pre class="methodSignature">java.util.HashMap&lt;java.lang.Long,&#8203;<a href="DDM_INSTANCE_STATE.html" title="enum in org.mases.datadistributionmanager">DDM_INSTANCE_STATE</a>&gt;&nbsp;getClusterState()</pre>
 <div class="block">State of the cluster</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>an <a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" class="externalLink"><code>HashMap</code></a> between server id and <a href="DDM_INSTANCE_STATE.html" title="enum in org.mases.datadistributionmanager"><code>DDM_INSTANCE_STATE</code></a></dd>
+<dd>an <code>HashMap</code> between server id and <a href="DDM_INSTANCE_STATE.html" title="enum in org.mases.datadistributionmanager"><code>DDM_INSTANCE_STATE</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -393,11 +393,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getClusterHealth</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" class="externalLink">HashMap</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang" class="externalLink">Long</a>,&#8203;<a href="ClusterHealthElement.html" title="class in org.mases.datadistributionmanager">ClusterHealthElement</a>&gt;&nbsp;getClusterHealth()</pre>
+<pre class="methodSignature">java.util.HashMap&lt;java.lang.Long,&#8203;<a href="ClusterHealthElement.html" title="class in org.mases.datadistributionmanager">ClusterHealthElement</a>&gt;&nbsp;getClusterHealth()</pre>
 <div class="block">Health of the cluster</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>an <a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html?is-external=true" title="class or interface in java.util" class="externalLink"><code>HashMap</code></a> between server id and <a href="ClusterHealthElement.html" title="class in org.mases.datadistributionmanager"><code>ClusterHealthElement</code></a></dd>
+<dd>an <code>HashMap</code> between server id and <a href="ClusterHealthElement.html" title="class in org.mases.datadistributionmanager"><code>ClusterHealthElement</code></a></dd>
 </dl>
 </li>
 </ul>
