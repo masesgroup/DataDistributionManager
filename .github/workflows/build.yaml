@@ -22,16 +22,23 @@ jobs:
         uses: actions/checkout@v3
         with:
           submodules: 'true'
-    
-      - name: Exists OpenDDS
-        id: existsOpenDDS
-        continue-on-error: true
-        run: |
-          python $GITHUB_WORKSPACE/third_party/CommonTools/scripts/utilsftp.py -c check -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.25.zip -l $GITHUB_WORKSPACE/OpenDDS_Build_3.25.zip
+
+      - uses: actions/cache@v3
+        id: cache
+        with:
+          lookup-only: true
+          key: OpenDDS_Build_3.25
+          
+     # - name: Exists OpenDDS
+     #   id: existsOpenDDS
+     #   continue-on-error: true
+     #   run: |
+     #     python $GITHUB_WORKSPACE/third_party/CommonTools/scripts/utilsftp.py -c check -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.25.zip -l $GITHUB_WORKSPACE/OpenDDS_Build_3.25.zip
 
       - name: If failed we need to rebuild artifact
         id: check_existsOpenDDS
-        if: ${{ steps.existsOpenDDS.outcome == 'failure' }}
+        if: steps.cache.outputs.cache-hit != 'true'
+       # if: ${{ steps.existsOpenDDS.outcome == 'failure' }}
         run: echo "build_opendds=true" >> $GITHUB_OUTPUT
 
   build_opendds_windows:
@@ -133,14 +140,32 @@ jobs:
           7z a .\OpenDDS_Headers_3.25.zip .\third_party\OpenDDS\*.h -r
           7z u .\OpenDDS_Headers_3.25.zip .\third_party\OpenDDS\*.inl -r
 
-      - name: Upload OpenDDS
-        shell: cmd
-        run: |
-          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.25.zip -l %GITHUB_WORKSPACE%\OpenDDS_Build_3.25.zip
-          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_PDB_Build_3.25.zip -l %GITHUB_WORKSPACE%\OpenDDS_PDB_Build_3.25.zip
-          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Headers_3.25.zip -l %GITHUB_WORKSPACE%\OpenDDS_Headers_3.25.zip
-        env:
-          GITHUB_WORKSPACE: $GITHUB_WORKSPACE
+      - name: Save OpenDDS Binaries in cache
+        uses: actions/cache/save@v3
+        with:
+          path: %GITHUB_WORKSPACE%\OpenDDS_Build_3.25.zip
+          key: OpenDDS_Build_3.25
+          
+      - name: Save OpenDDS PDB in cache
+        uses: actions/cache/save@v3
+        with:
+          path: %GITHUB_WORKSPACE%\OpenDDS_PDB_Build_3.25.zip
+          key: OpenDDS_PDB_Build_3.25
+          
+      - name: Save OpenDDS Headers in cache
+        uses: actions/cache/save@v3
+        with:
+          path: %GITHUB_WORKSPACE%\OpenDDS_Headers_3.25.zip
+          key: OpenDDS_Headers_3.25
+
+    #  - name: Upload OpenDDS
+    #    shell: cmd
+    #    run: |
+    #      python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.25.zip -l %GITHUB_WORKSPACE%\OpenDDS_Build_3.25.zip
+    #      python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_PDB_Build_3.25.zip -l %GITHUB_WORKSPACE%\OpenDDS_PDB_Build_3.25.zip
+    #      python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c upload -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Headers_3.25.zip -l %GITHUB_WORKSPACE%\OpenDDS_Headers_3.25.zip
+    #    env:
+    #      GITHUB_WORKSPACE: $GITHUB_WORKSPACE
 
   # Verify if a build is needed
   check_changes:
@@ -193,7 +218,7 @@ jobs:
           submodules: 'true'
 
       - name: Cache local Maven repository
-        uses: actions/cache@v3.3.1
+        uses: actions/cache@v3
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
@@ -254,19 +279,31 @@ jobs:
           cd third_party\OpenDDS
           configure
 
-      - name: Download OpenDDS Binaries
-        shell: cmd
-        run: |
-          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c download -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.25.zip -l %GITHUB_WORKSPACE%\OpenDDS_Build_3.25.zip
-        env:
-          GITHUB_WORKSPACE: $GITHUB_WORKSPACE
-          
-      - name: Download OpenDDS Headers
-        shell: cmd
-        run: |
-          python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c download -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Headers_3.25.zip -l %GITHUB_WORKSPACE%\OpenDDS_Headers_3.25.zip
-        env:
-          GITHUB_WORKSPACE: $GITHUB_WORKSPACE
+      - name: Restore OpenDDS Binaries from cache
+        uses: actions/cache/restore@v3
+        with:
+          path: %GITHUB_WORKSPACE%\OpenDDS_Build_3.25.zip
+          key: OpenDDS_Build_3.25
+
+      - name: Restore OpenDDS Headers from cache
+        uses: actions/cache/restore@v3
+        with:
+          path: %GITHUB_WORKSPACE%\OpenDDS_Headers_3.25.zip
+          key: OpenDDS_Headers_3.25
+
+    #  - name: Download OpenDDS Binaries
+    #    shell: cmd
+    #    run: |
+    #      python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c download -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.25.zip -l %GITHUB_WORKSPACE%\OpenDDS_Build_3.25.zip
+    #    env:
+    #      GITHUB_WORKSPACE: $GITHUB_WORKSPACE
+    #      
+    #  - name: Download OpenDDS Headers
+    #    shell: cmd
+    #    run: |
+    #      python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c download -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Headers_3.25.zip -l %GITHUB_WORKSPACE%\OpenDDS_Headers_3.25.zip
+    #    env:
+    #      GITHUB_WORKSPACE: $GITHUB_WORKSPACE
 
       - name: Prepare OpenDDS Binaries
         run: |
