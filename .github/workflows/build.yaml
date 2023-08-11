@@ -27,7 +27,7 @@ jobs:
         id: cache
         with:
           lookup-only: true
-          path: ~\third_party\OpenDDS\
+          path: ./OutputOpenDDS/
           key: OpenDDS_3.25
           
      # - name: Exists OpenDDS

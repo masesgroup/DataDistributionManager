@@ -9,6 +9,143 @@ on:
     branches: [ master ]
 
 jobs:
+  # Verify if a build is needed
+  check_opendds:
+    name: Check artifact files
+    outputs:
+      build_opendds: ${{ steps.check_existsOpenDDS.outputs.build_opendds }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      #  with:
+      #    submodules: 'true'
+
+      - uses: actions/cache@v3
+        id: cache
+        with:
+          lookup-only: true
+          path: ./OutputOpenDDS/
+          key: OpenDDS_3.25
+          
+     # - name: Exists OpenDDS
+     #   id: existsOpenDDS
+     #   continue-on-error: true
+     #   run: |
+     #     python $GITHUB_WORKSPACE/third_party/CommonTools/scripts/utilsftp.py -c check -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.25.zip -l $GITHUB_WORKSPACE/OpenDDS_Build_3.25.zip
+
+      - name: If failed we need to rebuild artifact
+        id: check_existsOpenDDS
+        if: steps.cache.outputs.cache-hit != 'true'
+       # if: ${{ steps.existsOpenDDS.outcome == 'failure' }}
+        run: echo "build_opendds=true" >> $GITHUB_OUTPUT
+
+  build_opendds_windows:
+    needs: check_opendds
+    if: needs.check_opendds.outputs.build_opendds == 'true'
+    # The type of runner that the job will run on
+    runs-on: windows-2022
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Runs a set of commands using the runners shell
+      # Support longpaths
+      - name: Support long paths
+        run: git config --system core.longpaths true
+      
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+        with:
+          submodules: 'true'
+          
+      - name: set up msvc env
+        uses: ilammy/msvc-dev-cmd@v1.12.1
+
+      - name: Configure OpenDDS
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          configure
+
+      - name: Build OpenDDS x64
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          call setenv.cmd
+          msbuild -p:Configuration=Release,Platform=x64 -m DDS_TAOv2.sln
+
+      - name: Move OpenDDS x64 binaries
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          xcopy .\lib\*.dll ..\..\Output\x64\
+          xcopy .\lib\*.lib ..\..\Output\lib64\
+          xcopy .\bin\*.exe ..\..\Output\bin64\
+          xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x64\
+          xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib64\
+          xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin64\
+          
+      - name: Move OpenDDS x64 PDB
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          mkdir ..\..\OutputPdb
+          xcopy .\lib\*.pdb ..\..\OutputPdb\pdb64\
+          xcopy .\bin\*.pdb ..\..\OutputPdb\pdb64\
+          xcopy .\ACE_wrappers\lib\*.pdb ..\..\OutputPdb\pdb64\
+          xcopy .\ACE_wrappers\bin\*.pdb ..\..\OutputPdb\pdb64\
+
+      - name: Build OpenDDS x86
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          call setenv.cmd
+          msbuild -p:Configuration=Release,Platform=Win32 -m DDS_TAOv2.sln
+
+      - name: Move OpenDDS x86 binaries
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          xcopy .\lib\*.dll ..\..\Output\x86\
+          xcopy .\lib\*.lib ..\..\Output\lib32\
+          xcopy .\bin\*.exe ..\..\Output\bin32\
+          xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x86\
+          xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib32\
+          xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin32\
+
+      - name: Move OpenDDS x86 PDB
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          xcopy .\lib\*.pdb ..\..\OutputPdb\pdb32\
+          xcopy .\bin\*.pdb ..\..\OutputPdb\pdb32\
+          xcopy .\ACE_wrappers\lib\*.pdb ..\..\OutputPdb\pdb32\
+          xcopy .\ACE_wrappers\bin\*.pdb ..\..\OutputPdb\pdb32\
+
+      - name: Move setenv.cmd
+        shell: cmd
+        run: |
+          cd third_party\OpenDDS
+          xcopy setenv.cmd ..\..\Output\
+
+      - name: Prepare for packaging OpenDDS Binaries and PDB
+        run: |
+          New-Item -Path .\OutputOpenDDS -ItemType directory
+          Compress-Archive -Path .\Output\* -DestinationPath .\OutputOpenDDS\OpenDDS_Build_3.25.zip
+          Compress-Archive -Path .\OutputPdb\* -DestinationPath .\OutputOpenDDS\OpenDDS_PDB_Build_3.25.zip
+
+      - name: Prepare for packaging OpenDDS Headers
+        shell: cmd
+        run: |
+          7z a .\OutputOpenDDS\OpenDDS_Headers_3.25.zip .\third_party\OpenDDS\*.h -r
+          7z u .\OutputOpenDDS\OpenDDS_Headers_3.25.zip .\third_party\OpenDDS\*.inl -r
+
+      - name: Save OpenDDS in cache
+        uses: actions/cache/save@v3
+        with:
+          path: ./OutputOpenDDS/
+          key: OpenDDS_3.25
+
   # This workflow contains a single job called "build_release"
   build_pullrequest:
     # The type of runner that the job will run on
@@ -69,49 +206,72 @@ jobs:
           cd third_party\OpenDDS
           configure
 
-      - name: Build OpenDDS x64
-        shell: cmd
+      - name: Restore OpenDDS from cache
+        uses: actions/cache/restore@v3
+        with:
+          fail-on-cache-miss: true
+          path: ./OutputOpenDDS/
+          key: OpenDDS_3.25
+
+      - name: Prepare OpenDDS Binaries
         run: |
-          cd third_party\OpenDDS
-          call setenv.cmd
-          msbuild -p:Configuration=Release,Platform=x64 -m DDS_TAOv2.sln
+          Expand-Archive -LiteralPath '.\OutputOpenDDS\OpenDDS_Build_3.25.zip' -DestinationPath .\Output -Force
+          
+      - name: Prepare OpenDDS Headers
+        run: |
+          Expand-Archive -LiteralPath '.\OutputOpenDDS\OpenDDS_Headers_3.25.zip' -DestinationPath .\third_party\OpenDDS -Force
 
       - name: Move OpenDDS x64
         shell: cmd
         run: |
-          cd third_party\OpenDDS
-          xcopy .\lib\*.dll ..\..\Output\x64\
-          xcopy .\lib\*.pdb ..\..\Output\pdb64\
-          xcopy .\lib\*.lib ..\..\Output\lib64\
-          xcopy .\bin\*.exe ..\..\Output\bin64\
-          xcopy .\bin\*.pdb ..\..\Output\pdb64\
-          xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x64\
-          xcopy .\ACE_wrappers\lib\*.pdb ..\..\Output\pdb64\
-          xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib64\
-          xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin64\
-          xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb64\
+           xcopy .\Output\bin32\*.* .\third_party\OpenDDS\bin\
+           xcopy .\Output\x86\*.dll .\third_party\OpenDDS\lib\
+           xcopy .\Output\bin32\*.* .\third_party\OpenDDS\ACE_wrappers\bin\
+           xcopy .\Output\x86\*.dll .\third_party\OpenDDS\ACE_wrappers\lib\
 
-      - name: Build OpenDDS x86
-        shell: cmd
-        run: |
-          cd third_party\OpenDDS
-          call setenv.cmd
-          msbuild -p:Configuration=Release,Platform=Win32 -m DDS_TAOv2.sln
-
-      - name: Move OpenDDS x86
-        shell: cmd
-        run: |
-          cd third_party\OpenDDS
-          xcopy .\lib\*.dll ..\..\Output\x86\
-          xcopy .\lib\*.pdb ..\..\Output\pdb32\
-          xcopy .\lib\*.lib ..\..\Output\lib32\
-          xcopy .\bin\*.exe ..\..\Output\bin32\
-          xcopy .\bin\*.pdb ..\..\Output\pdb32\
-          xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x86\
-          xcopy .\ACE_wrappers\lib\*.pdb ..\..\Output\pdb32\
-          xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib32\
-          xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin32\
-          xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb32\
+    #  - name: Build OpenDDS x64
+    #    shell: cmd
+    #    run: |
+    #      cd third_party\OpenDDS
+    #      call setenv.cmd
+    #      msbuild -p:Configuration=Release,Platform=x64 -m DDS_TAOv2.sln
+    #
+    #  - name: Move OpenDDS x64
+    #    shell: cmd
+    #    run: |
+    #      cd third_party\OpenDDS
+    #      xcopy .\lib\*.dll ..\..\Output\x64\
+    #      xcopy .\lib\*.pdb ..\..\Output\pdb64\
+    #      xcopy .\lib\*.lib ..\..\Output\lib64\
+    #      xcopy .\bin\*.exe ..\..\Output\bin64\
+    #      xcopy .\bin\*.pdb ..\..\Output\pdb64\
+    #      xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x64\
+    #      xcopy .\ACE_wrappers\lib\*.pdb ..\..\Output\pdb64\
+    #      xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib64\
+    #      xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin64\
+    #      xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb64\
+    #
+    #  - name: Build OpenDDS x86
+    #    shell: cmd
+    #    run: |
+    #      cd third_party\OpenDDS
+    #      call setenv.cmd
+    #      msbuild -p:Configuration=Release,Platform=Win32 -m DDS_TAOv2.sln
+    #
+    #  - name: Move OpenDDS x86
+    #    shell: cmd
+    #    run: |
+    #      cd third_party\OpenDDS
+    #      xcopy .\lib\*.dll ..\..\Output\x86\
+    #      xcopy .\lib\*.pdb ..\..\Output\pdb32\
+    #      xcopy .\lib\*.lib ..\..\Output\lib32\
+    #      xcopy .\bin\*.exe ..\..\Output\bin32\
+    #      xcopy .\bin\*.pdb ..\..\Output\pdb32\
+    #      xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x86\
+    #      xcopy .\ACE_wrappers\lib\*.pdb ..\..\Output\pdb32\
+    #      xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib32\
+    #      xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin32\
+    #      xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb32\
 
       - name: Generate OpenDDS projects
         shell: cmd
