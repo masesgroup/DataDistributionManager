@@ -27,6 +27,7 @@ jobs:
         id: cache
         with:
           lookup-only: true
+          enableCrossOsArchive: true
           path: ./OutputOpenDDS/
           key: OpenDDS_3.25
           
@@ -145,6 +146,7 @@ jobs:
       - name: Save OpenDDS in cache
         uses: actions/cache/save@v3
         with:
+          enableCrossOsArchive: true
           path: ./OutputOpenDDS/
           key: OpenDDS_3.25
 
@@ -275,6 +277,7 @@ jobs:
         uses: actions/cache/restore@v3
         with:
           fail-on-cache-miss: true
+          enableCrossOsArchive: true
           path: ./OutputOpenDDS/
           key: OpenDDS_3.25
 
