@@ -145,7 +145,7 @@ jobs:
       - name: Save OpenDDS in cache
         uses: actions/cache/save@v3
         with:
-          path: $GITHUB_WORKSPACE/OutputOpenDDS/
+          path: ./OutputOpenDDS/
           key: OpenDDS_3.25
 
       - name: Upload OpenDDS
@@ -275,7 +275,7 @@ jobs:
         uses: actions/cache/restore@v3
         with:
           fail-on-cache-miss: true
-          path: $GITHUB_WORKSPACE/OutputOpenDDS/
+          path: ./OutputOpenDDS/
           key: OpenDDS_3.25
 
     #  - name: Download OpenDDS Binaries
