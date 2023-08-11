@@ -8,7 +8,7 @@ on:
   push:
     # only trigger on branches, not on tags
     branches: '**'
-   
+
 # This workflow contains two jobs called "check_opendds", "build_opendds_windows", "check_changes", "build_ddm_windows"
 jobs:
   # Verify if a build is needed
