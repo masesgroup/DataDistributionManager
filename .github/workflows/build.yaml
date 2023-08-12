@@ -20,8 +20,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      #  with:
-      #    submodules: 'true'
 
       - uses: actions/cache/restore@v3
         id: cache
@@ -30,12 +28,6 @@ jobs:
           enableCrossOsArchive: true
           path: ./OutputOpenDDS/
           key: OpenDDS_3.25
-          
-     # - name: Exists OpenDDS
-     #   id: existsOpenDDS
-     #   continue-on-error: true
-     #   run: |
-     #     python $GITHUB_WORKSPACE/third_party/CommonTools/scripts/utilsftp.py -c check -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.25.zip -l $GITHUB_WORKSPACE/OpenDDS_Build_3.25.zip
 
       - name: If failed we need to rebuild artifact
         id: check_existsOpenDDS
@@ -280,20 +272,6 @@ jobs:
           enableCrossOsArchive: true
           path: ./OutputOpenDDS/
           key: OpenDDS_3.25
-
-    #  - name: Download OpenDDS Binaries
-    #    shell: cmd
-    #    run: |
-    #      python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c download -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Build_3.25.zip -l %GITHUB_WORKSPACE%\OpenDDS_Build_3.25.zip
-    #    env:
-    #      GITHUB_WORKSPACE: $GITHUB_WORKSPACE
-    #      
-    #  - name: Download OpenDDS Headers
-    #    shell: cmd
-    #    run: |
-    #      python %GITHUB_WORKSPACE%\third_party\CommonTools\scripts\utilsftp.py -c download -s ${{ secrets.FTP_STORE_SITE }} -u ${{ secrets.FTP_STORE_USER }} -p ${{ secrets.FTP_STORE_PASSWORD }} -r OpenDDS_Headers_3.25.zip -l %GITHUB_WORKSPACE%\OpenDDS_Headers_3.25.zip
-    #    env:
-    #      GITHUB_WORKSPACE: $GITHUB_WORKSPACE
 
       - name: Prepare OpenDDS Binaries
         run: |
