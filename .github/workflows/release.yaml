@@ -414,7 +414,7 @@ jobs:
       - run: nuget pack packaging\nuget\datadistributionmanager.nuspec
 
       - name: Upload DataDistributionManager NuGet to release
-        uses: svenstaro/upload-release-action@v2.7.0
+        uses: svenstaro/upload-release-action@v2.7
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: .\MASES.DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
@@ -423,7 +423,7 @@ jobs:
           overwrite: true
 
       - name: Upload DataDistributionManager binaries to release
-        uses: svenstaro/upload-release-action@v2.7.0
+        uses: svenstaro/upload-release-action@v2.7
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: .\OutputPackage\DataDistributionManager.zip
@@ -432,7 +432,7 @@ jobs:
           overwrite: true
 
       - name: Upload DataDistributionManager Java to release
-        uses: svenstaro/upload-release-action@v2.7.0
+        uses: svenstaro/upload-release-action@v2.7
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: .\Output\datadistributionmanager.jar
@@ -441,7 +441,7 @@ jobs:
           overwrite: true
 
       - name: Upload DataDistributionManager Java docs to release
-        uses: svenstaro/upload-release-action@v2.7.0
+        uses: svenstaro/upload-release-action@v2.7
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: .\Output\datadistributionmanager.docs.jar
@@ -450,7 +450,7 @@ jobs:
           overwrite: true
           
       - name: Upload DataDistributionManager Docs snapshot to release
-        uses: svenstaro/upload-release-action@v2.7.0
+        uses: svenstaro/upload-release-action@v2.7
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: .\Documentation.zip
