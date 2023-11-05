@@ -454,12 +454,16 @@ jobs:
           echo "GITHUB_COMMIT_MESSAGE=$(echo $GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
         shell: bash
 
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v9
+      - name: Request a PR to commit changes
         if: ${{ github.repository_owner == 'masesgroup'}} #do not push any changes outside main repo
+        uses: peter-evans/create-pull-request@v5
         with:
-          author_name: github-actions
-          author_email: 41898282+github-actions[bot]@users.noreply.github.com
-          add: '.\docs\*.*'
-          message: Update documentation after commit ${{ env.GITHUB_COMMIT_MESSAGE }}
+          branch-suffix: short-commit-hash
+          add-paths: docs/*.*
+          commit-message: Update documentation after commit ${{ env.GITHUB_COMMIT_MESSAGE }}
+          title: Changes by GitHub action
+          body: Automated changes by GitHub action
+          reviewers: masesdevelopers
+          assignees: masesdevelopers
+          labels: documentation, enhancement 
          
