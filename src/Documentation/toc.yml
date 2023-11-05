@@ -9,24 +9,35 @@
 - name: Java API Documentation
   href: javadoc/
   homepage: javadoc/root.md
-- name: Github sites
+- name: Open source projects
   dropdown: true
   href: https://masesgroup.github.io/
   items:
-  - name: MASES Group main site
-    href: https://masesgroup.github.io/
+  - name: JNet
+    href: https://masesgroup.github.io/JNet/
+  - name: KNet
+    href: https://masesgroup.github.io/KNet/
+  - name: KEFCore
+    href: https://masesgroup.github.io/KEFCore/
+  - name: JCOReflector
+    href: https://masesgroup.github.io/JCOReflector/
+  - name: NuReflector
+    href: https://masesgroup.github.io/NuReflector/
+  - name: DataDistributionManager
+    href: https://masesgroup.github.io/DataDistributionManager/
+  - name: CLIParser
+    href: https://masesgroup.github.io/CLIParser/
+  - name: JCO SWT Bridge
+    href: https://masesgroup.github.io/JCOSWTBridge/
+- name: Other products
+  dropdown: true
+  items:
   - name: Sinapse Platform
     href: https://masesgroup.github.io/sinapse/
   - name: JCOBridge
     href: https://masesgroup.github.io/JCOBridge/
-  - name: JCOReflector
-    href: https://masesgroup.github.io/JCOReflector/
-  - name: DDMChat
-    href: https://masesgroup.github.io/DDMChat/
-  - name: JCO SWT Bridge
-    href: https://masesgroup.github.io/JCOSWTBridge/
-  - name: JCOBridge Examples
-    href: https://masesgroup.github.io/JCOBridge-Examples   
+  - name: KNetOPC
+    href: https://masesgroup.github.io/KNetOPC/
 - name: External links
   dropdown: true
   items:
@@ -34,3 +45,5 @@
     href: https://www.sinapsesystem.com
   - name: JCOBridge Official site
     href: https://www.jcobridge.com
+- name: MASES Group global and contacts
+  href: https://masesgroup.com
