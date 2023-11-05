@@ -417,9 +417,10 @@ jobs:
           cd src\Documentation
           doxygen Doxyfile
 
+      - run: dotnet tool update -g docfx
+
       - name: Build documentation
         run: |
-          choco install docfx
           cd src\Documentation
           docfx
 
