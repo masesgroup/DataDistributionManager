@@ -1,1447 +1,1521 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-  
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class OpenDDSConfiguration.DCPSInfoRepoConfiguration
-   | Data Distribution Manager website </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class OpenDDSConfiguration.DCPSInfoRepoConfiguration
-   | Data Distribution Manager website ">
-    <meta name="generator" content="docfx 2.59.4.0">
-    
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
-    
-    
-    
+      <title>Class OpenDDSConfiguration.DCPSInfoRepoConfiguration
+ | MASES Group website - Data Distribution Manager </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class OpenDDSConfiguration.DCPSInfoRepoConfiguration
+ | MASES Group website - Data Distribution Manager ">
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
-        
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../images/logo.png" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
-              </form>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
             </div>
           </div>
-        </nav>
-        
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
-        
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration">
-  
-  
-  <h1 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration" class="text-break">Class OpenDDSConfiguration.DCPSInfoRepoConfiguration
+
+        <article data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration">
+
+
+
+  <h1 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration" class="text-break">
+    Class OpenDDSConfiguration.DCPSInfoRepoConfiguration
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L171"><i class="bi bi-code-slash"></i></a>
   </h1>
-  <div class="markdown level0 summary"><p>Class managing DCPSInfoRepo. See <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a></p>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="MASES.html">MASES</a>.<a class="xref" href="MASES.DataDistributionManager.html">DataDistributionManager</a>.<a class="xref" href="MASES.DataDistributionManager.Bindings.html">Bindings</a>.<a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.html">Configuration</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>DataDistributionManagerNet.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Class managing DCPSInfoRepo. See <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a></p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html">BaseConfiguration</a></div>
-    <div class="level2"><span class="xref">OpenDDSConfiguration.DCPSInfoRepoConfiguration</span></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class OpenDDSConfiguration.DCPSInfoRepoConfiguration : BaseConfiguration, IConfiguration, INotifyPropertyChanged</code></pre>
   </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="MASES.DataDistributionManager.Bindings.IConfiguration.html">IConfiguration</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html">BaseConfiguration</a></div>
+      <div><span class="xref">OpenDDSConfiguration.DCPSInfoRepoConfiguration</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="MASES.DataDistributionManager.Bindings.IConfiguration.html">IConfiguration</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_PropertyChanged">BaseConfiguration.PropertyChanged</a>
     </div>
     <div>
-      <a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_EmitPropertyChanged_System_String_">BaseConfiguration.EmitPropertyChanged(String)</a>
+      <a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_EmitPropertyChanged_System_String_">BaseConfiguration.EmitPropertyChanged(string)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">Object.Equals(Object)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">Object.GetHashCode()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">Object.GetType()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">Object.MemberwiseClone()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.html">MASES.DataDistributionManager.Bindings.Configuration</a></h6>
-  <h6><strong>Assembly</strong>: DataDistributionManagerNet.dll</h6>
-  <h5 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class DCPSInfoRepoConfiguration : BaseConfiguration, IConfiguration, INotifyPropertyChanged</code></pre>
-  </div>
-  <h3 id="constructors">Constructors
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration__ctor.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L259">View Source</a>
-  </span>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration__ctor_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.#ctor*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration__ctor" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.#ctor">DCPSInfoRepoConfiguration()</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration__ctor" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.#ctor">
+  DCPSInfoRepoConfiguration()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L259"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Initialize a new instance of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html">OpenDDSConfiguration.DCPSInfoRepoConfiguration</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public DCPSInfoRepoConfiguration()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration__ctor_System_Boolean_System_String_.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.%23ctor(System.Boolean%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L267">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration__ctor_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.#ctor*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration__ctor_System_Boolean_System_String_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.#ctor(System.Boolean,System.String)">DCPSInfoRepoConfiguration(Boolean, String)</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration__ctor_System_Boolean_System_String_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.#ctor(System.Boolean,System.String)">
+  DCPSInfoRepoConfiguration(bool, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L267"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Initialize a new instance of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html">OpenDDSConfiguration.DCPSInfoRepoConfiguration</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public DCPSInfoRepoConfiguration(bool autostart, string commandLine)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><span class="parametername">autostart</span></td>
-        <td><p>Automatically starts DCPSInfoRepo</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">commandLine</span></td>
-        <td><p>Command line to use with DCPSInfoRepo</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="fields">Fields
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>autostart</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Automatically starts DCPSInfoRepo</p>
+</dd>
+    <dt><code>commandLine</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Command line to use with DCPSInfoRepo</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoAutostartKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoAutostartKey">
+  DCPSInfoRepoAutostartKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L177"><i class="bi bi-code-slash"></i></a>
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoAutostartKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoAutostartKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L177">View Source</a>
-  </span>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoAutostartKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoAutostartKey">DCPSInfoRepoAutostartKey</h4>
+
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Autostart">Autostart</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DCPSInfoRepoAutostartKey = &quot;datadistributionmanager.opendds.dcpsinforepo.autostart&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoCommandLineKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoCommandLineKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L189">View Source</a>
-  </span>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoCommandLineKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoCommandLineKey">DCPSInfoRepoCommandLineKey</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoCommandLineKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoCommandLineKey">
+  DCPSInfoRepoCommandLineKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L189"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_CommandLine">CommandLine</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DCPSInfoRepoCommandLineKey = &quot;datadistributionmanager.opendds.dcpsinforepo.cmdlineargs&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoDispatchingCheckDelayKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoDispatchingCheckDelayKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L253">View Source</a>
-  </span>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoDispatchingCheckDelayKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoDispatchingCheckDelayKey">DCPSInfoRepoDispatchingCheckDelayKey</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoDispatchingCheckDelayKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoDispatchingCheckDelayKey">
+  DCPSInfoRepoDispatchingCheckDelayKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L253"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DispatchingCheckDelay">DispatchingCheckDelay</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DCPSInfoRepoDispatchingCheckDelayKey = &quot;DispatchingCheckDelay&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoFederateWithKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoFederateWithKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L245">View Source</a>
-  </span>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoFederateWithKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoFederateWithKey">DCPSInfoRepoFederateWithKey</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoFederateWithKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoFederateWithKey">
+  DCPSInfoRepoFederateWithKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L245"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_FederateWith">FederateWith</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DCPSInfoRepoFederateWithKey = &quot;FederateWith&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoFederationIdKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoFederationIdKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L241">View Source</a>
-  </span>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoFederationIdKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoFederationIdKey">DCPSInfoRepoFederationIdKey</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoFederationIdKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoFederationIdKey">
+  DCPSInfoRepoFederationIdKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L241"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_FederationId">FederationId</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DCPSInfoRepoFederationIdKey = &quot;FederationId&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoFederatorConfigKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoFederatorConfigKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L237">View Source</a>
-  </span>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoFederatorConfigKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoFederatorConfigKey">DCPSInfoRepoFederatorConfigKey</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoFederatorConfigKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoFederatorConfigKey">
+  DCPSInfoRepoFederatorConfigKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L237"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_FederatorConfig">FederatorConfig</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DCPSInfoRepoFederatorConfigKey = &quot;FederatorConfig&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoIorFileKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoIorFileKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L209">View Source</a>
-  </span>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoIorFileKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoIorFileKey">DCPSInfoRepoIorFileKey</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoIorFileKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoIorFileKey">
+  DCPSInfoRepoIorFileKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L209"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_IorFile">IorFile</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DCPSInfoRepoIorFileKey = &quot;o&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoListeningAddressKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoListeningAddressKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L217">View Source</a>
-  </span>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoListeningAddressKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoListeningAddressKey">DCPSInfoRepoListeningAddressKey</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoListeningAddressKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoListeningAddressKey">
+  DCPSInfoRepoListeningAddressKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L217"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ListeningAddress">ListeningAddress</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DCPSInfoRepoListeningAddressKey = &quot;a&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoLogOnApplicationKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoLogOnApplicationKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L185">View Source</a>
-  </span>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoLogOnApplicationKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoLogOnApplicationKey">DCPSInfoRepoLogOnApplicationKey</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoLogOnApplicationKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoLogOnApplicationKey">
+  DCPSInfoRepoLogOnApplicationKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L185"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_LogOnApplication">LogOnApplication</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DCPSInfoRepoLogOnApplicationKey = &quot;datadistributionmanager.opendds.dcpsinforepo.logonapplication&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoMonitorKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoMonitorKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L181">View Source</a>
-  </span>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoMonitorKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoMonitorKey">DCPSInfoRepoMonitorKey</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoMonitorKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoMonitorKey">
+  DCPSInfoRepoMonitorKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L181"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Autostart">Autostart</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DCPSInfoRepoMonitorKey = &quot;datadistributionmanager.opendds.dcpsinforepo.monitor&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoNOBITSKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoNOBITSKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L213">View Source</a>
-  </span>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoNOBITSKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoNOBITSKey">DCPSInfoRepoNOBITSKey</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoNOBITSKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoNOBITSKey">
+  DCPSInfoRepoNOBITSKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L213"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_NOBITS">NOBITS</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DCPSInfoRepoNOBITSKey = &quot;NOBITS&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoORBEndpointKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoORBEndpointKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L201">View Source</a>
-  </span>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoORBEndpointKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoORBEndpointKey">DCPSInfoRepoORBEndpointKey</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoORBEndpointKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoORBEndpointKey">
+  DCPSInfoRepoORBEndpointKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L201"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ORBEndpoint">ORBEndpoint</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DCPSInfoRepoORBEndpointKey = &quot;ORBEndpoint&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoORBListenEndpointsKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoORBListenEndpointsKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L205">View Source</a>
-  </span>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoORBListenEndpointsKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoORBListenEndpointsKey">DCPSInfoRepoORBListenEndpointsKey</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoORBListenEndpointsKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoORBListenEndpointsKey">
+  DCPSInfoRepoORBListenEndpointsKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L205"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ORBListenEndpoints">ORBListenEndpoints</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DCPSInfoRepoORBListenEndpointsKey = &quot;ORBListenEndpoints&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoORBSvcConfKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoORBSvcConfKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L197">View Source</a>
-  </span>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoORBSvcConfKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoORBSvcConfKey">DCPSInfoRepoORBSvcConfKey</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoORBSvcConfKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoORBSvcConfKey">
+  DCPSInfoRepoORBSvcConfKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L197"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ORBSvcConf">ORBSvcConf</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DCPSInfoRepoORBSvcConfKey = &quot;ORBSvcConf&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoPersistenceFileKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoPersistenceFileKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L225">View Source</a>
-  </span>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoPersistenceFileKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoPersistenceFileKey">DCPSInfoRepoPersistenceFileKey</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoPersistenceFileKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoPersistenceFileKey">
+  DCPSInfoRepoPersistenceFileKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L225"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_PersistenceFile">PersistenceFile</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DCPSInfoRepoPersistenceFileKey = &quot;file&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoPersistenceResetKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoPersistenceResetKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L233">View Source</a>
-  </span>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoPersistenceResetKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoPersistenceResetKey">DCPSInfoRepoPersistenceResetKey</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoPersistenceResetKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoPersistenceResetKey">
+  DCPSInfoRepoPersistenceResetKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L233"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_PersistenceReset">PersistenceReset</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DCPSInfoRepoPersistenceResetKey = &quot;reset&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoReassociateDelayKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoReassociateDelayKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L249">View Source</a>
-  </span>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoReassociateDelayKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoReassociateDelayKey">DCPSInfoRepoReassociateDelayKey</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoReassociateDelayKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoReassociateDelayKey">
+  DCPSInfoRepoReassociateDelayKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L249"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ReassociateDelay">ReassociateDelay</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DCPSInfoRepoReassociateDelayKey = &quot;ReassociateDelay&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoResurrectKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoResurrectKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L229">View Source</a>
-  </span>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoResurrectKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoResurrectKey">DCPSInfoRepoResurrectKey</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoResurrectKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoResurrectKey">
+  DCPSInfoRepoResurrectKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L229"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Resurrect">Resurrect</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DCPSInfoRepoResurrectKey = &quot;r&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoVerboseLoggingKey.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoVerboseLoggingKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L221">View Source</a>
-  </span>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoVerboseLoggingKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoVerboseLoggingKey">DCPSInfoRepoVerboseLoggingKey</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DCPSInfoRepoVerboseLoggingKey" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DCPSInfoRepoVerboseLoggingKey">
+  DCPSInfoRepoVerboseLoggingKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L221"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html#MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_VerboseLogging">VerboseLogging</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public const string DCPSInfoRepoVerboseLoggingKey = &quot;z&quot;</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Autostart.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Autostart%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L276">View Source</a>
-  </span>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Autostart_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Autostart*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Autostart" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Autostart">Autostart</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Autostart" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Autostart">
+  Autostart
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L276"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Automatically start DCPSInfoRepo</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Autostart { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_CommandLine.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.CommandLine%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L636">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_CommandLine_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.CommandLine*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_CommandLine" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.CommandLine">CommandLine</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_CommandLine" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.CommandLine">
+  CommandLine
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L636"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The command line to be used on DCPSInfoRepo executable</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string CommandLine { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Configuration.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Configuration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L690">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Configuration_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Configuration*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Configuration" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Configuration">Configuration</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Configuration" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Configuration">
+  Configuration
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L690"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override string[] Configuration { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_Configuration">BaseConfiguration.Configuration</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DispatchingCheckDelay.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DispatchingCheckDelay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L617">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DispatchingCheckDelay_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DispatchingCheckDelay*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DispatchingCheckDelay" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DispatchingCheckDelay">DispatchingCheckDelay</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_DispatchingCheckDelay" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.DispatchingCheckDelay">
+  DispatchingCheckDelay
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L617"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Unique identifier for this repository within any federation. This is supplied as a 32 bit decimal numeric value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int DispatchingCheckDelay { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_FederateWith.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.FederateWith%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L580">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_FederateWith_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.FederateWith*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_FederateWith" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.FederateWith">FederateWith</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_FederateWith" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.FederateWith">
+  FederateWith
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L580"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Repository federation reference at which to join a federation. This is supplied as a valid CORBA object reference in string form: stringified IOR, file: or corbaloc: reference string.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string FederateWith { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_FederationId.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.FederationId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L562">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_FederationId_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.FederationId*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_FederationId" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.FederationId">FederationId</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_FederationId" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.FederationId">
+  FederationId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L562"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Unique identifier for this repository within any federation. This is supplied as a 32 bit decimal numeric value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int FederationId { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_FederatorConfig.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.FederatorConfig%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L543">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_FederatorConfig_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.FederatorConfig*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_FederatorConfig" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.FederatorConfig">FederatorConfig</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_FederatorConfig" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.FederatorConfig">
+  FederatorConfig
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L543"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Configure federation from file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string FederatorConfig { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_IorFile.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.IorFile%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L386">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_IorFile_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.IorFile*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_IorFile" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.IorFile">IorFile</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_IorFile" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.IorFile">
+  IorFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L386"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Write the IOR of the DCPSInfo object to the specified file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string IorFile { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ListeningAddress.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ListeningAddress%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L430">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ListeningAddress_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ListeningAddress*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ListeningAddress" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ListeningAddress">ListeningAddress</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ListeningAddress" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ListeningAddress">
+  ListeningAddress
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L430"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Listening address for built-in topics (when built-in topics are published).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string ListeningAddress { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_LogOnApplication.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.LogOnApplication%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L312">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_LogOnApplication_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.LogOnApplication*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_LogOnApplication" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.LogOnApplication">LogOnApplication</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_LogOnApplication" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.LogOnApplication">
+  LogOnApplication
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L312"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Emits log in the application log</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool LogOnApplication { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Monitor.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Monitor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L294">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Monitor_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Monitor*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Monitor" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Monitor">Monitor</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Monitor" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Monitor">
+  Monitor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L294"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Monitors DCPSInfoRepo process</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Monitor { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_NOBITS.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.NOBITS%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L405">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_NOBITS_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.NOBITS*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_NOBITS" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.NOBITS">NOBITS</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_NOBITS" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.NOBITS">
+  NOBITS
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L405"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Disable the publication of built-in topics</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool NOBITS { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ORBEndpoint.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ORBEndpoint%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L348">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ORBEndpoint_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ORBEndpoint*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ORBEndpoint" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ORBEndpoint">ORBEndpoint</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ORBEndpoint" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ORBEndpoint">
+  ORBEndpoint
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L348"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>See <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string ORBEndpoint { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ORBListenEndpoints.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ORBListenEndpoints%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L367">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ORBListenEndpoints_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ORBListenEndpoints*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ORBListenEndpoints" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ORBListenEndpoints">ORBListenEndpoints</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ORBListenEndpoints" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ORBListenEndpoints">
+  ORBListenEndpoints
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L367"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>See <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string ORBListenEndpoints { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ORBSvcConf.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ORBSvcConf%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L329">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ORBSvcConf_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ORBSvcConf*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ORBSvcConf" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ORBSvcConf">ORBSvcConf</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ORBSvcConf" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ORBSvcConf">
+  ORBSvcConf
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L329"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>See <a href="http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string ORBSvcConf { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_PersistenceFile.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.PersistenceFile%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L474">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_PersistenceFile_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.PersistenceFile*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_PersistenceFile" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.PersistenceFile">PersistenceFile</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_PersistenceFile" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.PersistenceFile">
+  PersistenceFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L474"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Name of the persistent file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string PersistenceFile { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_PersistenceReset.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.PersistenceReset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L518">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_PersistenceReset_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.PersistenceReset*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_PersistenceReset" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.PersistenceReset">PersistenceReset</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_PersistenceReset" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.PersistenceReset">
+  PersistenceReset
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L518"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Wipe out old persistent data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool PersistenceReset { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ReassociateDelay.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ReassociateDelay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L599">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ReassociateDelay_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ReassociateDelay*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ReassociateDelay" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ReassociateDelay">ReassociateDelay</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_ReassociateDelay" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.ReassociateDelay">
+  ReassociateDelay
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L599"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>delay between reassociations</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int ReassociateDelay { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Resurrect.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Resurrect%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L493">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Resurrect_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Resurrect*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Resurrect" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Resurrect">Resurrect</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_Resurrect" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.Resurrect">
+  Resurrect
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L493"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Resurrect from persistent file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Resurrect { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_VerboseLogging.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.VerboseLogging%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L449">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_VerboseLogging_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.VerboseLogging*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_VerboseLogging" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.VerboseLogging">VerboseLogging</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_VerboseLogging" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.VerboseLogging">
+  VerboseLogging
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L449"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Turn on verbose transport logging</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool VerboseLogging { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_CheckConfiguration.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.CheckConfiguration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L663">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_CheckConfiguration_" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.CheckConfiguration*"></a>
-  <h4 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_CheckConfiguration" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.CheckConfiguration">CheckConfiguration()</h4>
+
+  <h3 id="MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration_CheckConfiguration" data-uid="MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.CheckConfiguration">
+  CheckConfiguration()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L663"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override void CheckConfiguration()</code></pre>
   </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_CheckConfiguration">BaseConfiguration.CheckConfiguration()</a></div>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="MASES.DataDistributionManager.Bindings.IConfiguration.html">IConfiguration</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">System.ComponentModel.INotifyPropertyChanged</a>
-  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </article>
-          </div>
-          
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_OpenDDSConfiguration_DCPSInfoRepoConfiguration.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/DataDistributionManagerNet/Configuration/OpenDDSConfiguration.cs/#L171" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\Configuration\OpenDDSConfiguration.cs/#L171" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2023 MASES s.r.l.. | Via San Cesidio 16 - San Valentino in A.C. - PE | P.I. 01932310681</span>
         </div>
       </div>
-      
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-            <span>Copyright © 2022 MASES s.r.l..<br>Generated by <strong>DocFX</strong></span>
-            
-          </div>
-        </div>
-      </footer>
-    </div>
-    
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+    </footer>
   </body>
 </html>
