@@ -112,7 +112,7 @@
       <ProgramDatabaseFile>$(OutDir)..\pdb32\$(TargetName).pdb</ProgramDatabaseFile>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>..\ProductInformation</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\ProductInformation</AdditionalIncludeDirectories>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -132,7 +132,7 @@
       <ProgramDatabaseFile>$(OutDir)..\pdb64\$(TargetName).pdb</ProgramDatabaseFile>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>..\ProductInformation</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\ProductInformation</AdditionalIncludeDirectories>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -156,7 +156,7 @@
       <ProgramDatabaseFile>$(OutDir)..\pdb32\$(TargetName).pdb</ProgramDatabaseFile>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>..\ProductInformation</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\ProductInformation</AdditionalIncludeDirectories>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -180,7 +180,7 @@
       <ProgramDatabaseFile>$(OutDir)..\pdb64\$(TargetName).pdb</ProgramDatabaseFile>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>..\ProductInformation</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\ProductInformation</AdditionalIncludeDirectories>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
