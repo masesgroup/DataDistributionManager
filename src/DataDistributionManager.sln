@@ -5,19 +5,19 @@ VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{AA70DB07-B2B0-4304-9EF8-2391CC0FA0B0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataDistributionManager", "DataDistributionManager\DataDistributionManager.vcxproj", "{8F228993-29BF-4DAD-95AB-A553C1C23EF0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataDistributionManager", "native\DataDistributionManager\DataDistributionManager.vcxproj", "{8F228993-29BF-4DAD-95AB-A553C1C23EF0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataDistributionManagerKafka", "DataDistributionManagerKafka\DataDistributionManagerKafka.vcxproj", "{83C34AD7-B6C6-41FE-986F-BFB7E4773689}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataDistributionManagerKafka", "native\DataDistributionManagerKafka\DataDistributionManagerKafka.vcxproj", "{83C34AD7-B6C6-41FE-986F-BFB7E4773689}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8F228993-29BF-4DAD-95AB-A553C1C23EF0} = {8F228993-29BF-4DAD-95AB-A553C1C23EF0}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataDistributionMastershipManager", "DataDistributionMastershipManager\DataDistributionMastershipManager.vcxproj", "{B885E87A-AC84-4EE6-8486-9BA16B465CB3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataDistributionMastershipManager", "native\DataDistributionMastershipManager\DataDistributionMastershipManager.vcxproj", "{B885E87A-AC84-4EE6-8486-9BA16B465CB3}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8F228993-29BF-4DAD-95AB-A553C1C23EF0} = {8F228993-29BF-4DAD-95AB-A553C1C23EF0}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataDistributionManagerOpenDDS_Common", "DataDistributionManagerOpenDDS\DataDistributionManagerOpenDDS_Common.vcxproj", "{40B63857-FECA-1BAD-5002-3FDE0000002E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataDistributionManagerOpenDDS_Common", "native\DataDistributionManagerOpenDDS\DataDistributionManagerOpenDDS_Common.vcxproj", "{40B63857-FECA-1BAD-5002-3FDE0000002E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8F228993-29BF-4DAD-95AB-A553C1C23EF0} = {8F228993-29BF-4DAD-95AB-A553C1C23EF0}
 	EndProjectSection
