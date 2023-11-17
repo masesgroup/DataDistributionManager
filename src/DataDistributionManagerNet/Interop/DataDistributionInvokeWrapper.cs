@@ -19,15 +19,41 @@
 using System;
 using System.ComponentModel;
 using System.IO;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 namespace MASES.DataDistributionManager.Bindings.Interop
 {
     static class DataDistributionManagerInvokeWrapper
     {
+        static bool? _isNetFramework = null;
+        static bool IsNetFramework
+        {
+            get
+            {
+                if (_isNetFramework == null)
+                {
+                    var str = RuntimeInformation.FrameworkDescription;
+                    if (str.StartsWith(".NET Framework")) _isNetFramework = true;
+                    else if (str.StartsWith(".NET Native")) throw new InvalidOperationException($"{str} is not managed.");
+                    else _isNetFramework = false;
+                }
+                return _isNetFramework.GetValueOrDefault(true);
+            }
+        }
+
         #region native invokes
 
-#if !NET_STANDARD
+        static Type _nativeLibrary = null;
+        static Type NativeLibrary
+        {
+            get
+            {
+                if (_nativeLibrary == null) _nativeLibrary = Type.GetType("System.Runtime.InteropServices.NativeLibrary", true);
+                return _nativeLibrary;
+            }
+        }
+
         [DllImport("kernel32.dll", EntryPoint = "LoadLibraryW")]
         static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPWStr)] string name);
 
@@ -39,48 +65,33 @@ namespace MASES.DataDistributionManager.Bindings.Interop
 
         [DllImport("kernel32.dll", EntryPoint = "GetProcAddress")]
         static extern IntPtr GetProcAddress(IntPtr hModule, [MarshalAs(UnmanagedType.LPStr)] string name);
-#else
-        [DllImport("coredll.dll", EntryPoint="GetModuleHandleW", SetLastError=true)]
-        public static extern IntPtr GetModuleHandle(string moduleName);
-#endif
+
+        [DllImport("coredll.dll", EntryPoint = "GetModuleHandleW", SetLastError = true)]
+        public static extern IntPtr GetModuleHandleCore([MarshalAs(UnmanagedType.LPWStr)] string moduleName);
 
         internal static IntPtr WrapperLoadLibrary(string name)
         {
-#if !NET_STANDARD
-            return LoadLibrary(name);
-#else
-            return System.Runtime.InteropServices.NativeLibrary.Load(name);
-#endif
+            return IsNetFramework ? LoadLibrary(name) : (IntPtr)NativeLibrary.InvokeMember("Load", BindingFlags.Static | BindingFlags.Public, null, null, [name]);
         }
 
         internal static bool WrapperFreeLibrary(IntPtr hModule)
         {
-#if !NET_STANDARD
-            return FreeLibrary(hModule);
-#else
-            System.Runtime.InteropServices.NativeLibrary.Free(hModule);
-            return true;
-#endif
+            if (IsNetFramework) return FreeLibrary(hModule);
+            else
+            {
+                NativeLibrary.InvokeMember("Free", BindingFlags.Static | BindingFlags.Public, null, null, [hModule]);
+                return true;
+            }
         }
 
         internal static IntPtr WrapperGetModuleHandle(string name)
         {
-#if !NET_STANDARD
             return GetModuleHandle(name);
-#else
-            return GetModuleHandle(name);
-#endif
         }
 
         internal static IntPtr WrapperGetProcAddress(IntPtr hModule, string name)
         {
-            IntPtr result = IntPtr.Zero;
-#if !NET_STANDARD
-            result = GetProcAddress(hModule, name);
-#else
-            result = System.Runtime.InteropServices.NativeLibrary.GetExport(hModule, name);
-#endif
-            return result;
+            return IsNetFramework ? GetProcAddress(hModule, name) : (IntPtr)NativeLibrary.InvokeMember("GetExport", BindingFlags.Static | BindingFlags.Public, null, null, [hModule, name]);
         }
 
         #endregion
@@ -260,6 +271,6 @@ namespace MASES.DataDistributionManager.Bindings.Interop
                                                                       IntPtr param, IntPtr dataLen,
                                                                       bool waitAll = false, Int64 timestamp = SmartDataDistributionChannel.DDM_NO_TIMESTAMP);
         public delegate bool IDataDistributionSubsystem_ReadFromChannel(IntPtr IDataDistributionSubsystem_instance, IntPtr channelHandle,
-                                                                       [In, Out] IntPtr param, [In, Out]IntPtr dataLen, long offset);
+                                                                       [In, Out] IntPtr param, [In, Out] IntPtr dataLen, long offset);
     }
 }

@@ -3,7 +3,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-    <TargetFrameworks>net6.0;net7.0;net462</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <RootNamespace>MASES.DataDistributionManager.Bindings</RootNamespace>
     <LangVersion>latest</LangVersion>
     <AssemblyName>DataDistributionManagerNet</AssemblyName>
@@ -13,10 +13,6 @@
 	<GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(TargetFramework)' != 'net462'">
-    <DefineConstants>$(DefineConstants);NET_STANDARD</DefineConstants>
-  </PropertyGroup>
-	
   <ItemGroup>
     <Compile Include="..\ProductInformation\Version.cs">
       <Link>Properties\Version.cs</Link>
