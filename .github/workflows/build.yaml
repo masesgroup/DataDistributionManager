@@ -298,7 +298,7 @@ jobs:
           perl %ACE_ROOT%\bin\mwc.pl -type vs2022 DataDistributionManagerOpenDDS.mwc
           cd ..\..
 
-      - uses: nuget/setup-nuget@v1.2.0
+      - uses: nuget/setup-nuget@v2.0.0
         with:
           nuget-version: '5.x'
       - run: nuget restore src\DataDistributionManager.sln
@@ -424,7 +424,7 @@ jobs:
           cd src\Documentation
           docfx
 
-      - uses: nuget/setup-nuget@v1.2.0
+      - uses: nuget/setup-nuget@v2.0.0
         with:
           nuget-version: '5.x'
       - run: nuget pack packaging\nuget\datadistributionmanager.nuspec
