@@ -8,6 +8,13 @@ on:
   push:
     # only trigger on branches, not on tags
     branches: '**'
+    paths-ignore:
+      - 'docs/**'
+  workflow_dispatch:
+  
+concurrency:
+  group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+  cancel-in-progress: true
 
 # This workflow contains two jobs called "check_opendds", "build_opendds_windows", "check_changes", "build_ddm_windows"
 jobs:
@@ -319,11 +326,11 @@ jobs:
           cd src
           msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
 
-      - name: Build DataDistributionManager net462, net6.0 and net7.0
+      - name: Build DataDistributionManager net462, net6.0 and net8.0
         run: |
           dotnet build --no-incremental --configuration Release --framework net462 -o Output src\DataDistributionManagerNet\DataDistributionManagerNet.csproj
           dotnet build --no-incremental --configuration Release --framework net6.0 -o Outputnet6.0 src\DataDistributionManagerNet\DataDistributionManagerNet.csproj
-          dotnet build --no-incremental --configuration Release --framework net7.0 -o Outputnet7.0 src\DataDistributionManagerNet\DataDistributionManagerNet.csproj
+          dotnet build --no-incremental --configuration Release --framework net8.0 -o Outputnet8.0 src\DataDistributionManagerNet\DataDistributionManagerNet.csproj
 
       - name: Prepare for packaging
         run: |
