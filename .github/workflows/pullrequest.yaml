@@ -27,7 +27,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - uses: actions/cache/restore@v3
+      - uses: actions/cache/restore@v4
         id: cache
         with:
           lookup-only: true
@@ -142,7 +142,7 @@ jobs:
           7z u .\OutputOpenDDS\OpenDDS_Headers_3.29.1.zip .\third_party\OpenDDS\*.inl -r
 
       - name: Save OpenDDS in cache
-        uses: actions/cache/save@v3
+        uses: actions/cache/save@v4
         with:
           enableCrossOsArchive: true
           path: ./OutputOpenDDS/
@@ -211,7 +211,7 @@ jobs:
           configure
 
       - name: Restore OpenDDS from cache
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         with:
           fail-on-cache-miss: true
           enableCrossOsArchive: true
@@ -243,7 +243,7 @@ jobs:
           perl %ACE_ROOT%\bin\mwc.pl -type vs2022 DataDistributionManagerOpenDDS.mwc
           cd ..\..
 
-      - uses: nuget/setup-nuget@v1.2.0
+      - uses: nuget/setup-nuget@v2.0.0
         with:
           nuget-version: '5.x'
       - run: nuget restore src\DataDistributionManager.sln
@@ -324,7 +324,7 @@ jobs:
           CreateJar.bat
           cd ..\..
 
-      - uses: nuget/setup-nuget@v1.2.0
+      - uses: nuget/setup-nuget@v2.0.0
         with:
           nuget-version: '5.x'
       - run: nuget pack packaging\nuget\datadistributionmanager.nuspec
