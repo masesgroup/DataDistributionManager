@@ -116,7 +116,7 @@
       <ProgramDatabaseFile>$(OutDir)..\pdb32\$(TargetName).pdb</ProgramDatabaseFile>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>..\ProductInformation</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\ProductInformation</AdditionalIncludeDirectories>
     </ResourceCompile>
     <PreBuildEvent>
       <Command>
@@ -148,7 +148,7 @@
       <ProgramDatabaseFile>$(OutDir)..\pdb64\$(TargetName).pdb</ProgramDatabaseFile>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>..\ProductInformation</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\ProductInformation</AdditionalIncludeDirectories>
     </ResourceCompile>
     <PreBuildEvent>
       <Command>
@@ -184,7 +184,7 @@
       <ProgramDatabaseFile>$(OutDir)..\pdb32\$(TargetName).pdb</ProgramDatabaseFile>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>..\ProductInformation</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\ProductInformation</AdditionalIncludeDirectories>
     </ResourceCompile>
     <PreBuildEvent>
       <Command>
@@ -220,7 +220,7 @@
       <ProgramDatabaseFile>$(OutDir)..\pdb64\$(TargetName).pdb</ProgramDatabaseFile>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>..\ProductInformation</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\ProductInformation</AdditionalIncludeDirectories>
     </ResourceCompile>
     <PreBuildEvent>
       <Command>
