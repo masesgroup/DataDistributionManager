@@ -1,3 +1,8 @@
+---
+title: Sinapse distributed is based on Data Distribution Manager
+_description: Describes how Sinapse distributed is based on Data Distribution Manager
+---
+
 # Sinapse platform: the definitive solution for Agile development
 
 We use **Data Distribution Manager** as the core of [Sinapse](https://www.sinapsesystem.com) High Avalailablity.

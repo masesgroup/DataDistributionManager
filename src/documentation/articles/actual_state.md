@@ -1,3 +1,8 @@
+---
+title: Current development state of Data Distribution Manager
+_description: Describes current development state of Data Distribution Manager
+---
+
 # Development Status
 
 * The project supports, at this stage of implementation, these communication subsystems:

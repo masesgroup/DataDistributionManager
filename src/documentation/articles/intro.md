@@ -1,3 +1,8 @@
+---
+title: Intro on Data Distribution Manager
+_description: Describes and introduces Data Distribution Manager
+---
+
 # Welcome to **Data Distribution Manager**
 
 A reliable subsystem to distribute data across datacenters using multiple technologies in a transparent manner.

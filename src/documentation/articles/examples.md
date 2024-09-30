@@ -1,3 +1,8 @@
+---
+title: Examples of Data Distribution Manager
+_description: Describes some example usage of Data Distribution Manager
+---
+
 # DataDistributionManager example 
 
 >

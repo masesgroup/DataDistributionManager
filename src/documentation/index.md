@@ -1,3 +1,8 @@
+---
+title: Main page of Data Distribution Manager
+_description: Describes Data Distribution Manager
+---
+
 # Welcome to **Data Distribution Manager**
 
 A reliable subsystem able to distribute data across multiple datacenters using multiple technologies.
