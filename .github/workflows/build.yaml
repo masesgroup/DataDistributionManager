@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - uses: actions/cache/restore@v3
         id: cache
@@ -49,12 +49,12 @@ jobs:
         run: git config --system core.longpaths true
       
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: 'true'
           
       - name: set up msvc env
-        uses: ilammy/msvc-dev-cmd@v1.12.1
+        uses: ilammy/msvc-dev-cmd@v1.13.0
 
       - name: Configure OpenDDS
         shell: cmd
@@ -199,7 +199,7 @@ jobs:
         run: git config --system core.longpaths true
       
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: 'true'
 
@@ -221,7 +221,7 @@ jobs:
 
       - name: set up msvc env
         if: ${{ github.repository_owner != 'masesgroup' || (github.repository_owner == 'masesgroup' && steps.installGPGKeyForMaven.outcome == 'success') }}
-        uses: ilammy/msvc-dev-cmd@v1.12.1
+        uses: ilammy/msvc-dev-cmd@v1.13.0
       
       - name: Build Common Tools
         shell: cmd
@@ -429,22 +429,22 @@ jobs:
           nuget-version: '5.x'
       - run: nuget pack packaging\nuget\datadistributionmanager.nuspec
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: MASES.DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
           path: .\MASES.DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: MavenDeploy
           path: .\packaging\maven\target\*.jar
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: DataDistributionManager.jar
           path: .\Output\datadistributionmanager.jar
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: DataDistributionManager.zip
           path: .\OutputPackage\DataDistributionManager.zip
@@ -456,7 +456,7 @@ jobs:
 
       - name: Request a PR to commit changes
         if: ${{ github.repository_owner == 'masesgroup'}} #do not push any changes outside main repo
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v7
         with:
           branch-suffix: short-commit-hash
           add-paths: docs/*.*
