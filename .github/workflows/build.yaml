@@ -429,22 +429,22 @@ jobs:
           nuget-version: '5.x'
       - run: nuget pack packaging\nuget\datadistributionmanager.nuspec
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: MASES.DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
           path: .\MASES.DataDistributionManager.${{ env.NUGET_PACKAGE_VERSION }}.nupkg
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: MavenDeploy
           path: .\packaging\maven\target\*.jar
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: DataDistributionManager.jar
           path: .\Output\datadistributionmanager.jar
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: DataDistributionManager.zip
           path: .\OutputPackage\DataDistributionManager.zip
