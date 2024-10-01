@@ -23,19 +23,19 @@
 		<file src=".\native\mases.datadistributionmanager.targets" target="build\native" />
 		<file src=".\dotnet\mases.datadistributionmanager.targets" target="build" />
 
-		<file src="..\..\Output\DataDistributionManagerNet.dll" target="lib\net462" />
-		<file src="..\..\Outputnet6.0\DataDistributionManagerNet.dll" target="lib\net6.0" />
-		<file src="..\..\Outputnet8.0\DataDistributionManagerNet.dll" target="lib\net8.0" />
+		<file src="..\..\..\Output\DataDistributionManagerNet.dll" target="lib\net462" />
+		<file src="..\..\..\Outputnet6.0\DataDistributionManagerNet.dll" target="lib\net6.0" />
+		<file src="..\..\..\Outputnet8.0\DataDistributionManagerNet.dll" target="lib\net8.0" />
 
-		<file src="..\..\OutputPackage\include\*" target="build\native\include\" />
-		<file src="..\..\OutputPackage\lib\x86\DataDistributionManager.lib" target="build\native\lib\x86\" />
-		<file src="..\..\OutputPackage\lib\x64\DataDistributionManager.lib" target="build\native\lib\x64\" />
+		<file src="..\..\..\OutputPackage\include\*" target="build\native\include\" />
+		<file src="..\..\..\OutputPackage\lib\x86\DataDistributionManager.lib" target="build\native\lib\x86\" />
+		<file src="..\..\..\OutputPackage\lib\x64\DataDistributionManager.lib" target="build\native\lib\x64\" />
 
-		<file src="..\..\OutputPackage\runtime\x86\*.dll" target="runtimes\x86\" />
-		<file src="..\..\OutputPackage\runtime\x86\*.exe" target="runtimes\x86\" />
-		<file src="..\..\OutputPackage\runtime\x64\*.dll" target="runtimes\x64\" />
-		<file src="..\..\OutputPackage\runtime\x64\*.exe" target="runtimes\x64\" />
+		<file src="..\..\..\OutputPackage\runtime\x86\*.dll" target="runtimes\x86\" />
+		<file src="..\..\..\OutputPackage\runtime\x86\*.exe" target="runtimes\x86\" />
+		<file src="..\..\..\OutputPackage\runtime\x64\*.dll" target="runtimes\x64\" />
+		<file src="..\..\..\OutputPackage\runtime\x64\*.exe" target="runtimes\x64\" />
 
-		<file src="..\..\OutputPackage\licenses\*.*" target="licenses\" />
+		<file src="..\..\..\OutputPackage\licenses\*.*" target="licenses\" />
 	</files>
 </package>
