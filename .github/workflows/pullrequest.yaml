@@ -304,7 +304,7 @@ jobs:
           Copy-Item .\Output\x64\*.pdb .\OutputPackage\pdb\x64\ -Force
           Copy-Item .\Output\pdb64\*.pdb .\OutputPackage\pdb\x64\ -Force
           Copy-Item .\LICENSE .\OutputPackage\licenses\LICENSE.datadistributionmanager -Force
-          Copy-Item .\src\packages\librdkafka.redist.2.2.0\LICENSES.txt .\OutputPackage\licenses\LICENSE.librdkafka -Force
+          Copy-Item .\src\packages\librdkafka.redist.2.5.3\LICENSES.txt .\OutputPackage\licenses\LICENSE.librdkafka -Force
           Copy-Item .\src\3rdparty\OpenDDS\LICENSE .\OutputPackage\licenses\LICENSE.opendds -Force
           Compress-Archive -Path .\OutputPackage\* -DestinationPath .\OutputPackage\DataDistributionManager.zip
 
