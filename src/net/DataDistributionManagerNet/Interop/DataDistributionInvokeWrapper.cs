@@ -31,6 +31,9 @@ namespace MASES.DataDistributionManager.Bindings.Interop
         {
             get
             {
+#if NET462_OR_GREATER
+                return true;
+#else
                 if (_isNetFramework == null)
                 {
                     var str = RuntimeInformation.FrameworkDescription;
@@ -39,6 +42,7 @@ namespace MASES.DataDistributionManager.Bindings.Interop
                     else _isNetFramework = false;
                 }
                 return _isNetFramework.GetValueOrDefault(true);
+#endif
             }
         }
 

@@ -246,10 +246,10 @@ jobs:
         shell: cmd
         run: |
           call .\src\3rdparty\OpenDDS\setenv.cmd
-          cd src\DataDistributionManagerOpenDDS
+          cd src\native\DataDistributionManagerOpenDDS
           perl %ACE_ROOT%\bin\generate_export_file.pl DataDistributionSchemaCommon > DataDistributionSchemaCommon_Export.h
           perl %ACE_ROOT%\bin\mwc.pl -type vs2022 DataDistributionManagerOpenDDS.mwc
-          cd ..\..
+          cd ..\..\..
 
       - uses: nuget/setup-nuget@v2.0.0
         with:
