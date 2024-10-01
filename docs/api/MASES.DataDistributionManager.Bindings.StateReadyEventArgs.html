@@ -2,12 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class StateReadyEventArgs
- | MASES Group website - Data Distribution Manager </title>
+      <title>Class StateReadyEventArgs | MASES Group website - Data Distribution Manager </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class StateReadyEventArgs
- | MASES Group website - Data Distribution Manager ">
+      <meta name="title" content="Class StateReadyEventArgs | MASES Group website - Data Distribution Manager ">
       
+      <meta name="description" content="Event args for  event">
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -74,7 +73,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -86,8 +85,7 @@
 
 
   <h1 id="MASES_DataDistributionManager_Bindings_StateReadyEventArgs" data-uid="MASES.DataDistributionManager.Bindings.StateReadyEventArgs" class="text-break">
-    Class StateReadyEventArgs
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistribution.cs/#L187"><i class="bi bi-code-slash"></i></a>
+Class StateReadyEventArgs  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistribution.cs/#L187"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -117,17 +115,23 @@
 
 
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventargs.empty">EventArgs.Empty</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
@@ -137,12 +141,6 @@
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </dd></dl>
 
@@ -159,7 +157,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_StateReadyEventArgs_Buffer" data-uid="MASES.DataDistributionManager.Bindings.StateReadyEventArgs.Buffer">
   Buffer
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistribution.cs/#L205"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistribution.cs/#L205"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The managed buffer received</p>
@@ -191,7 +189,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_StateReadyEventArgs_Length" data-uid="MASES.DataDistributionManager.Bindings.StateReadyEventArgs.Length">
   Length
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistribution.cs/#L201"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistribution.cs/#L201"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The length of the received buffer</p>
@@ -223,7 +221,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_StateReadyEventArgs_NativeBuffer" data-uid="MASES.DataDistributionManager.Bindings.StateReadyEventArgs.NativeBuffer">
   NativeBuffer
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistribution.cs/#L197"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistribution.cs/#L197"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The native pointer of the buffer</p>
@@ -255,7 +253,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistribution.cs/#L187" class="edit-link">Edit this page</a>
+          <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistribution.cs/#L187" class="edit-link">Edit this page</a>
         </div>
 
 
@@ -270,7 +268,7 @@
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          <div style="text-align: center;">Copyright © 2023 MASES s.r.l.. | Via San Cesidio 16 - San Valentino in A.C. - PE | P.I. 01932310681</div>
+          <div style="text-align: center;">Copyright © 2024 MASES s.r.l.. | Via San Cesidio 16 - San Valentino in A.C. - PE | P.I. 01932310681</div>
         </div>
       </div>
     </footer>

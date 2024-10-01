@@ -2,12 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Interface ISmartDataDistributionMastership
- | MASES Group website - Data Distribution Manager </title>
+      <title>Interface ISmartDataDistributionMastership | MASES Group website - Data Distribution Manager </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Interface ISmartDataDistributionMastership
- | MASES Group website - Data Distribution Manager ">
+      <meta name="title" content="Interface ISmartDataDistributionMastership | MASES Group website - Data Distribution Manager ">
       
+      <meta name="description" content="Interface to manage underlying mastersip manager">
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -74,7 +73,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -86,8 +85,7 @@
 
 
   <h1 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership" class="text-break">
-    Interface ISmartDataDistributionMastership
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\ISmartDataDistributionMastership.cs/#L29"><i class="bi bi-code-slash"></i></a>
+Interface ISmartDataDistributionMastership  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/ISmartDataDistributionMastership.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -123,7 +121,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_ClusterHealth" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ClusterHealth">
   ClusterHealth
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\ISmartDataDistributionMastership.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/ISmartDataDistributionMastership.cs/#L83"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Health of the cluster</p>
@@ -155,7 +153,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_ClusterState" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ClusterState">
   ClusterState
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\ISmartDataDistributionMastership.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/ISmartDataDistributionMastership.cs/#L79"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>State of the cluster</p>
@@ -187,7 +185,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_IamNextPrimary" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.IamNextPrimary">
   IamNextPrimary
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\ISmartDataDistributionMastership.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/ISmartDataDistributionMastership.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Verify if this server will be elected as next primary</p>
@@ -220,7 +218,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_LocalServerId" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.LocalServerId">
   LocalServerId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\ISmartDataDistributionMastership.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/ISmartDataDistributionMastership.cs/#L91"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Get my server identifier</p>
@@ -252,7 +250,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_MessageDelay" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.MessageDelay">
   MessageDelay
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\ISmartDataDistributionMastership.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/ISmartDataDistributionMastership.cs/#L99"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets actual message delay in the cluster</p>
@@ -284,7 +282,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_MyState" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.MyState">
   MyState
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\ISmartDataDistributionMastership.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/ISmartDataDistributionMastership.cs/#L87"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Get my <a class="xref" href="MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE.html">DDM_INSTANCE_STATE</a></p>
@@ -316,7 +314,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_PrimaryServerId" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.PrimaryServerId">
   PrimaryServerId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\ISmartDataDistributionMastership.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/ISmartDataDistributionMastership.cs/#L95"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets identifier of the primary server</p>
@@ -348,7 +346,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_UpTime" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.UpTime">
   UpTime
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\ISmartDataDistributionMastership.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/ISmartDataDistributionMastership.cs/#L103"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets this instance uptime</p>
@@ -384,7 +382,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_ChangeMyState_MASES_DataDistributionManager_Bindings_Interop_DDM_INSTANCE_STATE_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ChangeMyState(MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE)">
   ChangeMyState(DDM_INSTANCE_STATE)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\ISmartDataDistributionMastership.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/ISmartDataDistributionMastership.cs/#L59"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Change the state of this instance</p>
@@ -417,7 +415,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_ChangeState_System_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_INSTANCE_STATE_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.ChangeState(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE)">
   ChangeState(long, DDM_INSTANCE_STATE)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\ISmartDataDistributionMastership.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/ISmartDataDistributionMastership.cs/#L65"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Change the state of the instance <code class="paramref">instanceId</code></p>
@@ -453,7 +451,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_GetParameter_System_String_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.GetParameter(System.String)">
   GetParameter(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\ISmartDataDistributionMastership.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/ISmartDataDistributionMastership.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Get mastership parameter</p>
@@ -492,7 +490,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_RequestIAmNextPrimary" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.RequestIAmNextPrimary">
   RequestIAmNextPrimary()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\ISmartDataDistributionMastership.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/ISmartDataDistributionMastership.cs/#L70"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Request to be the next primary server</p>
@@ -525,7 +523,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_SetParameter_System_String_System_String_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.SetParameter(System.String,System.String)">
   SetParameter(string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\ISmartDataDistributionMastership.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/ISmartDataDistributionMastership.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Set mastership parameter</p>
@@ -561,7 +559,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_Start_System_UInt32_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.Start(System.UInt32)">
   Start(uint)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\ISmartDataDistributionMastership.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/ISmartDataDistributionMastership.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Starts the manager</p>
@@ -600,7 +598,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionMastership_Stop_System_UInt32_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.Stop(System.UInt32)">
   Stop(uint)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\ISmartDataDistributionMastership.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/ISmartDataDistributionMastership.cs/#L54"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Stops the manager</p>
@@ -639,7 +637,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\ISmartDataDistributionMastership.cs/#L29" class="edit-link">Edit this page</a>
+          <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/ISmartDataDistributionMastership.cs/#L29" class="edit-link">Edit this page</a>
         </div>
 
 
@@ -654,7 +652,7 @@
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          <div style="text-align: center;">Copyright © 2023 MASES s.r.l.. | Via San Cesidio 16 - San Valentino in A.C. - PE | P.I. 01932310681</div>
+          <div style="text-align: center;">Copyright © 2024 MASES s.r.l.. | Via San Cesidio 16 - San Valentino in A.C. - PE | P.I. 01932310681</div>
         </div>
       </div>
     </footer>

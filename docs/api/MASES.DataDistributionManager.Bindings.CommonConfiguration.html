@@ -2,12 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class CommonConfiguration
- | MASES Group website - Data Distribution Manager </title>
+      <title>Class CommonConfiguration | MASES Group website - Data Distribution Manager </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class CommonConfiguration
- | MASES Group website - Data Distribution Manager ">
+      <meta name="title" content="Class CommonConfiguration | MASES Group website - Data Distribution Manager ">
       
+      <meta name="description" content="The common configuration class">
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -74,7 +73,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -86,8 +85,7 @@
 
 
   <h1 id="MASES_DataDistributionManager_Bindings_CommonConfiguration" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration" class="text-break">
-    Class CommonConfiguration
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L24"><i class="bi bi-code-slash"></i></a>
+Class CommonConfiguration  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -133,7 +131,7 @@
     </dd>
   </dl>
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
@@ -185,10 +183,16 @@
       <a class="xref" href="MASES.DataDistributionManager.Bindings.BaseConfiguration.html#MASES_DataDistributionManager_Bindings_BaseConfiguration_Configuration">BaseConfiguration.Configuration</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
@@ -198,12 +202,6 @@
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </dd></dl>
 
@@ -220,7 +218,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration__ctor_MASES_DataDistributionManager_Bindings_IConfiguration_" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.#ctor(MASES.DataDistributionManager.Bindings.IConfiguration)">
   CommonConfiguration(IConfiguration)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L80"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Duplicates a configuration</p>
@@ -253,7 +251,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration__ctor_System_String_System_String_" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.#ctor(System.String,System.String)">
   CommonConfiguration(string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L72"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initialize a new <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html">CommonConfiguration</a></p>
@@ -292,7 +290,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ChannelSeekTimeoutKey" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ChannelSeekTimeoutKey">
   ChannelSeekTimeoutKey
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_ChannelSeekTimeout">ChannelSeekTimeout</a></p>
@@ -323,7 +321,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitSyncKey" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.CommitSyncKey">
   CommitSyncKey
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L57"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitSync">CommitSync</a></p>
@@ -354,7 +352,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitTimeoutKey" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.CommitTimeoutKey">
   CommitTimeoutKey
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L53"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitTimeout">CommitTimeout</a></p>
@@ -385,7 +383,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ConsumerTimeoutKey" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ConsumerTimeoutKey">
   ConsumerTimeoutKey
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_ConsumerTimeout">ConsumerTimeout</a></p>
@@ -416,7 +414,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_CreateChannelTimeoutKey" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.CreateChannelTimeoutKey">
   CreateChannelTimeoutKey
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_CreateChannelTimeout">CreateChannelTimeout</a></p>
@@ -447,7 +445,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_EventSyncKey" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.EventSyncKey">
   EventSyncKey
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L61"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_EventSync">EventSync</a></p>
@@ -478,7 +476,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_InitialOffsetKey" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffsetKey">
   InitialOffsetKey
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L65"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_InitialOffset">InitialOffset</a></p>
@@ -509,7 +507,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_KeepAliveTimeoutKey" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.KeepAliveTimeoutKey">
   KeepAliveTimeoutKey
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_KeepAliveTimeout">KeepAliveTimeout</a></p>
@@ -540,7 +538,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ProducerTimeoutKey" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ProducerTimeoutKey">
   ProducerTimeoutKey
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L49"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_ProducerTimeout">ProducerTimeout</a></p>
@@ -571,7 +569,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ReceiveTimeoutKey" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ReceiveTimeoutKey">
   ReceiveTimeoutKey
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L37"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Configuration key of <a class="xref" href="MASES.DataDistributionManager.Bindings.CommonConfiguration.html#MASES_DataDistributionManager_Bindings_CommonConfiguration_ReceiveTimeout">ReceiveTimeout</a></p>
@@ -607,7 +605,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ChannelSeekTimeout" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ChannelSeekTimeout">
   ChannelSeekTimeout
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L107"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The timeout on seek channel in ms</p>
@@ -639,7 +637,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitSync" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.CommitSync">
   CommitSync
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L215"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L215"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>True to commit message in sync</p>
@@ -671,7 +669,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_CommitTimeout" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.CommitTimeout">
   CommitTimeout
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L197"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L197"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The timeout on channel message commit in ms</p>
@@ -703,7 +701,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ConsumerTimeout" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ConsumerTimeout">
   ConsumerTimeout
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L161"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L161"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The timeout on channel message consume in ms</p>
@@ -735,7 +733,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_CreateChannelTimeout" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.CreateChannelTimeout">
   CreateChannelTimeout
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L89"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L89"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The timeout on create channel in ms</p>
@@ -767,7 +765,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_EventSync" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.EventSync">
   EventSync
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L233"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L233"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>True to emit message receive events in sync</p>
@@ -799,7 +797,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_InitialOffset" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffset">
   InitialOffset
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L252"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L252"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The initial offset of the channel</p>
@@ -831,7 +829,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_KeepAliveTimeout" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.KeepAliveTimeout">
   KeepAliveTimeout
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L143"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L143"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The timeout on channel keep alive in ms</p>
@@ -863,7 +861,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ProducerTimeout" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ProducerTimeout">
   ProducerTimeout
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L179"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L179"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The timeout on channel message produce in ms</p>
@@ -895,7 +893,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_CommonConfiguration_ReceiveTimeout" data-uid="MASES.DataDistributionManager.Bindings.CommonConfiguration.ReceiveTimeout">
   ReceiveTimeout
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L125"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The timeout on channel receive in ms</p>
@@ -927,7 +925,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\CommonConfiguration.cs/#L24" class="edit-link">Edit this page</a>
+          <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/CommonConfiguration.cs/#L24" class="edit-link">Edit this page</a>
         </div>
 
 
@@ -942,7 +940,7 @@
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          <div style="text-align: center;">Copyright © 2023 MASES s.r.l.. | Via San Cesidio 16 - San Valentino in A.C. - PE | P.I. 01932310681</div>
+          <div style="text-align: center;">Copyright © 2024 MASES s.r.l.. | Via San Cesidio 16 - San Valentino in A.C. - PE | P.I. 01932310681</div>
         </div>
       </div>
     </footer>

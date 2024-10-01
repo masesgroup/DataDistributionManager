@@ -2,12 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Interface ISmartDataDistributionChannel
- | MASES Group website - Data Distribution Manager </title>
+      <title>Interface ISmartDataDistributionChannel | MASES Group website - Data Distribution Manager </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Interface ISmartDataDistributionChannel
- | MASES Group website - Data Distribution Manager ">
+      <meta name="title" content="Interface ISmartDataDistributionChannel | MASES Group website - Data Distribution Manager ">
       
+      <meta name="description" content="Interface to interact with channel">
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -74,7 +73,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -86,8 +85,7 @@
 
 
   <h1 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel" class="text-break">
-    Interface ISmartDataDistributionChannel
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L125"><i class="bi bi-code-slash"></i></a>
+Interface ISmartDataDistributionChannel  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L125"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -109,7 +107,7 @@
 
 
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
@@ -139,7 +137,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_ChangeChannelDirection_MASES_DataDistributionManager_Bindings_Interop_DDM_CHANNEL_DIRECTION_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.ChangeChannelDirection(MASES.DataDistributionManager.Bindings.Interop.DDM_CHANNEL_DIRECTION)">
   ChangeChannelDirection(DDM_CHANNEL_DIRECTION)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L248"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L248"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Changes channel direction</p>
@@ -178,7 +176,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_GetParameter_MASES_DataDistributionManager_Bindings_Interop_DDM_GENERAL_PARAMETER_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.GetParameter(MASES.DataDistributionManager.Bindings.Interop.DDM_GENERAL_PARAMETER)">
   GetParameter(DDM_GENERAL_PARAMETER)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L162"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L162"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Set parameter on channel</p>
@@ -217,7 +215,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_GetParameter_System_String_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.GetParameter(System.String)">
   GetParameter(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L156"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Set parameter on channel</p>
@@ -256,7 +254,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_Lock_System_UInt32_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.Lock(System.UInt32)">
   Lock(uint)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L168"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L168"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Lock the channel</p>
@@ -295,7 +293,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_OnConditionOrError_MASES_DataDistributionManager_Bindings_Interop_OPERATION_RESULT_System_Int32_System_String_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnConditionOrError(MASES.DataDistributionManager.Bindings.Interop.OPERATION_RESULT,System.Int32,System.String)">
   OnConditionOrError(OPERATION_RESULT, int, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L261"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L261"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Called when an event condition is raised from subsystem</p>
@@ -334,7 +332,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_OnDataAvailable_System_String_System_Byte___" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.OnDataAvailable(System.String,System.Byte[])">
   OnDataAvailable(string, byte[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L254"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L254"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Called when a data is available</p>
@@ -370,7 +368,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_ReadFromChannel_System_Int64_System_Int64_System_Byte____" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.ReadFromChannel(System.Int64,System.Int64,System.Byte[]@)">
   ReadFromChannel(long, long, out byte[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L242"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L242"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Reads data from channel</p>
@@ -415,7 +413,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SeekChannel_System_DateTime_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.DateTime)">
   SeekChannel(DateTime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L186"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L186"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Seek the channel to an absolute timestamp</p>
@@ -454,7 +452,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SeekChannel_System_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKCONTEXT_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)">
   SeekChannel(long, DDM_SEEKCONTEXT, DDM_SEEKKIND)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L200"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L200"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Seek the channel using absolute or relative offset</p>
@@ -499,7 +497,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SeekChannel_System_Int64_MASES_DataDistributionManager_Bindings_Interop_DDM_SEEKKIND_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.Int64,MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND)">
   SeekChannel(long, DDM_SEEKKIND)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L180"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L180"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Seek the channel using absolute or relative offset</p>
@@ -541,7 +539,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SeekChannel_System_TimeSpan_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SeekChannel(System.TimeSpan)">
   SeekChannel(TimeSpan)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L192"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L192"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Seek the channel by a relative time expressed as <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a> starting from latest known timestamp</p>
@@ -580,7 +578,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SetParameter_MASES_DataDistributionManager_Bindings_Interop_DDM_GENERAL_PARAMETER_System_String_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SetParameter(MASES.DataDistributionManager.Bindings.Interop.DDM_GENERAL_PARAMETER,System.String)">
   SetParameter(DDM_GENERAL_PARAMETER, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L150"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L150"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Set parameter on channel</p>
@@ -616,7 +614,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_SetParameter_System_String_System_String_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.SetParameter(System.String,System.String)">
   SetParameter(string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L144"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L144"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Set parameter on channel</p>
@@ -652,7 +650,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_StartChannel_System_UInt32_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.StartChannel(System.UInt32)">
   StartChannel(uint)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L132"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L132"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Starts the channel</p>
@@ -691,7 +689,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_StopChannel_System_UInt32_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.StopChannel(System.UInt32)">
   StopChannel(uint)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L138"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L138"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Stops the channel</p>
@@ -730,7 +728,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_Unlock" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.Unlock">
   Unlock()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L173"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L173"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Unlock the channel</p>
@@ -763,7 +761,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_WriteOnChannel_System_Byte___System_Boolean_System_Int64_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.Byte[],System.Boolean,System.Int64)">
   WriteOnChannel(byte[], bool, long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L225"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L225"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Writes in the channel</p>
@@ -807,7 +805,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_WriteOnChannel_System_String_System_Boolean_System_Int64_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String,System.Boolean,System.Int64)">
   WriteOnChannel(string, bool, long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L208"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L208"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Writes in the channel</p>
@@ -851,7 +849,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_WriteOnChannel_System_String_System_Byte___System_Boolean_System_Int64_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String,System.Byte[],System.Boolean,System.Int64)">
   WriteOnChannel(string, byte[], bool, long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L234"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L234"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Writes in the channel</p>
@@ -898,7 +896,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_WriteOnChannel_System_String_System_String_System_Boolean_System_Int64_" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.WriteOnChannel(System.String,System.String,System.Boolean,System.Int64)">
   WriteOnChannel(string, string, bool, long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L217"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L217"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Writes in the channel</p>
@@ -948,7 +946,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_ConditionOrError" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.ConditionOrError">
   ConditionOrError
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L269"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L269"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Event to receive condition or errors</p>
@@ -979,7 +977,7 @@
 
   <h3 id="MASES_DataDistributionManager_Bindings_ISmartDataDistributionChannel_DataAvailable" data-uid="MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.DataAvailable">
   DataAvailable
-  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L265"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L265"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Event to receive messages when data are available</p>
@@ -1011,7 +1009,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src\DataDistributionManagerNet\SmartDataDistributionChannel.cs/#L125" class="edit-link">Edit this page</a>
+          <a href="https://github.com/masesgroup/DataDistributionManager/blob/master/src/net/DataDistributionManagerNet/SmartDataDistributionChannel.cs/#L125" class="edit-link">Edit this page</a>
         </div>
 
 
@@ -1026,7 +1024,7 @@
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          <div style="text-align: center;">Copyright © 2023 MASES s.r.l.. | Via San Cesidio 16 - San Valentino in A.C. - PE | P.I. 01932310681</div>
+          <div style="text-align: center;">Copyright © 2024 MASES s.r.l.. | Via San Cesidio 16 - San Valentino in A.C. - PE | P.I. 01932310681</div>
         </div>
       </div>
     </footer>
