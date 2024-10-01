@@ -1,3 +1,8 @@
+---
+title: Legacy COM Application revamping based on Data Distribution Manager
+_description: Describes how revamp Legacy COM Application using Data Distribution Manager
+---
+
 # Legacy COM Application revamping
 
 For many years Microsoft based its products on COM (Component Object Model) and its network extension DCOM (Distributed COM). Many customer built their infrastructure and products over COM technology.
