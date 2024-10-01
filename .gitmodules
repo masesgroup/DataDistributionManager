@@ -1,6 +1,6 @@
-[submodule "third_party/OpenDDS"]
+[submodule "OpenDDS"]
 	path = src/3rdparty/OpenDDS
 	url = https://github.com/objectcomputing/OpenDDS.git
-[submodule "third_party/CommonTools"]
+[submodule "CommonTools"]
 	path = src/3rdparty/CommonTools
 	url = https://github.com/masesgroup/CommonTools.git

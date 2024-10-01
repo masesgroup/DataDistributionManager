@@ -252,8 +252,8 @@ jobs:
       - name: Prepare packaging versioning
         shell: cmd
         run: |
-          src\3rdparty\CommonTools\Output\PlaceHolderReplacer.exe .\src\ProductInformation\Version.cs .\packaging\nuget\datadistributionmanager.nuspec >> .\nuget_version.txt
-          src\3rdparty\CommonTools\Output\PlaceHolderReplacer.exe .\src\ProductInformation\Version.cs .\packaging\maven\pom.xml "-SNAPSHOT"
+          src\3rdparty\CommonTools\Output\PlaceHolderReplacer.exe .\src\ProductInformation\Version.cs .\src\packaging\nuget\datadistributionmanager.nuspec >> .\nuget_version.txt
+          src\3rdparty\CommonTools\Output\PlaceHolderReplacer.exe .\src\ProductInformation\Version.cs .\src\packaging\maven\pom.xml "-SNAPSHOT"
 
       - name: Store version
         run: |
@@ -262,7 +262,7 @@ jobs:
 
       - name: Verify Nuget version in file
         run: |
-          type .\packaging\nuget\datadistributionmanager.nuspec
+          type .\src\packaging\nuget\datadistributionmanager.nuspec
           echo ${{ env.NUGET_PACKAGE_VERSION }}
         shell: cmd
 
@@ -394,7 +394,7 @@ jobs:
         id: publishOnMaven
         continue-on-error: true
         shell: bash
-        run: mvn --file ./packaging/maven/pom.xml --no-transfer-progress --batch-mode -Dgpg.passphrase=${{ secrets.MAVEN_GPG_PASSPHRASE }} deploy
+        run: mvn --file ./src/packaging/maven/pom.xml --no-transfer-progress --batch-mode -Dgpg.passphrase=${{ secrets.MAVEN_GPG_PASSPHRASE }} deploy
         env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
           MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
@@ -434,7 +434,7 @@ jobs:
       - uses: nuget/setup-nuget@v1.2.0
         with:
           nuget-version: '5.x'
-      - run: nuget pack packaging\nuget\datadistributionmanager.nuspec
+      - run: nuget pack src\packaging\nuget\datadistributionmanager.nuspec
 
       - uses: actions/upload-artifact@v4
         with:
@@ -444,7 +444,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: MavenDeploy
-          path: .\packaging\maven\target\*.jar
+          path: .\src\packaging\maven\target\*.jar
 
       - uses: actions/upload-artifact@v4
         with:

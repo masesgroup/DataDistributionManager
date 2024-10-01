@@ -191,7 +191,7 @@ jobs:
       - name: Prepare nuget
         shell: cmd
         run: |
-          src\3rdparty\CommonTools\Output\PlaceHolderReplacer.exe .\src\ProductInformation\Version.cs .\packaging\nuget\datadistributionmanager.nuspec >> .\nuget_version.txt
+          src\3rdparty\CommonTools\Output\PlaceHolderReplacer.exe .\src\ProductInformation\Version.cs .\src\packaging\nuget\datadistributionmanager.nuspec >> .\nuget_version.txt
 
       - name: Store version
         run: |
@@ -200,7 +200,7 @@ jobs:
 
       - name: Verify Nuget version in file
         run: |
-          type .\packaging\nuget\datadistributionmanager.nuspec
+          type .\src\packaging\nuget\datadistributionmanager.nuspec
           echo ${{ env.NUGET_PACKAGE_VERSION }}
         shell: cmd
  
@@ -327,4 +327,4 @@ jobs:
       - uses: nuget/setup-nuget@v1.2.0
         with:
           nuget-version: '5.x'
-      - run: nuget pack packaging\nuget\datadistributionmanager.nuspec
+      - run: nuget pack src\packaging\nuget\datadistributionmanager.nuspec
