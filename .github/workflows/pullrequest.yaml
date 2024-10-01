@@ -266,9 +266,9 @@ jobs:
 
       - name: Build DataDistributionManager net462, net6.0 and net8.0
         run: |
-          dotnet build --no-incremental --configuration Release --framework net462 -o Output src\DataDistributionManagerNet\DataDistributionManagerNet.csproj
-          dotnet build --no-incremental --configuration Release --framework net6.0 -o Outputnet6.0 src\DataDistributionManagerNet\DataDistributionManagerNet.csproj
-          dotnet build --no-incremental --configuration Release --framework net8.0 -o Outputnet8.0 src\DataDistributionManagerNet\DataDistributionManagerNet.csproj
+          dotnet build --no-incremental --configuration Release --framework net462 -o Output src\net\DataDistributionManagerNet\DataDistributionManagerNet.csproj
+          dotnet build --no-incremental --configuration Release --framework net6.0 -o Outputnet6.0 src\net\DataDistributionManagerNet\DataDistributionManagerNet.csproj
+          dotnet build --no-incremental --configuration Release --framework net8.0 -o Outputnet8.0 src\net\DataDistributionManagerNet\DataDistributionManagerNet.csproj
 
       - name: Prepare for packaging
         run: |
