@@ -80,22 +80,22 @@ jobs:
         shell: cmd
         run: |
           cd src\3rdparty\OpenDDS
-          xcopy .\lib\*.dll ..\..\Output\x64\
-          xcopy .\lib\*.lib ..\..\Output\lib64\
-          xcopy .\bin\*.exe ..\..\Output\bin64\
-          xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x64\
-          xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib64\
-          xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin64\
+          xcopy .\lib\*.dll ..\..\..\Output\x64\
+          xcopy .\lib\*.lib ..\..\..\Output\lib64\
+          xcopy .\bin\*.exe ..\..\..\Output\bin64\
+          xcopy .\ACE_wrappers\lib\*.dll ..\..\..\Output\x64\
+          xcopy .\ACE_wrappers\lib\*.lib ..\..\..\Output\lib64\
+          xcopy .\ACE_wrappers\bin\*.exe ..\..\..\Output\bin64\
           
       - name: Move OpenDDS x64 PDB
         shell: cmd
         run: |
           cd src\3rdparty\OpenDDS
           mkdir ..\..\OutputPdb
-          xcopy .\lib\*.pdb ..\..\OutputPdb\pdb64\
-          xcopy .\bin\*.pdb ..\..\OutputPdb\pdb64\
-          xcopy .\ACE_wrappers\lib\*.pdb ..\..\OutputPdb\pdb64\
-          xcopy .\ACE_wrappers\bin\*.pdb ..\..\OutputPdb\pdb64\
+          xcopy .\lib\*.pdb ..\..\..\OutputPdb\pdb64\
+          xcopy .\bin\*.pdb ..\..\..\OutputPdb\pdb64\
+          xcopy .\ACE_wrappers\lib\*.pdb ..\..\..\OutputPdb\pdb64\
+          xcopy .\ACE_wrappers\bin\*.pdb ..\..\..\OutputPdb\pdb64\
 
       - name: Build OpenDDS x86
         shell: cmd
@@ -108,27 +108,27 @@ jobs:
         shell: cmd
         run: |
           cd src\3rdparty\OpenDDS
-          xcopy .\lib\*.dll ..\..\Output\x86\
-          xcopy .\lib\*.lib ..\..\Output\lib32\
-          xcopy .\bin\*.exe ..\..\Output\bin32\
-          xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x86\
-          xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib32\
-          xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin32\
+          xcopy .\lib\*.dll ..\..\..\Output\x86\
+          xcopy .\lib\*.lib ..\..\..\Output\lib32\
+          xcopy .\bin\*.exe ..\..\..\Output\bin32\
+          xcopy .\ACE_wrappers\lib\*.dll ..\..\..\Output\x86\
+          xcopy .\ACE_wrappers\lib\*.lib ..\..\..\Output\lib32\
+          xcopy .\ACE_wrappers\bin\*.exe ..\..\..\Output\bin32\
 
       - name: Move OpenDDS x86 PDB
         shell: cmd
         run: |
           cd src\3rdparty\OpenDDS
-          xcopy .\lib\*.pdb ..\..\OutputPdb\pdb32\
-          xcopy .\bin\*.pdb ..\..\OutputPdb\pdb32\
-          xcopy .\ACE_wrappers\lib\*.pdb ..\..\OutputPdb\pdb32\
-          xcopy .\ACE_wrappers\bin\*.pdb ..\..\OutputPdb\pdb32\
+          xcopy .\lib\*.pdb ..\..\..\OutputPdb\pdb32\
+          xcopy .\bin\*.pdb ..\..\..\OutputPdb\pdb32\
+          xcopy .\ACE_wrappers\lib\*.pdb ..\..\..\OutputPdb\pdb32\
+          xcopy .\ACE_wrappers\bin\*.pdb ..\..\..\OutputPdb\pdb32\
 
       - name: Move setenv.cmd
         shell: cmd
         run: |
           cd src\3rdparty\OpenDDS
-          xcopy setenv.cmd ..\..\Output\
+          xcopy setenv.cmd ..\..\..\Output\
 
       - name: Prepare for packaging OpenDDS Binaries and PDB
         run: |
