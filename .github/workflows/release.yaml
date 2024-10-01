@@ -58,20 +58,20 @@ jobs:
       - name: Configure OpenDDS
         shell: cmd
         run: |
-          cd third_party\OpenDDS
+          cd src\3rdparty\OpenDDS
           configure
 
       - name: Build OpenDDS x64
         shell: cmd
         run: |
-          cd third_party\OpenDDS
+          cd src\3rdparty\OpenDDS
           call setenv.cmd
           msbuild -p:Configuration=Release,Platform=x64 -m DDS_TAOv2.sln
 
       - name: Move OpenDDS x64 binaries
         shell: cmd
         run: |
-          cd third_party\OpenDDS
+          cd src\3rdparty\OpenDDS
           xcopy .\lib\*.dll ..\..\Output\x64\
           xcopy .\lib\*.lib ..\..\Output\lib64\
           xcopy .\bin\*.exe ..\..\Output\bin64\
@@ -82,7 +82,7 @@ jobs:
       - name: Move OpenDDS x64 PDB
         shell: cmd
         run: |
-          cd third_party\OpenDDS
+          cd src\3rdparty\OpenDDS
           mkdir ..\..\OutputPdb
           xcopy .\lib\*.pdb ..\..\OutputPdb\pdb64\
           xcopy .\bin\*.pdb ..\..\OutputPdb\pdb64\
@@ -92,14 +92,14 @@ jobs:
       - name: Build OpenDDS x86
         shell: cmd
         run: |
-          cd third_party\OpenDDS
+          cd src\3rdparty\OpenDDS
           call setenv.cmd
           msbuild -p:Configuration=Release,Platform=Win32 -m DDS_TAOv2.sln
 
       - name: Move OpenDDS x86 binaries
         shell: cmd
         run: |
-          cd third_party\OpenDDS
+          cd src\3rdparty\OpenDDS
           xcopy .\lib\*.dll ..\..\Output\x86\
           xcopy .\lib\*.lib ..\..\Output\lib32\
           xcopy .\bin\*.exe ..\..\Output\bin32\
@@ -110,7 +110,7 @@ jobs:
       - name: Move OpenDDS x86 PDB
         shell: cmd
         run: |
-          cd third_party\OpenDDS
+          cd src\3rdparty\OpenDDS
           xcopy .\lib\*.pdb ..\..\OutputPdb\pdb32\
           xcopy .\bin\*.pdb ..\..\OutputPdb\pdb32\
           xcopy .\ACE_wrappers\lib\*.pdb ..\..\OutputPdb\pdb32\
@@ -119,7 +119,7 @@ jobs:
       - name: Move setenv.cmd
         shell: cmd
         run: |
-          cd third_party\OpenDDS
+          cd src\3rdparty\OpenDDS
           xcopy setenv.cmd ..\..\Output\
 
       - name: Prepare for packaging OpenDDS Binaries and PDB
@@ -131,8 +131,8 @@ jobs:
       - name: Prepare for packaging OpenDDS Headers
         shell: cmd
         run: |
-          7z a .\OutputOpenDDS\OpenDDS_Headers_3.29.1.zip .\third_party\OpenDDS\*.h -r
-          7z u .\OutputOpenDDS\OpenDDS_Headers_3.29.1.zip .\third_party\OpenDDS\*.inl -r
+          7z a .\OutputOpenDDS\OpenDDS_Headers_3.29.1.zip .\src\3rdparty\OpenDDS\*.h -r
+          7z u .\OutputOpenDDS\OpenDDS_Headers_3.29.1.zip .\src\3rdparty\OpenDDS\*.inl -r
 
       - name: Save OpenDDS in cache
         uses: actions/cache/save@v4
@@ -179,7 +179,7 @@ jobs:
       - name: Build Common Tools
         shell: cmd
         run: |
-          cd third_party\CommonTools
+          cd src\3rdparty\CommonTools
           msbuild -p:Configuration=Release,Platform="Any CPU" -m CommonTools.sln
 
       - name: Extract commit SHA
@@ -190,7 +190,7 @@ jobs:
       - name: Prepare version
         shell: cmd
         run: |
-          cd third_party\CommonTools\Output
+          cd src\3rdparty\CommonTools\Output
           VersionGenerator %GITHUB_WORKSPACE%\src\ProductInformation\Version.cs %GITHUB_WORKSPACE%\src\ProductInformation ${{ env.GITHUB_COMMIT_MESSAGE }}
         env:
           GITHUB_WORKSPACE: $GITHUB_WORKSPACE
@@ -198,8 +198,8 @@ jobs:
       - name: Prepare packaging versioning
         shell: cmd
         run: |
-          third_party\CommonTools\Output\PlaceHolderReplacer.exe .\src\ProductInformation\Version.cs .\packaging\nuget\datadistributionmanager.nuspec >> .\nuget_version.txt
-          third_party\CommonTools\Output\PlaceHolderReplacer.exe .\src\ProductInformation\Version.cs .\packaging\maven\pom.xml
+          src\3rdparty\CommonTools\Output\PlaceHolderReplacer.exe .\src\ProductInformation\Version.cs .\packaging\nuget\datadistributionmanager.nuspec >> .\nuget_version.txt
+          src\3rdparty\CommonTools\Output\PlaceHolderReplacer.exe .\src\ProductInformation\Version.cs .\packaging\maven\pom.xml
 
       - name: Store version
         run: |
@@ -215,7 +215,7 @@ jobs:
       - name: Configure OpenDDS
         shell: cmd
         run: |
-          cd third_party\OpenDDS
+          cd src\3rdparty\OpenDDS
           configure
 
       - name: Restore OpenDDS from cache
@@ -232,20 +232,20 @@ jobs:
           
       - name: Prepare OpenDDS Headers
         run: |
-          Expand-Archive -LiteralPath '.\OutputOpenDDS\OpenDDS_Headers_3.29.1.zip' -DestinationPath .\third_party\OpenDDS -Force
+          Expand-Archive -LiteralPath '.\OutputOpenDDS\OpenDDS_Headers_3.29.1.zip' -DestinationPath .\src\3rdparty\OpenDDS -Force
 
       - name: Move OpenDDS x64
         shell: cmd
         run: |
-           xcopy .\Output\bin32\*.* .\third_party\OpenDDS\bin\
-           xcopy .\Output\x86\*.dll .\third_party\OpenDDS\lib\
-           xcopy .\Output\bin32\*.* .\third_party\OpenDDS\ACE_wrappers\bin\
-           xcopy .\Output\x86\*.dll .\third_party\OpenDDS\ACE_wrappers\lib\
+           xcopy .\Output\bin32\*.* .\src\3rdparty\OpenDDS\bin\
+           xcopy .\Output\x86\*.dll .\src\3rdparty\OpenDDS\lib\
+           xcopy .\Output\bin32\*.* .\src\3rdparty\OpenDDS\ACE_wrappers\bin\
+           xcopy .\Output\x86\*.dll .\src\3rdparty\OpenDDS\ACE_wrappers\lib\
 
       - name: Generate OpenDDS projects
         shell: cmd
         run: |
-          call .\third_party\OpenDDS\setenv.cmd
+          call .\src\3rdparty\OpenDDS\setenv.cmd
           cd src\DataDistributionManagerOpenDDS
           perl %ACE_ROOT%\bin\generate_export_file.pl DataDistributionSchemaCommon > DataDistributionSchemaCommon_Export.h
           perl %ACE_ROOT%\bin\mwc.pl -type vs2022 DataDistributionManagerOpenDDS.mwc
@@ -259,7 +259,7 @@ jobs:
       - name: Build DataDistributionManager x64
         shell: cmd
         run: |
-          call .\third_party\OpenDDS\setenv.cmd
+          call .\src\3rdparty\OpenDDS\setenv.cmd
           set JDK_ROOT_FOLDER=%JAVA_HOME_11_X64%
           cd src
           msbuild /m -p:Configuration=Release,Platform=x64 DataDistributionManager.sln
@@ -267,7 +267,7 @@ jobs:
       - name: Build DataDistributionManager x86
         shell: cmd
         run: |
-          call .\third_party\OpenDDS\setenv.cmd
+          call .\src\3rdparty\OpenDDS\setenv.cmd
           set JDK_ROOT_FOLDER=%JAVA_HOME_11_X64%
           cd src
           msbuild /m -p:Configuration=Release,Platform=Win32 DataDistributionManager.sln
@@ -313,7 +313,7 @@ jobs:
           Copy-Item .\Output\pdb64\*.pdb .\OutputPackage\pdb\x64\ -Force
           Copy-Item .\LICENSE .\OutputPackage\licenses\LICENSE.datadistributionmanager -Force
           Copy-Item .\src\packages\librdkafka.redist.2.2.0\LICENSES.txt .\OutputPackage\licenses\LICENSE.librdkafka -Force
-          Copy-Item .\third_party\OpenDDS\LICENSE .\OutputPackage\licenses\LICENSE.opendds -Force
+          Copy-Item .\src\3rdparty\OpenDDS\LICENSE .\OutputPackage\licenses\LICENSE.opendds -Force
           Compress-Archive -Path .\OutputPackage\* -DestinationPath .\OutputPackage\DataDistributionManager.zip
 
       - name: Prepare for Java packaging
