@@ -347,7 +347,7 @@ jobs:
       - name: Build Java Binder
         shell: cmd
         run: |
-          cd src\DataDistributionManagerJava
+          cd src\jvm
           set JDK_ROOT_FOLDER=%JAVA_HOME_11_X64%
           CreateJar.bat
           cd ..\..
