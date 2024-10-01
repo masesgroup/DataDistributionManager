@@ -42,7 +42,7 @@
         "files": [
           "javadoc/**"
         ],
-		"src": "../DataDistributionManagerJava"
+		"src": "../jvm"
       },
       {
         "files": [
