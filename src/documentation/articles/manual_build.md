@@ -20,37 +20,37 @@ git.exe submodule update --init
 * Build the OpenDDS libraries:
 
 ```
-cd third_party\OpenDDS
+cd src\3rdparty\\OpenDDS
 
 configure
 
 msbuild -p:Configuration=Release,Platform=x64 -m DDS_TAOv2.sln
 
-xcopy .\lib\*.dll ..\..\Output\x64\
-xcopy .\lib\*.pdb ..\..\Output\pdb64\
-xcopy .\lib\*.lib ..\..\Output\lib64\
-xcopy .\bin\*.exe ..\..\Output\bin64\
-xcopy .\bin\*.pdb ..\..\Output\pdb64\
-xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x64\
-xcopy .\ACE_wrappers\lib\*.pdb ..\..\Output\pdb64\
-xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib64\
-xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin64\
-xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb64\
+xcopy .\lib\*.dll ..\..\..\Output\x64\
+xcopy .\lib\*.pdb ..\..\..\Output\pdb64\
+xcopy .\lib\*.lib ..\..\..\Output\lib64\
+xcopy .\bin\*.exe ..\..\..\Output\bin64\
+xcopy .\bin\*.pdb ..\..\..\Output\pdb64\
+xcopy .\ACE_wrappers\lib\*.dll ..\..\..\Output\x64\
+xcopy .\ACE_wrappers\lib\*.pdb ..\..\..\Output\pdb64\
+xcopy .\ACE_wrappers\lib\*.lib ..\..\..\Output\lib64\
+xcopy .\ACE_wrappers\bin\*.exe ..\..\..\Output\bin64\
+xcopy .\ACE_wrappers\bin\*.pdb ..\..\..\Output\pdb64\
 
 msbuild -p:Configuration=Release,Platform=Win32 -m DDS_TAOv2.sln
 
-xcopy .\lib\*.dll ..\..\Output\x86\
-xcopy .\lib\*.pdb ..\..\Output\pdb32\
-xcopy .\lib\*.lib ..\..\Output\lib32\
-xcopy .\bin\*.exe ..\..\Output\bin32\
-xcopy .\bin\*.pdb ..\..\Output\pdb32\
-xcopy .\ACE_wrappers\lib\*.dll ..\..\Output\x86\
-xcopy .\ACE_wrappers\lib\*.pdb ..\..\Output\pdb32\
-xcopy .\ACE_wrappers\lib\*.lib ..\..\Output\lib32\
-xcopy .\ACE_wrappers\bin\*.exe ..\..\Output\bin32\
-xcopy .\ACE_wrappers\bin\*.pdb ..\..\Output\pdb32\
+xcopy .\lib\*.dll ..\..\..\Output\x86\
+xcopy .\lib\*.pdb ..\..\..\Output\pdb32\
+xcopy .\lib\*.lib ..\..\..\Output\lib32\
+xcopy .\bin\*.exe ..\..\..\Output\bin32\
+xcopy .\bin\*.pdb ..\..\..\Output\pdb32\
+xcopy .\ACE_wrappers\lib\*.dll ..\..\..\Output\x86\
+xcopy .\ACE_wrappers\lib\*.pdb ..\..\..\Output\pdb32\
+xcopy .\ACE_wrappers\lib\*.lib ..\..\..\Output\lib32\
+xcopy .\ACE_wrappers\bin\*.exe ..\..\..\Output\bin32\
+xcopy .\ACE_wrappers\bin\*.pdb ..\..\..\Output\pdb32\
 
-cd ..\..
+cd ..\..\..
 ```
 
 * Generate the projects related to OpenDDS transport:
@@ -85,7 +85,7 @@ msbuild /m -p:Configuration=Release,Platform=Win32 src\DataDistributionManager.s
 > NOTE: a JDK must be installed in the build machine:
 
 ```
-cd src\DataDistributionManagerJava
+cd src\jvm
 set JDK_ROOT_FOLDER=C:\Program Files\Java\jdk-13.0.2+8
 CreateJars.bat
 cd ..\..

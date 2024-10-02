@@ -51,15 +51,15 @@
 		</repository>
 	</distributionManagement>
 	<build>
-		<sourceDirectory>../../src/DataDistributionManagerJava/src</sourceDirectory>
+		<sourceDirectory>../../../src/jvm/src</sourceDirectory>
 		<resources>
 			<resource>
-				<directory>../../OutputJava/windows_x86</directory>
+				<directory>../../../OutputJava/windows_x86</directory>
 				<filtering>false</filtering>
 				<targetPath>org/mases/datadistributionmanager/windows_x86</targetPath>
 			</resource>
 			<resource>
-				<directory>../../OutputJava/windows_x64</directory>
+				<directory>../../../OutputJava/windows_x64</directory>
 				<filtering>false</filtering>
 				<targetPath>org/mases/datadistributionmanager/windows_x64</targetPath>
 			</resource>
