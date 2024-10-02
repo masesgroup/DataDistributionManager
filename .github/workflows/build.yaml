@@ -254,6 +254,7 @@ jobs:
         run: |
           src\3rdparty\CommonTools\Output\PlaceHolderReplacer.exe .\src\ProductInformation\Version.cs .\src\packaging\nuget\datadistributionmanager.nuspec >> .\nuget_version.txt
           src\3rdparty\CommonTools\Output\PlaceHolderReplacer.exe .\src\ProductInformation\Version.cs .\src\packaging\maven\pom.xml "-SNAPSHOT"
+          src\3rdparty\CommonTools\Output\PlaceHolderReplacer.exe .\src\ProductInformation\Version.cs .\src\documentation\Doxyfile
 
       - name: Store version
         run: |
@@ -416,19 +417,19 @@ jobs:
         run: C:\msys64\usr\bin\wget.exe https://www.doxygen.nl/files/doxygen-1.12.0.windows.x64.bin.zip
 
       - name: Expand Doxygen package
-        run: Expand-Archive -LiteralPath '.\doxygen-1.12.0.windows.x64.bin.zip' -DestinationPath .\src\Documentation -Force
+        run: Expand-Archive -LiteralPath '.\doxygen-1.12.0.windows.x64.bin.zip' -DestinationPath .\src\documentation -Force
 
       - name: Create C/C++ documentation
         shell: cmd
         run: |
-          cd src\Documentation
+          cd src\documentation
           doxygen Doxyfile
 
       - run: dotnet tool update -g docfx
 
       - name: Build documentation
         run: |
-          cd src\Documentation
+          cd src\documentation
           docfx
 
       - uses: nuget/setup-nuget@v2.0.0
