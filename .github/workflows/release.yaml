@@ -251,7 +251,7 @@ jobs:
           perl %ACE_ROOT%\bin\mwc.pl -type vs2022 DataDistributionManagerOpenDDS.mwc
           cd ..\..\..
 
-      - uses: nuget/setup-nuget@v2.0.0
+      - uses: nuget/setup-nuget@v2.0.1
         with:
           nuget-version: '5.x'
       - run: nuget restore src\DataDistributionManager.sln
@@ -355,7 +355,7 @@ jobs:
       - name: Prepare for Docs packaging
         run: Compress-Archive -Path .\docs\* -DestinationPath .\Documentation.zip
 
-      - uses: nuget/setup-nuget@v2.0.0
+      - uses: nuget/setup-nuget@v2.0.1
         with:
           nuget-version: '5.x'
       - run: nuget pack .\src\packaging\nuget\datadistributionmanager.nuspec
@@ -405,7 +405,7 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
 
-      - uses: nuget/setup-nuget@v2.0.0
+      - uses: nuget/setup-nuget@v2.0.1
         with:
           nuget-version: '5.x'
 
