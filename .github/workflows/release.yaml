@@ -20,7 +20,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
 
-      - uses: actions/cache/restore@v4
+      - uses: actions/cache/restore@v6
         id: cache
         with:
           lookup-only: true
@@ -135,7 +135,7 @@ jobs:
           7z u .\OutputOpenDDS\OpenDDS_Headers_3.29.1.zip .\src\3rdparty\OpenDDS\*.inl -r
 
       - name: Save OpenDDS in cache
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           enableCrossOsArchive: true
           path: ./OutputOpenDDS/
@@ -160,7 +160,7 @@ jobs:
           submodules: 'true'
 
       - name: Cache local Maven repository
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
@@ -219,7 +219,7 @@ jobs:
           configure
 
       - name: Restore OpenDDS from cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with:
           fail-on-cache-miss: true
           enableCrossOsArchive: true
