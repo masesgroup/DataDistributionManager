@@ -39,16 +39,22 @@
         ]
       },
       {
+        "src": "../jvm",
         "files": [
           "javadoc/**"
-        ],
-		"src": "../jvm"
+        ]
       },
       {
+        "src": "..",
         "files": [
           "cppdoc/html/**"
-        ],
-		"src": ".."
+        ]
+      },
+      {
+        "src": "../../",
+        "files": [
+          "llms.txt"
+        ]
       }
     ],
     "overwrite": [
