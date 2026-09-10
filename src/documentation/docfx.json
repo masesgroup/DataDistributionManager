@@ -39,16 +39,22 @@
         ]
       },
       {
+        "src": "../jvm",
         "files": [
           "javadoc/**"
-        ],
-		"src": "../jvm"
+        ]
       },
       {
+        "src": "..",
         "files": [
           "cppdoc/html/**"
-        ],
-		"src": ".."
+        ]
+      },
+      {
+        "src": "../../",
+        "files": [
+          "llms.txt"
+        ]
       }
     ],
     "overwrite": [
@@ -67,10 +73,10 @@
     ],
     "postProcessors": [ "ExtractSearchIndex" ],
     "globalMetadata": {
-	  "_appLogoPath": "images/logo.png",
+	    "_appLogoPath": "images/logo.png",
       "_appFaviconPath": "images/favicon.ico",
       "_appTitle": "MASES Group website - Data Distribution Manager",
-      "_appFooter": "<div style=\"text-align: center;\">Copyright © 2024 MASES s.r.l.. | Via San Cesidio 16 - San Valentino in A.C. - PE | P.I. 01932310681</div>",
+      "_appFooter": "<script type=\"text/javascript\">document.write('<div style=\"text-align: center;\">Copyright © 2021 - ' + new Date().getFullYear() + ' MASES s.r.l. | Via San Cesidio 16 - San Valentino in A.C. - PE | P.I. 01932310681</div>');</script>",
       "_gitContribute": {
 
       }
@@ -82,7 +88,6 @@
       "default",
       "modern"
     ],
-    "postProcessors": [],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,
     "keepFileLink": false,
