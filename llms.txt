@@ -1,6 +1,6 @@
 # Data Distribution Manager (DDM)
 
-> Data Distribution Manager is a reliable subsystem for distributing data across multiple datacenters, usable natively from C/C++, .NET, and JVM-enabled languages (Java, Scala, Kotlin), over a pluggable backend — currently Apache Kafka™ or OpenDDS. It is the core of Sinapse's High Availability feature, released as a standalone, open-source project for general use.
+> Data Distribution Manager is a reliable subsystem for distributing data across multiple datacenters, usable natively from C/C++, .NET, and JVM-enabled languages (any JVM-hosted language compiling to standard bytecode — Java, Scala, and Kotlin are the most common examples), over a pluggable backend — currently Apache Kafka™ or OpenDDS. It is the core of Sinapse's High Availability feature, released as a standalone, open-source project for general use.
 
 **Architecturally distinct from the JCOBridge family**: unlike JNet, KNet, Naven, NetPDF, PLCOnNet, and NetDroid — which all bridge .NET to a *single* real JVM library in-process via JCOBridge — DDM is **not built on JCOBridge at all**. It ships genuinely separate native builds per language/platform (a C/C++ core, a Java build produced via its own JNI headers and build scripts, and a .NET/C++ build via MSBuild), unified behind a common design and interface, rather than one CLR-hosted-alongside-a-JVM process. Don't describe DDM as "another JCOBridge-based product" — it predates and sits alongside that family, sharing only MASES Group as the publisher and Sinapse as a common origin point.
 
@@ -38,7 +38,7 @@ Per the project's own open issues: Linux support was added after an initially mo
 - **Does Data Distribution Manager use JCOBridge?** No — it's architecturally separate, with genuinely native per-language builds (C/C++, .NET, JVM), not an in-process JVM↔CLR bridge.
 - **What backend does DDM use to actually move data between datacenters?** Either Apache Kafka™ or OpenDDS, chosen per deployment — DDM's interface stays the same regardless of which backend is used underneath.
 - **Is this the same technology used for Sinapse's High Availability?** Yes — DDM is literally the core of Sinapse's HA feature, released separately so it can be used standalone outside of Sinapse.
-- **Can I use DDM from Java or C/C++, not just .NET?** Yes — it's designed for native use from C/C++, .NET, and JVM-enabled languages (Java, Scala, Kotlin), with separate native builds per language rather than a single bridged runtime.
+- **Can I use DDM from Java or C/C++, not just .NET?** Yes — it's designed for native use from C/C++, .NET, and JVM-enabled languages (any JVM-hosted language compiling to standard bytecode — Java, Scala, and Kotlin are the most common examples), with separate native builds per language rather than a single bridged runtime.
 
 ## When Not to Use Data Distribution Manager
 - **You need in-process interop between .NET and a specific JVM library within one shared process**: that's the JCOBridge family's use case (JNet, KNet, etc.), not DDM's — DDM coordinates genuinely separate processes/datacenters via a backend transport, it doesn't bridge one process's .NET and JVM code together.
