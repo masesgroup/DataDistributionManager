@@ -1,7 +1,26 @@
 {
+  "docfx_version": "2.81.0+ba844df625370a6bd7c1ecab0d0ec4d1d9128ac4",
   "source_base_path": "D:/a/DataDistributionManager/DataDistributionManager/src/documentation",
   "xrefmap": "xrefmap.yml",
   "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../../llms.txt",
+      "output": {
+        "resource": {
+          "relative_path": "llms.txt"
+        }
+      },
+      "version": ""
+    },
     {
       "type": "Resource",
       "source_relative_path": "../cppdoc/html/DataDistributionManagerEnums_8h.html",
@@ -2433,1116 +2452,6 @@
       "version": ""
     },
     {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/allclasses.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/allclasses.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/constant-values.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/constant-values.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/deprecated-list.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/deprecated-list.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/element-list",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/element-list"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/help-doc.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/help-doc.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/index.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/legal/ADDITIONAL_LICENSE_INFO",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/legal/ADDITIONAL_LICENSE_INFO"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/legal/ASSEMBLY_EXCEPTION",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/legal/ASSEMBLY_EXCEPTION"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/legal/LICENSE",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/legal/LICENSE"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/legal/jszip.md",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/legal/jszip.md"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/legal/pako.md",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/legal/pako.md"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/BaseConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/BaseConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/ChangedStateListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/ChangedStateListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/ChangingStateListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/ChangingStateListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/ClusterHealthElement.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/ClusterHealthElement.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/ClusterStateChangeListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/ClusterStateChangeListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/CommonConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/CommonConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/CompletelyDisconnectedListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/CompletelyDisconnectedListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/ConditionOrErrorListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/ConditionOrErrorListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/ConfigurationListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/ConfigurationListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/DDM_CHANNEL_DIRECTION.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_CHANNEL_DIRECTION.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/DDM_CLUSTEREVENT.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_CLUSTEREVENT.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/DDM_GENERAL_PARAMETER.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_GENERAL_PARAMETER.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/DDM_INSTANCE_STATE.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_INSTANCE_STATE.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/DDM_LOG_LEVEL.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_LOG_LEVEL.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/DDM_SEEKCONTEXT.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_SEEKCONTEXT.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/DDM_SEEKKIND.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/DDM_SEEKKIND.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/DataAvailableListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/DataAvailableListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/FirstStateChangeListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/FirstStateChangeListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/GlobalConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/GlobalConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/IChangedStateListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/IChangedStateListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/IChangingStateListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/IChangingStateListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/IClusterStateChangeListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/IClusterStateChangeListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/ICompletelyDisconnectedListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/ICompletelyDisconnectedListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/IConditionOrErrorListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/IConditionOrErrorListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/IConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/IConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/IConfigurationListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/IConfigurationListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/IDataAvailableListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/IDataAvailableListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/IFirstStateChangeListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/IFirstStateChangeListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/ILoggingListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/ILoggingListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/IMultiplePrimaryListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/IMultiplePrimaryListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/IRequestedStateListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/IRequestedStateListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/ISmartDataDistribution.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/ISmartDataDistribution.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/ISmartDataDistributionChannel.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/ISmartDataDistributionChannel.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/ISmartDataDistributionChannelInfo.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/ISmartDataDistributionChannelInfo.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/ISmartDataDistributionMastership.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/ISmartDataDistributionMastership.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/IStateChangeListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/IStateChangeListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/IStateReadyListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/IStateReadyListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/LoggingListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/LoggingListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/MultiplePrimaryListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/MultiplePrimaryListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/OPERATION_RESULT.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/OPERATION_RESULT.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/RequestedStateListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/RequestedStateListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/SmartDataDistribution.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/SmartDataDistribution.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/SmartDataDistributionChannel.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/SmartDataDistributionChannel.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/StateChangeListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/StateChangeListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/StateReadyListener.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/StateReadyListener.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/UnderlyingEvent.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/UnderlyingEvent.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/DataReaderQosConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DataReaderQosConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/DataWriterQosConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DataWriterQosConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/DeadlineQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DeadlineQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyKind.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DestinationOrderQosPolicyKind.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/DomainParticipantQosConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DomainParticipantQosConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyKind.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DurabilityQosPolicyKind.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/DurabilityServiceQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/DurabilityServiceQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/EntityFactoryQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/EntityFactoryQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/GroupDataQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/GroupDataQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyKind.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/HistoryQosPolicyKind.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/KafkaChannelConfiguration.InitialOffsetTypes.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/KafkaChannelConfiguration.InitialOffsetTypes.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/KafkaChannelConfiguration.KafkaConfigurationType.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/KafkaChannelConfiguration.KafkaConfigurationType.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/KafkaChannelConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/KafkaChannelConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/KafkaConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/KafkaConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/LatencyBudgetQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/LatencyBudgetQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/LifespanQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/LifespanQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyKind.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/LivelinessQosPolicyKind.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/MastershipConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/MastershipConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/OpenDDSChannelConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OpenDDSChannelConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.DCPSInfoRepoConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.DCPSInfoRepoConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.OpenDDSArgsConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.OpenDDSArgsConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OpenDDSConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyKind.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OwnershipQosPolicyKind.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/OwnershipStrengthQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/OwnershipStrengthQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/PartitionQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/PartitionQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyAccessScopeKind.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyAccessScopeKind.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/PresentationQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.Property.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.Property.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/PropertyQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/PublisherQosConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/PublisherQosConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/ReaderDataLifecycleQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/ReaderDataLifecycleQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyKind.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/ReliabilityQosPolicyKind.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/ResourceLimitsQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/ResourceLimitsQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/SubscriberQosConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/SubscriberQosConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/TimeBasedFilterQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/TimeBasedFilterQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/TopicDataQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/TopicDataQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/TopicQosConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/TopicQosConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/TransportPriorityQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/TransportPriorityQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/UserDataQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/UserDataQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/WriterDataLifecycleQosPolicyConfiguration.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/WriterDataLifecycleQosPolicyConfiguration.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/package-summary.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/package-summary.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/configuration/package-tree.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/configuration/package-tree.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/package-summary.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/package-summary.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/org/mases/datadistributionmanager/package-tree.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/org/mases/datadistributionmanager/package-tree.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/overview-summary.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/overview-summary.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/overview-tree.html",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/overview-tree.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/script.js",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/script.js"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "../jvm/javadoc/stylesheet.css",
-      "output": {
-        "resource": {
-          "relative_path": "javadoc/stylesheet.css"
-        }
-      },
-      "version": ""
-    },
-    {
       "type": "ManagedReference",
       "source_relative_path": "api/MASES.DataDistributionManager.Bindings.BaseConfiguration.yml",
       "output": {
@@ -3550,7 +2459,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.BaseConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.BaseConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.BaseConfiguration.yml\" sourcestartlinenumber=\"1\">The base configuration class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3560,7 +2473,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ChangedStateEventArgs.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.ChangedStateEventArgs",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.ChangedStateEventArgs.yml\" sourcestartlinenumber=\"1\">Event args for <xref href=\"MASES.DataDistributionManager.Bindings.ISmartDataDistribution.ChangedStateEvent\" data-throw-if-not-resolved=\"false\"></xref> event</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3570,7 +2487,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ChangingStateEventArgs.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.ChangingStateEventArgs",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.ChangingStateEventArgs.yml\" sourcestartlinenumber=\"1\">Event args for <xref href=\"MASES.DataDistributionManager.Bindings.ISmartDataDistribution.ChangingStateEvent\" data-throw-if-not-resolved=\"false\"></xref> event</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3580,7 +2501,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ClusterHealthElement.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.ClusterHealthElement",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.ClusterHealthElement.yml\" sourcestartlinenumber=\"1\">Container of cluster instance information</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3590,7 +2515,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ClusterStateChangeEventArgs.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.ClusterStateChangeEventArgs",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.ClusterStateChangeEventArgs.yml\" sourcestartlinenumber=\"1\">Event args for <xref href=\"MASES.DataDistributionManager.Bindings.ISmartDataDistribution.ClusterStateChangeEvent\" data-throw-if-not-resolved=\"false\"></xref> event</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3600,7 +2529,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.CommonConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.CommonConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.CommonConfiguration.yml\" sourcestartlinenumber=\"1\">The common configuration class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3610,7 +2543,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.CompletelyDisconnectedEventArgs.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.CompletelyDisconnectedEventArgs",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.CompletelyDisconnectedEventArgs.yml\" sourcestartlinenumber=\"1\">Event args for <xref href=\"MASES.DataDistributionManager.Bindings.ISmartDataDistribution.CompletelyDisconnectedEvent\" data-throw-if-not-resolved=\"false\"></xref> event</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3620,7 +2557,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.ConditionOrErrorEventArgs.yml\" sourcestartlinenumber=\"1\">Event args for <xref href=\"MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.ConditionOrError\" data-throw-if-not-resolved=\"false\"></xref> event</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3630,7 +2571,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.AutoOffsetResetType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.AutoOffsetResetType",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.AutoOffsetResetType.yml\" sourcestartlinenumber=\"1\">Action to take when there is no initial offset in offset store or the desired offset is out of range</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3640,7 +2585,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.BrokerAddressFamilyType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.BrokerAddressFamilyType",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.BrokerAddressFamilyType.yml\" sourcestartlinenumber=\"1\">Allowed broker IP address families: any, v4, v6</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3650,7 +2599,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.BuiltinFeaturesType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.BuiltinFeaturesType",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.BuiltinFeaturesType.yml\" sourcestartlinenumber=\"1\">Indicates the builtin features for this build of librdkafka.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3660,7 +2613,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.CompressionCodecType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.CompressionCodecType",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.CompressionCodecType.yml\" sourcestartlinenumber=\"1\">compression codec to use for compressing message sets</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3670,7 +2627,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DataReaderQosConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.DataReaderQosConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.DataReaderQosConfiguration.yml\" sourcestartlinenumber=\"1\">The configuration class for DataReaderQos</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3680,7 +2641,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DataWriterQosConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.DataWriterQosConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.DataWriterQosConfiguration.yml\" sourcestartlinenumber=\"1\">The configuration class for DataWriterQos</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3690,7 +2655,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DeadlineQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.DeadlineQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.DeadlineQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing DeadlineQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3700,7 +2669,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DebugType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.DebugType",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.DebugType.yml\" sourcestartlinenumber=\"1\">Debug levels</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3710,7 +2683,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DestinationOrderQosPolicyConfiguration.DestinationOrderQosPolicyKind.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.DestinationOrderQosPolicyConfiguration.DestinationOrderQosPolicyKind",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.DestinationOrderQosPolicyConfiguration.DestinationOrderQosPolicyKind.yml\" sourcestartlinenumber=\"1\">See OpenDDS documentation at <a href=\"http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf\" sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.DestinationOrderQosPolicyConfiguration.DestinationOrderQosPolicyKind.yml\" sourcestartlinenumber=\"1\">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3720,7 +2697,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DestinationOrderQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.DestinationOrderQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.DestinationOrderQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing DestinationOrderQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3730,7 +2711,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DomainParticipantQosConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.DomainParticipantQosConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.DomainParticipantQosConfiguration.yml\" sourcestartlinenumber=\"1\">The configuration class for DomainParticipantQos</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3740,7 +2725,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityQosPolicyConfiguration.DurabilityQosPolicyKind.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.DurabilityQosPolicyConfiguration.DurabilityQosPolicyKind",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityQosPolicyConfiguration.DurabilityQosPolicyKind.yml\" sourcestartlinenumber=\"1\">See OpenDDS documentation at <a href=\"http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf\" sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityQosPolicyConfiguration.DurabilityQosPolicyKind.yml\" sourcestartlinenumber=\"1\">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3750,7 +2739,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.DurabilityQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing DurabilityQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3760,7 +2753,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityServiceQosPolicyConfiguration.HistoryQosPolicyKind.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.DurabilityServiceQosPolicyConfiguration.HistoryQosPolicyKind",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityServiceQosPolicyConfiguration.HistoryQosPolicyKind.yml\" sourcestartlinenumber=\"1\">See OpenDDS documentation at <a href=\"http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf\" sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityServiceQosPolicyConfiguration.HistoryQosPolicyKind.yml\" sourcestartlinenumber=\"1\">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3770,7 +2767,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityServiceQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.DurabilityServiceQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.DurabilityServiceQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing DurabilityServiceQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3780,7 +2781,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.EntityFactoryQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.EntityFactoryQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.EntityFactoryQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing EntityFactoryQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3790,7 +2795,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.GroupDataQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.GroupDataQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.GroupDataQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing GroupDataQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3800,7 +2809,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.HistoryQosPolicyKind.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.HistoryQosPolicyKind",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.HistoryQosPolicyKind.yml\" sourcestartlinenumber=\"1\">See OpenDDS documentation at <a href=\"http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf\" sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.HistoryQosPolicyKind.yml\" sourcestartlinenumber=\"1\">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3810,7 +2823,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.HistoryQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing HistoryQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3820,7 +2837,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.InitialOffsetTypes.yml\" sourcestartlinenumber=\"1\">Specific values to use on <xref href=\"MASES.DataDistributionManager.Bindings.CommonConfiguration.InitialOffset\" data-throw-if-not-resolved=\"false\"></xref> when channel is based on Kafka</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3830,7 +2851,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.IsolationLevelType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.IsolationLevelType",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.IsolationLevelType.yml\" sourcestartlinenumber=\"1\">Controls how to read messages written transactionally</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3840,7 +2865,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.KafkaChannelConfiguration.yml\" sourcestartlinenumber=\"1\">The configuration class for Kafka channel</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3850,7 +2879,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.KafkaConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.KafkaConfiguration.yml\" sourcestartlinenumber=\"1\">The configuration class for Kafka</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3860,7 +2893,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.KafkaConfigurationType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.KafkaConfigurationType",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.KafkaConfigurationType.yml\" sourcestartlinenumber=\"1\">Kafka configuration type</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3870,7 +2907,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LatencyBudgetQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.LatencyBudgetQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.LatencyBudgetQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing LatencyBudgetQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3880,7 +2921,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LifespanQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.LifespanQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.LifespanQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing LifespanQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3890,7 +2935,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration.LivelinessQosPolicyKind.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration.LivelinessQosPolicyKind",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration.LivelinessQosPolicyKind.yml\" sourcestartlinenumber=\"1\">See OpenDDS documentation at <a href=\"http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf\" sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration.LivelinessQosPolicyKind.yml\" sourcestartlinenumber=\"1\">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3900,7 +2949,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.LivelinessQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing LivelinessQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3910,7 +2963,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.MastershipConfiguration.yml\" sourcestartlinenumber=\"1\">The configuration class for mastership based on DataDistributionMastershipManager</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3920,7 +2977,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSChannelConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.OpenDDSChannelConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSChannelConfiguration.yml\" sourcestartlinenumber=\"1\">The configuration class for OpenDDS</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3930,7 +2991,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing DCPSInfoRepo. See <a href=\"http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf\" sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.DCPSInfoRepoConfiguration.yml\" sourcestartlinenumber=\"1\">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3940,7 +3005,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.OpenDDSArgsConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.OpenDDSArgsConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.OpenDDSArgsConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing OpenDDSArgs. See <a href=\"http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf\" sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.OpenDDSArgsConfiguration.yml\" sourcestartlinenumber=\"1\">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3950,7 +3019,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.OpenDDSConfiguration.yml\" sourcestartlinenumber=\"1\">The configuration class for OpenDDS</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3960,7 +3033,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipQosPolicyConfiguration.OwnershipQosPolicyKind.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.OwnershipQosPolicyConfiguration.OwnershipQosPolicyKind",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipQosPolicyConfiguration.OwnershipQosPolicyKind.yml\" sourcestartlinenumber=\"1\">See OpenDDS documentation at <a href=\"http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf\" sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipQosPolicyConfiguration.OwnershipQosPolicyKind.yml\" sourcestartlinenumber=\"1\">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3970,7 +3047,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.OwnershipQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing OwnershipQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3980,7 +3061,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipStrengthQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.OwnershipStrengthQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.OwnershipStrengthQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing OwnershipStrengthQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3990,7 +3075,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionAssignmentStrategyType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.PartitionAssignmentStrategyType",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.PartitionAssignmentStrategyType.yml\" sourcestartlinenumber=\"1\">The name of one or more partition assignment strategies.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4000,7 +3089,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.PartitionQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.PartitionQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing PartitionQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4010,7 +3103,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PartitionerType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.PartitionerType",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.PartitionerType.yml\" sourcestartlinenumber=\"1\">Partitioner</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4020,7 +3117,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PresentationQosPolicyConfiguration.PresentationQosPolicyAccessScopeKind.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.PresentationQosPolicyConfiguration.PresentationQosPolicyAccessScopeKind",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.PresentationQosPolicyConfiguration.PresentationQosPolicyAccessScopeKind.yml\" sourcestartlinenumber=\"1\">See OpenDDS documentation at <a href=\"http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf\" sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.PresentationQosPolicyConfiguration.PresentationQosPolicyAccessScopeKind.yml\" sourcestartlinenumber=\"1\">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4030,7 +3131,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PresentationQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.PresentationQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.PresentationQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing PresentationQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4040,7 +3145,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.Property.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.Property",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.Property.yml\" sourcestartlinenumber=\"1\">A single property</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4050,7 +3159,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.PropertyQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing PropertyQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4060,7 +3173,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.PublisherQosConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.PublisherQosConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.PublisherQosConfiguration.yml\" sourcestartlinenumber=\"1\">The configuration class for PublisherQos</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4070,7 +3187,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.QueueingStrategyType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.QueueingStrategyType",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.QueueingStrategyType.yml\" sourcestartlinenumber=\"1\">compression codec to use for compressing message sets</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4080,7 +3201,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ReaderDataLifecycleQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.ReaderDataLifecycleQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.ReaderDataLifecycleQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing ReaderDataLifecycleQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4090,7 +3215,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ReliabilityQosPolicyConfiguration.ReliabilityQosPolicyKind.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.ReliabilityQosPolicyConfiguration.ReliabilityQosPolicyKind",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.ReliabilityQosPolicyConfiguration.ReliabilityQosPolicyKind.yml\" sourcestartlinenumber=\"1\">See OpenDDS documentation at <a href=\"http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf\" sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.ReliabilityQosPolicyConfiguration.ReliabilityQosPolicyKind.yml\" sourcestartlinenumber=\"1\">http://download.objectcomputing.com/OpenDDS/OpenDDS-latest.pdf</a></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4100,7 +3229,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ReliabilityQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.ReliabilityQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.ReliabilityQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing ReliabilityQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4110,7 +3243,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.ResourceLimitsQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.ResourceLimitsQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.ResourceLimitsQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing ResourceLimitsQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4120,7 +3257,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SaslMechanismType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.SaslMechanismType",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.SaslMechanismType.yml\" sourcestartlinenumber=\"1\">SASL mechanism to use for authentication.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4130,7 +3271,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SaslOauthbearerMethodType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.SaslOauthbearerMethodType",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.SaslOauthbearerMethodType.yml\" sourcestartlinenumber=\"1\">SaslOauthbearerMethod</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4140,7 +3285,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SecurityProtocolType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.SecurityProtocolType",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.SecurityProtocolType.yml\" sourcestartlinenumber=\"1\">Protocol used to communicate with brokers.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4150,7 +3299,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SslEndpointIdentificationAlgorithmType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.SslEndpointIdentificationAlgorithmType",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.SslEndpointIdentificationAlgorithmType.yml\" sourcestartlinenumber=\"1\">Endpoint identification algorithm to validate broker hostname using broker certificate.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4160,7 +3313,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.SubscriberQosConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.SubscriberQosConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.SubscriberQosConfiguration.yml\" sourcestartlinenumber=\"1\">The configuration class for SubscriberQos</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4170,7 +3327,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TimeBasedFilterQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.TimeBasedFilterQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.TimeBasedFilterQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing TimeBasedFilterQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4180,7 +3341,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TopicDataQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.TopicDataQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.TopicDataQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing TopicDataQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4190,7 +3355,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TopicQosConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.TopicQosConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.TopicQosConfiguration.yml\" sourcestartlinenumber=\"1\">The configuration class for TopicQos</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4200,7 +3369,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.TransportPriorityQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.TransportPriorityQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.TransportPriorityQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing TransportPriorityQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4210,7 +3383,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.UserDataQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.UserDataQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.UserDataQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing UserDataQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4220,7 +3397,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.WriterDataLifecycleQosPolicyConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration.WriterDataLifecycleQosPolicyConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Configuration.WriterDataLifecycleQosPolicyConfiguration.yml\" sourcestartlinenumber=\"1\">Class managing WriterDataLifecycleQosPolicy</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4230,7 +3411,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Configuration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Configuration",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -4240,7 +3425,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ConfigurationEventArgs.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.ConfigurationEventArgs",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.ConfigurationEventArgs.yml\" sourcestartlinenumber=\"1\">Event args for <xref href=\"MASES.DataDistributionManager.Bindings.ISmartDataDistribution.ConfigurationEvent\" data-throw-if-not-resolved=\"false\"></xref> event</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4250,7 +3439,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.DataAvailableEventArgs",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.DataAvailableEventArgs.yml\" sourcestartlinenumber=\"1\">Event args for <xref href=\"MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.DataAvailable\" data-throw-if-not-resolved=\"false\"></xref> event</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4260,7 +3453,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.FirstStateChangeEventArgs.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.FirstStateChangeEventArgs",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.FirstStateChangeEventArgs.yml\" sourcestartlinenumber=\"1\">Event args for <xref href=\"MASES.DataDistributionManager.Bindings.ISmartDataDistribution.FirstStateChangeEvent\" data-throw-if-not-resolved=\"false\"></xref> event</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4270,7 +3467,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.GlobalConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.GlobalConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.GlobalConfiguration.yml\" sourcestartlinenumber=\"1\">The global configuration class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4280,7 +3481,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.HelperClass.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.HelperClass",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.HelperClass.yml\" sourcestartlinenumber=\"1\">Class with helping function</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4290,7 +3495,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.IConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.IConfiguration",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.IConfiguration.yml\" sourcestartlinenumber=\"1\">Interface to retrieve configuration parameters</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4300,7 +3509,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.ISmartDataDistribution",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.ISmartDataDistribution.yml\" sourcestartlinenumber=\"1\">Interface to interact with underlying system</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4310,7 +3523,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannel.yml\" sourcestartlinenumber=\"1\">Interface to interact with channel</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4320,7 +3537,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionChannelInfo.yml\" sourcestartlinenumber=\"1\">Interface containing information related to a channel</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4330,7 +3551,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.ISmartDataDistributionMastership.yml\" sourcestartlinenumber=\"1\">Interface to manage underlying mastersip manager</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4340,7 +3565,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_CHANNEL_DIRECTION.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Interop.DDM_CHANNEL_DIRECTION",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Interop.DDM_CHANNEL_DIRECTION.yml\" sourcestartlinenumber=\"1\">Direction of the channel</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4350,7 +3579,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Interop.DDM_CLUSTEREVENT.yml\" sourcestartlinenumber=\"1\">Cluster events</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4360,7 +3593,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_GENERAL_PARAMETER.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Interop.DDM_GENERAL_PARAMETER",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Interop.DDM_GENERAL_PARAMETER.yml\" sourcestartlinenumber=\"1\">General configuration parameters</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4370,7 +3607,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Interop.DDM_INSTANCE_STATE.yml\" sourcestartlinenumber=\"1\">State of the instance</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4380,7 +3621,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_LOG_LEVEL.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Interop.DDM_LOG_LEVEL",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Interop.DDM_LOG_LEVEL.yml\" sourcestartlinenumber=\"1\">Log levels</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4390,7 +3635,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKCONTEXT.yml\" sourcestartlinenumber=\"1\">Seek context</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4400,7 +3649,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.Interop.DDM_SEEKKIND.yml\" sourcestartlinenumber=\"1\">Seek kind</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4410,7 +3663,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.OPERATION_RESULT.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Interop.OPERATION_RESULT",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -4420,7 +3677,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.OperationResultException.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Interop.OperationResultException",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -4430,7 +3691,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.Interop.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.Interop",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -4440,7 +3705,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.LoggingEventArgs.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.LoggingEventArgs",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.LoggingEventArgs.yml\" sourcestartlinenumber=\"1\">Event args for <xref href=\"MASES.DataDistributionManager.Bindings.ISmartDataDistribution.LoggingEvent\" data-throw-if-not-resolved=\"false\"></xref> event</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4450,7 +3719,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.MultiplePrimaryEventArgs.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.MultiplePrimaryEventArgs",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.MultiplePrimaryEventArgs.yml\" sourcestartlinenumber=\"1\">Event args for <xref href=\"MASES.DataDistributionManager.Bindings.ISmartDataDistribution.MultiplePrimaryEvent\" data-throw-if-not-resolved=\"false\"></xref> event</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4460,7 +3733,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.RequestedStateEventArgs.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.RequestedStateEventArgs",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.RequestedStateEventArgs.yml\" sourcestartlinenumber=\"1\">Event args for <xref href=\"MASES.DataDistributionManager.Bindings.ISmartDataDistribution.RequestedStateEvent\" data-throw-if-not-resolved=\"false\"></xref> event</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4470,7 +3747,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.SmartDataDistribution",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.SmartDataDistribution.yml\" sourcestartlinenumber=\"1\">Main class to activate Data Distribution Manager</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4480,7 +3761,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.SmartDataDistributionChannel.yml\" sourcestartlinenumber=\"1\">Main class managing channel</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4490,7 +3775,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.StateChangeEventArgs.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.StateChangeEventArgs",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.StateChangeEventArgs.yml\" sourcestartlinenumber=\"1\">Event args for <xref href=\"MASES.DataDistributionManager.Bindings.ISmartDataDistribution.StateChangeEvent\" data-throw-if-not-resolved=\"false\"></xref> event</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4500,7 +3789,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.StateReadyEventArgs.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings.StateReadyEventArgs",
+      "Summary": "<p sourcefile=\"api/MASES.DataDistributionManager.Bindings.StateReadyEventArgs.yml\" sourcestartlinenumber=\"1\">Event args for <xref href=\"MASES.DataDistributionManager.Bindings.ISmartDataDistribution.StateReadyEvent\" data-throw-if-not-resolved=\"false\"></xref> event</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4510,7 +3803,11 @@
           "relative_path": "api/MASES.DataDistributionManager.Bindings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MASES.DataDistributionManager.Bindings",
+      "Summary": null
     },
     {
       "type": "Conceptual",
