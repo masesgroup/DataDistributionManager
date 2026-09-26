@@ -8,8 +8,8 @@ Current implementation can use [Apache Kafka](https://kafka.apache.org/) or [Ope
 ### Libraries and Tools
 
 |Maven | Nuget |
-|---	|---	|
-|[![Maven Central](https://img.shields.io/maven-central/v/com.masesgroup/datadistributionmanager.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.masesgroup%22%20AND%20a:%22datadistributionmanager%22)| [![latest version](https://img.shields.io/nuget/v/MASES.DataDistributionManager)](https://www.nuget.org/packages/MASES.DataDistributionManager) [![downloads](https://img.shields.io/nuget/dt/MASES.DataDistributionManager)](https://www.nuget.org/packages/MASES.DataDistributionManager)|
+|:---:	|---	|
+|[![Maven Central](https://img.shields.io/maven-central/v/com.masesgroup/datadistributionmanager.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.masesgroup%22%20AND%20a:%22datadistributionmanager%22) <br/> ![Maven Central](https://api.scarf.sh/v2/packages/Masesgroup/914216b4-0b78-4928-ab83-2fce66063a85/commercial-users-badge) <br/> ![Maven Central](https://api.scarf.sh/v2/packages/Masesgroup/914216b4-0b78-4928-ab83-2fce66063a85/downloads-badge) | [![latest version](https://img.shields.io/nuget/v/MASES.DataDistributionManager)](https://www.nuget.org/packages/MASES.DataDistributionManager) [![downloads](https://img.shields.io/nuget/dt/MASES.DataDistributionManager)](https://www.nuget.org/packages/MASES.DataDistributionManager)|
 
 ### Pipelines
 
