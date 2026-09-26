@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -13,7 +13,7 @@
       <meta name="docfx:navrel" content="../toc.html">
       <meta name="docfx:tocrel" content="toc.html">
       
-      
+      <meta name="docfx:rel" content="../">
       
       
       <meta name="docfx:docurl" content="https://github.com/masesgroup/DataDistributionManager/new/master/apiSpec/new?filename=MASES_DataDistributionManager_Bindings_Configuration_BuiltinFeaturesType.md&amp;value=---%0Auid%3A%20MASES.DataDistributionManager.Bindings.Configuration.BuiltinFeaturesType%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
@@ -52,6 +52,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navpanel">
             <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
             </div>
           </div>
         </div>
@@ -90,7 +94,7 @@ Enum BuiltinFeaturesType  <a class="header-action link-secondary" title="View so
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="MASES.html">MASES</a>.<a class="xref" href="MASES.DataDistributionManager.html">DataDistributionManager</a>.<a class="xref" href="MASES.DataDistributionManager.Bindings.html">Bindings</a>.<a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.html">Configuration</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><span class="xref">MASES</span>.<span class="xref">DataDistributionManager</span>.<a class="xref" href="MASES.DataDistributionManager.Bindings.html">Bindings</a>.<a class="xref" href="MASES.DataDistributionManager.Bindings.Configuration.html">Configuration</a></dd></dl>
   <dl><dt>Assembly</dt><dd>DataDistributionManagerNet.dll</dd></dl>
   </div>
 
@@ -115,40 +119,52 @@ public enum BuiltinFeaturesType</code></pre>
 </h2>
   <dl class="parameters">
     <dt id="MASES_DataDistributionManager_Bindings_Configuration_BuiltinFeaturesType_gzip"><code>gzip = 1</code></dt>
-    <dd><p>gzip</p>
+  
+  <dd><p>gzip</p>
 </dd>
     <dt id="MASES_DataDistributionManager_Bindings_Configuration_BuiltinFeaturesType_lz4"><code>lz4 = 32</code></dt>
-    <dd><p>lz4</p>
+  
+  <dd><p>lz4</p>
 </dd>
     <dt id="MASES_DataDistributionManager_Bindings_Configuration_BuiltinFeaturesType_plugins"><code>plugins = 512</code></dt>
-    <dd><p>plugins</p>
+  
+  <dd><p>plugins</p>
 </dd>
     <dt id="MASES_DataDistributionManager_Bindings_Configuration_BuiltinFeaturesType_regex"><code>regex = 16</code></dt>
-    <dd><p>regex</p>
+  
+  <dd><p>regex</p>
 </dd>
     <dt id="MASES_DataDistributionManager_Bindings_Configuration_BuiltinFeaturesType_sasl"><code>sasl = 8</code></dt>
-    <dd><p>sasl</p>
+  
+  <dd><p>sasl</p>
 </dd>
     <dt id="MASES_DataDistributionManager_Bindings_Configuration_BuiltinFeaturesType_sasl_gssapi"><code>sasl_gssapi = 64</code></dt>
-    <dd><p>sasl_gssapi</p>
+  
+  <dd><p>sasl_gssapi</p>
 </dd>
     <dt id="MASES_DataDistributionManager_Bindings_Configuration_BuiltinFeaturesType_sasl_oauthbearer"><code>sasl_oauthbearer = 2048</code></dt>
-    <dd><p>sasl_oauthbearer</p>
+  
+  <dd><p>sasl_oauthbearer</p>
 </dd>
     <dt id="MASES_DataDistributionManager_Bindings_Configuration_BuiltinFeaturesType_sasl_plain"><code>sasl_plain = 128</code></dt>
-    <dd><p>sasl_plain</p>
+  
+  <dd><p>sasl_plain</p>
 </dd>
     <dt id="MASES_DataDistributionManager_Bindings_Configuration_BuiltinFeaturesType_sasl_scram"><code>sasl_scram = 256</code></dt>
-    <dd><p>sasl_scram</p>
+  
+  <dd><p>sasl_scram</p>
 </dd>
     <dt id="MASES_DataDistributionManager_Bindings_Configuration_BuiltinFeaturesType_snappy"><code>snappy = 2</code></dt>
-    <dd><p>snappy</p>
+  
+  <dd><p>snappy</p>
 </dd>
     <dt id="MASES_DataDistributionManager_Bindings_Configuration_BuiltinFeaturesType_ssl"><code>ssl = 4</code></dt>
-    <dd><p>ssl</p>
+  
+  <dd><p>ssl</p>
 </dd>
     <dt id="MASES_DataDistributionManager_Bindings_Configuration_BuiltinFeaturesType_zstd"><code>zstd = 1024</code></dt>
-    <dd><p>zstd</p>
+  
+  <dd><p>zstd</p>
 </dd>
   </dl>
 
@@ -168,11 +184,12 @@ public enum BuiltinFeaturesType</code></pre>
       </div>
     </main>
 
+    <div class="container-xxl search-results" id="search-results"></div>
 
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          <div style="text-align: center;">Copyright © 2024 MASES s.r.l.. | Via San Cesidio 16 - San Valentino in A.C. - PE | P.I. 01932310681</div>
+          <script type="text/javascript">document.write('<div style="text-align: center;">Copyright © 2021 - ' + new Date().getFullYear() + ' MASES s.r.l. | Via San Cesidio 16 - San Valentino in A.C. - PE | P.I. 01932310681</div>');</script>
         </div>
       </div>
     </footer>
